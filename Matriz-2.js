@@ -209,6 +209,33 @@ idsArray.push("cont-titulo")
 idsArrayEliminados.push('cont-titulo')
 const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','wall_street_II','equalizer','padre','patern']
 const masterKey = [4];
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+  
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazyload");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Fallback para navegadores que no soportan IntersectionObserver
+    lazyImages.forEach(function(lazyImage) {
+      lazyImage.src = lazyImage.dataset.src;
+    });
+  }
+});
+
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
