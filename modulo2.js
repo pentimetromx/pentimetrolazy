@@ -2900,15 +2900,40 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      container.scrollTop = 0;
    }
  }
- function iniciarMovimiento(instrucId) {
-   var container = document.getElementById(instrucId);
-   container.scrollTop = container.scrollHeight;
-
-
-
-   setTimeout(function() {
-    if(instrucId === 'control-neumatico') {
-      const contenedor = document.getElementById('control-neumatico');
+function iniciarMovimiento(instrucId) {
+  var container = document.getElementById(instrucId);
+  container.scrollTop = container.scrollHeight;
+  setTimeout(function() {
+  if(instrucId === 'control-neumatico') {
+    const contenedor = document.getElementById('control-neumatico');
+    // Función para animar el scroll hacia arriba
+    function scrollToTopSmoothly() {
+      const currentPosition = contenedor.scrollTop;
+      const targetPosition = 0;
+      const duration = 500; // Duración de la animación en     
+      const startTime = performance.now();    
+      function animateScroll(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);    
+        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      }    
+      requestAnimationFrame(animateScroll);
+    }    
+    // Función para aplicar una función de easing (interpolación suave)
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }    
+    // Llama a la función para animar el scroll hacia arriba
+    scrollToTopSmoothly();
+    }}, 277
+  );
+  setTimeout(function() {
+    if(instrucId === 'rodillo-infeed') {
+      const contenedor = document.getElementById('rodillo-infeed');
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
         const currentPosition = contenedor.scrollTop;
@@ -2933,130 +2958,71 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
     }}, 277
+  );    
+  setTimeout(function() {
+    if(instrucId === 'puesta-punto') {
+      const contenedor = document.getElementById('puesta-punto');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0; // Desplazar hacia arriba
+        const duration = 500; // Duración de la animación en milisegundos
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }
+  }, 277
+  );   
+  setTimeout(function() {
+    if(instrucId === 'agrupaOblicuos-XII') {
+      const contenedor = document.getElementById('agrupaOblicuos-XII');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor.scrollTop;
+        const targetPosition = 0;
+        const duration = 400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+    }}, 277    
   );
-
-
-
-     
-   setTimeout(function() {
-     if(instrucId === 'rodillo-infeed') {
-       const contenedor = document.getElementById('rodillo-infeed');
-       // Función para animar el scroll hacia arriba
-       function scrollToTopSmoothly() {
-         const currentPosition = contenedor.scrollTop;
-         const targetPosition = 0;
-         const duration = 500; // Duración de la animación en     
-         const startTime = performance.now();    
-         function animateScroll(timestamp) {
-           const elapsed = timestamp - startTime;
-           const progress = Math.min(elapsed / duration, 1);
-           const easedProgress = easeInOutCubic(progress);    
-           contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-           if (progress < 1) {
-             requestAnimationFrame(animateScroll);
-           }
-         }    
-         requestAnimationFrame(animateScroll);
-       }    
-       // Función para aplicar una función de easing (interpolación suave)
-       function easeInOutCubic(t) {
-         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-       }    
-       // Llama a la función para animar el scroll hacia arriba
-       scrollToTopSmoothly();
-     }}, 277
-   );    
-   setTimeout(function() {
-     if(instrucId === 'puesta-punto') {
-       const contenedor = document.getElementById('puesta-punto');
-       // Función para animar el scroll hacia arriba
-       function scrollToTopSmoothly() {
-         const currentPosition = contenedor.scrollTop;
-         const targetPosition = 0; // Desplazar hacia arriba
-         const duration = 500; // Duración de la animación en milisegundos
-         const startTime = performance.now();    
-         function animateScroll(timestamp) {
-           const elapsed = timestamp - startTime;
-           const progress = Math.min(elapsed / duration, 1);
-           const easedProgress = easeInOutCubic(progress);    
-           contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-           if (progress < 1) {
-             requestAnimationFrame(animateScroll);
-           }
-         }    
-         requestAnimationFrame(animateScroll);
-       }    
-       // Función para aplicar una función de easing (interpolación suave)
-       function easeInOutCubic(t) {
-         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-       }    
-       // Llama a la función para animar el scroll hacia arriba
-       scrollToTopSmoothly();
-     }
-   }, 277
-   );   
-   setTimeout(function() {
-     if(instrucId === 'agrupaOblicuos-XII') {
-       const contenedor = document.getElementById('agrupaOblicuos-XII');
-       // Función para animar el scroll hacia arriba
-       function scrollToTopSmoothly() {
-         const currentPosition = contenedor.scrollTop;
-         const targetPosition = 0;
-         const duration = 400; // Duración de la animación en ms     
-         const startTime = performance.now();    
-         function animateScroll(timestamp) {
-           const elapsed = timestamp - startTime;
-           const progress = Math.min(elapsed / duration, 1);
-           const easedProgress = easeInOutCubic(progress);    
-           contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-           if (progress < 1) {
-             requestAnimationFrame(animateScroll);
-           }
-         }    
-         requestAnimationFrame(animateScroll);
-       }    
-       // Función para aplicar una función de easing (interpolación suave)
-       function easeInOutCubic(t) {
-         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-       }    
-       // Llama a la función para animar el scroll hacia arriba
-       scrollToTopSmoothly();
-     }}, 277    
-   );
-   setTimeout(() => {
-     changeColorToRedAndBack();    
-   }, 877);
-   setTimeout(function() {
-     if(instrucId === 'agrupaOblicuos-XVIII') {
-       const contenedor = document.getElementById('agrupaOblicuos-XVIII');
-       // Función para animar el scroll hacia arriba
-       function scrollToTopSmoothly() {
-         const currentPosition = contenedor.scrollTop;
-         const targetPosition = 0;
-         const duration = 400; // Duración de la animación en ms     
-         const startTime = performance.now();    
-         function animateScroll(timestamp) {
-           const elapsed = timestamp - startTime;
-           const progress = Math.min(elapsed / duration, 1);
-           const easedProgress = easeInOutCubic(progress);    
-           contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-           if (progress < 1) {
-             requestAnimationFrame(animateScroll);
-           }
-         }    
-         requestAnimationFrame(animateScroll);
-       }    
-       // Función para aplicar una función de easing (interpolación suave)
-       function easeInOutCubic(t) {
-         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-       }    
-       // Llama a la función para animar el scroll hacia arriba
-       scrollToTopSmoothly();
-     }}, 277
-   );  
-   setTimeout(function() {
-      if(instrucId === 'contenedor-vertical') {
-      const contenedor = document.getElementById('contenedor-vertical');
+  setTimeout(() => {
+    changeColorToRedAndBack();    
+  }, 877);
+  setTimeout(function() {
+    if(instrucId === 'agrupaOblicuos-XVIII') {
+      const contenedor = document.getElementById('agrupaOblicuos-XVIII');
+      contenedor.style.zIndex=111
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
         const currentPosition = contenedor.scrollTop;
@@ -3081,8 +3047,36 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
     }}, 277
-   );
- }
+  );  
+  setTimeout(function() {
+    if(instrucId === 'contenedor-vertical') {
+    const contenedor = document.getElementById('contenedor-vertical');
+    // Función para animar el scroll hacia arriba
+    function scrollToTopSmoothly() {
+      const currentPosition = contenedor.scrollTop;
+      const targetPosition = 0;
+      const duration = 400; // Duración de la animación en ms     
+      const startTime = performance.now();    
+      function animateScroll(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);    
+        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      }    
+      requestAnimationFrame(animateScroll);
+    }    
+    // Función para aplicar una función de easing (interpolación suave)
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }    
+    // Llama a la función para animar el scroll hacia arriba
+    scrollToTopSmoothly();
+  }}, 277
+  );
+}
  var canvas = document.getElementById("sinusoidalCanvas");         
  var ctx = canvas.getContext("2d");
  ctx.strokeStyle = "rgb(0, 255, 0)"; // Verde

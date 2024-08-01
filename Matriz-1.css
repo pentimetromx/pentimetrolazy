@@ -5524,21 +5524,6 @@ input.numero:focus {
     left:2%;
     width: 100%;
   }
-  #agrupaOblicuos-XII{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:-5%;
-    overflow:auto;
-    gap: 9%;
-    left: 53%;
-    width: 45%;
-    height: 400px;
-    border-radius: 11px;
-    background-color: #000;  
-    z-index: 4;
-  }
   #subtitulo-operacion{
     position: absolute;
     display: flex;
@@ -5552,16 +5537,33 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -5%;
-    left: 2%;
-    width: 48%;
-    height: 400px;
-    overflow-y: auto; /* Controla el desbordamiento vertical */
-    overflow-x: hidden;
-    gap: 17%;
+    margin-top:0;
+    left: 2vw;
+    width: 48vw;
+    height:40vh;
+    overflow-y: auto;
+    overflow-x:hidden;
+    gap: 17vh;
+    border-radius: 11px;
+    background-color: #000; 
+  }
+  #agrupaOblicuos-XII{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    gap: 9vh;
+    left: 53vw;
+    width: 45vw;
+    height: 40vh;
     border-radius: 11px;
     background-color: #000;  
+    z-index: 4;
   }
+
   #pantalla-inicial{
     position: relative;
     display: flex;
