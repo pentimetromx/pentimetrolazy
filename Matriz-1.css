@@ -5512,7 +5512,7 @@ input.numero:focus {
     display: flex;
     height:90vh;
     width:99vw;
-    top: 13vh;
+    top: 7vh;
     left: 0;
   }
   #cont-titulo-operacion h4{
@@ -8385,7 +8385,7 @@ input.numero:focus {
   #cont-titulo{
     position: relative;
     display: flex;
-    top: -99%;
+    top: -105%;
     left: 0;
     width: 100vw;
     height: 70vh;

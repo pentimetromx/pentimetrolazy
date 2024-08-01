@@ -3407,7 +3407,7 @@ function detenerMovimiento() {
 }
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
-function moverDerecha() {
+/* function moverDerecha() {
   botonSeguidor.style.top = botonSolitario.style.top
   var posicionInicialX = 0
   var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
@@ -3475,7 +3475,7 @@ function moverArriba() {
       botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
     }
   }, 17);
-}
+} */
 const buttons = document.querySelectorAll('.buttons')  
 var contButtsAround = document.getElementById('button-container')
 function moverBoton(boton, index) {
