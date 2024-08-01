@@ -11,16 +11,16 @@
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar..."> 
           <datalist id="suggestions"></datalist>      
-            <img loading="lazy" src="./assets/lupa.jpg" alt="Buscar">
+            <img data-src="./assets/lupa.jpg" class="lazy" alt="Buscar">
       </form>
     </header>
     <div id="over_size"></div>
     <div id="over_side"></div>
     <div id="logo-grande">
-      <img loading="lazy" id="titulo-ancho" src="./assets/cadena logo big.png" alt="logo">
+      <img data-src="./assets/cadena logo big.png" class="lazy" id="titulo-ancho" alt="logo">
     </div>
     <div id="franja-Blanca">
-      <img id="img-logo" loading="lazy" src="./assets/cadena logo.png" alt="logo">
+      <img data-src="./assets/cadena logo.png" id="img-logo" class="lazy" alt="logo">
     </div>
     <div id="contenedor-principal">
       <input id="input1" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric" autofocus>    
@@ -444,14 +444,14 @@
       </div>
     </div>
     <div class="overlay"></div>
-    <video id="videoBackground" style="display: none;" loop muted autoplay>
-      <source src="./assets/Rotatek.mp4" type="video/mp4">  
+    <video class="lazy" id="videoBackground" loop muted autoplay>
+      <source data-src="./assets/Rotatek.mp4" type="video/mp4"> 
     </video>
-    <video id="video-background" autoplay muted loop>
-      <source src="./assets/galaxy.mp4" type="video/mp4">
+    <video class="lazy" id="video-background" autoplay muted loop>
+      <source data-src="./assets/galaxy.mp4" type="video/mp4">
       Tu navegador no soporta el elemento de video.
     </video>
-    <img  id="image-background" src="./assets/eintein.png" alt="einst">
+    <img data-src="./assets/eintein.png"  id="image-background" alt="einst">
     <div class="links-inicialesI" id="links-inicialesI">
       
       <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL INICIO</button>
@@ -606,15 +606,17 @@
         <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('contImpresor', 'videoTrain01')">Cilindro impresor</a>
       </div>
 
-      <img loading="lazy" src="./assets/Arriba abajo.jpg" id="imgTorre" alt="imagen-torre">
+      <img data-src="./assets/Arriba abajo.jpg" class="lazy" id="imgTorre" alt="imagen-torre">
       
-      <video class="video-training" id="vidTintero" src="./assets/Arriba abajo.mp4"></video>
+      <video class="lazy video-training" id="vidTintero" >
+        <source data-src="./assets/Arriba abajo.mp4" type="video/mp4">
+      </video>
       
       <div id="imgsRepuestos">
-        <img class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" loading="lazy" src="./assets/galgas.jfif" alt="eje">
-        <img class="image-trainings" id="conico" onclick="ampliaIndicaciones('conico')" loading="lazy" src="./assets/conico.jpg" alt="cónico">
-        <img class="image-trainings" id="reductor" onclick="ampliaIndicaciones(2)" loading="lazy" src="./assets/reductor.jpg" alt="reductor">
-        <img class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" loading="lazy" src="./assets/reductorII.png" alt="reductorII">
+        <img data-src="./assets/galgas.jpg" class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" class="lazy" alt="eje">
+        <img data-src="./assets/conico.jpg" class="image-trainings" id="conico" onclick="ampliaIndicaciones('conico')" class="lazy" alt="cónico">
+        <img data-src="./assets/reductor.jpg" class="image-trainings" id="reductor" onclick="ampliaIndicaciones(2)" class="lazy" alt="reductor">
+        <img data-src="./assets/reductorII.png" class="image-trainings" id="reductor-II" onclick="ampliaIndicaciones(3)" class="lazy" alt="reductorII">
       </div>
       <div id="agrupaOblicuos-II">
         <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
@@ -668,13 +670,13 @@
     <div id="pantalla-frente"> 
 
       <div id="imgsRepuestos-II">
-        <img loading="lazy" src="./assets/eje.jpg" alt="eje">
-        <img loading="lazy" src="./assets/conico.jpg" alt="eje">
-        <img loading="lazy" src="./assets/reductor.jpg" alt="eje">
-        <img loading="lazy" src="./assets/reductorII.png" alt="eje">
+        <img data-src="./assets/eje.jpg" class="lazy" alt="eje">
+        <img data-src="./assets/conico.jpg" class="lazy" alt="eje">
+        <img data-src="./assets/reductor.jpg" class="lazy" alt="eje">
+        <img data-src="./assets/reductorII.png" class="lazy" alt="eje">
       </div>
 
-      <img loading="lazy" src="./assets/Arriba abajo.jpg" id="imgTorre-f" alt="imagen-torre">
+      <img data-src="./assets/Arriba abajo.jpg" class="lazy" id="imgTorre-f" alt="imagen-torre">
 
       <div id="agrupaOblicuos">
         <button class="Bot-inicio2" id="butt-001" onclick="muestraTorresI('pantalla-frente')">Frente</button>
@@ -690,13 +692,13 @@
     <div id="pantalla-mandos" style="display: none;">
 
       <div id="imgsRepuestos-III">
-        <img class="image-trainings image-training rep-izquierda" src="./assets/sprocket.jpg" alt="ejes">
-        <img class="image-trainings rep-izquierda" loading="lazy" src="./assets/cadena.jpg" alt="ejes">
-        <img class="image-trainings rep-izquierda" loading="lazy" src="./assets/acople cardan.jpg" alt="ejes">
-        <img class="image-trainings rep-izquierda" loading="lazy" src="./assets/acople.jpg" alt="ejes">
+        <img data-src="./assets/sprocket.jpg" class="image-trainings image-training rep-izquierda" alt="ejes">
+        <img data-src="./assets/cadena.jpg" class="image-trainings rep-izquierda" class="lazy" alt="ejes">
+        <img data-src="./assets/acople cardan.jpg" class="image-trainings rep-izquierda" class="lazy" alt="ejes">
+        <img data-src="./assets/acople.jpg" class="image-trainings rep-izquierda" class="lazy" alt="ejes">
       </div>
 
-      <img loading="lazy" src="./assets/Mandos.jpg" id="imgTorre-f" alt="imagen-torre">
+      <img data-src="./assets/Mandos.jpg" class="lazy" id="imgTorre-f" alt="imagen-torre">
 
       <div id="agrupaOblicuos-III">
         <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
@@ -713,12 +715,12 @@
     <div id="pantalla-servicio" style="display: none;">
 
       <div id="imgsRepuestos-IV">
-        <img class="image-trainings rep-derecha" loading="lazy" src="./assets/piñon masa.jpg" alt="ejes">
-        <img class="image-trainings rep-derecha" loading="lazy" src="./assets/Piñon.jpg" alt="ejes">
-        <img class="image-trainings rep-derecha" loading="lazy" src="./assets/PiñonII.jpg" alt="ejes">
-        <img class="image-trainings rep-derecha" loading="lazy" src="./assets/piñonIII.jpg" alt="ejes">
+        <img data-src="./assets/piñon masa.jpg" class="image-trainings rep-derecha" class="lazy" alt="ejes">
+        <img data-src="./assets/Piñon.jpg" class="image-trainings rep-derecha" class="lazy" alt="ejes">
+        <img data-src="./assets/PiñonII.jpg" class="image-trainings rep-derecha" class="lazy" alt="ejes">
+        <img data-src="./assets/piñonIII.jpg" class="image-trainings rep-derecha" class="lazy" alt="ejes">
       </div>
-      <img loading="lazy" src="./assets/Transmision.jpg" id="imgTorre-f" alt="imagen-torre">
+      <img data-src="./assets/Transmision.jpg" class="lazy" id="imgTorre-f" alt="imagen-torre">
 
       <div id="agrupaOblicuos-IV">
         <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
@@ -734,13 +736,13 @@
     <div id="pantalla-atras" style="display: none;">
 
       <div id="imgsRepuestos-V">
-        <img loading="lazy" class="image-trainings rep-derecha" src="./assets/transmision correas.jpg" alt="ejes">
-        <img loading="lazy" class="image-trainings rep-derecha" src="./assets/piñon loco.jpg" alt="ejes">
-        <img loading="lazy" class="image-trainings rep-derecha" src="./assets/planeta.jpg" alt="ejes">
-        <img loading="lazy" class="image-trainings rep-derecha" src="./assets/piñon trasero.jpg" alt="ejes">
+        <img data-src="./assets/transmision correas.jpg" class="lazy" class="image-trainings rep-derecha" alt="ejes">
+        <img data-src="./assets/piñon loco.jpg" class="lazy" class="image-trainings rep-derecha" alt="ejes">
+        <img data-src="./assets/planeta.jpg" class="lazy" class="image-trainings rep-derecha" alt="ejes">
+        <img data-src="./assets/piñon trasero.jpg" class="lazy" class="image-trainings rep-derecha" alt="ejes">
       </div>
 
-      <img loading="lazy" src="./assets/Atras.jpg" id="imgTorre-a" alt="imagen-torre">
+      <img data-src="./assets/Atras.jpg" class="lazy" id="imgTorre-a" alt="imagen-torre">
 
       <div id="agrupaOblicuos-V">
         <button class="Bot-inicio2" id="butt-01" onclick="muestraTorresI('pantalla-frente')">Frente</button>
@@ -756,9 +758,15 @@
     <div id="videosTraining" style="display: none;">
 
       <div class="videos-training" id="videos-training">
-        <video class="video-training" id="videoElement1" src="./assets/Bateria de entintado.mp4" height="400px" loop></video>
-        <video class="video-training" id="videoElement4" src="./assets/2.full velocidad2.mp4" height="400px" width="520px" loop></video>
-        <video class="video-training" id="videoElement5" src="./assets/1.Rodillo a rodillo.mp4" height="400px" loop></video>
+        <video class="lazy" class="video-training" id="videoElement1" loop>
+          <source data-src="./assets/Bateria de entintado.mp4" type="video/mp4">
+        </video>
+        <video class="lazy video-training" id="videoElement4" loop>
+          <source data-src="./assets/2.full velocidad2.mp4" type="video/mp4">
+        </video>
+        <video class="lazy video-training" id="videoElement5" loop>
+          <source data-src="./assets/1.Rodillo a rodillo.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
     <div id="sector-distribuidor">
@@ -771,14 +779,16 @@
         <button class="boton-f " onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="conti-video-distribuidor">
-        <video class="video-training" id="videoElement2" src="./assets/Montaje distribuidor.mp4" height="400px" loop autoplay muted></video>
+        <video class="lazy video-training" id="videoElement2" loop autoplay muted>
+          <source data-src="./assets/Montaje distribuidor.mp4" type="video/mp4">
+        </video>
       </div>
       <div id="images-distribuidor">
-        <img id="imageElement" loading="lazy" src="./assets/Distri-2.jpg" alt="Entintador">
-        <img id="imageElement2" loading="lazy" src="./assets/Distri-6.jpg" alt="Rodamiento entintador">                
-        <img id="imageElement3" loading="lazy" src="./assets/Distri-7.jpg" alt="Lupa">
-        <img id="imageElement4" loading="lazy" src="./assets/DIstri-12.jpg" alt="Tornillo lupa">
-        <img id="imageElement5" loading="lazy" src="./assets/Distri-11.jpg" alt="Tuerca lupa">
+        <img data-src="./assets/Distri-2.jpg" id="imageElement" class="lazy" alt="Entintador">
+        <img data-src="./assets/Distri-6.jpg" id="imageElement2" class="lazy" alt="Rodamiento entintador">                
+        <img data-src="./assets/Distri-7.jpg" id="imageElement3" class="lazy" alt="Lupa">
+        <img data-src="./assets/DIstri-12.jpg" id="imageElement4" class="lazy" alt="Tornillo lupa">
+        <img data-src="./assets/Distri-11.jpg" id="imageElement5" class="lazy" alt="Tuerca lupa">
       </div>
       <div id="conti-boton-repuestos">
         <button class="butt-partes" id="butt-repuestos">PARTES  /  REPUESTOS</button>
@@ -794,12 +804,14 @@
         <button class="boton-f " onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="conti-video-entintador">
-        <video class="video-training" id="videoElement3" src="./assets/Montaje entintador.mp4" height="400px" autoplay loop muted></video>
+        <video class="lazy video-training" id="videoElement3" autoplay loop muted>
+          <source data-src="./assets/Montaje entintador.mp4" type="video/mp4">
+        </video>
       </div>
       
       <div id="images-entintador" class="images-training" >   
-        <img class="image-training image-trainings image-trainings1" id="imageElement6" loading="lazy" src="./assets/Entintador.png" alt="Entintador"><br>
-        <img class="image-training image-trainings image-trainings1" id="imageElement7" loading="lazy" src="./assets/Rodamiento entintador.png" alt="Rodamiento entintador"><br>
+        <img data-src="./assets/Entintador.png" class="lazy image-training image-trainings image-trainings1" id="imageElement6" alt="Entintador"><br>
+        <img data-src="./assets/Rodamiento entintador.png" class="lazy image-training image-trainings image-trainings1" id="imageElement7" alt="Rodamiento entintador"><br>
       </div>
       <div id="conti-boton-repuestos-I">
         <button class="butt-partes" id="butt-repuestos-I">PARTES  /  REPUESTOS</button>
@@ -815,16 +827,18 @@
         <button class="boton-f " onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="conti-video-smed">
-        <video class="video-training" id="plate-smed" src="./assets/plate smed.mp4" autoplay loop></video>
+        <video class="lazy video-training" id="plate-smed" autoplay loop>
+          <source data-src="./assets/plate smed.mp4" type="video/mp4">
+        </video>
       </div>
 
       <div id="images-smed" class="smed-style">
         <div class="image-container">
-          <img class="image-trainings image-trainings1" id="imageElement11" loading="lazy" src="./assets/dobladora.png" alt="Entintador">
-          <img class="image-trainings image-trainings1" id="imageElement22" loading="lazy" src="./assets/instrumento.png" alt="Rodamiento entintador">
-          <img class="image-trainings image-trainings1" id="imageElement33" loading="lazy" src="./assets/vinil.png" alt="Rodamiento entintador">
-          <img class="image-trainings image-trainings1" id="imageElement44" loading="lazy" src="./assets/rodillos prensa.png" alt="Rodamiento entintador">
-          <img class="image-trainings image-trainings1" id="imageElement55" loading="lazy" src="./assets/medidor.jfif" alt="Rodamiento entintador">
+          <img data-src="./assets/dobladora.png" class="lazy image-trainings image-trainings1" id="imageElement11" alt="Entintador">
+          <img data-src="./assets/instrumento.png" class="lazy image-trainings image-trainings1" id="imageElement22" alt="Rodamiento entintador">
+          <img data-src="./assets/vinil.png" class="lazy image-trainings image-trainings1" id="imageElement33" alt="Rodamiento entintador">
+          <img data-src="./assets/rodillos prensa.png" class="lazy image-trainings image-trainings1" id="imageElement44" alt="Rodamiento entintador">
+          <img data-src="./assets/medidor.jpg" class="lazy image-trainings image-trainings1" id="imageElement55" alt="Rodamiento entintador">
         </div>
       </div>
       <div id="conti-boton-repuestos-II">
@@ -881,10 +895,10 @@
         <input id="nombre-VII" type="checkbox" class="input-class">
       </div> 
       <div id="contImagNeg">
-        <img id="imagPixelate" loading="lazy" src="./assets/pixelate.jpg" alt="Gráfico de Excel 6">
+        <img data-src="./assets/pixelate.jpg" id="imagPixelate" class="lazy" alt="Gráfico de Excel 6">
       </div>
       <div id="contImagGraf">
-        <img loading="lazy" src="./assets/Excel.png" alt="Gráfico de Excel 6">
+        <img data-src="./assets/Excel.png" class="lazy" alt="Gráfico de Excel 6">
       </div>      
     </div>
     <div id="conti-boton-kaizen">
@@ -899,71 +913,73 @@
       <button class="butt-mautonomo-planos" id="btn15" onclick="rodillosKaizen('btn15','')">LAYOUT</button>
     </div>
     <div id="planos-kaizen">
-      <img class="imgs-Planos" loading="lazy" src="./assets/planos kaizen.jpg" alt="planos">
-      <img class="imgs-Planos" loading="lazy" src="./assets/planos kaizen 1.jpg" alt="planos">
-      <img class="imgs-Planos" loading="lazy" src="./assets/planos kaizen 2.jpg" alt="planos">
-      <img class="imgs-Planos" loading="lazy" src="./assets/planos kaizen 3.jpg" alt="planos">
+      <img data-src="./assets/planos kaizen.jpg" class="lazy imgs-Planos" alt="planos">
+      <img data-src="./assets/planos kaizen 1.jpg" class="lazy imgs-Planos" alt="planos">
+      <img data-src="./assets/planos kaizen 2.jpg" class="lazy imgs-Planos" alt="planos">
+      <img data-src="./assets/planos kaizen 3.jpg" class="lazy imgs-Planos" alt="planos">
     </div>
     <div id="materiales-kaizen">
-      <img class="imgs-kaizen aumentar" loading="lazy" src="./assets/materiales kaizen.jpg" alt="materiales">
-      <img class="imgs-kaizen aumentar" loading="lazy" src="./assets/materiales kaizen 1.jpg" alt="materiales">
-      <img class="imgs-kaizen aumentar" loading="lazy" src="./assets/materiales kaizen 2.jpg" alt="materiales">
-      <img class="imgs-kaizen aumentar" loading="lazy" src="./assets/materiales kaizen 3.jpg" alt="materiales">
+      <img data-src="./assets/materiales kaizen.jpg" class="lazy imgs-kaizen aumentar" alt="materiales">
+      <img data-src="./assets/materiales kaizen 1.jpg" class="lazy imgs-kaizen aumentar" alt="materiales">
+      <img data-src="./assets/materiales kaizen 2.jpg" class="lazy imgs-kaizen aumentar" alt="materiales">
+      <img data-src="./assets/materiales kaizen 3.jpg" class="lazy imgs-kaizen aumentar" alt="materiales">
     </div>
     <div id="toyota-kaizen">
-      <img id="toyota1" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 1.jpg" alt="toyota">
-      <img id="toyota2" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 2.jpg" alt="toyota">
-      <img id="toyota3" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 8.jpg" alt="toyota">
-      <img id="toyota4" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 4.jpg" alt="toyota">
-      <img id="toyota5" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 5.jpg" alt="toyota">
-      <img id="toyota6" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 6.jpg" alt="toyota">
-      <img id="toyota7" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 7.jpg" alt="toyota">
-      <img id="toyota8" class="imgs-toyota aumentar" loading="lazy" src="./assets/toyota 3.jpg" alt="toyota">
+      <img data-src="./assets/toyota 1.jpg" id="toyota1" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 2.jpg" id="toyota2" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 8.jpg" id="toyota3" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 4.jpg" id="toyota4" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 5.jpg" id="toyota5" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 6.jpg" id="toyota6" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 7.jpg" id="toyota7" class="lazy imgs-toyota aumentar" alt="toyota">
+      <img data-src="./assets/toyota 3.jpg" id="toyota8" class="lazy imgs-toyota aumentar" alt="toyota">
     </div>
     <h1 id="casos-kaizen">Casos de estudio</h1>
    <div id="mejoras-kai">
-      <img id="caso1" class="caso-estudio" loading="lazy" src="./assets/caso 1.png" alt="casos">
-      <img id="caso2" class="caso-estudio" loading="lazy" src="./assets/caso.jpg" alt="casos">
-      <img id="caso3" class="caso-estudio" loading="lazy" src="./assets/caso 2.png" alt="casos">
+      <img data-src="./assets/caso 1.png" id="caso1" class="lazycaso-estudio" alt="casos">
+      <img data-src="./assets/caso.jpg" id="caso2" class="lazy caso-estudio" alt="casos">
+      <img data-src="./assets/caso 2.png" id="caso3" class="lazy caso-estudio" alt="casos">
    </div>
     <div id="toyota-kaizen-antes">
-      <img id="antes1" class="imgs-Antes" loading="lazy" src="./assets/antes 1.jpg" alt="toyota">
-      <img id="antes2" class="imgs-Antes" loading="lazy" src="./assets/antes 2.jpg" alt="antes">
-      <img id="antes3" class="imgs-Antes" loading="lazy" src="./assets/antes 3.jpg" alt="antes">
-      <img id="antes6" class="imgs-Antes" loading="lazy" src="./assets/antes.jpg" alt="antes">     
-      <img id="antes4" class="imgs-Antes" loading="lazy" src="./assets/antes 4.jpg" alt="antes">
-      <img id="antes5" class="imgs-Antes" loading="lazy" src="./assets/antes 5.jpg" alt="antes">
+      <img data-src="./assets/antes 1.jpg" id="antes1" class="lazy imgs-Antes" alt="toyota">
+      <img data-src="./assets/antes 2.jpg" id="antes2" class="lazy imgs-Antes" alt="antes">
+      <img data-src="./assets/antes 3.jpg" id="antes3" class="lazy imgs-Antes" alt="antes">
+      <img data-src="./assets/antes.jpg" id="antes6" class="lazy imgs-Antes" alt="antes">     
+      <img data-src="./assets/antes 4.jpg" id="antes4" class="lazy imgs-Antes" alt="antes">
+      <img data-src="./assets/antes 5.jpg" id="antes5" class="lazy imgs-Antes" alt="antes">
     </div>
     <div id="kaizenCont">
-      <video id="vidElem" src="./assets/kaizen vid.mp4" autoplay loop muted></video>
+      <video class="lazy" id="vidElem" autoplay loop muted>
+        <source data-src="./assets/kaizen vid.mp4" type="video/mp4">
+      </video>
     </div>
     <div id="kaizen-propuestos" class="grid-container">
       <div class="row">
         <div class="cell">
           <div class="label">Salva manos en maquina colectora</div>
-          <img loading="lazy" src="./assets/kaizen colectora.jpg" alt="colectora">
+          <img data-src="./assets/kaizen colectora.jpg" class="lazy" alt="colectora">
         </div>
         <div class="cell">
           <div class="label">Mejora en linea de ensamble</div>
-          <img loading="lazy" src="./assets/kaizen fresa.jpg" alt="colectora">
+          <img data-src="./assets/kaizen fresa.jpg" class="lazy" alt="colectora">
         </div>
         <div class="cell">
           <div class="label">Bodega estanteria lijera</div>
-          <img loading="lazy" src="./assets/kaizen estante.jpg" alt="colectora">
+          <img data-src="./assets/kaizen estante.jpg" class="lazy" alt="colectora">
         </div>
       </div>      
       <div class="row">
         <div class="cell">
           <div class="label">Metodologia 5S</div>
-          <img loading="lazy" src="./assets/kaizen 5S.jpg" alt="colector">
+          <img data-src="./assets/kaizen 5S.jpg" class="lazy" alt="colector">
         </div>
         <div class="cell">
           <div class="label">Lean manufacturing</div>
-          <img loading="lazy" src="./assets/kaizen lean.jpg" alt="colector">
+          <img data-src="./assets/kaizen lean.jpg" class="lazy" alt="colector">
         </div>
         <div class="cell">
           <div class="label">Filosofia kaizen japones</div>
-          <img loading="lazy" src="./assets/kaizen japones.jpg" alt="colecta">
+          <img data-src="./assets/kaizen japones.jpg" class="lazy" alt="colecta">
         </div>
       </div>
     </div>
@@ -998,17 +1014,19 @@
           <div class="aceite-lub"><label class="labl-class" for="lubrica">GRASA</label></div>
         </div>
         <div id="padre-lubricante" class="contenedor-lubri">
-          <div class="lubricante"><video id="lubri-vid" src="./assets/Lubricacion.mp4" autoplay loop muted></video></div>
+          <div class="lubricante"><video class="lazy" id="lubri-vid" autoplay loop muted>
+            <source data-src="./assets/Lubricacion.mp4" type="video/mp4">
+          </video></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Boquilla principal</label></div>  
-          <div class="lubricante"><img loading="lazy" src="./assets/grasera.jpg" alt="aceitera-1"></div>
+          <div class="lubricante"><img data-src="./assets/grasera.jpg" class="lazy" alt="aceitera-1"></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Grasera transmision</label></div>                  
-          <div class="lubricante"><img loading="lazy" src="./assets/aceite.jpg" alt="aceitera-1"></div>
+          <div class="lubricante"><img data-src="./assets/aceite.jpg" class="lazy" alt="aceitera-1"></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Aceite SAE 70W</label></div>         
-          <div class="lubricante"><img loading="lazy" src="./assets/engrasadora.jpg" alt="aceitera-1"></div>
+          <div class="lubricante"><img data-src="./assets/engrasadora.jpg" class="lazy" alt="aceitera-1"></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Precarga</label></div> 
-          <div class="lubricante"><img loading="lazy" src="./assets/aceitera.jpg" alt="aceitera-1"></div>
+          <div class="lubricante"><img data-src="./assets/aceitera.jpg" class="lazy" alt="aceitera-1"></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Aceitera manual</label></div> 
-          <div class="lubricante"><img loading="lazy" src="./assets/rodagrasa.jpg" alt="aceitera-1"></div>
+          <div class="lubricante"><img data-src="./assets/rodagrasa.jpg" class="lazy" alt="aceitera-1"></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Viscosidad 80 - 120</label></div>
         </div>    
       </div>
@@ -1020,11 +1038,13 @@
         <label class="labl-class" for="lubrica">ACEITE</label>
       </div>
       <div id="vidLub">
-        <video id="lubri-vid" src="./assets/Lubricacion.mp4" autoplay loop muted></video>
+        <video class="lazy" id="lubri-vid" autoplay loop muted>
+          <source data-src="./assets/Lubricacion.mp4" type="video/mp4">
+        </video>
       </div>
       <div id="aceitera">
-        <img loading="lazy" src="./assets/aceitera.jpg" alt="aceitera-1">
-        <img loading="lazy" src="./assets/aceite.jpg" alt="aceitera-1">
+        <img data-src="./assets/aceitera.jpg" class="lazy" alt="aceitera-1">
+        <img data-src="./assets/aceite.jpg" class="lazy" alt="aceitera-1">
       </div>
       <div id="indicaciones">
         <label class="labl-class labl-lub" style="display: none;" for="lubrica">Boquilla principal</label>
@@ -1039,9 +1059,9 @@
         <label class="labl-class" for="lubrica">GRASA</label>
       </div>
       <div id="aceitera-II">
-        <img loading="lazy" src="./assets/engrasadora.jpg" alt="aceitera-1">
-        <img loading="lazy" src="./assets/grasera.jpg" alt="aceitera-1">
-        <img loading="lazy" src="./assets/rodagrasa.jpg" alt="aceitera-1">
+        <img data-src="./assets/engrasadora.jpg" class="lazy" alt="aceitera-1">
+        <img data-src="./assets/grasera.jpg" class="lazy" alt="aceitera-1">
+        <img data-src="./assets/rodagrasa.jpg" class="lazy" alt="aceitera-1">
       </div>
       <div id="indicaciones-II">
         <label class="labl-class labl-lub" style="display: none;" for="lubrica">Precarga</label>
@@ -1054,21 +1074,21 @@
       <div id="child-div"></div>
       <div id="bis-abuelo" class="grand-father">
         <div id="padre-lubrica" class="contenedor-padre">
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento mandos.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento mandos.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento de Esferas de Una Hilera</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento mandos 2.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento mandos 2.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento de Esferas Sellado</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento mandos 3.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento mandos 3.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento Hibrido de Esferas</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento mandos 4.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento mandos 4.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento de Esferas Radial</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento conico mandos 2.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento conico mandos 2.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento Cónico de Alta Velocidad</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento conico mandos.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento conico mandos.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento Cónico de Una Hilera</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento conico mandos 1.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento conico mandos 1.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento Cónico de Una Hilera</label></div>
-          <div class="item"><img class="item-child" loading="lazy" src="./assets/rodamiento conico mandos 3.jpg" alt="rodamiento"></div>
+          <div class="item"><img data-src="./assets/rodamiento conico mandos 3.jpg" class="item-child lazy" alt="rodamiento"></div>
           <div class="item"><label class="labl-lub" for="lubrica">Rodamiento Cónico de Precisión</label></div>
         </div>    
       </div>
@@ -1085,25 +1105,24 @@
         </div>        
           
         <div id="vidFreno">
-          <video id="freno-vid" src="./assets/freno disco.mp4" autoplay loop muted></video>
+          <video class="lazy" id="freno-vid" autoplay loop muted>
+            <source data-src="./assets/freno disco.mp4" type="video/mp4">
+          </video>
         </div>      
       </div>
       <div id="abuelo-grilla" class="grilla-freno">
         <div id="child-move-II"></div>
         <div id="abuelo-grilla-freno" class="grand-father-III">
           <div id="grilla-frena" class="grilla-frena-hijo">
-
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico.jpg" alt="rodamiento"></div>
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 1.jpg" alt="rodamiento"></div>
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 2.jpg" alt="rodamiento"></div>
-
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 6.jpg" alt="rodamiento"></div>
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 4.jpg" alt="rodamiento"></div>
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 5.jpg" alt="rodamiento"></div>
-
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 3.jpg" alt="rodamiento"></div>
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 7.jpg" alt="rodamiento"></div>
-            <div class="siste-freno"><img class="img-freno" loading="lazy" src="./assets/sist neumatico 8.jpg" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 1.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 2.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 6.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 4.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 5.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 3.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 7.jpg" class="img-freno lazy" alt="rodamiento"></div>
+            <div class="siste-freno"><img data-src="./assets/sist neumatico 8.jpg" class="img-freno lazy" alt="rodamiento"></div> 
 
           </div>
         </div>
@@ -1121,7 +1140,9 @@
         </div>
 
         <div id="vidTeñido">
-          <video id="teñido-vid" src="./assets/vid-teñido.mp4" autoplay loop muted></video>
+          <video class="lazy" id="teñido-vid" autoplay loop muted>
+            <source data-src="./assets/vid-teñido.mp4" type="video/mp4">
+          </video>
         </div>
     
       </div>
@@ -1130,15 +1151,15 @@
         <div id="abuelo-grilla-teñido" class="grand-father-I">
           
           <div id="grilla-tiñe" class="grilla-teñido-hijo">
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 1.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 2.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 6.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 4.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 5.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 3.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 7.jpg" alt="rodamiento"></div>
-            <div class="imagen"><img class="item-grilla" loading="lazy" src="./assets/sist neumatico 8.jpg" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 1.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 2.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 6.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 4.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 5.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 3.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 7.jpg" class="item-grilla lazy" alt="rodamiento"></div>
+            <div class="imagen"><img data-src="./assets/sist neumatico 8.jpg" class="item-grilla lazy" alt="rodamiento"></div>
           </div>
         </div>
       </div>
@@ -1156,7 +1177,9 @@
           <label class="labl-class" for="teñido">GP TINTER</label>
         </div>
         <div id="vidRodillos">
-          <video class="video-training" id="rodilleria-vid" src="./assets/tinter vid.mp4" autoplay loop muted></video>
+          <video class="lazy video-training" id="rodilleria-vid" autoplay loop muted>
+            <source data-src="./assets/tinter vid.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
       
@@ -1164,10 +1187,10 @@
         <div id="child-div-I"></div>
         <div id="padre-cuadricula" class="marco-2">
           <div  id="hijo-cuadricula" class="marco-1">
-            <div><img class="rodillo" loading="lazy" src="./assets/tinter.jpg" alt="freno"></div>  
-            <div><img class="rodillo" loading="lazy" src="./assets/tinter 1.jpg" alt="freno"></div>
-            <div><img class="rodillo" loading="lazy" src="./assets/tinter 2.jpg" alt="freno"></div>
-            <div><img class="rodillo" loading="lazy" src="./assets/tinter 3.jpg" alt="freno"></div>  
+            <div><img data-src="./assets/tinter.jpg" class="rodillo lazy"  alt="freno"></div>  
+            <div><img data-src="./assets/tinter 1.jpg" class="rodillo lazy" alt="freno"></div>
+            <div><img data-src="./assets/tinter 2.jpg" class="rodillo lazy" alt="freno"></div>
+            <div><img data-src="./assets/tinter 3.jpg" class="rodillo lazy" alt="freno"></div>  
           </div>
         </div>
       </div>
@@ -1175,16 +1198,18 @@
         <div id="item-movil"></div>
         <div id="abuelo-grilla-dureza" class="grand-father-dureza">
           <div id="grilla-duro" class="grilla-dureza-hijo">
-            <div class="duros"><img class="rodillo-durezas" loading="lazy" src="./assets/durometro 1.jpg" alt="freno"></div>
-            <div class="duros"><img class="rodillo-durezas" loading="lazy" src="./assets/durometro 2.jpg" alt="freno"></div>
-            <div class="duros"><img class="rodillo-durezas" loading="lazy" src="./assets/durometro 3.jpg" alt="freno"></div>
-            <div class="duros"><img class="rodillo-durezas" loading="lazy" src="./assets/durometro 4.jpg" alt="freno"></div>
+            <div class="duros"><img data-src="./assets/durometro 1.jpg" class="rodillo-durezas lazy" alt="freno"></div>
+            <div class="duros"><img data-src="./assets/durometro 2.jpg" class="rodillo-durezas lazy" alt="freno"></div>
+            <div class="duros"><img data-src="./assets/durometro 3.jpg" class="rodillo-durezas lazy" alt="freno"></div>
+            <div class="duros"><img data-src="./assets/durometro 4.jpg" class="rodillo-durezas lazy"  alt="freno"></div>
           </div>
         </div>
       </div>
     </div>        
     <div id="contPortPlaca">
-      <video class="video-training" id="video-placa" src="./assets/video-plancha-v2.mp4" autoplay loop muted></video>
+      <video class="lazy video-training" id="video-placa" autoplay loop muted>
+        <source data-src="./assets/video-plancha-v2.mp4" type="video/mp4">
+      </video>
       <div id="agrupaOblicuos-placa">
         <button class="Bot-inicio2" id="butt-010" onclick="ladosPlancha('imagen1')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-020" ></button> 
@@ -1196,32 +1221,34 @@
         <button class="Bot-inicio2-fondo" id="butt-080"></button>  
       </div>
       <div id="placa">
-        <img class="image-trainings" loading="lazy" src="./assets/comparador caratula.png"><br> 
-        <img class="image-trainings" loading="lazy" src="./assets/anodizado.jpg" alt="placa"><br>
-        <img class="image-trainings" loading="lazy" src="./assets/plancha.jfif" alt="placa">
+        <img data-src="./assets/comparador caratula.png" class="image-trainings lazy"><br> 
+        <img data-src="./assets/anodizado.jpg" class="image-trainings lazy" alt="placa"><br>
+        <img data-src="./assets/plancha.jpg" class="image-trainings lazy"  alt="placa">
       </div>
     </div>
     <div id="imagenes-plancha">
 
       <div class="imagen-container" id="imagen1">
-        <img loading="lazy" src="./assets/Porta plancha2.png" class="imagesTorre aumentar" id="portPlaca" alt="porte plancha">
-        <img loading="lazy" src="./assets/Porta plancha.png" class="imagesTorre aumentar" id="portPlaca" alt="porte plancha">
+        <img data-src="./assets/Porta plancha2.png" class="lazy imagesTorre aumentar" alt="porte plancha">
+        <img data-src="./assets/Porta plancha.png" class="lazy imagesTorre aumentar" id="portPlaca" alt="porte plancha">
       </div>
       <div class="imagen-container" id="imagen2">
-        <img loading="lazy" src="./assets/Porta plancha3.png" class="imagesTorre aumentar" id="portPlaca2" alt="porte plancha">
-        <img loading="lazy" src="./assets/Porta plancha4.png" class="imagesTorre aumentar" id="portPlaca2" alt="porte plancha">
+        <img data-src="./assets/Porta plancha3.png" class="lazy imagesTorre aumentar" id="portPlaca2" alt="porte plancha">
+        <img data-src="./assets/Porta plancha4.png" class="lazy imagesTorre aumentar" id="portPlaca2" alt="porte plancha">
       </div>
       <div class="imagen-container" id="imagen3">
-        <img loading="lazy" src="./assets/Porta plancha5.png" class="imagesTorre aumentar" id="portPlaca3" alt="porte plancha">
-        <img loading="lazy" src="./assets/Porta plancha6.png" class="imagesTorre aumentarv" id="portPlaca3" alt="porte plancha">
+        <img data-src="./assets/Porta plancha5.png" class="lazy imagesTorre aumentar" id="portPlaca3" alt="porte plancha">
+        <img data-src="./assets/Porta plancha6.png" class="lazy imagesTorre aumentar" id="portPlaca3" alt="porte plancha">
       </div>
       <div class="imagen-container" id="imagen4">
-        <img loading="lazy" src="./assets/Porta plancha7.png" class="imagesTorre aumentar" id="portPlaca4" alt="porte plancha">
-        <img loading="lazy" src="./assets/Porta plancha8.png" class="imagesTorre aumenta  r" id="portPlaca4" alt="porte plancha">
+        <img data-src="./assets/Porta plancha7.png" class="lazy imagesTorre aumentar" id="portPlaca4" alt="porte plancha">
+        <img data-src="./assets/Porta plancha8.png" class="lazy imagesTorre aumentar" id="portPlaca4" alt="porte plancha">
       </div>
     </div>
     <div id="contPortManta">
-      <video class="video-training" id="videoManta" src="./assets/video-portaManta-v2.mp4" loop autoplay></video>
+      <video class="lazy video-training" id="videoManta" loop autoplay>
+        <source data-src="./assets/video-portaManta-v2.mp4" type="video/mp4">
+      </video>
       <div id="agrupaOblicuos-IX">
         <button class="Bot-inicio2" id="butt-01" onclick="ladosMantilla('mantilla1')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-02"></button> 
@@ -1233,31 +1260,33 @@
         <button class="Bot-inicio2-fondo" id="butt-08"></button>  
       </div>
       <div id="manta">
-        <img loading="lazy" class="image-trainings aumentar" src="./assets/calibrador.png" alt="calibra"> <br>
-        <img loading="lazy" class="image-trainings aumentar" src="./assets/mantilla3.jfif" alt="manta"> <br>
-        <img loading="lazy" class="image-trainings aumentar" src="./assets/mantilla2.png" alt="manta1">
+        <img data-src="./assets/calibrador.png" class="lazy image-trainings aumentar"  alt="calibra"> <br>
+        <img data-src="./assets/mantilla3.jpg" class="lazy image-trainings aumentar" alt="manta"> <br>
+        <img data-src="./assets/mantilla2.png" class="lazy image-trainings aumentar" alt="manta1">
       </div>     
     </div>
     <div id="imagenes-manta">
       <div class="imagen-container" id="mantilla1">
-        <img loading="lazy" src="./assets/mantillaII.jpg" class="imagesTorre imgMant aumentar" id="manta0" alt="porte plancha">
-        <img loading="lazy" src="./assets/mantilla.jpg" class="imagesTorre imgMant aumentar" id="manta1" alt="porte plancha">
+        <img data-src="./assets/mantillaII.jpg" class="lazy imagesTorre imgMant aumentar" id="manta0" alt="porte plancha">
+        <img data-src="./assets/mantilla.jpg" class="lazy imagesTorre imgMant aumentar" id="manta1" alt="porte plancha">
       </div>
       <div class="imagen-container" id="mantilla2">
-        <img loading="lazy" src="./assets/mantilla estructura.jpg" class="imagesTorre imgMant aumentar" id="manta2" alt="porte plancha">
-        <img loading="lazy" src="./assets/mantilla aplicador.png" class="imagesTorre imgMant aumentar" id="manta3" alt="porte plancha">
+        <img data-src="./assets/mantilla estructura.jpg" class="lazy imagesTorre imgMant aumentar"  id="manta2" alt="porte plancha">
+        <img data-src="./assets/mantilla aplicador.png" class="lazy imagesTorre imgMant aumentar" id="manta3" alt="porte plancha">
       </div>
       <div class="imagen-container" id="mantilla3">
-        <img loading="lazy" src="./assets/mantilla calibrador.jpg" class="imagesTorre imgMant aumentar" id="manta4" alt="porte plancha">
-        <img loading="lazy" src="./assets/mantilla capas.jpg" class="imagesTorre imgMant aumentar" id="manta5" alt="porte plancha">
+        <img data-src="./assets/mantilla calibrador.jpg" class="lazy imagesTorre imgMant aumentar" id="manta4" alt="porte plancha">
+        <img data-src="./assets/mantilla capas.jpg" class="lazy imagesTorre imgMant aumentar" id="manta5" alt="porte plancha">
       </div>
       <div class="imagen-container" id="mantilla4">
-        <img loading="lazy" src="./assets/tensor rotulaz.jpg" class="imagesTorre imgMant aumentar" id="manta6" alt="porte plancha">
-        <img loading="lazy" src="./assets/tensor avanzado.jpg" class="imagesTorre imgMant aumentar" id="manta7" alt="porte plancha">
+        <img data-src="./assets/tensor rotulaz.jpg" class="lazy imagesTorre imgMant aumentar" id="manta6" alt="porte plancha">
+        <img data-src="./assets/tensor avanzado.jpg" class="lazy imagesTorre imgMant aumentar" id="manta7" alt="porte plancha">
       </div>
     </div>       
     <div id="contImpresor">
-      <video class="video-training" id="video-impresor" src="./assets/video-impresor.mp4" loop muted autoplay></video>
+      <video class="lazy video-training" id="video-impresor" loop muted autoplay>
+        <source data-src="./assets/video-impresor.mp4" type="video/mp4">
+      </video>
       <div id="agrupaOblicuos-XXIII">
         <button class="Bot-inicio2" id="butt-011" onclick="ladosImpresor('forward')">Frente</button>
         <button class="Bot-inicio2-fondo" id="butt-022"></button> 
@@ -1269,50 +1298,50 @@
         <button class="Bot-inicio2-fondo" id="butt-088"></button>  
       </div>
       <div id="impresorImg">
-        <img loading="lazy" class="image-trainings aumentar" src="./assets/medidor.jfif" alt="manta"> <br>
-        <img loading="lazy" class="image-trainings aumentar" src="./assets/impresor.jfif" alt="manta"> <br> 
-        <img loading="lazy" class="image-trainings aumentar" src="./assets/impresor1.jfif" alt="manta1">
+        <img data-src="./assets/medidor.jpg" class="lazy image-trainings aumentar" alt="manta"> <br>
+        <img data-src="./assets/impresor.jpg" class="lazy image-trainings aumentar" alt="manta"> <br> 
+        <img data-src="./assets/impresor1.jpg" class="lazy image-trainings aumentar" alt="manta1">
       </div> 
     </div>
     <div id="imagenes-impresor">
 
       <div class="contImPresor" id="forward"> 
-        <img loading="lazy" src="./assets/tensor cilindro.jpg" class="imagesTorre imgImpresor aumentar" id="impresor" alt="porte plancha">
-        <img loading="lazy" src="./assets/tensor doblerosca.jpg" class="imagesTorre imgImpresor aumentar" id="impresor1" alt="porte plancha">
+        <img data-src="./assets/tensor cilindro.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor" alt="porte plancha">
+        <img data-src="./assets/tensor doblerosca.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor1" alt="porte plancha">
       </div>
       <div class="contImPresor" id="comands"> 
-        <img loading="lazy" src="./assets/tensor piñon.jpg" class="imagesTorre imgImpresor aumentar" id="impresor2" alt="porte plancha">
-        <img loading="lazy" src="./assets/tensor rosca.jpg" class="imagesTorre imgImpresor aumentar" id="impresor3" alt="porte plancha">
+        <img data-src="./assets/tensor piñon.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor2" alt="porte plancha">
+        <img data-src="./assets/tensor rosca.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor3" alt="porte plancha">
       </div>
       <div class="contImPresor" id="service"> 
-        <img loading="lazy" src="./assets/tensor rotula.jpg" class="imagesTorre imgImpresor aumentar" id="impresor4" alt="porte plancha">
-        <img loading="lazy" src="./assets/tensor rotulas.jpg" class="imagesTorre imgImpresor aumentar" id="impresor5" alt="porte plancha">
+        <img data-src="./assets/tensor rotula.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor4" alt="porte plancha">
+        <img data-src="./assets/tensor rotulas.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor5" alt="porte plancha">
       </div>
       <div class="contImPresor" id="back"> 
-        <img loading="lazy" src="./assets/tensor rotulaz.jpg" class="imagesTorre imgImpresor aumentar" id="impresor6" alt="porte plancha">
-        <img loading="lazy" src="./assets/tensor avanzado.jpg" class="imagesTorre imgImpresor aumentar" id="impresor7" alt="porte plancha">
+        <img data-src="./assets/tensor rotulaz.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor6" alt="porte plancha">
+        <img data-src="./assets/tensor avanzado.jpg" class="lazy imagesTorre imgImpresor aumentar" id="impresor7" alt="porte plancha">
       </div>
     </div>       
     <div id="frame-rollers">
       <div id="child-move-III"></div>
       <div id= "contImgDistribuidor">
         <div id="grilla-entintado">
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-0.jpg" class=" image-trainings" alt="imgDistrib-4"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-14.jpg" class=" image-trainings" alt="imgDistrib-17"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/DIstri-3.jpg" class=" image-trainings" alt="imgDistrib-3"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-2.jpg" class=" image-trainings" alt="imgDistrib-2"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-5.jpg" class=" image-trainings" alt="imgDistrib-5"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-6.jpg" class=" image-trainings"  alt="imgDistrib-6"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-6.0.jpg" class=" image-trainings" alt="imgDistrib-7"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-6.1.jpg" class=" image-trainings" alt="imgDistrib-8"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-7.jpg" class=" image-trainings" alt="imgDistrib-9"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/DIstri-8.jpg" class=" image-trainings" alt="imgDistrib-10"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/DIstri-9.jpg" class=" image-trainings" alt="imgDistrib-11"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-9.1.jpg" class=" image-trainings" alt="imgDistrib-12"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/DIstri-10.jpg" class=" image-trainings" alt="imgDistrib-13"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-11.jpg" class=" image-trainings" alt="imgDistrib-14"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/DIstri-12.jpg" class=" image-trainings" alt="imgDistrib-15"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/Distri-13.jpg" class=" image-trainings" alt="imgDistrib-16"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-0.jpg" class="lazy image-trainings" alt="imgDistrib-4"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-14.jpg" class="lazy image-trainings" alt="imgDistrib-17"></div>
+          <div class="imgs-row"><img data-src="./assets/DIstri-3.jpg" class="lazy image-trainings" alt="imgDistrib-3"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-2.jpg" class="lazy image-trainings" alt="imgDistrib-2"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-5.jpg" class="lazy image-trainings" alt="imgDistrib-5"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-6.jpg" class="lazy image-trainings" alt="imgDistrib-6"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-6.0.jpg" class="lazy image-trainings" alt="imgDistrib-7"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-6.1.jpg" class="lazy image-trainings" alt="imgDistrib-8"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-7.jpg" class="lazy image-trainings" alt="imgDistrib-9"></div>
+          <div class="imgs-row"><img data-src="./assets/DIstri-8.jpg" class="lazy image-trainings" alt="imgDistrib-10"></div>
+          <div class="imgs-row"><img data-src="./assets/DIstri-9.jpg" class="lazy image-trainings" alt="imgDistrib-11"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-9.1.jpg" class="lazy image-trainings" alt="imgDistrib-12"></div>
+          <div class="imgs-row"><img data-src="./assets/DIstri-10.jpg" class="lazy image-trainings" alt="imgDistrib-13"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-11.jpg" class="lazy image-trainings" alt="imgDistrib-14"></div>
+          <div class="imgs-row"><img data-src="./assets/DIstri-12.jpg" class="lazy image-trainings" alt="imgDistrib-15"></div>
+          <div class="imgs-row"><img data-src="./assets/Distri-13.jpg" class="lazy image-trainings" alt="imgDistrib-16"></div>
         </div>
       </div>
     </div>
@@ -1320,10 +1349,10 @@
       <div id="child-move-IV"></div>
       <div id= "padre-entintadores">
         <div id="grilla-corta-entintado">
-          <div class="imgs-row"><img loading="lazy" src="./assets/forma-1.jpg" class="image-trainings aumentar" alt="imgDistrib-18"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/forma-2.jpg" class="image-trainings aumentar" alt="imgDistrib-19"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/forma-3.jpg" class="image-trainings aumentar" alt="imgDistrib-20"></div>
-          <div class="imgs-row"><img loading="lazy" src="./assets/forma-4.jpg" class="image-trainings aumentar" alt="imgDistrib-21"></div>
+          <div class="imgs-row"><img data-src="./assets/forma-1.jpg" class="lazy image-trainings aumentar" alt="imgDistrib-18"></div>
+          <div class="imgs-row"><img data-src="./assets/forma-2.jpg" class="lazy image-trainings aumentar" alt="imgDistrib-19"></div>
+          <div class="imgs-row"><img data-src="./assets/forma-3.jpg" class="lazy image-trainings aumentar" alt="imgDistrib-20"></div>
+          <div class="imgs-row"><img data-src="./assets/forma-4.jpg" class="lazy image-trainings aumentar" alt="imgDistrib-21"></div>
         </div>  
       </div>
     </div>
@@ -1331,12 +1360,18 @@
       <div id="child-move-variable"></div>
       <div id="padre-variable">
         <div id="cont-variable">
-          <img loading="lazy" class="child-section aumentar" src="./assets/IBM 4000.jpg" alt="IBM4000">
-          <video class="child-section" src="./assets/info-I.mp4" autoplay loop muted controls></video>
-          <img loading="lazy" class="child-section aumentar" src="./assets/IBM 5000.jpg" alt="IBM4000">
-          <video class="child-section" src="./assets/info-II.mp4" autoplay loop muted controls></video>
-          <img loading="lazy" class="child-section aumentar" src="./assets/info print.jpg" alt="IBM4000">
-          <video class="child-section" src="./assets/info-III.mp4" autoplay loop muted controls></video>
+          <img data-src="./assets/IBM 4000.jpg" class="lazy child-section aumentar" alt="IBM4000">
+          <video class="lazy child-section" autoplay loop muted controls>
+            <source data-src="./assets/info-I.mp4" type="video/mp4">
+          </video>
+          <img data-src="./assets/IBM 5000.jpg" class="lazy child-section aumentar" alt="IBM4000">
+          <video class="lazy child-section" autoplay loop muted controls>
+            <source data-src="./assets/info-II.mp4" type="video/mp4">
+          </video>
+          <img data-src="./assets/info print.jpg" class="lazy child-section aumentar" alt="IBM4000">
+          <video class="lazy child-section" autoplay loop muted controls>
+            <source data-src="./assets/info-III.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -1344,21 +1379,29 @@
       <div id="child-move-plana"></div>
       <div id="padre-plana">
         <div id="cont-plana">           
-          <img loading="lazy" class="child-section aumentar" src="./assets/sor-m.jpg" alt="GTO52">
-          <video class="child-section" src="./assets/Planas-I.mp4" autoplay loop muted controls></video>
-          <img loading="lazy" class="child-section aumentar" src="./assets/GTO 52.jpg" alt="GTO52">
-          <video class="child-section" src="./assets/planas-II.mp4" autoplay loop muted controls></video>
-          <img loading="lazy" class="child-section aumentar" src="./assets/pinza heidelberg.jpg" alt="GTO52">
-          <video class="child-section" src="./assets/planas-III.mp4" autoplay loop muted controls></video>
+          <img data-src="./assets/sor-m.jpg" class="lazy child-section aumentar" alt="GTO52">
+          <video class="lazy child-section" autoplay loop muted controls>
+            <source data-src="./assets/Planas-I.mp4" type="video/mp4">
+          </video>
+          <img data-src="./assets/GTO 52.jpg" class="lazy child-section aumentar" alt="GTO52">
+          <video class="lazy child-section" autoplay loop muted controls>
+            <source data-src="./assets/planas-II.mp4" type="video/mp4">
+          </video>
+          <img data-src="./assets/pinza heidelberg.jpg" class="lazy child-section aumentar" alt="GTO52">
+          <video class="lazy child-section" autoplay loop muted controls>
+            <source data-src="./assets/planas-III.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
     <div id="cont-secador">
       <div class="video-container">
-        <video class="video-training" id="curado-uv" src="./assets/secador.mp4" autoplay loop muted></video>
+        <video class="lazy video-training" id="curado-uv" autoplay loop muted>
+          <source data-src="./assets/secador.mp4" type="video/mp4">
+        </video>
       </div>      
       <div id="imgsSecador">
-        <img loading="lazy" class="maq-seccion aumentar" src="./assets/secado uv3.png" alt="">
+        <img data-src="./assets/secado uv3.png" class="lazy maq-seccion aumentar" alt="">
       </div>
     </div>
     <div class="planet-container" id="planetary">
@@ -1381,8 +1424,12 @@
 
       </div>  
 
-      <div class="planet"><video src="./assets/bancada torre.mp4" autoplay loop muted></video></div>
-      <div class="satelite"><video src="./assets/bancada torre.mp4" autoplay loop muted></video></div>
+      <div class="planet"><video class="lazy" autoplay loop muted>
+        <source data-src="./assets/bancada torre.mp4" type="video/mp4">
+      </video></div>
+      <div class="satelite"><video class="lazy" autoplay loop muted>
+        <source data-src="./assets/bancada torre.mp4" type="video/mp4">
+      </video></div>
     </div>
     <div id="bateria-entintado-II">
 
@@ -1395,7 +1442,9 @@
         <button class="boton-f" onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>
       </div>
       <div id="video-entintado">  
-        <video id="videoElement1-II" src="./assets/Bateria de entintado.mp4" autoplay loop muted></video>  
+        <video class="lazy" id="videoElement1-II" autoplay loop muted>
+          <source data-src="./assets/Bateria de entintado.mp4" type="video/mp4">
+        </video>  
       </div> 
     </div>
     <div id="bancada-torre-II">
@@ -1406,15 +1455,17 @@
         <button class="boton-g " onclick="muestraRodillo()">Expulsión y halado<div class="linea-horizontal"></div></button>                
       </div>
       <div id="imgsIsopropil" class="images-training">
-        <img loading="lazy" class="image-training image-trainings image-trainings1 image-isopropil" id="isopropil1" src="./assets/isopropil alcoholimetro.png" alt="iso">
-        <img loading="lazy" class="image-training image-trainings image-trainings1 image-isopropil" id="isopropil2" src="./assets/isopropil ph.png" alt="iso">
-        <img loading="lazy" class="image-training image-trainings image-trainings1 image-isopropil" id="isopropil3" src="./assets/isopropil.png" alt="iso">
+        <img data-src="./assets/isopropil alcoholimetro.png" class="lazy image-training image-trainings image-trainings1 image-isopropil" id="isopropil1" alt="iso">
+        <img data-src="./assets/isopropil ph.png" class="lazy image-training image-trainings image-trainings1 image-isopropil" id="isopropil2" alt="iso">
+        <img data-src="./assets/isopropil.png" class="lazy image-training image-trainings image-trainings1 image-isopropil" id="isopropil3" alt="iso">
       </div>
       <div id="conti-boton-repuestos-III">
         <button class="butt-partes" id="butt-repuestos-III">PARTES  /  REPUESTOS</button>
       </div>
       <div id="conti-video-bancada">
-        <video class="video-training" id="plate-smed-I" src="./assets/plate smed.mp4" autoplay loop></video> 
+        <video class="lazy video-training" id="plate-smed-I" autoplay loop>
+          <source data-src="./assets/plate smed.mp4" type="video/mp4">
+        </video> 
       </div>
     </div>
     <div id="sitema-humedad">
@@ -1434,36 +1485,40 @@
     <div id="pre-prensa">
       <div id="ventana-lateral" onmouseup="cerrarVentana()">  
         <div id="icono1">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono arroba.png">  
+          <img data-src="./assets/icono arroba.png" class="lazy iconos-laterales">  
         </div>
         <div id="icono2">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono llamada whatsapp.png"> 
+          <img data-src="./assets/icono llamada whatsapp.png" class="lazy iconos-laterales"> 
         </div>
         <div id="icono3">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono mensaje importante.png">
+          <img data-src="./assets/icono mensaje importante.png" class="lazy iconos-laterales">
         </div>
         <div id="icono4">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono home.png">  
+          <img data-src="./assets/icono home.png" class="lazy iconos-laterales">  
         </div>
         <div id="icono5">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono papelera.png"> 
+          <img data-src="./assets/icono papelera.png" class="lazy iconos-laterales" > 
         </div>
         <div id="icono6">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono herramientas.png">
+          <img data-src="./assets/icono herramientas.png" class="lazy iconos-laterales">
         </div>
         <div id="icono7">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono configuracion.png">
+          <img data-src="./assets/icono configuracion.png" class="lazy iconos-laterales">
         </div>
         <div id="icono8">
-          <img loading="lazy" class="iconos-laterales" src="./assets/icono ajustes.png">
+          <img data-src="./assets/icono ajustes.png" class="lazy iconos-laterales">
         </div>
         <h6 id="cerrar-ventana" onmouseup="cerrarVentana()">Cerrar</h6>
       </div>
       <div id="vidColor">
-        <video class="video-training vid-prepress" id="prisma-vid" src="./assets/prisma.mp4" autoplay loop onclick="abrirPrepress('pre-prensa')"></video>
+        <video class="lazy video-training vid-prepress" id="prisma-vid" autoplay loop onclick="abrirPrepress('pre-prensa')">
+          <source data-src="./assets/prisma.mp4" type="video/mp4">
+        </video>
       </div>
       <div id="vidColor-II">
-        <video class="video-training" id="color-vid" src="./assets/color.mp4"></video>
+        <video class="lazy video-training" id="color-vid">
+          <source data-src="./assets/color.mp4" type="video/mp4">
+        </video>
       </div> 
       <div id="conte-botDensitoII">
         <button class="butt-prepre" id="troubleshoot" onclick="muestraVidPrisma('prisma-vid-II')">MONTAJES</button>
@@ -1474,53 +1529,72 @@
         <button class="butt-prepre" id="lup" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div>
       <div id="imgs-prepress">
-        <video id="vidCicodelia" class="vidTeoria video-training" src="./assets/cicodelia.mp4" autoplay loop></video>
+        <video class="lazy vidTeoria video-training" id="vidCicodelia" autoplay loop>
+          <source data-src="./assets/cicodelia.mp4" type="video/mp4">
+        </video>
         <div id="primerCont" class="contColor">
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa13.png" alt="pre13"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa.jpg" alt="pre1"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa2.jpg" alt="pre2"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' style="cursor: pointer;" onclick="muestraVidPrisma('prisma-vid-II')" src="./assets/preprensa17.jpg" alt="pre3"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa4.jpg" alt="pre4"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa12.png" alt="pre12"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa13.png" class="lazy img-special" alt="pre13"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa.jpg" class="lazy img-special" alt="pre1"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa2.jpg" class="lazy img-special" alt="pre2"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa17.jpg" class="lazy img-special" style="cursor: pointer;" onclick="muestraVidPrisma('prisma-vid-II')" alt="pre3"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa4.jpg" class="lazy img-special" alt="pre4"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa12.png" class="lazy img-special" alt="pre12"></div>
         </div>
         <div id="segundoCont" class="contColor">
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/luz6.jfif" alt="pre18"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa7.jpg" alt="pre7"></div>
-          <div class='imgTeoria1'><video class='vidTeoria img-special' id="vid01" onclick="muestraVidPrisma('vid04')" src="./assets/luz.mp4" autoplay loop></video></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa8.jpg" alt="pre8"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' onclick="muestraVidColor('vidColor-II')" src="./assets/preprensa10.jpg" alt="pre10"></div>
-          <div class='imgTeoria1'><video class='vidTeoria img-special' id="vid02" onclick="muestraVidPrisma('vid05')" src="./assets/luz2.mp4" autoplay loop></video></div>
+          <div class='imgTeoria1'><img data-src="./assets/luz6.jpg" class="lazy img-special" alt="pre18"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa7.jpg" class="lazy img-special" alt="pre7"></div>
+             <source data-src="./assets/luz.mp4" type="video/mp4">
+          </video></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa8.jpg" class="lazy img-special" alt="pre8"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa10.jpg" class="lazy img-special" onclick="muestraVidColor('vidColor-II')" alt="pre10"></div>
+          <div class='imgTeoria1'><video class="lazy vidTeoria img-special" id="vid02" onclick="muestraVidPrisma('vid05')" autoplay loop>
+            <source data-src="./assets/luz2.mp4" type="video/mp4">
+          </video></div>
         </div>
         <div id="tercerCont" class="contColor">
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa6.jpg" alt="pre6"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa1.jpg" alt="pre19"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa14.jpg" alt="pre14"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa15.jpg" alt="pre15"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa16.jpg" alt="pre16"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa10.png" alt="pre18"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa6.jpg" class="lazy img-special" alt="pre6"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa1.jpg" class="lazy img-special" alt="pre19"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa14.jpg" class="lazy img-special" alt="pre14"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa15.jpg" class="lazy img-special" alt="pre15"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa16.jpg" class="lazy img-special" alt="pre16"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa10.png" class="lazy img-special" alt="pre18"></div>
         </div>
         <div id="cuartoCont" class="contColor"> 
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa11.png" alt="pre17"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa9.jpg" alt="pre9"></div>
-          <div class='imgTeoria1'><video class='vidTeoria img-special' id="vid03" onclick="muestraVidPrisma('vid06')" src="./assets/luz3.mp4" autoplay loop></video></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/luz4.jfif" alt="pre18"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/luz5.jfif" alt="pre18"></div>
-          <div class='imgTeoria1'><img loading="lazy" class='img-special' src="./assets/preprensa5.jpg" alt="pre5"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa11.png" class="lazy img-special" alt="pre17"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa9.jpg" class="lazy img-special" alt="pre9"></div>
+          <div class='imgTeoria1'><video class="lazy vidTeoria img-special" id="vid03" onclick="muestraVidPrisma('vid06')" autoplay loop>
+            <source data-src="./assets/luz3.mp4" type="video/mp4">
+          </video></div>
+          <div class='imgTeoria1'><img data-src="./assets/luz4.jpg" class="lazy img-special" alt="pre18"></div>
+          <div class='imgTeoria1'><img data-src="./assets/luz5.jpg" class="lazy img-special" alt="pre18"></div>
+          <div class='imgTeoria1'><img data-src="./assets/preprensa5.jpg" class="lazy img-special" alt="pre5"></div>
         </div>
       </div>
     </div>
     <div id="nicho-videos">
-      <video class='vidTeoria vid-prepress' id="vid04" onclick="abrirPrepress('pre-prensa')" src="./assets/luz.mp4" autoplay loop></video>
-      <video class='vidTeoria vid-prepress' id="vid05" onclick="abrirPrepress('pre-prensa')" src="./assets/luz2.mp4" autoplay loop></video>
-      <video class='vidTeoria vid-prepress' id="vid06" onclick="abrirPrepress('pre-prensa')" src="./assets/luz3.mp4" autoplay loop></video>
-      <video class="video-training vid-prepress" id="prisma-vid-II" src="./assets/prisma.mp4" autoplay loop></video>
+      <video class="lazy vidTeoria vid-prepress" id="vid04" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+        <source data-src="./assets/luz.mp4" type="video/mp4">
+      </video>
+      <video class="lazy vidTeoria vid-prepress" id="vid05" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+        <source data-src="./assets/luz2.mp4" type="video/mp4">
+      </video>
+      <video class="lazy vidTeoria vid-prepress" id="vid06" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+        <source data-src="./assets/luz3.mp4" type="video/mp4">
+      </video>
+      <video class="lazy video-training vid-prepress" id="prisma-vid-II" autoplay loop>
+        <source data-src="./assets/prisma.mp4" type="video/mp4">
+      </video>
     </div>
     <div id="densitometria">
       <div id="vidDensito">
-        <video class="video-training" id="prisma-vid" src="./assets/prisma.mp4"></video>
+        <video class="lazy video-training" id="prisma-vid">
+          <source data-src="./assets/prisma.mp4" type="video/mp4">
+        </video>
       </div>
       <div id="vidDensito-II">
-        <video class="video-training" id="color-vid" style="position: absolute;left: 137px;top: 80px;width: 638px;height: 480px;" src="./assets/color.mp4"></video><br><br><br>
+        <video class="lazy video-training" id="color-vid">
+          <source data-src="./assets/color.mp4" type="video/mp4">
+        </video><br><br><br>
         <label style="position: absolute; left: 177px;top: 300px;" for="training"></label>
       </div>
       <div id="conte-botDensito">
@@ -1532,39 +1606,41 @@
         <button class="butt-prepre-d deploy-butt" id="bot-densi-6" onclick="mantAutonomo('lup')">CALIBRES</button>
       </div>
       <div id="imgs-densito">
-        <video id="vidCicodeliaII" class="vidTeoria video-training" src="./assets/cicodelia.mp4" loop autoplay ></video>    
+        <video class="lazy vidTeoria video-training" id="vidCicodeliaII" loop autoplay >
+          <source data-src="./assets/cicodelia.mp4" type="video/mp4">
+        </video>    
 
         <div id="contDensito" class="contDensi">
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito906.jfif" alt="pre10018"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito1.jpg" alt="pre1002"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito2.jpg" alt="pre1003"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito3.jpg" alt="pre1004"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito4.jpg" alt="pre1005"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito904.jfif" alt="pre10016"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito906.jpg" class="lazy imgDensito" alt="pre10018"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito1.jpg" class="lazy imgDensito"  alt="pre1002"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito2.jpg" class="lazy imgDensito" alt="pre1003"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito3.jpg" class="lazy imgDensito" alt="pre1004"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito4.jpg" class="lazy imgDensito" alt="pre1005"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito904.jpg" class="lazy imgDensito" alt="pre10016"></div>
         </div>
         <div id="segundoContDensito" class="contDensi">
-          <div class='imgTeoria1'><img loading="lazy" class='imgDensito' src="./assets/densito5.jpg" alt="pre1006"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito7.jpg" alt="pre1008"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito8.jpg" alt="pre1009"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito9.jpg" alt="pre10010"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito910.jfif" alt="pre10011"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito911.jfif" alt="pre10012"></div>                    
+          <div class='imgTeoria1'><img data-src="./assets/densito5.jpg" class="lazy imgDensito" alt="pre1006"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito7.jpg" class="lazy imgDensito" alt="pre1008"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito8.jpg" class="lazy imgDensito" alt="pre1009"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito9.jpg" class="lazy imgDensito" alt="pre10010"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito910.jpg" class="lazy imgDensito" alt="pre10011"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito911.jpg" class="lazy imgDensito" alt="pre10012"></div>                    
         </div>
         <div id="tercerContDensito" class="contDensi">
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito901.png" alt="pre10013"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito902.jpg" alt="pre10014"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito903.jpg" alt="pre10015"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito6.jpg" alt="pre1007"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito909.jfif" alt="pre10015"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito.jpg" alt="pre1001"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito901.png" class="lazy imgDensito" alt="pre10013"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito902.jpg" class="lazy imgDensito" alt="pre10014"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito903.jpg" class="lazy imgDensito" alt="pre10015"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito6.jpg" class="lazy imgDensito" alt="pre1007"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito909.jpg" class="lazy imgDensito" alt="pre10015"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito.jpg" class="lazy imgDensito" alt="pre1001"></div>
         </div>
         <div id="cuartoContDensito" class="contDensi">
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito907.jfif" alt="pre10013"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito908.jfif" alt="pre10014"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito905.jfif" alt="pre10017"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito912.jfif" alt="pre10016"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito913.jfif" alt="pre10017"></div>
-          <div class='imgTeoria1'> <img loading="lazy" class='imgDensito' src="./assets/densito914.jfif" alt="pre10018"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito907.jpg" class="lazy imgDensito" alt="pre10013"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito908.jpg" class="lazy imgDensito" alt="pre10014"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito905.jpg" class="lazy imgDensito" alt="pre10017"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito912.jpg" class="lazy imgDensito" alt="pre10016"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito913.jpg" class="lazy imgDensito" alt="pre10017"></div>
+          <div class='imgTeoria1'> <img data-src="./assets/densito914.jpg" class="lazy imgDensito" alt="pre10018"></div>
         </div>
       </div> 
     </div>
@@ -1588,21 +1664,23 @@
       <div id="imag3" >
 
         <div style="display: flex;flex-direction: column;align-items: center;">
-          <img loading="lazy" class="img-1" src="./assets/neumatica3.jpg" alt="neuma5"><br>
+          <img data-src="./assets/neumatica3.jpg" class="lazy img-1" alt="neuma5"><br>
           <h4>CARRERA DE CILINDRO </h4>
         </div>
         <div style="display: flex;flex-direction: column;align-items: center">
-          <img loading="lazy" class="img-1" src="./assets/neumatica4.jpg" alt="neuma6"><br>
+          <img data-src="./assets/neumatica4.jpg" class="lazy img-1" alt="neuma6"><br>
           <h4>ACOPLES DE CILINDRO</h4>
         </div>
         <div style="display: flex;flex-direction: column;align-items: center">
-          <img loading="lazy" class="img-1" src="./assets/neumatica33.jpg" alt="neuma6"><br>
+          <img data-src="./assets/neumatica33.jpg" class="lazy img-1" alt="neuma6"><br>
           <h4>CONTROL NEUMATICO</h4>
         </div>
 
       </div>
       <div id="bailarina">
-        <video id="vid-basculante" src="./assets/oscilante rotativa.mp4" loop></video> 
+        <video class="lazy" id="vid-basculante" loop>
+          <source data-src="./assets/oscilante rotativa.mp4" type="video/mp4">
+        </video> 
       </div>
     </div>
     <p id="instrucciones_manometro">
@@ -1618,26 +1696,34 @@
     </p>
     <div id="vid_festo">
       <div class="parrafo_video" style="display: flex; flex-direction: row;">
-        <video src="./assets/festo.mp4" muted loop autoplay controls></video>
+        <video class="lazy" muted loop autoplay controls>
+          <source data-src="./assets/festo.mp4" type="video/mp4">
+        </video>
         <p style="white-space: nowrap;margin-top: -0.5%; margin-left: 3%;font-family: Oswald, sans-serif;color: rgb(0,255,255);font-size: 17px;">Limpieza ensamble y disponibilidad</p>
       </div>
       <div class="parrafo_video" style="display: flex; flex-direction: row;">
-        <video src="./assets/festo-II.mp4" muted loop autoplay controls></video>
+        <video class="lazy" muted loop autoplay controls>
+          <source data-src="./assets/festo-II.mp4" type="video/mp4">
+        </video>
         <p style="white-space: nowrap;margin-top: -0.5%; margin-left: 3%;font-family: Oswald, sans-serif;color: rgb(0,255,255);font-size: 17px;">Puesta a punto en equilibrio</p>
       </div>
 
       <div class="parrafo_video" style="display: flex; flex-direction: row;">
-        <video src="./assets/festo-III.mp4" muted loop autoplay controls></video>
+        <video class="lazy" muted loop autoplay controls>
+          <source data-src="./assets/festo-III.mp4" type="video/mp4">
+        </video>
         <p style="white-space: nowrap;margin-top: -0.5%; margin-left: 3%;font-family: Oswald, sans-serif;color: rgb(0,255,255);font-size: 17px;">Mantenimiento del circuito neumatico</p>
       </div>
     </div>
     <div id="padre-1">
 
       <div id="imag1" class="img1">
-        <img loading="lazy" id="image-1" src="./assets/neumatica.jpg" alt="neuma1">
-        <video src="./assets/festo_manometro.mp4" style="height: 122px;border-radius: 12px;" muted loop autoplay controls></video>
+        <img data-src="./assets/neumatica.jpg" class="lazy" id="image-1" alt="neuma1">
+        <video class="lazy" muted loop autoplay controls>
+          <source data-src="./assets/festo_manometro.mp4" type="video/mp4">
+        </video>
         <h6>PRESIÓN NEUMÁTICA 90 PSI</h6>
-        <img loading="lazy" id="image-2" src="./assets/neumatica2.jpg" alt="neuma2">
+        <img data-src="./assets/neumatica2.jpg" class="lazy" id="image-2" alt="neuma2">
       </div>
 
       <div id="control-neumatico" class="guia-neumatica">
@@ -1665,15 +1751,17 @@
     </div>
     <div id="padre-2">
       <div id="imag2" class="img1">
-        <img loading="lazy" id="image-3" src="./assets/freno.jpg" alt="neuma3">
+        <img data-src="./assets/freno.jpg" class="lazy" id="image-3" alt="neuma3">
         <h6>LIMPIEZA ZAPATAS.<br>
           JUEGO EN SEGUROS DE MANO. <br>
           REVISION CAUCHOS. <br>
           JUEGO EN EL EJE.</h6>
-        <img loading="lazy" id="image-4" src="./assets/freno2.jpg" alt="neuma4">
+        <img data-src="./assets/freno2.jpg" class="lazy" id="image-4" alt="neuma4">
       </div>      
       <div id="pneumatico">
-        <video id="vid-pneumatic" src="./assets/pneumatic video.mp4" loop muted autoplay></video> 
+        <video class="lazy" id="vid-pneumatic" loop muted autoplay>
+          <source data-src="./assets/pneumatic video.mp4" type="video/mp4">
+        </video> 
       </div>
     </div>
     <div id="puesta-punto" class="guia-neumatica">
@@ -1767,10 +1855,10 @@
         </p>     
       </div>
       <div id="imag4">
-        <img loading="lazy" id="imgGrafilado1" src="./assets/grafilado.jpg" alt="neuma7">
-        <img loading="lazy" id="imgGrafilado2" src="./assets/grafilado2.jpg" alt="neuma8">
-        <img loading="lazy" id="imgGrafilado3" src="./assets/grafilado4.jpg" alt="neuma9">
-        <img loading="lazy" id="imgGrafilado4" src="./assets/grafilado5.jpg" alt="neuma10">
+        <img data-src="./assets/grafilado.jpg" class="lazy" id="imgGrafilado1" alt="neuma7">
+        <img data-src="./assets/grafilado2.jpg" class="lazy" id="imgGrafilado2" alt="neuma8">
+        <img data-src="./assets/grafilado4.jpg" class="lazy" id="imgGrafilado3" alt="neuma9">
+        <img data-src="./assets/grafilado5.jpg" class="lazy" id="imgGrafilado4" alt="neuma10">
       </div>
     </div>
     <div id="iconos">
@@ -1778,31 +1866,31 @@
 
       <div id="conte-secundario">
         <div class="cont-user"  id="icon-carlos">
-          <img loading="lazy" id="img1" class="icono-user" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img1" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1')" alt="icono">
           <label for="nombres">Carlos Mario Sanchez</labelclass=>  
         </div>
         <div class="cont-user" id="icon-andres">
-          <img loading="lazy" id="img2" class="icono-user" onclick="resultadosEmpleado('icon-andres','updateAndres','img2')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img2" onclick="resultadosEmpleado('icon-andres','updateAndres','img2')" alt="icono">
           <label for="nombres">Andres Felipe Montoya</labelclass=>
         </div>
         <div class="cont-user" id="icon-jorge">
-          <img loading="lazy" id="img3" class="icono-user" onclick="resultadosEmpleado('icon-jorge','updateJorge','img3')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img3" onclick="resultadosEmpleado('icon-jorge','updateJorge','img3')" alt="icono">
           <label for="nombres">Jorge Alberto Lozada</label>
         </div>
         <div class="cont-user" id="icon-jesus">
-          <img loading="lazy" id="img4" class="icono-user" onclick="resultadosEmpleado('icon-jesus','updateJesus','img4')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img4" onclick="resultadosEmpleado('icon-jesus','updateJesus','img4')" alt="icono">
           <label for="nombres">Jesus Norvey Cordoba</label>
         </div>
         <div class="cont-user" id="icon-sandra">
-          <img loading="lazy" id="img5" class="icono-user" onclick="resultadosEmpleado('icon-sandra','updateSandra','img5')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img5" onclick="resultadosEmpleado('icon-sandra','updateSandra','img5')" alt="icono">
           <label for="nombres">Sandra Milena Alvarez</label>
         </div>
         <div class="cont-user" id="icon-mario">
-          <img loading="lazy" id="img6" class="icono-user" onclick="resultadosEmpleado('icon-mario','updateMario','img6')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img6" onclick="resultadosEmpleado('icon-mario','updateMario','img6')" alt="icono">
           <label for="nombres">John Mario Mira Pineda</label>
         </div>
         <div class="cont-user" id="icon-ana">
-          <img loading="lazy" id="img7" class="icono-user" onclick="resultadosEmpleado('icon-ana','updateAna','img7')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img7" onclick="resultadosEmpleado('icon-ana','updateAna','img7')" alt="icono">
           <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
@@ -1848,31 +1936,31 @@
       </div>
       <div class="contenedor-vertical" id="contenedor-vertical">
         <div class="cont-userI" id="icon-carlos-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-carlos','updateCarlos')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-carlos','updateCarlos')" alt="icono">
           <label class="lblNombres" for="nombres">Carlos Mario Sanchez</label>  
         </div>
         <div class="cont-userI" id="icon-andres-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-andres','updateAndres')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-andres','updateAndres')" alt="icono">
           <label class="lblNombres" for="nombres">Andres Felipe Montoya</label>
         </div>   
         <div class="cont-userI" id="icon-jorge-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-jorge','updateJorge')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-jorge','updateJorge')" alt="icono">
           <label class="lblNombres" for="nombres">Jorge Alberto Lozada</label>
         </div>    
         <div class="cont-userI" id="icon-jesus-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-jesus','updateJesus')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-jesus','updateJesus')" alt="icono">
           <label class="lblNombres" for= "nombres">Jesus Norvey Cordoba</label>
         </div>
         <div class="cont-userI" id="icon-sandra-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-sandra','updateSandra')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-sandra','updateSandra')" alt="icono">
           <label class="lblNombres" for="nombres">Sandra Milena Alvarez</label>
         </div> 
         <div class="cont-userI" id="icon-mario-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-mario','updateMario')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-mario','updateMario')" alt="icono">
           <label class="lblNombres" for="nombres">John Mario Mira Pineda</label>
         </div>
         <div class="cont-userI" id="icon-ana-I">
-          <img loading="lazy" class="icono-user-I imgEmploye" onclick="resultadosEmpleado('icon-ana','updateAna')" src="./assets/icono1.jpg" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-ana','updateAna')" alt="icono">
           <label class="lblNombres" for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
@@ -1886,8 +1974,8 @@
         <h6 id="options">Opciones</h6>
     </div>
     <div id="conte-ayudas">
-      <img loading="lazy" id="imagen-ayudas" onclick="alternarAyudas()" onmouseout="ocultarElementos('imagen-ayudas')" src="./assets/ayudas.png" alt="">
-      <img loading="lazy" id="imagen-ayudasII" onclick="alternarAyudasII()" src="./assets/ayudasII.png" alt="">
+      <img data-src="./assets/ayudas.png" class="lazy" id="imagen-ayudas" onclick="alternarAyudas()" onmouseout="ocultarElementos('imagen-ayudas')" alt="">
+      <img data-src="./assets/ayudasII.png" class="lazy" id="imagen-ayudasII" onclick="alternarAyudasII()" alt="">
       <h6 id="ayudas-video" style="position: relative;display: flex;left: 62%;top: -42%;font-size: 17px;display: none;">Ayudas</h6>
     </div>
     <div class="contenedor">
