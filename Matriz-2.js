@@ -236,6 +236,45 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+  
+  if ("IntersectionObserver" in window) {
+    let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyVideo = entry.target;
+          for (let source of lazyVideo.children) {
+            if (typeof source.tagName === "string" && source.tagName === "SOURCE") {
+              source.src = source.dataset.src;
+            }
+          }
+          lazyVideo.load();
+          lazyVideo.classList.remove("lazy");
+          lazyVideoObserver.unobserve(lazyVideo);
+        }
+      });
+    });
+
+    lazyVideos.forEach(function(lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  } else {
+    // Fallback para navegadores que no soportan IntersectionObserver
+    lazyVideos.forEach(function(lazyVideo) {
+      for (let source of lazyVideo.children) {
+        if (typeof source.tagName === "string" && source.tagName === "SOURCE") {
+          source.src = source.dataset.src;
+        }
+      }
+      lazyVideo.load();
+    });
+  }
+});
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
@@ -265,7 +304,7 @@ function manejarLogica() {
       if (suma === masterKey[0]) {
         document.getElementById('contenedor-principal').style.display = 'none'
         setTimeout(() => {
-          aumentoGradualVideo()              
+          /* aumentoGradualVideo() */              
         }, 200);
         setTimeout(() => {
           abrirInterfaz();

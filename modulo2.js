@@ -4338,9 +4338,9 @@ function abrirInterfaz() {
     desactivarClicsPorUnTiempo()
     }, 177);
     setTimeout(() => {
-      var contenedor = document.getElementById('video-background');  
+      /* var contenedor = document.getElementById('video-background');  
       contenedor.style.filter = 'none';
-      reduccionGradualVideo()
+      reduccionGradualVideo()*/
     }, 1800);
     setTimeout(() => {
       document.getElementById('subtitulo-I').classList.add('move-title')    
@@ -4422,7 +4422,7 @@ function bloquearClic(event) {
 event.stopPropagation();
 event.preventDefault();
 }
-function aumentoGradualVideo() {
+/* function aumentoGradualVideo() {
   var video = document.getElementById('video-background');
   var currentScale = 1; // Escala inicial del video
   var targetScale = 10; // Escala objetivo del video
@@ -4451,7 +4451,7 @@ function reduccionGradualVideo() {
         clearInterval(scaleDown); // Detener la reducción progresiva
     }
   }, interval);
-}
+} */
 const boton = document.getElementById('butt-Institucional');
 const elementos = document.querySelectorAll('.accion-secuencial');
 function animarBoton() {
