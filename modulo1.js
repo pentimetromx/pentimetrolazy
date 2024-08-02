@@ -1631,9 +1631,11 @@ function abrirSeccionOperativa(elementId){
       iniciarMovimiento('agrupaOblicuos-XVIII'); 
     }, 300);
   }else{
-    setTimeout(() => {
-      changeColorToRedAndBack();      
-    }, 177);
+    setTimeout(function () {
+    /* changeColorToRedAndBack();  */
+    iniciarMovimiento('agrupaOblicuos-XII');
+    iniciarMovimiento('agrupaOblicuos-XVIII'); 
+  }, 300);  
   }
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);

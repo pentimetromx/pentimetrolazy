@@ -2900,51 +2900,50 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      container.scrollTop = 0;
    }
  }
+ const contenedor = document.getElementById('agrupaOblicuos-XII');
+ const contenedor1 = document.getElementById('agrupaOblicuos-XVIII');
 function iniciarMovimiento(instrucId) {
   var container = document.getElementById(instrucId);
   container.scrollTop = container.scrollHeight;
-  setTimeout(function() {
-  if(instrucId === 'control-neumatico') {
-    const contenedor = document.getElementById('control-neumatico');
-    // Función para animar el scroll hacia arriba
-    function scrollToTopSmoothly() {
-      const currentPosition = contenedor.scrollTop;
-      const targetPosition = 0;
-      const duration = 500; // Duración de la animación en     
-      const startTime = performance.now();    
-      function animateScroll(timestamp) {
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeInOutCubic(progress);    
-        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll);
-        }
-      }    
-      requestAnimationFrame(animateScroll);
-    }    
-    // Función para aplicar una función de easing (interpolación suave)
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }    
-    // Llama a la función para animar el scroll hacia arriba
-    scrollToTopSmoothly();
-    }}, 277
-  );
-  setTimeout(function() {
-    if(instrucId === 'rodillo-infeed') {
-      const contenedor = document.getElementById('rodillo-infeed');
+
+  switch(instrucId){
+    /* case 'agrupaOblicuos-XII':
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
         const currentPosition = contenedor.scrollTop;
         const targetPosition = 0;
-        const duration = 500; // Duración de la animación en     
+        const duration = 1400; // Duración de la animación en ms     
         const startTime = performance.now();    
         function animateScroll(timestamp) {
           const elapsed = timestamp - startTime;
           const progress = Math.min(elapsed / duration, 1);
           const easedProgress = easeInOutCubic(progress);    
           contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      } 
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();
+      break; */
+      case 'agrupaOblicuos-XVIII':
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor1.scrollTop;
+        const targetPosition = 0;
+        const duration = 1400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor1.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
           if (progress < 1) {
             requestAnimationFrame(animateScroll);
           }
@@ -2957,43 +2956,12 @@ function iniciarMovimiento(instrucId) {
       }    
       // Llama a la función para animar el scroll hacia arriba
       scrollToTopSmoothly();
-    }}, 277
-  );    
-  setTimeout(function() {
-    if(instrucId === 'puesta-punto') {
-      const contenedor = document.getElementById('puesta-punto');
+    break
+    /* case 'contenedor-vertical':
+      const contenedor2 = document.getElementById('contenedor-vertical');
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
-        const currentPosition = contenedor.scrollTop;
-        const targetPosition = 0; // Desplazar hacia arriba
-        const duration = 500; // Duración de la animación en milisegundos
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      }    
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }    
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();
-    }
-  }, 277
-  );   
-  setTimeout(function() {
-    if(instrucId === 'agrupaOblicuos-XII') {
-      const contenedor = document.getElementById('agrupaOblicuos-XII');
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor.scrollTop;
+        const currentPosition = contenedor2.scrollTop;
         const targetPosition = 0;
         const duration = 400; // Duración de la animación en ms     
         const startTime = performance.now();    
@@ -3001,7 +2969,7 @@ function iniciarMovimiento(instrucId) {
           const elapsed = timestamp - startTime;
           const progress = Math.min(elapsed / duration, 1);
           const easedProgress = easeInOutCubic(progress);    
-          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          contenedor2.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
           if (progress < 1) {
             requestAnimationFrame(animateScroll);
           }
@@ -3013,19 +2981,13 @@ function iniciarMovimiento(instrucId) {
         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
       }    
       // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();
-    }}, 277    
-  );
-  setTimeout(() => {
-    changeColorToRedAndBack();    
-  }, 877);
-  setTimeout(function() {
-    if(instrucId === 'agrupaOblicuos-XVIII') {
-      const contenedor = document.getElementById('agrupaOblicuos-XVIII');
-      contenedor.style.zIndex=111
+      scrollToTopSmoothly();  
+    break
+    case 'puesta-punto':
+      const contenedor3 = document.getElementById('puesta-punto');
       // Función para animar el scroll hacia arriba
       function scrollToTopSmoothly() {
-        const currentPosition = contenedor.scrollTop;
+        const currentPosition = contenedor3.scrollTop;
         const targetPosition = 0;
         const duration = 400; // Duración de la animación en ms     
         const startTime = performance.now();    
@@ -3033,7 +2995,7 @@ function iniciarMovimiento(instrucId) {
           const elapsed = timestamp - startTime;
           const progress = Math.min(elapsed / duration, 1);
           const easedProgress = easeInOutCubic(progress);    
-          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          contenedor3.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
           if (progress < 1) {
             requestAnimationFrame(animateScroll);
           }
@@ -3045,37 +3007,63 @@ function iniciarMovimiento(instrucId) {
         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
       }    
       // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();
-    }}, 277
-  );  
-  setTimeout(function() {
-    if(instrucId === 'contenedor-vertical') {
-    const contenedor = document.getElementById('contenedor-vertical');
-    // Función para animar el scroll hacia arriba
-    function scrollToTopSmoothly() {
-      const currentPosition = contenedor.scrollTop;
-      const targetPosition = 0;
-      const duration = 400; // Duración de la animación en ms     
-      const startTime = performance.now();    
-      function animateScroll(timestamp) {
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeInOutCubic(progress);    
-        contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll);
-        }
+      scrollToTopSmoothly();  
+    break
+    case 'rodillo-infeed':
+      const contenedor4 = document.getElementById('rodillo-infeed');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor4.scrollTop;
+        const targetPosition = 0;
+        const duration = 400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor4.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
       }    
-      requestAnimationFrame(animateScroll);
-    }    
-    // Función para aplicar una función de easing (interpolación suave)
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }    
-    // Llama a la función para animar el scroll hacia arriba
-    scrollToTopSmoothly();
-  }}, 277
-  );
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();  
+    break
+    case 'control-neumatico':
+      const contenedor5 = document.getElementById('control-neumatico');
+      // Función para animar el scroll hacia arriba
+      function scrollToTopSmoothly() {
+        const currentPosition = contenedor5.scrollTop;
+        const targetPosition = 0;
+        const duration = 400; // Duración de la animación en ms     
+        const startTime = performance.now();    
+        function animateScroll(timestamp) {
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeInOutCubic(progress);    
+          contenedor5.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        }    
+        requestAnimationFrame(animateScroll);
+      }    
+      // Función para aplicar una función de easing (interpolación suave)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }    
+      // Llama a la función para animar el scroll hacia arriba
+      scrollToTopSmoothly();  
+    break */
+    default:
+  }
+
 }
  var canvas = document.getElementById("sinusoidalCanvas");         
  var ctx = canvas.getContext("2d");
@@ -4356,23 +4344,7 @@ function bloquearClic(event) {
 event.stopPropagation();
 event.preventDefault();
 }
-/* function aumentoGradualVideo() {
-  var video = document.getElementById('video-background');
-  var currentScale = 1; // Escala inicial del video
-  var targetScale = 10; // Escala objetivo del video
-  var increment = 0.1; // Incremento de escala en cada paso
-  var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
-  var scaleUp = setInterval(function() {
-    currentScale += increment; // Aumentar la escala actual
-    video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-    // Verificar si se alcanzó la escala objetivo
-    if (currentScale >= targetScale) {
-        clearInterval(scaleUp); // Detener el aumento progresivo
-    }
-  }, interval);
-}*/
 const boton = document.getElementById('butt-Institucional');
-const elementos = document.querySelectorAll('.accion-secuencial');
 function animarBoton() {
   if(screenWidth < 500){  
     boton.classList.add('big-button'); // Agregar clase para aumentar tamaño
@@ -4388,6 +4360,7 @@ function animarBoton() {
 }
 const elements = document.querySelectorAll('.Bot-inicio7');
 function changeColorToRedAndBack() {
+  const elements = document.querySelectorAll('.secuence');
   elements.forEach((element, index) => {
   setTimeout(() => {
     element.style.backgroundColor = 'rgb(255,160,0)';
@@ -4407,23 +4380,25 @@ function changeColorToRedAndBack() {
   changeColorRedAndBack() 
 }
 function changeColorRedAndBack() {
-  elementos.forEach((element, index) => {
-  setTimeout(() => {
-    element.style.backgroundColor = 'rgb(255,160,0)';
-    // Verificar si es el último elemento
-    if (index === elementos.length - 1) {
-      // Después de cambiar todos los elementos a rojo, programar el retorno del color original
-      setTimeout(() => {
-        elementos.forEach((elem, idx) => {
-          setTimeout(() => {
-            elem.style.backgroundColor = '';
-          }, idx * 25);
-        });
-      },25); // Retraso inicial de 100 milisegundos
-    }
+  const elements = document.querySelectorAll('.secuence');
+  elements.forEach((element, index) => {
+    setTimeout(() => {
+      element.style.backgroundColor = 'rgb(255,160,0)';
+      // Verificar si es el último elemento
+      if (index === elements.length - 1) {
+        // Después de cambiar todos los elementos a rojo, programar el retorno del color original
+        setTimeout(() => {
+          elements.forEach((elem, idx) => {
+            setTimeout(() => {
+              elem.style.backgroundColor = '';
+            }, idx * 25);
+          });
+        }, 25); // Retraso inicial de 25 milisegundos
+      }
     }, index * 25);
   });
 }
+
 function dañarLogo() {
   var imagenAyudas = document.getElementById('imagen-ayudas')
   var imagenAyudasII = document.getElementById('imagen-ayudasII')

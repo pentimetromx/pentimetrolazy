@@ -2813,6 +2813,16 @@ elemento.visible {
   display: none;
 
 }
+#cont-titulo-operacion h4{
+  position:   absolute;
+  display: flex;
+  top: 4%;
+  font-family: 'Candara', sans-serif; 
+  font-size:2.4vw; 
+  font-weight: bold; 
+  color: white; 
+  margin-bottom: 10px;  
+}
 #cont-titulo-calidad,
 #cont-titulo-comercial,
 #cont-titulo-operacion,
@@ -3458,25 +3468,14 @@ h4{
   margin: 2px;
   border-radius: 5px;
 }
-#subtitulo-operacion{
-  position:   absolute;
-  display: flex;
-  top: 4%;
-  font-family: 'Candara', sans-serif; 
-  font-size: 51px; 
-  font-weight: bold; 
-  color: white; 
-  margin-bottom: 10px;  
-}
 #descripcion-II{
   position:   absolute;
   display: flex;
-  top: 10%;
+  top: 10vh;
   font-family: 'Candara', sans-serif; 
-  font-size: 20px; 
+  font-size:1.6vw; 
   color: white; 
   text-align: center; 
-  /* margin-top: 10px; */    
 }
 #butt-operacion{
   position: absolute;
@@ -3497,8 +3496,8 @@ h4{
   align-items: center;
   overflow-y:auto;
   overflow-x:hidden;
-  top: 30%;
-  left: 59%;
+  top: 30vh;
+  left: 52vw;
   gap:20px;
   width: 17vw;
   height: 40vh;
@@ -3511,9 +3510,17 @@ h4{
   position: absolute;
   display: flex;
   flex-direction: column-reverse;
-  top: 30%;
-  left: 28%;
-  gap: 7px;
+  align-items: center;
+  overflow-y:auto;
+  overflow-x:hidden;
+  top: 30vh;
+  left: 31vw;
+  gap: 20px;
+  width: 17vw;
+  height: 40vh;
+  border-radius: 11px;
+  background-color: #000;  
+  z-index: 4;
 }
 #subtitulo-calidad{
   font-family: 'Candara', sans-serif; 
@@ -5539,8 +5546,7 @@ input.numero:focus {
     top: 4%;
     font-size:2.5vw; 
     margin-bottom: 10px;  
-  }
-  
+  }  
   #agrupaOblicuos-XVIII{
     position:absolute;
     display: flex;
@@ -5572,7 +5578,6 @@ input.numero:focus {
     background-color: #000;  
     z-index: 4;
   }
-
   #pantalla-inicial{
     position: relative;
     display: flex;
@@ -7986,14 +7991,14 @@ input.numero:focus {
     position: absolute;
     display: flex;
     margin-top:5%;
-    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+    transition: left 1.007s ease;
   }
   #canvasContainer3{
     position: absolute;
     display: flex;
     flex-direction: column;
     left:47vw;
-    top:8vh;
+    top:6vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;
@@ -8963,10 +8968,25 @@ input.numero:focus {
   }
   #equalizer{
     width: 25vw;
-    height:61vh; 
-    top: 27.4%;
-    left:60%;
+    height:52vh; 
+    top: 27.4vh;
+    left:60vw;
   }
+  #column_2{
+    position:relative;
+    display: flex;
+    top: 0;
+    flex-direction: column;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    height: 90%;
+  }
+  .column_spans{
+    font-size:2.2vw;
+    color:'';
+    font: bolder;
+    display: none;
+  }  
   #first_half {
     position: absolute;
     gap:1px;           
