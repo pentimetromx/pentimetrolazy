@@ -1006,7 +1006,7 @@ width:447px ;
   display: flex;
   flex-direction: column;
   left: 20%;
-  margin-top:4%;
+  margin-top:3%;
   width: 200px;
   height: 490px;
   border-radius: 20px;
@@ -5167,7 +5167,7 @@ input.numero:focus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   flex-wrap: nowrap;
-  top:17vh;
+  top:22.7vh;
   left:40vw;
   width:50vw; 
   height:27vh;
@@ -7980,11 +7980,11 @@ input.numero:focus {
     transition: left 1.007s ease; /* Usa la propiedad left para la transición */
   }
   #canvasContainer3{
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     left:47vw;
-    top:9vh;
+    top:8vh;
     width: 37vw;
     height: 55vh;
     gap:3px ;

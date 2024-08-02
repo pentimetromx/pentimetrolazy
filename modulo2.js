@@ -238,8 +238,8 @@ document.addEventListener('keydown', function(event) {
 });
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
-  console.clear();
-  var contiBoton = document.getElementById('icon-carlos-I') 
+  console.clear();  
+  var contiBoton = document.getElementById('canvasContainer3') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
