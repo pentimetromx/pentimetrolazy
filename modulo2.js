@@ -2565,166 +2565,166 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
  const searchInput = document.getElementById('search-input')
  const suggestionsList = document.getElementById('suggestions') // Agrega el elemento datalist
  const sugerencias = [
-   'autonomo',
-   'bateria',
-   'contra',
-   'contraPresion',
-   'densitometria',
-   'impresorImg',
-   'inicio',
-   'manta',
-   'mantenimiento autonomo',
-   'mantilla',
-   'pantalla-inicial',
-   'planas',
-   'plancha',
-   'porta mantilla',
-   'porta plancha',
-   'pre',
-   'preprensa',
-   'rotatek',
-   'secador',
-   'secador uv',
-   'smed',
-   'resultados',
-   'tintero',
-   'torre',
-   'variable'
+  'autonomo',
+  'bateria',
+  'contra',
+  'contraPresion',
+  'densitometria',
+  'impresorImg',
+  'inicio',
+  'manta',
+  'mantenimiento autonomo',
+  'mantilla',
+  'pantalla-inicial',
+  'planas',
+  'plancha',
+  'porta mantilla',
+  'porta plancha',
+  'pre',
+  'preprensa',
+  'rotatek',
+  'secador',
+  'secador uv',
+  'smed',
+  'resultados',
+  'tintero',
+  'torre',
+  'variable'
    
  ]
  // Agregamos un evento para manejar la búsqueda
- searchForm.addEventListener('submit', function (e) {
-   e.preventDefault() // Evita que se envíe el formulario
-   const searchTerm = searchInput.value.toLowerCase() // Obtenemos el término de búsqueda y lo convertimos a minúsculas
- 
-   // ... Tu código de manejo de búsqueda actual ...
-   switch (searchTerm) {
-     case 'autonomo':
-     case 'mantenimiento autonomo':
-       ElementosMaII('conteneMantaut')
-     break;
-     case 'densitometria':
-       abrirDensitometria()
-     break;
-     case 'inicio':
-       VolveraInicio()
-     break;
-     case 'tintero':
-       changeButtonStyles('pantalla-tintero')
-     break;
-     case 'bateria':
-       changeButtonStyles('bateria-entintado-II', 'contene-7')
-     break;
-     case 'variable':
-       abrirSeccionVariable('cont-variable')
-     break;
-     case 'planas':
-       abrirSeccionPlanas('cont-plana')
-     break;
-     case 'secador uv':
-     case 'secador':      
-       abrirSeccionCurado('cont-secador')
-     break;
-     case 'torre':      
-       cambioContenedor('torre-imp')
-     break;
-     case 'smed':      
-     changeButtonStyles('bancada-torre-II')
-     break;  
-     case 'plancha':  
-     case 'porta plancha': 
-       for (var i = 0; i < allContenedores.length; i++) {
-         var elemento = document.getElementById(allContenedores[i])
-         if (elemento) {
-           elemento.style.display = 'none'
-         }
-       }             
-       showRepuesto('contPortPlaca')
-     break;
-     case 'pantalla inicial':
-     case 'pantalla-inicial':
-       abrirSeccionContinua('pantalla-inicial')
-     break;
-     case 'preprensa':
-     abrirPrepress('pre-prensa')
-     break;
-     case 'mantilla': 
-     case 'manta':      
-     case 'porta mantilla': 
-     for (var i = 0; i < allContenedores.length; i++) {
-       var elemento = document.getElementById(allContenedores[i])
-       if (elemento) {
-         elemento.style.display = 'none'
-       }
-     }          
-     showRepuesto('contPortManta', 'videoTrain03')
-     break;
-     case 'contra':      
-     case 'contraPresion':
-     case 'impresorImg':
-       for (var i = 0; i < allContenedores.length; i++) {
-         var elemento = document.getElementById(allContenedores[i])
-         if (elemento) {
-           elemento.style.display = 'none'
-         }
-       }       
-     showRepuesto('contImpresor', 'videoTrain01')
-     break;
-     case 'empleados':
-     case 'resultados':
-       for (var i = 0; i < allContenedores.length; i++) {
-         var elemento = document.getElementById(allContenedores[i])
-         if (elemento) {
-           elemento.style.display = 'none'
-         }
-       } 
-       resultadosMA() 
-       container1.style.display = 'flex'           
-     break;
-     default:
-       alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm)  
-     break;
-   }
-   // Verifica si suggestionsList no es nulo antes de intentar establecer su propiedad innerHTML
-   if (suggestionsList) {
-     // Puedes agregar una lógica para autocompletar el término de búsqueda
-     if (sugerencias.includes(searchTerm)) {
-       // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
-       suggestionsList.innerHTML = ''; // Borra cualquier sugerencia anterior
-       const suggestionOption = document.createElement('option');
-       suggestionOption.value = searchTerm;
-       suggestionsList.appendChild(suggestionOption);
-     }
-   } else {
-     console.error('No se encontró el elemento con ID "suggestions"');
-   }
- })
- const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
- const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
- const canvasElements4 = document.querySelectorAll('#contChecks input')
- canvasElements2.forEach(canvas => {
-   canvas.addEventListener('click', () => {
-     toggleFullScreen(canvas)
-   })
- })
- canvasElements3.forEach(canvas => {
-   canvas.addEventListener('click', () => {
-     toggleFullScreen(canvas)
-   })
- })
- canvasElements4.forEach(input => {
-   input.addEventListener('click', () => {
-     toggleFullScreen(input)
-   })
- })
- var colorClickLinks = document.querySelectorAll('.colorClick')
-   colorClickLinks.forEach(function (link) {
-     link.addEventListener('click', function (event) {
-       event.preventDefault()
-       link.classList.add('orange-text')
-       imagenesPasoApaso(link.getAttribute('data-imagen'))
-     })
- })
+searchForm.addEventListener('submit', function (e) {
+  e.preventDefault() // Evita que se envíe el formulario
+  const searchTerm = searchInput.value.toLowerCase() // Obtenemos el término de búsqueda y lo convertimos a minúsculas
+
+  // ... Tu código de manejo de búsqueda actual ...
+  switch (searchTerm) {
+    case 'autonomo':
+    case 'mantenimiento autonomo':
+      ElementosMaII('conteneMantaut')
+    break;
+    case 'densitometria':
+      abrirDensitometria()
+    break;
+    case 'inicio':
+      VolveraInicio()
+    break;
+    case 'tintero':
+      changeButtonStyles('pantalla-tintero')
+    break;
+    case 'bateria':
+      changeButtonStyles('bateria-entintado-II', 'contene-7')
+    break;
+    case 'variable':
+      abrirSeccionVariable('cont-variable')
+    break;
+    case 'planas':
+      abrirSeccionPlanas('cont-plana')
+    break;
+    case 'secador uv':
+    case 'secador':      
+      abrirSeccionCurado('cont-secador')
+    break;
+    case 'torre':      
+      cambioContenedor('torre-imp')
+    break;
+    case 'smed':      
+    changeButtonStyles('bancada-torre-II')
+    break;  
+    case 'plancha':  
+    case 'porta plancha': 
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }             
+      showRepuesto('contPortPlaca')
+    break;
+    case 'pantalla inicial':
+    case 'pantalla-inicial':
+      abrirSeccionContinua('pantalla-inicial')
+    break;
+    case 'preprensa':
+    abrirPrepress('pre-prensa')
+    break;
+    case 'mantilla': 
+    case 'manta':      
+    case 'porta mantilla': 
+    for (var i = 0; i < allContenedores.length; i++) {
+      var elemento = document.getElementById(allContenedores[i])
+      if (elemento) {
+        elemento.style.display = 'none'
+      }
+    }          
+    showRepuesto('contPortManta', 'videoTrain03')
+    break;
+    case 'contra':      
+    case 'contraPresion':
+    case 'impresorImg':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }       
+    showRepuesto('contImpresor', 'videoTrain01')
+    break;
+    case 'empleados':
+    case 'resultados':
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      } 
+      resultadosMA() 
+      container1.style.display = 'flex'           
+    break;
+    default:
+      alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm)  
+    break;
+  }
+  // Verifica si suggestionsList no es nulo antes de intentar establecer su propiedad innerHTML
+  if (suggestionsList) {
+    // Puedes agregar una lógica para autocompletar el término de búsqueda
+    if (sugerencias.includes(searchTerm)) {
+      // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
+      suggestionsList.innerHTML = ''; // Borra cualquier sugerencia anterior
+      const suggestionOption = document.createElement('option');
+      suggestionOption.value = searchTerm;
+      suggestionsList.appendChild(suggestionOption);
+    }
+  } else {
+    console.error('No se encontró el elemento con ID "suggestions"');
+  }
+})
+const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
+const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
+const canvasElements4 = document.querySelectorAll('#contChecks input')
+canvasElements2.forEach(canvas => {
+  canvas.addEventListener('click', () => {
+    toggleFullScreen(canvas)
+  })
+})
+canvasElements3.forEach(canvas => {
+  canvas.addEventListener('click', () => {
+    toggleFullScreen(canvas)
+  })
+})
+canvasElements4.forEach(input => {
+  input.addEventListener('click', () => {
+    toggleFullScreen(input)
+  })
+})
+var colorClickLinks = document.querySelectorAll('.colorClick')
+  colorClickLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault()
+      link.classList.add('orange-text')
+      imagenesPasoApaso(link.getAttribute('data-imagen'))
+    })
+})
  function aumentarTamanosDeBotones() {
    const buttons = [
      document.getElementById("boton1"),
@@ -2900,170 +2900,32 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
      container.scrollTop = 0;
    }
  }
- const contenedor = document.getElementById('agrupaOblicuos-XII');
- const contenedor1 = document.getElementById('agrupaOblicuos-XVIII');
-function iniciarMovimiento(instrucId) {
-  var container = document.getElementById(instrucId);
-  container.scrollTop = container.scrollHeight;
-
-  switch(instrucId){
-    /* case 'agrupaOblicuos-XII':
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor.scrollTop;
-        const targetPosition = 0;
-        const duration = 1400; // Duración de la animación en ms     
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      } 
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();
-      break; */
-      case 'agrupaOblicuos-XVIII':
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor1.scrollTop;
-        const targetPosition = 0;
-        const duration = 1400; // Duración de la animación en ms     
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor1.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      }    
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }    
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();
-    break
-    /* case 'contenedor-vertical':
-      const contenedor2 = document.getElementById('contenedor-vertical');
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor2.scrollTop;
-        const targetPosition = 0;
-        const duration = 400; // Duración de la animación en ms     
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor2.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      }    
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }    
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();  
-    break
-    case 'puesta-punto':
-      const contenedor3 = document.getElementById('puesta-punto');
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor3.scrollTop;
-        const targetPosition = 0;
-        const duration = 400; // Duración de la animación en ms     
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor3.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      }    
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }    
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();  
-    break
-    case 'rodillo-infeed':
-      const contenedor4 = document.getElementById('rodillo-infeed');
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor4.scrollTop;
-        const targetPosition = 0;
-        const duration = 400; // Duración de la animación en ms     
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor4.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      }    
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }    
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();  
-    break
-    case 'control-neumatico':
-      const contenedor5 = document.getElementById('control-neumatico');
-      // Función para animar el scroll hacia arriba
-      function scrollToTopSmoothly() {
-        const currentPosition = contenedor5.scrollTop;
-        const targetPosition = 0;
-        const duration = 400; // Duración de la animación en ms     
-        const startTime = performance.now();    
-        function animateScroll(timestamp) {
-          const elapsed = timestamp - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeInOutCubic(progress);    
-          contenedor5.scrollTop = currentPosition + (targetPosition - currentPosition) * easedProgress;    
-          if (progress < 1) {
-            requestAnimationFrame(animateScroll);
-          }
-        }    
-        requestAnimationFrame(animateScroll);
-      }    
-      // Función para aplicar una función de easing (interpolación suave)
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      }    
-      // Llama a la función para animar el scroll hacia arriba
-      scrollToTopSmoothly();  
-    break */
-    default:
+ function scrollToBottom(element) {
+  const startTime = performance.now();
+  const duration = 1500; // 1.5 segundos
+  const startScrollTop = element.scrollTop;
+  const scrollHeight = element.scrollHeight;
+  const endScrollTop = scrollHeight - element.clientHeight;
+  function animate(time) {
+    const elapsedTime = time - startTime;
+    const progress = Math.min(elapsedTime / duration, 1);
+    element.scrollTop = startScrollTop + progress * (endScrollTop - startScrollTop);
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
   }
-
+  requestAnimationFrame(animate);
+}
+function animateScroll(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    // Llevar la barra hasta la parte superior
+    element.scrollTop = 0;
+    // Iniciar el movimiento de la parte superior a la inferior
+    scrollToBottom(element);
+  } else {
+    console.error(`Element with ID ${elementId} not found.`);
+  }
 }
  var canvas = document.getElementById("sinusoidalCanvas");         
  var ctx = canvas.getContext("2d");

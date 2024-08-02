@@ -2803,7 +2803,7 @@ elemento.visible {
   position: absolute;
   display: flex;
   top:10%;
-  left: 111%;
+  left: 114%;
   width: 100%;
   font-family: 'Candara', sans-serif; 
   font-size:2.6vw;
@@ -3511,7 +3511,7 @@ h4{
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  overflow-y:auto;
+  overflow-y:scroll;
   overflow-x:hidden;
   top: 30vh;
   left: 31vw;
@@ -8357,21 +8357,21 @@ input.numero:focus {
   }
   .contenedor-vertical{  
     position: fixed;
-    top: 38%;
-    left: 2%;
-    width: 30%;
     display: flex;
-    display: none;
     flex-direction: column;
     align-items: flex-start;    
     justify-content: space-between;
+    top: 38%;
+    left: 2%;
+    width: 30%;
+    display: none;
     gap: 7px;
     background-color: rgb(22,22,22);
     border: 7px solid white; 
     border-radius: 6px;  
-    max-height:55vh;
-    overflow-x: hidden;
+    max-height:35vh;
     overflow-y: auto;  
+    overflow-x:hidden;
   }
   .cont-userI{
     position: relative;
@@ -8379,7 +8379,7 @@ input.numero:focus {
     flex-direction: column;
     justify-content: center;
     left:2.4vw;
-    width:21vw;
+    width:100%;
     cursor: pointer;
   }
   .cont-userI .icono-user-I{
@@ -8411,7 +8411,7 @@ input.numero:focus {
     font-size: 5.3vw;
     text-align: center;
     top: -1%;
-    left: 99%;
+    left: 101%;
     height:9.3vh;
     width:100vw;
     transition: transform 1.6s ease;

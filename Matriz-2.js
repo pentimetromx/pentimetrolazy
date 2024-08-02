@@ -211,7 +211,7 @@ const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','w
 const masterKey = [4];
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove("lazyload");
+          lazyImage.classList.remove("lazy");
           lazyImageObserver.unobserve(lazyImage);
         }
       });
@@ -369,10 +369,7 @@ function abrirInterfaz() {
     elementoPadre.classList.add ('move-oblicuos');
     desactivarClicsPorUnTiempo()
     }, 177);
-/*     setTimeout(() => {
-      titulo.classList.add('move-title')    
-    }, 500);
- */    setTimeout(() => {
+    setTimeout(() => {
       alternarColorVerde() 
     }, 900);
     setTimeout(() => {
