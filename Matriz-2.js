@@ -2,7 +2,7 @@ var anchoPantalla = window.innerWidth || document.documentElement.clientWidth ||
 var acumuladorVideos = [] 
 
 var intervaloColor;
-let arrayVideos = ['vid06','prisma-vid-II','vid04','vid05']
+let arrayVideos = ['vid06','prisma-vid-II','vid04','vid05']   
 let videoStore = []
 
 var contenedor2 = document.getElementById('canvasContainer2')

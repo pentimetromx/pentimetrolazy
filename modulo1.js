@@ -4643,7 +4643,27 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  animateScroll('contenedor-vertical')
+
+
+
+  let contenedor = document.getElementById('contenedor-vertical');
+  if (contenedor) {
+    let bounding = contenedor.getBoundingClientRect();
+    let isVisible = (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );  
+    if (!isVisible) {
+      animateScroll('contenedor-vertical');
+    }
+  } else {
+    console.error('El elemento con el id "contenedor-vertical" no existe.');
+  }
+  
+
+
   if (iconosPermitidos.includes(icono)) {
   } 
   if(screenWidth < 500){
