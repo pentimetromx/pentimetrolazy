@@ -4322,73 +4322,7 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-function abrirInterfaz() {
-  var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
-  }
-  if(screenWidth < 500){
-    var elementoPadre = document.getElementById('cont-titulo');
-    elementoPadre.classList.remove('move-oblicuos');
-    setTimeout(function () {
-    elementoPadre.classList.add ('move-oblicuos');
-    desactivarClicsPorUnTiempo()
-    }, 177);
-    setTimeout(() => {
-      /* var contenedor = document.getElementById('video-background');  
-      contenedor.style.filter = 'none';
-      reduccionGradualVideo()*/
-    }, 1800);
-    setTimeout(() => {
-      document.getElementById('subtitulo-I').classList.add('move-title')    
-    }, 1977);
-    setTimeout(() => {
-      alternarColorVerde() 
-    }, 2500);
-    setTimeout(() => {
-      alternarColorVerdeInverso() 
-      applyImageEffects5()      
-    }, 2800); 
-    setTimeout(() => {
-      alternarColorVerde() 
-    }, 3100);
-    setTimeout(() => {
-      alternarColorVerdeInverso() 
-    }, 3400); 
-  }else{
-    var titulo = document.getElementById('subtitulo-I')
-    var elementoPadre = document.getElementById('cont-titulo');
-    elementoPadre.classList.remove('move-oblicuosII');
-    setTimeout(function () {
-    elementoPadre.classList.add('move-oblicuosII');
-    desactivarClicsPorUnTiempo()
-    }, 177);
-    setTimeout(() => {
-      var contenedor = document.getElementById('video-background');  
-      contenedor.style.filter = 'none';
-      reduccionGradualVideo()
-    }, 500);
-    setTimeout(() => {
-      titulo.classList.add('move-title')    
-    }, 1722);
-    setTimeout(() => {
-      alternarColorVerde() 
-    }, 300);  
-    setTimeout(() => {
-      alternarColorVerdeInverso() 
-      applyImageEffects5()            
-    }, 3300);  
-    setTimeout(() => {
-      alternarColorVerde() 
-    }, 3600);
-    setTimeout(() => {
-      alternarColorVerdeInverso() 
-    }, 3900);      
-  }
-}
+
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
   contOblicuosXI.classList.add('move-oblicuos');
@@ -4436,22 +4370,7 @@ event.preventDefault();
         clearInterval(scaleUp); // Detener el aumento progresivo
     }
   }, interval);
-}
-function reduccionGradualVideo() {
-  var video = document.getElementById('video-background');
-  var currentScale = 10; // Escala inicial del video (10x)
-  var targetScale = 1.1; // Escala objetivo del video (1x)
-  var decrement = 1; // Decremento de escala en cada paso
-  var interval = 1; // Intervalo de tiempo entre cada paso (en milisegundos)
-  var scaleDown = setInterval(function() {
-    currentScale -= decrement; // Reducir la escala actual
-    video.style.transform = 'scale(' + currentScale + ')'; // Aplicar la escala al video
-    // Verificar si se alcanzó la escala objetivo
-    if (currentScale <= targetScale) {
-        clearInterval(scaleDown); // Detener la reducción progresiva
-    }
-  }, interval);
-} */
+}*/
 const boton = document.getElementById('butt-Institucional');
 const elementos = document.querySelectorAll('.accion-secuencial');
 function animarBoton() {

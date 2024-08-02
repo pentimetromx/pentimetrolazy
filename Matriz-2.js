@@ -209,7 +209,7 @@ idsArray.push("cont-titulo")
 idsArrayEliminados.push('cont-titulo')
 const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','wall_street_II','equalizer','padre','patern']
 const masterKey = [4];
-
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 document.addEventListener("DOMContentLoaded", function() {
   var lazyImages = [].slice.call(document.querySelectorAll("img.lazyload"));
   
@@ -235,7 +235,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
-
 document.addEventListener("DOMContentLoaded", function() {
   var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
   
@@ -271,8 +270,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
-
-
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 function manejarLogica() {
@@ -304,11 +301,8 @@ function manejarLogica() {
       if (suma === masterKey[0]) {
         document.getElementById('contenedor-principal').style.display = 'none'
         setTimeout(() => {
-          /* aumentoGradualVideo() */              
-        }, 200);
-        setTimeout(() => {
           abrirInterfaz();
-        }, 1100);
+        }, 200);
         inputs.forEach(input => {
         input.value = '';
         });         
@@ -343,11 +337,8 @@ function manejarLogica() {
       if (suma === masterKey[0]) {
         document.getElementById('contenedor-principal').style.display = 'none'
         setTimeout(() => {
-          aumentoGradualVideo()              
-        }, 200);
-        setTimeout(() => {
           abrirInterfaz();
-        }, 600);
+        }, 200);
         inputs.forEach(input => {
         input.value = '';
         });         
@@ -360,6 +351,68 @@ function manejarLogica() {
   let imgBackgound = document.getElementById('image-background')
   imgBackgound.style.display = 'flex'
 
+}
+function abrirInterfaz() {
+  var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }
+  var titulo = document.getElementById('subtitulo-I')
+
+  if(screenWidth < 500){
+    var elementoPadre = document.getElementById('cont-titulo');
+    elementoPadre.classList.remove('move-oblicuos');
+    setTimeout(function () {
+    elementoPadre.classList.add ('move-oblicuos');
+    desactivarClicsPorUnTiempo()
+    }, 177);
+/*     setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 500);
+ */    setTimeout(() => {
+      alternarColorVerde() 
+    }, 900);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+      applyImageEffects5()      
+    }, 1200); 
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 1500);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 1800); 
+    setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 1900);
+
+  }else{
+    var elementoPadre = document.getElementById('cont-titulo');
+    elementoPadre.classList.remove('move-oblicuosII');
+    setTimeout(function () {
+    elementoPadre.classList.add('move-oblicuosII');
+    desactivarClicsPorUnTiempo()
+    }, 177);
+    setTimeout(() => {
+      titulo.classList.add('move-title')    
+    }, 1222);
+    setTimeout(() => {
+      alternarColorVerde() 
+    },2500);  
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+      applyImageEffects5()            
+    }, 2800);  
+    setTimeout(() => {
+      alternarColorVerde() 
+    }, 3100);
+    setTimeout(() => {
+      alternarColorVerdeInverso() 
+    }, 3400);      
+  }
 }
 function VolveraInicio(){
   location.reload()

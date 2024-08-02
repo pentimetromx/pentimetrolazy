@@ -2785,33 +2785,33 @@ elemento.visible {
   cursor: pointer; 
   transition: transform 0.1s; 
 }
-
-#subtitulo-I{
-  position: absolute;
-  display: flex;
-  top:10%;
-  left: 99%;
-  width: 100%;
-  font-family: 'Candara', sans-serif; 
-  font-size: 51px;
-  font-weight: bold; color: white;
-  margin-bottom: 10px;
-  transition: transform 1.6s ease;
-  display: none;
-}
 #cont-titulo{
   position: absolute;
   top: -95%;
   left: 0;
-  width:100%; /* Establece el ancho que desees para tu contenedor. Puede ser un valor fijo o relativo. */
-  margin: 0 auto; /* Esto centra el contenedor horizontalmente. */
+  width:100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transition: transform 1.6s ease; /* Aplica la transición a la propiedad 'transform' */
+  transition: transform 1.6s ease;
   z-index: 2;  
+}
+#cont-titulo h4{
+  position: absolute;
+  display: flex;
+  top:10%;
+  left: 111%;
+  width: 100%;
+  font-family: 'Candara', sans-serif; 
+  font-size:2.6vw;
+  font-weight: bold; color: white;
+  margin-bottom: 10px;
+  transition: transform 1.6s ease;
+  display: none;
+
 }
 #cont-titulo-calidad,
 #cont-titulo-comercial,
@@ -3494,9 +3494,18 @@ h4{
   position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow-y:auto;
+  overflow-x:hidden;
   top: 30%;
   left: 59%;
-  gap: 7px;
+  gap:20px;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 11px;
+  background-color: #000;  
+  z-index: 4;
+
 }
 #agrupaOblicuos-XVIII{
   position: absolute;
@@ -8394,14 +8403,13 @@ input.numero:focus {
   #cont-titulo h4{
     position: absolute;
     display: flex;
-    font-size: 7vw;
+    font-size: 5.3vw;
     text-align: center;
     top: -1%;
     left: 99%;
     height:9.3vh;
     width:100vw;
-    transition: transform 0.7s ease;
-
+    transition: transform 1.6s ease;
   }
   #agrupaOblicuos-XI{ /*div padre */
     position:relative;
