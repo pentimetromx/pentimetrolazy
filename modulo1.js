@@ -3043,7 +3043,6 @@ function listaEntrenamientosII(btnList) {
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          /* elemento.removeAttribute('style'); */
         }
       }
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3260,7 +3259,7 @@ function toggleFullScreen(element) {
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
   var linkOrange = document.getElementById(id)      
   var troubleTable = document.getElementById('troubleshooting') 
-  troubleTable.style.marginLeft = '-7%'
+  troubleTable.style.left = '20vw'
   container1.style.left = ''  
   document.body.style.zoom = "67%"
   if(screenWidth < 500){

@@ -997,7 +997,7 @@ width:447px ;
   display: flex;
   flex-direction: column;
   left: 19%;
-  margin-top: 4%;
+  top: 21%;
   width: 350px;
   height: 333px;
   border-radius: 20px;
@@ -1776,13 +1776,11 @@ width:447px ;
 #linksMA{
   position: relative;
   display: flex;
-  flex-direction: column;
-  /* height: 222px; */
+  top:13vh;
+  left:37vw;
   height:31vh;
-  /* width: 450px; */
   width:35vw;
-  left:104%;
-  margin-top:11%;
+  flex-direction: column;
   display: none;
 }
 #conte-links{
@@ -1966,16 +1964,17 @@ header {
 #padre-1{
   position: relative;
   display: flex;
+  top: -12vh;
+  left:77vw;
+  height:82vh;
+  width:69vw;
+
   flex-direction: row; 
   align-items: center;
-  height: 587px;
-  width: 892px;
   display: none; 
   border-radius: 21px; 
   background-color:black;
   border: solid 1px orange;
-  top: 6%;
-  left:52%;
 } 
 #pneumatico,
 #control-neumatico{
@@ -4844,8 +4843,8 @@ input.numero:focus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  left: 27vw;
-  top: 14.8vh;
+  left: 19vw;
+  top:-7.5vh;
   height: 23vh;
   width: 31vw;
   display: none;
@@ -4858,6 +4857,21 @@ input.numero:focus {
   /* height: 77%; */
   background-color: #adff2f;
   border-radius: 5px 5px 0 0;
+}
+#cortina{
+  position: absolute;
+  display: flex;
+  left: 19%;
+  top: 47%;
+  width: 31vw;
+  height: 1px;
+  object-fit: fill;
+  opacity: 0.7;
+  background-image: url('./assets/grafico\ avanzado.png');
+  background-size: cover; /* Esto se asegurará de que la imagen cubra todo el área del elemento */
+  background-position: center;  
+  z-index: 4;
+  display: none;
 }
  #cortina_II{
   position: absolute;
@@ -4873,28 +4887,13 @@ input.numero:focus {
   z-index: 4;
   display: none;
 }
-#cortina{
-  position: absolute;
-  display: flex;
-  left: 27%;
-  top: 40.4%;
-  width: 31vw;
-  height: 1px;
-  object-fit: fill;
-  opacity: 0.7;
-  background-image: url('./assets/grafico\ avanzado.png');
-  background-size: cover; /* Esto se asegurará de que la imagen cubra todo el área del elemento */
-  background-position: center;  
-  z-index: 4;
-  display: none;
-}
 #second_half{
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  left: -4vw;
-  top: 38vh;
+  left: -12vw;
+  top:13vh;
   height: 14vh;
   width: 31vw;
   display: none;  
@@ -4911,8 +4910,8 @@ input.numero:focus {
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  left: -35vw;
-  top: 52.5vh;
+  left: -43vw;
+  top:29.5vh;
   gap: 2px;
   height: 5vh;
   width: 31vw;
@@ -4942,8 +4941,8 @@ input.numero:focus {
   flex-direction: column;
   grid-template-columns: repeat(1, 1fr);
   gap: 12px;
-  left: 27vw;
-  top: 65vh;
+  left: 29.4vw;
+  top: 52vh;
   height: 200vh;
   width: 20vw;
   z-index: 3;
@@ -7984,7 +7983,7 @@ input.numero:focus {
     display: flex;
     flex-direction: column;
     left:37%;
-    top: 10%;
+    top: 0;
     width:63%;
     height:130%;
     border-radius: 20px;
@@ -8369,7 +8368,7 @@ input.numero:focus {
     top:22vh;
     left:0.7vw;
     width:31vw;
-    max-height:52vh;
+    max-height:50vh;
     gap: 25px;
     align-items: center;
     border-radius: 7px;  
@@ -8403,52 +8402,6 @@ input.numero:focus {
     height: 30%;
     font-size:2.5vw;
   }
-
-/*   .contenedor-vertical{  
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;    
-    justify-content: space-between;
-    top: 20vh;
-    left: 2vw;
-    width: 30vw;
-    height:30vh;
-    display: none;
-    gap: 7px;
-    background-color: rgb(22,22,22);
-    border: 7px solid white; 
-    border-radius: 6px;  
-    overflow-y: auto;  
-    overflow-x:hidden;
-  }
-  .cont-userI{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    left:3%;
-    width:90%;
-    height:40%;
-    cursor: pointer;
-  }
-  .cont-userI .icono-user-I{
-    position: absolute;
-    display: flex;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 70%;
-  }
-  .cont-userI .lblNombres{
-    position: relative;
-    color: yellow;
-    font-family: "GothamRounded", sans-serif;
-    align-items: center;
-    justify-content: center; 
-    text-align: center;
-    font-size:2.7vw;
-  } */
   #cont-titulo{
     position: relative;
     display: flex;
@@ -8984,9 +8937,10 @@ input.numero:focus {
     display:none;
   }
   #wall_street_II{
-    position:absolute;  
-    margin-left: 9%;
-    margin-top:11%;
+    position:absolute;
+    display: flex;  
+    left: 37%;
+    top:53%;
     height:103vh;
     width: 50vh;
     display:none;
@@ -9000,11 +8954,18 @@ input.numero:focus {
   #nicho_spans{
     position:absolute;
     left:38vw;
-    top:60vh;
+    top:62.5vh;
     gap:7px;
     height:5vh;
-    width:55%;
+    width:55vw;
   }
+  #nicho_spans .spans{
+    max-width:100%;
+    height: 100%;
+    font-size:2.9vw;
+    overflow:hidden;
+  }
+
   .butt-special{
     top:40vh;
     left:43vw;
@@ -9012,12 +8973,6 @@ input.numero:focus {
     height:4.6vh;
     font-size: 2.8vw;
     display: none;
-  }
-  .spans {
-    max-width:100%;
-    height: 100%;
-    font-size: calc(0.75em + 0.5vw);
-    overflow:hidden;
   }
   #equalizer{
     width: 25vw;

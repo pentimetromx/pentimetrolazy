@@ -47,8 +47,8 @@ function deslizaContenedor(identificador, idButton) {
       mostrarTroublesshIntervalo()
     break;
     case 'canvasContainer2' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']  
-      for (var i = 0; i < allContenedores.length; i++) { 
+      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
+      for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
@@ -56,8 +56,6 @@ function deslizaContenedor(identificador, idButton) {
       }
       document.getElementById('conti-boton').removeAttribute('style');
       incrementoHeightVII()
-      document.getElementById('wall_street_II').style.top = '44%'
-      document.getElementById('wall_street_II').style.left = '29.5%'
     break;
     case 'contChecks' :
       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
@@ -239,7 +237,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('contLineas-II') 
+  var contiBoton = document.getElementById('linksMA') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -4742,9 +4740,6 @@ function incrementoHeight(barra, pantalla, intervaloVariable, intervaloTiempo) {
         reduccionHeight(barraV, pantallaV,'intervaloV',30);
     }
     } 
-    /* if (contador >= iniciador) {
-      incrementoHeightVI(); // BARRAS HORIZONTALES (1)
-    } */
   }, intervaloTiempo);
 }
 function reduccionHeight(elementoBarra, elementoPantalla, intervaloVariable, intervaloTiempo) {
@@ -4799,10 +4794,6 @@ function incrementoHeightVII() {
           g = alturaAcumuladaBarraI + 1.4;
       }
       barraVII.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      /* if (alturaAcumuladaBarraI >= 20 && !isAnimatingVIII) {
-        isAnimatingVIII = false
-        incrementoHeightVIII();
-      } */
       if (alturaAcumuladaBarraI >= alturaBarras) {
           clearInterval(INTERVALOSHORIZONTALES.intervaloXVII);
           isAnimatingVII = false;
