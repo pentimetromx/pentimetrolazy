@@ -4634,7 +4634,7 @@ function ubicaPerfil(idEmpleado) {
   }
  }
 let llamadaEjecutada = false;
-function resultadosEmpleado(idEmpleado, functionExe,icono) {
+function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -4642,28 +4642,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  }
-
-
-
-  let contenedor = document.getElementById('contenedor-vertical');
-  if (contenedor) {
-    let bounding = contenedor.getBoundingClientRect();
-    let isVisible = (
-      bounding.top >= 0 &&
-      bounding.left >= 0 &&
-      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );  
-    if (!isVisible) {
-      animateScroll('contenedor-vertical');
-    }
-  } else {
-    console.error('El elemento con el id "contenedor-vertical" no existe.');
-  }
-  
-
-
+  } 
   if (iconosPermitidos.includes(icono)) {
   } 
   if(screenWidth < 500){
@@ -4674,6 +4653,10 @@ function resultadosEmpleado(idEmpleado, functionExe,icono) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }  
+    if(state === 'true'){
+      setTimeout(() => {
+        animateScroll('contenedor-vertical')
+      }, 500);}
     if (iconosPermitidos.includes(icono)) {
     }
     ubicaPerfil(idEmpleado)

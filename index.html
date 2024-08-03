@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./Matriz-1.css">
   </head>
   <body onload="manejarLogica()">
-    <header class="buscador" id="buscador">
+    <header class="buscador" id="buscador" style="display: none;">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar..."> 
           <datalist id="suggestions"></datalist>      
@@ -450,15 +450,12 @@
       Tu navegador no soporta el elemento de video.
     </video>
     <img src="./assets/eintein.png"  id="image-background" alt="einst">
-    <div class="links-inicialesI" id="links-inicialesI">
-      
+    <div class="links-inicialesI" id="links-inicialesI">      
       <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL INICIO</button>
-
       <div class="iridescent-element" id="lineI"></div>
       <div id="titleContainerI">
         <p id="textToColorI">Pilares<span>&#9660;</span></p>
-      </div>
-      
+      </div>      
       <ul class="iridescent-element" id="linkListI">
         <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
         <li><a href="#" onclick="Geometria()">Pilar Educación y Entrenamiento</a></li><br>
@@ -934,7 +931,7 @@
     </div>
     <h1 id="casos-kaizen">Casos de estudio</h1>
    <div id="mejoras-kai">
-      <img data-src="./assets/caso 1.png" id="caso1" class="lazycaso-estudio" alt="casos">
+      <img data-src="./assets/caso 1.png" id="caso1" class="lazy caso-estudio" alt="casos">
       <img data-src="./assets/caso.jpg" id="caso2" class="lazy caso-estudio" alt="casos">
       <img data-src="./assets/caso 2.png" id="caso3" class="lazy caso-estudio" alt="casos">
    </div>
@@ -1644,8 +1641,7 @@
       </div> 
     </div>
     <div id="largoImpresion">
-    <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;"> </div>
-    
+    <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;"> </div>    
     <div id="linksMA">
       <div id="conte-links">
         <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>  
@@ -1865,31 +1861,31 @@
 
       <div id="conte-secundario">
         <div class="cont-user"  id="icon-carlos">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img1" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img1" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1','true')" alt="icono">
           <label for="nombres">Carlos Mario Sanchez</labelclass=>  
         </div>
         <div class="cont-user" id="icon-andres">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img2" onclick="resultadosEmpleado('icon-andres','updateAndres','img2')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img2" onclick="resultadosEmpleado('icon-andres','updateAndres','img2','true')" alt="icono">
           <label for="nombres">Andres Felipe Montoya</labelclass=>
         </div>
         <div class="cont-user" id="icon-jorge">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img3" onclick="resultadosEmpleado('icon-jorge','updateJorge','img3')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img3" onclick="resultadosEmpleado('icon-jorge','updateJorge','img3','true')" alt="icono">
           <label for="nombres">Jorge Alberto Lozada</label>
         </div>
         <div class="cont-user" id="icon-jesus">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img4" onclick="resultadosEmpleado('icon-jesus','updateJesus','img4')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img4" onclick="resultadosEmpleado('icon-jesus','updateJesus','img4','true')" alt="icono">
           <label for="nombres">Jesus Norvey Cordoba</label>
         </div>
         <div class="cont-user" id="icon-sandra">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img5" onclick="resultadosEmpleado('icon-sandra','updateSandra','img5')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img5" onclick="resultadosEmpleado('icon-sandra','updateSandra','img5','true')" alt="icono">
           <label for="nombres">Sandra Milena Alvarez</label>
         </div>
         <div class="cont-user" id="icon-mario">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img6" onclick="resultadosEmpleado('icon-mario','updateMario','img6')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img6" onclick="resultadosEmpleado('icon-mario','updateMario','img6','true')" alt="icono">
           <label for="nombres">John Mario Mira Pineda</label>
         </div>
         <div class="cont-user" id="icon-ana">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img7" onclick="resultadosEmpleado('icon-ana','updateAna','img7')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img7" onclick="resultadosEmpleado('icon-ana','updateAna','img7','true')" alt="icono">
           <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
@@ -1935,31 +1931,31 @@
       </div>
       <div class="contenedor-vertical" id="contenedor-vertical">
         <div class="cont-userI" id="icon-carlos-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-carlos','updateCarlos')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-carlos','updateCarlos','false')" alt="icono">
           <label class="lblNombres" for="nombres">Carlos Mario Sanchez</label>  
         </div>
         <div class="cont-userI" id="icon-andres-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-andres','updateAndres')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-andres','updateAndres','false')" alt="icono">
           <label class="lblNombres" for="nombres">Andres Felipe Montoya</label>
         </div>   
         <div class="cont-userI" id="icon-jorge-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-jorge','updateJorge')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-jorge','updateJorge','false')" alt="icono">
           <label class="lblNombres" for="nombres">Jorge Alberto Lozada</label>
         </div>    
         <div class="cont-userI" id="icon-jesus-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-jesus','updateJesus')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-jesus','updateJesus','false')" alt="icono">
           <label class="lblNombres" for= "nombres">Jesus Norvey Cordoba</label>
         </div>
         <div class="cont-userI" id="icon-sandra-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-sandra','updateSandra')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-sandra','updateSandra','false')" alt="icono">
           <label class="lblNombres" for="nombres">Sandra Milena Alvarez</label>
         </div> 
         <div class="cont-userI" id="icon-mario-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-mario','updateMario')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-mario','updateMario','false')" alt="icono">
           <label class="lblNombres" for="nombres">John Mario Mira Pineda</label>
         </div>
         <div class="cont-userI" id="icon-ana-I">
-          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-ana','updateAna')" alt="icono">
+          <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-ana','updateAna','false')" alt="icono">
           <label class="lblNombres" for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
