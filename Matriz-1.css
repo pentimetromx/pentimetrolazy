@@ -7995,14 +7995,15 @@ input.numero:focus {
     margin-top:5%;
     transition: left 1.007s ease;
   }
+
   #canvasContainer3{
     position: absolute;
     display: flex;
     flex-direction: column;
     left:47vw;
-    top:6vh;
-    width: 37vw;
-    height: 55vh;
+    top:8.3vh;
+    width: 35vw;
+    height: 50vh;
     gap:3px ;
     border-radius: 21px;
     display: none;
@@ -8365,13 +8366,13 @@ input.numero:focus {
     position:absolute;
     display: flex;
     flex-direction: column;
-    top:29vh;
+    top:22vh;
     left:0.7vw;
     width:31vw;
-    max-height:40vh;
+    max-height:54vh;
     gap: 25px;
     align-items: center;
-    border-radius: 6px;  
+    border-radius: 7px;  
     background-color: rgb(22,22,22);
     border: 7px solid white; 
     display: none;
@@ -8400,7 +8401,7 @@ input.numero:focus {
     justify-content: center; 
     text-align: center;
     height: 30%;
-    font-size:0.9vw;
+    font-size:2.5vw;
   }
 
 /*   .contenedor-vertical{  
