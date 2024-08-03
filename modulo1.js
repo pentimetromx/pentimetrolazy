@@ -4632,8 +4632,9 @@ function ubicaPerfil(idEmpleado) {
   
 
   }
- }
+}
 let llamadaEjecutada = false;
+
 function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
@@ -4696,6 +4697,69 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     break;
   }
 }
+
+/* function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
+  const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
+  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  } 
+  if (iconosPermitidos.includes(icono)) {
+  } 
+  if(screenWidth < 500){
+    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }  
+    if(state === 'true'){
+      setTimeout(() => {
+        animateScroll('contenedor-vertical')
+      }, 500);}
+    if (iconosPermitidos.includes(icono)) {
+    }
+    ubicaPerfil(idEmpleado)
+  }else{
+    ubicaPerfil(idEmpleado)
+  }
+  switch (functionExe) {
+    case 'updateAna':
+      updateAna() 
+      updateAnaII()
+    break;
+    case 'updateMario':
+      updateMario()
+      updateMarioII()
+    break;
+    case 'updateSandra':
+      updateSandra()
+      updateSandraII()
+    break;
+    case 'updateJesus':
+      updateJesus()
+      updateJesusII()      
+    break;
+    case 'updateJorge':
+      updateJorge()
+      updateJorgeII()      
+    break;
+    case 'updateAndres':
+      updateAndres()
+      updateAndresII()      
+    break;
+    case 'updateCarlos':
+      updateCarlos()
+      updateCarlosII()      
+    break;
+    default:
+    break;
+  }
+} */
 function resultadosMA(){
   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','conte-secundario','title-interfaz']  
   for (var i = 0; i < allContenedores.length; i++) { 

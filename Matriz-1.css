@@ -8361,35 +8361,81 @@ input.numero:focus {
     display: block;
     object-fit: fill; /* Elimina la relación de aspecto */
   }
-  .contenedor-vertical{  
-    position: fixed;
+  .contenedor-vertical{
+    position:absolute;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;    
-    justify-content: space-between;
-    top: 38%;
-    left: 2%;
-    width: 30%;
-    display: none;
-    gap: 7px;
+    top:29vh;
+    left:0.7vw;
+    width:31vw;
+    max-height:40vh;
+    gap: 25px;
+    align-items: center;
+    border-radius: 6px;  
     background-color: rgb(22,22,22);
     border: 7px solid white; 
-    border-radius: 6px;  
-    max-height:35vh;
-    overflow-y: auto;  
-    overflow-x:hidden;
+    display: none;
+    overflow-y: auto;
   }
   .cont-userI{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left:2.4vw;
-    width:100%;
+    left:0;
+    width:95%;
+    height:16%;
     cursor: pointer;
   }
   .cont-userI .icono-user-I{
     left: 0;
+    border-radius: 9px;
+    margin-bottom: 4px;
+  }
+  .cont-userI .lblNombres{
+    position: relative;
+    color: yellow;
+    font-family: "GothamRounded", sans-serif;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    height: 30%;
+    font-size:0.9vw;
+  }
+
+/*   .contenedor-vertical{  
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+    justify-content: space-between;
+    top: 20vh;
+    left: 2vw;
+    width: 30vw;
+    height:30vh;
+    display: none;
+    gap: 7px;
+    background-color: rgb(22,22,22);
+    border: 7px solid white; 
+    border-radius: 6px;  
+    overflow-y: auto;  
+    overflow-x:hidden;
+  }
+  .cont-userI{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left:3%;
+    width:90%;
+    height:40%;
+    cursor: pointer;
+  }
+  .cont-userI .icono-user-I{
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 70%;
   }
@@ -8401,7 +8447,7 @@ input.numero:focus {
     justify-content: center; 
     text-align: center;
     font-size:2.7vw;
-  }
+  } */
   #cont-titulo{
     position: relative;
     display: flex;
