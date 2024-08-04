@@ -1025,6 +1025,12 @@ function mostrarTroublesshIntervalo() {
   hacerVisibleSiguienteElemento()
 }
 function deslizaContenedorII(idElement, idButton) {
+  const elements = document.querySelectorAll('.class-line');
+  elements.forEach(element => {
+    element.style.left=''
+    element.style.top=''
+  });
+
   var originalButtonColors = {}; 
   var elementoAnterior = null;
   var elementoActual = null;
@@ -1114,57 +1120,15 @@ function resetBotns() {
     }
   } 
   document.getElementById('conti-boton').removeAttribute('style');
-  var padre = document.getElementById('nicho_spans');    
-  if (padre) {
-    padre.style.display = 'none';
-    padre.style.visibility = 'hidden';
-      var hijos = padre.children;
-    for (var i = 0; i < hijos.length; i++) {
-      hijos[i].style.display = 'none';
-      hijos[i].style.visibility = 'hidden';
-    }
-  }
-  var contProblema = document.getElementById('linksMA')
-  var contProblema2 = document.getElementById('contImgEntrenos')
-  var contVidPlanos = document.getElementById('kaizenCont')
-  var botSpecial = document.getElementById('contBotInfeed')
-  var contImaginario = document.getElementById('contImaginario')
-  var contImaginario2 = document.getElementById('contImaginario-II')   
-
-  var padre1 = document.getElementById('padre-1')
-  var padre2 = document.getElementById('padre-2')
-  botSpecial.style.display = 'none'
-  padre1.style.display = 'none'
-  padre2.style.display = 'none'
-  contImaginario.style.display = 'none'
-  contImaginario2.style.display = 'none'
   linkIni1.style.left= ''  
   linkIni2.style.left = ''   
   if (document.body.style.zoom !== "100%") {
     document.body.style.zoom = "100%";
   }
-  contProblema.style.display = 'none'
-  contProblema2.style.display = 'none'
   console.log(arrayPosicionnador)
-  idsMA.forEach(function (elto) {
-    var elemento = document.getElementById(elto)    
-    if (elemento) {
-      elemento.style.display = 'none'
-    }
-  })
   arrayPosicionnador = []
   container1.style.left = ''
   destino = 257;
-  function handleClickEvent(event) {
-     ('troubleshooting', 'troubleshoot')
-  }
-  videoElements.forEach(video => {
-    if (video) {
-      video.pause()
-      video.style.display = 'none'
-    }
-  })
-  contVidPlanos.style.display = 'none'
   arrayPosicionnador = []
   console.log(arrayPosicionnador)
 }
@@ -1228,9 +1192,7 @@ function deslizarChecks(idElement) {
     arrayPosicionnador.push(idElement)
   }
   console.log(arrayPosicionnador)
-  var contenedor1 = document.getElementById('contChecks')
   var contenedor2 = document.getElementById('canvasContainer2')  
-
 
   if (contenedor1) {
     contenedor1.style.display = 'flex'
@@ -3053,8 +3015,8 @@ function listaEntrenamientosII(btnList) {
         }
       }
       if(screenWidth < 500){
-       document.getElementById('troubleshooting').style.left='1vw'
-       document.getElementById('linksMA').style.top='1vh' 
+       /* document.getElementById('troubleshooting').style.left='1vw' 
+       document.getElementById('linksMA').style.top='1vh' */
 
       }
     break;

@@ -44,7 +44,7 @@ function deslizaContenedor(identificador, idButton) {
         }
       }
       if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='flex'
+        document.getElementById('conti-boton').style.display='none'
       }
       mostrarTroublesshIntervalo()
     break;
@@ -56,11 +56,13 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
-      document.getElementById('conti-boton').removeAttribute('style');
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+      }
       incrementoHeightVII()
     break;
     case 'contChecks' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','general','first_half']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -80,13 +82,9 @@ function deslizaContenedor(identificador, idButton) {
       setTimeout(() => {
         secondMovement()
       }, 117);
-
       if(screenWidth < 500){
-        var contChecks = document.getElementById(identificador);
-        if (contChecks !== null) {
-          contChecks.style.marginTop = '12%';
-        }
-      }
+        document.getElementById('conti-boton').style.display='flex'
+      }  
     break;
     case 'canvasContainer3' :
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
@@ -122,13 +120,9 @@ function deslizaContenedor(identificador, idButton) {
       numeros.forEach((numero) => {
         numero.style.marginTop = '260%'
       });
-
-      /* if(screenWidth < 500){
-        var imagNeg = document.getElementById(identificador);
-        if (imagNeg !== null) {
-          imagNeg.style.marginTop = '12%';
-        }
-      } */
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+      }  
     break;
     case 'contImagGraf' :
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
@@ -143,12 +137,9 @@ function deslizaContenedor(identificador, idButton) {
       let padre = document.getElementById('patern')
       padre.style.display = 'grid'
       changeColors()
-      if(screenWidth < 500){
-        var imagGraf = document.getElementById(identificador);
-        if (imagGraf !== null) {
-          imagGraf.style.marginTop = '12%';
+        if(screenWidth < 500){
+          document.getElementById('conti-boton').style.display='flex'  
         }
-      }
     break;
     case 'conti-boton-kaizen' :
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
@@ -163,7 +154,10 @@ function deslizaContenedor(identificador, idButton) {
       setTimeout(function() {
         showButtonsKaizenRetraso();
       }, 500);
-      break;
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'  
+      }
+    break;
     default:
   }
 }

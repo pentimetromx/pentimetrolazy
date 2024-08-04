@@ -853,7 +853,7 @@
         <button class="butt-mautonomo" onclick="building()" style="background-color: red;color: white;">Show everything</button>
         <button class="butt-mautonomo" onclick="resultadosMA()">TRACKING DASHBOARD</button>               
       </div> 
-      <div id="troubleshooting" style="display: none;">
+      <div id="troubleshooting" class="class-line" style="display: none;">
         <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
         <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('archivo')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl2" for="archivo">Aditivos solución de fuente:</label>
@@ -879,16 +879,6 @@
         <canvas id="MiCuartaGrafica" class="canva-container"></canvas>  
         <canvas id="MiQuintaGrafica" class="canva-container"></canvas>              
       </div>
-      <div id="contChecks">
-        <input id="nombre" type="checkbox"class="input-class"> 
-        <input id="nombre-I" type="checkbox" class="input-class">
-        <input id="nombre-II" type="checkbox" class="input-class">
-        <input id="nombre-III" type="checkbox" class="input-class">
-        <input id="nombre-IV" type="checkbox" class="input-class">
-        <input id="nombre-V" type="checkbox" class="input-class">
-        <input id="nombre-VI" type="checkbox" class="input-class">
-        <input id="nombre-VII" type="checkbox" class="input-class">
-      </div> 
       <div id="contImagNeg">
         <img data-src="./assets/pixelate.jpg" id="imagPixelate" class="lazy" alt="Gráfico de Excel 6">
       </div>
@@ -1673,7 +1663,7 @@
 
       </div>
       <div id="bailarina">
-        <video class="lazy" id="vid-basculante" loop>
+        <video class="lazy" id="vid-basculante"autoplay muted loop>
           <source data-src="./assets/oscilante rotativa.mp4" type="video/mp4">
         </video> 
       </div>

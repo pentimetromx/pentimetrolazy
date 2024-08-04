@@ -1018,17 +1018,6 @@ width:447px ;
   display: flex;
   transition: left 1.007s ease; /* Usa la propiedad left para la transición */
 }
-#contChecks{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  left: 20%;
-  margin-top: 4%;
-  border-radius: 20px;
-  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
-  display: none;
-}
 #contImagNeg{
   position: absolute;
   display: flex;
@@ -7636,8 +7625,8 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 36vw;
-    top:4vh;
+    left:1vw;
+    top:3vh;
     width: 33vw;
     height: 50vh;
     border-radius: 20px;
@@ -7665,9 +7654,8 @@ input.numero:focus {
     height:50vh;
     width:57vw;      
     left:37vw;
-    top:24vh;
+    top:0;
     z-index: 3;
-    transition: top 1.007s ease; /* Usa la propiedad left para la transición */
     display: none;
   }
   #conte-links{
@@ -8114,17 +8102,6 @@ input.numero:focus {
     transform: scale(1.2);
     background-color:rgb(255,255,0);
     color: black;
-  }
-  #contChecks{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    left:41%;
-    top:34%;   
-    border-radius: 20px;
-    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
-    display: none;
   }
   #toyota-kaizen{
     position: absolute;
