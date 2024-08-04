@@ -23,14 +23,13 @@ function deslizaContenedor(identificador, idButton) {
   }
   switch(identificador){
     case 'troubleshooting' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
-      document.getElementById('conti-boton').removeAttribute('style');
       var contenedor = document.getElementById(identificador)                                                     
       if (identificador !== 'troubleshooting' && contenedor) {
         contenedor.style.display = 'flex'
@@ -44,10 +43,13 @@ function deslizaContenedor(identificador, idButton) {
           }
         }
       }
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+      }
       mostrarTroublesshIntervalo()
     break;
     case 'canvasContainer2' :
-      var elementosExcluidos = ['def2','buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
+      var elementosExcluidos = ['def2','buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
       for (var i = 0; i < allContenedores.length; i++) {
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -58,7 +60,7 @@ function deslizaContenedor(identificador, idButton) {
       incrementoHeightVII()
     break;
     case 'contChecks' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','contChecks','general','first_half']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -87,7 +89,7 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'canvasContainer3' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -96,15 +98,17 @@ function deslizaContenedor(identificador, idButton) {
       }
       inicioTracker()
       if(screenWidth < 500){
+        
         var canvas3 = document.getElementById(identificador);
         if (canvas3 !== null) {
           canvas3.style.marginTop = '12%';
         }
         document.getElementById('conti-boton').style.top='14vh'
+        document.getElementById('conti-boton').style.display='flex'
       }
     break;
     case 'contImagNeg' :  
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -127,7 +131,7 @@ function deslizaContenedor(identificador, idButton) {
       } */
     break;
     case 'contImagGraf' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -147,7 +151,7 @@ function deslizaContenedor(identificador, idButton) {
       }
     break;
     case 'conti-boton-kaizen' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -237,7 +241,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('linksMA') 
+  var contiBoton = document.getElementById('conti-boton') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -1197,7 +1201,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    }
    switch(idButton){
      case 'btn10':
-       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
+       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
        for (var i = 0; i < allContenedores.length; i++) { 
          var elemento = document.getElementById(allContenedores[i])  
          if (elemento) {
@@ -1251,7 +1255,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
  
      break;
      case 'btn11':
-       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
        for (var i = 0; i < allContenedores.length; i++) { 
          var elemento = document.getElementById(allContenedores[i])  
          if (elemento) {
@@ -1275,7 +1279,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        if (contadorClicks === 1) {
          miBot.innerText = 'ANTES';
          miBot.style.backgroundColor = 'red' 
-         var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','toyota-kaizen-antes']
+         var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','toyota-kaizen-antes']
          for (var i = 0; i < allContenedores.length; i++) { 
            var elemento = document.getElementById(allContenedores[i])  
            if (elemento) {
@@ -1290,7 +1294,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        } else if (contadorClicks === 2) {
            miBot.innerText = 'DESPUES';
            miBot.style.backgroundColor = 'green' 
-           var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','vidElem']  
+           var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','vidElem']  
            for (var i = 0; i < allContenedores.length; i++) { 
              var elemento = document.getElementById(allContenedores[i])  
              if (elemento) {
@@ -1323,7 +1327,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        }       
      break;
      case 'btn13':
-       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','planos-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','planos-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
        for (var i = 0; i < allContenedores.length; i++) { 
          var elemento = document.getElementById(allContenedores[i])  
          if (elemento) {
@@ -1347,7 +1351,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        contplanosKaizen.style.display = 'flex'
      break;  
      case 'btn14':
-       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
        for (var i = 0; i < allContenedores.length; i++) { 
          var elemento = document.getElementById(allContenedores[i])  
          if (elemento) {
@@ -1364,7 +1368,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        contMateriales.style.display = 'flex'
      break;  
      case 'btn15':
-       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
        for (var i = 0; i < allContenedores.length; i++) { 
          var elemento = document.getElementById(allContenedores[i])  
          if (elemento) {
@@ -1380,7 +1384,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
        })
      break;
      case 'btn17':
-       var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
+       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
        for (var i = 0; i < allContenedores.length; i++) { 
          var elemento = document.getElementById(allContenedores[i])  
          if (elemento) {
@@ -1501,7 +1505,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    mostrarConRetraso(0) // Comienza desde el primer botón
  }
  function aumentoBotonesBody() {
-   var elementosExcluidos = ['buscador','franja-Blanca','cont-titulo','subtitulo-I','descripcion-I','contenedor-principal']
+   var elementosExcluidos = ['buscador','search-form','franja-Blanca','cont-titulo','subtitulo-I','descripcion-I','contenedor-principal']
    for (var i = 0; i < allContenedores.length; i++) { 
      var elemento = document.getElementById(allContenedores[i])  
      if (elemento) {
@@ -1531,7 +1535,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    aumentarYRestaurar(0);
  }
  function tamaño100(){
-   var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
+   var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
    for (var i = 0; i < allContenedores.length; i++) { 
      var elemento = document.getElementById(allContenedores[i])  
      if (elemento) {
@@ -3633,7 +3637,7 @@ function restablecerEstilos(elemento) {
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
 function volverApre(){
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -4519,7 +4523,7 @@ const INTERVALOSHORIZONTALES = {
   intervaloXLVIII: null,
 }
 function barraInteligente() {
-  var elementosExcluidos = ['first_half','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['first_half','buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -5334,7 +5338,7 @@ function secondMovement(){
       hijos[i].style.display = 'none';
     }
   }
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','buscador','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -5413,7 +5417,7 @@ function thirdMovement(){
   incrementoHeightVII()
 }
 function fourthMovement(){
-var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','search-form','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
 for (var i = 0; i < allContenedores.length; i++) { 
   var elemento = document.getElementById(allContenedores[i])  
   if (elemento) {
@@ -5431,7 +5435,7 @@ if (padre) {
 changeColorToGreen()
 }
 function fifthMovement(){
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','search-form','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -5447,7 +5451,7 @@ function fifthMovement(){
   inicioTracker()
 }
 function sixthMovement(){
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','search-form','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -5525,7 +5529,7 @@ function moveElement(element, parent) {
   }, speed * 2);
 }
 document.getElementById('butt-sitio').addEventListener('click', () => {
-  var elementosExcluidos = ['buscador','container01','sitema-humedad','links-inicialesI','links-iniciales']
+  var elementosExcluidos = ['buscador','search-form','container01','sitema-humedad','links-inicialesI','links-iniciales']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {

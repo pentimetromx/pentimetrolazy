@@ -110,7 +110,7 @@ function cierraContenedores(elementId,buttonID){
 function muestraRodillo (vidElem, imgCont){
   switch(vidElem){
   case 'videoElement2':
-    var elementosExcluidos = ['buscador','sector-distribuidor','butt-repuestos','conti-video-distribuidor','videoElement2','images-distribuidor','conti-boton-repuestos','contenedor-7-V','container01','links-iniciales','links-inicialesI','videosTraining']; 
+    var elementosExcluidos = ['buscador','search-form','sector-distribuidor','butt-repuestos','conti-video-distribuidor','videoElement2','images-distribuidor','conti-boton-repuestos','contenedor-7-V','container01','links-iniciales','links-inicialesI','videosTraining']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -137,7 +137,7 @@ function muestraRodillo (vidElem, imgCont){
       }
       } 
       if (screenWidth < 500) { 
-        var elementosExcluidos = ['buscador','sector-distribuidor','conti-boton-repuestos','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','contenedor-7-V','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
+        var elementosExcluidos = ['buscador','search-form','sector-distribuidor','conti-boton-repuestos','butt-repuestos','container01','links-iniciales','links-inicialesI','contene-images','images-distribuidor','contenedor-7-V','videosTraining','videos-training','conti-video-distribuidor','videoElement2']; 
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -152,7 +152,7 @@ function muestraRodillo (vidElem, imgCont){
       }
   break;
   case 'videoElement3':
-    var elementosExcluidos = ['buscador','sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
+    var elementosExcluidos = ['buscador','search-form','sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -174,7 +174,7 @@ function muestraRodillo (vidElem, imgCont){
     }
     }
     if (screenWidth < 500) {
-      var elementosExcluidos = ['buscador','sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
+      var elementosExcluidos = ['buscador','search-form','sector-entintador','conti-boton-repuestos-I','butt-repuestos-I','conti-video-entintador','videoElement3','images-entintador','contenedor-7-VI','container01','links-iniciales','links-inicialesI','videosTraining']; 
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -196,7 +196,7 @@ function muestraRodillo (vidElem, imgCont){
     }
   break;
   case 'plate-smed' :
-    var elementosExcluidos = ['buscador','sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining']; 
+    var elementosExcluidos = ['buscador','search-form','sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -217,7 +217,7 @@ function muestraRodillo (vidElem, imgCont){
       }
       }      
     if (screenWidth < 500) {
-      var elementosExcluidos = ['buscador','sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining'];
+      var elementosExcluidos = ['buscador','search-form','sector-smed','conti-boton-repuestos-II','butt-repuestos-II','conti-video-smed','plate-smed','images-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI','videosTraining'];
       for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -242,7 +242,7 @@ function muestraRodillo (vidElem, imgCont){
     }
   break;  
   case 'videoElement5' :
-    var elementosExcluidos = ['buscador','sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
+    var elementosExcluidos = ['buscador','search-form','sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -267,7 +267,7 @@ function muestraRodillo (vidElem, imgCont){
 
   break; 
   case 'videoElement6' :
-    var elementosExcluidos = ['buscador','sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
+    var elementosExcluidos = ['buscador','search-form','sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -276,7 +276,7 @@ function muestraRodillo (vidElem, imgCont){
     }
   break;  
   case 'videoElement7' :
-    var elementosExcluidos = ['buscador','sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
+    var elementosExcluidos = ['buscador','search-form','sector-smed','contenedor-7-VII','container01','links-iniciales','links-inicialesI']; 
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -417,7 +417,7 @@ function showRepuesto(elementId) {
 var imgsContra = document.getElementById('impresorImg')
   switch (elementId) {
   case 'contImgDistribuidor': 
-    var elementosExcluidos = ['buscador','container01','links-iniciales','frame-rollers','links-inicialesI'];   
+    var elementosExcluidos = ['buscador','search-form','container01','links-iniciales','frame-rollers','links-inicialesI'];   
     var elementosGrid = document.getElementById('contImgDistribuidor')        
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
@@ -432,7 +432,7 @@ var imgsContra = document.getElementById('impresorImg')
 
     }
     if (screenWidth < 500) {
-      var elementosExcluidos = ['buscador','container01','links-iniciales','links-inicialesI','frame-rollers',];  
+      var elementosExcluidos = ['buscador','search-form','container01','links-iniciales','links-inicialesI','frame-rollers',];  
       var elementosGrid = document.getElementById('contImgDistribuidor')        
       for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
@@ -451,7 +451,7 @@ var imgsContra = document.getElementById('impresorImg')
     }
   break;
   case 'contImgEntintador':
-    var elementosExcluidos = ['buscador','abuelo-entintadores','padre-entintadores','container01','links-iniciales','links-inicialesI']; 
+    var elementosExcluidos = ['buscador','search-form','abuelo-entintadores','padre-entintadores','container01','links-iniciales','links-inicialesI']; 
     var elementosGrid = document.getElementById('grilla-corta-entintado')                
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
@@ -466,7 +466,7 @@ var imgsContra = document.getElementById('impresorImg')
 
     }
     if (screenWidth < 500) {
-      var elementosExcluidos = ['buscador','abuelo-entintadores','padre-entintadores','container01','links-iniciales','links-inicialesI']; 
+      var elementosExcluidos = ['buscador','search-form','abuelo-entintadores','padre-entintadores','container01','links-iniciales','links-inicialesI']; 
       var elementosGrid = document.getElementById('grilla-corta-entintado')                        
       for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
@@ -486,7 +486,7 @@ var imgsContra = document.getElementById('impresorImg')
     }
   break;
   case 'contPortPlaca':  
-    var elementosExcluidos = ['buscador','container01','links-iniciales','links-inicialesI','contPortPlaca', 'agrupaOblicuos-placa','placa','video-placa'];          
+    var elementosExcluidos = ['buscador','search-form','container01','links-iniciales','links-inicialesI','contPortPlaca', 'agrupaOblicuos-placa','placa','video-placa'];          
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -500,7 +500,7 @@ var imgsContra = document.getElementById('impresorImg')
     }
   break;       
   case 'contPortManta':
-    var elementosExcluidos = ['buscador','contPortManta', 'container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];           
+    var elementosExcluidos = ['buscador','search-form','contPortManta', 'container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];           
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -522,7 +522,7 @@ var imgsContra = document.getElementById('impresorImg')
     } 
   break;
   case 'contImpresor':
-    var elementosExcluidos = ['buscador','agrupaOblicuos-XXIII','impresorImg','contImpresor','container01','links-iniciales','links-inicialesI'];           
+    var elementosExcluidos = ['buscador','search-form','agrupaOblicuos-XXIII','impresorImg','contImpresor','container01','links-iniciales','links-inicialesI'];           
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -549,7 +549,7 @@ var imgsContra = document.getElementById('impresorImg')
 function ladosPlancha(elementId){ 
 switch (elementId) {
 case 'imagen1':
-  var elementosExcluidos = ['buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen1']          
+  var elementosExcluidos = ['buscador','search-form','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen1']          
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -562,7 +562,7 @@ case 'imagen1':
   }      
 break;
 case 'imagen2':
-  var elementosExcluidos = ['buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen2']
+  var elementosExcluidos = ['buscador','search-form','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen2']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -575,7 +575,7 @@ case 'imagen2':
   }
 break; 
 case 'imagen3':
-  var elementosExcluidos = ['buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen3']
+  var elementosExcluidos = ['buscador','search-form','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen3']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -588,7 +588,7 @@ case 'imagen3':
   }
 break;
 case 'imagen4':
-  var elementosExcluidos = ['buscador','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen4']
+  var elementosExcluidos = ['buscador','search-form','contPortPlaca', 'agrupaOblicuos-placa','container01','links-iniciales','links-inicialesI','imagenes-plancha','imagen4']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -612,7 +612,7 @@ imgsMantasI.style.display = 'none'
 
 switch (elementId) {
 case 'mantilla1':
-  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','search-form','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -629,7 +629,7 @@ case 'mantilla1':
   }
   })
   if (screenWidth < 500) {   
-    var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+    var elementosExcluidos = ['buscador','search-form','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]) 
       if (elemento) {
@@ -645,7 +645,7 @@ case 'mantilla1':
   }
   break;
 case 'mantilla2':
-  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','search-form','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -662,7 +662,7 @@ case 'mantilla2':
     }
     })
     if (screenWidth < 500) {   
-      var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+      var elementosExcluidos = ['buscador','search-form','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -678,7 +678,7 @@ case 'mantilla2':
 
 break;     
 case 'mantilla3':
-  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','search-form','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -700,7 +700,7 @@ case 'mantilla3':
   } 
 break;
 case 'mantilla4':
-  var elementosExcluidos = ['buscador','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['buscador','search-form','imagenes-manta','contPortManta','agrupaOblicuos-IX','container01','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -736,7 +736,7 @@ elemento.style.display = 'flex'
 
 switch (elementId) {
 case 'forward':
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','contImpresor','agrupaOblicuos-XXIII','imagenes-impresor'];          
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contImpresor','agrupaOblicuos-XXIII','imagenes-impresor'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -757,7 +757,7 @@ case 'forward':
   }
   break;
 case 'comands':
-  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];          
+  var elementosExcluidos = ['buscador','search-form','contImpresor','agrupaOblicuos-XXIII','container01'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -786,7 +786,7 @@ case 'comands':
   }
 break;     
 case 'service':
-  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];          
+  var elementosExcluidos = ['buscador','search-form','contImpresor','agrupaOblicuos-XXIII','container01'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -815,7 +815,7 @@ case 'service':
   }
 break;
 case 'back':
-  var elementosExcluidos = ['buscador','contImpresor','agrupaOblicuos-XXIII','container01'];          
+  var elementosExcluidos = ['buscador','search-form','contImpresor','agrupaOblicuos-XXIII','container01'];          
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -1041,7 +1041,7 @@ function deslizaContenedorII(idElement, idButton) {
     }
   }
   if (idElement === 'canvasContainer2') {
-    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica']  
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -1050,7 +1050,7 @@ function deslizaContenedorII(idElement, idButton) {
     }
   }
   if (idElement === 'troubleshooting') {
-    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting']  
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -1102,7 +1102,7 @@ function deslizaContenedorII(idElement, idButton) {
 }
 function resetBotns() {  
   clearAllIntervals()
-  var elementosExcluidos = ['nicho_spans','pantalla','conti-boton','conteneMantaut','buscador','container01','links-inicialesI','links-iniciales'];          
+  var elementosExcluidos = ['nicho_spans','pantalla','conti-boton','conteneMantaut','buscador','search-form','container01','links-inicialesI','links-iniciales'];          
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
@@ -1397,7 +1397,7 @@ function muestraTorresI (elementId) {
 
   switch (elementId) {    
     case 'pantalla-frente':
-      var elementosExcluidos = ['buscador','pantalla-frente','container01','links-inicialesI','links-iniciales','agrupaOblicuos'];          
+      var elementosExcluidos = ['buscador','search-form','pantalla-frente','container01','links-inicialesI','links-iniciales','agrupaOblicuos'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -1406,7 +1406,7 @@ function muestraTorresI (elementId) {
       }
       if (screenWidth < 500) {  
         var agrupaOblicuos = document.getElementById('agrupaOblicuos') 
-        var elementosExcluidos = ['buscador','pantalla-frente','container01','links-inicialesI','links-iniciales','agrupaOblicuos'];          
+        var elementosExcluidos = ['buscador','search-form','pantalla-frente','container01','links-inicialesI','links-iniciales','agrupaOblicuos'];          
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -1425,7 +1425,7 @@ function muestraTorresI (elementId) {
       } 
     break; 
     case 'pantalla-mandos':
-      var elementosExcluidos = ['buscador','pantalla-mandos',,'container01','links-inicialesI','links-iniciales','agrupaOblicuos-III'];          
+      var elementosExcluidos = ['buscador','search-form','pantalla-mandos',,'container01','links-inicialesI','links-iniciales','agrupaOblicuos-III'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -1434,7 +1434,7 @@ function muestraTorresI (elementId) {
       }
       if (screenWidth < 500) {  
         var agrupaOblicuosIII = document.getElementById('agrupaOblicuos-III') 
-        var elementosExcluidos = ['buscador','pantalla-mandos',,'container01','links-inicialesI','links-iniciales','agrupaOblicuos-III'];          
+        var elementosExcluidos = ['buscador','search-form','pantalla-mandos',,'container01','links-inicialesI','links-iniciales','agrupaOblicuos-III'];          
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -1453,7 +1453,7 @@ function muestraTorresI (elementId) {
       } 
     break;
     case 'pantalla-servicio': 
-    var elementosExcluidos = ['buscador','pantalla-servicio','container01','links-inicialesI','links-iniciales','agrupaOblicuos-IV'];          
+    var elementosExcluidos = ['buscador','search-form','pantalla-servicio','container01','links-inicialesI','links-iniciales','agrupaOblicuos-IV'];          
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -1462,7 +1462,7 @@ function muestraTorresI (elementId) {
     }
     if (screenWidth < 500) {  
       var agrupaOblicuosIV = document.getElementById('agrupaOblicuos-IV') 
-      var elementosExcluidos = ['buscador','pantalla-servicio','container01','links-inicialesI','links-iniciales','agrupaOblicuos-IV'];          
+      var elementosExcluidos = ['buscador','search-form','pantalla-servicio','container01','links-inicialesI','links-iniciales','agrupaOblicuos-IV'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
@@ -1481,7 +1481,7 @@ function muestraTorresI (elementId) {
     } 
     break;
     case 'pantalla-atras':
-      var elementosExcluidos = ['buscador','pantalla-atras','container01','links-inicialesI','links-iniciales','agrupaOblicuos-V'];          
+      var elementosExcluidos = ['buscador','search-form','pantalla-atras','container01','links-inicialesI','links-iniciales','agrupaOblicuos-V'];          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -1490,7 +1490,7 @@ function muestraTorresI (elementId) {
       }
       if (screenWidth < 500) {  
         var agrupaOblicuosV = document.getElementById('agrupaOblicuos-V') 
-        var elementosExcluidos = ['buscador','pantalla-atras','container01','links-inicialesI','links-iniciales','agrupaOblicuos-V'];          
+        var elementosExcluidos = ['buscador','search-form','pantalla-atras','container01','links-inicialesI','links-iniciales','agrupaOblicuos-V'];          
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {
@@ -1543,7 +1543,7 @@ function videosImpresor(videoId) {
   } 
 } 
 function abrirSeccionContinua(elementId) {  
-  var elementosExcluidos = ['buscador','toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado'];
+  var elementosExcluidos = ['buscador','search-form','toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -1612,7 +1612,7 @@ function alternarColorVerdeInverso() {
 }
 function abrirSeccionOperativa(elementId){
   const buttsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
-  var elementosExcluidos = ['container01','buscador','links-inicialesI','links-iniciales','cont-titulo-operacion','image-background']  
+  var elementosExcluidos = ['container01','buscador','search-form','links-inicialesI','links-iniciales','cont-titulo-operacion','image-background']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -1856,7 +1856,7 @@ function devolverColoresConRetrasoIII() {
 }
 function abrirSeccionVariable(elementId){
   clearAllIntervals()
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-variable','padre-variable'];
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','abuelo-variable','padre-variable'];
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
@@ -1882,7 +1882,7 @@ function abrirSeccionVariable(elementId){
 } 
 function abrirSeccionPlanas(elementId){
   clearAllIntervals()
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-plana','padre-plana'];
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','abuelo-plana','padre-plana'];
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
@@ -1908,7 +1908,7 @@ function abrirSeccionPlanas(elementId){
   }
 }
 function abrirSeccionCurado(elementId){
-  var elementosExcluidos = ['buscador','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales'];  
+  var elementosExcluidos = ['buscador','search-form','cont-secador','container01','video-container','curado-uv','links-inicialesI','links-iniciales'];  
   document.getElementById('linkList').style.display = 'none'
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
@@ -1928,7 +1928,7 @@ function abrirSeccionCurado(elementId){
   }  
 }
 function abrirSeccionDemo(elementId) {
-  var elementosExcluidos = ['buscador', 'container01', 'links-inicialesI', 'links-iniciales', 'planetary', 'tendencia-naranja','padre-naranja'];
+  var elementosExcluidos = ['buscador','search-form', 'container01', 'links-inicialesI', 'links-iniciales', 'planetary', 'tendencia-naranja','padre-naranja'];
   document.getElementById('linkList').style.display = 'none';
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);
@@ -1996,7 +1996,7 @@ function abrirPilarMA(){
   }    
 }
 function abrirPrepress(elementId) {
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pre-prensa','primerCont','imgs-prepress','conte-botDensitoII'] 
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pre-prensa','primerCont','imgs-prepress','conte-botDensitoII'] 
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2043,7 +2043,7 @@ function abrirPrepress(elementId) {
 }
 function abrirDensitometria(elementId){
   var contieneLinks = document.getElementById('linkList')
-  var elementosExcluidos = ['buscador','densitometria','links-inicialesI','links-iniciales','container01','imgs-densito','contDensito','conte-botDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList']         
+  var elementosExcluidos = ['buscador','search-form','densitometria','links-inicialesI','links-iniciales','container01','imgs-densito','contDensito','conte-botDensito','segundoContDensito','tercerContDensito','cuartoContDensito','linkList']         
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
@@ -2113,7 +2113,7 @@ function muestraVidPrisma(eltoHtml) {
     }
   })
   if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','container01','vidCicodelia','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
+    var elementosExcluidos = ['buscador','search-form','container01','vidCicodelia','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -2121,7 +2121,7 @@ function muestraVidPrisma(eltoHtml) {
       }
     }
   }else{
-    var elementosExcluidos = ['buscador','container01','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
+    var elementosExcluidos = ['buscador','search-form','container01','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -2490,7 +2490,7 @@ function irContenedorAnterior() {
       boton01.style.display = 'block'        
     break; 
     case 'desbobinadorId':
-      var elementosExcluidos = ['buscador','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2520,7 +2520,7 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
-      var elementosExcluidos = ['buscador','pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2550,7 +2550,7 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
-      var elementosExcluidos = ['buscador','pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2580,7 +2580,7 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
-      var elementosExcluidos = ['buscador','pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2610,7 +2610,7 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
-      var elementosExcluidos = ['buscador','pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2852,7 +2852,7 @@ function irContenedorSiguiente() {
       boton01.style.display = 'block'        
     break; 
     case 'desbobinadorId':
-      var elementosExcluidos = ['buscador','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2882,7 +2882,7 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
-      var elementosExcluidos = ['buscador','pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2912,7 +2912,7 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
-      var elementosExcluidos = ['buscador','pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2942,7 +2942,7 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
-      var elementosExcluidos = ['buscador','pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -2972,7 +2972,7 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
-      var elementosExcluidos = ['buscador','pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
@@ -3027,8 +3027,7 @@ function listaEntrenamientosII(btnList) {
   container1.style.left = ''
   linkIni1.style.left = ''
   linkIni2.style.left = ''  
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  enlacesIDs.forEach(function (id) {                                                                                                   // VINCULOS COLOR BLANCO
+  enlacesIDs.forEach(function (id) {
   var enlace = document.getElementById(id)
   if (enlace) {
     enlace.style.color = 'white'
@@ -3038,47 +3037,29 @@ function listaEntrenamientosII(btnList) {
   troubleTable.removeAttribute('style')                                                                                                                    
   switch(btnList){                                                                                                                      
     case 'archivo': 
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) { /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
             boton.style.backgroundColor = 'orange';  
         }
       }
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'  
-          }
-        } 
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        for (var i = 0; i < contiBtt.length; i++) {                                                                                            /// NARANJA A BOTON
-          var botonId = contiBtt[i];
-          var boton = document.getElementById(botonId);
-          // Restablecer el color de fondo para todos los botones
-          boton.style.backgroundColor = '';
-          if (botonId === btnList) {
-              // Cambiar el color de fondo a naranja para el botón seleccionado
-              boton.style.backgroundColor = 'orange';
-          }
-        }
+       document.getElementById('troubleshooting').style.left='1vw'
+       document.getElementById('linksMA').style.top='1vh' 
+
       }
     break;
     case 'btt2':
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3098,7 +3079,7 @@ function listaEntrenamientosII(btnList) {
       }
     break;
     case 'btt3':
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3118,7 +3099,7 @@ function listaEntrenamientosII(btnList) {
       }
     break;  
     case 'btt4':
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3138,7 +3119,7 @@ function listaEntrenamientosII(btnList) {
       }
     break;  
     case 'btt5':
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3158,7 +3139,7 @@ function listaEntrenamientosII(btnList) {
       }
     break;  
     case 'btt6':
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3178,7 +3159,7 @@ function listaEntrenamientosII(btnList) {
       }
     break;  
     case 'btt7':
-      var elementosExcluidos = ['buscador','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3218,7 +3199,7 @@ function listaEntrenamientos(){
   videoBackground.pause()
   videoBackground.style.display = 'none' 
 
-  var elementosExcluidos = ['buscador','conteneMantaut','links-inicialesI','links-iniciales','container01']         
+  var elementosExcluidos = ['buscador','search-form','conteneMantaut','links-inicialesI','links-iniciales','container01']         
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -3268,7 +3249,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   }      
   switch (id) {
     case 'link1':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1','troubleshooting']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1','troubleshooting']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3285,7 +3266,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }}
           
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3295,7 +3276,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
     break;
     case 'link2':
-      var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III','contBotInfeed']  
+      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3311,7 +3292,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III']  
+        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3327,7 +3308,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       vidFesto.play()
     break;
     case 'link3':
-      var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
+      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3343,7 +3324,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
+        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3358,7 +3339,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   
     break;
     case 'link4':  
-    var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed','contImaginario-II']  
+    var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed','contImaginario-II']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -3375,7 +3356,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     }}         
     if(screenWidth < 500){
       
-      var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contImaginario-II']      
+      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contImaginario-II']      
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3385,7 +3366,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     }     
     break;  
     case 'link5':
-      var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto','contBotInfeed']  
+      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3401,7 +3382,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
+        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3416,7 +3397,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
 function lubricacion(buttId){
     switch (buttId) {
       case 'boton2':  
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3426,7 +3407,7 @@ function lubricacion(buttId){
       mostrartBotonesIntervalo('butt-mautonomo-desbobina');    
       break;
       case 'boton3':
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','freno','conti-boton-freno']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','freno','conti-boton-freno']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3436,7 +3417,7 @@ function lubricacion(buttId){
         mostrartBotonesIntervalo('butt-mautonomo-freno');  
       break;    
       case 'boton4':
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3446,7 +3427,7 @@ function lubricacion(buttId){
       palpitarBoton('desbobinadorId')       
       break;
       case 'boton5':
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3456,7 +3437,7 @@ function lubricacion(buttId){
         palpitarBoton('desbobinadorId')
       break  
       case 'boton6':
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3520,7 +3501,7 @@ function LubricaDesbobinador(idButt) {
   }  
   switch (idButt) {
     case 'btn1':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb','frec-lubrica']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb','frec-lubrica']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3530,7 +3511,7 @@ function LubricaDesbobinador(idButt) {
       showLablsLubricacion()
       break;
     case 'btn2':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
       let elementosGrid =['inicio','bis-abuelo','padre-lubrica']
       
       for (var i = 0; i < allContenedores.length; i++) { 
@@ -3552,7 +3533,7 @@ function LubricaDesbobinador(idButt) {
 
     break; 
     case 'btn3':
-    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3563,7 +3544,7 @@ function LubricaDesbobinador(idButt) {
       document.getElementById('frec-lubrica').style.display = 'none'
     break;
     case 'btn4':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3574,7 +3555,7 @@ function LubricaDesbobinador(idButt) {
       document.getElementById('frec-lubrica').style.display = 'none'
     break; 
     case 'btn5':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3585,7 +3566,7 @@ function LubricaDesbobinador(idButt) {
       document.getElementById('frec-lubrica').style.display = 'none'
     break;
     case 'btn60':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','abuelo-grilla','freno','cont-arriba-freno','conti-boton-freno','desbobinadorId','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','abuelo-grilla','freno','cont-arriba-freno','conti-boton-freno','desbobinadorId','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3629,7 +3610,7 @@ function LubricaDesbobinador(idButt) {
 function UnidadTeñido(buttId){
   switch (buttId) {
     case 'boton8' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3639,7 +3620,7 @@ function UnidadTeñido(buttId){
       mostrartBotonesIntervalo('butt-mautonomo-teñido');    
       break;
     case 'boton9' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3649,7 +3630,7 @@ function UnidadTeñido(buttId){
       mostrartBotonesIntervalo('butt-mautonomo-rodilleria');    
     break; 
     case 'boton10' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3659,7 +3640,7 @@ function UnidadTeñido(buttId){
       palpitarBoton('uTeñidos')
     break; 
     case 'boton11' : 
-    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -3669,7 +3650,7 @@ function UnidadTeñido(buttId){
     palpitarBoton('uTeñidos')
     break; 
     case 'boton12' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3679,7 +3660,7 @@ function UnidadTeñido(buttId){
       palpitarBoton('uTeñidos')
     break; 
     case 'btn600' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido','cont-arriba','padre-grilla','teñido-I','vidTeñido','teñido-vid']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido','cont-arriba','padre-grilla','teñido-I','vidTeñido','teñido-vid']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3693,7 +3674,7 @@ function UnidadTeñido(buttId){
       moveElement(child,parent)
     break; 
     case 'btn700' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3703,7 +3684,7 @@ function UnidadTeñido(buttId){
       palpitarBoton('uteñidos')
      break; 
     case 'btn800' :
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3731,7 +3712,7 @@ function mostrartBotonesIntervalo(className) {
 function UnidadAlimenta(buttId){
     switch (buttId) {
       case 'boton14' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3741,7 +3722,7 @@ function UnidadAlimenta(buttId){
         palpitarBoton('alimentadorId')
       break;
       case 'boton15' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3751,7 +3732,7 @@ function UnidadAlimenta(buttId){
         palpitarBoton('alimentadorId')
       break; 
       case 'boton16' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3761,7 +3742,7 @@ function UnidadAlimenta(buttId){
         palpitarBoton('alimentadorId')
       break; 
       case 'boton17' : 
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3771,7 +3752,7 @@ function UnidadAlimenta(buttId){
       palpitarBoton('alimentadorId')
       break; 
       case 'boton18' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3786,7 +3767,7 @@ function UnidadAlimenta(buttId){
 function UnidadProceso(buttId){
     switch (buttId) {
       case 'boton20' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3796,7 +3777,7 @@ function UnidadProceso(buttId){
         palpitarBoton('unidProceso')
       break;
       case 'boton21' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3806,7 +3787,7 @@ function UnidadProceso(buttId){
         palpitarBoton('unidProceso')
       break; 
       case 'boton22' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3816,7 +3797,7 @@ function UnidadProceso(buttId){
         palpitarBoton('unidProceso')
       break; 
       case 'boton23' : 
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3826,7 +3807,7 @@ function UnidadProceso(buttId){
       palpitarBoton('unidProceso')
     break; 
       case 'boton24' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3841,7 +3822,7 @@ function UnidadProceso(buttId){
 function UnidadRebonina(buttId){
     switch (buttId) {
       case 'boton26' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3851,7 +3832,7 @@ function UnidadRebonina(buttId){
         palpitarBoton('rebobinador')
       break;
       case 'boton27' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3861,7 +3842,7 @@ function UnidadRebonina(buttId){
         palpitarBoton('rebobinador')
       break; 
       case 'boton28' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3871,7 +3852,7 @@ function UnidadRebonina(buttId){
         palpitarBoton('rebobinador')
       break; 
       case 'boton29' : 
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3881,7 +3862,7 @@ function UnidadRebonina(buttId){
       palpitarBoton('rebobinador')
     break; 
       case 'boton30' :
-        var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -4425,7 +4406,7 @@ function rodillosTeñido(botId) {
 
   switch(botId) {
     case 'btn06':
-      var elementosExcluidos = ['buscador','cont-links','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','cont-arriba-rodillos','vidRodillos','rodilleria-vid','conti-boton-rodilleria','cont-arriba-rodillos','abuelo-cuadricula']  
+      var elementosExcluidos = ['buscador','search-form','cont-links','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','cont-arriba-rodillos','vidRodillos','rodilleria-vid','conti-boton-rodilleria','cont-arriba-rodillos','abuelo-cuadricula']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4440,7 +4421,7 @@ function rodillosTeñido(botId) {
       moveElement(child,parent)
     break;
     case 'btn07':
-      var elementosExcluidos = ['buscador','cont-links','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','conti-boton-rodilleria','grilla-durezas','abuelo-grilla-dureza']  
+      var elementosExcluidos = ['buscador','search-form','cont-links','container01','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria','conti-boton-rodilleria','grilla-durezas','abuelo-grilla-dureza']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4504,7 +4485,7 @@ function lubricaDiario(butId,labelId){
   switch(butId) {
     
     case 'lub-diario':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
       var elementosGrid =['lubricantes','abuelo-lubrica','padre-lubricante']
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
@@ -4524,7 +4505,7 @@ function lubricaDiario(butId,labelId){
       moveElement(child,parent)
     break;
     case 'lub-semanal':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4533,7 +4514,7 @@ function lubricaDiario(butId,labelId){
       }
     break;
     case 'lub-mensual':
-      var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -4636,7 +4617,7 @@ let llamadaEjecutada = false;
 
 function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -4646,7 +4627,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   if (iconosPermitidos.includes(icono)) {
   } 
   if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -4696,71 +4677,8 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     break;
   }
 }
-
-/* function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
-  const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  } 
-  if (iconosPermitidos.includes(icono)) {
-  } 
-  if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i])  
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-      }
-    }  
-    if(state === 'true'){
-      setTimeout(() => {
-        animateScroll('contenedor-vertical')
-      }, 500);}
-    if (iconosPermitidos.includes(icono)) {
-    }
-    ubicaPerfil(idEmpleado)
-  }else{
-    ubicaPerfil(idEmpleado)
-  }
-  switch (functionExe) {
-    case 'updateAna':
-      updateAna() 
-      updateAnaII()
-    break;
-    case 'updateMario':
-      updateMario()
-      updateMarioII()
-    break;
-    case 'updateSandra':
-      updateSandra()
-      updateSandraII()
-    break;
-    case 'updateJesus':
-      updateJesus()
-      updateJesusII()      
-    break;
-    case 'updateJorge':
-      updateJorge()
-      updateJorgeII()      
-    break;
-    case 'updateAndres':
-      updateAndres()
-      updateAndresII()      
-    break;
-    case 'updateCarlos':
-      updateCarlos()
-      updateCarlosII()      
-    break;
-    default:
-    break;
-  }
-} */
 function resultadosMA(){
-  var elementosExcluidos = ['buscador','container01','links-inicialesI','links-iniciales','iconos','conte-secundario','title-interfaz']  
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','conte-secundario','title-interfaz']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {

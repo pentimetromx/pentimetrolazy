@@ -222,9 +222,8 @@ color: white;
   width: 20%;
   height: 6%;
   background-color: #333333;
-  display: none;
 }
-#search-form {
+#search-form{
   position:relative;
   display: flex;
   justify-content: center;
@@ -252,7 +251,6 @@ color: white;
   height:62%;
   object-fit:fill;
   border-radius: 3px;
-  display:none;
 }
 
 #titulo-ancho{
@@ -1420,29 +1418,11 @@ width:447px ;
   left: 1094px;
   top:-602px;
 }
-/* #contMedio-V-comercial,
-#contAtras-V-comercial,
-#contArriba-V-comercial,
-#contLateral-V-comercial,
-#contLateral-V-calidad,
-#contArriba-V-calidad,
-#contAtras-V-calidad,
-#contMedio-V-calidad,
-#contArriba-V,
-#contArriba-V-admin,
-#contAtras-V-admin,
-#contAtras-V,
-#contenedor-interfaz,
-#juego-V,
-#contLateral-V-admin,
-#contLateral-V{
-  position: relative;
-} */
 #contBotInfeed{
   position: absolute;
   display: flex;
-  left: 77%;
-  top: 21px;
+  left:105vw;
+  top:110vh;
   display: none;
 }
 #contBotCasos{
@@ -6785,8 +6765,7 @@ input.numero:focus {
     border-radius: 7px;
     position: absolute;
     top:0.7vh;
-  }
-  
+  }  
   .sinusoidales{
     margin-left: auto;
     margin-right: auto;
@@ -6819,8 +6798,9 @@ input.numero:focus {
     width: 52%;
     height: 4%;
     background-color: #333333;
+    display: none;
   }
-  #search-form {
+  #search-form{
     position:relative;
     display: flex;
     justify-content: center;
@@ -6875,6 +6855,7 @@ input.numero:focus {
     left:0;
     width: 33vw;
     height:52vh;
+    display: none;
   }
   .butt-mautonomo{
     height:4vh;
@@ -7686,6 +7667,7 @@ input.numero:focus {
     left:37vw;
     top:24vh;
     z-index: 3;
+    transition: top 1.007s ease; /* Usa la propiedad left para la transición */
     display: none;
   }
   #conte-links{
@@ -7974,7 +7956,6 @@ input.numero:focus {
   #conteneMantaut{
     position: relative;
     display: flex;
-    /* top: 5%; */
     top: 15%;
     left: 0%;
   }   
@@ -7994,7 +7975,6 @@ input.numero:focus {
     margin-top:5%;
     transition: left 1.007s ease;
   }
-
   #canvasContainer3{
     position: absolute;
     display: flex;
