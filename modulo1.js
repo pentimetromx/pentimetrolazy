@@ -1119,7 +1119,7 @@ function resetBotns() {
       }
     }
   } 
-  document.getElementById('conti-boton').removeAttribute('style');
+  document.getElementById('conti-boton').style.top=''
   linkIni1.style.left= ''  
   linkIni2.style.left = ''   
   if (document.body.style.zoom !== "100%") {

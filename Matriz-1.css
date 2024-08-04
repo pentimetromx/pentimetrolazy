@@ -7785,9 +7785,9 @@ input.numero:focus {
     flex-direction: row;
     align-items: center;
     height:52vh;
-    width:97vw;
+    width:99vw;
     top:23vh;
-    left:1%;
+    left:0;
     display: none;
     z-index: 3;
     border-radius: 21px; 
@@ -7807,13 +7807,12 @@ input.numero:focus {
     overflow: auto;
     top: 1%;
     left:33%;
-    /* margin-left:29vw; */
     display: none;  
     z-index: 3;
   }
   .guia-neumatica{
-    overflow-y: scroll; /* Asegura que el elemento sea desplazable */
-    -webkit-overflow-scrolling: touch; /* Habilita el desplazamiento suave en dispositivos móviles */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .guia-neumatica::-webkit-scrollbar{
     scrollbar-width: none;
