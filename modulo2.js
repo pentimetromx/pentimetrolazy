@@ -5533,6 +5533,12 @@ document.getElementById('butt-sitio').addEventListener('click', () => {
   document.getElementById('butt-sitio').style.display='none'
   abrirSeccionContinua()
 })
+function cerrarVentanas() {
+  const ventanas = document.querySelectorAll('.ventana');
+  for (let i = 0; i < ventanas.length; i++) {
+    ventanas[i].style.display = 'none';
+  }
+}
 
 
 

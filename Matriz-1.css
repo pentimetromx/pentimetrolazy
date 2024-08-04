@@ -5488,10 +5488,6 @@ input.numero:focus {
   color: whitesmoke;
   display: none;
 }
-/* #butt-links{
-  display: none;
-  visibility: hidden;
-} */
 
 @media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -7667,14 +7663,14 @@ input.numero:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -10vh;
-    left: -4vw;
-    height: 2.5vh;
-    width: 12vw;
+    top: -12vh;
+    left: 0;
+    height: 3.5vh;
+    width: 18vw;
     background-color: rgb(255,0,0);
     border-radius: 5px;
     color: whitesmoke;
-    font-size: 3vw;
+    font-size: 3.3vw;
     cursor: pointer;
   }
   #conte-links{
@@ -7790,7 +7786,7 @@ input.numero:focus {
     align-items: center;
     height:52vh;
     width:97vw;
-    top:27vh;
+    top:23vh;
     left:1%;
     display: none;
     z-index: 3;

@@ -2986,17 +2986,12 @@ function irContenedorSiguiente() {
 }
 function listaEntrenamientosII(btnList) {
   document.body.style.zoom = "100%"; 
-  container1.style.left = ''
-  linkIni1.style.left = ''
-  linkIni2.style.left = ''  
   enlacesIDs.forEach(function (id) {
   var enlace = document.getElementById(id)
   if (enlace) {
     enlace.style.color = 'white'
   }
   })  
-  var troubleTable = document.getElementById('troubleshooting') 
-  troubleTable.removeAttribute('style')                                                                                                                    
   switch(btnList){                                                                                                                      
     case 'archivo': 
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
@@ -3006,6 +3001,7 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      document.getElementById('butt-links').style.display='none'
       for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
