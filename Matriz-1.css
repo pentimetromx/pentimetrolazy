@@ -1937,7 +1937,6 @@ header {
   left:77vw;
   height:82vh;
   width:69vw;
-
   flex-direction: row; 
   align-items: center;
   display: none; 
@@ -7727,13 +7726,13 @@ input.numero:focus {
     flex-direction: column; 
     align-items: flex-start;
     height:57vh;
-    width:97vw;
+    width:99vw;
     display: none; 
     border-radius: 21px; 
     background-color:black;
     border: solid 1px orange;
     top:32vh;
-    left:1vw;
+    left:0;
     z-index: 3;
   }
   #imag3{
@@ -7873,16 +7872,16 @@ input.numero:focus {
   #contImaginario-II{ 
     position: absolute;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
     height:50vh;
-    width:97vw;
-    display: none; 
-    border-radius: 21px; 
+    width:99vw;
+    display: none;
+    border-radius: 21px;
     background-color:black;
     border: solid 2px orange;
     top:32vh;
-    left:1vw;
+    left:0;
     z-index: 3;
   }
   #iconos{
