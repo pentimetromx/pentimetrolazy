@@ -5488,6 +5488,10 @@ input.numero:focus {
   color: whitesmoke;
   display: none;
 }
+/* #butt-links{
+  display: none;
+  visibility: hidden;
+} */
 
 @media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -7780,13 +7784,13 @@ input.numero:focus {
   }
   #padre-2,
   #padre-1{
-    position: relative;
+    position:absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
     height:52vh;
     width:97vw;
-    top: -9%;
+    top:27vh;
     left:1%;
     display: none;
     z-index: 3;

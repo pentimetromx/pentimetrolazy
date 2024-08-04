@@ -432,11 +432,8 @@ function ElementosMaII(elementId){
       document.body.style.zoom = "100%"    
     }, 10);
     setTimeout(() => {
-      container1.style.left=''    
-    }, 20);
-    setTimeout(() => {
       showButtonsMAconRetraso()  
-    }, 50);  
+    }, 20);  
     arrayIdButtsMA .forEach(function (elto) {
       var elemento = document.getElementById(elto)    
       if (elemento) {
@@ -456,19 +453,23 @@ function ElementosMaII(elementId){
     console.log(idsArray);
   } 
 }
-function showButtonsMAconRetraso(){
-  var botones = document.querySelectorAll('.butt-mautonomo')
+function showButtonsMAconRetraso() {
+  var botones = document.querySelectorAll('.butt-mautonomo');
+  // Ocultar todos los botones al inicio
+  botones.forEach(boton => {
+    boton.style.display = 'none';
+  });
   function mostrarBotonConRetraso(i) {
     if (i < botones.length) {
-      var boton = botones[i]
-      boton.style.display = 'inline-block'
-      boton.style.marginTop = '10px';      
+      var boton = botones[i];
+      boton.style.display = 'inline-block';
+      boton.style.marginTop = '10px';
       setTimeout(function() {
-        mostrarBotonConRetraso(i + 1)
-      },100)
+        mostrarBotonConRetraso(i + 1);
+      }, 100);
     }
   }
-  mostrarBotonConRetraso(0)
+  mostrarBotonConRetraso(0);
 }
 function showButtonsTeoriaConRetraso() {
   var botones = document.querySelectorAll('.butt-prepre');

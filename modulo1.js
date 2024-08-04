@@ -3015,6 +3015,7 @@ function listaEntrenamientosII(btnList) {
         }
       }
       if(screenWidth < 500){
+        document.getElementById('butt-links').style.display='flex'
        /* document.getElementById('troubleshooting').style.left='1vw' 
        document.getElementById('linksMA').style.top='1vh' */
 
@@ -3201,13 +3202,13 @@ function toggleFullScreen(element) {
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
   var linkOrange = document.getElementById(id)      
-  var troubleTable = document.getElementById('troubleshooting') 
+  /* var troubleTable = document.getElementById('troubleshooting') 
   troubleTable.style.left = '20vw'
-  container1.style.left = ''  
+  container1.style.left = ''*/  
   document.body.style.zoom = "67%"
   if(screenWidth < 500){
     document.body.style.zoom = "100%" 
-    troubleTable.style.left = '47%'
+    /* troubleTable.style.left = '47%' */
   }      
   switch (id) {
     case 'link1':
@@ -3218,8 +3219,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }    
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
+      linkOrange.style.color = 'orange'
       // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3228,7 +3228,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }}
           
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
