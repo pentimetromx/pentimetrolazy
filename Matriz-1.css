@@ -7748,7 +7748,7 @@ input.numero:focus {
     align-items: center;
     height:52vh;
     width:99vw;
-    top:26.5vh;
+    top:25vh;
     left:0;
     display: none;
     z-index: 3;
@@ -7763,7 +7763,7 @@ input.numero:focus {
     align-items: flex-start;
     height:52vh;
     width:99vw;
-    top:26.5vh;
+    top:25vh;
     left:0;
     display: none;
     border-radius: 21px;
@@ -7786,7 +7786,6 @@ input.numero:focus {
     background-color: #000;
     z-index: 3;
   }
-
   #contImaginario{
     position: absolute;
     display: flex;
@@ -7794,7 +7793,7 @@ input.numero:focus {
     align-items: flex-start;
     height:52vh;
     width:99vw;
-    top:26.5vh;
+    top:25vh;
     left:0;
     display: none; 
     border-radius: 21px; 
@@ -7819,7 +7818,7 @@ input.numero:focus {
     flex-direction: column;
     height:52vh;
     width:99vw;
-    top:26.5vh;
+    top:25vh;
     left:0;
     border: 1px solid orange;
     border-radius: 20px;
