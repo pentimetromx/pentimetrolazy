@@ -3251,12 +3251,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           }
         }  
       }
-      var linksTraining = document.getElementById('linkLis')
-      linksTraining.style.marginlef = '64px'
-      var vidFesto = document.getElementById('vid-pneumatic')
-      vidFesto.style.display = 'block'      
-      vidFesto.currentTime = '0'
-      vidFesto.play()
     break;
     case 'link3':
       var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
@@ -3297,8 +3291,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }   
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-    linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
+    linkOrange.style.color = 'orange'
     // Cambiar otros enlaces a azul
     var botones = document.getElementsByClassName('colorClick')
     for (var i = 0; i < botones.length; i++) {
@@ -3313,7 +3306,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
+      }
+      animateScroll('rodillo-infeed')   
     }     
     break;  
     case 'link5':
@@ -3339,7 +3333,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
-        }   
+        }      
+        animateScroll('puesta-punto')
       }     
     break;  
     default: 
