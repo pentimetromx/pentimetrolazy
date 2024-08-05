@@ -197,16 +197,16 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           resultadosMA()
         },977) 
-        /*setTimeout(function() {
-          muestraRodillo('videoElement2','images-distribuidor')
+        setTimeout(function() {
+          ElementosMaII()
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('conti-boton-kaizen','kaizen')           
+          deslizaContenedor()          
         },1377)
         setTimeout(function() {
-          rodillosKaizen('btn17','')                               
+          deslizaContenedor('contImagNeg','fua1')                             
         },1677) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           abrirSeccionContinua()              
         },1977)
         setTimeout(function() {
@@ -235,7 +235,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('conti-boton') 
+  var contiBoton = document.getElementById('butt-links') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

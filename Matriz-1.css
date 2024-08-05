@@ -861,19 +861,6 @@ width:447px ;
   object-fit: fill;
   border-radius:15px;
 }
-#contImagGraf{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 250px;
-  top: 50px;
-  display: none;
-}
-#contImagGraf img{
-  width:117px;
-  height:489px;
-  border-radius: 17px;
-}
 #conte-botDensito,
 #conte-botDensitoII{  
   position: absolute;
@@ -1018,18 +1005,22 @@ width:447px ;
   display: flex;
   transition: left 1.007s ease; /* Usa la propiedad left para la transición */
 }
+#contImagGraf,
 #contImagNeg{
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 20%;
-  margin-top: 4%;
+  left:18vw;
+  top: 6.5vh;
+  height:59.5vh;
+  width: 11vw;
   display: none; 
   border-radius: 20px; 
 }
+#contImagGraf img,
 #contImagNeg img{
-  width:117px;
-  height:490px;
+  width:100%;
+  height:100%;
   border-radius: 17px;
 }
 #canvasContainer4{
@@ -4822,7 +4813,6 @@ input.numero:focus {
   top: 100%;
   display: inline-block;
   width: 100%;
-  /* height: 77%; */
   background-color: #adff2f;
   border-radius: 5px 5px 0 0;
 }
@@ -4949,11 +4939,11 @@ input.numero:focus {
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   flex-direction:row;
-  background-color: rgb(0, 0,10 );                 
+  background-color: rgb(0, 0,10 ); 
   border-radius:8px;                               
   width:25.3vw;
-  height:61vh; 
-  top:15vh;
+  height:52.5vh; 
+  top:22.5vh;
   left:30vw;
   padding:27px;
   display:none;
@@ -4961,6 +4951,25 @@ input.numero:focus {
 .column{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  height: 100%;
+}
+#patern{
+  position:absolute;
+  display: grid;
+  top:22.5vh;
+  left:30vw;
+  width:29vw;
+  height:60vh; 
+  border-radius:8px;                               
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  background-color: RGB(0,0,10);
+  gap: 1px;
+  display: none;
+}
+#patern .irisado{
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -4977,7 +4986,7 @@ input.numero:focus {
 #column_2{
   position:relative;
   display: flex;
-  margin-top:-2%;
+  top:-1vh;
   flex-direction: column;
   font-family: "Oswald", sans-serif;
   text-align: center;
@@ -4985,8 +4994,7 @@ input.numero:focus {
   height: 100%;
 }
 .column_spans{
-  font-size: 11px;
-  margin-top: 57%;
+  font-size:0.8vw;
   color:'';
   font: bolder;
   display: none;
@@ -5128,25 +5136,6 @@ input.numero:focus {
 #patern .irisado:nth-child(24) {
   background-color: rgb(102, 0, 255);
 }
-#patern{
-  position:absolute;
-  display: grid;
-  top:15vh;
-  left:30vw;
-  height:68vh;
-  width: 25vw; 
-  border: radius 9px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  background-color: RGB(0,0,10);
-  gap: 1px;
-  display: none;
-}
-#patern .irisado{
-  display: block;
-  width: 100%;
-  height: 100%;
-}
 #padre{
   position: absolute;
   display: grid;
@@ -5162,7 +5151,7 @@ input.numero:focus {
   overflow: hidden; 
   display: none;
 }
-  #padre > div {
+#padre > div {
   display: block;
   width: 100%;
   height: 0;
@@ -7720,32 +7709,6 @@ input.numero:focus {
     object-fit: cover;
     border-radius: 13px;
   }
-  #contImaginario{
-    position: absolute;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    height:57vh;
-    width:99vw;
-    display: none; 
-    border-radius: 21px; 
-    background-color:black;
-    border: solid 1px orange;
-    top:32vh;
-    left:0;
-    z-index: 3;
-  }
-  #imag3{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-top:1vh;
-    margin-left:9vw;
-    gap: 14px;
-    height: auto;
-    width:80vw;
-  }
   .img-1{
     height:12vh;
     width:24vw;
@@ -7785,13 +7748,85 @@ input.numero:focus {
     align-items: center;
     height:52vh;
     width:99vw;
-    top:23vh;
+    top:26.5vh;
     left:0;
     display: none;
     z-index: 3;
     border-radius: 21px; 
     background-color:black;
     border: solid 1px orange;
+  }
+  #contImaginario-II{ 
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height:52vh;
+    width:99vw;
+    top:26.5vh;
+    left:0;
+    display: none;
+    border-radius: 21px;
+    background-color:black;
+    border: solid 2px orange;
+    z-index: 3;
+  }
+  #rodillo-infeed{
+    position: absolute;
+    top: 1vh;
+    left:25vw;
+    width:66vw;
+    height:48vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    border-radius: 20px;
+    display: none;
+    overflow: auto;
+    background-color: #000;
+    z-index: 3;
+  }
+
+  #contImaginario{
+    position: absolute;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    height:52vh;
+    width:99vw;
+    top:26.5vh;
+    left:0;
+    display: none; 
+    border-radius: 21px; 
+    background-color:black;
+    border: solid 1px orange;
+    z-index: 3;
+  }
+  #imag3{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top:1vh;
+    margin-left:9vw;
+    gap: 14px;
+    height: auto;
+    width:80vw;
+  }
+  #puesta-punto{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    height:52vh;
+    width:99vw;
+    top:26.5vh;
+    left:0;
+    border: 1px solid orange;
+    border-radius: 20px;
+    display: none;
+    overflow: auto; 
+    background-color: #000;
+    z-index: 3;
   }
   #pneumatico,
   #control-neumatico{
@@ -7821,7 +7856,7 @@ input.numero:focus {
     font-size: 11px;
     font-family: "GothamRounded", sans-serif; 
   }  
-  #imag1, /* contenedor hijo ID */
+  #imag1,
   #imag2{
     position: absolute;
     display: flex;
@@ -7869,21 +7904,6 @@ input.numero:focus {
   h5{
     font-size: 8px;
   }
-  #contImaginario-II{ 
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height:50vh;
-    width:99vw;
-    display: none;
-    border-radius: 21px;
-    background-color:black;
-    border: solid 2px orange;
-    top:32vh;
-    left:0;
-    z-index: 3;
-  }
   #iconos{
     position: absolute;
     display: flex;
@@ -7906,21 +7926,6 @@ input.numero:focus {
     color: rgb(255, 204, 0); 
     font-size:4vw; 
   }
-  #rodillo-infeed{
-    position: absolute;
-    top: 1vh;
-    left:25vw;
-    width:66vw;
-    height:48vh;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid orange;
-    border-radius: 20px;
-    display: none;
-    overflow: auto;
-    background-color: #000;
-    z-index: 3;
-  }
   #imag4{
     position: absolute;
     display: flex;
@@ -7938,21 +7943,6 @@ input.numero:focus {
     border-radius: 11px;
     width:17vw;
     height:11vh;    
-  }
-  #puesta-punto{
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    height:46vh;
-    width:97vw;
-    top:32vh;
-    left:1vw;
-    border: 1px solid orange;
-    border-radius: 20px;
-    display: none;
-    overflow: auto; 
-    background-color: #000;
-    z-index: 3;
   }
   #conteneMantaut{
     position: relative;
@@ -7995,30 +7985,18 @@ input.numero:focus {
     display: flex;
     overflow: hidden;
   }
+  #contImagGraf,
   #contImagNeg{
     position: absolute;
     display: flex;
-    width:20vw;
-    height:59vh;  
+    width:21vw;
+    height:50.5vh;  
     left:37vw;
-    top:1vh;
+    top:4vh;
     display: none;
   }
+  #contImagGraf img,
   #contImagNeg img{
-    width:100%;
-    height:100%;
-    border-radius: 17px;
-  }
-  #contImagGraf{
-    position: absolute;
-    display: flex;  
-    width:20vw;
-    height:66vh;
-    left:37vw;
-    top:-5vh;
-    display:none;
-  }
-  #contImagGraf img{
     width:100%;
     height:100%;
     border-radius: 17px;
@@ -8899,11 +8877,11 @@ input.numero:focus {
   #patern{
     position:absolute;
     display:grid;
-    top:25vh;
+    top: 28.7vh;
     left: 60vw;
-    height:68vh;
+    height:50.3vh;
     width: 38vw; 
-    border-radius: 5px;
+    border-radius: 10px;
     display:none;
   }
   #wall_street_II{
@@ -8935,7 +8913,6 @@ input.numero:focus {
     font-size:2.9vw;
     overflow:hidden;
   }
-
   .butt-special{
     top:40vh;
     left:43vw;
@@ -8946,21 +8923,22 @@ input.numero:focus {
   }
   #equalizer{
     width: 25vw;
-    height:52vh; 
-    top: 27.4vh;
+    height:43vh; 
+    top: 28.7vh;
     left:60vw;
   }
   #column_2{
     position:relative;
     display: flex;
-    top: 0;
+    top:-2vh;
     flex-direction: column;
     font-family: "Oswald", sans-serif;
     text-align: center;
-    height: 90%;
-  }
+    padding: 10px;
+    height: 100%;
+  }  
   .column_spans{
-    font-size:2.2vw;
+    font-size:2vw;
     color:'';
     font: bolder;
     display: none;
