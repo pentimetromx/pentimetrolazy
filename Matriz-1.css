@@ -1112,20 +1112,6 @@ width:447px ;
 #linkPlate { margin-bottom: 7vh; }
 #linkManta { margin-bottom: 7vh; }
 #linkImpresor { margin-bottom:2vh; }
-#contImaginario{
-  position: relative;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  height: 760px;
-  width: 892px;
-  display: none; 
-  border-radius: 21px; 
-  background-color:black;
-  border: solid 2px orange;
-  top: 6%;
-  left:52%;
-}
 #rodilleria,
 #uniteñido,
 #freno,
@@ -1924,17 +1910,80 @@ header {
 #padre-1{
   position: relative;
   display: flex;
+  flex-direction: row; 
+  align-items: center;
   top: -12vh;
   left:77vw;
   height:82vh;
   width:69vw;
-  flex-direction: row; 
-  align-items: center;
   display: none; 
   border-radius: 21px; 
   background-color:black;
   border: solid 1px orange;
 } 
+#contImaginario-II{
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  top: -12vh;
+  left:77vw;
+  height:82vh;
+  width:69vw;
+  display: none; 
+  border-radius: 21px; 
+  background-color:black;
+  border: solid 1px orange;
+}
+#rodillo-infeed{
+  position: absolute;
+  left:27%;
+  top:1%;
+  width: 71.3%;
+  height: 97%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid orange;
+  border-radius: 20px;
+  display: none;
+  overflow: auto;
+  background-color: #000;
+}
+#imag4{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  width:25%;
+  top:1%;
+  left:1%;
+}
+#imag4 .img-flex{
+  border: solid 1px orange;
+  border-radius: 11px;
+  width:100%;
+  height:24%;
+}
+#control-neumatico > *,
+#rodillo-infeed > *,
+#puesta-punto > * {
+  margin-left: 17px;
+}
+#puesta-punto{
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  top: -12vh;
+  left:77vw;
+  height:82vh;
+  width:69vw;
+  border: 1px solid orange;
+  border-radius: 20px;
+  display: none;
+  overflow: auto;
+  background-color: #000;
+}
+
 #pneumatico,
 #control-neumatico{
   position: absolute;
@@ -1947,8 +1996,23 @@ header {
   border: 1px solid orange;
   border-radius: 20px;
   display: none;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x:hidden ;
   background-color: #000;
+}
+#contImaginario{
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  top: -12vh;
+  left:77vw;
+  height:82vh;
+  width:69vw;  
+  display: none; 
+  border-radius: 21px; 
+  background-color:black;
+  border: solid 2px orange;
 }
 #imag1,
 #imag2{
@@ -1964,64 +2028,6 @@ header {
   border: 2px solid orange;
   border-radius: 13px;
   cursor: pointer;
-}
-#control-neumatico > *,
-#rodillo-infeed > *,
-#puesta-punto > * {
-  margin-left: 17px;
-}
-#puesta-punto{
-  position: relative; 
-  width: 877px;
-  height: 727px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid orange;
-  border-radius: 20px;
-  display: none;
-  overflow: auto;
-  background-color: #000;
-  top: 6%;
-  left:52%;
-}
-#contImaginario-II{
-  position: relative;
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-start;
-  height:780px;
-  width: 892px;
-  display: none; 
-  border-radius: 21px; 
-  background-color:black;
-  border: solid 1px orange;
-  top: 6%;
-  left:52%;
-}
-#rodillo-infeed{
-  position: absolute;
-  left:26.5%;
-  top:1%;
-  width: 637px;
-  height: 747px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid orange;
-  border-radius: 20px;
-  display: none;
-  overflow: auto;
-  background-color: #000;
-}
-#imag4{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  width: auto;
-  top:1%;
-  left:1%;
-  gap: 7px;
-  display: none;
 }
 h6{
   color: white;
@@ -3289,12 +3295,6 @@ elemento.visible {
 }
 .colorClick:hover {
   color: orange;
-}
-#imag4 img{
-  border: solid 1px orange;
-  border-radius: 11px;
-  width: 210px;
-  height: 180px;
 }
 #bailarina{
   display: flex;

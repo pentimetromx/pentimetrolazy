@@ -3208,7 +3208,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      document.getElementById('butt-links').style.display='display'   
+      document.getElementById('butt-links').style.display='none'   
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3233,10 +3233,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
-      // Cambiar otros enlaces a azul
+      }
+      document.getElementById('butt-links').style.display='none'
+      linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
@@ -3259,9 +3258,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange'                                                                                                       ///  LINK NARANJA
+      }
+      document.getElementById('butt-links').style.display='none'
+      linkOrange.style.color = 'orange'
       // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3277,11 +3276,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           }
         }   
       }      
-      var vidBasculante = document.getElementById('vid-basculante')
-      vidBasculante.style.display = 'block'      
-      vidBasculante.currentTime = '0'
-      vidBasculante.play()
-  
     break;
     case 'link4':  
     var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed','contImaginario-II']  
@@ -3298,8 +3292,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       if (botones[i].id !== id) {
       botones[i].style.color = ''
     }}         
-    if(screenWidth < 500){
-      
+    if(screenWidth < 500){      
       var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contImaginario-II']      
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
