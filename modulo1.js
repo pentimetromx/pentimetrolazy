@@ -3210,13 +3210,11 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
       document.getElementById('butt-links').style.display='display'   
       linkOrange.style.color = 'orange'
-      // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
         botones[i].style.color = ''
-      }}
-          
+      }}          
       if(screenWidth < 500){
         var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -3244,7 +3242,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','butt-links','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III']  
+        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','butt-links','linkLis','conteneMantaut','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3276,7 +3274,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
+        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -3308,7 +3306,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     }}         
     if(screenWidth < 500){
       
-      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contImaginario-II']      
+      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contImaginario-II']      
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3334,7 +3332,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}         
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
+        var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','butt-links','linkLis','conteneMantaut','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
@@ -4648,22 +4646,20 @@ function resultadosMA(){
     usuario.style.width = '';
     usuario.style.left = '';
     var label = usuario.querySelector('label');
-    clearInterval(intervaloColor); // Detiene el intervalo de cambio de colores
+    clearInterval(intervaloColor);
     if (label) {
-        label.style.color = 'yellow'; // Cambia el color del texto a amarillo
+      label.style.color = 'yellow';
     }
   }
-
   if(screenWidth < 500){
     var etiquetasIconos = document.getElementsByClassName('lblNombres');
     for(var i = 0; i < etiquetasIconos.length; i++){
-        var labelIcon = etiquetasIconos[i];
-        clearInterval(intervaloColor); // Detiene el intervalo de cambio de colores
-        if(labelIcon){
-          labelIcon.style.color = 'yellow'; // Cambia el color del texto a amarillo
-        }    
+      var labelIcon = etiquetasIconos[i];
+      clearInterval(intervaloColor);
+      if(labelIcon){
+        labelIcon.style.color = 'yellow';
+      }    
     }
-
   }
 }
 function aumentarTamaño(element, factor, tiempo) {
