@@ -3223,6 +3223,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         } 
+        desactivarClicsPorUnTiempo()
       }
     break;
     case 'link2':
