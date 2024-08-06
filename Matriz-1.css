@@ -1393,6 +1393,7 @@ width:447px ;
 }
 #contBotCasos{
   position: relative;  
+  display: none;
 }
 #butt-013,
 #butt-01300,
@@ -1742,8 +1743,8 @@ width:447px ;
   display:flex; 
   flex-direction: column;
   background-color:#333333;
-  width: 450px;
-  height: 360px;
+  width:34vw;
+  height:47vh;
   left: 0%;
   margin-top:1%;
 } 
@@ -1776,7 +1777,7 @@ width:447px ;
 .linksTraining li a{
   color: white; /*Cambiar el color del texto a blanco*/
   cursor: pointer; /*Cambiar el cursor a una mano */
-  font-size: 21px;
+  font-size: 1.7vw;
 }
 header {
   background-color: #333;
@@ -1921,6 +1922,58 @@ header {
   background-color:black;
   border: solid 1px orange;
 } 
+#imag1,
+#imag2{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width:23%;
+  height:95%;
+  top: 	1%;
+  left: 1%;
+  background-color: #000;
+  padding: 7px;
+  border: 2px solid orange;
+  border-radius: 13px;
+  cursor: pointer;
+}
+.img1{
+  display: flex;
+  position: absolute;
+  flex-direction: column; 
+  gap: 4px;
+  display: none;
+}
+.img1 img{
+  width:93%;
+  height: 24%;
+  border-radius: 7px;
+}
+#control-neumatico{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left:27%;
+  top:1%;
+  height:97%;
+  width: 72%;  
+  border: 1px solid orange;
+  border-radius: 20px;
+  display: none;
+  overflow-y: auto;
+  overflow-x:hidden ;
+  background-color: #000;
+}
+.casos-h1{
+  font-family: GothamRounded , sans-serif;
+  font-size: 1.7vw;
+  color: orange;
+}
+.parrafo-casos{
+  font-family: GothamRounded , sans-serif;
+  font-size: 1.7vw;
+  color: whitesmoke;
+}
 #instrucciones_manometro{
   position: absolute;
   display: flex;
@@ -1950,10 +2003,11 @@ header {
 .parrafo_video{
   flex: 1;
   display: flex;
+  flex-direction: column;
   height: 100%;
   border-radius: 9px;
+  border: 1px solid white;
 }
-
 .parrafo_video video{
   display: flex;
   width: 100%;
@@ -1961,6 +2015,14 @@ header {
   border-radius: 9px;
   object-fit: fill;
 }
+.anuncio{
+  white-space: nowrap;
+  margin-top: 4vh; 
+  margin-left:0.5vw;
+  font-family: Oswald, sans-serif;
+  color: rgb(0,255,255);
+  font-size:1.7vw;
+ }
 #contImaginario-II{
   position: relative;
   display: flex;
@@ -2024,21 +2086,6 @@ header {
   background-color: #000;
 }
 #pneumatico,
-#control-neumatico{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left:27.5%;
-  top:1%;
-  height: 571.7px;
-  width: 637px;  
-  border: 1px solid orange;
-  border-radius: 20px;
-  display: none;
-  overflow-y: auto;
-  overflow-x:hidden ;
-  background-color: #000;
-}
 #contImaginario{
   position: relative;
   display: flex;
@@ -2053,26 +2100,35 @@ header {
   background-color:black;
   border: solid 2px orange;
 }
-#imag1,
-#imag2{
+#image-2{
   position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 211px;
-  height: 557px;
-  top: 	1%;
-  left: 1%;
-  background-color: #000;
-  padding: 7px;
-  border: 2px solid orange;
-  border-radius: 13px;
-  cursor: pointer;
+  display: block;
+  top: 75%;
+}
+#image-1{
+  position: absolute;
+  display: block;
+  top:1%;
+}
+.video-pneuma{
+  position: absolute;
+  display: block;
+  top: 27%;
+  width: 95%;
+  height: 30%;
+  border-radius: 10px;
+  object-fit: fill;
 }
 h6{
+  position: absolute;
+  display: block;
+  top: 53%;
+  width: 97%;
   color: white;
-  font-size: 16px;
+  font-size:1.3vw;
   font-family: "GothamRounded", sans-serif; 
 }
+
 #vid-pneumatic{
   width: 100%;
   height: 100%;
@@ -2080,18 +2136,7 @@ h6{
   border: 2px solid orange;
   border-radius: 13px;
 }
-.img1{
-  display: flex;
-  position: absolute;
-  flex-direction: column; 
-  gap: 4px;
-  display: none;
-}
-.img1 img{
-  width: 210px;
-  height: 180px;
-  border-radius: 7px;
-}
+
 #padre-neumat{
   display: flex;
   flex-direction: row;
@@ -3248,16 +3293,6 @@ elemento.visible {
   border-radius: 7px;
   width: calc(33.3333% - 10px); /* 10px es el espacio entre las imágenes */
   margin-bottom: 10px; /* Espacio entre las filas */
-}
-.casos-h1{
-  font-family: GothamRounded , sans-serif;
-  font-size: 21px;
-  color: orange;
-}
-.parrafo-casos{
-  font-family: GothamRounded , sans-serif;
-  font-size: 21px;
-  color: whitesmoke;
 }
 #toyota-kaizen-antes{
   position:absolute;
@@ -7767,6 +7802,56 @@ input.numero:focus {
   #instrucciones_manometro{
     position: absolute;
     display: flex;
+    left: 62vw;
+    top:7vh;
+    width: 45vw;
+    height: 35vh;
+    background-color: transparent; 
+    color: white;
+    font-family: "Oswald", sans-serif; 
+    font-size: 1.9vw;
+    z-index: 2;
+    display: none;
+  }
+  #vid_festo{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 2vw;
+    top:96vh; 
+    width:145vw;
+    height:30vh;
+    border-radius: 14px;
+    gap: 20%;
+    display: none;
+  }
+  .parrafo_video{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 9px;
+    border: 1px solid white;
+  }
+  .parrafo_video video{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+    object-fit: fill;
+  }
+  .anuncio{
+    white-space: nowrap;
+    margin-top: 4vh; 
+    margin-left:0.5vw;
+    font-family: Oswald, sans-serif;
+    color: rgb(0,255,255);
+    font-size:1.7vw;
+   }
+
+/*   #instrucciones_manometro{
+    position: absolute;
+    display: flex;
     left: 33%;
     top:5%;
     height:50vh;
@@ -7780,38 +7865,19 @@ input.numero:focus {
   }
   #vid_festo{
     position: relative;
-    display: flex; /* Add this line */
-    flex-direction: row; /* Ensure this is set to row */
+    display: flex;
+    flex-direction: row;
     left: 0;
     top: 63vh;
     height: 25vh;
     width: 95vw;
     background-color: rgb(125, 125, 125);
-  }
-  
+  }  
   .parrafo_video{
     flex: 1;
     display: flex;
     height: 100%;
   }
-
-/*   #vid_festo{
-    display: flex;
-    flex-direction: row;
-    left: 1vw;
-    top: 63vh;
-    height: 20vh;
-    width: 97vw;
-    border-radius: 14px;
-    display: none;
-  }
-  .parrafo_video{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-  }
- */
    .anuncio{
     white-space: nowrap;
     margin-top: -0.5%; 
@@ -7819,7 +7885,7 @@ input.numero:focus {
     font-family: Oswald, sans-serif;
     color: rgb(0,255,255);
     font-size: 17px;
-   }
+   } */
   #contImaginario-II{ 
     position: absolute;
     display: flex;
