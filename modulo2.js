@@ -1,4 +1,5 @@
 function deslizaContenedor(identificador, idButton) {
+  reponerEstilos()
   clearAllIntervals() 
   arrayIdButtsMA.forEach(element => {                                                                                                        
     var elemento = document.getElementById(element)
@@ -206,16 +207,16 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           deslizaContenedor('contImagNeg','fua1')                             
         },1677) 
-        /*setTimeout(function() {
-          abrirSeccionContinua()              
+        setTimeout(function() {
+          deslizaContenedor('troubleshooting','troubleshoot')              
         },1977)
         setTimeout(function() {
-          cierraContenedores('uTeñido')         
+          listaEntrenamientosII('archivo')        
         },2177)
         setTimeout(function() {
-          UnidadTeñido('boton9')
+          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
         },3077) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           rodillosTeñido('btn06')
         },3377)
         setTimeout(function() {
@@ -1538,9 +1539,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    }  
    troublesh.removeAttribute('style')
    document.body.style.zoom = "100%"
-   linkIni1.style.left = ''
-   linkIni2.style.left = ''  
-   container1.style.left=''
+   reponerEstilos()   
  }
  const imagenesAumentar = document.querySelectorAll('img.aumentar')
  imagenesAumentar.forEach(image => {
@@ -3253,75 +3252,6 @@ function detenerMovimiento() {
 }
 var botonSolitario = document.getElementById('buttSolitario');
 var botonSeguidor = document.getElementById('boton2');
-/* function moverDerecha() {
-  botonSeguidor.style.top = botonSolitario.style.top
-  var posicionInicialX = 0
-  var posicionFinalX = window.innerWidth - botonSolitario.offsetWidth
-
-  var intervalo = setInterval(function() {
-    if (posicionInicialX >= posicionFinalX) {
-      clearInterval(intervalo)
-      moverAbajo()
-    } else {
-      // Movimiento hacia la derecha
-      posicionInicialX += 7
-      botonSolitario.style.left = posicionInicialX + 'px'
-      botonSeguidor.style.left = (posicionInicialX - 85) + 'px'
-
-    }
-  }, 17);  
-}
-function moverAbajo() {
-  botonSeguidor.style.left = botonSolitario.style.left
-  var posicionInicialY = 0;
-  var posicionFinalY =(window.innerHeight - 33) - botonSolitario.offsetHeight;
-
-  var intervalo = setInterval(function() {
-    if (posicionInicialY >= posicionFinalY) {
-      moverIzquierda()      
-      clearInterval(intervalo);
-    } else {
-      // Movimiento hacia abajo
-      posicionInicialY += 7;
-      botonSolitario.style.top = posicionInicialY + 'px';
-      botonSeguidor.style.top = (posicionInicialY - 35) + 'px';
-    }
-  }, 17);
-}
-function moverIzquierda() {
-  botonSeguidor.style.top = botonSolitario.style.top
-  var posicionInicialX = (window.innerWidth - 33) - botonSolitario.offsetWidth;
-  var posicionFinalX = 0
-
-  var intervalo = setInterval(function() {
-    if (posicionInicialX <= posicionFinalX) {
-      moverArriba()      
-      clearInterval(intervalo);
-    } else {
-      // Movimiento hacia la izquierda
-      posicionInicialX -= 7;
-      botonSolitario.style.left = posicionInicialX + 'px';
-      botonSeguidor.style.left = posicionInicialX + 95 + 'px'
-    }
-  }, 17);
-} 
-function moverArriba() {
-  botonSeguidor.style.left = botonSolitario.style.left;
-  var posicionInicialY = (window.innerHeight - 33) - botonSolitario.offsetHeight;
-  var posicionFinalY = 0;
-
-  var intervalo = setInterval(function() {
-    if (posicionInicialY <= posicionFinalY) {
-      moverDerecha()      
-      clearInterval(intervalo);
-    } else {
-      // Movimiento hacia arriba
-      posicionInicialY -= 7;
-      botonSolitario.style.top = posicionInicialY + 'px';
-      botonSeguidor.style.top = (posicionInicialY + 35) + 'px';
-    }
-  }, 17);
-} */
 const buttons = document.querySelectorAll('.buttons')  
 var contButtsAround = document.getElementById('button-container')
 function moverBoton(boton, index) {
@@ -4168,7 +4098,6 @@ function moveCursorToEnd(input) {
   // Mover el cursor al final del input
   input.setSelectionRange(textLength, textLength); 
 } 
-
 function trasladarOblicuos(){
   var contOblicuosXI = document.getElementById('agrupaOblicuos-XI');
   contOblicuosXI.classList.add('move-oblicuos');
@@ -4256,7 +4185,6 @@ function changeColorRedAndBack() {
     }, index * 25);
   });
 }
-
 function dañarLogo() {
   var imagenAyudas = document.getElementById('imagen-ayudas')
   var imagenAyudasII = document.getElementById('imagen-ayudasII')
@@ -5538,6 +5466,11 @@ function cerrarVentanas() {
   for (let i = 0; i < ventanas.length; i++) {
     ventanas[i].style.display = 'none';
   }
+}
+function reponerEstilos(){
+  document.getElementById('links-inicialesI').style.left=''
+  document.getElementById('links-iniciales').style.left=''
+  if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
 }
 
 

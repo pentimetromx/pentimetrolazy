@@ -270,8 +270,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
-/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
   let valoresIngresados = [0, 0, 0, 0];
@@ -428,6 +426,7 @@ function ElementosMaII(elementId){
         }
       }
     }
+    reponerEstilos()
     setTimeout(() => {
       document.body.style.zoom = "100%"    
     }, 10);
@@ -789,6 +788,8 @@ function building(){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   } 
+  reponerEstilos()
+  if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
   if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
     idsArray.push(elementId);
     console.log(idsArray);
@@ -799,6 +800,7 @@ function building(){
 const neumatica = document.getElementById('neumatica');
 const moveButton = document.getElementById('moveButton');
 let moved = false;
+
 padreManometro.addEventListener('dblclick', () => {
   var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -808,9 +810,9 @@ padreManometro.addEventListener('dblclick', () => {
     }
   }
   if (!moved) {
-    padreManometro.style.left = '1%'
-    padreManometro.style.top = '-30%'
-    padreManometro.style.width = 'calc(100% - 34%)'
+    padreManometro.style.left = '41vw'
+    padreManometro.style.top = '6vh'
+    padreManometro.style.width = 'calc(100vw - 34vw)'
     moved = true;
   }
   else {

@@ -1921,6 +1921,46 @@ header {
   background-color:black;
   border: solid 1px orange;
 } 
+#instrucciones_manometro{
+  position: absolute;
+  display: flex;
+  left: 62vw;
+  top:7vh;
+  width: 45vw;
+  height: 35vh;
+  background-color: transparent; 
+  color: white;
+  font-family: "Oswald", sans-serif; 
+  font-size: 1.9vw;
+  z-index: 2;
+  display: none;
+}
+#vid_festo{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  left: 2vw;
+  top:96vh; 
+  width:145vw;
+  height:30vh;
+  border-radius: 14px;
+  gap: 20%;
+  display: none;
+}
+.parrafo_video{
+  flex: 1;
+  display: flex;
+  height: 100%;
+  border-radius: 9px;
+}
+
+.parrafo_video video{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  object-fit: fill;
+}
 #contImaginario-II{
   position: relative;
   display: flex;
@@ -1983,7 +2023,6 @@ header {
   overflow: auto;
   background-color: #000;
 }
-
 #pneumatico,
 #control-neumatico{
   position: absolute;
@@ -4661,7 +4700,6 @@ input.numero:focus {
   width: auto;
   margin-right: 4px;
 }
-/* 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 */
 .interfaz{
   position: absolute;
   display: flex;
@@ -4739,37 +4777,7 @@ input.numero:focus {
   color: yellow;
   font-family: "Oswald", sans-serif;
 }
-#instrucciones_manometro{
-  position: absolute;
-  display: flex;
-  left: 15%;
-  top:7%;
-  background-color: transparent; 
-  color: white;
-  font-family: "Oswald", sans-serif; 
-  font-size: 27px;
-  z-index: 2;
-  display: none;
-}
-#vid_festo{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 69%;
-  top: 5%; 
-  border-radius: 14px;
-  width: calc(100% - 85%);
-  gap: 20%;
-  height: calc(100% - 65%);
-  display: none;
-  /* overflow: hidden; */
-}
-#vid_festo video{
-  border-radius: 17px;
-  width: 100%; /* Asegura que el video ocupe todo el espacio disponible */
-  height: 100%; /* Asegura que el video ocupe todo el espacio disponible */
-  object-fit: fill; 
-}
+
 .move-window{
   transform: translateX(388px);
 }
@@ -7756,6 +7764,62 @@ input.numero:focus {
     background-color:black;
     border: solid 1px orange;
   }
+  #instrucciones_manometro{
+    position: absolute;
+    display: flex;
+    left: 33%;
+    top:5%;
+    height:50vh;
+    width:33vw;
+    background-color: transparent; 
+    color: white;
+    font-family: "Oswald", sans-serif; 
+    font-size:2.5vw;
+    z-index: 7;
+    display: none;
+  }
+  #vid_festo{
+    position: relative;
+    display: flex; /* Add this line */
+    flex-direction: row; /* Ensure this is set to row */
+    left: 0;
+    top: 63vh;
+    height: 25vh;
+    width: 95vw;
+    background-color: rgb(125, 125, 125);
+  }
+  
+  .parrafo_video{
+    flex: 1;
+    display: flex;
+    height: 100%;
+  }
+
+/*   #vid_festo{
+    display: flex;
+    flex-direction: row;
+    left: 1vw;
+    top: 63vh;
+    height: 20vh;
+    width: 97vw;
+    border-radius: 14px;
+    display: none;
+  }
+  .parrafo_video{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+ */
+   .anuncio{
+    white-space: nowrap;
+    margin-top: -0.5%; 
+    margin-left: 3%;
+    font-family: Oswald, sans-serif;
+    color: rgb(0,255,255);
+    font-size: 17px;
+   }
   #contImaginario-II{ 
     position: absolute;
     display: flex;

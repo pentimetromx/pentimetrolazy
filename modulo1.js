@@ -1512,7 +1512,7 @@ function abrirSeccionContinua(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  /* document.getElementById('uniteñido').style.display='none' */
+  reponerEstilos()
   document.body.style.zoom = "100%"
   /* container1.style.left='' */
   if (typeof elementId !== 'undefined') {
@@ -1826,6 +1826,7 @@ function abrirSeccionVariable(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  reponerEstilos()
   document.getElementById('cont-variable').style.display='grid'
   const child = document.getElementById('child-move-variable');
   const parent = document.getElementById('padre-variable');
@@ -1852,6 +1853,7 @@ function abrirSeccionPlanas(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  reponerEstilos()
   document.getElementById('cont-plana').style.display='grid'
   const child = document.getElementById('child-move-plana');
   const parent = document.getElementById('padre-plana');
@@ -1878,6 +1880,7 @@ function abrirSeccionCurado(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  reponerEstilos()
   document.body.style.zoom = "100%";
   container1.style.left=''
   if (typeof elementId !== 'undefined') {
@@ -1898,6 +1901,7 @@ function abrirSeccionDemo(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  reponerEstilos()
   const movil = document.getElementById('child-move-naranja')
   const currentZone = document.getElementById('tendencia-naranja')
   moveElement(movil,currentZone)
@@ -1965,6 +1969,7 @@ function abrirPrepress(elementId) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  reponerEstilos()
   botIzquierda.style.display = 'flex'
   botDerecha.style.display = 'flex'
   videosPrepress.forEach(video => {
@@ -2012,8 +2017,7 @@ function abrirDensitometria(elementId){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-
-  
+  reponerEstilos()  
   var conteBotsDensito = ['bot-densi-1','bot-densi-2','bot-densi-3','bot-densi-4','bot-densi-5','bot-densi-6'];
   for (var i = 0; i < conteBotsDensito.length; i++) {
     var botDensitometria = document.getElementById(conteBotsDensito[i]);
@@ -2161,24 +2165,17 @@ function empujarLeft() {
 }
 function reducirAlturaVentana() {
   const ventanaLateral = document.getElementById('ventana-lateral');
-  // Establecer el tamaño inicial del elemento
   let alturaActual = 677;
-  // Establecer un intervalo para reducir la altura cada 0.1 segundos
   const intervalo = setInterval(() => {
-    // Verificar si la altura actual es mayor que 100px
     if (alturaActual > 290) {
-      // Reducir la altura del elemento en 20px
       alturaActual -= 5;      
-      // Aplicar el nuevo tamaño al elemento
       ventanaLateral.style.height = alturaActual + 'px';
     } else {
-      // Si la altura llega a 100px, detener el intervalo
       clearInterval(intervalo);
     }
-  }, 7); // Intervalo de 0.1 segundos (100 milisegundos)
+  }, 7);
   setTimeout(() => {
     document.getElementById('nicho-videos').style.display = 'flex'
-    /* document.getElementById('vid04').classList.add('move-video-up') */ 
     arrayVideos.forEach(videoId => {
       let videoElement = document.getElementById(videoId);
       if (videoElement) {
@@ -2270,6 +2267,7 @@ function formateaPrepress(eltoHtml){
     }
 }
 function irContenedorAnterior() {
+  reponerEstilos()
   var previousElementID = idsArray[idsArray.length - 2];
 
   switch (previousElementID ) {  
@@ -2992,6 +2990,7 @@ function listaEntrenamientosII(btnList) {
     enlace.style.color = 'white'
   }
   })  
+  reponerEstilos()
   switch(btnList){                                                                                                                      
     case 'archivo': 
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
@@ -3214,7 +3213,10 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
         botones[i].style.color = ''
-      }}          
+      }}
+      document.getElementById('links-inicialesI').style.left='107vw'
+       document.getElementById('links-iniciales').style.left='127vw'          
+
       if(screenWidth < 500){
         var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -4623,6 +4625,7 @@ function resultadosMA(){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  reponerEstilos()
   document.body.style.zoom = "100%";
   var contiUsers = document.getElementsByClassName('cont-user'); 
   for (var i = 0; i < contiUsers.length; i++) {
