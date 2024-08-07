@@ -2005,7 +2005,7 @@ header {
   width:145vw;
   height:30vh;
   border-radius: 14px;
-  gap: 20%;
+  gap: 2%;
   display: none;
 }
 .parrafo_video{
@@ -2232,8 +2232,8 @@ h6{
   position:absolute;
   display: flex;
   flex-direction: column;
-  left: 31%;
-  top:13%;
+  left: 31vw;
+  top:22.5vh;
   transition: left 1.007s ease;
   border: 3px solid orange;  
   border-radius: 20px;
@@ -2488,12 +2488,12 @@ h6{
   display: none;
 }
 #conti-boton-kaizen{
-  position: relative;  
+  position:absolute;  
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
   left: 16.7vw;
-  top:13vh;
+  top:22.5vh;
   width: 11%;
   height: 20vh;
   gap: 4px;
@@ -2537,7 +2537,6 @@ h6{
   border-radius: 11px;
   transform: translateZ(0);
 }
-
 .hijo1{
   position: relative;
   display: flex;
@@ -3278,7 +3277,7 @@ elemento.visible {
   position:absolute;
   display: flex;
   display: none;
-  top:15vh;
+  top:22.5vh;
   left:32vw;
   width:35vw;
   height:45vh;
@@ -3299,7 +3298,6 @@ elemento.visible {
   border: orange solid 3px;
   border-radius: 9px;
 }
-
 #casos-kaizen{
   position:absolute;
   display: flex;
@@ -3308,7 +3306,7 @@ elemento.visible {
   max-width:25vw;
   margin: 0 auto;
   left:64vw;
-  top:14.5vh;
+  top:17vh;
   font-size: 1.8vw;
   font-family: GothamRounded , sans-serif;
   color:rgba(255, 24, 55);
@@ -3319,7 +3317,7 @@ elemento.visible {
   flex-direction:column;
   display: flex;
   left:73vw;
-  top:20vh;
+  top:22.5vh;
   width:10vw;
   height:40vh;
   gap: 2px;
@@ -3347,7 +3345,7 @@ elemento.visible {
   position:absolute;
   display: flex;
   left:29vw;
-  top:13vh;
+  top:22.5vh;
   width: 58vw;
   height: 70vh;
   flex-wrap: wrap;
@@ -3907,7 +3905,6 @@ h4{
   width: 100%;
   height: 100%;
 }
-
 #sitio-en-construccion{
   position: absolute;
   display: flex;
@@ -3926,13 +3923,13 @@ h4{
   display: none;
 }
 .grid-container{ 
-  position: relative;
+  position:absolute;
   display: flex;
   flex-direction: column;
   width:69vw;
   height:70vh;
   left: 29vw;
-  top: -8vh;
+  top:22.5vh;
   gap: 4px;
 }
 .row {
@@ -3967,7 +3964,6 @@ h4{
   border-radius:0 0 19px 19px;
   object-fit: fill;
 }
-
 .aumentar{ 
   cursor: pointer;
 }
@@ -7932,10 +7928,9 @@ input.numero:focus {
     height: 22%;
     border-radius: 10px;
     object-fit: fill;
-  }
-  
+  }  
   #vid_festo{
-    position: absolute;
+    position:relative;
     display: flex;
     flex-direction: row;
     left: 2vw;
@@ -7943,7 +7938,7 @@ input.numero:focus {
     width:145vw;
     height:30vh;
     border-radius: 14px;
-    gap: 20%;
+    gap: 2%;
     display: none;
   }
   .parrafo_video{
@@ -7967,7 +7962,19 @@ input.numero:focus {
     margin-left:0.5vw;
     font-family: Oswald, sans-serif;
     color: rgb(0,255,255);
-    font-size:1.7vw;
+    font-size:2.2vw;
+   }
+   .etiqueta-mano{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size:2.3vw;
+    font-family: "GothamRounded", sans-serif; 
+    top:17%;
+    left:2%;
+    height: 13%;
+    width: 100%;
    }
   #contImaginario-II{ 
     position: absolute;
