@@ -1949,6 +1949,14 @@ header {
   height: 24%;
   border-radius: 7px;
 }
+#imag2 h6{
+  position:absolute;
+  display:block;
+  top:37%;
+  font-size:1.2vw;
+  width:100%;
+}
+
 #control-neumatico{
   position: absolute;
   display: flex;
@@ -2085,7 +2093,6 @@ header {
   overflow: auto;
   background-color: #000;
 }
-#pneumatico,
 #contImaginario{
   position: relative;
   display: flex;
@@ -2095,6 +2102,50 @@ header {
   left:77vw;
   height:82vh;
   width:69vw;  
+  display: none; 
+  border-radius: 21px; 
+  background-color:black;
+  border: solid 2px orange;
+}
+#imag3{
+  position:relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-radius: 9px;
+  top:2%;
+  left:0;
+  width: 96%;
+  height:30%;
+  gap: 22px;
+}
+.conte-disco{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+  height: 100%;
+}
+.conte-disco h4{
+  font-size: 1.1vw;
+}
+.img-1{
+  height: 100%;
+  width: 100%;
+  border: 1px solid orange;
+  border-radius: 7px;
+  object-fit: fill;
+}
+#pneumatico{  
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  top: 0%;
+  left:27%;
+  height:96%;
+  width:71%;  
   display: none; 
   border-radius: 21px; 
   background-color:black;
@@ -2171,7 +2222,6 @@ h6{
   margin-bottom: 11px;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .labl-class{
   font-family: "GothamRounded", sans-serif;
   color: yellow;
@@ -2223,7 +2273,6 @@ h6{
   margin: 0;
   padding: 0;
 }
-
 #cont-secador{
   position: relative;
   display: flex;
@@ -3371,13 +3420,13 @@ elemento.visible {
   color: orange;
 }
 #bailarina{
+  position:absolute;
   display: flex;
-  position: relative;
-  left: -2px;
-  margin-top: 37px;
+  left:1vw;
+  top:44%;
   display: none;
-  height: 570px;
-  width: 881px;
+  height:55%;
+  width:97%;
   border-radius: 11px;
 }
 #vid-basculante{
@@ -3391,26 +3440,11 @@ elemento.visible {
   border: 1px solid orange;
   border-radius: 33px;
 }
-#imag3{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  top: 7px;
-  left: 2px;
-  gap: 14px;
-}
 h4{
   color: white;
   font-size: 14px;
   font-family: "GothamRounded", sans-serif;
   margin: 0;
-}
-.img-1{
-  height: 200px;
-  width: 277px;
-  border: 1px solid orange;
-  border-radius: 7px;
 }
 #diagonalCanvas,
 #tripleSinusoidalCanvas,
@@ -7743,12 +7777,6 @@ input.numero:focus {
     height: 33%;
     display: none;
   }
-  #vid-pneumatic{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 13px;
-  }
   .img-1{
     height:12vh;
     width:24vw;
@@ -7758,9 +7786,10 @@ input.numero:focus {
   #bailarina{
     display: flex;
     position: relative;
+    top:4vh;
     left:2vw;
     display: none;
-    height:35vh;
+    height:31vh;
     width:95vw;
     border-radius: 11px;
   }
@@ -7847,7 +7876,6 @@ input.numero:focus {
     z-index: 2;
     display: none;
   }
-  #pneumatico,
   #control-neumatico{
     position: absolute;
     display: flex;
@@ -7863,6 +7891,28 @@ input.numero:focus {
     left:33%;
     display: none;  
     z-index: 3;
+  }
+  #pneumatico{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width:62vw;
+    height:50vh;
+    border: 1px solid orange;
+    border-radius: 20px;
+    background-color: #000;
+    overflow: auto;
+    overflow-x: hidden;
+    top: 1vh;
+    left:33vw;
+    display: none;  
+    z-index: 3;
+  }
+  #vid-pneumatic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 13px;
   }
   .casos-h1{
     font-family: GothamRounded , sans-serif;
@@ -7964,6 +8014,10 @@ input.numero:focus {
     border: solid 1px orange;
     z-index: 3;
   }
+  .conte-disco h4{
+    font-size: 2vw;
+  }
+  
   #imag3{
     position: relative;
     display: flex;
