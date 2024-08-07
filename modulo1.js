@@ -3449,7 +3449,7 @@ function LubricaDesbobinador(idButt) {
       showLablsLubricacion()
       break;
     case 'btn2':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb','butt-links-II']  
       let elementosGrid =['inicio','bis-abuelo','padre-lubrica']
       
       for (var i = 0; i < allContenedores.length; i++) { 
@@ -4418,12 +4418,10 @@ function lubricaDiario(butId,labelId){
     }else{
       document.getElementById(label).style.color = 'rgb(255, 255, 0)'
     }
-  })  
-
-  switch(butId) {
-    
+  }) 
+  switch(butId) {    
     case 'lub-diario':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial','butt-links-II']  
       var elementosGrid =['lubricantes','abuelo-lubrica','padre-lubricante']
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  

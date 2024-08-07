@@ -5476,6 +5476,13 @@ function cerrarVentanasI(){
   document.getElementById('padre-1').style.top='25vh'
   document.getElementById('padre-1').style.left='1vw'
 }
+function cerrarVentanasII(){
+  const ventanas = document.querySelectorAll('.ventana');
+  for (let i = 0; i < ventanas.length; i++) {
+    ventanas[i].style.display = 'none';
+  }
+
+}
 function reponerEstilos(){
   document.getElementById('links-inicialesI').style.left=''
   document.getElementById('links-iniciales').style.left=''

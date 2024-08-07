@@ -5644,7 +5644,7 @@ input.numero:focus {
     display: flex;
     cursor: pointer;
     text-align: center;
-    top:50%;
+    top:52%;
     left:24%;
     height:3.7vh;
     width:46vw;
@@ -5876,13 +5876,19 @@ input.numero:focus {
   #inicio{
     display:none;
   }
+  #butt-links-II{
+    top: 65vh;
+    left: 37vw;
+    z-index:100;
+    display: none;
+  }
   .genesis{
     position:absolute;
     display: flex;
-    top:39vh;
-    left:3vw;
+    top:19vh;
+    left:0;
     width: 93vw;
-    height:38vh;
+    height:39vh;
     background-color: black;
     border-radius: 20px;
     z-index: 33;
