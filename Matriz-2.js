@@ -809,19 +809,47 @@ padreManometro.addEventListener('dblclick', () => {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  if (!moved) {
-    padreManometro.style.left = '41vw'
-    padreManometro.style.top = '6vh'
-    padreManometro.style.width = 'calc(100vw - 34vw)'
-    moved = true;
-  }
-  else {
-    imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
-    padreManometro.style.top = ''
-    padreManometro.style.left = ''
-    padreManometro.style.width = ''
-    moved = false;
-  }
+    if (!moved) {
+      padreManometro.style.left = '41vw'
+      padreManometro.style.top = '6vh'
+      padreManometro.style.width = 'calc(100vw - 34vw)'
+      moved = true;
+    }
+    else {
+      imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+      padreManometro.style.top = ''
+      padreManometro.style.left = ''
+      padreManometro.style.width = ''
+      moved = false;
+    }
+    if(screenWidth < 500){
+      if (!moved) {
+        padreManometro.style.left = '41vw'
+        padreManometro.style.top = '6vh'
+        padreManometro.style.width = 'calc(100vw - 34vw)'
+        moved = true;  
+      }
+      else {
+        imagenesPasoApaso('padre-1','imag1','instrucciones_manometro','vid_festo')
+        let instruccManometro = document.getElementById('instrucciones_manometro')
+        let videosManometro = document.getElementById('vid_festo')
+        videosManometro.style.top='63vh'
+        videosManometro.style.height='15vh'
+        videosManometro.style.width='95%'
+        videosManometro.style.position='relative'
+
+        instruccManometro.style.zIndex= '4'
+        instruccManometro.style.left='36vw'
+        instruccManometro.style.top='6vh'
+        instruccManometro.style.fontSize='2.8vw'
+
+        padreManometro.style.top = '6vh'
+        padreManometro.style.left = '2vw'
+        padreManometro.style.width = '97vw'
+        moved = false;
+      }
+  
+    }
 })
 botonClick.addEventListener('mouseup', () => {                   
   cierraContenedores('desbobinadorId','boton1')

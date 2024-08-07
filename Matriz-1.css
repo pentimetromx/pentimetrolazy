@@ -7799,6 +7799,18 @@ input.numero:focus {
     background-color:black;
     border: solid 1px orange;
   }
+  #imag1,
+  #imag2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 1%;
+    left: 1%;
+    background-color: #000;
+    z-index: 2;
+    height:48vh;
+    width:25vw;
+  }
   #instrucciones_manometro{
     position: absolute;
     display: flex;
@@ -7806,13 +7818,50 @@ input.numero:focus {
     top:7vh;
     width: 45vw;
     height: 35vh;
-    background-color: transparent; 
+    background-color: transparent;
     color: white;
     font-family: "Oswald", sans-serif; 
     font-size: 1.9vw;
     z-index: 2;
     display: none;
   }
+  #pneumatico,
+  #control-neumatico{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width:62vw;
+    height:50vh;
+    border: 1px solid orange;
+    border-radius: 20px;
+    background-color: #000;
+    overflow: auto;
+    overflow-x: hidden;
+    top: 1%;
+    left:33%;
+    display: none;  
+    z-index: 3;
+  }
+  .casos-h1{
+    font-family: GothamRounded , sans-serif;
+    font-size: 2.7vw;
+    color: orange;
+  }
+  .parrafo-casos{
+    font-family: GothamRounded , sans-serif;
+    font-size: 2.5vw;
+    color: whitesmoke;
+  }
+  .video-pneuma{
+    position: absolute;
+    display: block;
+    top: 34%;
+    width: 87%;
+    height: 22%;
+    border-radius: 10px;
+    object-fit: fill;
+  }
+  
   #vid_festo{
     position: absolute;
     display: flex;
@@ -7848,44 +7897,6 @@ input.numero:focus {
     color: rgb(0,255,255);
     font-size:1.7vw;
    }
-
-/*   #instrucciones_manometro{
-    position: absolute;
-    display: flex;
-    left: 33%;
-    top:5%;
-    height:50vh;
-    width:33vw;
-    background-color: transparent; 
-    color: white;
-    font-family: "Oswald", sans-serif; 
-    font-size:2.5vw;
-    z-index: 7;
-    display: none;
-  }
-  #vid_festo{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    left: 0;
-    top: 63vh;
-    height: 25vh;
-    width: 95vw;
-    background-color: rgb(125, 125, 125);
-  }  
-  .parrafo_video{
-    flex: 1;
-    display: flex;
-    height: 100%;
-  }
-   .anuncio{
-    white-space: nowrap;
-    margin-top: -0.5%; 
-    margin-left: 3%;
-    font-family: Oswald, sans-serif;
-    color: rgb(0,255,255);
-    font-size: 17px;
-   } */
   #contImaginario-II{ 
     position: absolute;
     display: flex;
@@ -7957,23 +7968,6 @@ input.numero:focus {
     background-color: #000;
     z-index: 3;
   }
-  #pneumatico,
-  #control-neumatico{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width:62vw;
-    height:50vh;
-    border: 1px solid orange;
-    border-radius: 20px;
-    background-color: #000;
-    overflow: auto;
-    overflow-x: hidden;
-    top: 1%;
-    left:33%;
-    display: none;  
-    z-index: 3;
-  }
   .guia-neumatica{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -7986,25 +7980,13 @@ input.numero:focus {
     font-size: 11px;
     font-family: "GothamRounded", sans-serif; 
   }  
-  #imag1,
-  #imag2{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 1%;
-    left: 1%;
-    background-color: #000;
-    z-index: 2;
-    height:48vh;
-    width:25vw;
-  }
   #imag1 h6{
-    position:relative;
+    position:absolute;
     display:block;
+    top: 54%;
+    font-size:2.4vw;
     width:100%;
   }
-  #image-1,
-  #image-2,
   #image-3,
   #image-4{
     position: relative;
@@ -8024,12 +8006,18 @@ input.numero:focus {
     border: 0.1px solid orange;
   }
   .img1 img{
-    width: 124px;
-    height: 101px;
+    position:absolute;
+    display: block;
+    top: 37%;
+    width:92%;
+    height:27%;
     border-radius: 7px;
     border: 1px solid orange;
     margin-left: -3.1px;
   }
+  #image-2{
+    top: 71%;
+  }  
   h4,
   h5{
     font-size: 8px;
