@@ -236,7 +236,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('instrucciones_manometro') 
+  var contiBoton = document.getElementById('links-iniciales') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;

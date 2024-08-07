@@ -3207,7 +3207,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      document.getElementById('butt-links').style.display='none'   
+      /* document.getElementById('butt-links').style.display='none' */   
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3215,7 +3215,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         botones[i].style.color = ''
       }}
       document.getElementById('links-inicialesI').style.left='107vw'
-       document.getElementById('links-iniciales').style.left='127vw'          
+      document.getElementById('links-iniciales').style.left='127vw'          
 
       if(screenWidth < 500){
         var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
@@ -3225,6 +3225,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }
+        document.getElementById('links-iniciales').style.left='47vw'
         animateScroll('control-neumatico')
       }
     break;

@@ -3427,22 +3427,19 @@ h4{
   margin-top: 100px; 
   /* transform: rotate(90deg); */
 }
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.contCicodelicos {                                  /* CUADRO DE BOTONES ILUMINADOS TRANSITAN EN PANTALLA */
-  position: absolute;  /* Establece la posición del elemento como absoluta en relación con el primer elemento padre que tiene una posición diferente de estática. */
-  left: -200px;  /* Define la posición inicial del elemento a -200px desde el borde izquierdo del contenedor principal. */
-  top: 50%;  /* Coloca el elemento en el 50% de la altura del contenedor principal. */
-  transform: translateY(-17%);  /* Aplica una transformación para centrar verticalmente el elemento utilizando translateY. */
-  animation: ocultarMostrar 4.5s linear forwards;  /* Asigna la animación llamada 'ocultarMostrar' con una duración de 4.5 segundos, un timing function lineal y 
-  la propiedad forwards para que se quede en el último estado después de la animación. */
+.contCicodelicos {
+  position: absolute;
+  left: -200px;
+  top: 50%;
+  transform: translateY(-17%);
+  animation: ocultarMostrar 4.5s linear forwards;
 }
-/* Definición de la animación 'ocultarMostrar' */
 @keyframes ocultarMostrar {
   0% {
-    left: -530px;  /* Estado inicial de la animación: el elemento está desplazado a la izquierda en -530px. */
+    left: -530px;
   }
   100% {
-    left: 1427px;  /* Estado final de la animación: el elemento se desplaza a la derecha en 1277px. */
+    left: 1427px;
   }
 }
 #botonesContainer {
@@ -7761,10 +7758,10 @@ input.numero:focus {
   #bailarina{
     display: flex;
     position: relative;
-    left:10vw;
+    left:2vw;
     display: none;
     height:35vh;
-    width:77vw;
+    width:95vw;
     border-radius: 11px;
   }
   #vid-basculante{
@@ -7810,6 +7807,31 @@ input.numero:focus {
     z-index: 2;
     height:48vh;
     width:25vw;
+  }
+  .img1{
+    border: 0.1px solid orange;
+  }
+  .img1 img{
+    position:absolute;
+    display: block;
+    width:92%;
+    height:27%;
+    border-radius: 7px;
+    border: 1px solid orange; 
+    margin-left: -3.1px;
+  }
+  #image-3{
+    top: 1%;
+  }
+  #image-4{
+    top: 71.5%;
+  }
+  #imag2 h6{
+    position:absolute;
+    display:block;
+    top: 34%;
+    font-size:2.4vw;
+    width:100%;
   }
   #instrucciones_manometro{
     position: absolute;
@@ -7987,33 +8009,12 @@ input.numero:focus {
     font-size:2.4vw;
     width:100%;
   }
-  #image-3,
-  #image-4{
-    position: relative;
-    display: block;
-    width:100%;
-  }
   #padre-neumat{
     position: absolute;
     display: flex;
     flex-direction: row;
     gap: 3px; 
     display: none;
-  }
-  .img1{
-    display: flex;
-    flex-direction: column;
-    border: 0.1px solid orange;
-  }
-  .img1 img{
-    position:absolute;
-    display: block;
-    top: 37%;
-    width:92%;
-    height:27%;
-    border-radius: 7px;
-    border: 1px solid orange;
-    margin-left: -3.1px;
   }
   #image-2{
     top: 71%;
