@@ -2596,9 +2596,6 @@ function irContenedorAnterior() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       } 
-
-
-
       video.style.display = 'none'
       aumentarTamanosDeBotonesV()
     break;
@@ -3207,7 +3204,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      /* document.getElementById('butt-links').style.display='none' */   
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {

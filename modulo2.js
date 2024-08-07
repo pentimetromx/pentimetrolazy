@@ -236,7 +236,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('pneumatico') 
+  var contiBoton = document.getElementById('butt-links') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5466,6 +5466,15 @@ function cerrarVentanas() {
   for (let i = 0; i < ventanas.length; i++) {
     ventanas[i].style.display = 'none';
   }
+}
+function cerrarVentanasI(){
+  const ventanas = document.querySelectorAll('.ventana');
+  for (let i = 0; i < ventanas.length; i++) {
+    ventanas[i].style.display = 'none';
+  }
+  listaEntrenamientosII('archivo')
+  document.getElementById('padre-1').style.top='25vh'
+  document.getElementById('padre-1').style.left='1vw'
 }
 function reponerEstilos(){
   document.getElementById('links-inicialesI').style.left=''
