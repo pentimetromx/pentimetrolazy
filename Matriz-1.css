@@ -5610,7 +5610,7 @@ input.numero:focus {
     position: relative;
     display: flex;
     flex-direction: row;
-    top: 15%;
+    top: 11%;
     left: 1%;
     display: none;
     width:98vw;
@@ -5627,7 +5627,7 @@ input.numero:focus {
     position: absolute;
     display: flex;
     flex-direction: row;
-    top:49%;
+    top:53%;
     left:1vw;
     height: 57vh;
     width: 100%;
@@ -5644,7 +5644,7 @@ input.numero:focus {
     display: flex;
     cursor: pointer;
     text-align: center;
-    top:48%;
+    top:50%;
     left:24%;
     height:3.7vh;
     width:46vw;
@@ -7712,7 +7712,7 @@ input.numero:focus {
     height:50vh;
     width:57vw;      
     left:37vw;
-    top:0;
+    top:2vh;
     z-index: 3;
     display: none;
   }
