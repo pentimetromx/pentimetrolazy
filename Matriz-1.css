@@ -5889,9 +5889,9 @@ input.numero:focus {
   }
   .conte-lubrica{
     position:absolute;
-    top:39%;
-    left: 3%;
-    width: 93vw;
+    top:19%;
+    left:0;
+    width: 99vw;
     height: 39vh;
     background-color: black;
     border-radius: 20px;
