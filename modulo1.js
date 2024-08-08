@@ -3393,8 +3393,7 @@ function LubricaDesbobinador(idButt) {
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var arrayLabels = ['labl1', 'labl2', 'labl3']
   var contFreno = document.getElementById('freno')
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual']                                                  /// COLOR VERDE A LOS BOTONES REDONDOS                   
+  var arrayIdButtsCheck = ['lub-diario', 'lub-semanal', 'lub-mensual']                   
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i]
     if (button) {
@@ -3402,36 +3401,29 @@ function LubricaDesbobinador(idButt) {
       document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
     } 
   }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    arrayLabels.forEach(label => {                                                                                                    ///COLOR AMARILLO A LABELS
+    arrayLabels.forEach(label => {
     if (label) {
       document.getElementById(label).style.color = 'rgb(0, 255, 0)'
     }
   })  
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                        /// COLOR VERDE A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                       
+  for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                     
     var button = arrayIdButtsLub[i]                                                                                         
     if (button === idButt) {
-      // Cambia el color del botón a rojo
       document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
       document.getElementById(button).style.color = 'black'
   
     } else {
-      // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= '#333333'
       document.getElementById(button).style.color = 'white'
     }
   }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                  /// COLOR AMARILLO A LOS BOTONES Y COLOR NEGRO AL TEXTO                                                            
+    for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                            
     var button = arrayIdButtsLubII[i]                                                                                         
     if (button === idButt) {
-      // Cambia el color del botón a rojo
       document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)'
       document.getElementById(button).style.color = 'black'
 
     } else {
-      // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= '#333333'
       document.getElementById(button).style.color = 'white'
 
@@ -3449,7 +3441,7 @@ function LubricaDesbobinador(idButt) {
       showLablsLubricacion()
       break;
     case 'btn2':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb','butt-links-II']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
       let elementosGrid =['inicio','bis-abuelo','padre-lubrica']
       
       for (var i = 0; i < allContenedores.length; i++) { 
@@ -3464,10 +3456,10 @@ function LubricaDesbobinador(idButt) {
           elemento.style.display ='grid'
         }
       }
-
       const child = document.getElementById('child-div');
       const parent = document.getElementById('inicio');
       moveElement(child,parent)
+      if(screenWidth < 500){document.getElementById('butt-links-II').style.display='flex'}
 
     break; 
     case 'btn3':
@@ -4421,7 +4413,7 @@ function lubricaDiario(butId,labelId){
   }) 
   switch(butId) {    
     case 'lub-diario':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial','butt-links-II']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
       var elementosGrid =['lubricantes','abuelo-lubrica','padre-lubricante']
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
@@ -4439,6 +4431,7 @@ function lubricaDiario(butId,labelId){
       const parent = document.getElementById('lubricantes');
       child.style.display='flex'
       moveElement(child,parent)
+      if(screenWidth < 500){document.getElementById('butt-links-II').style.display='flex'}
     break;
     case 'lub-semanal':
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
