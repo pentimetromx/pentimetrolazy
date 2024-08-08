@@ -5268,6 +5268,9 @@ input.numero:focus {
   background-color: rgb(0,0,17);
   border-radius: 20px;
 }
+#butt-links-II{
+  display: none;
+}
 .genesis{
   position:absolute;
   display:flex;
@@ -5278,6 +5281,22 @@ input.numero:focus {
   background-color: black;
   border-radius: 20px;
 }
+.contraseña{
+  position:absolute;
+  display: flex;
+  font-family: 'GothamRounded', sans-serif;
+  align-items: center;
+  justify-content: center;
+  color:whitesmoke ;
+  background-color: #000;
+  top:117%;
+  left: 31;
+  width:55%;
+  height: 4vh;
+  font-size: 1.8vw;
+  border-radius: 10px;
+}
+
 .dureza{
   width:44vw;
   height:55vh;
@@ -8741,6 +8760,21 @@ input.numero:focus {
     border-radius: 10px;
     background-color: transparent;
     z-index: 37;
+  }
+  .contraseña{
+    position:absolute;
+    display: flex;
+    font-family: 'GothamRounded', sans-serif;
+    align-items: center;
+    justify-content: center;
+    color:whitesmoke ;
+    background-color: #000;
+    top:117%;
+    left: 31;
+    width:40%;
+    height: 4vh;
+    font-size: 3.4vw;
+    border-radius: 10px;
   }
   input.numero {
     position: relative;
