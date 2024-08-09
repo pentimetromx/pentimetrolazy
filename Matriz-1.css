@@ -7665,7 +7665,7 @@ input.numero:focus {
   .linksTraining li a {
     color: white; /*Cambiar el color del texto a blanco*/
     cursor: pointer; /*Cambiar el cursor a una mano */
-    font-size: 14px;
+    font-size: 3.2vw;
   }
   #abuelo-plana,
   #abuelo-variable{
@@ -7724,24 +7724,13 @@ input.numero:focus {
     margin-bottom: 11px;
     transition: background-color 0.3s, color 0.3s;
   }
-  #linksMA{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    height:50vh;
-    width:57vw;      
-    left:37vw;
-    top:2vh;
-    z-index: 3;
-    display: none;
-  }
   .butt-links{
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top:51vh;
-    left: -3vw;
+    top:46vh;
+    left: 36vw;
     height: 3.5vh;
     width: 27vw;
     background-color: rgb(255,0,0);
@@ -7750,23 +7739,6 @@ input.numero:focus {
     font-size: 3.5vw;
     cursor: pointer;
   }
-  #conte-links{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width:100%;
-    height:100%;
-  }  
-  #linkLis{
-    position:relative;
-    display:flex; 
-    flex-direction: column;
-    background-color:#333333;
-    width:100%;
-    height:100%;
-    left: 57%;
-    top:-17%;
-  } 
   .colorClick {
     color: blue;
     width:100%;
@@ -7780,12 +7752,41 @@ input.numero:focus {
     flex-direction: column;
     color: white;
     font-family: "GothamRounded", sans-serif; 
-    top: 2%;
-    left: 2%;
-    width: 249px;
-    height: 333px;
+    top:-5vh;
+    left: 37vw;
+    width: 59vw;
+    height: 46vh;
     display: none;
   }  
+  #linksMA{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height:50vh;
+    width:57vw;      
+    left:0;
+    top:0;
+    z-index: 3;
+    display: none;
+  }
+  #conte-links{
+    position: absolute;
+    display: flex;
+    top: 0%;
+    left: 0%;
+    width:100%;
+    height:100%;
+  }
+  #linkLis{
+    position:absolute;
+    display:flex; 
+    flex-direction: column;
+    background-color:#333333;
+    width:100%;
+    height:100%;
+    left: 57%;
+    top:0;
+  } 
   #contImgEntrenos{
     position: absolute;
     display: flex;
@@ -8946,9 +8947,6 @@ input.numero:focus {
   .move-vid-smed-II{
     transform: translateY(260%);
   }
-/*   .move-grafica{
-    left: 100px;
-  } */
   .mover-up{
     transform: translateX(200px);
   }
