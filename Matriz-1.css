@@ -1119,11 +1119,24 @@ width:447px ;
   position:absolute;
   display: flex;
   left: 13vw;
-  top:19vh;
+  top:25vh;
   width: 86vw;
   height:77vh;
   display: none;
 }
+#conti-boton-rodilleria,
+#conti-boton-teñido,
+#conti-boton-freno,
+#conti-boton-desb{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top:0;
+  left:0; 
+  width:13%;
+  height:33%;
+}
+
 #frec-lubrica{
   position: absolute;
   display: flex;
@@ -2457,18 +2470,6 @@ h6{
 #tendencia-naranja .item-orange:nth-child(10) {
   width:6%;
 }
-#conti-boton-rodilleria,
-#conti-boton-teñido,
-#conti-boton-freno,
-#conti-boton-desb{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top:0;
-  left:0; 
-  width:13%;
-  height:33%;
-}
 .butt-mautonomo-freno,
 .butt-mautonomo-desbobina,
 .butt-mautonomo-rodilleria,
@@ -3678,7 +3679,7 @@ h4{
   display: flex;
   height: 100%;
   width: 100%;
-  top: 15%;
+  top: 7%;
   left: 1%;
   display: none;
 }
@@ -5242,10 +5243,10 @@ input.numero:focus {
 .conte-lubrica{
   position: absolute;
   display:grid;
-  top:19vh;
+  top:25%;
   left:42%;
-  width:57vw;
-  height:50vh;
+  width:57%;
+  height:50%;
   background-color: black;
   border-radius: 20px;
 }
@@ -5274,8 +5275,8 @@ input.numero:focus {
 .genesis{
   position:absolute;
   display:flex;
-  top:19vh;
-  left: 33%;
+  top:25vh;
+  left: 33vw;
   width: 50vw;
   height: 50vh;
   background-color: black;
@@ -5290,7 +5291,7 @@ input.numero:focus {
   color:whitesmoke ;
   background-color: #000;
   top:117%;
-  left: 31;
+  left: 23%;
   width:55%;
   height: 4vh;
   font-size: 1.8vw;
@@ -5404,6 +5405,9 @@ input.numero:focus {
   left:1%;
   width: 96%;
   grid-template-columns:50% 50%;
+}
+#butt-links{
+  display: none;
 }
 .contenedor-lubri{
   position: absolute;
@@ -7366,7 +7370,7 @@ input.numero:focus {
     position: relative;
     display: flex;
     left: 2%;
-    top: 14%;
+    top: 7.7%;
     height: 100%;
     width: 100%;
     display: none;
@@ -7751,6 +7755,7 @@ input.numero:focus {
     color: whitesmoke;
     font-size: 3.5vw;
     cursor: pointer;
+    display: none;
   }
   #largoImpresion{
     position: relative;
@@ -8777,7 +8782,7 @@ input.numero:focus {
     color:whitesmoke ;
     background-color: #000;
     top:117%;
-    left: 31;
+    left: 29.5%;
     width:40%;
     height: 4vh;
     font-size: 3.4vw;

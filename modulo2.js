@@ -196,12 +196,12 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('conteneMantaut')        
         },577)
         setTimeout(function() {
-          resultadosMA()
+          abrirSeccionContinua()
         },977) 
         setTimeout(function() {
-          ElementosMaII()
+          changeButtonStyles('pantalla-tintero')
         },1177) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           deslizaContenedor()          
         },1377)
         setTimeout(function() {
@@ -216,7 +216,7 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
         },3077) 
-        /*setTimeout(function() {
+        setTimeout(function() {
           rodillosTeñido('btn06')
         },3377)
         setTimeout(function() {

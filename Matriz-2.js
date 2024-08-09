@@ -539,7 +539,7 @@ function changeButtonStyles(elementId){
         videoElements.forEach(video => {
         if (video.id === 'vidTintero') {
           video.style.top = '0'
-          video.style.left='17.7vw'
+          video.style.left='18vw'
           video.style.display = 'block'
           video.play();          
           setTimeout(function () {
