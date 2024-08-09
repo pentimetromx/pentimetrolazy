@@ -7191,11 +7191,6 @@ input.numero:focus {
     height: 100vh;
     width: 100vh;
   }
-
-  #bateria-entintado-II video{
-    border-radius: 10px;
-    height: 250px;
-  }
   #contenedor-7{
     position: absolute;
     flex-direction: column;
@@ -7204,6 +7199,11 @@ input.numero:focus {
     left:44%;
     z-index: 3;
     transition: transform 1.6s ease;
+  }
+
+  #bateria-entintado-II video{
+    border-radius: 10px;
+    height: 250px;
   }
   .contene-botones{
     position: absolute;
