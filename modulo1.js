@@ -3214,13 +3214,14 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       document.getElementById('links-iniciales').style.left='127vw'          
 
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','largoImpresion','control-neumatico','padre-1','troubleshooting']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','control-neumatico','padre-1','troubleshooting']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }
+        document.getElementById('butt-links').style.left='0'
         document.getElementById('links-iniciales').style.left='47vw'
         animateScroll('control-neumatico')
       }
@@ -4431,7 +4432,11 @@ function lubricaDiario(butId,labelId){
       const parent = document.getElementById('lubricantes');
       child.style.display='flex'
       moveElement(child,parent)
-      if(screenWidth < 500){document.getElementById('butt-links-II').style.display='flex'}
+      if(screenWidth < 500){
+        document.getElementById('butt-links-II').style.display='flex'
+        document.getElementById('butt-links-II').style.display='flex'
+
+      }
     break;
     case 'lub-semanal':
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  

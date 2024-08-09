@@ -5296,7 +5296,6 @@ input.numero:focus {
   font-size: 1.8vw;
   border-radius: 10px;
 }
-
 .dureza{
   width:44vw;
   height:55vh;
@@ -5898,9 +5897,13 @@ input.numero:focus {
     display:none;
   }
   #butt-links-II{
-    top: 65vh;
-    left: 37vw;
-    z-index:100;
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:60vh;
+    left:38vw;
+    z-index: 34;    
     display: none;
   }
   .genesis{
@@ -7724,13 +7727,23 @@ input.numero:focus {
     margin-bottom: 11px;
     transition: background-color 0.3s, color 0.3s;
   }
-  .butt-links{
+  .colorClick {
+    color: blue;
+    width:100%;
+  }
+  .colorClick:hover {
+    color: orange;
+  }
+  #butt-links{
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top:46vh;
-    left: 36vw;
+    top:117%;
+    left:0;
+    z-index: 5;
+  }
+  .butt-links{
     height: 3.5vh;
     width: 27vw;
     background-color: rgb(255,0,0);
@@ -7738,13 +7751,6 @@ input.numero:focus {
     color: whitesmoke;
     font-size: 3.5vw;
     cursor: pointer;
-  }
-  .colorClick {
-    color: blue;
-    width:100%;
-  }
-  .colorClick:hover {
-    color: orange;
   }
   #largoImpresion{
     position: relative;
