@@ -4853,7 +4853,7 @@ input.numero:focus {
   transform: translateY(100%);
 }
 .move-title{
-  transform: translateX(-1111px);
+  transform: translateX(-85vw);
 }
 .move_video{
   transform: translateX(200px);    
@@ -8974,7 +8974,7 @@ input.numero:focus {
     transform: translateX(98vw)
   }
   .move-title{
-    transform: translateX(-413px);
+    transform: translateX(-98vw);
   }
   .contenedor{
     position: relative;
