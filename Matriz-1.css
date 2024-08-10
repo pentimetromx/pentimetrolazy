@@ -7165,7 +7165,7 @@ input.numero:focus {
   #conti-boton-repuestos-I{
     position: absolute;
     display: flex;
-    top:0;
+    top:-25%;
     left:44%;
     width:28%;
   }
@@ -7195,14 +7195,14 @@ input.numero:focus {
     position: absolute;
     transition: transform 1.6s ease;
   }
-  #bateria-entintado-II{
+  /* #bateria-entintado-II{
     position:relative;
     display: flex;
     left:3%;
     top: 18%;
     height:80vh;
     width:96vw;
-  }
+  } */
   #video-entintado{
     position:absolute;
     display: flex;
@@ -7260,12 +7260,25 @@ input.numero:focus {
     margin-top: 87%;
     margin-left: 3%;
   }
-  #sector-distribuidor{
+/*   #sector-distribuidor{
     display: none;
     width: 98vw;
     height: 80vh;
   }
-  #sector-entintador{
+  #sector-entintador{ 
+    position: relative;
+    display: flex;
+    width: 98vw;
+    height: 80vh;
+    top: 7%;
+    left: 1%;
+    display: none;
+  } */
+  #sector-distribuidor,
+  #bateria-entintado-II,
+  #sector-entintador,
+  #sector-smed,
+  #bancada-torre-II{
     position: relative;
     display: flex;
     width: 98vw;
@@ -7274,7 +7287,8 @@ input.numero:focus {
     left: 1%;
     display: none;
   }
-  #conti-video-entintador{
+
+  #conti-video-entintador{ 
     position: absolute;
     display: flex;
     top: 5%;
@@ -7285,7 +7299,7 @@ input.numero:focus {
     border-radius: 19px;  
     transition: transform 1.6s ease;
   }
-  #videoElement3{
+  #videoElement3{ 
     position: absolute; 
     left:0;
     top:0;
@@ -7419,7 +7433,7 @@ input.numero:focus {
     width: 200px;
     transition: transform 1.6s ease;
   }
-  #bancada-torre-II{
+/*   #bancada-torre-II{
     position: relative;
     display: flex;
     left: 2%;
@@ -7427,7 +7441,7 @@ input.numero:focus {
     height: 100%;
     width: 100%;
     display: none;
-  }
+  } */
   #contenedor-8{
     position: absolute;
     top: -205%;
@@ -8972,7 +8986,7 @@ input.numero:focus {
     transform: translateY(870px) translateX(-107px); 
   }  
   .move-repuest-II{
-    transform: translateY(555px) translateX(-111px); 
+    transform: translateY(60vh) 
   }
   .move-images-II{
     transform: translateY(93vh) translateX(-25vw);
