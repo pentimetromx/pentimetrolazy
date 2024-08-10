@@ -642,7 +642,6 @@ function changeButtonStyles(elementId){
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       }
-
       const botonElement = document.querySelectorAll('.boton-g, .image-isopropil')
       var delay = 100;
       for (var i = 0; i < botonElement.length; i++) {

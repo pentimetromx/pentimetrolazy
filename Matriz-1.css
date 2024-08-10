@@ -7256,7 +7256,22 @@ input.numero:focus {
     left: 1%;
     display: none;
   }
-
+  #contenedor-8{
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    top: -205%;
+    transition: transform 1.6s ease;
+  }
+  #conti-video-bancada{
+    position: absolute;
+    display: flex;
+    top: -68%;
+    left: 0;
+    width: 60%;
+    height: 25%;
+    transition: transform 1.6s ease;
+    }  
   #conti-video-entintador{ 
     position: absolute;
     display: flex;
@@ -7332,7 +7347,7 @@ input.numero:focus {
     flex-direction: column;
     gap: 1px;
     margin-top: -93vh;
-    left:80;
+    left:76vw;
     height: 40vh;
     width: 30vw;
     display: none;
@@ -7391,13 +7406,6 @@ input.numero:focus {
     height: 150px;
   }
   #conti-video-smed{
-/*     position: absolute;
-    display: flex;
-    left: 117%;
-    height: 200px;
-    width: 200px;
-    transition: transform 1.6s ease;
- */
     position: absolute;
     display: flex;
     top:131%;
@@ -7407,12 +7415,8 @@ input.numero:focus {
     border: solid 1px white;
     border-radius: 19px;  
     transition: transform 1.6s ease;
-  }
+  }  
   #plate-smed{
-/*     position: absolute;
-    display: flex;
-    height:193px; */
-
     position: absolute; 
     display: flex;
     border-radius: 19px;
@@ -7422,26 +7426,13 @@ input.numero:focus {
     width: 100%;
     height: 100%;
   }
-
-  #contenedor-8{
-    position: absolute;
-    top: -205%;
-    transition: transform 1.6s ease;
-  }
-  #conti-video-bancada{
-  position: absolute;
-  display: flex;
-  top: -68%;
-  height: 200px;
-  transition: transform 1.6s ease;
-  }
   #imgsIsopropil{
     position: absolute; 
     left: 42%;
     top: 174%; 
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 160px;
     height: 400px;
     transition: transform 1.6s ease;
   }
@@ -7476,7 +7467,6 @@ input.numero:focus {
     border-radius: 9px;
     background-color: rgba(83, 82, 82, 0.678);
     transition: transform 1.6s ease;
-
     display: none;  
   }  
   .image-isopropil{
@@ -8999,7 +8989,6 @@ input.numero:focus {
     transform: translateY(-247%);
   }
   .move-butts-IV{
-    /* transform: translateY(543%); */
     transform: translateY(529%);
   }
   .move-vid-smed-II{

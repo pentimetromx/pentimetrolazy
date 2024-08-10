@@ -199,10 +199,10 @@ document.addEventListener('keydown', function(event) {
           abrirSeccionContinua()
         },977) 
         setTimeout(function() {
-          changeButtonStyles('bateria-entintado-II', 'contene-7')
+          changeButtonStyles('bancada-torre-II')
         },1177) 
         setTimeout(function() {
-          muestraRodillo('plate-smed','images-entintador')        
+        
         },1377)
         /*setTimeout(function() {
           deslizaContenedor('contImagNeg','fua1')                             
