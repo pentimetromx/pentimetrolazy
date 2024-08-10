@@ -7218,7 +7218,7 @@ input.numero:focus {
     position: absolute;
     flex-direction: column;
     display: flex;
-    top:105%;
+    top:118%;
     left:82%;
     z-index: 3;
     transition: transform 1.6s ease;
@@ -7305,14 +7305,16 @@ input.numero:focus {
   #images-entintador{
     position: relative;
     display: flex;
-    height: 200px;
-    margin-top: -397px;
+    height: 100vh;
+    width: 22vw;
+    margin-top: -55vh;
     left: 73%;
     display: none;
     transition: transform 1.6s ease;
   }
   #images-entintador img{ 
-    width: 90px;
+    width:100%;
+    height: 20%;
   }
   #conti-boton-repuestos-I{
     position: absolute;
@@ -8949,7 +8951,7 @@ input.numero:focus {
     }
   }
   .move-up-left{
-    transform: translateY(457px); 
+    transform: translateY(64vh); 
   }
   .move-up{
     transform: translateY(-677px);  

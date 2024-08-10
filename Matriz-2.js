@@ -589,7 +589,7 @@ function changeButtonStyles(elementId){
           }
         }
         contibotsDistri.classList.remove('move-up')
-        contibotsDistri.style.marginTop = '-5%'
+        /* contibotsDistri.style.marginTop = '-5%' */
         contVideo.classList.remove('move-up-left')
         contVid.style.display='block' 
         videoElements.forEach(video => {
