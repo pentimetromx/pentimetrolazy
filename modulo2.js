@@ -193,18 +193,18 @@ document.addEventListener('keydown', function(event) {
         
         abrirSeccionOperativa('cont-titulo-operacion')       
         setTimeout(function() {
-          ElementosMaII('conteneMantaut')        
+          ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
           abrirSeccionContinua()
         },977) 
         setTimeout(function() {
-          changeButtonStyles('pantalla-tintero')
+          changeButtonStyles('bateria-entintado-II', 'contene-7')
         },1177) 
-        /*setTimeout(function() {
-          deslizaContenedor()          
-        },1377)
         setTimeout(function() {
+          muestraRodillo('videoElement2','images-distribuidor')         
+        },1377)
+        /*setTimeout(function() {
           deslizaContenedor('contImagNeg','fua1')                             
         },1677) 
         setTimeout(function() {
@@ -236,7 +236,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('butt-links') 
+  var contiBoton = document.getElementById('butt-repuestos') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
