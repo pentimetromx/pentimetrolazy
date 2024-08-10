@@ -202,7 +202,7 @@ document.addEventListener('keydown', function(event) {
           changeButtonStyles('bateria-entintado-II', 'contene-7')
         },1177) 
         setTimeout(function() {
-          muestraRodillo('videoElement3','images-entintador')        
+          muestraRodillo('plate-smed','images-entintador')        
         },1377)
         /*setTimeout(function() {
           deslizaContenedor('contImagNeg','fua1')                             
@@ -236,7 +236,7 @@ document.addEventListener('keydown', function(event) {
 // SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('butt-repuestos') 
+  var contiBoton = document.getElementById('conti-video-smed') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
