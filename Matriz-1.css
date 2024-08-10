@@ -6733,12 +6733,6 @@ input.numero:focus {
     top: 10%;
     left: 5%;
   }   
-  #videoElement3{
-    position: absolute; 
-    left: 2%;
-    top: 19%;
-    height:197px;
-  }
   #videoElement4{
     position: absolute; 
     left: 2%;
@@ -7158,18 +7152,26 @@ input.numero:focus {
     z-index: -1;
 
   }
+  #conti-boton-repuestos{
+    position: absolute;
+    display: flex;
+    top: -8%;
+    left: 68%;
+    width: 40%;
+    height: 27%;
+  }
   #butt-repuestos-II,
   #butt-repuestos-I,
   #butt-repuestos{
-    position: fixed;
+    position:absolute;
     display: flex;
     font-family: "GothamRounded", sans-serif;
     align-items: center;
     justify-content: center;
-    font-size: 7px;
+    font-size: 1.7vw;
     color: white;
-    height: 27px;
-    width: 133px;
+    height: 15%;
+    width: 77%;
     margin-top: -107px;
     margin-left: 7px;
     border-radius: 9px;
@@ -7185,25 +7187,41 @@ input.numero:focus {
     transition: transform 1.6s ease;
   }
   #bateria-entintado-II{
-    position:absolute;
+    position:relative;
+    display: flex;
     left:3%;
     top: 18%;
-    height: 100vh;
-    width: 100vh;
+    height:80vh;
+    width:96vw;
+  }
+  #video-entintado{
+    position:absolute;
+    display: flex;
+    left:0;
+    top: -79.6%;
+    height: 100%;
+    width: 100%;
+    transition: transform 1.6s ease;
+    display: none;
+  }
+  #bateria-entintado-II video{
+    position: absolute;
+    display:flex;
+    left:0;
+    top: 0;
+    height:34%;
+    width: 70%;
+    border-radius: 10px;
+    object-fit: fill; 
   }
   #contenedor-7{
     position: absolute;
     flex-direction: column;
     display: flex;
     top:105%;
-    left:44%;
+    left:82%;
     z-index: 3;
     transition: transform 1.6s ease;
-  }
-
-  #bateria-entintado-II video{
-    border-radius: 10px;
-    height: 250px;
   }
   .contene-botones{
     position: absolute;
@@ -7211,26 +7229,6 @@ input.numero:focus {
     flex-direction: column;
     left: -0.1%;
     display: none;
-  }
-  #video-entintado{
-    position:absolute;
-    display: flex;
-    left:-31%;
-    top: -54%;
-    height: 100%;
-    width: 100%;
-    transition: transform 1.6s ease;
-    display: none;
-  }
-  #videoElement1-II{
-    position:absolute;
-    display:flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit:fill;
-    border: solid 1px white;
   }
   .boton-h,
   .boton-g,
@@ -7253,10 +7251,49 @@ input.numero:focus {
     margin-top: 87%;
     margin-left: 3%;
   }
+  #sector-distribuidor{
+    display: none;
+    width: 98vw;
+    height: 80vh;
+  }
+  #sector-entintador{
+    position: relative;
+    display: flex;
+    width: 98vw;
+    height: 80vh;
+    top: 7%;
+    left: 1%;
+    display: none;
+  }
   #conti-video-entintador{
     position: absolute;
     display: flex;
+    top: 5%;
     left: 111%;
+    width: 60%;
+    height: 30%;
+    border: solid 1px white;
+    border-radius: 19px;  
+    transition: transform 1.6s ease;
+  }
+  #videoElement3{
+    position: absolute; 
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 19px;
+  }
+  #conti-video-distribuidor{
+    position: absolute;
+    display: flex;
+    top:131%;
+    left: 28%;
+    width: 60%;
+    height: 30%;
+    border: solid 1px white;
+    border-radius: 19px;  
     transition: transform 1.6s ease;
   }
   #contenedor-7-VI{
@@ -7288,22 +7325,6 @@ input.numero:focus {
     display: flex;
     top: -77%;
     left: 2%;
-    transition: transform 1.6s ease;
-  }
-  #sector-distribuidor{
-    display: none;
-    width: 98vw;
-    height: 80vh;
-  }    
-  #conti-video-distribuidor{
-    position: absolute;
-    display: flex;
-    top:131%;
-    left: 28%;
-    width: 60%;
-    height: 30%;
-    border: solid 1px white;
-    border-radius: 19px;  
     transition: transform 1.6s ease;
   }
   #videoElement2{
@@ -7339,12 +7360,6 @@ input.numero:focus {
     transition: transform 0.1s ease, filter 0.1s ease;
     border-radius: 11px;
     transform: translateZ(0);
-  }
-  #conti-boton-repuestos{
-    position: absolute;
-    display: flex;
-    top: -8%;
-    left: 66%;
   }
   #plate-smed{
     position: absolute;
