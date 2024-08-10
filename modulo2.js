@@ -202,7 +202,7 @@ document.addEventListener('keydown', function(event) {
           changeButtonStyles('bateria-entintado-II', 'contene-7')
         },1177) 
         setTimeout(function() {
-          muestraRodillo('videoElement2','images-distribuidor')         
+          muestraRodillo('videoElement3','images-entintador')        
         },1377)
         /*setTimeout(function() {
           deslizaContenedor('contImagNeg','fua1')                             

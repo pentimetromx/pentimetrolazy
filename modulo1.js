@@ -162,7 +162,6 @@ function muestraRodillo (vidElem, imgCont){
     setTimeout(() => {
       applyImageEffects()
     }, 277) 
-
     for (const video of videoElements) {
     if (video.id === vidElem) {
       video.style.display = 'flex' 

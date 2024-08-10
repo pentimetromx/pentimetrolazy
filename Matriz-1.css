@@ -7291,7 +7291,7 @@ input.numero:focus {
   #contenedor-7-VI{
     position: absolute;
     display: flex;
-    top: 79%;
+    top:110%;
     left: 3%;
   }
   #images-entintador{
@@ -7300,7 +7300,7 @@ input.numero:focus {
     height: 100vh;
     width: 22vw;
     margin-top: -55vh;
-    left: 73vw;
+    left:48vw;
     display: none;
     transition: transform 1.6s ease;
   }
@@ -8948,16 +8948,16 @@ input.numero:focus {
     transform: translateY(121vh) translateX(-20vh); 
   }  
   .move-repuest-II{
-    transform: translateY(60vh) 
+    transform: translateY(53vh) 
   }
   .move-images-II{
-    transform: translateY(93vh) translateX(-25vw);
+    transform: translateY(85vh)
   }
   .move-butts-II{
-    transform: translateY(-537px) translateX(-1px);
+    transform: translateY(-83vh)
   }
   .move-vid-entintador{
-    transform: translateX(-347px) translateY(30px);
+    transform: translateX(-81vw)
   }
   .move-repuest-III{
     transform: translateY(613px); 
