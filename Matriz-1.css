@@ -3665,7 +3665,9 @@ h4{
 #plate-smed{
   position: absolute;
   display: flex;
-  height:400px;
+  height:100%;
+  width: 100%;
+  object-fit: cover;
 }
 #bancada-torre-II,
 #sector-smed,
@@ -8727,30 +8729,55 @@ input.numero:focus {
     transition: transform 1.6s;
   }
   #padre-circle{
-    position: relative;
+    position: absolute;
     display: flex;
-    top: -60%;
-    left: 4%; 
-    width: 300px;
-    height:50px ;
-    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 14%;
+    left: 4%;
+    width: 35vw;
+    height: 5.5vh;
   }
   #conte-ayudas{
     position: absolute;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     top: 14%;
     left: 41%;
-    width: 77px;
-    height: 77px;
-    }
+    width: 35vw;
+    height: 5.5vh;
+  }
+  #imagen-ayudas{
+    position: absolute;
+    display: flex;
+    width: 7.6vw;
+    height:4.44vh;
+    left: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.2s ease; /* Transición suave para el efecto */
+  }
+  #conte-ayudas h6{
+    position:absolute;
+    display: flex;
+    left: 30%;
+    top:-30%;
+    font-size:2.7vw;
+    display: none;
+  }  
   #circle{
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 5px;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 7.6vw;
+    height:4.44vh;
+    left: 0;
     background-color: rgb(100,100,125);
     border-radius: 50%;
     cursor: pointer;
@@ -8758,10 +8785,11 @@ input.numero:focus {
     display: none;
   }
   #padre-circle h6{
-    position: absolute;
-    margin-left: 13%;
-    margin-top:2%;
-    font-size: 17px; 
+    position:absolute;
+    display: flex;
+    left:13%;
+    top:25%;
+    font-size:2.7vw;
     display: none;
   }
   #circle .line{
@@ -9112,7 +9140,7 @@ input.numero:focus {
     width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
     transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
   }
-  #imagen-ayudas{
+/*   #imagen-ayudasII{
     position: absolute;
     display: flex;
     width: 32px;
@@ -9120,18 +9148,8 @@ input.numero:focus {
     border-radius: 100px;
     cursor: pointer;
     display: none;
-    transition: all 0.2s ease; /* Transición suave para el efecto */
-  }
-  #imagen-ayudasII{
-    position: absolute;
-    display: flex;
-    width: 32px;
-    height: 32px;
-    border-radius: 100px;
-    cursor: pointer;
-    display: none;
-    transition: all 0.2s ease; /* Transición suave para el efecto */
-  }
+    transition: all 0.2s ease:
+  } */
   #padre{
     position:absolute;
     top:18vh;
