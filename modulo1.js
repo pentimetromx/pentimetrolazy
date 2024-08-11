@@ -2068,6 +2068,7 @@ function muestraVidPrisma(eltoHtml) {
   var conteAyudas = document.getElementById('conte-ayudas')
   var primerAyuda = document.getElementById('imagen-ayudas')
   const videoComponent = document.getElementById(eltoHtml)
+  reponerEstilos()
   primerAyuda.style.display = 'flex'
   conteAyudas.style.display = 'flex'
   circulo.style.display = 'flex'
@@ -2124,6 +2125,75 @@ function muestraVidPrisma(eltoHtml) {
     default:
   } 
 }
+let ejecutando = false;
+function alternarAyudas() {
+  var imagenAyudas = document.getElementById('imagen-ayudas')
+  var contenedorElementos = document.getElementById('contenedorElementos')
+  imagenAyudas.classList.remove('pressed');
+
+  if (ejecutando) {
+    // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
+    return;
+  }
+  ejecutando = true;
+  setTimeout(() => {
+    imagenAyudas.classList.add('pressed');
+  }, 17);
+  setTimeout(() => {
+    contenedorElementos.style.display = 'block';
+  }, 77);
+  setTimeout(() => {
+    imagenAyudas.classList.remove('pressed');
+    ejecutando = false;
+  },277);
+}
+function interfazAvance() {
+  let verInterfaz = document.getElementById('container_interfaz')
+  let verInterfazII = document.getElementById('container_interfaz_2')
+  let verInterfazIII = document.getElementById('container_interfaz_3')              
+  let verDisplay = document.getElementById('display')
+  let verDisplayII = document.getElementById('display_2')
+  let verDisplayIII = document.getElementById('display_3') 
+  botIzquierda.style.display = 'none'
+  botDerecha.style.display = 'none'
+  clickHabilitado = true  
+  if (botIzquierda && botDerecha && padreUno && padreDos && padreTres) {
+    botIzquierda.style.display = 'none';
+    botDerecha.style.display = 'none';
+    [padreUno, padreDos, padreTres].forEach(padre => {
+      padre.style.display = 'block';
+      padre.classList.remove('move_container', 'move_containerI', 'move_containerII');
+    });
+  }
+  makeFilters()
+  makeFiltersII()
+  makeFiltersIII()
+  desactivarClicsPorUnTiempoIII()
+  padreVideos.classList.remove('move_video');
+  setTimeout(() => {
+  padreVideos.classList.add('move_video');
+  }, 500);
+  ocultarElementos('contenedorElementos');
+  [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
+    eliminarEstilosInline(elemento);
+  });
+  const elementosFlex = [
+    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
+    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
+    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
+  ];  
+  const elementosVisible = [
+    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
+    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
+    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
+  ];
+  for (let i = 0; i < elementosFlex.length; i++) {
+    elementosFlex[i].style.display = 'flex';
+  }  
+  for (let i = 0; i < elementosVisible.length; i++) {
+    elementosVisible[i].style.visibility = 'visible';
+  }
+} 
 function ventanaLateral(eltoHtml){
   acumuladorVideos.push(eltoHtml)
   var ventaFlotante = document.getElementById('ventana-lateral')

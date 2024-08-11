@@ -4879,7 +4879,7 @@ input.numero:focus {
   transform: translateX(-85vw);
 }
 .move_video{
-  transform: translateX(200px);    
+  transform: translateX(16.7vw);    
 }
 .move_container{
   transform: translateY(-137px);
@@ -8932,10 +8932,10 @@ input.numero:focus {
     top: -3%;
   }
   #contenedorElementos{
-    position: relative;
+    position:absolute;
     display: flex;
     display: none;
-    top: -58%;
+    top:20%;
     left: 17%;
     width: 52%;
     height:40%;
@@ -9057,6 +9057,9 @@ input.numero:focus {
   .move-title{
     transform: translateX(-98vw);
   }
+  .move_video{
+    transform: translateY(-35vh);    
+  }
   .contenedor{
     position: relative;
     width: 300px;
@@ -9141,16 +9144,6 @@ input.numero:focus {
     width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
     transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
   }
-/*   #imagen-ayudasII{
-    position: absolute;
-    display: flex;
-    width: 32px;
-    height: 32px;
-    border-radius: 100px;
-    cursor: pointer;
-    display: none;
-    transition: all 0.2s ease:
-  } */
   #padre{
     position:absolute;
     top:18vh;

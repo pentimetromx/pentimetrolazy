@@ -195,24 +195,24 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirSeccionContinua()
+          abrirPrepress('pre-prensa')
         },977) 
         setTimeout(function() {
-          changeButtonStyles('bancada-torre-II')
+          muestraVidPrisma('prisma-vid-II')
         },1177) 
         setTimeout(function() {
         
         },1377)
-        /*setTimeout(function() {
-          deslizaContenedor('contImagNeg','fua1')                             
+        setTimeout(function() {
+          alternarAyudas()                        
         },1677) 
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')              
+          cambiarColor(this, false)
         },1977)
         setTimeout(function() {
-          listaEntrenamientosII('archivo')        
+          interfazAvance()       
         },2177)
-        setTimeout(function() {
+        /*setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
         },3077) 
         setTimeout(function() {
@@ -3998,60 +3998,6 @@ function mostrarInterfaz() {
   posicionPantalla.style.zIndex = '3'
   display.style.zIndex = '3'
 }
-function interfazAvance() {
-  /* var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
-    }
-  }  */
-  let verInterfaz = document.getElementById('container_interfaz')
-  let verInterfazII = document.getElementById('container_interfaz_2')
-  let verInterfazIII = document.getElementById('container_interfaz_3')              
-  let verDisplay = document.getElementById('display')
-  let verDisplayII = document.getElementById('display_2')
-  let verDisplayIII = document.getElementById('display_3') 
-  botIzquierda.style.display = 'none'
-  botDerecha.style.display = 'none'
-  clickHabilitado = true  
-  if (botIzquierda && botDerecha && padreUno && padreDos && padreTres) {
-    botIzquierda.style.display = 'none';
-    botDerecha.style.display = 'none';
-    [padreUno, padreDos, padreTres].forEach(padre => {
-      padre.style.display = 'block';
-      padre.classList.remove('move_container', 'move_containerI', 'move_containerII');
-    });
-  }
-  makeFilters()
-  makeFiltersII()
-  makeFiltersIII()
-  desactivarClicsPorUnTiempoIII()
-  padreVideos.classList.remove('move_video');
-  setTimeout(() => {
-  padreVideos.classList.add('move_video');
-  }, 500);
-  ocultarElementos('contenedorElementos');
-  [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
-    eliminarEstilosInline(elemento);
-  });
-  const elementosFlex = [
-    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
-    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
-    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
-  ];  
-  const elementosVisible = [
-    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
-    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
-    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
-  ];
-  for (let i = 0; i < elementosFlex.length; i++) {
-    elementosFlex[i].style.display = 'flex';
-  }  
-  for (let i = 0; i < elementosVisible.length; i++) {
-    elementosVisible[i].style.visibility = 'visible';
-  }
-} 
 function eliminarEstilosInline(elemento) {
   var estilosAplicados = window.getComputedStyle(elemento)
   for (var i = 0; i < estilosAplicados.length; i++) {
@@ -4203,28 +4149,6 @@ function dañarLogo() {
   }, 350);  
 
 }
-let ejecutando = false;
-function alternarAyudas() {
-  var imagenAyudas = document.getElementById('imagen-ayudas')
-  var contenedorElementos = document.getElementById('contenedorElementos')
-  imagenAyudas.classList.remove('pressed');
-
-  if (ejecutando) {
-    // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
-    return;
-  }
-  ejecutando = true;
-  setTimeout(() => {
-    imagenAyudas.classList.add('pressed');
-  }, 17);
-  setTimeout(() => {
-    contenedorElementos.style.display = 'block';
-  }, 77);
-  setTimeout(() => {
-    imagenAyudas.classList.remove('pressed');
-    ejecutando = false;
-  },277);
-}
 let ocultarTimer = null; 
 function mostrarElementos() {
   const contenedorElementos = document.getElementById('contenedorElementos');
@@ -4269,9 +4193,7 @@ function ocultarElementos(eltoID) {
     break;
     case 'imagen-ayudas':
       const imagenAyudas = document.getElementById('imagen-ayudas');
-      const imagenAyudasII = document.getElementById('imagen-ayudasII');
       imagenAyudas.style.display = 'flex'
-      imagenAyudasII.style.display = 'none' 
       if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
         // Espera 500 ms antes de ocultar el elemento
         setTimeout(() => {
@@ -4282,21 +4204,7 @@ function ocultarElementos(eltoID) {
         }, 200);
       }
     break;
-    case 'imagen-ayudasII':
-      const imageAyudas = document.getElementById('imagen-ayudas');
-      const imageAyudasII = document.getElementById('imagen-ayudasII');
-      imageAyudas.style.display = 'flex'
-      imageAyudasII.style.display = 'none' 
-      if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
-        // Espera 500 ms antes de ocultar el elemento
-        setTimeout(() => {
-          // Solo oculta el elemento si el ratón no está sobre él
-          if (!isMouseOver) {
-            conteElementos.style.display = 'none';
-          }
-        }, 200);
-      }
-    break;
+    default:  
   }
 } 
 function cambiarColor(elemento, encendido) {
@@ -5492,4 +5400,6 @@ function reponerEstilos(){
   document.getElementById('links-iniciales').style.left=''
   document.getElementById('vid01').style.left=''
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
+  padreVideos.classList.remove('move_video');
+
 }
