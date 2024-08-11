@@ -7215,6 +7215,32 @@ input.numero:focus {
     z-index: 3;
     transition: transform 1.6s ease;
   }
+  .clase-contenedor-7{
+    position: absolute;
+    margin-top: 87%;
+    margin-left: 3%;
+  }
+  #sector-distribuidor,
+  #bateria-entintado-II,
+  #sector-entintador,
+  #sector-smed,
+  #bancada-torre-II{
+    position: relative;
+    display: flex;
+    width: 98vw;
+    height: 80vh;
+    top: 7vh;
+    left: 1vw;
+    display: none;
+  }
+  #contenedor-8{
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    top: -55vh;
+    width:17vw;
+    transition: transform 1.6s ease;
+  }
   .contene-botones{
     position: absolute;
     display: flex;
@@ -7238,40 +7264,25 @@ input.numero:focus {
     cursor: pointer; 
     transition: transform 0.1s; 
   }
-  .clase-contenedor-7{
-    position: absolute;
-    margin-top: 87%;
-    margin-left: 3%;
-  }
-  #sector-distribuidor,
-  #bateria-entintado-II,
-  #sector-entintador,
-  #sector-smed,
-  #bancada-torre-II{
-    position: relative;
-    display: flex;
-    width: 98vw;
-    height: 80vh;
-    top: 7%;
-    left: 1%;
-    display: none;
-  }
-  #contenedor-8{
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    top: -205%;
-    transition: transform 1.6s ease;
-  }
   #conti-video-bancada{
     position: absolute;
     display: flex;
     top: -68%;
-    left: 0;
+    left: 28%;
     width: 60%;
-    height: 25%;
+    height: 30%;
+    border-radius: 9px;
     transition: transform 1.6s ease;
-    }  
+    } 
+    #plate-smed-I{
+      position: absolute;
+      display: flex;
+      height:100%;
+      width: 100%;
+      object-fit:cover;
+      border-radius: 9px;
+      }
+     
   #conti-video-entintador{ 
     position: absolute;
     display: flex;
@@ -7428,21 +7439,21 @@ input.numero:focus {
   }
   #imgsIsopropil{
     position: absolute; 
-    left: 42%;
-    top: 174%; 
     display: flex;
+    left: 42%;
+    top:120%; 
     flex-direction: column;
-    width: 160px;
-    height: 400px;
+    width:32vw;
+    height:55vh;
     transition: transform 1.6s ease;
   }
   #imgsIsopropil img{
     position: relative;
-    left: -10%;
+    width: 100%;
+    height:20%;
     display: flex;
   }
-  #conti-boton-repuestos,
-  #conti-boton-repuestos-III{
+  #conti-boton-repuestos{
     position: absolute;
     display: flex;
     left: 44%;
@@ -7451,6 +7462,16 @@ input.numero:focus {
     width:30vw;
     transition: transform 1.6s ease;
   }
+  #conti-boton-repuestos-III{
+    position: absolute;
+    display: flex;
+    left: 41.4vw;
+    top: 115vh;
+    height:3.3vh;
+    width:30vw;
+    transition: transform 1.6s ease;
+  }
+
   #butt-repuestos,
   #butt-repuestos-III{
     position: absolute;
@@ -7479,11 +7500,6 @@ input.numero:focus {
   }
   .image-isopropil:hover {
     transform: scale(2);
-  }
-  #plate-smed-I{
-  position: absolute;
-  display: flex;
-  height:207px;
   }
   #sitema-humedad{
     position: relative;
@@ -8983,13 +8999,13 @@ input.numero:focus {
     transform: translateX(1vh) translateY(-96vh);
   }
   .move-repuest-IV{
-    transform: translateY(-1377%); 
+    transform:  translateY(-597%); 
   }
   .move-images-IV{
-    transform: translateY(-247%);
+    transform: translateY(-107%);
   }
   .move-butts-IV{
-    transform: translateY(529%);
+    transform: translateY(170%);
   }
   .move-vid-smed-II{
     transform: translateY(260%);
