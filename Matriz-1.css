@@ -4136,6 +4136,7 @@ input.numero:focus {
   left: 4%;
   width: 77px;
   height: 47px;
+  display: none;
 }
 #imagen-ayudas{
   position: absolute;
@@ -8707,10 +8708,10 @@ input.numero:focus {
   #nicho-videos{
     position: relative;
     display: flex;
-    width: auto;
-    height: 500px;
-    left: 1.7%;
-    top: 49%;
+    width: 97vw;
+    height: 37vh;
+    left: 1.7vw;
+    top: 49vh;
     display: none;
   }
   #vid06,
@@ -8719,13 +8720,12 @@ input.numero:focus {
   #prisma-vid-II{
     position: absolute;
     display: flex;
-    left: 1px;
-    top: 1px;
     width: 100%;
-    height: auto;
+    height:100%;
     border: 1px solid gray;
     border-radius: 17px;
     cursor: pointer;
+    object-fit: cover;
     transition: transform 1.6s;
   }
   #padre-circle{
@@ -8745,6 +8745,7 @@ input.numero:focus {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    display: none;
     top: 14%;
     left: 41%;
     width: 35vw;

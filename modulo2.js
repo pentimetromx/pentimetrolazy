@@ -185,7 +185,6 @@ function resetearBarras(){
   isAnimatingVI = false
   /* isAnimatingXVI = false */
 }
-// COMBINACION TECLAS EJECUTA FUNCION
 document.addEventListener('keydown', function(event) {             
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
@@ -233,7 +232,6 @@ document.addEventListener('keydown', function(event) {
     }
   }
 });
-// SECCION EXTRAER DATOS A  ELEMENTOS DEL DOM
 function Geometria() {
   console.clear();  
   var contiBoton = document.getElementById('images-entintador') 
@@ -3397,7 +3395,6 @@ function moverBoton(boton, index) {
     boton.style.top = y + 'px'
     requestAnimationFrame(mover);
   }
-  // Inicia el movimiento hacia la derecha
   mover();
 } 
 function iniciaMove() {
@@ -4002,6 +3999,13 @@ function mostrarInterfaz() {
   display.style.zIndex = '3'
 }
 function interfazAvance() {
+  /* var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
+  }  */
   let verInterfaz = document.getElementById('container_interfaz')
   let verInterfazII = document.getElementById('container_interfaz_2')
   let verInterfazIII = document.getElementById('container_interfaz_3')              
@@ -4026,7 +4030,7 @@ function interfazAvance() {
   padreVideos.classList.remove('move_video');
   setTimeout(() => {
   padreVideos.classList.add('move_video');
-}, 500);
+  }, 500);
   ocultarElementos('contenedorElementos');
   [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
     eliminarEstilosInline(elemento);
@@ -5486,11 +5490,6 @@ function cerrarVentanasII(){
 function reponerEstilos(){
   document.getElementById('links-inicialesI').style.left=''
   document.getElementById('links-iniciales').style.left=''
+  document.getElementById('vid01').style.left=''
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
 }
-
-
-
-
-
-

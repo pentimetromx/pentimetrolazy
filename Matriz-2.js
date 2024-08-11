@@ -209,7 +209,6 @@ idsArray.push("cont-titulo")
 idsArrayEliminados.push('cont-titulo')
 const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','wall_street_II','equalizer','padre','patern']
 const masterKey = [4];
-/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 document.addEventListener("DOMContentLoaded", function() {
   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   

@@ -2087,6 +2087,14 @@ function muestraVidPrisma(eltoHtml) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'                 
       }
     }
+    reponerEstilos()
+    arrayVideos.forEach(videoId => {
+      let videoElement = document.getElementById(videoId)
+      if (videoElement) {
+        videoElement.removeAttribute('style')
+        videoElement.classList.remove('move-video-up')
+      }
+    })
   }else{
     var elementosExcluidos = ['buscador','search-form','container01','nicho-videos','padre-circle','circle','options','conte-ayudas','imagen-ayudas','ayudas-video']  
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -2262,6 +2270,7 @@ function formateaPrepress(eltoHtml){
       document.getElementById('imgs-prepress').style.display = 'flex'
       document.getElementById('primerCont').style.display = 'flex'
       document.getElementById('vid01').style.display = 'flex'
+      document.getElementById('vid01').style.left='0'
       animateVideoWidth(eltoHtml)
     }else{
       animateVideoWidthII(eltoHtml) 
