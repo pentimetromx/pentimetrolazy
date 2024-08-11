@@ -7160,7 +7160,17 @@ input.numero:focus {
     top:-25%;
     left:44%;
     width:28%;
+    height:4%;
   }
+  #conti-boton-repuestos-II{
+    position: absolute;
+    display: flex;
+    top: -40%;
+    left: 45%;
+    width:30%;
+    height: 4%;
+    transition: transform 1.6s ease; 
+  }  
   #butt-repuestos-II,
   #butt-repuestos-I{
     position:absolute;
@@ -7170,13 +7180,10 @@ input.numero:focus {
     justify-content: center;
     font-size: 1.7vw;
     color: white;
-    height: 7%;
+    height:100%;
     width:100%;
-    margin-top: -15%;
-    margin-left:1.6vw;
     border-radius: 9px;
     background-color: rgba(83, 82, 82, 0.678);
-    margin-bottom: 17px;
     display: none;  
     transition: transform 1.6s ease;
   }
@@ -7220,19 +7227,6 @@ input.numero:focus {
     margin-top: 87%;
     margin-left: 3%;
   }
-  #sector-distribuidor,
-  #bateria-entintado-II,
-  #sector-entintador,
-  #sector-smed,
-  #bancada-torre-II{
-    position: relative;
-    display: flex;
-    width: 98vw;
-    height: 80vh;
-    top: 7vh;
-    left: 1vw;
-    display: none;
-  }
   #contenedor-8{
     position: absolute;
     flex-direction: column;
@@ -7273,16 +7267,15 @@ input.numero:focus {
     height: 30%;
     border-radius: 9px;
     transition: transform 1.6s ease;
-    } 
-    #plate-smed-I{
-      position: absolute;
-      display: flex;
-      height:100%;
-      width: 100%;
-      object-fit:cover;
-      border-radius: 9px;
-      }
-     
+  } 
+  #plate-smed-I{
+    position: absolute;
+    display: flex;
+    height:100%;
+    width: 100%;
+    object-fit:cover;
+    border-radius: 9px;
+  }     
   #conti-video-entintador{ 
     position: absolute;
     display: flex;
@@ -7324,26 +7317,41 @@ input.numero:focus {
     width: 100%;
     height: 100%;
   }
-
   #contenedor-7-VI{
     position: absolute;
     display: flex;
     top:110%;
     left: 3%;
   }
+  #sector-distribuidor,
+  #bateria-entintado-II,
+  #sector-entintador,
+  #sector-smed,
+  #bancada-torre-II{
+    position: relative;
+    display: flex;
+    width: 98vw;
+    height: 80vh;
+    top: 7vh;
+    left: 1vw;
+    display: none;
+  }
   #images-entintador{
     position: absolute;
     display: flex;
-    height: 100vh;
-    width: 22vw;
-    margin-top: -55vh;
-    left:48vw;
+    height: 40%;
+    width: 30%;
+    top: -55%;
+    left:42%;
     display: none;
     transition: transform 1.6s ease;
+    z-index: 333;
   }
   #images-entintador img{ 
+    position:relative;
+    display: flex;
     width:100%;
-    height: 10%;
+    height: 27%;
   }
   #contenedor-7-V{
     position: absolute;
@@ -7388,13 +7396,6 @@ input.numero:focus {
     top:122%;
     transition: transform 1.6s ease;
   }
-  #conti-boton-repuestos-II{
-    position: absolute;
-    display: flex;
-    top: -40%;
-    left: 46%;
-    transition: transform 1.6s ease; 
-  }  
   #images-smed .image-container {
     display: flex;
     flex-direction: column;
@@ -7465,13 +7466,12 @@ input.numero:focus {
   #conti-boton-repuestos-III{
     position: absolute;
     display: flex;
-    left: 41.4vw;
-    top: 115vh;
+    left: 41.4%;
+    top: -15%;
     height:3.3vh;
     width:30vw;
     transition: transform 1.6s ease;
   }
-
   #butt-repuestos,
   #butt-repuestos-III{
     position: absolute;
@@ -7485,6 +7485,7 @@ input.numero:focus {
     height:100%;
     width:100%;
     margin-left: 7px;
+    top:0;
     border-radius: 9px;
     background-color: rgba(83, 82, 82, 0.678);
     transition: transform 1.6s ease;
@@ -8978,7 +8979,7 @@ input.numero:focus {
     transform: translateY(53vh) 
   }
   .move-images-II{
-    transform: translateY(85vh)
+    transform: translateY(83vh)
   }
   .move-butts-II{
     transform: translateY(-83vh)
@@ -8987,7 +8988,7 @@ input.numero:focus {
     transform: translateX(-81vw)
   }
   .move-repuest-III{
-    transform: translateY(65vh); 
+    transform: translateY(62.5vh); 
   }
   .move-images-III{
     transform: translateY(-63vh);
@@ -8999,10 +9000,10 @@ input.numero:focus {
     transform: translateX(1vh) translateY(-96vh);
   }
   .move-repuest-IV{
-    transform:  translateY(-597%); 
+    transform:  translateY(47vh); 
   }
   .move-images-IV{
-    transform: translateY(-107%);
+    transform: translateY(-98%);
   }
   .move-butts-IV{
     transform: translateY(170%);

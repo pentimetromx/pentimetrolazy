@@ -191,6 +191,8 @@ function muestraRodillo (vidElem, imgCont){
       contImgsEntintador.classList.remove('move-images-II') 
       buttRepuestI.classList.remove('move-repuest-II')
       contiVidEntintador.classList.remove('move-vid-entintador')
+      document.getElementById('imageElement6').style.display='flex'  
+      document.getElementById('imageElement7').style.display='flex'
       desplegarBotonesIII()      
     }
   break;
