@@ -456,12 +456,6 @@ color: white;
   display: flex;
   flex-direction: column;
 } 
-.image-training{
-  cursor: pointer;
-  height: 80px;
-  transition: transform 0.1s ease, filter 0.1s ease;
-  border-radius: 11px;
-}
 .image-isopropil{
   cursor: pointer;
   height: 152px;
@@ -3735,19 +3729,20 @@ h4{
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  left: 78%;
+  left: 75.5%;
   top: 9%;
+  width: 17%;
+  height: 77%;
   display: none;
 }
-#images-smed img{
-  height: 80px;
-  width: 147px;
-  transition: transform 0.1s ease, filter 0.1s ease;
-  border-radius: 11px;
-}
+#images-smed img,
 #imgsIsopropil img,
-#images-distribuidor img{
-  width: 157px;    
+#images-distribuidor img,
+#images-entintador img{ 
+  position:relative;
+  display: flex;
+  width:100%;
+  height: 20%;
 }
 #conti-boton-repuestos-III,
 #conti-boton-repuestos-II,
@@ -3757,7 +3752,7 @@ h4{
   display: flex;
   top: 0%;
   left: 75.5%;
-  width:25%;
+  width:17%;
   height:60%;
 }
 #butt-repuestos-III,
@@ -3767,9 +3762,11 @@ h4{
   position:absolute;
   display: flex;
   justify-content: center; 
+  align-items: center;
   font-family: "GothamRounded", sans-serif;
+  font-size: 0.9vw;
   color: white;
-  height: 20%;
+  height: 6%;
   width:100%;
   border-radius: 9px;
   background-color: rgba(83, 82, 82, 0.678);
@@ -7396,13 +7393,6 @@ input.numero:focus {
     top:122%;
     transition: transform 1.6s ease;
   }
-  #images-smed .image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    cursor: pointer;
-    border-radius: 11px;
-  }  
   #images-smed img {
     height: 60px;
     width: 110px;
