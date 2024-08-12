@@ -201,18 +201,18 @@ document.addEventListener('keydown', function(event) {
           muestraVidPrisma('prisma-vid-II')
         },1177) 
         setTimeout(function() {
-        
+          alternarAyudas()
         },1377)
         setTimeout(function() {
           alternarAyudas()                        
         },1677) 
         setTimeout(function() {
-          cambiarColor(this, false)
+          interfazAvance
         },1977)
-        setTimeout(function() {
+        /*setTimeout(function() {
           interfazAvance()       
         },2177)
-        /*setTimeout(function() {
+        setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
         },3077) 
         setTimeout(function() {

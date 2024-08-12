@@ -4127,7 +4127,6 @@ input.numero:focus {
   height: 5%;
   font-size: 1vw;
 }
-
 @keyframes giro-y {
   0% {
     transform: rotateY(0deg);
@@ -4231,13 +4230,6 @@ input.numero:focus {
   margin-bottom: 7px;
   color: rgb(255, 255, 177);
 } 
-.container{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(0,0,0,0.7);
-  overflow: hidden;
-}
 #contenedor_padre_2{
   display: inline-block; /* Cambiar a inline-block porque flex esta dando problemas */
   grid-template-columns: 1fr; /* Solo una columna */
@@ -4305,6 +4297,139 @@ input.numero:focus {
   justify-content: center;
   padding: 4px;
 }
+#container_interfaz_3{ /* SEGUNDO HIJO */
+  position: absolute;
+  display: flex;
+  top: 33%;
+  left: 0; 
+  height: 30%;
+  width:100%;
+}
+.container{ /* CLASE SEGUNDO HIJO */
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.7);
+  overflow: hidden;
+}
+#unicoide_flecha,  /* SPAN TRIANGULO DEL HIJO */
+#unicoide_triangulo{
+  transition: width 0.001s ease;
+}
+.guide_3 { /* CLASE DEL SPAN */
+  position: absolute;
+  top: 64%;
+  left: 0%;
+  width:1.5vw;
+  height: 2vh; 
+}
+.guide_3::after { /* CLASE::AFTER */
+  content: "\25B6";
+  position: absolute;
+  top: -1.1vh;
+  left: calc(50% - 4px); 
+  font-size:1.4vw; /* Tamaño triángulo */
+  color: rgb(0,2556,255)
+}
+#slider_4{ /* SLIDER SEGUNDO HIJO */
+  position: absolute;
+  bottom: 0;
+  left:1vw;
+  top: 0;
+  height: 1vh;
+  max-width: 27vw;
+  background-color: rgb(0,255,255);
+  transition: width 0.001s ease;
+}
+.linea-numerada_3{ /* LINEA NUMERADA SEGUNDO HIJO */
+  position: relative;
+  display: flex;
+  top: 20%;
+  left: 0%;
+  gap: 15px;
+  width:100%;
+  height: 100%;
+}
+.numero_3{ /* CLASE PARA LOS NUMEROS */
+  position: relative;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7vw;
+  color:rgb(0,255,255);
+}
+#butts_interfaz_3{ /* TERCER HIJO */
+  position: absolute;
+  display: flex;
+  top:65%;
+  left: 0;
+  height:20%;
+  width: 100%;
+}
+#buttonLeft_3{ /* PRIMER BOTON */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1%;
+  background-color: rgb(0,255,0);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  font-size: 1.7em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+#buttonRight_3{ /* SEGUNDO BOTOM */
+  top: 1%;
+  background-color: rgb(0,255,0);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+#menos {/* SPAN SEGUNDO BOTON */
+  position: relative;
+  top: -90%;
+  left: 1%;
+  font-size: 2.8em;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+#buttonReset_3,
+#buttonReset_2,
+#buttonReset{/* TERCER BOTON */
+  position: relative;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  top: 1%;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 4px; /* Relleno en la parte inferior */
+}
+#buttonClose_I,
+#buttonClose_II,
+#buttonClose { /* CUARTO BOTON */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1%;
+  background-color: rgb(33, 33, 33);
+  background-image: url(./assets/cerrar.png);
+  background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
 #container_interfaz_2{
   margin-bottom: 5px; 
   height: 33px;
@@ -4331,27 +4456,11 @@ input.numero:focus {
   font-size: 10px;
   color:rgb(0,255,0);
 }
-#container_interfaz_3{
-  position: absolute;
-  display: flex;
-  top: 33%;
-  left: 0; 
-  height: 30%;
-  width:100%;
-}
 #butts_interfaz{
   margin-bottom: 5px; 
 }
 #butts_interfaz_2{
   margin-bottom: 5px; 
-}
-#butts_interfaz_3{
-  position: absolute;
-  display: flex;
-  top:65%;
-  left: 0;
-  height:20%;
-  width: 100%;
 }
 .linea-numerada_2{
   position: relative;       
@@ -4359,15 +4468,6 @@ input.numero:focus {
   top: 20%;
   left: 0%;
   gap: 18px;
-  width:100%;
-  height: 100%;
-}
-.linea-numerada_3{
-  position: relative;
-  display: flex;
-  top: 20%;
-  left: 0%;
-  gap: 15px;
   width:100%;
   height: 100%;
 }
@@ -4380,10 +4480,6 @@ input.numero:focus {
   outline: none;
   z-index: 2;
   transition: left 0.001s ease;
-}
-#unicoide_flecha,
-#unicoide_triangulo{
-  transition: width 0.001s ease;
 }
 .guide_2 {
   position: absolute;
@@ -4399,21 +4495,6 @@ input.numero:focus {
   left: calc(50% - 4px); /* Ajusta la posición del triángulo */
   font-size: 16px; /* Tamaño triángulo */
   color: rgb(255, 255, 0); /* Color triángulo */
-}
-.guide_3 {
-  position: absolute;
-  top: 70%;
-  left: 0%;
-  width: 7px;
-  height: 15px; 
-}
-.guide_3::after {
-  content: "\25B6";
-  position: absolute;
-  top: -8px; /* Ajusta la posición del triángulo */
-  left: calc(50% - 4px); /* Ajusta la posición del triángulo */
-  font-size: 16px; /* Tamaño triángulo */
-  color: rgb(0,2556,255)
 }
 .guide{
   position: absolute;
@@ -4463,16 +4544,6 @@ input.numero:focus {
   background-color: rgb(255,0,0);
   transition: width 0.001s ease;
 }
-#slider_4{
-  position: absolute;
-  bottom: 0;
-  left:1%;
-  top: 0;
-  height: 7px;
-  max-width: 360px;
-  background-color: rgb(0,255,255);
-  transition: width 0.001s ease;
-}
 .numero_2{
   position: relative;
   width: calc(400px / 6);
@@ -4480,14 +4551,6 @@ input.numero:focus {
   font-family: "Courier New", Courier, monospace;
   font-size: 10px;
   color:rgb(255,255,0);
-}
-.numero_3{
-  position: relative;
-  /* width: calc(400px / 6); */
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 10px;
-  color:rgb(0,255,255);
 }
 .rule-container{
   position: absolute;
@@ -4498,8 +4561,6 @@ input.numero:focus {
   top: 7%;
   left: 0.2%;
 }
-
-
 #contenedor_2{
   position: absolute;
   display: flex;
@@ -4691,20 +4752,6 @@ input.numero:focus {
   border: none;
   cursor: pointer;
 }
-#buttonLeft_3{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 1%;
-  background-color: rgb(0,255,0);
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  font-size: 1.7em;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
 #buttonRight{
   display: flex;
   justify-content: center;
@@ -4729,59 +4776,6 @@ input.numero:focus {
   border-radius: 100%;
   border: none;
   cursor: pointer;
-}
-#buttonRight_3{
-  top: 1%;
-  background-color: rgb(0,255,0);
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  border: none;
-  cursor: pointer;
-}
-#buttonReset_3,
-#buttonReset_2,
-#buttonReset{
-  position: relative;
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 20px;
-  top: 1%;
-  background-color: red;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  border: none;
-  cursor: pointer;
-  padding-bottom: 4px; /* Relleno en la parte inferior */
-}
-#buttonClose_I,
-#buttonClose_II,
-#buttonClose {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 1%;
-  background-color: rgb(33, 33, 33);
-  background-image: url(./assets/cerrar.png);
-  background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  border: none;
-  cursor: pointer;
-}
-#menos {
-  position: relative;
-  top: -90%;
-  left: 1%;
-  font-size: 2.8em;
-  font-weight: bold;
-  color: black;
-  display: flex;
-  justify-content: center;
 }
 #buttonRight::before{
   content: "\25C0";
