@@ -1469,7 +1469,7 @@
 
     </div>
     <div id="pre-prensa">
-      <div id="ventana-lateral" onmouseup="cerrarVentana()">  
+      <div id="ventana-lateral" onmouseup="cerrarVentana()" onmouseleave="cerrarVentana()">  
         <div id="icono1">
           <img data-src="./assets/icono arroba.png" class="lazy iconos-laterales">  
         </div>
@@ -1558,20 +1558,22 @@
         </div>
       </div>
     </div>
+
     <div id="nicho-videos">
-      <video class="lazy vidTeoria vid-prepress" id="vid04" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+      <video class="lazy vid-prepress" id="vid04" onclick="abrirPrepress('pre-prensa')" autoplay loop>
         <source data-src="./assets/luz.mp4" type="video/mp4">
       </video>
-      <video class="lazy vidTeoria vid-prepress" id="vid05" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+      <video class="lazy vid-prepress" id="vid05" onclick="abrirPrepress('pre-prensa')" autoplay loop>
         <source data-src="./assets/luz2.mp4" type="video/mp4">
       </video>
-      <video class="lazy vidTeoria vid-prepress" id="vid06" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+      <video class="lazy vid-prepress" id="vid06" onclick="abrirPrepress('pre-prensa')" autoplay loop>
         <source data-src="./assets/luz3.mp4" type="video/mp4">
       </video>
-      <video class="lazy video-training vid-prepress" id="prisma-vid-II" autoplay loop>
+      <video class="lazy vid-prepress" id="prisma-vid-II" autoplay loop>
         <source data-src="./assets/prisma.mp4" type="video/mp4">
       </video>
     </div>
+
     <div id="densitometria">
       <div id="vidDensito">
         <video class="lazy video-training" id="prisma-vid">
@@ -2156,7 +2158,9 @@
         <button id="buttonClose"></button>
       </div>
     </div>
+     
     <div id="contenedor_padre_3">
+
       <div id="display_3">
         <span id="aplique_3" class="span_interfaz_3">Zoom</span>
         <span id="positionDisplay_3" class="span_interfaz_3">100 %</span>
@@ -2232,7 +2236,10 @@
         <button id="buttonReset_3">&#9632;</button>
         <button id="buttonClose_II"></button>
       </div>
+      
     </div>
+
+
     <div class="interfaz" id="interfaz">
       <div id="zona_titulo">
         <h1 id="titulo">CONTINUAR CON PRECAUCION</h1>

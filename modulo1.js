@@ -2065,6 +2065,9 @@ function muestraVidPrisma(eltoHtml) {
   acumuladorVideos.push(eltoHtml)
   videoStore.pop()
   var circulo = document.getElementById('circle')
+  var circulo1 = document.getElementById('padre-circle')
+  circulo1.style.display='flex'
+
   var conteAyudas = document.getElementById('conte-ayudas')
   var primerAyuda = document.getElementById('imagen-ayudas')
   const videoComponent = document.getElementById(eltoHtml)
@@ -2148,51 +2151,32 @@ function alternarAyudas() {
   },277);
 }
 function interfazAvance() {
-  let verInterfaz = document.getElementById('container_interfaz')
-  let verInterfazII = document.getElementById('container_interfaz_2')
-  let verInterfazIII = document.getElementById('container_interfaz_3')              
-  let verDisplay = document.getElementById('display')
-  let verDisplayII = document.getElementById('display_2')
-  let verDisplayIII = document.getElementById('display_3') 
-  botIzquierda.style.display = 'none'
-  botDerecha.style.display = 'none'
-  clickHabilitado = true  
-  if (botIzquierda && botDerecha && padreUno && padreDos && padreTres) {
-    botIzquierda.style.display = 'none';
-    botDerecha.style.display = 'none';
-    [padreUno, padreDos, padreTres].forEach(padre => {
-      padre.style.display = 'block';
-      padre.classList.remove('move_container', 'move_containerI', 'move_containerII');
-    });
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conte-ayudas','contenedor_padre_3','nicho-videos','contenedor_padre_2','contenedor_padre'];
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+    }
   }
-  makeFilters()
-  makeFiltersII()
-  makeFiltersIII()
-  desactivarClicsPorUnTiempoIII()
-  padreVideos.classList.remove('move_video');
-  setTimeout(() => {
-  padreVideos.classList.add('move_video');
-  }, 500);
-  ocultarElementos('contenedorElementos');
-  [container, verButtsInterfaz, display, button, posicionPantalla].forEach(elemento => {
-    eliminarEstilosInline(elemento);
+  const parentContainer3 = document.getElementById('contenedor_padre_3');
+  parentContainer3.style.marginTop='-81vh'
+  const children3 = parentContainer3.querySelectorAll('*');
+  children3.forEach(child => {
+    child.style.display = 'flex';
   });
-  const elementosFlex = [
-    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
-    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
-    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
-  ];  
-  const elementosVisible = [
-    verInterfaz, verButtsInterfaz, verDisplay, verInterfazII, verButtsInterfazII,
-    verDisplayII, positionDisplayIII, positionDisplayII, verInterfazIII,
-    verButtsInterfazIII, verDisplayIII, aplique, apliqueII
-  ];
-  for (let i = 0; i < elementosFlex.length; i++) {
-    elementosFlex[i].style.display = 'flex';
-  }  
-  for (let i = 0; i < elementosVisible.length; i++) {
-    elementosVisible[i].style.visibility = 'visible';
-  }
+  const parentContainer2 = document.getElementById('contenedor_padre_2');
+  const children2 = parentContainer2.querySelectorAll('*');
+  children2.forEach(child => {
+    child.style.display = 'flex';
+  });
+  const parentContainer = document.getElementById('contenedor_padre');
+  const children = parentContainer.querySelectorAll('*');
+  children.forEach(child => {
+    child.style.display = 'flex';
+  });
+
+
+
 } 
 function ventanaLateral(eltoHtml){
   acumuladorVideos.push(eltoHtml)
