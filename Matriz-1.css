@@ -52,7 +52,6 @@ body,html {
   z-index: -2;
   pointer-events: none;
 }
-
 #video-background {
   position: fixed;
   top: 0;
@@ -252,7 +251,6 @@ color: white;
   object-fit:fill;
   border-radius: 3px;
 }
-
 #titulo-ancho{
   position: absolute;
   display: flex;
