@@ -867,9 +867,9 @@ setTimeout(showNextInputChec, 37)
 }
 function mantAutonomo (idElement) {
   var conteLinksI = document.getElementById('links-inicialesI')
-  var videoBackground = document.getElementById('videoBackground')
+/*   var videoBackground = document.getElementById('videoBackground')
   videoBackground.pause()
-  videoBackground.style.display = 'none'
+  videoBackground.style.display = 'none' */
   switch (idElement) {
     case 'troubleshooting':       
         deslizarTrouble(idElement)
@@ -2158,12 +2158,7 @@ function interfazAvance() {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
-  const parentContainer3 = document.getElementById('contenedor_padre_3');
-  parentContainer3.style.marginTop='-81vh'
-  const children3 = parentContainer3.querySelectorAll('*');
-  children3.forEach(child => {
-    child.style.display = 'flex';
-  });
+  reponerEstilos()
   const parentContainer2 = document.getElementById('contenedor_padre_2');
   const children2 = parentContainer2.querySelectorAll('*');
   children2.forEach(child => {
@@ -2174,9 +2169,12 @@ function interfazAvance() {
   children.forEach(child => {
     child.style.display = 'flex';
   });
-
-
-
+  const parentContainer3 = document.getElementById('contenedor_padre_3');
+  const children3 = parentContainer3.querySelectorAll('*');
+  children3.forEach(child => {
+    child.style.display = 'flex';
+  });
+  padreVideos.classList.add('move_vid_pre')
 } 
 function ventanaLateral(eltoHtml){
   acumuladorVideos.push(eltoHtml)

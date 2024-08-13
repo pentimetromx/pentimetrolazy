@@ -207,7 +207,7 @@ document.addEventListener('keydown', function(event) {
           alternarAyudas()                        
         },1677) 
         setTimeout(function() {
-          interfazAvance
+          interfazAvance()
         },1977)
         /*setTimeout(function() {
           interfazAvance()       
@@ -234,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('contenedor_padre_2') 
+  var contiBoton = document.getElementById('contenedor_padre_3') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -3895,7 +3895,7 @@ botNaran.addEventListener('mousedown', () => {
   button.style.left = '0'
   makeFilters()
 })
-botRed.addEventListener('mousedown', resetButtons);
+/* botRed.addEventListener('mousedown', resetButtons);
 botClose.addEventListener('mousedown', resetButtons); 
 function resetButtons() {
   clickHabilitado = true; 
@@ -3978,7 +3978,7 @@ function resetButtonsIII() {
   verButtsInterfazIII.style.display = 'none';
   positionDisplayIII.style.display = 'none';
   aplique.style.display = 'none'
-}
+} */
 function mostrarInterfaz() { 
   container.style.display = 'flex'
   verButtsInterfaz.style.display = 'flex'
@@ -5399,7 +5399,19 @@ function reponerEstilos(){
   document.getElementById('links-inicialesI').style.left=''
   document.getElementById('links-iniciales').style.left=''
   document.getElementById('vid01').style.left=''
+  document.getElementById('contenedor_padre_3').style.top=''
+  document.getElementById('contenedor_padre_2').style.top=''
+  document.getElementById('contenedor_padre').style.top=''
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
   padreVideos.classList.remove('move_video');
-
+  padreTres.classList.remove('move_container')
+  padreTres.classList.remove('move_containerI')
+  padreTres.classList.remove('move_containerII') 
+  padreUno.classList.remove('move_container')
+  padreUno.classList.remove('move_containerI')
+  padreUno.classList.remove('move_containerII')
+  const vidPrePre = padreVideos.querySelectorAll('*');
+  vidPrePre.forEach(child => {
+    child.classList.remove('move_vid_pre')
+  });
 }
