@@ -1862,7 +1862,7 @@ header {
   left: 17vw;
   top: 7vh;
   display: none;
-  transition: transform 1.6s ease;
+  transition: transform 1.6s ease; 
 }
 #vid06,
 #vid05,
@@ -5976,6 +5976,25 @@ input.numero:focus {
   #inicio{
     display:none;
   }
+  #butt-links{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:123%;
+    left:0;
+    z-index: 5;
+  }
+  .butt-links{
+    height: 3.5vh;
+    width: 27vw;
+    background-color: rgb(255,0,0);
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 3.5vw;
+    cursor: pointer;
+    display: none;
+  }
   #butt-links-II{
     position:absolute;
     display: flex;
@@ -7843,25 +7862,6 @@ input.numero:focus {
   .colorClick:hover {
     color: orange;
   }
-  #butt-links{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top:123%;
-    left:0;
-    z-index: 5;
-  }
-  .butt-links{
-    height: 3.5vh;
-    width: 27vw;
-    background-color: rgb(255,0,0);
-    border-radius: 5px;
-    color: whitesmoke;
-    font-size: 3.5vw;
-    cursor: pointer;
-    display: none;
-  }
   #largoImpresion{
     position: relative;
     display: flex; 
@@ -7956,6 +7956,15 @@ input.numero:focus {
     border-radius: 21px; 
     background-color:black;
     border: solid 1px orange;
+  }
+  #butt-links-III{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:65vh;
+    left:36vw;
+    z-index: 5;
   }
   #imag1,
   #imag2{

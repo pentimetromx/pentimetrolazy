@@ -3255,7 +3255,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   var linkOrange = document.getElementById(id)      
   document.body.style.zoom = "67%"
   if(screenWidth < 500){
-    document.body.style.zoom = "100%" 
+    document.body.style.zoom = "100%"
+    reponerEstilos()
   }
   switch (id) {
     case 'link1':

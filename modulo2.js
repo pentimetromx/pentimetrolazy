@@ -5396,6 +5396,7 @@ function cerrarVentanasII(){
 
 }
 function reponerEstilos(){
+  document.getElementById('padre-1').style.top=''
   document.getElementById('links-inicialesI').style.left=''
   document.getElementById('links-iniciales').style.left=''
   document.getElementById('vid01').style.left=''
