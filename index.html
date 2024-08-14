@@ -774,7 +774,6 @@
         <button class="boton-f " onclick="muestraRodillo('videoElement6')">Montaje tomador <div class="linea-horizontal"></div></button>  
         <button class="boton-f " onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
-
       <div id="conti-video-distribuidor">
         <video class="lazy video-training" id="videoElement2" loop autoplay muted>
           <source data-src="./assets/Montaje distribuidor.mp4" type="video/mp4">
@@ -791,7 +790,6 @@
         <button class="butt-partes" id="butt-repuestos">PARTES  /  REPUESTOS</button>
       </div>
     </div>
-
     <div id="sector-entintador">
       <div id="contenedor-7-VI" class="contene-botones"> 
         <button class="boton-f " onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
@@ -814,7 +812,6 @@
         <button class="butt-partes" id="butt-repuestos-I">PARTES  /  REPUESTOS</button>
       </div>      
     </div>
-
     <div id="sector-smed">
       <div id="contenedor-7-VII" class="contene-botones"> 
         <button class="boton-f " onclick="muestraRodillo('videoElement2','images-distribuidor')">Montaje distribuidor<div class="linea-horizontal"></div></button>                
@@ -1469,29 +1466,29 @@
 
     </div>
     <div id="pre-prensa">
-      <div id="ventana-lateral" onmouseup="cerrarVentana()" onmouseleave="cerrarVentana()">  
-        <div id="icono1">
+      <div id="ventana-lateral" onmouseup="cerrarAyudas()"> <!-- onmouseleave="cerrarAyudas() -->  
+        <div id="icono1" class="icono">
           <img data-src="./assets/icono arroba.png" class="lazy iconos-laterales">  
         </div>
-        <div id="icono2">
+        <div id="icono2" class="icono">
           <img data-src="./assets/icono llamada whatsapp.png" class="lazy iconos-laterales"> 
         </div>
-        <div id="icono3">
+        <div id="icono3" class="icono">
           <img data-src="./assets/icono mensaje importante.png" class="lazy iconos-laterales">
         </div>
-        <div id="icono4">
+        <div id="icono4" class="icono">
           <img data-src="./assets/icono home.png" class="lazy iconos-laterales">  
         </div>
-        <div id="icono5">
+        <div id="icono5" class="icono">
           <img data-src="./assets/icono papelera.png" class="lazy iconos-laterales" > 
         </div>
-        <div id="icono6">
+        <div id="icono6" class="icono">
           <img data-src="./assets/icono herramientas.png" class="lazy iconos-laterales">
         </div>
-        <div id="icono7">
+        <div id="icono7" class="icono">
           <img data-src="./assets/icono configuracion.png" class="lazy iconos-laterales">
         </div>
-        <div id="icono8">
+        <div id="icono8" class="icono">
           <img data-src="./assets/icono ajustes.png" class="lazy iconos-laterales">
         </div>
         <h6 id="cerrar-ventana" onmouseup="cerrarVentana()">Cerrar</h6>
@@ -1529,7 +1526,7 @@
         <div id="segundoCont" class="contColor">
           <div class='imgTeoria1'><img data-src="./assets/luz6.jpg" class="lazy img-special" alt="pre18"></div>
           <div class='imgTeoria1'><img data-src="./assets/preprensa7.jpg" class="lazy img-special" alt="pre7"></div>
-          <div class='imgTeoria1'><video class="lazy vidTeoria img-special" id="vid01" onclick="muestraVidPrisma('vid04')" autoplay loop>
+          <div class='imgTeoria1'><video class="lazy vidTeoria img-special" id="vid01" onclick="muestraVidPrisma('vid04')" autoplay muted loop>
             <source data-src="./assets/luz.mp4" type="video/mp4">
           </video></div>
           <div class='imgTeoria1'><img data-src="./assets/preprensa8.jpg" class="lazy img-special" alt="pre8"></div>
@@ -1951,7 +1948,7 @@
       </div>
     </div>
     <div id="padre-circle">
-      <div id="circle" onclick="ventanaLateral()">
+      <div id="circle" onclick="abrirAyudas()">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -2064,8 +2061,7 @@
         <button id="buttonRight"></button>
         <button id="buttonReset">&#9632;</button>
       </div>
-    </div>
-    
+    </div>    
     <div id="contenedor_padre_2">
       <div id="display_2">
         <span id="aplique_2" class="span_interfaz_2">Grados rotacion</span>

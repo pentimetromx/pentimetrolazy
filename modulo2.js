@@ -234,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('contenedor_padre_3') 
+  var contiBoton = document.getElementById('ventana-lateral') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -275,6 +275,16 @@ function Geometria() {
   console.log('2 :','Display:', displayType);
   console.log('2 :','Visibility:', visibilityType);
   console.log('2 :','Is Visible:', isVisible);
+}
+function abrirAyudas(){
+  let padreAyudas = document.getElementById('pre-prensa')
+  let ayudas = document.getElementById('ventana-lateral')
+  padreAyudas.style.display='flex'
+  ayudas.style.display='flex'
+}
+function cerrarAyudas(){
+  let ayudas = document.getElementById('ventana-lateral')
+  ayudas.style.display='none'
 }
 function updateAna() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -3465,51 +3475,6 @@ function palpitarBotonHumedad() {
     document.getElementById('humedadButton').classList.remove('parpadea');
   }, 277);  
 }
-function aumentarIconos() {
-  const iconosLateral = document.getElementsByClassName('iconos-laterales');
-  let currentIndex = 0;
-  function applyEffect() {
-    if (currentIndex < iconosLateral.length) {
-      const currentImage = iconosLateral[currentIndex]
-      currentImage.style.transition = 'transform 0.1s'
-      currentImage.style.transform = 'scale(3.0)'
-      setTimeout(() => {
-        currentImage.style.transition = 'transform 0.7s'
-        currentImage.style.transform = 'scale(1)'
-        currentIndex++;
-        applyEffect()
-      }, 17)
-    }}
-      applyEffect()
-}
-function moverIconos(){  
-  for (let i = 1; i <= 8; i++) {
-    // Generar el ID del elemento actual
-    const elementoId = 'icono' + i;
-    // Eliminar la clase 'icon1-up' del elemento actual
-    document.getElementById(elementoId).classList.remove('icon1-up');
-  }  
-  setTimeout(() => {
-    document.getElementById('icono5').classList.add('icon1-up');
-  }, 77)
-  setTimeout(() => {
-    document.getElementById('icono6').classList.add('icon1-up');
-  }, 157)
-  setTimeout(() => {
-    document.getElementById('icono7').classList.add('icon1-up');
-  }, 237)
-  setTimeout(() => {
-    document.getElementById('icono8').classList.add('icon1-up');
-  }, 317)
-}
-document.getElementById('icono1').addEventListener('click', function(event) {
-  event.stopPropagation(); // Detener la propagación del evento
-  moverIconos() // Ejecutar la función asociada al child
-});
-document.getElementById('icono2').addEventListener('click', function(event) {
-  event.stopPropagation(); // Detener la propagación del evento
-  moverIconos() // Ejecutar la función asociada al child
-});
 document.getElementById('iniciar').addEventListener('click', function() {
   contibotsDistri.classList.toggle('move-down')
   contVideo.classList.toggle('move-down-I')
@@ -5403,6 +5368,12 @@ function reponerEstilos(){
   document.getElementById('contenedor_padre_3').style.top=''
   document.getElementById('contenedor_padre_2').style.top=''
   document.getElementById('contenedor_padre').style.top=''
+  padreVideos.classList.remove('move_vid_pre')
+  padreVideos.classList.remove('move-vid-dens-up')
+  let padreImgs = document.getElementById('imgs-prepress')
+  let blurValue = 0
+  padreImgs.style.filter=`blur(${blurValue}px)`;
+
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
   padreVideos.classList.remove('move_video');
   padreTres.classList.remove('move_container')
