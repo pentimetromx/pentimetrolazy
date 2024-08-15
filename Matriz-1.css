@@ -5689,7 +5689,7 @@ display: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:-4vh;
+    margin-top:-7vh;
     left: 2vw;
     width: 48vw;
     height:40vh;
@@ -5705,7 +5705,7 @@ display: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:-4vh;
+    margin-top:-7vh;
     overflow-y:auto;
     overflow-x:hidden;
     gap: 9vh;
@@ -6620,7 +6620,7 @@ display: none;
   #pantalla-frente{
     position: relative;
     display: flex;
-    top: 17%;
+    top: 10%;
     left: 0%;
     display: none;
   }
@@ -6654,13 +6654,6 @@ display: none;
     border-radius: 8px;
 
   }
-  #vidTintero{
-    position: relative;
-    margin-left: -157%;
-    margin-top: -4%;
-    height:37vh;
-    width:75vw;
-  }  
   #agrupaOblicuos,
   #agrupaOblicuos-III,
   #agrupaOblicuos-IV,
@@ -6668,17 +6661,8 @@ display: none;
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 44%;
-    margin-top: 1%;
-  }
-  #agrupaOblicuos-II{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left:76.6%;
-    top:-3.4vh;
-    width:20%;
-    height:100%;
+    /* left: 37%; */
+    top: 0;
   }
   .Bot-inicio2{
     position: relative;
@@ -7801,13 +7785,13 @@ display: none;
     gap: 11px;
   }
   #pantalla-tintero{
-    position: absolute;
+    position: relative;
     display: flex; /* Usar flexbox para centrar la imagen */
     flex-direction: row;
     justify-content: center;
     width:98vw;
     height:41vh;
-    top:26vh;
+    top:10vh;
     left: 1vw;
     display: none;
   }
@@ -7824,15 +7808,15 @@ display: none;
     position: absolute;
     display: flex;
     left: 0;
-    top:-4.7vh;
+    top:0;
     height:80%;
     width: 75%;
     border-radius: 8px;
   }
-
   #cont-links a{
     position: absolute;
     display: flex;
+    top: 17%;
     text-decoration: none;
     font-size: 2.3vw;
     font-family: "GothamRounded", sans-serif;
@@ -7842,12 +7826,29 @@ display: none;
   #linkForma {margin-top:3vh;color: whitesmoke; }
   #linkPlate {margin-top:9vh;}
   #linkManta {margin-top:15vh;}
-  #linkImpresor {margin-top:21vh;}
+  #linkImpresor {margin-top:21vh;
+  }
+  #vidTintero{
+    position: relative;
+    margin-left: -157%;
+    margin-top: 2.5vh;
+    height:37vh;
+    width:74vw;
+  }  
+  #agrupaOblicuos-II{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left:76.6%;
+    top:0;
+    width:20%;
+    height:100%;
+  }
   .iridescent-element li a{
     font-size:3vw;
   }
   .linksTraining li a {
-    color: white; /*Cambiar el color del texto a blanco*/
+    color: whitesmoke; /*Cambiar el color del texto a blanco*/
     cursor: pointer; /*Cambiar el cursor a una mano */
     font-size: 3.2vw;
   }
@@ -9212,7 +9213,6 @@ display: none;
     width:40%;
     height: 4vh;
     font-size: 3.4vw;
-    border-radius: 10px;
   }
   input.numero {
     position: relative;

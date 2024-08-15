@@ -59,6 +59,7 @@ function deslizaContenedor(identificador, idButton) {
       }
       if(screenWidth < 500){
         document.getElementById('conti-boton').style.display='flex'
+        document.getElementById('conti-boton').style.top=''
       }
       incrementoHeightVII()
     break;
@@ -96,8 +97,7 @@ function deslizaContenedor(identificador, idButton) {
         }
       }
       inicioTracker()
-      if(screenWidth < 500){
-        
+      if(screenWidth < 500){        
         var canvas3 = document.getElementById(identificador);
         if (canvas3 !== null) {
           canvas3.style.marginTop = '12%';
@@ -195,9 +195,9 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          abrirPrepress('pre-prensa')
+          changeButtonStyles('pantalla-tintero')
         },977) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           muestraVidPrisma('prisma-vid-II')
         },1177) 
         setTimeout(function() {
@@ -209,7 +209,7 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           interfazAvance()
         },1977)
-        /*setTimeout(function() {
+        setTimeout(function() {
           interfazAvance()       
         },2177)
         setTimeout(function() {
