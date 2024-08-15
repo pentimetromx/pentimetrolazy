@@ -7245,7 +7245,7 @@ display: none;
   }
   .icono {
     flex: 1;
-    height: 12%;
+    height: 11.5%;
     width: 15%;
     margin-bottom: 2px;
     border: none;
@@ -7260,7 +7260,7 @@ display: none;
     position: absolute;
     display: flex;
     cursor: pointer;
-    top:88%;
+    top:-2vh;
     left: 80%;
     width: 20%;
     height: 5%;
