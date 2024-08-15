@@ -5697,6 +5697,7 @@ display: none;
     overflow-x:hidden;
     gap: 17vh;
     border-radius: 11px;
+    border: 1px solid white;
     background-color: #000; 
   }
   #agrupaOblicuos-XII{
@@ -5712,6 +5713,7 @@ display: none;
     width: 45vw;
     height: 40vh;
     border-radius: 11px;
+    border: 1px solid white;
     background-color: #000;  
     z-index: 4;
   }
@@ -7675,6 +7677,7 @@ display: none;
     width: 88vw;
     border-radius: 15px;
     background-color: RGB(0,0,10);
+    display: none;
   }
   #padre-entintadores,
   #contImgDistribuidor{
@@ -7855,7 +7858,8 @@ display: none;
     left: 11vw;
     top: 21vh;
     width: 77vw;
-    height: 47vh;  
+    height: 47vh;
+    display: none;
   }
   #padre-plana,
   #padre-variable{
@@ -8726,18 +8730,19 @@ display: none;
   #cont-titulo{
     position: relative;
     display: flex;
-    top: -105%;
+    top:-95vh;
     left: 0;
     width: 100vw;
     height: 70vh;
     transition: transform 1.6s ease;
+    display: none;
   }  
   #cont-titulo h4{
     position: absolute;
     display: flex;
     font-size: 5.3vw;
     text-align: center;
-    top: -1%;
+    top: 2%;
     left: 101%;
     height:9.3vh;
     width:100vw;
@@ -9379,7 +9384,7 @@ display: none;
     transform: translateX(200px);
   }
   .move-oblicuos{
-    transform: translateY(166%);
+    transform: translateY(113vh);
   }
   .move-label{
     transform: translateX(107vw)

@@ -5435,8 +5435,7 @@ function moverVideoDerecha() {
         video.style.left = posicionFinal + 'vw';
       }
     }
-    requestAnimationFrame(animar);
-  
+    requestAnimationFrame(animar);  
   }
 }
 
