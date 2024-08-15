@@ -4106,10 +4106,10 @@ input.numero:focus {
   flex-direction: column;
   display: none;
   background-color: #000;
-  top:23%;
+  top:17.5%;
   left:1%;
   width:0;
-  height:71%;
+  height:80%;
   padding: 7px;
   border-radius: 0 17px 17px 0;
   transition: transform 0.1s;
@@ -4130,50 +4130,12 @@ input.numero:focus {
   position: absolute;
   display: flex;
   cursor: pointer;
-  top:88%;
+  top:-2vh;
   left: 80%;
   width: 20%;
   height: 5%;
   font-size:1em;
 } 
-
-/* #ventana-lateral {
-  position:absolute;
-  display: flex;
-  flex-direction: column;
-  display: none;
-  background-color: #000;
-  top:23%;
-  left:1%;
-  width:97%;
-  height:73%;
-  padding: 7px;
-  border-radius: 0 17px 17px 0;
-  transition: transform 0.1s;
-  z-index: 100;
-}
-.icono {
-  flex: 1;
-  width: 15%;
-  border: none;
-}
-.iconos-laterales {
-  width: 100%;
-  height: 100%;
-  border-radius:25%;
-  object-fit:fill;
-}
-#ventana-lateral h6{
-  position: absolute;
-  display: flex;
-  cursor: pointer;
-  top:88%;
-  left: 80%;
-  width: 20%;
-  height: 5%;
-  font-size:1em;
-} */
-
 @keyframes giro-y {
   0% {
     transform: rotateY(0deg);

@@ -279,6 +279,8 @@ function Geometria() {
 function cerrarAyudas(){
   let ayudas = document.getElementById('ventana-lateral')
   ayudas.style.display='none'
+  let video = document.getElementById('prisma-vid-II');
+  video.style.left = '';  
 }
 function updateAna() {
   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
@@ -5377,21 +5379,67 @@ function desenrrollarVentana() {
   let anchoFinal = 94;
   let duracion = 1000;
   let startTime = null;
-  function animar(timestamp) {
-    if (!startTime) startTime = timestamp;
-    let tiempoTranscurrido = timestamp - startTime;
-    let progreso = tiempoTranscurrido / duracion;
-    let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
-    let anchoActual = anchoInicial + (anchoFinal - anchoInicial) * easeOutProgress;
-    anchoVentana.style.width = anchoActual + 'vw';
-    if (tiempoTranscurrido < duracion) {
-      requestAnimationFrame(animar);
-    } else {
-      anchoVentana.style.width = anchoFinal + 'vw'; // Asegura que termine exactamente en el ancho final
+  if(screenWidth < 500){
+    function animar(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let tiempoTranscurrido = timestamp - startTime;
+      let progreso = tiempoTranscurrido / duracion;
+      let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
+      let anchoActual = anchoInicial + (anchoFinal - anchoInicial) * easeOutProgress;
+      anchoVentana.style.width = anchoActual + 'vw';
+      if (tiempoTranscurrido < duracion) {
+        requestAnimationFrame(animar);
+      } else {
+        anchoVentana.style.width = anchoFinal + 'vw';
+      }
     }
+    requestAnimationFrame(animar);  
+  }else{
+    let anchoFinal = 23;
+    function animar(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let tiempoTranscurrido = timestamp - startTime;
+      let progreso = tiempoTranscurrido / duracion;
+      let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
+      let anchoActual = anchoInicial + (anchoFinal - anchoInicial) * easeOutProgress;
+      anchoVentana.style.width = anchoActual + 'vw';
+      if (tiempoTranscurrido < duracion) {
+        requestAnimationFrame(animar);
+      } else {
+        anchoVentana.style.width = anchoFinal + 'vw';
+      }
+    }
+    requestAnimationFrame(animar);
   }
-  requestAnimationFrame(animar);
+  moverVideoDerecha()
 }
+function moverVideoDerecha() {
+  if(screenWidth > 500){
+    let video = document.getElementById('prisma-vid-II');
+    video.style.left = ''; // Asegurarse de que no haya un valor fijo previamente  
+    // Obtener la posición inicial en vw
+    let posicionInicial = parseFloat(window.getComputedStyle(video).left) / window.innerWidth * 100;
+    let posicionFinal = 19; // Mover a 50vw hacia la derecha
+    let duracion = 1000;
+    let startTime = null;
+    function animar(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let tiempoTranscurrido = timestamp - startTime;
+      let progreso = tiempoTranscurrido / duracion;
+      let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
+      let posicionActual = posicionInicial + (posicionFinal - posicionInicial) * easeOutProgress;
+      video.style.left = posicionActual + 'vw';
+      if (tiempoTranscurrido < duracion) {
+        requestAnimationFrame(animar);
+      } else {
+        video.style.left = posicionFinal + 'vw';
+      }
+    }
+    requestAnimationFrame(animar);
+  
+  }
+}
+
 function reponerEstilos(){
   document.getElementById('padre-1').style.top=''
   document.getElementById('links-inicialesI').style.left=''
