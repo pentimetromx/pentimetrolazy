@@ -1465,34 +1465,37 @@
       <button id="butt-sitio" class="butt-special">Cerrar</button>
 
     </div>
-    <div id="pre-prensa">
-      <div id="ventana-lateral" onmouseup="cerrarAyudas()"> <!-- onmouseleave="cerrarAyudas() -->  
-        <div id="icono1" class="icono">
-          <img data-src="./assets/icono arroba.png" class="lazy iconos-laterales">  
-        </div>
-        <div id="icono2" class="icono">
-          <img data-src="./assets/icono llamada whatsapp.png" class="lazy iconos-laterales"> 
-        </div>
-        <div id="icono3" class="icono">
-          <img data-src="./assets/icono mensaje importante.png" class="lazy iconos-laterales">
-        </div>
-        <div id="icono4" class="icono">
-          <img data-src="./assets/icono home.png" class="lazy iconos-laterales">  
-        </div>
-        <div id="icono5" class="icono">
-          <img data-src="./assets/icono papelera.png" class="lazy iconos-laterales" > 
-        </div>
-        <div id="icono6" class="icono">
-          <img data-src="./assets/icono herramientas.png" class="lazy iconos-laterales">
-        </div>
-        <div id="icono7" class="icono">
-          <img data-src="./assets/icono configuracion.png" class="lazy iconos-laterales">
-        </div>
-        <div id="icono8" class="icono">
-          <img data-src="./assets/icono ajustes.png" class="lazy iconos-laterales">
-        </div>
-        <h6 id="cerrar-ventana" onmouseup="cerrarVentana()">Cerrar</h6>
+
+    <div id="ventana-lateral" onmouseup="cerrarAyudas()" onmouseleave="cerrarAyudas()">  
+      <div id="icono1" class="icono">
+        <img data-src="./assets/icono arroba.png" class="lazy iconos-laterales">  
       </div>
+      <div id="icono2" class="icono">
+        <img data-src="./assets/icono llamada whatsapp.png" class="lazy iconos-laterales"> 
+      </div>
+      <div id="icono3" class="icono">
+        <img data-src="./assets/icono mensaje importante.png" class="lazy iconos-laterales">
+      </div>
+      <div id="icono4" class="icono">
+        <img data-src="./assets/icono home.png" class="lazy iconos-laterales">  
+      </div>
+      <div id="icono5" class="icono">
+        <img data-src="./assets/icono papelera.png" class="lazy iconos-laterales" > 
+      </div>
+      <div id="icono6" class="icono">
+        <img data-src="./assets/icono herramientas.png" class="lazy iconos-laterales">
+      </div>
+      <div id="icono7" class="icono">
+        <img data-src="./assets/icono configuracion.png" class="lazy iconos-laterales">
+      </div>
+      <div id="icono8" class="icono">
+        <img data-src="./assets/icono ajustes.png" class="lazy iconos-laterales">
+      </div>
+      <h6 id="cerrar-ventana" onmouseup="cerrarVentana()">Cerrar</h6>
+    </div>
+
+    <div id="pre-prensa">
+      
       <div id="vidColor">
         <video class="lazy video-training vid-prepress" id="prisma-vid" autoplay loop onclick="abrirPrepress('pre-prensa')">
           <source data-src="./assets/prisma.mp4" type="video/mp4">

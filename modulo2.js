@@ -276,12 +276,6 @@ function Geometria() {
   console.log('2 :','Visibility:', visibilityType);
   console.log('2 :','Is Visible:', isVisible);
 }
-function abrirAyudas(){
-  let padreAyudas = document.getElementById('pre-prensa')
-  let ayudas = document.getElementById('ventana-lateral')
-  padreAyudas.style.display='flex'
-  ayudas.style.display='flex'
-}
 function cerrarAyudas(){
   let ayudas = document.getElementById('ventana-lateral')
   ayudas.style.display='none'
@@ -5360,6 +5354,36 @@ function cerrarVentanasII(){
   }
 
 }
+function abrirAyudas(){
+  let padreAyudas = document.getElementById('pre-prensa')
+  let ayudas = document.getElementById('ventana-lateral')
+  /* ayudas.style.width='' */
+  padreAyudas.style.display='flex'
+  ayudas.style.display='block'
+  desenrrollarVentana()
+}
+function desenrrollarVentana() {
+  let anchoVentana = document.getElementById('ventana-lateral');
+  anchoVentana.style.width = '';
+  let anchoInicial = parseInt(window.getComputedStyle(anchoVentana).width);
+  let anchoFinal = 400;
+  let duracion = 1000; 
+  let startTime = null;
+  function animar(timestamp) {
+    if (!startTime) startTime = timestamp;
+    let tiempoTranscurrido = timestamp - startTime;
+    let progreso = tiempoTranscurrido / duracion;
+    let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
+    let anchoActual = anchoInicial + (anchoFinal - anchoInicial) * easeOutProgress;
+    anchoVentana.style.width = anchoActual + 'px';
+    if (tiempoTranscurrido < duracion) {
+      requestAnimationFrame(animar);
+    } else {
+      anchoVentana.style.width = anchoFinal + 'px'; // Asegura que termine exactamente en el ancho final
+    }
+  }
+  requestAnimationFrame(animar);
+}
 function reponerEstilos(){
   document.getElementById('padre-1').style.top=''
   document.getElementById('links-inicialesI').style.left=''
@@ -5373,6 +5397,8 @@ function reponerEstilos(){
   let padreImgs = document.getElementById('imgs-prepress')
   let blurValue = 0
   padreImgs.style.filter=`blur(${blurValue}px)`;
+  let padreAyudas = document.getElementById('ventana-lateral')
+  padreAyudas.style.width=''
 
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
   padreVideos.classList.remove('move_video');
