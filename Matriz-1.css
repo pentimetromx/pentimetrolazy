@@ -4108,6 +4108,43 @@ input.numero:focus {
   background-color: #000;
   top:23%;
   left:1%;
+  width:0;
+  height:71%;
+  padding: 7px;
+  border-radius: 0 17px 17px 0;
+  transition: transform 0.1s;
+  z-index: 100;
+}
+.icono {
+  flex: 1;
+  width: 15%;
+  border: none;
+}
+.iconos-laterales {
+  width: 100%;
+  height: 100%;
+  border-radius:25%;
+  object-fit:fill;
+}
+#ventana-lateral h6{
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  top:88%;
+  left: 80%;
+  width: 20%;
+  height: 5%;
+  font-size:1em;
+} 
+
+/* #ventana-lateral {
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  background-color: #000;
+  top:23%;
+  left:1%;
   width:97%;
   height:73%;
   padding: 7px;
@@ -4135,7 +4172,7 @@ input.numero:focus {
   width: 20%;
   height: 5%;
   font-size:1em;
-}
+} */
 
 @keyframes giro-y {
   0% {
@@ -9273,11 +9310,6 @@ display: none;
     z-index: 0;
     margin-top:6px;
   }
-  #cerrar-ventana{
-    position: absolute;
-    left: 47%;
-    top: -3%;
-  }
   #contenedorElementos{
     position:absolute;
     display: flex;
@@ -9308,12 +9340,14 @@ display: none;
     height: 19px;
     margin-bottom: 7px;
     color: rgb(255, 255, 177);
+    font-size:0.8em;
   } 
   .listado{
     position: relative;
     height: 19px;
     margin-bottom: 7px;
     color: rgb(255, 255, 177);
+    font-size: 0.3em;
   }   
   @keyframes parpadeo {
     0% {

@@ -4168,18 +4168,25 @@ function ocultarElementos(eltoID) {
 } 
 function cambiarColor(elemento, encendido) {
   const segundoListado = document.getElementById('segundaLista')
+  const screenWidth = window.innerWidth;
+
+  function pxToEm(px) {
+    const tamañoBase = parseFloat(window.getComputedStyle(document.documentElement).fontSize); // Tamaño base en px
+    return px / tamañoBase;
+  }
+
   switch(elemento.className){
     case 'conte-listado':
       if(screenWidth < 500){
         if (encendido) {
           elemento.style.backgroundColor = 'rgb(0,255,0)'
           elemento.style.color = 'rgb(0,0,77)';
-          elemento.style.fontSize = '16px'
+          elemento.style.fontSize = pxToEm(14) + 'em';
           elemento.style.fontWeight = 'bold';       
         } else {
           elemento.style.backgroundColor = '';
           elemento.style.color = 'rgb(255, 255, 177)';
-          elemento.style.fontSize = '16px'
+          elemento.style.fontSize = pxToEm(14) + 'em';
           elemento.style.fontWeight = 'normal'
         }
         if(encendido && elemento.id === 'ultimoElemento'){
@@ -4187,14 +4194,14 @@ function cambiarColor(elemento, encendido) {
           var lineas = document.getElementsByClassName('listado');
           for(var i = 0; i < lineas.length; i ++){
             lineas[i].style.fontWeight = 'normal';
-            lineas[i].style.fontSize = '14px'
+            lineas[i].style.fontSize = pxToEm(11) + 'em';
           }
         }
       }else {
         if (encendido) {
           elemento.style.backgroundColor = 'rgb(0,255,0)'
           elemento.style.color = 'rgb(0,0,77)'
-          elemento.style.fontSize = '19px'
+          elemento.style.fontSize = pxToEm(16) + 'em';
           elemento.style.fontWeight = 'bold'
         } else {
           elemento.style.backgroundColor = ''
@@ -4207,7 +4214,7 @@ function cambiarColor(elemento, encendido) {
           var lineas = document.getElementsByClassName('listado')  
           for(var i = 0; i < lineas.length; i ++){
             lineas[i].style.fontWeight = 'normal'
-            lineas[i].style.fontSize = '16px'
+            lineas[i].style.fontSize = pxToEm(14) + 'em';
           }
         }
       }  
@@ -4216,12 +4223,12 @@ function cambiarColor(elemento, encendido) {
       if (encendido) {
         elemento.style.backgroundColor = 'rgb(0,255,0)'
         elemento.style.color = 'rgb(0,0,77)';
-        elemento.style.fontSize = '16px'
+        elemento.style.fontSize = pxToEm(14) + 'em';
         elemento.style.fontWeight = 'bold';             
       } else {
         elemento.style.backgroundColor = '';
         elemento.style.color = 'rgb(255, 255, 177)';
-        elemento.style.fontSize = '19px'
+        elemento.style.fontSize = pxToEm(16) + 'em';
         elemento.style.fontWeight = 'normal'
       }     
     break;
