@@ -7245,7 +7245,9 @@ display: none;
   }
   .icono {
     flex: 1;
+    height: 12%;
     width: 15%;
+    margin-bottom: 2px;
     border: none;
   }
   .iconos-laterales {
@@ -9320,7 +9322,7 @@ display: none;
     height:40%;
     background-color: rgba(1,1,15,0.9);
     padding: 10px; 
-    gap: 34px;
+    /* gap: 34px; */
     border-radius: 3px;
     cursor: pointer;
     font-family: 'GothamRounded', sans-serif;
@@ -9337,7 +9339,7 @@ display: none;
   }
   .conte-listado{
     position: relative;
-    height: 19px;
+    height: 7.1%;
     margin-bottom: 7px;
     color: rgb(255, 255, 177);
     font-size:0.8em;
