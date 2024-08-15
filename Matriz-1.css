@@ -1807,10 +1807,12 @@ header {
   color: white;
 }
 #arow-direction::after{
+  position: absolute;
+  top:0;
   content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
-  font-size: 1em; /* Aumentar el tamaño al doble */
+  font-size: 1em;
   color: rgb(0,255,0);
-  margin-left: 83px;
+  margin-left:6.3vw;
 }
 #bot-atras12::before,
 #bot-atras11::before,

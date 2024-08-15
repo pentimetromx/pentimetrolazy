@@ -2128,6 +2128,7 @@ let ejecutando = false;
 function alternarAyudas() {
   var imagenAyudas = document.getElementById('imagen-ayudas')
   var contenedorElementos = document.getElementById('contenedorElementos')
+  document.getElementById('ventana-lateral').style.display='none'
   imagenAyudas.classList.remove('pressed');
 
   if (ejecutando) {

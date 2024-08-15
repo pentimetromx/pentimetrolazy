@@ -5365,9 +5365,10 @@ function abrirAyudas(){
 function desenrrollarVentana() {
   let anchoVentana = document.getElementById('ventana-lateral');
   anchoVentana.style.width = '';
-  let anchoInicial = parseInt(window.getComputedStyle(anchoVentana).width);
-  let anchoFinal = 400;
-  let duracion = 1000; 
+  // Obtener el ancho inicial en vw
+  let anchoInicial = parseFloat(window.getComputedStyle(anchoVentana).width) / window.innerWidth * 100;
+  let anchoFinal = 94;
+  let duracion = 1000;
   let startTime = null;
   function animar(timestamp) {
     if (!startTime) startTime = timestamp;
@@ -5375,11 +5376,11 @@ function desenrrollarVentana() {
     let progreso = tiempoTranscurrido / duracion;
     let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
     let anchoActual = anchoInicial + (anchoFinal - anchoInicial) * easeOutProgress;
-    anchoVentana.style.width = anchoActual + 'px';
+    anchoVentana.style.width = anchoActual + 'vw';
     if (tiempoTranscurrido < duracion) {
       requestAnimationFrame(animar);
     } else {
-      anchoVentana.style.width = anchoFinal + 'px'; // Asegura que termine exactamente en el ancho final
+      anchoVentana.style.width = anchoFinal + 'vw'; // Asegura que termine exactamente en el ancho final
     }
   }
   requestAnimationFrame(animar);
