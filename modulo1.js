@@ -91,21 +91,8 @@ function cierraContenedores(elementId,buttonID){
     }    
     firstClick = false;
   } else {
-    /* arrayGeneral.forEach(element => {
-      var elemento = document.getElementById(element)
-      if (elemento) {
-          elemento.style.display = 'none'
-      } 
-    }) 
-    btnsIniciales.forEach(elemento =>{
-      if (elemento){
-        elemento.style.background = ''
-        elemento.style.color = ''
-      }
-    }) */    
     abrirSeccionContinua() 
   }
-
 }
 function muestraRodillo (vidElem, imgCont){
   switch(vidElem){
@@ -3149,10 +3136,10 @@ function listaEntrenamientosII(btnList) {
     default:
   }
   if(screenWidth < 500){
-    var vinculosTrouble = document.getElementById('linkLis')
-    vinculosTrouble.style.position = 'absolute'    
+    var vinculosTrouble = document.getElementById('linksMA')
+/*     vinculosTrouble.style.position = 'absolute'    
     vinculosTrouble.style.marginLeft = '-64%'
-    vinculosTrouble.style.marginTop = '13%'
+    vinculosTrouble.style.marginTop = '13%' */
 
     var contBoton = document.getElementById('conti-boton')
     contBoton.removeAttribute('style')
