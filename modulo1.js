@@ -3193,7 +3193,7 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
-  var linkOrange = document.getElementById(id)      
+  var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
   if(screenWidth < 500){
     document.body.style.zoom = "100%"
@@ -3227,6 +3227,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
         document.getElementById('butt-links').style.left='0'
         document.getElementById('links-iniciales').style.left='47vw'
+        reponerEstilos()
         animateScroll('control-neumatico')
       }
     break;
@@ -3281,7 +3282,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }   
       }      
     break;
-    case 'link4':  
+    case 'link4':
     var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed','contImaginario-II']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  

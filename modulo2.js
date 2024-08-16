@@ -5454,6 +5454,9 @@ function reponerEstilos(){
   padreImgs.style.filter=`blur(${blurValue}px)`;
   let padreAyudas = document.getElementById('ventana-lateral')
   padreAyudas.style.width=''
+  padreManometro.style.height=''
+  padreManometro.style.left=''
+
 
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
   padreVideos.classList.remove('move_video');

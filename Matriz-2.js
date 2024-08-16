@@ -794,7 +794,8 @@ function building(){
 const neumatica = document.getElementById('neumatica');
 const moveButton = document.getElementById('moveButton');
 let moved = false;
-padreManometro.addEventListener('dblclick', () => {
+let imageManometro = document.getElementById('image-1')
+imageManometro.addEventListener('dblclick', () => {
   var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo','butt-links-III']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -843,6 +844,7 @@ padreManometro.addEventListener('dblclick', () => {
         padreManometro.style.top = '6vh'
         padreManometro.style.left = '2vw'
         padreManometro.style.width = '97vw'
+        padreManometro.style.height='53vh'
         moved = false;
       }  
     }
