@@ -2293,8 +2293,8 @@ function irContenedorAnterior() {
     abrirSeccionContinua('pantalla-inicial')
     break; 
     case "pantalla-tintero":
-      var botonesInicio = document.getElementById('container01')                  
-      botonesInicio.style.display='block'
+      /* var botonesInicio = document.getElementById('container01')                  
+      botonesInicio.style.display='block' */
       changeButtonStyles('pantalla-tintero')  
     break;
     case "videoElement1-II":

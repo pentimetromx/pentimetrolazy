@@ -531,6 +531,14 @@ function changeButtonStyles(elementId){
             video.style.display = 'none'
           }
           });
+          if (typeof elementId !== 'undefined') {
+            const index = idsArray.indexOf(elementId);
+            if (index !== -1) {
+              idsArray.splice(index, 1);
+            }
+            idsArray.push(elementId);
+            console.log(idsArray);
+          }   
       }else{
         videoElements.forEach(video => {
         if (video.id === 'vidTintero') {
@@ -544,11 +552,11 @@ function changeButtonStyles(elementId){
         } else {
           video.style.display = 'none'
         }
-        });
+        });  
         if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
           idsArray.push(elementId);
           console.log(idsArray);
-        } 
+        }
       }  
     break;    
     case 'bateria-entintado-II': 

@@ -8479,7 +8479,8 @@ display: none;
     position: absolute;
     display: flex;
     display: none;
-    top:40vh;
+    /* top:40vh; */
+    top: 43vh;
     left:37vw;
     width:55vw;
     height:22vh;
