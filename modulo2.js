@@ -195,15 +195,15 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          changeButtonStyles('pantalla-tintero')
+          ElementosMaII('conteneMantaut')
         },977) 
-        /*setTimeout(function() {
-          muestraVidPrisma('prisma-vid-II')
+        setTimeout(function() {
+          deslizaContenedor('conti-boton-kaizen','kaizen')
         },1177) 
         setTimeout(function() {
-          alternarAyudas()
+          rodillosKaizen('btn12','vidElem')
         },1377)
-        setTimeout(function() {
+        /*setTimeout(function() {
           alternarAyudas()                        
         },1677) 
         setTimeout(function() {
