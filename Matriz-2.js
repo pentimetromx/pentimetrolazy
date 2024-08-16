@@ -127,7 +127,7 @@ const padreVideos = document.getElementById('nicho-videos')
 
 const videoElements = document.querySelectorAll('.video-training') 
 const videosPrepress = document.querySelectorAll('.vid-prepress')  
-const video = document.getElementById("videoBackground")
+/* const video = document.getElementById("videoBackground") */
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
 const images = document.querySelectorAll('.image-training') 

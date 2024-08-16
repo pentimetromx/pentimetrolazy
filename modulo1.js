@@ -8,102 +8,102 @@ function cierraContenedores(elementId,buttonID){
   }
   }   
   if (firstClick) { 
-  if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
-    idsArray.push(elementId);
-    console.log(idsArray);
-  }     
-  switch (elementId) {
-    case 'desbobinadorId':
-      var pantallaInicial = document.getElementById('pantalla-inicial');
-      if (pantallaInicial) {    
-        for (var i = 0; i < pantallaInicial.children.length; i++) {
-          var hijo = pantallaInicial.children[i];
-          if (i === 0) {
-            hijo.style.display = 'flex';
-            hijo.style.position='relative'
-          } else {
-            hijo.style.display = 'none';
+    if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {
+      idsArray.push(elementId);
+      console.log(idsArray);
+    }     
+    switch (elementId) {
+      case 'desbobinadorId':
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {    
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 0) {
+              hijo.style.display = 'flex';
+              hijo.style.position='relative'
+            } else {
+              hijo.style.display = 'none';
+            }
+          }
+        }      
+        /* video.style.display = 'none' */
+        aumentarTamanosDeBotones() 
+      break;
+      case 'uTeñido':
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i !== 1) {
+              hijo.style.display = 'none';
+            } else {
+              hijo.style.display = 'flex';
+            }
+          }
+        }  
+        aumentarTamanosDeBotonesII()
+      break;
+      case 'alimentadorId':
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 2) {
+              hijo.style.display = 'flex';
+            } else {
+              hijo.style.display = 'none'
+            }
+          }
+        } 
+        botonClickIII.style.display = 'block'
+        aumentarTamanosDeBotonesIII()
+      break;
+      case 'unidProceso':
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i === 3) {
+              hijo.style.display = 'flex';
+            } else {
+              hijo.style.display = 'none';
+            }
+          }
+        }  
+        botonClickIV.style.display = 'block'
+        aumentarTamanosDeBotonesIV()         
+      break;
+      case 'rebobinador':
+        var pantallaInicial = document.getElementById('pantalla-inicial');
+        if (pantallaInicial) {
+          for (var i = 0; i < pantallaInicial.children.length; i++) {
+            var hijo = pantallaInicial.children[i];
+            if (i !== 4) {
+              hijo.style.display = 'none';
+            } else {
+              hijo.style.display = 'flex';
+            }
           }
         }
-      }      
-      video.style.display = 'none'
-      aumentarTamanosDeBotones() 
-    break;
-    case 'uTeñido':
-      var pantallaInicial = document.getElementById('pantalla-inicial');
-      if (pantallaInicial) {
-        for (var i = 0; i < pantallaInicial.children.length; i++) {
-          var hijo = pantallaInicial.children[i];
-          if (i !== 1) {
-            hijo.style.display = 'none';
-          } else {
-            hijo.style.display = 'flex';
-          }
-        }
-      }  
-      aumentarTamanosDeBotonesII()
-    break;
-    case 'alimentadorId':
-      var pantallaInicial = document.getElementById('pantalla-inicial');
-      if (pantallaInicial) {
-        for (var i = 0; i < pantallaInicial.children.length; i++) {
-          var hijo = pantallaInicial.children[i];
-          if (i === 2) {
-            hijo.style.display = 'flex';
-          } else {
-            hijo.style.display = 'none'
-          }
-        }
-      } 
-      botonClickIII.style.display = 'block'
-      aumentarTamanosDeBotonesIII()
-    break;
-    case 'unidProceso':
-      var pantallaInicial = document.getElementById('pantalla-inicial');
-      if (pantallaInicial) {
-        for (var i = 0; i < pantallaInicial.children.length; i++) {
-          var hijo = pantallaInicial.children[i];
-          if (i === 3) {
-            hijo.style.display = 'flex';
-          } else {
-            hijo.style.display = 'none';
-          }
-        }
-      }  
-      botonClickIV.style.display = 'block'
-      aumentarTamanosDeBotonesIV()         
-    break;
-    case 'rebobinador':
-      var pantallaInicial = document.getElementById('pantalla-inicial');
-      if (pantallaInicial) {
-        for (var i = 0; i < pantallaInicial.children.length; i++) {
-          var hijo = pantallaInicial.children[i];
-          if (i !== 4) {
-            hijo.style.display = 'none';
-          } else {
-            hijo.style.display = 'flex';
-          }
-        }
-      }
-      aumentarTamanosDeBotonesV()
-    break;
-    default:
-  }    
-  firstClick = false;
+        aumentarTamanosDeBotonesV()
+      break;
+      default:
+    }    
+    firstClick = false;
   } else {
-  arrayGeneral.forEach(element => {
-    var elemento = document.getElementById(element)
-    if (elemento) {
-        elemento.style.display = 'none'
-    } 
-  }) 
-  btnsIniciales.forEach(elemento =>{
-    if (elemento){
-      elemento.style.background = ''
-      elemento.style.color = ''
-    }
-  })    
-  abrirSeccionContinua() 
+    /* arrayGeneral.forEach(element => {
+      var elemento = document.getElementById(element)
+      if (elemento) {
+          elemento.style.display = 'none'
+      } 
+    }) 
+    btnsIniciales.forEach(elemento =>{
+      if (elemento){
+        elemento.style.background = ''
+        elemento.style.color = ''
+      }
+    }) */    
+    abrirSeccionContinua() 
   }
 
 }

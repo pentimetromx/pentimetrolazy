@@ -7757,8 +7757,8 @@ display: none;
     position:relative;
     display: flex;
     flex-direction: column;
-    left:2vw;
-    top:15vh;
+    left:1vw;
+    top:11vh;
     width:74vw;
     height: 70vh;
     display: none;
@@ -7831,9 +7831,9 @@ display: none;
   #vidTintero{
     position: relative;
     margin-left: -157%;
-    margin-top: 2.5vh;
-    height:37vh;
-    width:74vw;
+    margin-top: 1vh;
+    height:40vh;
+    width:73vw;
   }  
   #agrupaOblicuos-II{
     position: absolute;
