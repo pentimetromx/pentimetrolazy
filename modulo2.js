@@ -1213,11 +1213,8 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
            var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
            elemento.style.display = 'none'
          }
-         casoEstudio.removeAttribute("style");
          imgsEstudio.classList.remove('move-casos')        
-         casoEstudio.classList.remove('move-label') 
          casoEstudio.removeAttribute('style')
-         casoEstudio.style.left = '-63%';
          casoEstudio.style.display = 'none' 
          imgsEstudio.style.display = 'none'       
          const imagenes = document.querySelectorAll('.imgs-toyota');
@@ -1250,8 +1247,7 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          }
        }
        transicionImagenes()
-     }
- 
+     } 
      break;
      case 'btn11':
        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  

@@ -8392,7 +8392,7 @@ display: none;
     width:65vw;
     height:32vh;
     left: 33vw;
-    top:3vh;
+    top:0;
     gap: 2px;
   }
   .row {
@@ -8479,7 +8479,7 @@ display: none;
     position: absolute;
     display: flex;
     display: none;
-    top:52vh;
+    top:49vh;
     left:37vw;
     width:55vw;
     height:22vh;
@@ -9387,7 +9387,7 @@ display: none;
     transform: translateY(113vh);
   }
   .move-label{
-    transform: translateX(107vw)
+    transform: translateX(122vw)
   }
   .move-casos{
     transform: translateX(98vw)
