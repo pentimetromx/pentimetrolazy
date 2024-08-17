@@ -7075,7 +7075,7 @@ input.numero:focus {
   .planet-container {
     position: relative;
     display: flex;
-    top:17vh;
+    top:8.5vh;
     left: 0vw;
     width: 98vw;
     height: 88vh;
@@ -8515,7 +8515,7 @@ input.numero:focus {
     max-width: 40%;
     display: none;
     font-family: GothamRounded , sans-serif;
-    font-size: 20px;
+    font-size:1.1em;
     color:rgba(255, 24, 55); 
     transition: transform 1.6s ease;
   }  

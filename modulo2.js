@@ -1216,12 +1216,14 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
          imgsEstudio.classList.remove('move-casos')        
          casoEstudio.removeAttribute('style')
          casoEstudio.style.display = 'none' 
+         casoEstudio.style.left=''
          imgsEstudio.style.display = 'none'       
          const imagenes = document.querySelectorAll('.imgs-toyota');
          imagenes.forEach((imagen, index) => {
            setTimeout(() => {
                imagen.style.display = 'block';
            }, 400 + index * 177);
+           desactivarClicsPorUnTiempo()
            setTimeout(() => {
              imgsEstudio.style.display = 'flex'       
              casoEstudio.style.display = 'flex'  
@@ -1421,1172 +1423,1172 @@ var nuevosDatos = [/* Nuevos valores de datos */ 0,20,10,0,0,5]
    
    
  }
- function mostrarBotonConRetardo(index) {
-   let arrayButtCasos = ['caso1', 'caso2', 'caso3']
- 
-   contiButtCasos.style.display = 'flex'
- 
-   if (index < arrayButtCasos.length) {
- 
-     let casoId = arrayButtCasos[index]
-     document.getElementById(casoId).style.display = 'flex'
- 
-     // Luego de 1 segundo, mostrar el siguiente botón
-     setTimeout(function () {
-         mostrarBotonConRetardo(index + 1)
-     }, 350)
-   }
- }
- function showButtonsKaizenRetraso() {
-   var contiButtsKaizen = document.getElementById('conti-boton-kaizen')
-   contiButtsKaizen.style.display = 'flex'
-   function mostrarConRetraso(i) {
-     if (i < arrayButtsKaizen.length) {
-       var botonId = arrayButtsKaizen[i]
-       var boton = document.getElementById(botonId)
- 
-       if (boton) {
-         boton.style.display = 'inline-block'
-         boton.color = ''
-         boton.style.backgroundColor = ''
-         setTimeout(function() {
-           mostrarConRetraso(i + 1)
-         }, 150) // 150 milisegundos de retraso entre botones
-       }
-     }
-   }
-   mostrarConRetraso(0) // Comienza desde el primer botón
- }
- function hideButtonsKaizenRetraso() {
-   var contiButtsKaizen = document.getElementById('conti-boton-kaizen')
-   contiButtsKaizen.style.display = 'flex'
-   function mostrarConRetraso(i) {
-     if (i < arrayButtsKaizen.length) {
-       var botonId = arrayButtsKaizen[i]
-       var boton = document.getElementById(botonId)
- 
-       if (boton) {
-         boton.style.display = 'none'
-         boton.style.color = ''
-         boton.style.backgroundColor = ''
-           if(boton.id === 'btn12'){
-             boton.textContent = 'IMPLEMENTADOS';        
-           }
-         setTimeout(function() {
-           mostrarConRetraso(i + 1)
-         }, 17) 
-       }
-     }
-   }
-   mostrarConRetraso(0) // Comienza desde el primer botón
- }
- function showButtonsPlanosRetraso() {
-   var contiButtsPlanos = document.getElementById('conti-boton-planos')
-   contiButtsPlanos.style.display = 'flex'
-   function mostrarConRetraso(i) {
-     if (i < arrayButtsPlanos.length) {
-       var botonId = arrayButtsPlanos[i]
-       var boton = document.getElementById(botonId)
- 
-       if (boton) {
-         boton.style.display = 'inline-block' // o 'inline-block' según tus necesidades
- 
-         setTimeout(function() {
-           mostrarConRetraso(i + 1)
-         }, 150) // 150 milisegundos de retraso entre botones
-       }
-     }
-   }
-   mostrarConRetraso(0) // Comienza desde el primer botón
- }
- function aumentoBotonesBody() {
-   var elementosExcluidos = ['buscador','search-form','franja-Blanca','cont-titulo','subtitulo-I','descripcion-I','contenedor-principal']
-   for (var i = 0; i < allContenedores.length; i++) { 
-     var elemento = document.getElementById(allContenedores[i])  
-     if (elemento) {
-       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-     }
-   }  
-   // Función para aumentar el tamaño de un botón y luego restaurarlo
-   function aumentarYRestaurar(index) {
-     if (index < buttonsIds.length) {
-       const buttonId = buttonsIds[index];
-       const button = document.getElementById(buttonId);
-       // Aumentar el tamaño del botón
-       if (button) {
-         button.style.transform = 'scale(7)'
-         // Después de 0.5 segundos, devolverlo al tamaño normal
-         setTimeout(function () {
-           button.style.transform = 'scale(1)'
-           // Llamada a la función para eliminar estilos después de restaurar el tamaño
-           /* eliminarEstilosEnLinea(); */
-           // Llamada recursiva para pasar al siguiente botón en el array
-           aumentarYRestaurar(index + 1);
-         }, 177);
-       }
-     }
-   }
-   // Iniciar el proceso con el primer botón
-   aumentarYRestaurar(0);
- }
- function tamaño100(){
-   var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
-   for (var i = 0; i < allContenedores.length; i++) { 
-     var elemento = document.getElementById(allContenedores[i])  
-     if (elemento) {
-       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-     }
-   }  
-   troublesh.removeAttribute('style')
-   document.body.style.zoom = "100%"
-   reponerEstilos()   
- }
- const imagenesAumentar = document.querySelectorAll('img.aumentar')
- imagenesAumentar.forEach(image => {
-   image.addEventListener('click', () => {
-     if (!document.fullscreenElement) {
-       if (image.requestFullscreen) {
-         image.requestFullscreen()
-       } else if (image.mozRequestFullScreen) { // Firefox
-         image.mozRequestFullScreen()
-       } else if (image.webkitRequestFullscreen) { // Chrome, Safari y Opera
-         image.webkitRequestFullscreen()
-       } else if (image.msRequestFullscreen) { // IE/Edge
-         image.msRequestFullscreen()
-       }
-     } else {
-       if (document.exitFullscreen) {
-         document.exitFullscreen()
-       } else if (document.mozCancelFullScreen) { // Firefox
-         document.mozCancelFullScreen()
-       } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
-         document.webkitExitFullscreen()
-       } else if (document.msExitFullscreen) { // IE/Edge
-         document.msExitFullscreen()
-       }
-     }
-   })
- })
- botones.forEach(function(boton) {
- var id = boton.getAttribute('id')
- alternarVisibilidad(id)
- }) 
- document.addEventListener("DOMContentLoaded", function() {
-   toggleVideoButton.addEventListener("click", function() {
-     video.pause()
-   })
- })
- images.forEach(image => {
-   let isFullscreen = false;
-   image.addEventListener('click', () => {
-     if (!isFullscreen) {
-       if (image.requestFullscreen) {
-         image.requestFullscreen()
-       } else if (image.mozRequestFullScreen) {
-         image.mozRequestFullScreen()
-       } else if (image.webkitRequestFullscreen) {
-         image.webkitRequestFullscreen()
-       } else if (image.msRequestFullscreen) {
-         image.msRequestFullscreen()
-       }
-     } else {
-       if (document.exitFullscreen) {
-         document.exitFullscreen()
-       } else if (document.mozCancelFullScreen) {
-         document.mozCancelFullScreen()
-       } else if (document.webkitExitFullscreen) {
-         document.webkitExitFullscreen()
-       } else if (document.msExitFullscreen) {
-         document.msExitFullscreen()
-       }
-     }
-     isFullscreen = !isFullscreen;
-   })
- })
- images.forEach((image, index) => {
-   // Añadir el evento de aumento de tamaño al hacer clic
-   image.addEventListener('click', () => {
-     // Guardar el tamaño original para volver a él después
-     const originalWidth = image.width;
-     const originalHeight = image.height;
-     // Aumentar el tamaño de la imagen en un 30% durante 0.1 segundos
-     image.style.transition = 'transform 0.1s'
-     image.style.transform = 'scale(1.3)'    
-     // Volver al tamaño original después de 0.1 segundos
-     setTimeout(() => {
-       image.style.transition = 'transform 0.1s'
-       image.style.transform = 'scale(1)'
-     }, 400) 
-   })
- })
- var chart = new Chart(miCanvas, {
-     type: 'bar',    
-     data: {
-         labels: ['TROUBLESHOOTING', 'DEFECTOS TIPO 1', 'DEFECTOS TIPO 2', 'ADT', 'FUA', 'LUP'],
-         datasets: [
-             {
-                 label: 'Participación en M.A',
-                 backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)', 'rgb(0, 255, 255)', 'rgb(255, 0, 255)'],
-                 data: [57, 88, 62, 33, 14, 20]
-             }
-         ]
-     },
-     options: {
-         scales: {
-             x: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
-                 }
-             },
-             y: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(255,255,255)' ,// Color de las etiquetas de texto en el eje X
- 
-                     beginAtZero: true // Empezar el eje Y desde cero
-                 }
- 
-             }
-         },
-         indexAxis: 'y', // Mostrar barras horizontalmente
-         plugins: {
-             legend: {
-                 display: false // Ocultar la leyenda
-             }
-         }
-     }
- })
- var chart3 = new Chart(miCanvas2, {
-     type: 'bar',
-     data: {
-         labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-         datasets: [
-             {
-                 label: 'Datos del Segundo Gráfico',
-                 backgroundColor: ['rgb(0, 128, 0)', 'rgb(0,0,255)', 'rgb(255, 102, 0)', 'rgb(255, 0, 0)'],
-                 data: [15, 25, 35, 20, 10, 19]
-             }
-         ]
-     },
-     options: {
-         scales: {
-             x: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(255,255,0)' // Color de las etiquetas de texto en el eje X
-                 }
-             },
-             y: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(255,255,0)', // Color de las etiquetas de texto en el eje X
-                     beginAtZero: true // Empezar el eje Y desde cero
-                 }
- 
-             }
-         },
-         indexAxis: 'x', // Mostrar barras horizontalmente
-         plugins: {
-             legend: {
-                 display: false // Ocultar la leyenda
-             }
-         }
-     }
- })
- var chart4 = new Chart(miCanvas3, {
-     type: 'line',
-     data: {
-         labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-         datasets: [
-             {
-                 label: 'Datos del Segundo Gráfico',
-                 backgroundColor: ['rgb(0, 128, 0)', 'rgb(255, 102, 0)', 'rgb(0,0,255)', 'rgb(255,255,0)', 'rgb(255, 0, 0)', 'rgb(255, 0, 255)' ],
-                 data: [15, 25, 35, 20, 10, 19]
-             }
-         ]
-     },
-     options: {
-         scales: {
-             x: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
-                 }
-             },
-             y: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje X
-                     beginAtZero: true // Empezar el eje Y desde cero
-                 }
- 
-             }
-         },
-         indexAxis: 'x', // Mostrar barras horizontalmente
-         plugins: {
-             legend: {
-                 display: false // Ocultar la leyenda
-             }
-         }
-     }
- })
- var chart5 = new Chart(miCanvas4, {
-     type: 'pie',
-     data: {
-         labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-         datasets: [
-             {
-                 label: 'Datos del Segundo Gráfico',
-                 backgroundColor: ['#ff1700', '#ff2e00', '#ff4500', '#ff7300', '#ffa200)', '#ffff00'],
-                 data: [15, 25, 35, 20, 10, 19],
-                 borderWidth: 0.3,
-             }
-         ]
-     },
-     options: {
-         scales: {
-             x: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(3, 237, 253)' // Color de las etiquetas de texto en el eje X
-                 }
-             },
-             y: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(3, 237, 253)', // Color de las etiquetas de texto en el eje X
-                     beginAtZero: true // Empezar el eje Y desde cero
-                 }
- 
-             }
-         },
-         indexAxis: 'x', // Mostrar barras horizontalmente
-         plugins: {
-             legend: {
-                 display: false // Ocultar la leyenda
-             }
-         }
-     }
- })
- var chart6 = new Chart(miCanvas5, {
-     type: 'bar',
-     data: {
-         labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-         datasets: [
-             {
-                 label: 'Datos del Segundo Gráfico',
-                 backgroundColor: ['rgb(0,255,0)', '#ff1700', 'green', '#ff1700', '#ffa200)', '#ffff00'],
-                 data: [55, -65, 35, -90, 10, 19],
-                 borderWidth: 0.3,
-             }
-         ]
-     },
-     options: {
-         scales: {
-             x: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(3, 237, 253)' // Color de las etiquetas de texto en el eje X
-                 }
-             },
-             y: {
-                 grid: {
-                     display: false // Ocultar líneas de la cuadrícula en el eje X
-                 },
-                 ticks: {
-                     color: 'rgb(3, 237, 253)', // Color de las etiquetas de texto en el eje X
-                     beginAtZero: true // Empezar el eje Y desde cero
-                 }
- 
-             }
-         },
-         indexAxis: 'x', // Mostrar barras horizontalmente
-         plugins: {
-             legend: {
-                 display: false // Ocultar la leyenda
-             }
-         }
-     }
- })
- var chart7 = new Chart(miCanvas6, { 
-   type: 'bar',
-   data: {
-       labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
-       datasets: [
-           {
-               label: 'Participación en M.A',
-               backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
-               data: [57, 88, 62, 33]
-           }
-       ]
-   },
-   options: {
-       scales: {
-           x: {
-               grid: {
-                   display: false
-               },
-               ticks: {
-                   color: 'rgb(255,255,255)',
-                   font: {
-                       size: 9
-                   }
-               }
-           },
-           y: {
-               grid: {
-                   display: false
-               },
-               ticks: {
-                   color: 'rgb(255,255,255)',
-                   font: {
-                       size: 10
-                   },
-                   beginAtZero: true
-               }
-           }
-       },
-       indexAxis: 'x',
-       plugins: {
-           legend: {
-               display: false
-           },
-           title: {  // Agregar un título al gráfico
-               display: true,  // Mostrar el título
-               text: 'Participacion semanal',  // Texto del título
-               font: {
-                   size: 16  // Tamaño del texto del título
-               }
-           }
-       }
-   }
- })
- var chart7II = new Chart(miCanvas6II, { 
-   type: 'bar',
-   data: {
-     labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
-         data: [57, 88, 62, 33]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 4
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 5
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Participacion semanal',
-         font: {
-           size: 14
-         }
-       },
-       datalabels: {
-         color: 'rgb(255,255,255)',
-         font: {
-           size: 5 // Tamaño de la fuente para las etiquetas del conjunto de datos
-         },
-         anchor: 'end',
-         align: 'end',
-         formatter: function(value, context) {
-           return value; // Puedes personalizar el formato del valor si es necesario
-         }
-       }
-     }
-   }
- });
- var chart8 = new Chart(miCanvas7, {
-   type: 'bar',
-   data: {
-     labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)'],
-         data: [17, 9,27]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 9
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 10
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'y',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Lección de un punto',
-         font: {
-           size: 16
-         }
-       }
-     }
-   }
- })
- var chart8II = new Chart(miCanvas7II, {
-   type: 'bar',
-   data: {
-     labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)'],
-         data: [17, 9,27]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 4
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 5
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'y',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Lección de un punto',
-         font: {
-           size: 14
-         }
-       }
-     }
-   }
- })
- var chart9 = new Chart(miCanvas8, {
-   type: 'line',
-   data: {
-     labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas','Transicion'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         borderColor: 'rgb(0, 0, 255)',
-         backgroundColor: ['rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)'],
-         borderWidth: 1,        
-         data: [17, 9,27,55,19,33]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 9
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 10
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Areas De Dificil Acceso',
-         font: {
-           size: 16
-         }
-       }
-     }
-   }
- })
- var chart9II = new Chart(miCanvas8II, {
-   type: 'line',
-   data: {
-     labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas','Transicion'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         borderColor: 'rgb(0, 0, 255)',
-         backgroundColor: ['rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)'],
-         borderWidth: 1,        
-         data: [17, 9,27,55,19,33]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 4
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 5
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Areas de dificil acceso',
-         font: {
-           size: 14
-         }
-       }
-     }
-   }
- })
- var chart10 = new Chart(miCanvas9, {
-   type: 'doughnut',
-   data: {
-     labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,0,255)'],
-         data: [17, 9,27,55,19,33]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 9
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 10
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Ayudas De Trabajo',
-         font: {
-           size: 16
-         }
-       }
-     }
-   }
- })
- var chart10II = new Chart(miCanvas9II, {
-   type: 'doughnut',
-   data: {
-     labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,0,255)'],
-         data: [17, 9,27,55,19,33]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 4
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 5
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: ' Ayudas de trabajo',
-         font: {
-           size: 14
-         }
-       }
-     }
-   }
- })
- var chart11 = new Chart(miCanvas10, {
-   type: 'pie',
-   data: {
-     labels: ['LUP', 'DEF 1','DEF 2','ADA','ADT'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(0,255,255)'],
-         data: [7, 19,17,37,9,77]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 9
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 10
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Ejecución ',
-         font: {
-           size: 16
-         }
-       }
-     }
-   }
- })
- var chart11II = new Chart(miCanvas10II, {
-   type: 'pie',
-   data: {
-     labels: ['LUP', 'DEF 1','DEF 2','ADA','ADT'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(0,255,255)'],
-         data: [7, 19,17,37,9,77]
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 9
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 10
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Ejecución ',
-         font: {
-           size: 16
-         }
-       }
-     }
-   }
- })
- var chart12 = new Chart(miCanvas11, {
-   type: 'line',
-   data: {
-     labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         borderColor: 'rgb(255,165,0)', 
-         borderWidth: 1,
-         pointRadius: 0,                       
-         /* backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(255,255,0)','rgb(0,0,255)','rgb(177,0,255)'], */
-         /* data: [7, 19, 27, 37, 59, 77, 81, 99] */
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 9
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 10
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Tendencia',
-         font: {
-           size: 16
-         }
-       }
-     }
-   }
- });
- var chart12II = new Chart(miCanvas11II, {
-   type: 'line',
-   data: {
-     labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
-     datasets: [
-       {
-         label: 'Participación en M.A',
-         borderColor: 'rgb(255,165,0)', 
-         borderWidth: 1,
-         pointRadius: 0, 
-         data: [7, 19,17,37,9,77]
-                       
-       }
-     ]
-   },
-   options: {
-     scales: {
-       x: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 4
-           }
-         }
-       },
-       y: {
-         grid: {
-           display: false
-         },
-         ticks: {
-           color: 'rgb(255,255,255)',
-           font: {
-             size: 5
-           },
-           beginAtZero: true
-         }
-       }
-     },
-     indexAxis: 'x',
-     plugins: {
-       legend: {
-         display: false
-       },
-       title: {
-         display: true,
-         text: 'Tendencia',
-         font: {
-           size: 14
-         }
-       }
-     }
-   }
- });
- const zoomableImages = document.querySelectorAll('.image-trainings')
- const sensitivity = 5; 
- zoomableImages.forEach((zoomableImage) => {
-   zoomableImage.addEventListener('mouseenter', () => {
-     zoomableImage.style.transition = 'transform 0.1s ease, filter 0.1s ease'
-   })
-   zoomableImage.addEventListener('mousemove', (e) => {
-     const x = (zoomableImage.clientWidth / 2 - e.clientX + zoomableImage.getBoundingClientRect().left) / sensitivity;
-     const y = (zoomableImage.clientHeight / 2 - e.clientY + zoomableImage.getBoundingClientRect().top) / sensitivity;
- 
-     zoomableImage.style.transform = `translate(${x}px, ${y}px) scale(1.5)`;
-   })
-   zoomableImage.addEventListener('mouseleave', () => {
-     zoomableImage.style.transition = 'transform 0.1s ease'
-     zoomableImage.style.transform = 'translate(0, 0) scale(1)'
-   })
- })
- textToColor.addEventListener("mouseover", () => {
-     clearTimeout(hideTimeout)
-     hoverTimeout = setTimeout(() => {
-       linkList.style.display = "block";
-       linkListI.style.display = 'none'
-       line.style.width = textToColor.offsetWidth + "px";
-       linkListI.style.display = "none";
-     }, 7)
- })
- linkList.addEventListener("mouseover", () => {
-     clearTimeout(hideTimeout)
-     linkListI.style.display = 'none'
- })
- textToColor.addEventListener("mouseout", () => {
-     clearTimeout(hoverTimeout)
-     hideTimeout = setTimeout(() => {
-       textToColor.style.color = "white";
-       linkList.style.display = "none";
-       line.style.width = "0";
-     }, 7)
- })
- linkList.addEventListener("mouseout", () => {
-     hideTimeout = setTimeout(() => {
-       textToColor.style.color = "white";
-       linkList.style.display = "none";
-       line.style.width = "0";
-     }, 1)
- })
- textToColorI.addEventListener("mouseover", () => {
-   var linkList = document.getElementById('linkList')
-   clearTimeout(hideTimeout)
-   hoverTimeout = setTimeout(() => {
-     linkListI.style.display = "block";
-     linkList.style.display = 'none'
-     lineI.style.width = textToColorI.offsetWidth + "px";
-   }, 7)
- })
- linkListI.addEventListener("mouseover", () => {
-   clearTimeout(hideTimeout)
- })
- textToColorI.addEventListener("mouseout", () => {
-   clearTimeout(hoverTimeout)
-   hideTimeout = setTimeout(() => {
-     textToColorI.style.color = "white";
-     linkListI.style.display = "none";
-     lineI.style.width = "0";
-   }, 77)
- })
- linkListI.addEventListener("mouseout", () => {
-   hideTimeout = setTimeout(() => {
-     textToColorI.style.color = "white";
-     linkListI.style.display = "none";
-     lineI.style.width = "0";
-   }, 1)
- })
- const searchForm = document.getElementById('search-form')
- const searchInput = document.getElementById('search-input')
- const suggestionsList = document.getElementById('suggestions') // Agrega el elemento datalist
- const sugerencias = [
-  'autonomo',
-  'bateria',
-  'contra',
-  'contraPresion',
-  'densitometria',
-  'impresorImg',
-  'inicio',
-  'manta',
-  'mantenimiento autonomo',
-  'mantilla',
-  'pantalla-inicial',
-  'planas',
-  'plancha',
-  'porta mantilla',
-  'porta plancha',
-  'pre',
-  'preprensa',
-  'rotatek',
-  'secador',
-  'secador uv',
-  'smed',
-  'resultados',
-  'tintero',
-  'torre',
-  'variable'
-   
- ]
+function mostrarBotonConRetardo(index) {
+  let arrayButtCasos = ['caso1', 'caso2', 'caso3']
+
+  contiButtCasos.style.display = 'flex'
+
+  if (index < arrayButtCasos.length) {
+
+    let casoId = arrayButtCasos[index]
+    document.getElementById(casoId).style.display = 'flex'
+
+    // Luego de 1 segundo, mostrar el siguiente botón
+    setTimeout(function () {
+        mostrarBotonConRetardo(index + 1)
+    }, 350)
+  }
+}
+function showButtonsKaizenRetraso() {
+  var contiButtsKaizen = document.getElementById('conti-boton-kaizen')
+  contiButtsKaizen.style.display = 'flex'
+  function mostrarConRetraso(i) {
+    if (i < arrayButtsKaizen.length) {
+      var botonId = arrayButtsKaizen[i]
+      var boton = document.getElementById(botonId)
+
+      if (boton) {
+        boton.style.display = 'inline-block'
+        boton.color = ''
+        boton.style.backgroundColor = ''
+        setTimeout(function() {
+          mostrarConRetraso(i + 1)
+        }, 150) // 150 milisegundos de retraso entre botones
+      }
+    }
+  }
+  mostrarConRetraso(0) // Comienza desde el primer botón
+}
+function hideButtonsKaizenRetraso() {
+  var contiButtsKaizen = document.getElementById('conti-boton-kaizen')
+  contiButtsKaizen.style.display = 'flex'
+  function mostrarConRetraso(i) {
+    if (i < arrayButtsKaizen.length) {
+      var botonId = arrayButtsKaizen[i]
+      var boton = document.getElementById(botonId)
+
+      if (boton) {
+        boton.style.display = 'none'
+        boton.style.color = ''
+        boton.style.backgroundColor = ''
+          if(boton.id === 'btn12'){
+            boton.textContent = 'IMPLEMENTADOS';        
+          }
+        setTimeout(function() {
+          mostrarConRetraso(i + 1)
+        }, 17) 
+      }
+    }
+  }
+  mostrarConRetraso(0) // Comienza desde el primer botón
+}
+function showButtonsPlanosRetraso() {
+  var contiButtsPlanos = document.getElementById('conti-boton-planos')
+  contiButtsPlanos.style.display = 'flex'
+  function mostrarConRetraso(i) {
+    if (i < arrayButtsPlanos.length) {
+      var botonId = arrayButtsPlanos[i]
+      var boton = document.getElementById(botonId)
+
+      if (boton) {
+        boton.style.display = 'inline-block' // o 'inline-block' según tus necesidades
+
+        setTimeout(function() {
+          mostrarConRetraso(i + 1)
+        }, 150) // 150 milisegundos de retraso entre botones
+      }
+    }
+  }
+  mostrarConRetraso(0) // Comienza desde el primer botón
+}
+function aumentoBotonesBody() {
+  var elementosExcluidos = ['buscador','search-form','franja-Blanca','cont-titulo','subtitulo-I','descripcion-I','contenedor-principal']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+  // Función para aumentar el tamaño de un botón y luego restaurarlo
+  function aumentarYRestaurar(index) {
+    if (index < buttonsIds.length) {
+      const buttonId = buttonsIds[index];
+      const button = document.getElementById(buttonId);
+      // Aumentar el tamaño del botón
+      if (button) {
+        button.style.transform = 'scale(7)'
+        // Después de 0.5 segundos, devolverlo al tamaño normal
+        setTimeout(function () {
+          button.style.transform = 'scale(1)'
+          // Llamada a la función para eliminar estilos después de restaurar el tamaño
+          /* eliminarEstilosEnLinea(); */
+          // Llamada recursiva para pasar al siguiente botón en el array
+          aumentarYRestaurar(index + 1);
+        }, 177);
+      }
+    }
+  }
+  // Iniciar el proceso con el primer botón
+  aumentarYRestaurar(0);
+}
+function tamaño100(){
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }  
+  troublesh.removeAttribute('style')
+  document.body.style.zoom = "100%"
+  reponerEstilos()   
+}
+const imagenesAumentar = document.querySelectorAll('img.aumentar')
+imagenesAumentar.forEach(image => {
+  image.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      if (image.requestFullscreen) {
+        image.requestFullscreen()
+      } else if (image.mozRequestFullScreen) { // Firefox
+        image.mozRequestFullScreen()
+      } else if (image.webkitRequestFullscreen) { // Chrome, Safari y Opera
+        image.webkitRequestFullscreen()
+      } else if (image.msRequestFullscreen) { // IE/Edge
+        image.msRequestFullscreen()
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen()
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
+        document.webkitExitFullscreen()
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen()
+      }
+    }
+  })
+})
+botones.forEach(function(boton) {
+var id = boton.getAttribute('id')
+alternarVisibilidad(id)
+}) 
+document.addEventListener("DOMContentLoaded", function() {
+  toggleVideoButton.addEventListener("click", function() {
+    video.pause()
+  })
+})
+images.forEach(image => {
+  let isFullscreen = false;
+  image.addEventListener('click', () => {
+    if (!isFullscreen) {
+      if (image.requestFullscreen) {
+        image.requestFullscreen()
+      } else if (image.mozRequestFullScreen) {
+        image.mozRequestFullScreen()
+      } else if (image.webkitRequestFullscreen) {
+        image.webkitRequestFullscreen()
+      } else if (image.msRequestFullscreen) {
+        image.msRequestFullscreen()
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen()
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen()
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
+      }
+    }
+    isFullscreen = !isFullscreen;
+  })
+})
+images.forEach((image, index) => {
+  // Añadir el evento de aumento de tamaño al hacer clic
+  image.addEventListener('click', () => {
+    // Guardar el tamaño original para volver a él después
+    const originalWidth = image.width;
+    const originalHeight = image.height;
+    // Aumentar el tamaño de la imagen en un 30% durante 0.1 segundos
+    image.style.transition = 'transform 0.1s'
+    image.style.transform = 'scale(1.3)'    
+    // Volver al tamaño original después de 0.1 segundos
+    setTimeout(() => {
+      image.style.transition = 'transform 0.1s'
+      image.style.transform = 'scale(1)'
+    }, 400) 
+  })
+})
+var chart = new Chart(miCanvas, {
+    type: 'bar',    
+    data: {
+        labels: ['TROUBLESHOOTING', 'DEFECTOS TIPO 1', 'DEFECTOS TIPO 2', 'ADT', 'FUA', 'LUP'],
+        datasets: [
+            {
+                label: 'Participación en M.A',
+                backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(255, 255, 0)', 'rgb(0, 255, 255)', 'rgb(255, 0, 255)'],
+                data: [57, 88, 62, 33, 14, 20]
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)' ,// Color de las etiquetas de texto en el eje X
+
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'y', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+})
+var chart3 = new Chart(miCanvas2, {
+    type: 'bar',
+    data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['rgb(0, 128, 0)', 'rgb(0,0,255)', 'rgb(255, 102, 0)', 'rgb(255, 0, 0)'],
+                data: [15, 25, 35, 20, 10, 19]
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,0)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,0)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+})
+var chart4 = new Chart(miCanvas3, {
+    type: 'line',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['rgb(0, 128, 0)', 'rgb(255, 102, 0)', 'rgb(0,0,255)', 'rgb(255,255,0)', 'rgb(255, 0, 0)', 'rgb(255, 0, 255)' ],
+                data: [15, 25, 35, 20, 10, 19]
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(255,255,255)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+})
+var chart5 = new Chart(miCanvas4, {
+    type: 'pie',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['#ff1700', '#ff2e00', '#ff4500', '#ff7300', '#ffa200)', '#ffff00'],
+                data: [15, 25, 35, 20, 10, 19],
+                borderWidth: 0.3,
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+})
+var chart6 = new Chart(miCanvas5, {
+    type: 'bar',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        datasets: [
+            {
+                label: 'Datos del Segundo Gráfico',
+                backgroundColor: ['rgb(0,255,0)', '#ff1700', 'green', '#ff1700', '#ffa200)', '#ffff00'],
+                data: [55, -65, 35, -90, 10, 19],
+                borderWidth: 0.3,
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)' // Color de las etiquetas de texto en el eje X
+                }
+            },
+            y: {
+                grid: {
+                    display: false // Ocultar líneas de la cuadrícula en el eje X
+                },
+                ticks: {
+                    color: 'rgb(3, 237, 253)', // Color de las etiquetas de texto en el eje X
+                    beginAtZero: true // Empezar el eje Y desde cero
+                }
+
+            }
+        },
+        indexAxis: 'x', // Mostrar barras horizontalmente
+        plugins: {
+            legend: {
+                display: false // Ocultar la leyenda
+            }
+        }
+    }
+})
+var chart7 = new Chart(miCanvas6, { 
+  type: 'bar',
+  data: {
+      labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
+      datasets: [
+          {
+              label: 'Participación en M.A',
+              backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
+              data: [57, 88, 62, 33]
+          }
+      ]
+  },
+  options: {
+      scales: {
+          x: {
+              grid: {
+                  display: false
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)',
+                  font: {
+                      size: 9
+                  }
+              }
+          },
+          y: {
+              grid: {
+                  display: false
+              },
+              ticks: {
+                  color: 'rgb(255,255,255)',
+                  font: {
+                      size: 10
+                  },
+                  beginAtZero: true
+              }
+          }
+      },
+      indexAxis: 'x',
+      plugins: {
+          legend: {
+              display: false
+          },
+          title: {  // Agregar un título al gráfico
+              display: true,  // Mostrar el título
+              text: 'Participacion semanal',  // Texto del título
+              font: {
+                  size: 16  // Tamaño del texto del título
+              }
+          }
+      }
+  }
+})
+var chart7II = new Chart(miCanvas6II, { 
+  type: 'bar',
+  data: {
+    labels: ['DEFECTOS IDENTIFICADOS', 'DEFECTOS CORREGIDOS', 'TIPO 1', 'TIPO 2'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(128,128,128)', 'rgb(255, 255, 0)'],
+        data: [57, 88, 62, 33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 4
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 5
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Participacion semanal',
+        font: {
+          size: 14
+        }
+      },
+      datalabels: {
+        color: 'rgb(255,255,255)',
+        font: {
+          size: 5 // Tamaño de la fuente para las etiquetas del conjunto de datos
+        },
+        anchor: 'end',
+        align: 'end',
+        formatter: function(value, context) {
+          return value; // Puedes personalizar el formato del valor si es necesario
+        }
+      }
+    }
+  }
+});
+var chart8 = new Chart(miCanvas7, {
+  type: 'bar',
+  data: {
+    labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)'],
+        data: [17, 9,27]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Lección de un punto',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart8II = new Chart(miCanvas7II, {
+  type: 'bar',
+  data: {
+    labels: ['Propuestas', 'Ejecutadas','Entrenadas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)'],
+        data: [17, 9,27]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 4
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 5
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Lección de un punto',
+        font: {
+          size: 14
+        }
+      }
+    }
+  }
+})
+var chart9 = new Chart(miCanvas8, {
+  type: 'line',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas','Transicion'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: ['rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)'],
+        borderWidth: 1,        
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Areas De Dificil Acceso',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart9II = new Chart(miCanvas8II, {
+  type: 'line',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas','Transicion'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: ['rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)','rgb(0,255,255)'],
+        borderWidth: 1,        
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 4
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 5
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Areas de dificil acceso',
+        font: {
+          size: 14
+        }
+      }
+    }
+  }
+})
+var chart10 = new Chart(miCanvas9, {
+  type: 'doughnut',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,0,255)'],
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ayudas De Trabajo',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart10II = new Chart(miCanvas9II, {
+  type: 'doughnut',
+  data: {
+    labels: ['Mecanicas', 'Layout','Diseño','Temporales','Fijas'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','rgb(125,77,157)','rgb(255,255,0)','rgb(255,0,0)','rgb(0,0,255)'],
+        data: [17, 9,27,55,19,33]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 4
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 5
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: ' Ayudas de trabajo',
+        font: {
+          size: 14
+        }
+      }
+    }
+  }
+})
+var chart11 = new Chart(miCanvas10, {
+  type: 'pie',
+  data: {
+    labels: ['LUP', 'DEF 1','DEF 2','ADA','ADT'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(0,255,255)'],
+        data: [7, 19,17,37,9,77]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ejecución ',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart11II = new Chart(miCanvas10II, {
+  type: 'pie',
+  data: {
+    labels: ['LUP', 'DEF 1','DEF 2','ADA','ADT'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(0,255,255)'],
+        data: [7, 19,17,37,9,77]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Ejecución ',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+})
+var chart12 = new Chart(miCanvas11, {
+  type: 'line',
+  data: {
+    labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(255,165,0)', 
+        borderWidth: 1,
+        pointRadius: 0,                       
+        /* backgroundColor: ['rgb(255, 165, 0)', 'rgb(0, 255, 0)','#d6919a','rgb(255,255,0)','rgb(128,128,128)','rgb(255,255,0)','rgb(0,0,255)','rgb(177,0,255)'], */
+        /* data: [7, 19, 27, 37, 59, 77, 81, 99] */
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 9
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 10
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Tendencia',
+        font: {
+          size: 16
+        }
+      }
+    }
+  }
+});
+var chart12II = new Chart(miCanvas11II, {
+  type: 'line',
+  data: {
+    labels: ['S1','S2','S3','S4','S5','S6','S7','S8'],
+    datasets: [
+      {
+        label: 'Participación en M.A',
+        borderColor: 'rgb(255,165,0)', 
+        borderWidth: 1,
+        pointRadius: 0, 
+        data: [7, 19,17,37,9,77]
+                      
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 4
+          }
+        }
+      },
+      y: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: 'rgb(255,255,255)',
+          font: {
+            size: 5
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    indexAxis: 'x',
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Tendencia',
+        font: {
+          size: 14
+        }
+      }
+    }
+  }
+});
+const zoomableImages = document.querySelectorAll('.image-trainings')
+const sensitivity = 5; 
+zoomableImages.forEach((zoomableImage) => {
+  zoomableImage.addEventListener('mouseenter', () => {
+    zoomableImage.style.transition = 'transform 0.1s ease, filter 0.1s ease'
+  })
+  zoomableImage.addEventListener('mousemove', (e) => {
+    const x = (zoomableImage.clientWidth / 2 - e.clientX + zoomableImage.getBoundingClientRect().left) / sensitivity;
+    const y = (zoomableImage.clientHeight / 2 - e.clientY + zoomableImage.getBoundingClientRect().top) / sensitivity;
+
+    zoomableImage.style.transform = `translate(${x}px, ${y}px) scale(1.5)`;
+  })
+  zoomableImage.addEventListener('mouseleave', () => {
+    zoomableImage.style.transition = 'transform 0.1s ease'
+    zoomableImage.style.transform = 'translate(0, 0) scale(1)'
+  })
+})
+textToColor.addEventListener("mouseover", () => {
+    clearTimeout(hideTimeout)
+    hoverTimeout = setTimeout(() => {
+      linkList.style.display = "block";
+      linkListI.style.display = 'none'
+      line.style.width = textToColor.offsetWidth + "px";
+      linkListI.style.display = "none";
+    }, 7)
+})
+linkList.addEventListener("mouseover", () => {
+    clearTimeout(hideTimeout)
+    linkListI.style.display = 'none'
+})
+textToColor.addEventListener("mouseout", () => {
+    clearTimeout(hoverTimeout)
+    hideTimeout = setTimeout(() => {
+      textToColor.style.color = "white";
+      linkList.style.display = "none";
+      line.style.width = "0";
+    }, 7)
+})
+linkList.addEventListener("mouseout", () => {
+    hideTimeout = setTimeout(() => {
+      textToColor.style.color = "white";
+      linkList.style.display = "none";
+      line.style.width = "0";
+    }, 1)
+})
+textToColorI.addEventListener("mouseover", () => {
+  var linkList = document.getElementById('linkList')
+  clearTimeout(hideTimeout)
+  hoverTimeout = setTimeout(() => {
+    linkListI.style.display = "block";
+    linkList.style.display = 'none'
+    lineI.style.width = textToColorI.offsetWidth + "px";
+  }, 7)
+})
+linkListI.addEventListener("mouseover", () => {
+  clearTimeout(hideTimeout)
+})
+textToColorI.addEventListener("mouseout", () => {
+  clearTimeout(hoverTimeout)
+  hideTimeout = setTimeout(() => {
+    textToColorI.style.color = "white";
+    linkListI.style.display = "none";
+    lineI.style.width = "0";
+  }, 77)
+})
+linkListI.addEventListener("mouseout", () => {
+  hideTimeout = setTimeout(() => {
+    textToColorI.style.color = "white";
+    linkListI.style.display = "none";
+    lineI.style.width = "0";
+  }, 1)
+})
+const searchForm = document.getElementById('search-form')
+const searchInput = document.getElementById('search-input')
+const suggestionsList = document.getElementById('suggestions') // Agrega el elemento datalist
+const sugerencias = [
+'autonomo',
+'bateria',
+'contra',
+'contraPresion',
+'densitometria',
+'impresorImg',
+'inicio',
+'manta',
+'mantenimiento autonomo',
+'mantilla',
+'pantalla-inicial',
+'planas',
+'plancha',
+'porta mantilla',
+'porta plancha',
+'pre',
+'preprensa',
+'rotatek',
+'secador',
+'secador uv',
+'smed',
+'resultados',
+'tintero',
+'torre',
+'variable'
+  
+]
  // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault() // Evita que se envíe el formulario
