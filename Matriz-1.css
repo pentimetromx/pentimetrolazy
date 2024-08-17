@@ -6616,16 +6616,15 @@ input.numero:focus {
     margin-top: 69%;
     margin-left: 84%;
   }
-  #pantalla-servicio,
+  /* #pantalla-servicio,
   #pantalla-mandos,
-  #pantalla-atras,
-  #pantalla-frente{
+  #pantalla-atras{
     position: relative;
     display: flex;
     top: 10%;
     left: 0%;
     display: none;
-  }
+  } */
   #imgsRepuestos-V,
   #imgsRepuestos-IV,
   #imgsRepuestos-III,
@@ -6655,7 +6654,7 @@ input.numero:focus {
     border-radius: 8px;
 
   }
-  #agrupaOblicuos,
+  /* #agrupaOblicuos,
   #agrupaOblicuos-III,
   #agrupaOblicuos-IV,
   #agrupaOblicuos-V{
@@ -6665,9 +6664,18 @@ input.numero:focus {
     top: 0;
     width:18vw;
     height:45vh;
+  } */
+  /* #agrupaOblicuos-II{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left:76.6%;
+    top: 0;
+    width:18vw;
+    height:45vh;
   }
   .Bot-inicio2{
-    position: relative;
+    position:absolute;
     left:1%;
     background-color: #302928;
     color: rgb(0,255,0);
@@ -6682,7 +6690,7 @@ input.numero:focus {
     z-index: 1;
   }
   .Bot-inicio2-fondo{
-    position: relative;
+    position:absolute;
     margin-left: -1.2px;
     background-color: rgb(0,255,0);
     border-radius: 7px;
@@ -6693,7 +6701,7 @@ input.numero:focus {
     transform: skewX(-30deg);
     cursor: pointer;
     z-index: 0;
-  }
+  } */
   #lineI {
     position: fixed;
     left: 5%;
@@ -6725,6 +6733,100 @@ input.numero:focus {
     background-color: blue;
     display: none;
     z-index: 777;
+  }
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
+  #agrupaOblicuos-C,
+  #agrupaOblicuos-XC,
+  #agrupaOblicuos-DXXX,
+  #agrupaOblicuos-DXX,
+  #agrupaOblicuos-DX,
+  #agrupaOblicuos-D,
+  #agrupaOblicuos-XD,
+  #agrupaOblicuos-XXX {
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  left:81%;
+  top: 0;
+  width: 11%;
+  height:40%;
+}
+.cont-oblicuos {
+  position: absolute;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height:21%;
+}
+#oblicuo-tintero-29,
+#oblicuo-tintero-25,
+#oblicuo-tintero-21,
+#oblicuo-tintero-17,
+#oblicuo-tintero-13,
+#oblicuo-tintero-9,
+#oblicuo-tintero-5,
+#oblicuo-tintero-1{
+  top:0;
+}
+#oblicuo-tintero-30,
+#oblicuo-tintero-26,
+#oblicuo-tintero-22,
+#oblicuo-tintero-18,
+#oblicuo-tintero-14,
+#oblicuo-tintero-10,
+#oblicuo-tintero-6,
+#oblicuo-tintero-2{
+  top: 40%;
+}
+#oblicuo-tintero-31,
+#oblicuo-tintero-27,
+#oblicuo-tintero-23,
+#oblicuo-tintero-19,
+#oblicuo-tintero-15,
+#oblicuo-tintero-11,
+#oblicuo-tintero-7,
+#oblicuo-tintero-3{
+  top: 80%;
+}
+#oblicuo-tintero-32,
+#oblicuo-tintero-28,
+#oblicuo-tintero-24,
+#oblicuo-tintero-20,
+#oblicuo-tintero-16,
+#oblicuo-tintero-12,
+#oblicuo-tintero-8,
+#oblicuo-tintero-4{
+  top: 120%;
+}
+ .Bot-inicio2{
+    position:absolute;  
+    left:1%;
+    width:100%;
+    height:100%;
+    background-color: #302928;
+    color: rgb(0,255,0);
+    border-radius: 7px;
+    font-size:0.6em;
+    text-align: center;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: skewX(-30deg);
+    cursor: pointer;
+    z-index: 1;
+  }
+  .Bot-inicio2-fondo{
+    position:absolute;
+    margin-left: -1.2px;
+    background-color: rgb(0,255,0);
+    border-radius: 7px;
+    top:22%;
+    left:9%;
+    width:100%;
+    height:100%;
+    font-size:0.6em;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    transform: skewX(-30deg);
+    cursor: pointer;
+    z-index: 0;
   }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #links-iniciales{
@@ -7504,7 +7606,7 @@ input.numero:focus {
   }
   #images-smed {
     position: absolute;
-    left: 51%;
+    left: 53.7%;
     top:122%;
     transition: transform 1.6s ease;
   }
@@ -7706,13 +7808,14 @@ input.numero:focus {
   #contPortPlaca,
   #contPortManta,
   #contImpresor{  
-    position: absolute;
-    justify-content: center;
+    position: relative;
     display: flex;
     flex-direction: row;
-    top: 20vh;
-    height: 80%;
-    width: 99%;
+    justify-content: center;
+    width:98vw;
+    height:41vh;
+    top:10vh;
+    left: 1vw;
     display: none;
   }
   #contPortManta video,
@@ -7732,9 +7835,9 @@ input.numero:focus {
     display: flex;
     flex-direction: column; 
     left: 20%;
-    top: 47%; 
+    top: 87%; 
     width:37%; 
-    height: 50%;
+    height: 87%;
   }
   #impresorImg img,
   #manta img,
@@ -7743,25 +7846,14 @@ input.numero:focus {
     height:27%;
     border-radius: 11px;  
   }
-  
-  #agrupaOblicuos-placa, 
-  #agrupaOblicuos-XXIII, 
-  #agrupaOblicuos-IX{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    width:18vw;
-    height:45vh;    
-  }
   #imagenes-impresor,
   #imagenes-manta,
   #imagenes-plancha{
-    position:relative;
+    position:absolute;
     display: flex;
     flex-direction: column;
     left:1vw;
-    top:11vh;
+    top:19vh;
     width:74vw;
     height: 70vh;
     display: none;
@@ -7787,9 +7879,13 @@ input.numero:focus {
     align-items: flex-end;
     gap: 11px;
   }
+  #pantalla-atras,
+  #pantalla-servicio,
+  #pantalla-mandos,
+  #pantalla-frente,
   #pantalla-tintero{
     position: relative;
-    display: flex; /* Usar flexbox para centrar la imagen */
+    display: flex;
     flex-direction: row;
     justify-content: center;
     width:98vw;
@@ -7838,15 +7934,6 @@ input.numero:focus {
     height:40vh;
     width:73vw;
   }  
-  #agrupaOblicuos-II{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left:76.6%;
-    top: 0;
-    width:18vw;
-    height:45vh;
-  }
   .iridescent-element li a{
     font-size:3vw;
   }

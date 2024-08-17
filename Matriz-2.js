@@ -511,7 +511,7 @@ function changeButtonStyles(elementId){
         }
       } 
       if(screenWidth < 500){        
-        var elementosExcluidos = ['buscador','search-form','cont-links','pantalla-tintero','container01','links-inicialesI','links-iniciales','agrupaOblicuos-II','imgTorre','video-entintado','videoElement1-II']  
+        var elementosExcluidos = ['buscador','search-form','cont-links','pantalla-tintero','container01','links-inicialesI','links-iniciales','imgTorre','video-entintado','videoElement1-II']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i]) 
           if (elemento) {

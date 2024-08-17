@@ -234,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('ventana-lateral') 
+  var contiBoton = document.getElementById('agrupaOblicuos-XXX') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
