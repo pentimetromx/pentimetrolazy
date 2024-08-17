@@ -7184,10 +7184,10 @@ input.numero:focus {
     flex-direction: column;
     display: none;
     background-color: #000;
-    top:23%;
-    left:1%;
+    top:23vh;
+    left:1vw;
     width:0;
-    height:71%;
+    height:73vh;
     padding: 7px;
     border-radius: 0 17px 17px 0;
     transition: transform 0.1s;
