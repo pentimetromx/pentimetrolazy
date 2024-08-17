@@ -5368,7 +5368,7 @@ function desenrrollarVentana() {
   anchoVentana.style.width = '';
   // Obtener el ancho inicial en vw
   let anchoInicial = parseFloat(window.getComputedStyle(anchoVentana).width) / window.innerWidth * 100;
-  let anchoFinal = 95;
+  let anchoFinal = 94.4;
   let duracion = 1000;
   let startTime = null;
   if(screenWidth < 500){
