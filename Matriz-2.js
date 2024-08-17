@@ -804,7 +804,7 @@ const moveButton = document.getElementById('moveButton');
 let moved = false;
 let imageManometro = document.getElementById('image-1')
 imageManometro.addEventListener('dblclick', () => {
-  var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo','butt-links-III']  
+  var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -832,9 +832,11 @@ imageManometro.addEventListener('dblclick', () => {
         moved = true;  
       }
       else {
-        imagenesPasoApaso('padre-1','imag1','instrucciones_manometro','vid_festo')
+        imagenesPasoApaso('padre-1','imag1','instrucciones_manometro','vid_festo') 
         let instruccManometro = document.getElementById('instrucciones_manometro')
         let boton = document.getElementById('butt-links-I')
+        let botonLink = document.getElementById('butt-links-III')
+        botonLink.style.display='flex'
         boton.style.display='flex'
         boton.style.left='35%'
         boton.style.top='150%'

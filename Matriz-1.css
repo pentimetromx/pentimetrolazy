@@ -3257,12 +3257,12 @@ elemento.visible {
 #materiales-kaizen,
 #planos-kaizen{
   position: absolute;
-  left: 383px;
-  top: 71px;
+  left:31vw;
+  top:22vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 707px;
+  width:54vw ;
   margin: 0 auto;
   display: none;
 }
@@ -5651,7 +5651,9 @@ input.numero:focus {
   display: none;
 }
 #butt-links-III{
-display: none;
+  position:relative;
+  display: flex;
+  display: none;
 }
 
 @media only screen and (max-width: 420px) {
@@ -6632,16 +6634,15 @@ display: none;
     flex-direction: column;
     display: flex;
     margin-top: 56%;
-    margin-left: 13%; 
+    margin-left: 20%; 
   }
   #imgsRepuestos-V img,
   #imgsRepuestos-IV img,
   #imgsRepuestos-III img,
   #imgsRepuestos-II img,
   #imgsRepuestos img{
-   height: 72px;
-   width: 96px;
-   margin-right: 12px; 
+   height:10vh;
+   width:22.8vw;
   } 
   #imgTorre-a,
   #imgTorre-f{
@@ -6649,8 +6650,8 @@ display: none;
     display: flex;
     left: 2%;
     margin-top: -1.2%;
-    height: 223px;
-    width: 301px;
+    height:31vh;
+    width:71vw;
     border-radius: 8px;
 
   }
@@ -6661,8 +6662,9 @@ display: none;
     position: absolute;
     display: flex;
     flex-direction: column;
-    /* left: 37%; */
     top: 0;
+    width:18vw;
+    height:45vh;
   }
   .Bot-inicio2{
     position: relative;
@@ -6670,9 +6672,9 @@ display: none;
     background-color: #302928;
     color: rgb(0,255,0);
     border-radius: 7px;
-    width: 58px;
-    height: 35px;
-    font-size: 11px;
+    width:80%;
+    height:9%;
+    font-size:0.6em;
     text-align: center;
     clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
     transform: skewX(-30deg);
@@ -6684,9 +6686,9 @@ display: none;
     margin-left: -1.2px;
     background-color: rgb(0,255,0);
     border-radius: 7px;
-    width: 60px;
-    height: 40px;
-    font-size: 14px;
+    width:80%;
+    height:9%;
+    font-size:0.6em;
     clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); 
     transform: skewX(-30deg);
     cursor: pointer;
@@ -7748,8 +7750,9 @@ display: none;
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 79%;
-    top:0; 
+    top: 0;
+    width:18vw;
+    height:45vh;    
   }
   #imagenes-impresor,
   #imagenes-manta,
@@ -7840,9 +7843,9 @@ display: none;
     display: flex;
     flex-direction: column;
     left:76.6%;
-    top:0;
-    width:20%;
-    height:100%;
+    top: 0;
+    width:18vw;
+    height:45vh;
   }
   .iridescent-element li a{
     font-size:3vw;
@@ -8479,7 +8482,6 @@ display: none;
     position: absolute;
     display: flex;
     display: none;
-    /* top:40vh; */
     top: 43vh;
     left:37vw;
     width:55vw;
@@ -9334,16 +9336,16 @@ display: none;
     transform: translateY(-87vh);  
   }
   .move-butts{
-    transform: translateY(78vh); 
+    transform: translateY(74vh); 
   }
   .move-video{
-    transform: translateY(-96vh); 
+    transform: translateY(-100vh); 
   }
   .move-repuest{
-    transform: translateY(-62vh) translateX(-2vh) 
+    transform: translateY(-66vh) translateX(-2vh) 
   }
   .move-images{
-    transform: translateY(121vh) translateX(-20vh); 
+    transform: translateY(117vh) translateX(-20vh); 
   }  
   .move-repuest-II{
     transform: translateY(53vh) 
@@ -9358,28 +9360,28 @@ display: none;
     transform: translateX(-81vw)
   }
   .move-repuest-III{
-    transform: translateY(62.5vh); 
+    transform: translateY(58.5vh); 
   }
   .move-images-III{
-    transform: translateY(-63vh);
+    transform: translateY(-67vh);
   }
   .move-butts-III{
-    transform: translateY(94vh);
+    transform: translateY(90vh);
   }
   .move-vid-smed{
-    transform: translateX(1vh) translateY(-96vh);
+    transform: translateX(1vh) translateY(-100vh);
   }
   .move-repuest-IV{
-    transform:  translateY(47vh); 
+    transform:  translateY(43vh); 
   }
   .move-images-IV{
-    transform: translateY(-98%);
+    transform: translateY(-60vh);
   }
   .move-butts-IV{
-    transform: translateY(170%);
+    transform: translateY(59.5vh);
   }
   .move-vid-smed-II{
-    transform: translateY(260%);
+    transform: translateY(59vh);
   }
   .mover-up{
     transform: translateX(200px);

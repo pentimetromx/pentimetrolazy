@@ -195,15 +195,15 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          ElementosMaII('conteneMantaut')
+          changeButtonStyles('bancada-torre-II')
         },977) 
-        setTimeout(function() {
-          deslizaContenedor('conti-boton-kaizen','kaizen')
+        /*setTimeout(function() {
+          muestraRodillo('videoElement2','images-distribuidor')
         },1177) 
         setTimeout(function() {
           rodillosKaizen('btn12','vidElem')
         },1377)
-        /*setTimeout(function() {
+        setTimeout(function() {
           alternarAyudas()                        
         },1677) 
         setTimeout(function() {
