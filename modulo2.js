@@ -234,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('kaizenCont') 
+  var contiBoton = document.getElementById('mejoras-kai') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -3853,90 +3853,6 @@ botNaran.addEventListener('mousedown', () => {
   button.style.left = '0'
   makeFilters()
 })
-/* botRed.addEventListener('mousedown', resetButtons);
-botClose.addEventListener('mousedown', resetButtons); 
-function resetButtons() {
-  clickHabilitado = true; 
-  makeFilters()
-  desactivarClicsPorUnTiempoIII()
-  if(containerII.style.display === 'flex'){
-    verButtsInterfaz.style.pointerEvents = "auto";
-    slider1.style.width = '0';
-    slider2.style.width = '0';
-    slider3.style.width = '0';
-    posicionPantalla.textContent = `${'0'} - µpm`;
-    posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-    posicionPantalla.style.color = 'rgb(0,255,0)';
-    button.style.left = '0';
-    container.style.display = 'none';
-    verButtsInterfaz.style.display = 'none';
-    display.style.display = 'none';
-    button.style.display = 'none';
-    posicionPantalla.style.display = 'none';
-    interfaz.style.display = 'none';
-    newLeft = 0;
-    padreTres.classList.add('move_containerI')
-  }else{
-    verButtsInterfaz.style.pointerEvents = "auto";
-    slider1.style.width = '0';
-    slider2.style.width = '0';
-    slider3.style.width = '0';
-    posicionPantalla.textContent = `${'0'} - µpm`;
-    posicionPantalla.style.borderColor = 'rgb(0,255,0)';
-    posicionPantalla.style.color = 'rgb(0,255,0)';
-    button.style.left = '0';
-    container.style.display = 'none';
-    verButtsInterfaz.style.display = 'none';
-    display.style.display = 'none';
-    button.style.display = 'none';
-    posicionPantalla.style.display = 'none';
-    interfaz.style.display = 'none';
-    newLeft = 0;
-    padreTres.classList.add('move_containerII')
-}
-}
-botCloseII.addEventListener('mouseup', resetButtonsII);   // PRIMER BOTON CIERRE TOTAL 
-function resetButtonsII() {
-  makeFiltersII()
-  desactivarClicsPorUnTiempoIII()
-  if(container.style.display === 'none'){
-    displayII.style.display = 'none';
-    positionDisplayII.textContent = `${'0'}°`;
-    containerII.style.display = 'none';
-    spanGuide.style.display = 'none';
-    slider5.style.width = '0';
-    verButtsInterfazII.style.display = 'none';
-    positionDisplayII.style.display = 'none';
-    padreTres.classList.add('move_containerII')    
-  }else{
-    displayII.style.display = 'none';
-    positionDisplayII.textContent = `${'0'}°`;
-    containerII.style.display = 'none';
-    spanGuide.style.display = 'none';
-    slider5.style.width = '0';
-    verButtsInterfazII.style.display = 'none';
-    positionDisplayII.style.display = 'none';
-    setTimeout(() => {
-      padreUno.classList.add('move_container')    
-    },177);
-    setTimeout(() => {
-      padreTres.classList.add('move_container')    
-    },400);
-  }
-}
-botCloseIII.addEventListener('mousedown', resetButtonsIII);
-function resetButtonsIII() {
-  makeFiltersIII()
-  desactivarClicsPorUnTiempoIII()
-  positionDisplayIII.style.display = 'none';
-  positionDisplayIII.textContent = `${'100'}%`;
-  containerIII.style.display = 'none';
-  spanGuideI.style.display = 'none';
-  slider4.style.width = '0';
-  verButtsInterfazIII.style.display = 'none';
-  positionDisplayIII.style.display = 'none';
-  aplique.style.display = 'none'
-} */
 function mostrarInterfaz() { 
   container.style.display = 'flex'
   verButtsInterfaz.style.display = 'flex'

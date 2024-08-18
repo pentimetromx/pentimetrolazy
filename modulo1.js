@@ -3006,7 +3006,8 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            boton.style.backgroundColor = 'orange';  
+            boton.style.backgroundColor = 'rgb(0,255,0)'; 
+            boton.style.color='rgb(0,0,33)' 
         }
       }
       if(screenWidth < 500){
@@ -3028,9 +3029,9 @@ function listaEntrenamientosII(btnList) {
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
+          boton.style.backgroundColor = 'rgb(0,255,0)'; 
+          boton.style.color='rgb(0,0,33)' 
+      }
       }
     break;
     case 'btt3':
@@ -3048,9 +3049,9 @@ function listaEntrenamientosII(btnList) {
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
+          boton.style.backgroundColor = 'rgb(0,255,0)'; 
+          boton.style.color='rgb(0,0,33)' 
+      }
       }
     break;  
     case 'btt4':
@@ -3068,9 +3069,9 @@ function listaEntrenamientosII(btnList) {
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
+          boton.style.backgroundColor = 'rgb(0,255,0)'; 
+          boton.style.color='rgb(0,0,33)' 
+      }
       }
     break;  
     case 'btt5':
@@ -3088,9 +3089,9 @@ function listaEntrenamientosII(btnList) {
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
+          boton.style.backgroundColor = 'rgb(0,255,0)'; 
+          boton.style.color='rgb(0,0,33)' 
+      }
       }
     break;  
     case 'btt6':
@@ -3108,9 +3109,9 @@ function listaEntrenamientosII(btnList) {
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
+          boton.style.backgroundColor = 'rgb(0,255,0)'; 
+          boton.style.color='rgb(0,0,33)' 
+      }
       }
     break;  
     case 'btt7':
@@ -3128,9 +3129,9 @@ function listaEntrenamientosII(btnList) {
         // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            // Cambiar el color de fondo a naranja para el botón seleccionado
-            boton.style.backgroundColor = 'orange';
-        }
+          boton.style.backgroundColor = 'rgb(0,255,0)'; 
+          boton.style.color='rgb(0,0,33)' 
+      }
       }
     break;    
     default:
