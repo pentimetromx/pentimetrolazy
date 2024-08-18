@@ -195,18 +195,18 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          changeButtonStyles('bancada-torre-II')
+          ElementosMaII('conteneMantaut')
         },977) 
-        /*setTimeout(function() {
-          muestraRodillo('videoElement2','images-distribuidor')
+        setTimeout(function() {
+          deslizaContenedor('troubleshooting','troubleshoot')
         },1177) 
         setTimeout(function() {
-          rodillosKaizen('btn12','vidElem')
+          listaEntrenamientosII('archivo')
         },1377)
         setTimeout(function() {
-          alternarAyudas()                        
+          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                       
         },1677) 
-        setTimeout(function() {
+        /*setTimeout(function() {
           interfazAvance()
         },1977)
         setTimeout(function() {
@@ -5379,3 +5379,62 @@ function reponerEstilos(){
     child.classList.remove('move_vid_pre')
   });
 }
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+const targetDiv = document.querySelector('.img1');
+const contextMenu = document.getElementById('context-menu');
+let touchTimer = null;
+
+function showContextMenu(x, y) {
+  // Establecer la posición del menú contextual
+  contextMenu.style.top = `${y}px`;
+  contextMenu.style.left = `${x}px`;
+
+  contextMenu.style.display = 'block';
+}
+
+targetDiv.addEventListener('contextmenu', function (event) {
+  event.preventDefault(); // Evitar el menú contextual predeterminado
+
+  const { clientX: mouseX, clientY: mouseY } = event;
+
+  showContextMenu(mouseX, mouseY);
+});
+
+targetDiv.addEventListener('touchstart', function (event) {
+  touchTimer = setTimeout(function () {
+    const touch = event.touches[0];
+
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
+
+    showContextMenu(touchX, touchY);
+  }, 500); // 500ms para activar el menú en long press
+});
+
+// Cancelar la apertura del menú si el toque es corto
+targetDiv.addEventListener('touchend', function () {
+  clearTimeout(touchTimer);
+});
+
+document.addEventListener('click', function () {
+  contextMenu.style.display = 'none';
+});
+
+contextMenu.addEventListener('mouseleave', function () {
+  contextMenu.style.display = 'none';
+});
+
+document.addEventListener('contextmenu', function (event) {
+  if (!targetDiv.contains(event.target)) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('touchstart', function (event) {
+  if (!contextMenu.contains(event.target)) {
+    contextMenu.style.display = 'none';
+  }
+});
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
