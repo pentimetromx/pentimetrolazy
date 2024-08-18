@@ -3137,11 +3137,6 @@ function listaEntrenamientosII(btnList) {
     default:
   }
   if(screenWidth < 500){
-    var vinculosTrouble = document.getElementById('linksMA')
-/*     vinculosTrouble.style.position = 'absolute'    
-    vinculosTrouble.style.marginLeft = '-64%'
-    vinculosTrouble.style.marginTop = '13%' */
-
     var contBoton = document.getElementById('conti-boton')
     contBoton.removeAttribute('style')
   }
