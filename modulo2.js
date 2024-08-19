@@ -5383,7 +5383,7 @@ function reponerEstilos(){
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-/* const targetDiv = document.querySelector('.img1');
+const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 let touchTimer = null;
 
@@ -5434,5 +5434,5 @@ document.addEventListener('touchstart', function (event) {
   if (!contextMenu.contains(event.target)) {
     contextMenu.style.display = 'none';
   }
-}); */
+});
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
