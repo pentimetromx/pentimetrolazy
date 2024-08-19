@@ -195,10 +195,10 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          ElementosMaII('conteneMantaut')
+          resultadosMA()
         },977) 
-        setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')
+        /*setTimeout(function() {
+          resultadosEmpleado('icon-ana','updateAna','img7','true')
         },1177) 
         setTimeout(function() {
           listaEntrenamientosII('archivo')
@@ -206,7 +206,7 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                       
         },1677) 
-        /*setTimeout(function() {
+        setTimeout(function() {
           interfazAvance()
         },1977)
         setTimeout(function() {
@@ -5383,7 +5383,7 @@ function reponerEstilos(){
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-const targetDiv = document.querySelector('.img1');
+/* const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 let touchTimer = null;
 
@@ -5434,5 +5434,5 @@ document.addEventListener('touchstart', function (event) {
   if (!contextMenu.contains(event.target)) {
     contextMenu.style.display = 'none';
   }
-});
+}); */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

@@ -8452,14 +8452,14 @@ height:21%;
     font-size: 8px;
   }
   #iconos{
-    position: absolute;
+    position:relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 17%;
+    top: 8%;
     left:0;
     width:99%;
-    height: 100%;
+    height:80%;
     display: none;
   }
   #title-interfaz{
@@ -8828,13 +8828,13 @@ height:21%;
     font-size:2.5vw;
   }
   #contLineas-II{
-    position: relative;
+    position:absolute;
     display: flex;
     flex-direction: column;
     left: 37%;
-    top:-8vh;
-    width: 61vw;
-    height: 73vh;
+    top:2%;
+    width: 61%;
+    height:93%;
     gap: 2px;
     border-radius: 21px;
     display: none;
@@ -8857,10 +8857,10 @@ height:21%;
     position:absolute;
     display: flex;
     flex-direction: column;
-    top:22vh;
-    left:0.7vw;
-    width:31vw;
-    max-height:50vh;
+    top:27%;
+    left:0.7%;
+    width:31%;
+    height:65.5%;
     gap: 25px;
     align-items: center;
     border-radius: 7px;  
@@ -8876,7 +8876,7 @@ height:21%;
     justify-content: center;
     left:0;
     width:95%;
-    height:16%;
+    height:30%;
     cursor: pointer;
   }
   .cont-userI .icono-user-I{
