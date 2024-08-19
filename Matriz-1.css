@@ -5750,7 +5750,7 @@ height:21%;
   z-index: 0;
 }
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-.target-div {
+/* .target-div {
   width: 200px;
   height: 100px;
   background-color: rgb(224, 224, 224);
@@ -5783,7 +5783,7 @@ height:21%;
 .context-menu li:hover {
   background-color: rgb(0,0,100);
   color: #fff;
-}
+} */
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -8532,22 +8532,6 @@ height:21%;
     display: flex;
     overflow: hidden;
   }
-  #contImagGraf,
-  #contImagNeg{
-    position: absolute;
-    display: flex;
-    width:21vw;
-    height:50.5vh;  
-    left:37vw;
-    top:4vh;
-    display: none;
-  }
-  #contImagGraf img,
-  #contImagNeg img{
-    width:100%;
-    height:100%;
-    border-radius: 17px;
-  }
   #kaizen-propuestos{
     display: none;
   }
@@ -8670,11 +8654,11 @@ height:21%;
   #casos-kaizen{
     position:relative;
     display: flex;
-    justify-content: space-evenly;
     border-radius: 7px;
     left: -63vh;    
     top:3vh;
     max-width: 40vw;
+    height: 3vh;
     display: none;
     font-family: GothamRounded , sans-serif;
     font-size:1.1em;
@@ -8843,7 +8827,7 @@ height:21%;
     flex: 1;
     background-color: rgb(0,0,33);
     border: 1px solid white;
-    border-radius: 21px;
+    border-radius: 14px;
     display: flex;
     overflow: hidden;
   }
@@ -8878,11 +8862,11 @@ height:21%;
     width:95%;
     height:30%;
     cursor: pointer;
+    margin-top:8px;
   }
   .cont-userI .icono-user-I{
     left: 0;
     border-radius: 9px;
-    margin-bottom: 4px;
   }
   .cont-userI .lblNombres{
     position: relative;
@@ -9706,12 +9690,41 @@ height:21%;
     font-size: 2.8vw;
     display: none;
   }
-  #equalizer{
-    width: 25vw;
-    height:43vh; 
-    top: 28.7vh;
-    left:60vw;
+  #general{
+    position: relative;
+    display: flex;
+    top:-2vh;
+    left: 1vw;
+    height: 70vhvh;
+    width: 98vw;
+    display:block;
   }
+  
+  #equalizer{
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 60%;
+    width: 25%;
+    height: 43.3%;
+  }
+  #contImagGraf,
+  #contImagNeg{
+    position: absolute;
+    display: flex;
+    width:20%;
+    height: 51%;
+    left:35%;
+    top:0;
+    display: none;
+  }
+  #contImagGraf img,
+  #contImagNeg img{
+    width:100%;
+    height:100%;
+    border-radius: 17px;
+  }
+
   #column_2{
     position:relative;
     display: flex;
