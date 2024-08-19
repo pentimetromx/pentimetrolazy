@@ -5768,6 +5768,7 @@ height:21%;
   background-color: rgb(177, 177, 177);
   border: 1px solid #ccc;
   list-style-type: none;
+  font-family: "GothamRounded", sans-serif;
   padding: 0;
   margin: 0;
   width: 150px;
@@ -9759,6 +9760,7 @@ height:21%;
     left: 60%;
     width: 25%;
     height:63%;
+    display: none;
   }
 
   #column_2{
