@@ -1154,7 +1154,6 @@ function updateAndresII() {
    }
  }
  function ocultarIndicaciones(idIndicador) {
-   /* var contenedor = document.getElementById('imgsRepuestos') */
    var indicEjeI = document.getElementById('indicaciones-conico')
    var indicEje = document.getElementById('indicaciones-eje')
    var conico = document.getElementById('conico')
@@ -2501,10 +2500,6 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transition = 'transform 0.1s ease'
     zoomableImage.style.transform = 'translate(0, 0) scale(1)'
   })
-})
-linkList.addEventListener("mouseover", () => {
-    clearTimeout(hideTimeout)
-    linkListI.style.display = 'none'
 })
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
@@ -5326,51 +5321,46 @@ function reponerEstilos(){
     child.classList.remove('move_vid_pre')
   });
 }
-
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 let touchTimer = null;
-
 function showContextMenu(x, y) {
-    contextMenu.style.top = `${y}px`;
-    contextMenu.style.left = `${x}px`;
-    contextMenu.style.display = 'block';
-    const menuItems = contextMenu.querySelectorAll('li');
-    menuItems.forEach((item, index) => {
-        setTimeout(() => {
-            item.style.backgroundColor =  'rgb(0,0,100)';
-            item.style.color = '#fff'; 
-            setTimeout(() => {
-                item.style.backgroundColor = '';
-                item.style.color = '';
-            }, 177);
-        }, index * 177);
-    });
+  contextMenu.style.top = `${y}px`;
+  contextMenu.style.left = `${x}px`;
+  contextMenu.style.display = 'block';
+  const menuItems = contextMenu.querySelectorAll('li');
+  menuItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.backgroundColor =  'rgb(0,0,100)';
+      item.style.color = '#fff'; 
+      setTimeout(() => {
+        item.style.backgroundColor = '';
+        item.style.color = '';
+      }, 177);
+    }, index * 177);
+  });
 }
 targetDiv.addEventListener('contextmenu', function (event) {
-    event.preventDefault(); 
-    const { clientX: mouseX, clientY: mouseY } = event;
-    showContextMenu(mouseX, mouseY);
+  event.preventDefault(); 
+  const { clientX: mouseX, clientY: mouseY } = event;
+  showContextMenu(mouseX, mouseY);
 });
 targetDiv.addEventListener('touchstart', function (event) {
-    touchTimer = setTimeout(function () {
-        const touch = event.touches[0];
-        const touchX = touch.clientX;
-        const touchY = touch.clientY;
-        showContextMenu(touchX, touchY);
-    }, 500);
+  touchTimer = setTimeout(function () {
+    const touch = event.touches[0];
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
+    showContextMenu(touchX, touchY);
+  }, 500);
 });
 targetDiv.addEventListener('touchend', function () {
-    clearTimeout(touchTimer);
+  clearTimeout(touchTimer);
 });
 document.addEventListener('click', function () {
-    contextMenu.style.display = 'none';
+  contextMenu.style.display = 'none';
 });
 contextMenu.addEventListener('mouseleave', function () {
-    contextMenu.style.display = 'none';
+  contextMenu.style.display = 'none';
 });
 document.addEventListener('contextmenu', function (event) {
   if (!targetDiv.contains(event.target)) {
@@ -5382,4 +5372,3 @@ document.addEventListener('touchstart', function (event) {
     contextMenu.style.display = 'none';
   }
 });
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

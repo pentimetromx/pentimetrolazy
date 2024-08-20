@@ -205,8 +205,7 @@ idsArrayEliminados.push('cont-titulo')
 const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','wall_street_II','equalizer','padre','patern']
 const masterKey = [4];
 document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-  
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));  
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
@@ -218,7 +217,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     });
-
     lazyImages.forEach(function(lazyImage) {
       lazyImageObserver.observe(lazyImage);
     });
@@ -229,8 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 document.addEventListener("DOMContentLoaded", function() {
-  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-  
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));  
   if ("IntersectionObserver" in window) {
     let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
@@ -247,7 +244,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     });
-
     lazyVideos.forEach(function(lazyVideo) {
       lazyVideoObserver.observe(lazyVideo);
     });
@@ -418,7 +414,7 @@ function ElementosMaII(elementId){
           elemento.style.display = 'none';
         }
       }
-    }
+    }    
     reponerEstilos()
     setTimeout(() => {
       document.body.style.zoom = "100%"    
