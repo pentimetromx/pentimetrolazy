@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "GothamRounded"; /* Nombre de la familia de fuentes personalizada */
-  src: url('C:\Users\Juan\Documentos\programacion\programar\Pruebas\fonts\Mukta-Medium.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
+  font-family: "GothamRounded";
+  src: url('C:\Users\Juan\Documentos\programacion\programar\Pruebas\fonts\Mukta-Medium.ttf') format('ttf'),
 }
 @font-face {
-  font-family: "Oswald"; /* Nombre de la familia de fuentes personalizada */
-  src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
+  font-family: "Oswald";
+  src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'),
 }
 body,html {
   zoom: 100%;
@@ -15,9 +15,9 @@ body,html {
   background-position: center;
   background-image: url('./assets/eintein.png');
   background-repeat: no-repeat; 
-  height: 100%; /* Ajusta la altura del body para que cubra toda la pantalla */   
-  margin: 0; /* Elimina los márgenes predeterminados del body */
-  padding: 0; /* Elimina los rellenos predeterminados del body */
+  height: 100%;
+  margin: 0;
+  padding: 0;
   overflow:hidden;
   transition: zoom 0.5s;   
 }
@@ -29,7 +29,7 @@ body,html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.1; /* Ajusta la opacidad según tus preferencias */
+  opacity: 0.1;
 }
 #videoBackgroundII {
   position: fixed;
@@ -119,7 +119,7 @@ color: white;
 .boton-d:hover {
   transform: scale(1.1);
 }
-#links-inicialesI{  /* PADRE LINKS INICIALES  */
+#links-inicialesI{
   position: absolute;
   display: flex;
   top: 2%;
@@ -128,15 +128,6 @@ color: white;
   height: 50vh;
   font-family: 'GothamRounded', sans-serif;
   display: none;
-}
-#lineI {
-  position: absolute;
-  display: flex;
-  left:0;
-  top:2%;
-  width:0;
-  height: 7px;
-  transition: 0.1s;
 }
 #titleContainer,
 #titleContainerI{
@@ -156,20 +147,7 @@ color: white;
   width:100%;
   font-size: 1.3vw;
 }
-#linkListI{
-  position: absolute;
-  display: flex;
-  left:0;
-  top:8%;
-  width:100%;
-  height:auto;
-  list-style: none;
-  padding: 0;
-  background-color: blue;
-  display: none;
-  z-index: 777;
-}
-#links-iniciales{  /* PADRE LINKS INICIALES-II  */
+#links-iniciales{
   position: absolute;
   display: flex;
   top:2%;
@@ -439,7 +417,6 @@ color: white;
   width:60%;
   padding-left:1.5vw;
 }
-
 #videosTraining{
   display: flex;
   flex-direction: row;
@@ -1698,28 +1675,6 @@ width:447px ;
   top: -1px;
   left: 10px;
 }
-#titleContainerI::after,
-#titleContainer::after {
-  content: " ";
-  color: transparent;
-}
-#linkListI li,
-#linkList li {
-  margin: 5px 0;
-}
-#linkListI a,
-#linkList a {
-  color: black;
-  text-decoration: none;
-}
-#linkListI li:hover,
-#linkList li:hover {
-  background-color:yellow;          
-}
-#linkListI li:hover a,
-#linkList li:hover a {
-  color: black;
-}
 #linksMA{
   position: relative;
   display: flex;
@@ -1755,24 +1710,6 @@ width:447px ;
   flex-direction: column;
   top: 17PX;
   display: none;
-}
-@keyframes iridescent{
-  0% {
-    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
-    background-size: 200% 200%;
-    animation-timing-function: linear;
-  }
-  100% {
-    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
-    background-size: 200% 200%;
-    animation-timing-function: linear;
-    background-position: 100% 0;
-  }
-}
-.iridescent-element{
-  width: 200px;
-  height: 200px;
-  animation: iridescent 4s infinite;
 }
 .linksTraining li a{
   color: white; /*Cambiar el color del texto a blanco*/
@@ -3827,7 +3764,7 @@ h4{
   display: none;
 }
 #imgs-densito,
-#imgs-prepress{      /* PADRE */
+#imgs-prepress{
   position: relative;
   display: flex;
   top: 1vh;
@@ -3838,19 +3775,19 @@ h4{
   display: none;
 }
 .contDensi,
-.contColor {            /* FILAS */
+.contColor {
   display:flex;
   width: 100%;
   height: 25%;
 }
-.imgTeoria1 {          /* DIVS */
+.imgTeoria1 {
   flex: 1 1 16.6%;
   max-width: 16.6%;
   height: 100%;
   margin-right:3px;
 }
 .imgDensito,
-.img-special{       /* IMAGENES */
+.img-special{
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -5608,7 +5545,7 @@ input.numero:focus {
   font-family: "GothamRounded", sans-serif;
   color: yellow;
 }
-.labl-lub{ /* CLASES PARA ETIQUETAS DENTRO DE HIJOS */
+.labl-lub{
   font-size:1vw;
   text-align: left;
   object-fit: fill;
@@ -5655,7 +5592,6 @@ input.numero:focus {
   display: flex;
   display: none;
 }
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #agrupaOblicuos-C,
 #agrupaOblicuos-XC,
 #agrupaOblicuos-DXXX,
@@ -5761,7 +5697,6 @@ height:21%;
   margin: 50px;
   cursor: pointer;
 }
-
 .context-menu {
   display: none;
   position: absolute;
@@ -5772,17 +5707,14 @@ height:21%;
   padding: 0;
   margin: 0;
   width:35vw;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
-
 .context-menu li {
   padding: 10px;
   font-size:0.7em;
   cursor: pointer;
-
-  background-color: #e0e0e0; /* Fondo del elemento */
+  background-color: #e0e0e0;
   border-bottom: 2px solid #aaa; /* Bisel inferior gris */
   border-top: 2px solid #fff; /* Sombra superior blanca */
 }
@@ -6782,39 +6714,26 @@ height:21%;
     border-radius: 8px;
 
   }
-  #lineI {
+/*   #lineI {
     position: fixed;
     left: 5%;
     top: 14%;
     width: 0;
     height:1vh;
     transition: 0.1s;
-  }
+  } */
   #titleContainerI{
     position: fixed;
     display: flex;
     left: 5%;  
     top: 13%;
-    width:23vw;  
+    width:15vw;  
     align-items: center;
     z-index: 3;
   }
   #titleContainerI p{
     font-size: 3vw;
   }
-  #linkListI{
-    position: fixed;
-    left: 3%;  
-    top: 15.5%;    
-    width: 257px;
-    height:auto;
-    list-style: none;
-    padding: 0;
-    background-color: blue;
-    display: none;
-    z-index: 777;
-  }
-  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #agrupaOblicuos-C,
   #agrupaOblicuos-XC,
   #agrupaOblicuos-DXXX,
@@ -6918,24 +6837,6 @@ height:21%;
     width:52vw;
     display: none;
   }
-  #line{
-    position:absolute;
-    display: flex;
-    top:4%;
-    left:0;
-    width:20vw;
-    height:28vh;
-    animation: iridescent 4s infinite;
-  }
-  .iridescent-element{
-    position:absolute;
-    display: flex;
-    top:4%;
-    left:0;
-    width:42vw;
-    height:28vh;
-    animation: iridescent 4s infinite;
-  }
   #linkList{
     position: absolute;
     left:0;
@@ -6943,7 +6844,7 @@ height:21%;
     z-index: 777;
     display: none;
   }  
-  #links-inicialesI{  /* PADRE LINKS PILARES  */
+  #links-inicialesI{
     position: absolute;
     display: flex;
     top: 17%;
@@ -6952,20 +6853,46 @@ height:21%;
     width:60vw;
     display:none;   
   }
-  #line {
-    position: fixed;
-    left: 55.2%;
-    top: 14%;
-    width: 0;
-    height: 7px;
-    transition: 0.1s;
+  .iridescent-element{
+    position: absolute;
+    display: flex;
+    list-style: none;
+    list-style-type: none;
+    cursor: pointer;
+    font-family: "GothamRounded", sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  
+    background-color: rgb(177, 177, 177);
+    border: 1px solid #ccc;
+    left:0;
+    top:8%;
+    width:100%;
+    height:100%;
+    padding: 0;
+    display: none;
+    z-index: 777;
+    padding: 0;
+    margin: 0;
   }
+  .iridescent-element li {
+    padding: 10px;
+    font-size:0.7em;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #aaa; /* Bisel inferior gris */
+    border-top: 2px solid #fff; /* Sombra superior blanca */
+  }
+  .iridescent-element li:hover {
+    background-color: rgb(0,0,100);
+    color: #fff;
+  }
+  
+
   #titleContainer {
     position: fixed;
     display: flex;
     left: 47%;  
     top: 13%; 
-    width:39vw; 
+    width:27vw; 
     align-items: center;
     z-index: 3;
   }
@@ -7024,7 +6951,6 @@ height:21%;
     position: relative;
     display: flex;
     flex-direction: column;
-    /* flex-direction: row-reverse; */
     margin-top: 116%;
     left: -29%;
     gap: 7px;
@@ -7106,10 +7032,9 @@ height:21%;
     display: flex;
     flex-direction: column;
     margin-top: 100px; 
-    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+    overflow-y: auto;
   }
   .cont-user img{
-    /* height:100%; */
     width: 25%;
     border-radius: 11px;
   }
@@ -7121,7 +7046,7 @@ height:21%;
     font-family: "GothamRounded", sans-serif;
     font-size: 13px;
     width: 70%;
-    text-align: center; /* Centrar el texto */
+    text-align: center;
   }
   #buscador{
     position:relative;
@@ -7695,8 +7620,6 @@ height:21%;
     width: 110px;
     border-radius: 11px;
     transform: scale(1.1);
-
-    /* transition: transform 0.3s ease, filter 0.3s ease; */
   } 
   #contVid-smed{
     position: absolute;
@@ -7807,17 +7730,17 @@ height:21%;
     display: flex;
     top: 27%;
     left: 30%;
-    background-color: #fff; /* Fondo blanco */
-    color: #333; /* Texto color gris oscuro */
-    border: 3px solid #ccc; /* Borde 3px color gris */
-    border-radius: 5px; /* Radio en el borde de 5px */
+    background-color: #fff;
+    color: #333;
+    border: 3px solid #ccc;
+    border-radius: 5px;
     text-align: center;
     font-family: 'GothamRounded', sans-serif;
-    animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
+    animation: aumentarTamano 1s infinite alternate;
   }
   @keyframes aumentarTamano{
     to {
-      transform: scale(2); /* Aumenta el tamaño 2x */
+      transform: scale(2);
     }
   }
   .video-training{
@@ -8014,12 +7937,9 @@ height:21%;
     height:40vh;
     width:73vw;
   }  
-  .iridescent-element li a{
-    font-size:3vw;
-  }
   .linksTraining li a {
-    color: whitesmoke; /*Cambiar el color del texto a blanco*/
-    cursor: pointer; /*Cambiar el cursor a una mano */
+    color: whitesmoke;
+    cursor: pointer;
     font-size: 3.2vw;
   }
   #abuelo-plana,
@@ -8063,7 +7983,7 @@ height:21%;
     width: 33vw;
     height: 50vh;
     border-radius: 20px;
-    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+    transition: left 1.007s ease;
     z-index: 2;
   }
   .botnClass{
@@ -8750,7 +8670,7 @@ height:21%;
     left: 39vw;
     width:53vw;
     height:24vh;
-    transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+    transition: left 1.007s ease; 
     border: 1px solid orange;  
     flex-direction: column;
     border-radius: 20px;
@@ -8819,7 +8739,7 @@ height:21%;
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: fill; /* Elimina la relación de aspecto */
+    object-fit: fill;
   }
   .contenedor-vertical{
     position:absolute;
@@ -8883,7 +8803,7 @@ height:21%;
     width:100vw;
     transition: transform 1.6s ease;
   }
-  #agrupaOblicuos-XI{ /*div padre */
+  #agrupaOblicuos-XI{
     position:relative;
     display: flex;
     flex-direction:column-reverse;
@@ -8896,13 +8816,13 @@ height:21%;
     z-index: 2;   
     overflow: hidden;
   }
-  .oblicuosInicio{ /* div hijo */
+  .oblicuosInicio{
     display: flex;
     left: 0;
     flex: 1;
     width: 100%;   
   }
-  .Bot-inicio3{ /* primero de los botones */
+  .Bot-inicio3{
     position: absolute;
     left:3vw;
     width: 37vw;
@@ -9181,14 +9101,13 @@ height:21%;
     color:rgb(255,255,0);
   }
   .numero{
-    width: calc(10% - 2px); /* Divide el espacio en 10 elementos y resta el margen */
+    width: calc(10% - 2px);
     margin: 0 12px;
     text-align: center;
     font-family: "Courier New", Courier, monospace;
     font-size: 0.5em;
     color:rgb(0,255,0);
-  }
-  
+  }  
   #buttonReset_3,
   #buttonReset_2,
   #buttonReset{
@@ -9205,7 +9124,7 @@ height:21%;
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    padding-bottom: 4px; /* Relleno en la parte inferior */
+    padding-bottom: 4px;
   }
 
   #padre-interfaz{
@@ -9277,7 +9196,7 @@ height:21%;
     border-radius: 100px;
     cursor: pointer;
     display: none;
-    transition: all 0.2s ease; /* Transición suave para el efecto */ 
+    transition: all 0.2s ease;
   }
   #conte-ayudas h6{
     position:absolute;
@@ -9361,11 +9280,11 @@ height:21%;
     font-size: 40px;
      text-align: center;
     font-family: Arial, sans-serif;
-    border: 2px solid transparent; /* Establece un borde transparente por defecto */
+    border: 2px solid transparent;
 
   }
   input.numero:focus {
-    border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
+    border-color: blue;
   }
   #densitometria{
     position: relative;
@@ -9380,7 +9299,7 @@ height:21%;
     display: none;
     position: absolute;
     height: 99%; 
-    object-fit: fill; /* Elimina la relación de aspecto original */
+    object-fit: fill;
     width: 99%;
     z-index: -1;
   }
@@ -9423,7 +9342,6 @@ height:21%;
     height:40%;
     background-color: rgba(1,1,15,0.9);
     padding: 10px; 
-    /* gap: 34px; */
     border-radius: 3px;
     cursor: pointer;
     font-family: 'GothamRounded', sans-serif;
@@ -9616,8 +9534,8 @@ height:21%;
     overflow: hidden;
   }  
   #img-logo{
-    width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
-    transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
+    width: 0;
+    transition: width 0.7s ease;
   }
   .butt-special{
     top:40vh;

@@ -107,7 +107,6 @@ var contienePasos = document.getElementById('puesta-punto')
 let contPlana = document.getElementById('cont-plana')
 let contiButtCasos = document.getElementById('mejoras-kai')
 const textToColor = document.getElementById("textToColor")
-const textToColorI = document.getElementById("textToColorI")
 const line = document.getElementById("line")  
 const lineI = document.getElementById("lineI")
 let hoverTimeout;
@@ -127,7 +126,6 @@ const padreVideos = document.getElementById('nicho-videos')
 
 const videoElements = document.querySelectorAll('.video-training') 
 const videosPrepress = document.querySelectorAll('.vid-prepress')  
-/* const video = document.getElementById("videoBackground") */
 const imgsDistribuidor = document.getElementById('contImgDistribuidor')
 const imgsForma = document.getElementById('contImgEntintador')
 const images = document.querySelectorAll('.image-training') 
@@ -225,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function() {
       lazyImageObserver.observe(lazyImage);
     });
   } else {
-    // Fallback para navegadores que no soportan IntersectionObserver
     lazyImages.forEach(function(lazyImage) {
       lazyImage.src = lazyImage.dataset.src;
     });
@@ -450,7 +447,6 @@ function ElementosMaII(elementId){
 }
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo');
-  // Ocultar todos los botones al inicio
   botones.forEach(boton => {
     boton.style.display = 'none';
   });

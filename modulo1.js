@@ -26,7 +26,6 @@ function cierraContenedores(elementId,buttonID){
             }
           }
         }      
-        /* video.style.display = 'none' */
         aumentarTamanosDeBotones() 
       break;
       case 'uTeñido':
@@ -1499,11 +1498,10 @@ function abrirSeccionContinua(elementId) {
   }
   reponerEstilos()
   document.body.style.zoom = "100%"
-  /* container1.style.left='' */
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
     idsArray.push(elementId);
     console.log(idsArray);
@@ -1924,7 +1922,7 @@ document.getElementById('shrinkButton').addEventListener('click', function() {
       }
     }, 16);
   });
-});function cerrarSecciones(){
+  });function cerrarSecciones(){
   linkList.style.display = "none";
   linkListI.style.display = "none";
 }
@@ -2023,22 +2021,15 @@ function abrirDensitometria(elementId){
   setTimeout(() => {
     showButtonsDensitoConRetraso()        
   }, 77);
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
   const imagenesDensito = document.querySelectorAll('.imgDensito');
-  // Paso 2: Recorrer el array y hacer las imágenes visibles
   imagenesDensito.forEach((imagen) => {
-      // Hacer visible cada imagen
       imagen.style.display = 'flex';
   });
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-  // 4. Verificar si el elemento está definido y si ya existe en arrayIds
   if (typeof elementId !== 'undefined') {
     const index = idsArray.indexOf(elementId);
     if (index !== -1) {
-      // 4. Si el elemento ya existe, moverlo a la última posición
-      idsArray.splice(index, 1); // Elimina el elemento en la posición actual
+      idsArray.splice(index, 1);
     }
-    // 5. Agregar el elemento al final de arrayIds
     idsArray.push(elementId);
     console.log(idsArray);
   }
@@ -2119,7 +2110,6 @@ function alternarAyudas() {
   imagenAyudas.classList.remove('pressed');
 
   if (ejecutando) {
-    // Si la función ya está ejecutándose, salimos para no ejecutarla de nuevo
     return;
   }
   ejecutando = true;
@@ -2206,10 +2196,10 @@ function muestraVidColor(elementId){
       }             
     } 
     })
-    var contImgsTeoria = document.getElementsByClassName('imgTeoria') // Obtén elementos por su
+    var contImgsTeoria = document.getElementsByClassName('imgTeoria')
     for (var i = 0; i < contImgsTeoria.length; i++) {
-      var teorImage = contImgsTeoria[i] // Accede al elemento actual
-      teorImage.style.display = 'none' // Oculta el elemento  
+      var teorImage = contImgsTeoria[i] 
+      teorImage.style.display = 'none'  
     }
     videoElements.forEach(video => {
     if (video.id === 'color-vid') {
@@ -2220,22 +2210,10 @@ function muestraVidColor(elementId){
     }
     })
     const videos = document.querySelectorAll('.vidTeoria') 
-    // Reproducir todos los videos simultáneamente
         videos.forEach(video => {
             video.pause()
             video.style.display='none'
         })
-    /* // 4. Verificar si el elemento está definido y si ya existe en arrayIds
-    if (typeof elementId !== 'undefined') {
-      const index = idsArray.indexOf(elementId);
-      if (index !== -1) {
-        // 4. Si el elemento ya existe, moverlo a la última posición
-        idsArray.splice(index, 1); // Elimina el elemento en la posición actual
-      }
-      // 5. Agregar el elemento al final de arrayIds
-      idsArray.push(elementId);
-      console.log(idsArray);
-    } */ 
   }else{
     var contiVidPrisma = document.getElementById('vidColor-II')
     var vidPrisma = document.getElementById('color-vid')
@@ -2293,8 +2271,6 @@ function irContenedorAnterior() {
     abrirSeccionContinua('pantalla-inicial')
     break; 
     case "pantalla-tintero":
-      /* var botonesInicio = document.getElementById('container01')                  
-      botonesInicio.style.display='block' */
       changeButtonStyles('pantalla-tintero')  
     break;
     case "videoElement1-II":
@@ -2453,24 +2429,20 @@ function irContenedorAnterior() {
       boton01.style.display = 'block'        
     break; 
     case 'desbobinadorId':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 0) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2483,24 +2455,20 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 1) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2513,24 +2481,20 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 2) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2543,24 +2507,20 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 3) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2573,24 +2533,20 @@ function irContenedorAnterior() {
       aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 4) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2617,9 +2573,7 @@ function irContenedorAnterior() {
     default:
   } 
   let elementoEliminado = idsArray.pop();
-  // Verificar si el elemento ya existe en el segundo array
   if (!idsArrayEliminados.includes(elementoEliminado)) {
-    // Si no existe, hacer push
     idsArrayEliminados.push(elementoEliminado);
   } 
   console.log('1.', idsArray)
@@ -2812,24 +2766,20 @@ function irContenedorSiguiente() {
       boton01.style.display = 'block'        
     break; 
     case 'desbobinadorId':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','desbobinadorId','cont-Verticales1','container01']            
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 0) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2842,24 +2792,20 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 1) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2872,24 +2818,20 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 2) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2902,24 +2844,20 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7','container01']           
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 3) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -2932,24 +2870,20 @@ function irContenedorSiguiente() {
       aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
-      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador','container01']                                           /// OCULTA TODO MENOS (3 ELEMENTOS)          
+      var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador','container01']          
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]);  
         if (elemento) {
-          // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
       var pantallaInicial = document.getElementById('pantalla-inicial');
       if (pantallaInicial) {
-        // Oculta todos los hijos directos de 'pantalla-inicial'
         for (var i = 0; i < pantallaInicial.children.length; i++) {
           var hijo = pantallaInicial.children[i];
           if (i === 4) {
-            // Deja visible el primer hijo
-            hijo.style.display = 'flex'; // O el valor deseado ('block', 'inline', etc.)
+            hijo.style.display = 'flex';
           } else {
-            // Oculta el resto de los hijos
             hijo.style.display = 'none';
           }
         }
@@ -3022,11 +2956,9 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
@@ -3042,11 +2974,9 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
@@ -3062,11 +2992,9 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
@@ -3082,11 +3010,9 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
@@ -3102,11 +3028,9 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
@@ -3122,11 +3046,9 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      for (var i = 0; i < contiBtt.length; i++) {                                                                                             /// NARANJA A BOTON
+      for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
-        // Restablecer el color de fondo para todos los botones
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
@@ -3154,7 +3076,6 @@ function listaEntrenamientos(){
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
-      // Si el elemento está en la lista de excluidos, mostrarlo, de lo contrario, ocultarlo.
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
@@ -3169,21 +3090,21 @@ function toggleFullScreen(element) {
   if (!document.fullscreenElement) {
     if (element.requestFullscreen) {
       element.requestFullscreen()
-    } else if (element.mozRequestFullScreen) { // Firefox
+    } else if (element.mozRequestFullScreen) {
       element.mozRequestFullScreen()
-    } else if (element.webkitRequestFullscreen) { // Chrome, Safari y Opera
+    } else if (element.webkitRequestFullscreen) {
       element.webkitRequestFullscreen()
-    } else if (element.msRequestFullscreen) { // IE/Edge
+    } else if (element.msRequestFullscreen) {
       element.msRequestFullscreen()
     }
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen()
-    } else if (document.mozCancelFullScreen) { // Firefox
+    } else if (document.mozCancelFullScreen) {
       document.mozCancelFullScreen()
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari y Opera
+    } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen()
-    } else if (document.msExitFullscreen) { // IE/Edge
+    } else if (document.msExitFullscreen) {
       document.msExitFullscreen()
     }
   }
@@ -3262,7 +3183,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
       document.getElementById('butt-links').style.display='none'
       linkOrange.style.color = 'orange'
-      // Cambiar otros enlaces a azul
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
@@ -3287,7 +3207,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
     }   
     linkOrange.style.color = 'orange'
-    // Cambiar otros enlaces a azul
     var botones = document.getElementsByClassName('colorClick')
     for (var i = 0; i < botones.length; i++) {
       if (botones[i].id !== id) {
@@ -3312,9 +3231,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }   
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-      linkOrange.style.color = 'orange' ///  LINK NARANJA
-      // Cambiar otros enlaces a azul
+      linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
@@ -3399,7 +3316,6 @@ function LubricaDesbobinador(idButt) {
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i]
     if (button) {
-      // Cambia el color del botón a rojo
       document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
     } 
   }
@@ -3518,23 +3434,18 @@ function LubricaDesbobinador(idButt) {
           hijo.style.display = 'none'
         }
       }
-      contPadre.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
+      contPadre.style.display = 'flex'
     break;
     case 'btn80': 
-      // Paso 1: Obtener el elemento padre
       var contFreno = document.getElementById('freno')
-      // Paso 2: Iterar a través de los elementos hijos
       for (var i = 0; i < contFreno.children.length; i++) {
         var hijo = contFreno.children[i]
-        // Paso 3: Verificar si el hijo tiene la propiedad 'flex' en la propiedad de estilo
         var estiloCalculado = window.getComputedStyle(hijo)
         if (estiloCalculado.getPropertyValue('display') === 'flex') {
-          // Paso 4: Cambiar la propiedad de estilo 'display' a 'none'
           hijo.style.display = 'none'
         }
       }
-      // Paso 5: Hacer visible solo el hijo con la clase 'conti-boton'
-      contPadre.style.display = 'flex'  // Suponiendo que 'flex' es la propiedad de estilo 
+      contPadre.style.display = 'flex' 
     break;    
     default:
   }   
@@ -3599,8 +3510,6 @@ function UnidadTeñido(buttId){
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      /* document.getElementById('uniteñido').style.display='flex' */
-
       const child = document.getElementById('pieza-movil');
       const parent = document.getElementById('abuelo-grilla-teñido');
       moveElement(child,parent)
@@ -3630,7 +3539,7 @@ function UnidadTeñido(buttId){
 } 
 function mostrartBotonesIntervalo(className) {
   const buttons = document.querySelectorAll(`.${className}`);
-  buttons.forEach(button => button.style.visibility = 'hidden'); // Asegúrate de que estén ocultos
+  buttons.forEach(button => button.style.visibility = 'hidden');
 
   let delay = 0;
   buttons.forEach(button => {
@@ -3638,7 +3547,7 @@ function mostrartBotonesIntervalo(className) {
           button.style.visibility = 'visible';
           button.style.display='flex'
       }, delay);
-      delay += 177; // Incrementa el delay en 100ms para cada botón
+      delay += 177;
   });
 }
 function UnidadAlimenta(buttId){
@@ -3811,23 +3720,18 @@ function UnidadTintero(buttId,btnIniId){
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton31','boton32','boton33','boton34','boton35','boton36']
   var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
-
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonTintero()
   }
-
-  if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
-
+  if(alimenta.style.display === 'none'){
     switch (buttId) {
       case 'boton8' :
         var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
         if (computedStyleUteñido.display === 'flex') {
           palpitarBotonTintero()
         }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsTorre.length; i++) {                                                                                     /// ROJO BOTON * PARAMETRO
+      for (var i = 0; i < botsTorre.length; i++) {
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -3836,8 +3740,7 @@ function UnidadTintero(buttId,btnIniId){
           break;
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsUnidadT.length; i++) {                                                                               /// ROJO MISMO BOTON IZQUIERDO
+      for (var i = 0; i < botsUnidadT.length; i++) {
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
@@ -3847,8 +3750,7 @@ function UnidadTintero(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsDesplegables.length; i++) {                                                                                    /// ROJO MISMO BOTON
+      for (var i = 0; i < botsDesplegables.length; i++) {
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -3858,8 +3760,7 @@ function UnidadTintero(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      botsDesplegables.forEach(boton => {                                                                                              ///GRIS A BOTONES DERECHOS
+      botsDesplegables.forEach(boton => {
         botDesplegable = document.getElementById(boton)
         if(botDesplegable){
           botDesplegable.style.backgroundColor = '#333333'
@@ -3869,15 +3770,13 @@ function UnidadTintero(buttId,btnIniId){
       showButtonsUTeñidoconRetraso()
       break;
       case 'boton9' :
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-          botsDesplegables.forEach(boton => {                                                                                           ///GRIS A BOTONES DERECHOS
+          botsDesplegables.forEach(boton => {
           botDesplegable = document.getElementById(boton)
           if(botDesplegable){
             botDesplegable.style.backgroundColor = '#333333'
           }
         })
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsTorre.length; i++) {                                                                                  /// MAGENTA BOTON * PARAMETRO
+        for (var i = 0; i < botsTorre.length; i++) {
           var currentId = botsTorre[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === btnIniId && currentElement) {
@@ -3886,8 +3785,7 @@ function UnidadTintero(buttId,btnIniId){
             break;
           }
         }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsUnidadT.length; i++) {                                                                            /// MAGENTA MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsUnidadT.length; i++) {
           var currentId = botsUnidadT[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId && currentElement) {
@@ -3900,28 +3798,23 @@ function UnidadTintero(buttId,btnIniId){
         showButtonsRodilleria()      
       break; 
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
+        for (var i = 0; i < contenedorPadre.children.length; i++) {
           var hijo = contenedorPadre.children[i]
           hijo.style.display = 'none'
         }
 
         var contiBotonTeñido = document.getElementById('conti-boton-teñido')
         if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
+            contiBotonTeñido.style.display = 'flex'
         }
-
-        // Recorre los hijos del contenedor padre
         for (var i = 0; i < contiBotonTeñido.children.length; i++) {
             var hijo = contiBotonTeñido.children[i]
     
-            // Verifica si el hijo es un botón y lo muestra
             if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex' // O el valor que prefieras
+                hijo.style.display = 'flex'
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsDesplegables.length; i++) {
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
@@ -3942,14 +3835,13 @@ function UnidadBateria(buttId,btnIniId){
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton37','boton38','boton39','boton40','boton41']
   var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
 
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonBateria()
   }
 
-  if(alimenta.style.display === 'none'){                                                                                                  /// SI "ALIMENTA" ESTÁ OCULTA
+  if(alimenta.style.display === 'none'){
 
     switch (buttId) {
       case 'boton8' :
@@ -3957,8 +3849,7 @@ function UnidadBateria(buttId,btnIniId){
         if (computedStyleUteñido.display === 'flex') {
           palpitarBotonBateria()
         }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsTorre.length; i++) {                                                                                     /// ROJO BOTON * PARAMETRO
+      for (var i = 0; i < botsTorre.length; i++) {
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -3967,8 +3858,7 @@ function UnidadBateria(buttId,btnIniId){
           break;
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsUnidadT.length; i++) {                                                                               /// ROJO MISMO BOTON IZQUIERDO
+      for (var i = 0; i < botsUnidadT.length; i++) {
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
@@ -3978,8 +3868,7 @@ function UnidadBateria(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsDesplegables.length; i++) {                                                                                    /// ROJO MISMO BOTON
+      for (var i = 0; i < botsDesplegables.length; i++) {
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -3989,8 +3878,7 @@ function UnidadBateria(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      botsDesplegables.forEach(boton => {                                                                                              ///GRIS A BOTONES DERECHOS
+      botsDesplegables.forEach(boton => {
         botDesplegable = document.getElementById(boton)
         if(botDesplegable){
           botDesplegable.style.backgroundColor = '#333333'
@@ -4000,15 +3888,13 @@ function UnidadBateria(buttId,btnIniId){
       showButtonsUTeñidoconRetraso()
       break;
       case 'boton9' :
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-          botsDesplegables.forEach(boton => {                                                                                           ///GRIS A BOTONES DERECHOS
+          botsDesplegables.forEach(boton => {
           botDesplegable = document.getElementById(boton)
           if(botDesplegable){
             botDesplegable.style.backgroundColor = '#333333'
           }
         })
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsTorre.length; i++) {                                                                                  /// MAGENTA BOTON * PARAMETRO
+        for (var i = 0; i < botsTorre.length; i++) {
           var currentId = botsTorre[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === btnIniId && currentElement) {
@@ -4017,8 +3903,7 @@ function UnidadBateria(buttId,btnIniId){
             break;
           }
         }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsUnidadT.length; i++) {                                                                            /// MAGENTA MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsUnidadT.length; i++) {
           var currentId = botsUnidadT[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId && currentElement) {
@@ -4031,28 +3916,22 @@ function UnidadBateria(buttId,btnIniId){
         showButtonsRodilleria()      
       break; 
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
+        for (var i = 0; i < contenedorPadre.children.length; i++) {
           var hijo = contenedorPadre.children[i]
           hijo.style.display = 'none'
         }
 
         var contiBotonTeñido = document.getElementById('conti-boton-teñido')
         if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
+            contiBotonTeñido.style.display = 'flex'
         }
-
-        // Recorre los hijos del contenedor padre
         for (var i = 0; i < contiBotonTeñido.children.length; i++) {
             var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
-            if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex' // O el valor que prefieras
+                if (hijo.tagName.toLowerCase() === 'button') {
+                hijo.style.display = 'flex'
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsDesplegables.length; i++) {
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
@@ -4073,20 +3952,18 @@ function UnidadTorre(buttId,btnIniId){
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton42','boton43']
   var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonTorre()
   }
-  if(alimenta.style.display === 'none'){                                                                                                 /// SI "ALIMENTA" ESTÁ OCULTA
+  if(alimenta.style.display === 'none'){
     switch (buttId) {
       case 'boton8' :
         var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
         if (computedStyleUteñido.display === 'flex') {
           palpitarBotonTorre()
         }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsTorre.length; i++) {                                                                                     /// ROJO BOTON * PARAMETRO
+      for (var i = 0; i < botsTorre.length; i++) {
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -4095,8 +3972,7 @@ function UnidadTorre(buttId,btnIniId){
           break;
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsUnidadT.length; i++) {                                                                               /// ROJO MISMO BOTON IZQUIERDO
+      for (var i = 0; i < botsUnidadT.length; i++) {
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
@@ -4106,8 +3982,7 @@ function UnidadTorre(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsDesplegables.length; i++) {                                                                                    /// ROJO MISMO BOTON
+      for (var i = 0; i < botsDesplegables.length; i++) {
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -4117,8 +3992,7 @@ function UnidadTorre(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      botsDesplegables.forEach(boton => {                                                                                              ///GRIS A BOTONES DERECHOS
+      botsDesplegables.forEach(boton => {
         botDesplegable = document.getElementById(boton)
         if(botDesplegable){
           botDesplegable.style.backgroundColor = '#333333'
@@ -4128,15 +4002,13 @@ function UnidadTorre(buttId,btnIniId){
       showButtonsUTeñidoconRetraso()
       break;
       case 'boton9' :
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-          botsDesplegables.forEach(boton => {                                                                                           ///GRIS A BOTONES DERECHOS
+          botsDesplegables.forEach(boton => {
           botDesplegable = document.getElementById(boton)
           if(botDesplegable){
             botDesplegable.style.backgroundColor = '#333333'
           }
         })
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsTorre.length; i++) {                                                                                  /// MAGENTA BOTON * PARAMETRO
+        for (var i = 0; i < botsTorre.length; i++) {
           var currentId = botsTorre[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === btnIniId && currentElement) {
@@ -4145,8 +4017,7 @@ function UnidadTorre(buttId,btnIniId){
             break;
           }
         }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsUnidadT.length; i++) {                                                                            /// MAGENTA MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsUnidadT.length; i++) {
           var currentId = botsUnidadT[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId && currentElement) {
@@ -4159,28 +4030,22 @@ function UnidadTorre(buttId,btnIniId){
         showButtonsRodilleria()      
       break; 
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
+        for (var i = 0; i < contenedorPadre.children.length; i++) {
           var hijo = contenedorPadre.children[i]
           hijo.style.display = 'none'
         }
 
         var contiBotonTeñido = document.getElementById('conti-boton-teñido')
         if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
+            contiBotonTeñido.style.display = 'flex'
         }
-
-        // Recorre los hijos del contenedor padre
         for (var i = 0; i < contiBotonTeñido.children.length; i++) {
             var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
-            if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex' // O el valor que prefieras
+                if (hijo.tagName.toLowerCase() === 'button') {
+                hijo.style.display = 'flex'
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsDesplegables.length; i++) {
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
@@ -4201,20 +4066,18 @@ function UnidadSisHumedad(buttId,btnIniId){
   var botsTorre = ['boton1','boton7','boton13','boton19','boton25',]
   var botsUnidadT = ['boton44','boton45','boton4']
   var contiDesbobina = document.getElementById('desbobinadorId')
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////// /////////////////////////////////////////////////////////////    
   var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
   if (computedStyleUteñido.display === 'flex') {
     palpitarBotonHumedad()
   }
-  if(alimenta.style.display === 'none'){                                                                                                 /// SI "ALIMENTA" ESTÁ OCULTA
+  if(alimenta.style.display === 'none'){
     switch (buttId) {
       case 'boton8' :
         var computedStyleUteñido = window.getComputedStyle(contiDesbobina);
         if (computedStyleUteñido.display === 'flex') {
           palpitarBotonHumedad()
         }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsTorre.length; i++) {                                                                                     /// ROJO BOTON * PARAMETRO
+      for (var i = 0; i < botsTorre.length; i++) {
         var currentId = botsTorre[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -4223,8 +4086,7 @@ function UnidadSisHumedad(buttId,btnIniId){
           break;
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsUnidadT.length; i++) {                                                                               /// ROJO MISMO BOTON IZQUIERDO
+      for (var i = 0; i < botsUnidadT.length; i++) {
         var currentId = botsUnidadT[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === buttId && currentElement) {
@@ -4234,8 +4096,7 @@ function UnidadSisHumedad(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      for (var i = 0; i < botsDesplegables.length; i++) {                                                                                    /// ROJO MISMO BOTON
+      for (var i = 0; i < botsDesplegables.length; i++) {
         var currentId = botsDesplegables[i]
         var currentElement = document.getElementById(currentId)
         if (currentId === btnIniId && currentElement) {
@@ -4245,8 +4106,7 @@ function UnidadSisHumedad(buttId,btnIniId){
 
         }
       }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-      botsDesplegables.forEach(boton => {                                                                                              ///GRIS A BOTONES DERECHOS
+      botsDesplegables.forEach(boton => {
         botDesplegable = document.getElementById(boton)
         if(botDesplegable){
           botDesplegable.style.backgroundColor = '#333333'
@@ -4256,15 +4116,13 @@ function UnidadSisHumedad(buttId,btnIniId){
       showButtonsUTeñidoconRetraso()
       break;
       case 'boton9' :
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-          botsDesplegables.forEach(boton => {                                                                                           ///GRIS A BOTONES DERECHOS
+          botsDesplegables.forEach(boton => {
           botDesplegable = document.getElementById(boton)
           if(botDesplegable){
             botDesplegable.style.backgroundColor = '#333333'
           }
         })
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsTorre.length; i++) {                                                                                  /// MAGENTA BOTON * PARAMETRO
+        for (var i = 0; i < botsTorre.length; i++) {
           var currentId = botsTorre[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === btnIniId && currentElement) {
@@ -4273,8 +4131,7 @@ function UnidadSisHumedad(buttId,btnIniId){
             break;
           }
         }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-        for (var i = 0; i < botsUnidadT.length; i++) {                                                                            /// MAGENTA MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsUnidadT.length; i++) {
           var currentId = botsUnidadT[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId && currentElement) {
@@ -4287,28 +4144,22 @@ function UnidadSisHumedad(buttId,btnIniId){
         showButtonsRodilleria()      
       break; 
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < contenedorPadre.children.length; i++) {                                                               /// OOCULTAR HIJOS MENOS BOTONES
+        for (var i = 0; i < contenedorPadre.children.length; i++) {
           var hijo = contenedorPadre.children[i]
           hijo.style.display = 'none'
         }
 
         var contiBotonTeñido = document.getElementById('conti-boton-teñido')
         if (contiBotonTeñido) {
-            contiBotonTeñido.style.display = 'flex' // O el valor que prefieras
+            contiBotonTeñido.style.display = 'flex'
         }
-
-        // Recorre los hijos del contenedor padre
         for (var i = 0; i < contiBotonTeñido.children.length; i++) {
             var hijo = contiBotonTeñido.children[i]
-    
-            // Verifica si el hijo es un botón y lo muestra
             if (hijo.tagName.toLowerCase() === 'button') {
-                hijo.style.display = 'flex' // O el valor que prefieras
+                hijo.style.display = 'flex'
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        for (var i = 0; i < botsDesplegables.length; i++) {                                                                         /// ROJO MISMO BOTON IZQUIERDO
+        for (var i = 0; i < botsDesplegables.length; i++) {
           var currentId = botsDesplegables[i]
           var currentElement = document.getElementById(currentId)
           if (currentId === buttId) {
@@ -4365,8 +4216,7 @@ function rodillosTeñido(botId) {
       moveElement(childI,parentI)      
     break;
     case 'btn08':
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-      var childContainers = rodilleria.children;                                                                              /// OCULTA HIJOS MENOS LOS BOTONES
+      var childContainers = rodilleria.children;
       for (var i = 0; i < childContainers.length; i++) {
         var container = childContainers[i]
         if (container.id !== 'conti-boton-rodilleria') {
@@ -4378,20 +4228,19 @@ function rodillosTeñido(botId) {
     break;
     default:
   } 
-
 }
 function showLablsLubricacion() { 
-  var botones = document.querySelectorAll('.labl-lub') // Selecciona todos los botones
+  var botones = document.querySelectorAll('.labl-lub')
   function mostrarLabelConRetraso(i) {
     if (i < botones.length) {
       var boton = botones[i]
       boton.style.display = 'inline-block'
       setTimeout(function() {
         mostrarLabelConRetraso(i + 1)
-      }, 150) // 100 milisegundos de retraso entre botones
+      }, 150)
     }
   }
-  mostrarLabelConRetraso(0) // Comienza desde el primer botón
+  mostrarLabelConRetraso(0)
 }
 function lubricaDiario(butId,labelId){
   var arrayIdButtsLub = ['lub-diario', 'lub-semanal', 'lub-mensual']
@@ -4399,10 +4248,8 @@ function lubricaDiario(butId,labelId){
   for (var i = 0; i < arrayIdButtsLub.length; i++) {
     var button = arrayIdButtsLub[i]
     if (button === butId) {
-      // Cambia el color del botón a rojo
       document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)'
     } else {
-      // Cambia el color del resto de botones a gris
       document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)'
     }
   }
@@ -4648,13 +4495,11 @@ function resultadosMA(){
   }
 }
 function aumentarTamaño(element, factor, tiempo) {
-  const originalWidth = element.clientWidth; // Ancho original del elemento
-  const originalHeight = element.clientHeight; // Alto original del elemento
+  const originalWidth = element.clientWidth;
+  const originalHeight = element.clientHeight;
 
-  element.style.transition = `transform ${tiempo}s`; // Aplica una transición CSS para la animación
-  element.style.transform = `scale(${factor})`; // Escala el elemento al tamaño aumentado
-
-  // Después de un tiempo, quita la transición y restaura el tamaño original
+  element.style.transition = `transform ${tiempo}s`;
+  element.style.transform = `scale(${factor})`;
   setTimeout(() => {
     element.style.transition = 'none'
     element.style.transform = 'scale(1)'
@@ -4692,3 +4537,9 @@ function graficosAutomaticos(idGrafico){
     }
   }
 }
+
+document.getElementById('titleContainerI').addEventListener('mouseover', () => {
+  document.getElementById('links-inicialesI').style.display = 'block';
+  document.getElementById('linkListI').style.display = 'block';
+
+});

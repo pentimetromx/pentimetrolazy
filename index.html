@@ -450,24 +450,24 @@
       Tu navegador no soporta el elemento de video.
     </video>
     <img src="./assets/eintein.png"  id="image-background" alt="einst">
+
     <div class="links-inicialesI" id="links-inicialesI">      
-      <button class="boton-a" id="bot-ini-link" style="text-align: center;margin-left: 507px;display: none;" onclick="VolveraInicio()">PANEL INICIO</button>
-      <div class="iridescent-element" id="lineI"></div>
-      <div id="titleContainerI">
+      <div id="titleContainerI" class="cont-titulo-pilares">
         <p id="textToColorI">Pilares<span>&#9660;</span></p>
       </div>      
-      <ul class="iridescent-element" id="linkListI">
-        <li><a href="#" onclick="ElementosMaII('conteneMantaut')">Pilar de Mantenimiento Autonomo</a></li><br>        
-        <li><a href="#" onclick="Geometria()">Pilar Educación y Entrenamiento</a></li><br>
-        <li><a href="#" onclick="iniciarAplicacion()">Pilar Salud Seguridad y Ambiente</a></li><br>        
-        <li><a href="#" onclick="abrirPilarMP()">Pilar Mantenimiento Progresivo</a></li><br>
-        <li><a href="#" onclick="abrirPilarME()">Pilar Mejora Enfocada</a></li><br>
-        <li><a href="#" onclick="abrirPilarME()">Pilar Administrativo y soporte</a></li><br>   
-        <li><a href="#" onclick="cerrarSecciones()">Salir</a></li><br>       
-      </ul>    
+      
+      <ul id="linkListI" class="iridescent-element">
+        <li onclick="ElementosMaII('conteneMantaut')">Mantenimiento Autonomo</li>
+        <li>Educación y Entrenamiento</li>
+        <li>Salud Seguridad y Ambiente</li>
+        <li>Mantenimiento Progresivo</li>
+        <li>Mejora Enfocada</li>
+        <li>Administrativo y soporte</li>
+        <li>Salir</li>
+      </ul>
     </div>
+
     <div class="links-iniciales" id="links-iniciales">
-      <div id="line"></div>
       <div id="titleContainer">
         <p id="textToColor">Entrenamientos <span>&#9660;</span></p>
       </div>
@@ -2428,11 +2428,10 @@
 
     <ul id="context-menu" class="context-menu">
       <li>Historial</li>
-      <li class="bisel">Profundizar</li>
+      <li>Profundizar</li>
       <li>Ultimo caso</li>
-      <li class="bisel">Ayudas</li>
+      <li>Ayudas</li>
       <li onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Volver</li>
-
     </ul>
 
     <script src="./Matriz-2.js"></script>

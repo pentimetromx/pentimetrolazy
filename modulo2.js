@@ -2502,64 +2502,13 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transform = 'translate(0, 0) scale(1)'
   })
 })
-textToColor.addEventListener("mouseover", () => {
-    clearTimeout(hideTimeout)
-    hoverTimeout = setTimeout(() => {
-      linkList.style.display = "block";
-      linkListI.style.display = 'none'
-      line.style.width = textToColor.offsetWidth + "px";
-      linkListI.style.display = "none";
-    }, 7)
-})
 linkList.addEventListener("mouseover", () => {
     clearTimeout(hideTimeout)
     linkListI.style.display = 'none'
 })
-textToColor.addEventListener("mouseout", () => {
-    clearTimeout(hoverTimeout)
-    hideTimeout = setTimeout(() => {
-      textToColor.style.color = "white";
-      linkList.style.display = "none";
-      line.style.width = "0";
-    }, 7)
-})
-linkList.addEventListener("mouseout", () => {
-    hideTimeout = setTimeout(() => {
-      textToColor.style.color = "white";
-      linkList.style.display = "none";
-      line.style.width = "0";
-    }, 1)
-})
-textToColorI.addEventListener("mouseover", () => {
-  var linkList = document.getElementById('linkList')
-  clearTimeout(hideTimeout)
-  hoverTimeout = setTimeout(() => {
-    linkListI.style.display = "block";
-    linkList.style.display = 'none'
-    lineI.style.width = textToColorI.offsetWidth + "px";
-  }, 7)
-})
-linkListI.addEventListener("mouseover", () => {
-  clearTimeout(hideTimeout)
-})
-textToColorI.addEventListener("mouseout", () => {
-  clearTimeout(hoverTimeout)
-  hideTimeout = setTimeout(() => {
-    textToColorI.style.color = "white";
-    linkListI.style.display = "none";
-    lineI.style.width = "0";
-  }, 77)
-})
-linkListI.addEventListener("mouseout", () => {
-  hideTimeout = setTimeout(() => {
-    textToColorI.style.color = "white";
-    linkListI.style.display = "none";
-    lineI.style.width = "0";
-  }, 1)
-})
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
-const suggestionsList = document.getElementById('suggestions') // Agrega el elemento datalist
+const suggestionsList = document.getElementById('suggestions')
 const sugerencias = [
 'autonomo',
 'bateria',
@@ -2588,7 +2537,6 @@ const sugerencias = [
 'variable'
   
 ]
- // Agregamos un evento para manejar la búsqueda
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault() // Evita que se envíe el formulario
   const searchTerm = searchInput.value.toLowerCase() // Obtenemos el término de búsqueda y lo convertimos a minúsculas
@@ -5346,7 +5294,6 @@ function moverVideoDerecha() {
     requestAnimationFrame(animar);  
   }
 }
-
 function reponerEstilos(){
   document.getElementById('padre-1').style.top=''
   document.getElementById('links-inicialesI').style.left=''
