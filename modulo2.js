@@ -5403,6 +5403,63 @@ function showContextMenu(x, y) {
         }, index * 177);
     });
 }
+
+targetDiv.addEventListener('contextmenu', function (event) {
+    event.preventDefault(); 
+    const { clientX: mouseX, clientY: mouseY } = event;
+    showContextMenu(mouseX, mouseY);
+});
+
+targetDiv.addEventListener('touchstart', function (event) {
+    // Mostrar el menú contextual inmediatamente al tocar
+    const touch = event.touches[0];
+    const touchX = touch.clientX;
+    const touchY = touch.clientY;
+    showContextMenu(touchX, touchY);
+    // Evitar el comportamiento por defecto del evento
+    event.preventDefault();
+});
+
+document.addEventListener('click', function () {
+    contextMenu.style.display = 'none';
+});
+
+contextMenu.addEventListener('mouseleave', function () {
+    contextMenu.style.display = 'none';
+});
+
+document.addEventListener('contextmenu', function (event) {
+  if (!targetDiv.contains(event.target)) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('touchstart', function (event) {
+  if (!contextMenu.contains(event.target)) {
+    contextMenu.style.display = 'none';
+  }
+});
+
+/* const targetDiv = document.querySelector('.img1');
+const contextMenu = document.getElementById('context-menu');
+let touchTimer = null;
+
+function showContextMenu(x, y) {
+    contextMenu.style.top = `${y}px`;
+    contextMenu.style.left = `${x}px`;
+    contextMenu.style.display = 'block';
+    const menuItems = contextMenu.querySelectorAll('li');
+    menuItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.backgroundColor =  'rgb(0,0,100)';
+            item.style.color = '#fff'; 
+            setTimeout(() => {
+                item.style.backgroundColor = '';
+                item.style.color = '';
+            }, 177);
+        }, index * 177);
+    });
+}
 targetDiv.addEventListener('contextmenu', function (event) {
     event.preventDefault(); 
     const { clientX: mouseX, clientY: mouseY } = event;
@@ -5434,5 +5491,5 @@ document.addEventListener('touchstart', function (event) {
   if (!contextMenu.contains(event.target)) {
     contextMenu.style.display = 'none';
   }
-});
+}); */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
