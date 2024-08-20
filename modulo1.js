@@ -4550,14 +4550,23 @@ document.getElementById('titleContainerI').addEventListener('mouseover', () => {
         if (elementosNoIncluidos.includes(allContenedores[i])) {
           elemento.style.filter = '';
         } else {
-          elemento.style.filter = 'blur(5px)';
+          elemento.style.filter = 'blur(6px)';
         }
       }
     }
-  },300);
+  },200);
 }
 );
 document.getElementById('linkListI').addEventListener('mouseleave', () =>{
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+        elemento.style.filter = '';
+      }
+    }
+    document.getElementById('linkListI').style.display='none'
+})
+document.getElementById('links-inicialesI').addEventListener('mouseleave', () =>{
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {

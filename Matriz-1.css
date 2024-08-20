@@ -6865,16 +6865,19 @@ height:21%;
   #titleContainerI{
     position:absolute;
     display: flex;
+    align-items: center;
+    justify-content: center;
     left: 23%;  
     top:0;
     width:15vw;  
-    height: auto;
-    align-items: center;
     cursor: pointer;
     z-index: 3;
   }
   #titleContainerI p{
+    position: absolute;
+    display: flex;
     font-size: 3vw;
+    top: 0;
   }
 
   .iridescent-element li {
