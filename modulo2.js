@@ -5215,6 +5215,9 @@ function cerrarVentanasII(){
   }
 
 }
+function cerrarPilares(){
+  document.getElementById('linkListI').style.display='none'
+}
 function abrirAyudas(){
   let padreAyudas = document.getElementById('pre-prensa')
   let ayudas = document.getElementById('ventana-lateral')
@@ -5306,8 +5309,6 @@ function reponerEstilos(){
   padreAyudas.style.width=''
   padreManometro.style.height=''
   padreManometro.style.left=''
-
-
   if(document.body.style.zoom != "100%"){document.body.style.zoom = "100%"}
   padreVideos.classList.remove('move_video');
   padreTres.classList.remove('move_container')
@@ -5320,6 +5321,12 @@ function reponerEstilos(){
   vidPrePre.forEach(child => {
     child.classList.remove('move_vid_pre')
   });
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.filter = '';
+    }
+  }
 }
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');

@@ -6808,7 +6808,7 @@ height:21%;
     z-index: 0;
 }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
-  #links-iniciales{
+/*   #links-iniciales{
     position: absolute;
     display: flex;
     top: 14.5%;
@@ -6816,14 +6816,15 @@ height:21%;
     height:57vh;
     width:52vw;
     display: none;
-  }
-  #linkList{
+  } */
+/*   #linkList{
     position: absolute;
     left:0;
     top:0;
     z-index: 777;
     display: none;
-  }
+  } */
+  #links-iniciales,
   #links-inicialesI{
     position: absolute;
     display: flex;
@@ -6833,6 +6834,7 @@ height:21%;
     width:39vw;
     display:none;
   }
+  #linkList,
   #linkListI{
     position: absolute;
     left:0vh;
@@ -6862,6 +6864,7 @@ height:21%;
     padding: 0;
     margin: 0;
   }
+  #titleContainer,
   #titleContainerI{
     position:absolute;
     display: flex;
@@ -6873,6 +6876,7 @@ height:21%;
     cursor: pointer;
     z-index: 3;
   }
+  #titleContainer p,
   #titleContainerI p{
     position: absolute;
     display: flex;
@@ -6892,7 +6896,7 @@ height:21%;
     background-color: rgb(0,0,100);
     color: #fff;
   }
-  #titleContainer{
+  /* #titleContainer{
     position:absolute;
     display: flex;
     left:4%;  
@@ -6905,7 +6909,7 @@ height:21%;
   }
   #titleContainer p{
     font-size: 3vw;
-  }
+  } */
   .main-text {
     position: relative;
     left: 31px;
