@@ -5352,13 +5352,6 @@ function showContextMenu(x, y) {
   contextMenu.style.display = 'block';
 }
 
-//  menú en móviles
-targetDiv.addEventListener('touchstart', (event) => {
-  event.preventDefault();
-  const touch = event.touches[0];
-  showContextMenu(touch.clientX, touch.clientY);
-});
-
 // menú en PC
 targetDiv.addEventListener('click', (event) => {
   event.preventDefault();
@@ -5370,11 +5363,27 @@ contextMenu.addEventListener('mouseleave', () => {
   contextMenu.style.display = 'none';
 });
 
-// Oculta menú en móviles
-document.addEventListener('touchend', (event) => {
-  if (!contextMenu.contains(event.target)) {
+let shouldShowMenu = true;
+
+targetDiv.addEventListener('touchstart', (event) => {
+  shouldShowMenu = true;
+  setTimeout(() => {
+    if (shouldShowMenu) {
+      event.preventDefault();
+      const touch = event.touches[0];
+      showContextMenu(touch.clientX, touch.clientY);
+    }
+  }, 0);
+});
+
+document.addEventListener('touchstart', (event) => {
+  if (!contextMenu.contains(event.target) && !targetDiv.contains(event.target)) {
     contextMenu.style.display = 'none';
+    shouldShowMenu = false;
   }
 });
+
+
+
 
 
