@@ -6824,7 +6824,6 @@ height:21%;
     z-index: 777;
     display: none;
   } */
-  #links-iniciales,
   #links-inicialesI{
     position: absolute;
     display: flex;
@@ -6834,6 +6833,16 @@ height:21%;
     width:39vw;
     display:none;
   }
+  #links-iniciales{
+    position: absolute;
+    display: flex;
+    top: 13vh;
+    left:57vw;
+    height:33vh;
+    width:39vw;
+    display:none;
+  }
+
   #linkList,
   #linkListI{
     position: absolute;

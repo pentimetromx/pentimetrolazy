@@ -4538,12 +4538,11 @@ function graficosAutomaticos(idGrafico){
     }
   }
 }
-
 document.getElementById('titleContainerI').addEventListener('mouseover', () => {
   setTimeout(() => {
     document.getElementById('links-inicialesI').style.display = 'block';
     document.getElementById('linkListI').style.display = 'block';
-    var elementosNoIncluidos = ['links-inicialesI','linkListI'];  
+    var elementosNoIncluidos = ['buscador','search-form','container01','links-inicialesI', 'links-iniciales','linkList','linkListI'];  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);
       if (elemento) {
@@ -4557,6 +4556,25 @@ document.getElementById('titleContainerI').addEventListener('mouseover', () => {
   },200);
 }
 );
+document.getElementById('titleContainer').addEventListener('mouseover', () => {
+  setTimeout(() => {
+    document.getElementById('links-iniciales').style.display = 'block';
+    document.getElementById('linkList').style.display = 'block';
+    var elementosNoIncluidos = ['buscador','search-form','container01','links-inicialesI', 'links-iniciales','linkList'];  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i]);
+      if (elemento) {
+        if (elementosNoIncluidos.includes(allContenedores[i])) {
+          elemento.style.filter = '';
+        } else {
+          elemento.style.filter = 'blur(6px)';
+        }
+      }
+    }
+  },200);
+}
+);
+
 document.getElementById('linkListI').addEventListener('mouseleave', () =>{
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
@@ -4574,4 +4592,22 @@ document.getElementById('links-inicialesI').addEventListener('mouseleave', () =>
       }
     }
     document.getElementById('linkListI').style.display='none'
+})
+document.getElementById('linkList').addEventListener('mouseleave', () =>{
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+        elemento.style.filter = '';
+      }
+    }
+    document.getElementById('linkList').style.display='none'
+})
+document.getElementById('links-iniciales').addEventListener('mouseleave', () =>{
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+        elemento.style.filter = '';
+      }
+    }
+    document.getElementById('linkList').style.display='none'
 })
