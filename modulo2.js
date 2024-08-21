@@ -5342,56 +5342,31 @@ function reponerEstilos(){
   }
 }
 /* Habilita el menu contextual (click derecho) inhabilita el menu contextual por defecto en el elemento */
-
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 
+// Función para mostrar el menú contextual en la posición correcta
+function showContextMenu(x, y) {
+  contextMenu.style.left = `${x -5}px`;
+  contextMenu.style.top = `${y -5}px`; // 10px abajo del cursor
+  contextMenu.style.display = 'block';
+}
+
+// Evento para dispositivos móviles
 targetDiv.addEventListener('touchstart', (event) => {
-  // Evita que el evento toque accione un clic accidental
   event.preventDefault();
-
-  // Obtén las coordenadas del toque
   const touch = event.touches[0];
-  const touchX = touch.clientX;
-  const touchY = touch.clientY;
-
-  // Posiciona el menú 10px abajo del toque
-  contextMenu.style.left = `${touchX}px`;
-  contextMenu.style.top = `${touchY + 10}px`;
-  
-  // Muestra el menú contextual
-  contextMenu.style.display = 'block';
+  showContextMenu(touch.clientX, touch.clientY);
 });
-
+// Evento para PC
 targetDiv.addEventListener('click', (event) => {
-  // Evita que el evento toque accione un clic accidental
   event.preventDefault();
+  showContextMenu(event.clientX, event.clientY);
 
-  // Obtén las coordenadas del toque
-  const touch = event.touches[0];
-  const touchX = touch.clientX;
-  const touchY = touch.clientY;
-
-  // Posiciona el menú 10px abajo del toque
-  contextMenu.style.left = `${touchX}px`;
-  contextMenu.style.top = `${touchY + 10}px`;
-  
-  // Muestra el menú contextual
-  contextMenu.style.display = 'block';
 });
-
-/* const targetDiv = document.querySelector('.img1');
-const contextMenu = document.getElementById('context-menu');
-targetDiv.addEventListener('touchstart', () => {
-  contextMenu.style.display='block'
-}); */
-targetDiv.addEventListener('click', () => {
-  contextMenu.style.display='block'
-});
-contextMenu.addEventListener('mouseleave', () => {
+contextMenu.addEventListener('mouseleave', () =>{
   contextMenu.style.display='none'
-});
-
+})
 
 
 
