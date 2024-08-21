@@ -5732,6 +5732,7 @@ height:21%;
   position: absolute;
   background-color: rgb(177, 177, 177);
   border: 1px solid #ccc;
+  border-radius: 4px;
   list-style-type: none;
   font-family: "GothamRounded", sans-serif;
   padding: 0;
@@ -5747,6 +5748,8 @@ height:21%;
   background-color: #e0e0e0;
   border-bottom: 2px solid #aaa; /* Bisel inferior gris */
   border-top: 2px solid #fff; /* Sombra superior blanca */
+  border-radius: 4px;
+
 }
 .context-menu li:hover {
   background-color: rgb(0,0,100);
