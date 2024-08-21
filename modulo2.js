@@ -5341,10 +5341,20 @@ function reponerEstilos(){
     }
   }
 }
+/* Habilita el menu contextual (click derecho) inhabilita el menu contextual por defecto en el elemento */
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 let touchTimer = null;
-function showContextMenu(x, y) {
+
+targetDiv.addEventListener('touchstart', () => {
+  contextMenu.style.display='block'
+});
+targetDiv.addEventListener('click', () => {
+  contextMenu.style.display='block'
+});
+
+
+/* function showContextMenu(x, y) {
   contextMenu.style.top = `${y}px`;
   contextMenu.style.left = `${x}px`;
   contextMenu.style.display = 'block';
@@ -5391,4 +5401,4 @@ document.addEventListener('touchstart', function (event) {
   if (!contextMenu.contains(event.target)) {
     contextMenu.style.display = 'none';
   }
-});
+}); */
