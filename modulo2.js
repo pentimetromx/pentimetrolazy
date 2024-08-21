@@ -195,15 +195,15 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          resultadosMA()
+          deslizaContenedor('troubleshooting','troubleshoot')
         },977) 
-        /*setTimeout(function() {
-          resultadosEmpleado('icon-ana','updateAna','img7','true')
+        setTimeout(function() {
+          deslizaContenedor('troubleshooting','troubleshoot')
         },1177) 
         setTimeout(function() {
-          listaEntrenamientosII('archivo')
+          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
         },1377)
-        setTimeout(function() {
+        /*setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                       
         },1677) 
         setTimeout(function() {
@@ -5357,14 +5357,13 @@ targetDiv.addEventListener('click', (event) => {
   event.preventDefault();
   showContextMenu(event.clientX, event.clientY);
 });
-
 // Ocultar el menú (PC)
 contextMenu.addEventListener('mouseleave', () => {
   contextMenu.style.display = 'none';
 });
 
+// En moviles
 let shouldShowMenu = true;
-
 targetDiv.addEventListener('touchstart', (event) => {
   shouldShowMenu = true;
   setTimeout(() => {
