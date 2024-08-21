@@ -5218,6 +5218,18 @@ function cerrarVentanasII(){
 function cerrarPilares(){
   document.getElementById('linkListI').style.display='none'
   document.getElementById('linkList').style.display='none'
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.filter = '';
+    }
+  }
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);
+    if (elemento) {
+      elemento.style.filter = '';
+    }
+  }
 }
 function abrirAyudas(){
   let padreAyudas = document.getElementById('pre-prensa')
