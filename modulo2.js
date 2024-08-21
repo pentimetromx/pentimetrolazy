@@ -5341,32 +5341,41 @@ function reponerEstilos(){
     }
   }
 }
-/* Habilita el menu contextual (click derecho) inhabilita el menu contextual por defecto en el elemento */
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 
 // Función para mostrar el menú contextual en la posición correcta
 function showContextMenu(x, y) {
-  contextMenu.style.left = `${x -5}px`;
-  contextMenu.style.top = `${y -5}px`; // 10px abajo del cursor
+  contextMenu.style.left = `${x - 5}px`;
+  contextMenu.style.top = `${y - 5}px`;
   contextMenu.style.display = 'block';
 }
 
-// Evento para dispositivos móviles
+// Mostrar el menú en dispositivos móviles
 targetDiv.addEventListener('touchstart', (event) => {
   event.preventDefault();
   const touch = event.touches[0];
   showContextMenu(touch.clientX, touch.clientY);
 });
-// Evento para PC
+
+// Mostrar el menú en PC
 targetDiv.addEventListener('click', (event) => {
   event.preventDefault();
   showContextMenu(event.clientX, event.clientY);
-
 });
-contextMenu.addEventListener('mouseleave', () =>{
-  contextMenu.style.display='none'
-})
 
+// Ocultar el menú cuando el cursor sale del menú (PC)
+contextMenu.addEventListener('mouseleave', () => {
+  contextMenu.style.display = 'none';
+});
+
+// Ocultar el menú cuando se toca fuera de él en dispositivos móviles
+document.addEventListener('touchstart', (event) => {
+  if (!contextMenu.contains(event.target)) {
+    contextMenu.style.display = 'none';
+  }
+});
 
 
