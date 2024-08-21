@@ -6808,26 +6808,10 @@ height:21%;
     z-index: 0;
 }
   /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
-/*   #links-iniciales{
-    position: absolute;
-    display: flex;
-    top: 14.5%;
-    left:47vw;
-    height:57vh;
-    width:52vw;
-    display: none;
-  } */
-/*   #linkList{
-    position: absolute;
-    left:0;
-    top:0;
-    z-index: 777;
-    display: none;
-  } */
   #links-inicialesI{
     position: absolute;
     display: flex;
-    top: 13vh;
+    top: 12vh;
     left:0;
     height:33vh;
     width:39vw;
@@ -6836,7 +6820,7 @@ height:21%;
   #links-iniciales{
     position: absolute;
     display: flex;
-    top: 13vh;
+    top: 12vh;
     left:57vw;
     height:33vh;
     width:39vw;
