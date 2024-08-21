@@ -5352,12 +5352,11 @@ function showContextMenu(x, y) {
   contextMenu.style.display = 'block';
 }
 
-// menú en PC
+// Menú en PC
 targetDiv.addEventListener('click', (event) => {
   event.preventDefault();
   showContextMenu(event.clientX, event.clientY);
 });
-// Ocultar el menú (PC)
 contextMenu.addEventListener('mouseleave', () => {
   contextMenu.style.display = 'none';
 });
