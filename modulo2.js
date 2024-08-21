@@ -5345,34 +5345,33 @@ function reponerEstilos(){
 
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
-
-// Función para mostrar el menú contextual en la posición correcta
+// menú contextual en la posición correcta
 function showContextMenu(x, y) {
   contextMenu.style.left = `${x - 5}px`;
   contextMenu.style.top = `${y - 5}px`;
   contextMenu.style.display = 'block';
 }
 
-// Mostrar el menú en dispositivos móviles
+//  menú en móviles
 targetDiv.addEventListener('touchstart', (event) => {
   event.preventDefault();
   const touch = event.touches[0];
   showContextMenu(touch.clientX, touch.clientY);
 });
 
-// Mostrar el menú en PC
+// menú en PC
 targetDiv.addEventListener('click', (event) => {
   event.preventDefault();
   showContextMenu(event.clientX, event.clientY);
 });
 
-// Ocultar el menú cuando el cursor sale del menú (PC)
+// Ocultar el menú (PC)
 contextMenu.addEventListener('mouseleave', () => {
   contextMenu.style.display = 'none';
 });
 
-// Ocultar el menú cuando se toca fuera de él en dispositivos móviles
-document.addEventListener('touchstart', (event) => {
+// Oculta menú en móviles
+document.addEventListener('touchend', (event) => {
   if (!contextMenu.contains(event.target)) {
     contextMenu.style.display = 'none';
   }
