@@ -37,7 +37,7 @@ function deslizaContenedor(identificador, idButton) {
       } else{
         var contenedorPadre = document.getElementById(identificador)
         if (contenedorPadre) {
-          contenedorPadre.style.display = 'flex'  
+          contenedorPadre.style.display = 'grid'  
           var elementosHijos = contenedorPadre.children;  
           for (var i = 0; i < elementosHijos.length; i++) {
             elementosHijos[i].style.display = 'none'

@@ -1008,7 +1008,7 @@ function mostrarTroublesshIntervalo() {
   }
   hacerVisibleSiguienteElemento()
 }
-function deslizaContenedorII(idElement, idButton) {
+/* function deslizaContenedorII(idElement, idButton) {
   const elements = document.querySelectorAll('.class-line');
   elements.forEach(element => {
     element.style.left=''
@@ -1089,7 +1089,7 @@ function deslizaContenedorII(idElement, idButton) {
   boton.style.backgroundColor = 'orange'
   setTimeout(function () {    
   }, 300)
-}
+} */
 function resetBotns() {  
   clearAllIntervals()
   var elementosExcluidos = ['nicho_spans','pantalla','conti-boton','conteneMantaut','buscador','search-form','container01','links-inicialesI','links-iniciales'];          

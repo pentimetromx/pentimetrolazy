@@ -875,7 +875,19 @@
         <button class="butt-mautonomo" onclick="building()" style="background-color: red;color: white;">Show everything</button>
         <button class="butt-mautonomo" onclick="resultadosMA()">TRACKING DASHBOARD</button>               
       </div> 
-      <div id="troubleshooting" class="class-line" style="display: none;">
+
+      <div id="troubleshooting" class="contenedor-padre class-line">
+        <button class="miBoton" id="archivo" onclick="listaEntrenamientosII('archivo')">Largo de impresion</button>
+        <button class="miBoton" id="btt2" onclick="listaEntrenamientosII('btt2')">Aditivos solución de fuente</button>
+        <button class="miBoton" id="btt3" onclick="listaEntrenamientosII('btt3')">Reproceso adelantado</button>
+        <button class="miBoton" id="btt4" onclick="listaEntrenamientosII('btt4')">Reproceso atrazado</button>
+        <button class="miBoton" id="btt5" onclick="listaEntrenamientosII('btt5')">fuera de rango</button>
+        <button class="miBoton" id="btt6" onclick="listaEntrenamientosII('btt6')">Emulsion en mantilla</button>
+        <button class="miBoton" id="btt7" onclick="listaEntrenamientosII('btt7')">Problemas de teñido</button>       
+        <button class="miBoton" id="btt7" onclick="listaEntrenamientosII('btt7')">Seleccionar archivo</button>       
+      </div>
+
+      <!-- <div id="troubleshooting" class="class-line" style="display: none;">
         <label class="labl-class" id="lbl1" for="archivo">Largo de impresion:</label>
         <button class="inpt-class botnClass" id="archivo" onclick="listaEntrenamientosII('archivo')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl2" for="archivo">Aditivos solución de fuente:</label>
@@ -890,7 +902,7 @@
         <button class="inpt-class botnClass" id="btt6" onclick="listaEntrenamientosII('btt6')">Seleccionar archivo</button>
         <label class="labl-class" id="lbl7" for="archivo">Problemas de teñido:</label>
         <button class="inpt-class botnClass" id="btt7" onclick="listaEntrenamientosII('btt7')">Seleccionar archivo</button>       
-      </div>
+      </div> -->
       <canvas id="ctx"></canvas>
     </div>
     <div id="conti-boton-kaizen">
