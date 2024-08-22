@@ -234,7 +234,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('mejoras-kai') 
+  var contiBoton = document.getElementById('linkListI') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -1403,23 +1403,16 @@ function updateAndresII() {
          }
          index++;
          if (index < buttsToyota.length) {
-           // Si hay más imágenes, programa la siguiente ocultación después de 0.3 segundos
            setTimeout(ocultarSiguienteImagen, 150)
          } else {
-           // Después de mostrar todas las imágenes, ejecuta el código adicional
            var imgToyota = document.getElementById('toyota7')
            imgToyota.style.display = 'flex'
            casoEstudio.style.display = 'flex' 
            casoEstudio.style.marginLeft = '7%'                                                                    
-           // Aquí, pasa el índice 0 a la función mostrarBotonConRetardo
-           /* mostrarBotonConRetardo(0) */
            aumentarTamanosDeBotonesVI()
          }
      }
-     // Inicia la primera ocultación
      ocultarSiguienteImagen()
-   
-   
  }
 function mostrarBotonConRetardo(index) {
   let arrayButtCasos = ['caso1', 'caso2', 'caso3']
@@ -5351,16 +5344,14 @@ function showContextMenu(x, y) {
   contextMenu.style.top = `${y - 5}px`;
   contextMenu.style.display = 'block';
 }
-
 // Menú en PC
 targetDiv.addEventListener('click', (event) => {
   event.preventDefault();
   showContextMenu(event.clientX, event.clientY);
-});
+}); 
 contextMenu.addEventListener('mouseleave', () => {
   contextMenu.style.display = 'none';
 });
-
 // En moviles
 let shouldShowMenu = true;
 targetDiv.addEventListener('touchstart', (event) => {
@@ -5373,15 +5364,10 @@ targetDiv.addEventListener('touchstart', (event) => {
     }
   }, 0);
 });
-
 document.addEventListener('touchstart', (event) => {
   if (!contextMenu.contains(event.target) && !targetDiv.contains(event.target)) {
     contextMenu.style.display = 'none';
     shouldShowMenu = false;
   }
 });
-
-
-
-
 
