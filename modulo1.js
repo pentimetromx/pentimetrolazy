@@ -2870,14 +2870,14 @@ function listaEntrenamientosII(btnList) {
   reponerEstilos()
   switch(btnList){                                                                                                                      
     case 'archivo': 
-      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      document.getElementById('butt-links').style.display='none'
+      /* document.getElementById('butt-links').style.display='none' */
       for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
@@ -4474,7 +4474,6 @@ function graficosAutomaticos(idGrafico){
     }
   }
 }
-
 document.getElementById('textToColorI').addEventListener('click', () => {
   let padreLinks = document.getElementById('links-inicialesI')
   let conteLinks = document.getElementById('linkListI')
@@ -4505,7 +4504,6 @@ document.getElementById('textToColorI').addEventListener('click', () => {
   }
 }
 );
-
 document.getElementById('textToColor').addEventListener('click', () => {
   let padreLinks = document.getElementById('links-iniciales')
   let conteLinks = document.getElementById('linkList')
@@ -4536,8 +4534,6 @@ document.getElementById('textToColor').addEventListener('click', () => {
   }
 }
 );
-
-
 // Links desplegables
 let intervaloAltura = null; 
 let intervaloAlturaI = null;
@@ -4607,7 +4603,6 @@ function expandHeight(linksGuard) {
   }
 }
 /* ///////////////////*/
-
 document.getElementById('linkListI').addEventListener('mouseleave', () =>{
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);

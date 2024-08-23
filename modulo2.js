@@ -24,25 +24,16 @@ function deslizaContenedor(identificador, idButton) {
   }
   switch(identificador){
     case 'troubleshooting' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton','conteneMantaut']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i]) 
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
-      var contenedor = document.getElementById(identificador)                                                     
-      if (identificador !== 'troubleshooting' && contenedor) {
-        contenedor.style.display = 'flex'
-      } else{
-        var contenedorPadre = document.getElementById(identificador)
-        if (contenedorPadre) {
-          contenedorPadre.style.display = 'grid'  
-          var elementosHijos = contenedorPadre.children;  
-          for (var i = 0; i < elementosHijos.length; i++) {
-            elementosHijos[i].style.display = 'none'
-          }
-        }
+      var contenedorPadre = document.getElementById(identificador)
+      if (contenedorPadre) {
+        contenedorPadre.style.display = 'grid'  
       }
       mostrarTroublesshIntervalo()
       cambiaColorBotones()
@@ -233,7 +224,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('conti-boton') 
+  var contiBoton = document.getElementById('linksMA') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5186,10 +5177,18 @@ document.getElementById('butt-sitio').addEventListener('click', () => {
   abrirSeccionContinua()
 })
 function cerrarVentanas() {
-  const ventanas = document.querySelectorAll('.ventana');
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton','conteneMantaut','largoImpresion','linksMA','linkLis','conte-links']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]) 
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+    }
+  }
+
+  /* const ventanas = document.querySelectorAll('.ventana');
   for (let i = 0; i < ventanas.length; i++) {
     ventanas[i].style.display = 'none';
-  }
+  } */
 }
 function cerrarVentanasI(){
   const ventanas = document.querySelectorAll('.ventana');
