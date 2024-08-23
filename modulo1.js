@@ -1011,13 +1011,13 @@ function mostrarTroublesshIntervalo() {
 function cambiaColorBotones(){
   var botones = [
     document.getElementById('archivo'),
-    document.getElementById('btt8'),
     document.getElementById('btt2'),
-    document.getElementById('btt7'),
     document.getElementById('btt3'),
-    document.getElementById('btt6'),
     document.getElementById('btt4'),
     document.getElementById('btt5'),
+    document.getElementById('btt6'),
+    document.getElementById('btt7'),
+    document.getElementById('btt8')
   ];
   setTimeout(() => {
     botones.forEach((boton, index) => {
@@ -1029,7 +1029,7 @@ function cambiaColorBotones(){
   botones.forEach((boton, index) => {
     setTimeout(() => {
       boton.style.backgroundColor = 'rgb(0,255,0)';
-    }, 70 * index + 7);
+    }, 35 * index + 7);
   });
 }
 function resetBotns() {  

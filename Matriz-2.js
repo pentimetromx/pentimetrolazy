@@ -795,8 +795,8 @@ function building(){
 const neumatica = document.getElementById('neumatica');
 const moveButton = document.getElementById('moveButton');
 let moved = false;
-let imageManometro = document.getElementById('image-1')
-imageManometro.addEventListener('dblclick', () => {
+
+function secuenciaEntrena(){
   var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -804,55 +804,56 @@ imageManometro.addEventListener('dblclick', () => {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  if (!moved) {
+    padreManometro.style.left = '41vw'
+    padreManometro.style.top = '6vh'
+    padreManometro.style.width = 'calc(100vw - 34vw)'
+    moved = true;
+  }
+  else {
+    imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+    padreManometro.style.top = ''
+    padreManometro.style.left = ''
+    padreManometro.style.width = ''
+    moved = false;
+  }
+  if(screenWidth < 500){
     if (!moved) {
       padreManometro.style.left = '41vw'
       padreManometro.style.top = '6vh'
       padreManometro.style.width = 'calc(100vw - 34vw)'
-      moved = true;
+      moved = true;  
     }
     else {
-      imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
-      padreManometro.style.top = ''
-      padreManometro.style.left = ''
-      padreManometro.style.width = ''
-      moved = false;
-    }
-    if(screenWidth < 500){
-      if (!moved) {
-        padreManometro.style.left = '41vw'
-        padreManometro.style.top = '6vh'
-        padreManometro.style.width = 'calc(100vw - 34vw)'
-        moved = true;  
-      }
-      else {
-        imagenesPasoApaso('padre-1','imag1','instrucciones_manometro','vid_festo') 
-        let instruccManometro = document.getElementById('instrucciones_manometro')
-        let boton = document.getElementById('butt-links-I')
-        let botonLink = document.getElementById('butt-links-III')
-        botonLink.style.display='flex'
-        boton.style.display='flex'
-        boton.style.left='35%'
-        boton.style.top='150%'
-        let videosManometro = document.getElementById('vid_festo')
-        videosManometro.style.flexDirection='row'
-        videosManometro.style.top='59vh'
-        videosManometro.style.height='15vh'
-        videosManometro.style.width='95%'
-        videosManometro.style.position='relative'
+      imagenesPasoApaso('padre-1','imag1','instrucciones_manometro','vid_festo') 
+      let instruccManometro = document.getElementById('instrucciones_manometro')
+      let boton = document.getElementById('butt-links-I')
+      let botonLink = document.getElementById('butt-links-III')
+      botonLink.style.display='flex'
+      boton.style.display='flex'
+      boton.style.left='35%'
+      boton.style.top='150%'
+      let videosManometro = document.getElementById('vid_festo')
+      videosManometro.style.flexDirection='row'
+      videosManometro.style.top='59vh'
+      videosManometro.style.height='15vh'
+      videosManometro.style.width='95%'
+      videosManometro.style.position='relative'
 
-        instruccManometro.style.zIndex= '4'
-        instruccManometro.style.left='36vw'
-        instruccManometro.style.top='6vh'
-        instruccManometro.style.fontSize='2.8vw'
-        padreManometro.style.top = '6vh'
-        padreManometro.style.left = '2vw'
-        padreManometro.style.width = '97vw'
-        padreManometro.style.height='53vh'
-        moved = false;
-      }  
-    }
-})
-botonClick.addEventListener('mouseup', () => {                   
+      instruccManometro.style.zIndex= '4'
+      instruccManometro.style.left='36vw'
+      instruccManometro.style.top='6vh'
+      instruccManometro.style.fontSize='2.8vw'
+      padreManometro.style.top = '6vh'
+      padreManometro.style.left = '2vw'
+      padreManometro.style.width = '97vw'
+      padreManometro.style.height='53vh'
+      moved = false;
+    }  
+  }
+
+}
+    botonClick.addEventListener('mouseup', () => {                   
   cierraContenedores('desbobinadorId','boton1')
 })
 botonClickII.addEventListener('mouseup', () => {
