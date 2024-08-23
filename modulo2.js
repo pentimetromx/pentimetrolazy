@@ -44,10 +44,9 @@ function deslizaContenedor(identificador, idButton) {
           }
         }
       }
-      if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='none'
-      }
       mostrarTroublesshIntervalo()
+      cambiaColorBotones()
+
     break;
     case 'canvasContainer2' :
       var elementosExcluidos = ['def2','buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
@@ -224,7 +223,7 @@ document.addEventListener('keydown', function(event) {
       
       break;
       case 'H': 
-      changeColorRedAndBack()      
+        cambiaColorBotones()     
       break;
       case 'X':
         Geometria()
@@ -234,7 +233,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('linkListI') 
+  var contiBoton = document.getElementById('conti-boton') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -4026,7 +4025,7 @@ function cambiarColor(elemento, encendido) {
     return px / tamañoBase;
   }
 
-  switch(elemento.className){
+  switch(elemento){
     case 'conte-listado':
       if(screenWidth < 500){
         if (encendido) {
