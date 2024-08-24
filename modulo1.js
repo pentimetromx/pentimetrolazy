@@ -2877,7 +2877,7 @@ function listaEntrenamientosII(btnList) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
-      /* document.getElementById('butt-links').style.display='none' */
+      document.getElementById('troubleshooting').style.display='grid'
       for (var i = 0; i < contiBtt.length; i++) {
         var botonId = contiBtt[i];
         var boton = document.getElementById(botonId);
@@ -2903,8 +2903,9 @@ function listaEntrenamientosII(btnList) {
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
           boton.style.color='rgb(0,0,33)' 
+        }
       }
-      }
+      document.getElementById('troubleshooting').style.display='grid'
     break;
     case 'btt3':
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
@@ -2921,8 +2922,9 @@ function listaEntrenamientosII(btnList) {
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
           boton.style.color='rgb(0,0,33)' 
+        }
       }
-      }
+      document.getElementById('troubleshooting').style.display='grid'
     break;  
     case 'btt4':
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
@@ -2939,8 +2941,9 @@ function listaEntrenamientosII(btnList) {
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
           boton.style.color='rgb(0,0,33)' 
+        }
       }
-      }
+      document.getElementById('troubleshooting').style.display='grid'
     break;  
     case 'btt5':
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
@@ -2957,8 +2960,9 @@ function listaEntrenamientosII(btnList) {
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
           boton.style.color='rgb(0,0,33)' 
+        }
       }
-      }
+      document.getElementById('troubleshooting').style.display='grid'
     break;  
     case 'btt6':
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
@@ -2975,8 +2979,9 @@ function listaEntrenamientosII(btnList) {
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
           boton.style.color='rgb(0,0,33)' 
+        }
       }
-      }
+      document.getElementById('troubleshooting').style.display='grid'
     break;  
     case 'btt7':
       var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
@@ -2993,8 +2998,9 @@ function listaEntrenamientosII(btnList) {
         if (botonId === btnList) {
           boton.style.backgroundColor = 'rgb(0,255,0)'; 
           boton.style.color='rgb(0,0,33)' 
+        }
       }
-      }
+      document.getElementById('troubleshooting').style.display='grid'
     break;    
     default:
   }
@@ -3046,6 +3052,8 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
+  desactivarClicsPorUnTiempoIII()
+  document.getElementById('troubleshooting').style.display='grid'
   var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
   if(screenWidth < 500){
@@ -3054,7 +3062,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   }
   switch (id) {
     case 'link1':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','linksMA','linkLis','imag1','contImgEntrenos','largoImpresion','control-neumatico','contBotInfeed','padre-1','troubleshooting']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','largoImpresion','linksMA','linkLis','imag1','contImgEntrenos','control-neumatico','contBotInfeed','padre-1']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3086,7 +3094,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
     break;
     case 'link2':
-      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','linksMA','butt-links','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III','contBotInfeed']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','linksMA','butt-links','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-2','imag2','pneumatico','contImaginario-III','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3111,7 +3119,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
     break;
     case 'link3':
-      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3136,7 +3144,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }      
     break;
     case 'link4':
-    var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed','contImaginario-II']  
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','imag4','rodillo-infeed','contBotInfeed','contImaginario-II']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -3161,7 +3169,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     }     
     break;  
     case 'link5':
-      var elementosExcluidos = ['buscador','search-form','troubleshooting','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto','contBotInfeed']  
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','puesta-punto','contBotInfeed']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {

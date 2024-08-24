@@ -1,6 +1,7 @@
 function deslizaContenedor(identificador, idButton) {
   reponerEstilos()
   clearAllIntervals() 
+  desactivarClicsPorUnTiempoIII()
   arrayIdButtsMA.forEach(element => {                                                                                                        
     var elemento = document.getElementById(element)
     if (elemento) {
@@ -3859,7 +3860,7 @@ function desactivarClicsPorUnTiempoIII() {
   // Volver a habilitar los clics después de 1 segundo
   setTimeout(function() {
       document.removeEventListener('click', bloquearClic, true);
-  }, 1000);
+  }, 500);
 }
 function desactivarClicsPorUnTiempoII() {
   // Desactivar los clics
@@ -5343,8 +5344,16 @@ function showContextMenu(x, y) {
 }
 // Menú en PC
 targetDiv.addEventListener('click', (event) => {
-  event.preventDefault();
-  showContextMenu(event.clientX, event.clientY);
+  /* event.preventDefault(); */
+  if(screenWidth > 500){
+    contextMenu.style.display='block'
+    contextMenu.style.position='absolute'
+    contextMenu.style.top='27vh'
+    contextMenu.style.left='82vw'
+    contextMenu.style.width='10vw'
+  }else{
+    showContextMenu(event.clientX, event.clientY);
+  }
 }); 
 contextMenu.addEventListener('mouseleave', () => {
   contextMenu.style.display = 'none';

@@ -794,9 +794,10 @@ function building(){
 }
 const neumatica = document.getElementById('neumatica');
 const moveButton = document.getElementById('moveButton');
-let moved = false;
+/* let moved = false; */
 
 function secuenciaEntrena(){
+  let troubleshooting = document.getElementById('trobleshooting')
   var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -804,19 +805,36 @@ function secuenciaEntrena(){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  if (!moved) {
+  if(!troubleshooting){
+    padreManometro.style.position='relative'
     padreManometro.style.left = '41vw'
-    padreManometro.style.top = '6vh'
+    padreManometro.style.top = '8vh'
     padreManometro.style.width = 'calc(100vw - 34vw)'
-    moved = true;
+  }}
+
+/* function secuenciaEntrena(){
+  let troubleshooting = document.getElementById('trobleshooting')
+  var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
   }
-  else {
-    imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
-    padreManometro.style.top = ''
-    padreManometro.style.left = ''
-    padreManometro.style.width = ''
-    moved = false;
-  }
+    if (!moved) {
+      padreManometro.style.left = '41vw'
+      padreManometro.style.top = '6vh'
+      padreManometro.style.width = 'calc(100vw - 34vw)'
+      moved = true;
+    }
+    else {
+      imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+      padreManometro.style.top = ''
+      padreManometro.style.left = ''
+      padreManometro.style.width = ''
+      moved = false;
+    }
+
   if(screenWidth < 500){
     if (!moved) {
       padreManometro.style.left = '41vw'
@@ -852,7 +870,7 @@ function secuenciaEntrena(){
     }  
   }
 
-}
+} */
     botonClick.addEventListener('mouseup', () => {                   
   cierraContenedores('desbobinadorId','boton1')
 })

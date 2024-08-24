@@ -993,10 +993,10 @@ width:447px ;
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 20%;
-  margin-top:3%;
-  width: 200px;
-  height: 490px;
+  left: 20vw;
+  top:22vh;
+  width:16vw;
+  height:68vh;
   border-radius: 20px;
   transition: left 1.007s ease;
   display:none;
@@ -1012,7 +1012,7 @@ width:447px ;
   display: flex;
   flex-direction: column;
   left:18vw;
-  top: 6.5vh;
+  top:23vh;
   height:59.5vh;
   width: 11vw;
   display: none; 
@@ -1717,7 +1717,7 @@ width:447px ;
   position: relative;
   display: flex;
   top:13vh;
-  left:37vw;
+  left:42vw;
   height:31vh;
   width:35vw;
   flex-direction: column;
@@ -1891,7 +1891,7 @@ header {
   display: flex;
   flex-direction: row; 
   align-items: center;
-  top: -12vh;
+  top: -40vh;
   left:77vw;
   height:82vh;
   width:69vw;
@@ -1911,7 +1911,7 @@ header {
   left: 1%;
   background-color: #000;
   padding: 7px;
-  border: 2px solid orange;
+  border: 1px solid orange;
   border-radius: 13px;
   cursor: pointer;
 }
@@ -2014,7 +2014,7 @@ header {
   display: flex;
   flex-direction: column; 
   align-items: flex-start;
-  top: -12vh;
+  top:-40vh;
   left:77vw;
   height:82vh;
   width:69vw;
@@ -2052,7 +2052,7 @@ header {
   width:100%;
   height:24%;
 }
-#control-neumatico > *,
+/* #control-neumatico > *, */
 #rodillo-infeed > *,
 #puesta-punto > * {
   margin-left: 17px;
@@ -2061,7 +2061,7 @@ header {
   position: relative; 
   display: flex;
   flex-direction: column;
-  top: -12vh;
+  top:-40vh;
   left:77vw;
   height:82vh;
   width:69vw;
@@ -2076,7 +2076,7 @@ header {
   display: flex;
   flex-direction: column; 
   align-items: center;
-  top: -12vh;
+  top:-40vh;
   left:77vw;
   height:82vh;
   width:69vw;  
@@ -2175,18 +2175,18 @@ h6{
   z-index: 2;
   display: none;
 } 
-.contenedor-padre {
+.contenedor-pariente {
   position: relative;
   display: grid;
-  left: 1vw;
-  top: 25vh;
+  left: 17vw;
+  top: 6vh;
   gap: 5px;
   height: 50vh;
   width: 25vw;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
-.contenedor-padre .miBoton {
+.contenedor-pariente .miBoton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8025,7 +8025,7 @@ height:21%;
     z-index: 2;
     display: none;
   } 
-  .contenedor-padre {
+  .contenedor-pariente{
     position: relative;
     display: grid;
     left: 37vw;
@@ -8036,7 +8036,7 @@ height:21%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
-  .contenedor-padre .miBoton {
+  .contenedor-pariente .miBoton {
     display: flex;
     justify-content: center;
     align-items:baseline;
@@ -8062,8 +8062,6 @@ height:21%;
     background-color:rgb(0,255,0);
     color: black;
   }
-
-
   .colorClick {
     color: blue;
     width:100%;
@@ -8166,6 +8164,32 @@ height:21%;
     background-color:black;
     border: solid 1px orange;
   }
+  #control-neumatico {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 68%;
+    height: 87%;
+    border: 1px solid orange;
+    border-radius: 20px;
+    background-color: #000;
+    overflow: auto;
+    overflow-x: hidden;
+    top: 1%;
+    left: 31%;
+    display: none;
+    z-index: 3;
+    padding: 3%; /* Agrega un padding interno de 3% */
+    box-sizing: border-box; /* Asegura que el padding no afecte el width */
+  }
+
+  .guia-neumatica{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .guia-neumatica::-webkit-scrollbar{
+    scrollbar-width: none;
+  }
   #butt-links-III{
     position: relative;
     display: flex;
@@ -8227,35 +8251,24 @@ height:21%;
     z-index: 2;
     display: none;
   }
-  #control-neumatico{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width:62vw;
-    height:50vh;
-    border: 1px solid orange;
-    border-radius: 20px;
-    background-color: #000;
-    overflow: auto;
-    overflow-x: hidden;
-    top: 1%;
-    left:33%;
-    display: none;  
-    z-index: 3;
-  }
   #pneumatico{
     position: absolute;
     display: flex;
     flex-direction: column;
+    top: 0%;
+    left:27%;
+    height:96%;
+    width:71%;
+
+/*     top: 1vh;
+    left:33vw;
     width:62vw;
-    height:50vh;
+    height:50vh; */
     border: 1px solid orange;
-    border-radius: 20px;
+    border-radius:13px;
     background-color: #000;
     overflow: auto;
     overflow-x: hidden;
-    top: 1vh;
-    left:33vw;
     display: none;  
     z-index: 3;
   }
@@ -8405,13 +8418,6 @@ height:21%;
     overflow: auto; 
     background-color: #000;
     z-index: 3;
-  }
-  .guia-neumatica{
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-  .guia-neumatica::-webkit-scrollbar{
-    scrollbar-width: none;
   }
   h6{
     color: white;
