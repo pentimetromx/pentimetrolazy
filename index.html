@@ -971,6 +971,7 @@
         </div>
       </div>
     </div>
+
     <div id="lubricacion">
       <div class="conti-boton" id="conti-boton-desb"> 
         <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn1" onclick="LubricaDesbobinador('btn1')">REMALINER</button>
@@ -1019,9 +1020,7 @@
         </div>    
       </div>
     </div>
-
     <button id="butt-links-II" class="butt-links ventana" onclick="cerrarVentanasII()">Volver</button>
-
     <div id="lubri-I">
 
       <div id="vertical-lineI"></div>
@@ -2273,7 +2272,19 @@
         <span class="texto_izquierdo">Salir</span>
       </div>      
     </div>
-    <div id="general">      
+    <div id="general">  
+      <div id="canvasContainer2" style="display: none;">
+        <canvas id="MiGrafica"></canvas>
+      </div> 
+      <div id="wall_street_II" class="manejo">
+        <div id="iniciador_7" class="horizontales"></div>
+        <div id="iniciador_8" class="horizontales"></div>
+        <div id="iniciador_9" class="horizontales"></div>
+        <div id="iniciador_10" class="horizontales"></div>
+        <div id="iniciador_11" class="horizontales"></div>
+      </div>
+
+      
       <div id="first_half" class="manejo">
         <div id="cortina_II"></div>
         <div id="animatedDiv" class="first_table"></div>
@@ -2297,13 +2308,6 @@
         <span id="pantalla_IV" class="spans first_table estilos">4987</span>
         <span id="pantalla_V" class="spans first_table estilos">0123</span>
       </div>      
-      <div id="wall_street_II" class="manejo">
-        <div id="iniciador_7" class="horizontales"></div>
-        <div id="iniciador_8" class="horizontales"></div>
-        <div id="iniciador_9" class="horizontales"></div>
-        <div id="iniciador_10" class="horizontales"></div>
-        <div id="iniciador_11" class="horizontales"></div>
-      </div>
       <div id="equalizer" class="manejo">
         <div id="column_1" class="column">
           <div id="line_1" class="lineas"></div>
@@ -2408,9 +2412,6 @@
         <canvas id="MiCuartaGrafica" class="canva-container"></canvas>  
         <canvas id="MiQuintaGrafica" class="canva-container"></canvas>              
       </div>
-      <div id="canvasContainer2" style="display: none;">
-        <canvas id="MiGrafica"></canvas>
-      </div> 
     </div>
     <ul id="context-menu" class="context-menu">
       <li>Historial</linclick=>

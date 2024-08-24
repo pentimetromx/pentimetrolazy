@@ -42,7 +42,6 @@ function deslizaContenedor(identificador, idButton) {
       if(screenWidth < 500){
         reponerEstilos()
       }
-
     break;
     case 'canvasContainer2' :
       var elementosExcluidos = ['def2','buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
@@ -196,7 +195,7 @@ document.addEventListener('keydown', function(event) {
           listaEntrenamientosII('archivo')
         },1177) 
         setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+          deslizaContenedor('conti-boton-kaizen','kaizen')
         },1377)
         /*setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                       
