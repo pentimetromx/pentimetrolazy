@@ -3008,6 +3008,8 @@ function listaEntrenamientosII(btnList) {
     break;    
     default:
   }
+  document.getElementById('context-menu').style.display='none'
+
 }   
 function listaEntrenamientos(){
   var videoBackground = document.getElementById('videoBackground')

@@ -1710,26 +1710,30 @@
       8. Documenta las lecturas obtenidas durante la calibración para referencia futura.<br>
       9. Establece un programa de calibración regular para mantener la precisión a lo largo del tiempo.
     </p>
+
     <div id="vid_festo" class="ventana">
       <div class="parrafo_video">
         <video class="lazy" muted loop autoplay controls>
           <source data-src="./assets/festo.mp4" type="video/mp4">
-        </video>
-        <label for="etqpneum" class="etiqueta-mano">Limpieza ensamble y disponibilidad</label>
+        </video>        
       </div>
       <div class="parrafo_video">
         <video class="lazy" muted loop autoplay controls>
           <source data-src="./assets/festo-II.mp4" type="video/mp4">
         </video>
-        <label for="etqpneum" class="etiqueta-mano">Puesta a punto en equilibrio</label>
       </div>
       <div class="parrafo_video"> 
         <video class="lazy" muted loop autoplay controls>
           <source data-src="./assets/festo-III.mp4" type="video/mp4">
         </video>
-        <label for="etqpneum" class="etiqueta-mano">Mantenimiento del circuito neumatico</label>
       </div>
-    </div>   
+    </div>  
+    <div id="etqts-festo">
+      <label for="etqpneum" class="etiqueta-mano">Limpieza ensamble y disponibilidad</label>
+      <label for="etqpneum" class="etiqueta-mano">Puesta a punto en equilibrio</label>
+      <label for="etqpneum" class="etiqueta-mano">Mantenimiento del circuito neumatico</label>
+    </div>
+
     <div id="padre-1" class="ventana">
       <div id="imag1" class="img1">
         <img data-src="./assets/neumatica.jpg" class="lazy menu" id="image-1" alt="neuma1">
@@ -2418,7 +2422,7 @@
       <li onclick="secuenciaEntrena()">Profundizar</li>
       <li>Ultimo caso</li>
       <li>Ayudas</li>
-      <li onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Volver</li>
+      <li onclick="listaEntrenamientosII('archivo')">Volver</li>
     </ul>
     <script src="./Matriz-2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- LIBRERIA DE GRAFICOS -->

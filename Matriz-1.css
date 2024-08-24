@@ -8222,14 +8222,14 @@ height:21%;
   #instrucciones_manometro{
     position: absolute;
     display: flex;
-    left: 62vw;
-    top:7vh;
-    width: 45vw;
-    height: 35vh;
+    left:33vw;
+    top:4.5vh;
+    width: 64vw;
+    height: 55vh;
     background-color: transparent;
     color: white;
     font-family: "Oswald", sans-serif; 
-    font-size: 1.9vw;
+    font-size:0.85em;
     z-index: 2;
     display: none;
   }
@@ -8279,9 +8279,9 @@ height:21%;
     display: flex;
     flex-direction: row;
     left: 2vw;
-    top:96vh; 
-    width:145vw;
-    height:30vh;
+    top:65vh; 
+    width:95vw;
+    height:20vh;
     border-radius: 14px;
     gap: 2%;
     display: none;
@@ -8290,7 +8290,7 @@ height:21%;
     flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 70%;
     border-radius: 9px;
     border: 1px solid white;
   }
@@ -8299,7 +8299,16 @@ height:21%;
     width: 100%;
     height: 100%;
     border-radius: 9px;
-    object-fit: fill;
+    object-fit:cover;
+  }
+  #etqts-festo{
+    position: relative;
+    display: flex;
+    display: none;
+    flex-direction: row;
+    top:60vh;
+    left:2vw; 
+    width: 95vw; 
   }
   .anuncio{
     white-space: nowrap;
@@ -8368,8 +8377,7 @@ height:21%;
   }
   .conte-disco h4{
     font-size: 2vw;
-  }
-  
+  }  
   #imag3{
     position: relative;
     display: flex;
@@ -8584,7 +8592,7 @@ height:21%;
     position:relative;
     display: flex;
     border-radius: 7px;
-    left: -63vh;    
+    left: -60vh;    
     top:-56vh;
     max-width: 40vw;
     height: 3vh;
@@ -8599,7 +8607,7 @@ height:21%;
     flex-direction: row;
     display: flex;
     top:-54vh;
-    left: -95vw;
+    left: -96vw;
     width: 80vw;
     height: 11vh;
     transition: transform 1.6s ease;
@@ -9689,7 +9697,7 @@ height:21%;
   }
   #padre{
     position:absolute;
-    top:-14%;
+    top:-15%;
     left:0;
     width:100%; 
     height:30%;
