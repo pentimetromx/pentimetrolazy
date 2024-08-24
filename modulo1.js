@@ -3116,6 +3116,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
       }
       reponerEstilos()
+      document.getElementById('links-inicialesI').style.left='107vw'
+      document.getElementById('links-iniciales').style.left='127vw'
       solucionador.style.display='grid'
       solucionador.style.left='11.5%'
       document.getElementById('butt-links').style.display='none'
@@ -3144,6 +3146,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
       }
       reponerEstilos()
+      document.getElementById('links-inicialesI').style.left='107vw'
+      document.getElementById('links-iniciales').style.left='127vw'
       solucionador.style.display='grid'
       solucionador.style.left='11.5%'
       document.getElementById('butt-links').style.display='none'
@@ -3172,6 +3176,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       }
     }
     reponerEstilos()
+    document.getElementById('links-inicialesI').style.left='107vw'
+    document.getElementById('links-iniciales').style.left='127vw'    
     solucionador.style.display='grid'
     solucionador.style.left='11.5%' 
     linkOrange.style.color = 'orange'
@@ -3200,6 +3206,8 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
       } 
       reponerEstilos()
+      document.getElementById('links-inicialesI').style.left='107vw'
+      document.getElementById('links-iniciales').style.left='127vw'      
       solucionador.style.display='grid'
       solucionador.style.left='11.5%'  
       linkOrange.style.color = 'orange'

@@ -5182,6 +5182,14 @@ document.getElementById('butt-sitio').addEventListener('click', () => {
   abrirSeccionContinua()
 })
 function cerrarVentanasII(){
+  var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  document.getElementById('troubleshooting').style.display='grid'
   const ventanas = document.querySelectorAll('.ventana');
   for (let i = 0; i < ventanas.length; i++) {
     ventanas[i].style.display = 'none';
