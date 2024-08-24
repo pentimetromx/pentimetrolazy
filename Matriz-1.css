@@ -1398,13 +1398,6 @@ width:447px ;
   left: 1094px;
   top:-602px;
 }
-#contBotInfeed{
-  position: absolute;
-  display: flex;
-  left:105vw;
-  top:110vh;
-  display: none;
-}
 #contBotCasos{
   position: relative;  
   display: none;
@@ -5341,6 +5334,23 @@ input.numero:focus {
   border-radius: 20px;
 }
 #butt-links-II{
+  position:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top:107vh;
+  left:105vw;
+  z-index: 34;    
+  display: none;
+}
+.butt-links{
+  height: 4.5vh;
+  width: 13vw;
+  background-color: rgb(255,0,0);
+  border-radius: 5px;
+  color: whitesmoke;
+  font-size: 1.2em;
+  cursor: pointer;
   display: none;
 }
 .genesis{
@@ -5476,9 +5486,6 @@ input.numero:focus {
   left:1%;
   width: 96%;
   grid-template-columns:50% 50%;
-}
-#butt-links{
-  display: none;
 }
 .contenedor-lubri{
   position: absolute;
@@ -5640,11 +5647,6 @@ input.numero:focus {
   background-color: #1897ff;
   border: solid 1px white;
   color: whitesmoke;
-  display: none;
-}
-#butt-links-III{
-  position:relative;
-  display: flex;
   display: none;
 }
 #agrupaOblicuos-C,
@@ -6112,15 +6114,6 @@ height:21%;
   #inicio{
     display:none;
   }
-  #butt-links{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top:120%;
-    left:0;
-    z-index: 5;
-  }
   .butt-links{
     height: 3.5vh;
     width: 27vw;
@@ -6136,7 +6129,7 @@ height:21%;
     display: flex;
     align-items: center;
     justify-content: center;
-    top:60vh;
+    top:83vh;
     left:38vw;
     z-index: 34;    
     display: none;
@@ -8075,8 +8068,8 @@ height:21%;
     flex-direction: column;
     color: white;
     font-family: "GothamRounded", sans-serif; 
-    top:50vh;
-    left: 30vw;
+    top:47vh;
+    left: 32vw;
     width: 59vw;
     height: 46vh;
     display: none;
@@ -8188,16 +8181,6 @@ height:21%;
   }
   .guia-neumatica::-webkit-scrollbar{
     scrollbar-width: none;
-  }
-  #butt-links-III{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top:65vh;
-    left:36vw;
-    z-index: 5;
-    display: none;
   }
   #imag1,
   #imag2{

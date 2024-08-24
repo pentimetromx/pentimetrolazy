@@ -193,7 +193,7 @@ document.addEventListener('keydown', function(event) {
           deslizaContenedor('troubleshooting','troubleshoot')
         },977) 
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')
+          listaEntrenamientosII('archivo')
         },1177) 
         setTimeout(function() {
           imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('troubleshooting') 
+  var contiBoton = document.getElementById('butt-links-I') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5181,29 +5181,6 @@ document.getElementById('butt-sitio').addEventListener('click', () => {
   document.getElementById('butt-sitio').style.display='none'
   abrirSeccionContinua()
 })
-function cerrarVentanas() {
-  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton','conteneMantaut','largoImpresion','linksMA','linkLis','conte-links']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]) 
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-    }
-  }
-
-  /* const ventanas = document.querySelectorAll('.ventana');
-  for (let i = 0; i < ventanas.length; i++) {
-    ventanas[i].style.display = 'none';
-  } */
-}
-function cerrarVentanasI(){
-  const ventanas = document.querySelectorAll('.ventana');
-  for (let i = 0; i < ventanas.length; i++) {
-    ventanas[i].style.display = 'none';
-  }
-  listaEntrenamientosII('archivo')
-  document.getElementById('padre-1').style.top='25vh'
-  document.getElementById('padre-1').style.left='1vw'
-}
 function cerrarVentanasII(){
   const ventanas = document.querySelectorAll('.ventana');
   for (let i = 0; i < ventanas.length; i++) {
