@@ -32,12 +32,16 @@ function deslizaContenedor(identificador, idButton) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
         }
       }
+      reponerEstilos()
       var contenedorPadre = document.getElementById(identificador)
       if (contenedorPadre) {
         contenedorPadre.style.display = 'grid'  
       }
       mostrarTroublesshIntervalo()
       cambiaColorBotones()
+      if(screenWidth < 500){
+        reponerEstilos()
+      }
 
     break;
     case 'canvasContainer2' :
@@ -225,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('linksMA') 
+  var contiBoton = document.getElementById('troubleshooting') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5298,7 +5302,12 @@ function moverVideoDerecha() {
   }
 }
 function reponerEstilos(){
+  let padreSolucionador = document.getElementById('troubleshooting')
+  padreSolucionador.style.gridTemplateColumns = '';
+  padreSolucionador.style.gridTemplateRows = '';
+  padreSolucionador.style.left=''
   document.getElementById('padre-1').style.top=''
+  document.getElementById('padre-1').style.left=''
   document.getElementById('links-inicialesI').style.left=''
   document.getElementById('links-iniciales').style.left=''
   document.getElementById('vid01').style.left=''
@@ -5360,7 +5369,8 @@ contextMenu.addEventListener('mouseleave', () => {
 });
 // En moviles
 let shouldShowMenu = true;
-targetDiv.addEventListener('touchstart', (event) => {
+
+targetDiv.addEventListener('touchstart', function(event) {
   shouldShowMenu = true;
   setTimeout(() => {
     if (shouldShowMenu) {
@@ -5369,7 +5379,18 @@ targetDiv.addEventListener('touchstart', (event) => {
       showContextMenu(touch.clientX, touch.clientY);
     }
   }, 0);
-});
+}, { passive: true });
+
+/* targetDiv.addEventListener('touchstart', (event) => {
+  shouldShowMenu = true;
+  setTimeout(() => {
+    if (shouldShowMenu) {
+      event.preventDefault();
+      const touch = event.touches[0];
+      showContextMenu(touch.clientX, touch.clientY);
+    }
+  }, 0);
+}); */
 document.addEventListener('touchstart', (event) => {
   if (!contextMenu.contains(event.target) && !targetDiv.contains(event.target)) {
     contextMenu.style.display = 'none';

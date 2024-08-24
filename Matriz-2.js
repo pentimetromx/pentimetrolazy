@@ -794,10 +794,10 @@ function building(){
 }
 const neumatica = document.getElementById('neumatica');
 const moveButton = document.getElementById('moveButton');
-/* let moved = false; */
 
 function secuenciaEntrena(){
   let troubleshooting = document.getElementById('trobleshooting')
+  let padre = document.getElementById('padre-1')
   var elementosExcluidos = ['padre-1','imag1','instrucciones_manometro','vid_festo']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
@@ -805,12 +805,9 @@ function secuenciaEntrena(){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-  if(!troubleshooting){
-    padreManometro.style.position='relative'
-    padreManometro.style.left = '41vw'
-    padreManometro.style.top = '8vh'
-    padreManometro.style.width = 'calc(100vw - 34vw)'
-  }}
+  padre.style.top='9.3vh'
+  padre.style.left='40vw'
+}
 
 /* function secuenciaEntrena(){
   let troubleshooting = document.getElementById('trobleshooting')

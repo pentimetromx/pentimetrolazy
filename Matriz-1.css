@@ -1887,11 +1887,11 @@ header {
 }
 #padre-2,
 #padre-1{
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row; 
   align-items: center;
-  top: -40vh;
+  top:20vh;
   left:77vw;
   height:82vh;
   width:69vw;
@@ -1900,6 +1900,21 @@ header {
   background-color:black;
   border: solid 1px orange;
 } 
+#control-neumatico{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left:27%;
+  top:1%;
+  height:97%;
+  width: 72%;  
+  border: 1px solid orange;
+  border-radius: 20px;
+  display: none;
+  overflow-y: auto;
+  overflow-x:hidden ;
+  background-color: #000;
+}
 #imag1,
 #imag2{
   position: absolute;
@@ -1933,22 +1948,6 @@ header {
   top:37%;
   font-size:1.2vw;
   width:100%;
-}
-
-#control-neumatico{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left:27%;
-  top:1%;
-  height:97%;
-  width: 72%;  
-  border: 1px solid orange;
-  border-radius: 20px;
-  display: none;
-  overflow-y: auto;
-  overflow-x:hidden ;
-  background-color: #000;
 }
 .casos-h1{
   font-family: GothamRounded , sans-serif;
@@ -2010,11 +2009,11 @@ header {
   font-size:1.7vw;
  }
 #contImaginario-II{
-  position: relative;
+  position:absolute;
   display: flex;
   flex-direction: column; 
   align-items: flex-start;
-  top:-40vh;
+  top:19.5vh;
   left:77vw;
   height:82vh;
   width:69vw;
@@ -2058,10 +2057,10 @@ header {
   margin-left: 17px;
 }
 #puesta-punto{
-  position: relative; 
+  position:absolute;
   display: flex;
   flex-direction: column;
-  top:-40vh;
+  top:19.5vh;
   left:77vw;
   height:82vh;
   width:69vw;
@@ -2072,11 +2071,11 @@ header {
   background-color: #000;
 }
 #contImaginario{
-  position: relative;
+  position:absolute;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  top:-40vh;
+  top:19vh;
   left:77vw;
   height:82vh;
   width:69vw;  
@@ -2170,19 +2169,26 @@ h6{
   gap: 3px; 
   display: none;
 }
+#conteneMantaut{
+  position: relative;
+  display: flex;
+  top: 5vh;
+  height:80vh;
+  display: none;
+}
 #troubleshooting{
   transition: left 1.007s ease;
   z-index: 2;
   display: none;
 } 
 .contenedor-pariente {
-  position: relative;
+  position: absolute;
   display: grid;
-  left: 17vw;
-  top: 6vh;
+  left: 22%;
+  top: 7%;
   gap: 5px;
-  height: 50vh;
-  width: 25vw;
+  height:50%;
+  width:17%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
@@ -3117,12 +3123,6 @@ elemento.visible {
  .mantAuto{
   display: flex;
   flex-direction: row;
-}
- #conteneMantaut{
-  position: relative;
-  display: flex;
-  top: 5vh;
-  display: none;
 }
  #conti-boton{
   position: absolute;
@@ -8070,13 +8070,13 @@ height:21%;
     color: orange;
   }
   #largoImpresion{
-    position: relative;
+    position:absolute;
     display: flex; 
     flex-direction: column;
     color: white;
     font-family: "GothamRounded", sans-serif; 
-    top:-5vh;
-    left: 37vw;
+    top:50vh;
+    left: 30vw;
     width: 59vw;
     height: 46vh;
     display: none;
@@ -8156,7 +8156,7 @@ height:21%;
     align-items: center;
     height:57.5vh;
     width:99vw;
-    top:18vh;
+    top:22vh;
     left:0;
     display: none;
     z-index: 3;
@@ -8182,7 +8182,6 @@ height:21%;
     padding: 3%; /* Agrega un padding interno de 3% */
     box-sizing: border-box; /* Asegura que el padding no afecte el width */
   }
-
   .guia-neumatica{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -8255,20 +8254,15 @@ height:21%;
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 0%;
-    left:27%;
-    height:96%;
-    width:71%;
-
-/*     top: 1vh;
-    left:33vw;
     width:62vw;
-    height:50vh; */
+    height:50vh;
     border: 1px solid orange;
     border-radius:13px;
     background-color: #000;
     overflow: auto;
     overflow-x: hidden;
+    top: 1vh;
+    left:33vw;
     display: none;  
     z-index: 3;
   }

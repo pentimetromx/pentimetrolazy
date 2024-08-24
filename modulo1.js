@@ -997,6 +997,7 @@ function mantAutonomo (idElement) {
 }}
 function mostrarTroublesshIntervalo() {
   var contenedor = document.getElementById('troubleshooting')
+  contenedor.style.display='grid'
   var elementos = contenedor.children;
   var index = 0;
   function hacerVisibleSiguienteElemento() {
@@ -3053,7 +3054,8 @@ function toggleFullScreen(element) {
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
   desactivarClicsPorUnTiempoIII()
-  document.getElementById('troubleshooting').style.display='grid'
+  let solucionador = document.getElementById('troubleshooting')
+  solucionador.style.display='grid'
   var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
   if(screenWidth < 500){
@@ -3069,6 +3071,10 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      reponerEstilos()
+      solucionador.style.display='grid'
+      solucionador.style.left='11.5%'
+      document.body.style.zoom = "67%"
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3079,14 +3085,19 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       document.getElementById('links-iniciales').style.left='127vw'          
 
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','control-neumatico','padre-1','troubleshooting']  
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links','linkLis','largoImpresion','imag1','contImgEntrenos','control-neumatico','padre-1']  
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-            document.getElementById('troubleshooting').style.display='grid'
+            solucionador.style.display='grid'
           }
         }
+        solucionador.style.display='grid'
+        solucionador.style.left='2px'
+        solucionador.style.gridTemplateColumns = 'repeat(2, 1fr)';
+        solucionador.style.gridTemplateRows = 'repeat(4, 1fr)';
+
         document.getElementById('butt-links').style.left='0'
         document.getElementById('links-iniciales').style.left='47vw'
         reponerEstilos()
@@ -3101,6 +3112,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      reponerEstilos()
+      solucionador.style.display='grid'
+      solucionador.style.left='11.5%'
       document.getElementById('butt-links').style.display='none'
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
@@ -3126,6 +3140,9 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      reponerEstilos()
+      solucionador.style.display='grid'
+      solucionador.style.left='11.5%'
       document.getElementById('butt-links').style.display='none'
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
@@ -3150,7 +3167,10 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
-    }   
+    }
+    reponerEstilos()
+    solucionador.style.display='grid'
+    solucionador.style.left='11.5%' 
     linkOrange.style.color = 'orange'
     var botones = document.getElementsByClassName('colorClick')
     for (var i = 0; i < botones.length; i++) {
@@ -3175,7 +3195,10 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }   
+      } 
+      reponerEstilos()
+      solucionador.style.display='grid'
+      solucionador.style.left='11.5%'  
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
