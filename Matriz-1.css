@@ -5765,18 +5765,6 @@ height:21%;
   cursor: pointer;
   z-index: 0;
 }
-/* .target-div{
-  width: 200px;
-  height: 100px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px;
-  cursor: pointer;
-}
- */
  .context-menu {
   display: none;
   position: absolute;
@@ -8600,10 +8588,14 @@ height:21%;
     position: relative; 
     display: flex;
     flex-direction: column;
-    height: 12vh;
+    height: 12%;
+    width: 30%;
+    left: 50%;
+    top:-30%;
+/*     height: 12vh;
     width: 30vw;
     left: 50vw;
-    top:-33vh;  
+    top:-33vh; */  
     z-index: 7;
     display: none;
     padding: 0;
