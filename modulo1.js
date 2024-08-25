@@ -4254,6 +4254,7 @@ function lubricaDiario(butId,labelId){
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      reponerEstilos()
       for (var i = 0; i < elementosGrid.length; i++) { 
         var elemento = document.getElementById(elementosGrid[i])  
         if (elemento) {
@@ -4266,7 +4267,7 @@ function lubricaDiario(butId,labelId){
       moveElement(child,parent)
       if(screenWidth < 500){
         document.getElementById('butt-links-II').style.display='flex'
-        document.getElementById('butt-links-II').style.top='64vh'
+        document.getElementById('butt-links-II').style.top='64%'
       }
     break;
     case 'lub-semanal':
