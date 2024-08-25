@@ -3065,7 +3065,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   document.body.style.zoom = "67%"
   if(screenWidth < 500){
     document.body.style.zoom = "100%"
-    reponerEstilos()
   }
   switch (id) {
     case 'link1':
@@ -3090,13 +3089,18 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       document.getElementById('links-iniciales').style.left='127vw'          
 
       if(screenWidth < 500){
-        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links-II','linkLis','imag1','contImgEntrenos','control-neumatico','padre-1']  
+        reponerEstilos()
+        solucionador.style.display='grid'
+        solucionador.style.left='11.5%'
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','linksMA','butt-links-II','linkLis','imag1','contImgEntrenos','control-neumatico','padre-1']
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         }
+        document.getElementById('butt-links-II').style.display='flex'
+        document.getElementById('butt-links-II').style.marginTop='0'
         solucionador.style.display='grid'
         solucionador.style.left='2px'
         solucionador.style.gridTemplateColumns = 'repeat(2, 1fr)';
@@ -3136,6 +3140,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           }
         }  
       }
+      reponerEstilos()
     break;
     case 'link3':
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','butt-links-II','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
@@ -4261,8 +4266,7 @@ function lubricaDiario(butId,labelId){
       moveElement(child,parent)
       if(screenWidth < 500){
         document.getElementById('butt-links-II').style.display='flex'
-        document.getElementById('butt-links-II').style.display='flex'
-
+        document.getElementById('butt-links-II').style.top='64vh'
       }
     break;
     case 'lub-semanal':

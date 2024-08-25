@@ -5120,6 +5120,7 @@ function cerrarVentanasII(){
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  reponerEstilos()
   document.getElementById('troubleshooting').style.display='grid'
   const ventanas = document.querySelectorAll('.ventana');
   for (let i = 0; i < ventanas.length; i++) {
@@ -5230,7 +5231,8 @@ function reponerEstilos(){
   document.getElementById('contenedor_padre_3').style.top=''
   document.getElementById('contenedor_padre_2').style.top=''
   document.getElementById('contenedor_padre').style.top=''
-  /* document.getElementById('butt-links-II').removeAttribute('style'); */
+  document.getElementById('butt-links-II').style.top=''
+  document.getElementById('butt-links-II').style.left=''
   padreVideos.classList.remove('move_vid_pre')
   padreVideos.classList.remove('move-vid-dens-up')
   let padreImgs = document.getElementById('imgs-prepress')
