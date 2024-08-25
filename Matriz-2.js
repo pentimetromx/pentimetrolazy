@@ -808,11 +808,15 @@ function secuenciaEntrena(){
   }
   padre.style.top='9.3vh'
   padre.style.left='40vw'
-
+  document.getElementById('butt-links-II').style.display='flex'
+  document.getElementById('butt-links-II').style.left='68vw'
+  document.getElementById('butt-links-II').style.top='100vh'
   if(screenWidth < 500){
+    document.getElementById('butt-links-II').style.display='flex'
+    document.getElementById('butt-links-II').style.left=''
     let etiquetas = document.getElementById('etqts-festo')
     etiquetas.style.display='flex'
-    padre.style.top='4vh'
+    padre.style.top='2vh'
     padre.style.left='0' 
     instrucciones.style.zIndex=13 
   }

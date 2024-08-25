@@ -3095,7 +3095,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-            solucionador.style.display='grid'
           }
         }
         solucionador.style.display='grid'
@@ -3103,7 +3102,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         solucionador.style.gridTemplateColumns = 'repeat(2, 1fr)';
         solucionador.style.gridTemplateRows = 'repeat(4, 1fr)';
 
-        document.getElementById('butt-links').style.left='0'
         document.getElementById('links-iniciales').style.left='47vw'
         reponerEstilos()
         animateScroll('control-neumatico')

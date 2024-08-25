@@ -228,7 +228,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('butt-links-I') 
+  var contiBoton = document.getElementById('butt-links-II') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5230,6 +5230,7 @@ function reponerEstilos(){
   document.getElementById('contenedor_padre_3').style.top=''
   document.getElementById('contenedor_padre_2').style.top=''
   document.getElementById('contenedor_padre').style.top=''
+  document.getElementById('butt-links-II').removeAttribute('style');
   padreVideos.classList.remove('move_vid_pre')
   padreVideos.classList.remove('move-vid-dens-up')
   let padreImgs = document.getElementById('imgs-prepress')
