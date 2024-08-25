@@ -4960,10 +4960,10 @@ input.numero:focus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  left: 19vw;
-  top:-7.5vh;
-  height: 23vh;
-  width: 31vw;
+  left: 19%;
+  top:-66.5%;
+  height: 23%;
+  width: 31%;
   display: none;
   align-items: flex-end;
 }
@@ -4978,7 +4978,7 @@ input.numero:focus {
   position: absolute;
   display: flex;
   left: 19%;
-  top: 47%;
+  top: 47.7%;
   width: 31vw;
   height: 1px;
   object-fit: fill;
@@ -5008,10 +5008,10 @@ input.numero:focus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  left: -12vw;
-  top:13vh;
-  height: 14vh;
-  width: 31vw;
+  left: -12%;
+  top:-43.3%;
+  height: 14%;
+  width: 31%;
   display: none;  
 }
 #second_half .iniciadores{
