@@ -3361,7 +3361,10 @@ function LubricaDesbobinador(idButt) {
       const child = document.getElementById('child-div');
       const parent = document.getElementById('inicio');
       moveElement(child,parent)
-      if(screenWidth < 500){document.getElementById('butt-links-II').style.display='flex'}
+      if(screenWidth < 500){
+        document.getElementById('butt-links-II').style.display='flex'
+        document.getElementById('butt-links-II').style.top='64vh'
+      }
 
     break; 
     case 'btn3':
