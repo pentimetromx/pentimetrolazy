@@ -4011,74 +4011,6 @@ function ocultarElementos(eltoID) {
     default:  
   }
 } 
-function cambiarColor(elemento, encendido) {
-  const segundoListado = document.getElementById('segundaLista')
-  const screenWidth = window.innerWidth;
-
-  function pxToEm(px) {
-    const tamañoBase = parseFloat(window.getComputedStyle(document.documentElement).fontSize); // Tamaño base en px
-    return px / tamañoBase;
-  }
-
-  switch(elemento){
-    case 'conte-listado':
-      if(screenWidth < 500){
-        if (encendido) {
-          elemento.style.backgroundColor = 'rgb(0,255,0)'
-          elemento.style.color = 'rgb(0,0,77)';
-          elemento.style.fontSize = pxToEm(14) + 'em';
-          elemento.style.fontWeight = 'bold';       
-        } else {
-          elemento.style.backgroundColor = '';
-          elemento.style.color = 'rgb(255, 255, 177)';
-          elemento.style.fontSize = pxToEm(14) + 'em';
-          elemento.style.fontWeight = 'normal'
-        }
-        if(encendido && elemento.id === 'ultimoElemento'){
-          segundoListado.style.display = 'block'
-          var lineas = document.getElementsByClassName('listado');
-          for(var i = 0; i < lineas.length; i ++){
-            lineas[i].style.fontWeight = 'normal';
-            lineas[i].style.fontSize = pxToEm(11) + 'em';
-          }
-        }
-      }else {
-        if (encendido) {
-          elemento.style.backgroundColor = 'rgb(0,255,0)'
-          elemento.style.color = 'rgb(0,0,77)'
-          elemento.style.fontSize = pxToEm(16) + 'em';
-          elemento.style.fontWeight = 'bold'
-        } else {
-          elemento.style.backgroundColor = ''
-          elemento.style.color = 'rgb(255, 255, 177)'
-          elemento.style.fontSize = ''
-          elemento.style.fontWeight = 'normal'
-        }
-        if(encendido && elemento.id === 'ultimoElemento'){
-          segundoListado.style.display = 'block'
-          var lineas = document.getElementsByClassName('listado')  
-          for(var i = 0; i < lineas.length; i ++){
-            lineas[i].style.fontWeight = 'normal'
-            lineas[i].style.fontSize = pxToEm(14) + 'em';
-          }
-        }
-      }  
-    break;
-    case 'listado':
-      if (encendido) {
-        elemento.style.backgroundColor = 'rgb(0,255,0)'
-        elemento.style.color = 'rgb(0,0,77)';
-        elemento.style.fontSize = pxToEm(14) + 'em';
-        elemento.style.fontWeight = 'bold';             
-      } else {
-        elemento.style.backgroundColor = '';
-        elemento.style.color = 'rgb(255, 255, 177)';
-        elemento.style.fontSize = pxToEm(16) + 'em';
-        elemento.style.fontWeight = 'normal'
-      }     
-    break;
-  }
-}
 let barraI = document.getElementById('iniciador_1')
 let barraII = document.getElementById('iniciador_2')
 let barraIII = document.getElementById('iniciador_3')
@@ -5364,21 +5296,29 @@ targetDiv.addEventListener('touchstart', function(event) {
     }
   }, 0);
 }, { passive: true });
-
-/* targetDiv.addEventListener('touchstart', (event) => {
-  shouldShowMenu = true;
-  setTimeout(() => {
-    if (shouldShowMenu) {
-      event.preventDefault();
-      const touch = event.touches[0];
-      showContextMenu(touch.clientX, touch.clientY);
-    }
-  }, 0);
-}); */
 document.addEventListener('touchstart', (event) => {
   if (!contextMenu.contains(event.target) && !targetDiv.contains(event.target)) {
     contextMenu.style.display = 'none';
     shouldShowMenu = false;
   }
 });
-/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+const elementosPrePren = document.querySelectorAll('#contenedorElementos .conte-listado, #contenedorElementos .listado');
+    elementosPrePren.forEach(elemento => {
+    elemento.addEventListener('mouseover', () => {
+      elemento.classList.add('hover-style'); // Agregar la clase al elemento actual
+    });
+    elemento.addEventListener('mouseout', () => {
+      elemento.classList.remove('hover-style'); // Quitar la clase cuando el mouse salga
+    });
+});
+let listadoPrePrensa = document.getElementById('contenedorElementos')
+listadoPrePrensa.addEventListener('mouseleave',() =>{
+  listadoPrePrensa.style.display='none'
+})
+let subMenu = document.getElementById('segundaLista')
+subMenu.addEventListener('mouseleave',() =>{
+  subMenu.style.display='none'
+})
+function muestraMenu(){
+  document.getElementById('segundaLista').style.display='block'
+}

@@ -2064,11 +2064,11 @@ function alternarAyudas() {
   }, 17);
   setTimeout(() => {
     contenedorElementos.style.display = 'block';
-  }, 777);
+  }, 333);
   setTimeout(() => {
     imagenAyudas.classList.remove('pressed');
     ejecutando = false;
-  },977);
+  },500);
 }
 function interfazAvance() {
   if(screenWidth < 500){
