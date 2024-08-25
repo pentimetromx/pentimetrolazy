@@ -810,7 +810,7 @@ function secuenciaEntrena(){
   padre.style.left='40vw'
   document.getElementById('butt-links-II').style.display='flex'
   document.getElementById('butt-links-II').style.left='68vw'
-  document.getElementById('butt-links-II').style.top='100vh'
+  document.getElementById('butt-links-II').style.top='83vh'
   if(screenWidth < 500){
     document.getElementById('butt-links-II').style.display='flex'
     document.getElementById('butt-links-II').style.left=''
