@@ -4191,7 +4191,7 @@ function rodillosTeñido(botId) {
       if(screenWidth < 500){
         let boton = document.getElementById('butt-links-II')
         boton.style.display='flex'
-        boton.style.top='91vh'
+        boton.style.top='88vh'
       }
       contVideoTeñido.style.display = 'flex'
       contVideoTeñido.currentTime = '0'
