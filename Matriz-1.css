@@ -6361,7 +6361,7 @@ height:21%;
   #teñido-I{
     position: absolute;
     display: flex;
-    top:44%;
+    top:39%;
     left:2%;
     width:35vw;
     height:2.7vh;
@@ -6376,10 +6376,10 @@ height:21%;
     border-radius: 11px;
   }  
 
-  #vidTeñido {
+  #vidTeñido{
     position: absolute;
     display: flex;
-    top:56%;
+    top:51%;
     left:1vw;
     margin-bottom:2.3vh;
     width:85%;
@@ -6387,7 +6387,7 @@ height:21%;
   
   .grilla-teñido{
     position: relative;
-    top:50%;
+    top:45%;
     margin-left: -53%;
     width:96%;
     height:40%;
@@ -6612,7 +6612,7 @@ height:21%;
     position: absolute;
     flex-direction: column;
     display: flex;
-    top:40%;
+    top:35%;
     left:0;
     width:100%;
     height: 80%;
@@ -6668,7 +6668,7 @@ height:21%;
     display: flex;
   }
   .grilla-freno{
-    top: 40vh;
+    top: 37vh;
     left:-11vw;  
     width: 95%;
     height:29%;

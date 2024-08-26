@@ -3411,6 +3411,11 @@ function LubricaDesbobinador(idButt) {
       const movil = document.getElementById('child-move-II')
       const currentZone = document.getElementById('abuelo-grilla')
       moveElement(movil,currentZone)
+      if(screenWidth < 500){
+        let boton = document.getElementById('butt-links-II')
+        boton.style .display='flex'
+        boton.style.left='33vw'
+      }
     break;
     case 'btn70': 
       var contFreno = document.getElementById('freno')
@@ -4182,7 +4187,12 @@ function rodillosTeñido(botId) {
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      } 
+      }
+      if(screenWidth < 500){
+        let boton = document.getElementById('butt-links-II')
+        boton.style.display='flex'
+        boton.style.top='91vh'
+      }
       contVideoTeñido.style.display = 'flex'
       contVideoTeñido.currentTime = '0'
       contVideoTeñido.play()

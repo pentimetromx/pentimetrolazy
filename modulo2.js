@@ -228,7 +228,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('second_half') 
+  var contiBoton = document.getElementById('butt-links-II') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -249,7 +249,7 @@ function Geometria() {
   console.log('1 :','Visibility:', visibilityType);
   console.log('1 :','Is Visible:', isVisible);
   
-  var contiBotonI = document.getElementById('imageElement6') 
+  var contiBotonI = document.getElementById('lubricantes') 
   var rect = contiBotonI.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -951,463 +951,463 @@ function updateAndresII() {
   // Actualiza el gráfico
   chart12II.update()  
 }
- function updateCarlos() {
-    // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-    setTimeout(function() {
-     graficosAutomaticos('canvasContainer4')
-   },500) // 0.3 segundos
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer7')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer5')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer6')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer8')
-   }, 700) // 0.3 segundos (300 ms + 300 ms) 
-   setTimeout(function() {
-     graficosAutomaticos('canvasContainer9')
-   }, 700) // 0.3 segundos (300 ms + 300 ms)
-   var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5]
-   // Actualiza los datos del gráfico
-   chart7.data.datasets[0].data = nuevosDatos;
-   // Actualiza el gráfico
-   chart7.update()
-   ///////////////////////////////////////////////////////////////////
-   var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97]
-   // Actualiza los datos del gráfico
-   chart8.data.datasets[0].data = nuevosDatosI;
-   // Actualiza el gráfico
-   chart8.update()
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17]
-   // Actualiza los datos del gráfico
-   chart9.data.datasets[0].data = nuevosDatosII;
-   // Actualiza el gráfico
-   chart9.update() 
-    //////////////////////////////////////////////////////////////////
-    var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77]
-    // Actualiza los datos del gráfico
-    chart10.data.datasets[0].data = nuevosDatosIII;
-    // Actualiza el gráfico
-    chart10.update()
-      //////////////////////////////////////////////////////////////////
-  var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
-  // Actualiza los datos del gráfico
-  chart11.data.datasets[0].data = nuevosDatosIIII;
-  // Actualiza el gráfico
-  chart11.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosV = [/* Nuevos valores de datos */ 17,37,22,30,5,60,77,80]
-   // Actualiza los datos del gráfico
-   chart12.data.datasets[0].data = nuevosDatosV;
-   // Actualiza el gráfico
-   chart12.update()  
- }
- function updateCarlosII() {
-   // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
-   setTimeout(function() {
-    graficosAutomaticos('canvasContainer4-II')
+function updateCarlos() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer4')
   },500) // 0.3 segundos
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer7-II')
+    graficosAutomaticos('canvasContainer7')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer5-II')
+    graficosAutomaticos('canvasContainer5')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer6-II')
+    graficosAutomaticos('canvasContainer6')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
- /*  setTimeout(function() {
-    graficosAutomaticos('canvasContainer8-II')
-  }, 700) // 0.3 segundos (300 ms + 300 ms) */ 
   setTimeout(function() {
-    graficosAutomaticos('canvasContainer9-II')
+    graficosAutomaticos('canvasContainer8')
+  }, 700) // 0.3 segundos (300 ms + 300 ms) 
+  setTimeout(function() {
+    graficosAutomaticos('canvasContainer9')
   }, 700) // 0.3 segundos (300 ms + 300 ms)
   var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5]
   // Actualiza los datos del gráfico
-  chart7II.data.datasets[0].data = nuevosDatos;
+  chart7.data.datasets[0].data = nuevosDatos;
   // Actualiza el gráfico
-  chart7II.update()
+  chart7.update()
   ///////////////////////////////////////////////////////////////////
   var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97]
   // Actualiza los datos del gráfico
-  chart8II.data.datasets[0].data = nuevosDatosI;
+  chart8.data.datasets[0].data = nuevosDatosI;
   // Actualiza el gráfico
-  chart8II.update()
+  chart8.update()
   //////////////////////////////////////////////////////////////////
   var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17]
   // Actualiza los datos del gráfico
-  chart9II.data.datasets[0].data = nuevosDatosII;
+  chart9.data.datasets[0].data = nuevosDatosII;
   // Actualiza el gráfico
-  chart9II.update() 
-   //////////////////////////////////////////////////////////////////
-   var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77]
-   // Actualiza los datos del gráfico
-   chart10II.data.datasets[0].data = nuevosDatosIII;
-   // Actualiza el gráfico
-   chart10II.update()
-     //////////////////////////////////////////////////////////////////
-   var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
-   // Actualiza los datos del gráfico
-   chart11II.data.datasets[0].data = nuevosDatosIIII;
-   // Actualiza el gráfico
-   chart11II.update() 
+  chart9.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77]
+  // Actualiza los datos del gráfico
+  chart10.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10.update()
+    //////////////////////////////////////////////////////////////////
+var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
+// Actualiza los datos del gráfico
+chart11.data.datasets[0].data = nuevosDatosIIII;
+// Actualiza el gráfico
+chart11.update() 
   //////////////////////////////////////////////////////////////////
   var nuevosDatosV = [/* Nuevos valores de datos */ 17,37,22,30,5,60,77,80]
   // Actualiza los datos del gráfico
-  chart12II.data.datasets[0].data = nuevosDatosV;
+  chart12.data.datasets[0].data = nuevosDatosV;
   // Actualiza el gráfico
-  chart12II.update()  
- }
- function deslizaMosaicoII(idElement) {
-   var contLinkMant = document.getElementById('linksMA')
-   var elementoAnterior = null;
-   var elementoActual = null;
- 
-   if (contLinkMant !== null && contImgEntrenos !== null) {
-     contLinkMant.style.display = 'none'
-     contImgEntrenos.style.display = 'none'
-   }
-   // Verificar si el elemento ya está en el array
-   if (!arrayPosicionnador.includes(idElement)) {
-     arrayPosicionnador.push(idElement)
-   }
-   var contenedor = document.getElementById(idElement)  
-   contenedor.style.display = 'flex'
-   contenedor.style.left = '257px'
-   var inicio = 1100;
-   var velocidad = 500;
-   var duracion = Math.abs(destino - inicio) / velocidad * 100;
-   var inicioTiempo = null;
-   function animar(tiempo) {
-     if (!inicioTiempo) inicioTiempo = tiempo;
-     var progreso = (tiempo - inicioTiempo) / duracion;
-     var izquierda = inicio + progreso * (destino - inicio)
-     if (progreso < 1) {
-       contenedor.style.left = izquierda + 'px'
-       requestAnimationFrame(animar)
-     } else {
-       contenedor.style.left = destino + 'px'
-     }
-   }
-   requestAnimationFrame(animar)
- 
-   for (var i = 1; i < arrayPosicionnador.length; i++) {
-     var elementoActual = document.getElementById(arrayPosicionnador[i])
-     var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1])
- 
-     if (elementoActual && elementoAnterior) {
-       var estiloAnterior = window.getComputedStyle(elementoAnterior)
-       var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'))
-       var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'))
- 
-       destino = posicionAnterior + anchoAnterior;
-     }
-   }
- 
- }
- function ampliaIndicaciones(index) {
-   var botonConico = document.getElementById('bot-indicacionesII')
-   var indicEjeI = document.getElementById('indicaciones-conico')
-   var indicEje = document.getElementById('indicaciones-eje') 
-   var conico = document.getElementById('conico')
-   var eje = document.getElementById('eje')
- 
-   switch (index) {
-     case 'eje':
-     eje.style.width = (window.innerWidth * 0.75) + 'px' 
-     eje.style.height = window.innerHeight + 'px' 
-     indicEje.style.display = 'flex'
-     eje.style.position = 'fixed'
-     conico.style.zIndex = '0'     
-     eje.style.zIndex = '999'
-     eje.style.left = '0' 
-     eje.style.top = '0' 
-     
-     break;
-     case 'conico':
-       botonConico.style.display = 'block'
-       indicEjeI.style.display = 'flex' 
-       conico.style.position = 'fixed'
-       conico.style.height = window.innerHeight + 'px' 
-       conico.style.width = (window.innerWidth * 0.75) + 'px'    
-       conico.style.zIndex = '999'
-       conico.style.left = '0' 
-       conico.style.top = '0'    
-       break;
-     case 2:
-     break;
-     case 3:
-     break;
-     default:
-     break;
-   }
- }
- function ocultarIndicaciones(idIndicador) {
-   var indicEjeI = document.getElementById('indicaciones-conico')
-   var indicEje = document.getElementById('indicaciones-eje')
-   var conico = document.getElementById('conico')
-   var eje = document.getElementById('eje')
- 
-   switch(idIndicador) {
-     case 'eje':
-       indicEje.style.display = 'none'
-       eje.style.position = 'relative'
-       eje.style.height = '117px'
-       eje.style.display = 'flex'
-       eje.style.width = '143px'
-     break;
-     case 'conico':
-       conico.style.position = 'relative'
-       indicEjeI.style.display = 'none'
-       conico.style.display = 'flex'  
-       conico.style.height = '117px'
-       conico.style.width = '143px'
-     break;  
-     default:
-   }
-   linkListI.style.display = "none";  
-   linkList.style.display = "none";
- 
- }
- function rodillosKaizen(idButton,vidElem) {
-   var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos') 
-   var imgsEstudio = document.getElementById('mejoras-kai')
-   var casoEstudio = document.getElementById('casos-kaizen')
-   var contMateriales = document.getElementById('materiales-kaizen')
-   var contplanosKaizen = document.getElementById('planos-kaizen')
-   var videoKaizen = document.getElementById('videoElem')
-   var imgsPlanos = document.getElementsByClassName('imgs-Planos')
-   var contBotKaizen = document.getElementById('conti-boton-kaizen')
-   var conPlanos = document.getElementById('planos-kaizen')
-   var bton12 = document.getElementById('btn12')
-   if (bton12 !== null) {
-     bton12.style.backgroundColor = '' 
-     bton12.style.color = ''
-     bton12.innerText = 'IMPLEMENTADOS'
-   }
-   switch(idButton){
-     case 'btn10':
-       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
-       for (var i = 0; i < allContenedores.length; i++) { 
-         var elemento = document.getElementById(allContenedores[i])  
-         if (elemento) {
-           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-         }
-       } 
-       if(screenWidth < 500){
-         for (var i = 0; i < buttsToyota.length; i++) {
-          var elemento = document.getElementById(buttsToyota[i])      
-           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
-           elemento.style.display = 'none'
-         }
-         imgsEstudio.classList.remove('move-casos')        
-         casoEstudio.removeAttribute('style')
-         casoEstudio.style.display = 'none' 
-         casoEstudio.style.left=''
-         imgsEstudio.style.display = 'none'       
-         const imagenes = document.querySelectorAll('.imgs-toyota');
-         imagenes.forEach((imagen, index) => {
-           setTimeout(() => {
-               imagen.style.display = 'block';
-           }, 400 + index * 177);
-           desactivarClicsPorUnTiempoII()
-           setTimeout(() => {
-             imgsEstudio.style.display = 'flex'       
-             casoEstudio.style.display = 'flex'  
-             casoEstudio.classList.remove('move-label')    
-           }, 1700);
-           setTimeout(() => {
-             casoEstudio.classList.add('move-label')         
-           }, 1710);
-           setTimeout(() => {
-             imgsEstudio.classList.add('move-casos')         
-           }, 1910);  
-         });
-       } else{               
-       for (var i = 0; i < buttsToyota.length; i++) {
-         var elemento = document.getElementById(buttsToyota[i])      
-         if (elemento) {
-           // Accede a la propiedad 'display' utilizando window.getComputedStyle
-           var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')       
-           // Verifica si la propiedad 'display' es 'none' y cámbiala a 'flex' si es necesario
-           if (estiloDisplay === 'none') {
-             elemento.style.display = 'flex'
-           }
-         }
-       }
-       transicionImagenes()
-     } 
-     break;
-     case 'btn11':
-       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
-       for (var i = 0; i < allContenedores.length; i++) { 
-         var elemento = document.getElementById(allContenedores[i])  
-         if (elemento) {
-           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-         }
-       }  
-       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
-         var elemento = document.getElementById(arrayButtsPlanos[i])
-         if (elemento) {
-           elemento.style.display = 'none'
-         }
-       }
-     break; 
-     case 'btn12':
-       var miBot = document.getElementById('btn12')
-       var videoKaizen = document.getElementById('vidElem')
-       var contBotKaizen = document.getElementById('conti-boton-kaizen')
-       contadorClicks++;
-       console.log(contadorClicks)
-       if (contadorClicks === 1) {
-         miBot.innerText = 'ANTES';
-         miBot.style.backgroundColor = 'red' 
-         var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','toyota-kaizen-antes']
-         for (var i = 0; i < allContenedores.length; i++) { 
-           var elemento = document.getElementById(allContenedores[i])  
-           if (elemento) {
-             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-           }
-         } 
-         if (screenWidth < 500){
-           /* contiButts.style.top = '7%'
-           contiButts.removeAttribute('style')
-           contBotKaizen.removeAttribute('style') */
-         }
-       } else if (contadorClicks === 2) {
-           miBot.innerText = 'DESPUES';
-           miBot.style.backgroundColor = 'green' 
-           var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','vidElem']  
-           for (var i = 0; i < allContenedores.length; i++) { 
-             var elemento = document.getElementById(allContenedores[i])  
-             if (elemento) {
-               elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-             }
-           } 
-           videoKaizen.style.display = 'flex'
-           videoKaizen.currentTime = 0
-           videoKaizen.play()  
-           // Reiniciar la variable a cero después del segundo clic
-           contadorClicks = 0;
-           if (screenWidth < 500){
-             contBotKaizen.removeAttribute('style')
-             document.getElementById('conti-boton-kaizen').style.display='flex'
-           }
-         }
-       for (var i = 0; i < buttsTerceros.length; i++) {
-         var boton = buttsTerceros[i]
-         setTimeout(function(currentBoton) { 
-           return function() {
-             currentBoton.style.display = 'block'
-             setTimeout(function() {
-               currentBoton.style.transform = 'scale(4)'
-               setTimeout(function() {
-                 currentBoton.style.transform = 'scale(1)'
-               }, 200)
-             }, 200)
-           };
-         }(boton), i * 100) // Multiplicar por i para aplicar el intervalo adecuado
-       }       
-     break;
-     case 'btn13':
-       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','planos-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
-       for (var i = 0; i < allContenedores.length; i++) { 
-         var elemento = document.getElementById(allContenedores[i])  
-         if (elemento) {
-           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-         }
-       }  
-       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
-         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
-         if (element) {
-           element.style.display = 'inline-block'
-         }
-       })
-       conPlanos.style.display = 'flex'
-       for(var i = 0; i < imgsPlanos.length; i ++ ){
-         var elto = imgsPlanos[i]
-         if(elto){
-           elto.style.display = 'flex'
-         }
-       }
-       contplanosKaizen.style.display = 'flex'
-     break;  
-     case 'btn14':
-       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
-       for (var i = 0; i < allContenedores.length; i++) { 
-         var elemento = document.getElementById(allContenedores[i])  
-         if (elemento) {
-           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-         }
-       }  
-       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
-         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
-         if (element) {
-           element.style.display = 'inline-block'
-         }
-       })
-       contMateriales.style.display = 'flex'
-     break;  
-     case 'btn15':
-       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
-       for (var i = 0; i < allContenedores.length; i++) { 
-         var elemento = document.getElementById(allContenedores[i])  
-         if (elemento) {
-           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-         }
-       }  
-       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
-         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
-         if (element) {
-           element.style.display = 'inline-block'
-         }
-       })
-     break;
-     case 'btn17':
-       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
-       for (var i = 0; i < allContenedores.length; i++) { 
-         var elemento = document.getElementById(allContenedores[i])  
-         if (elemento) {
-           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-         }
-       } 
-     break;       
-     default:
-   }
- }
- function transicionImagenes() {
-   var casoEstudio = document.getElementById('casos-kaizen')
-   var index = 0;
-   casoEstudio.style.display = 'none'
- 
-     function ocultarSiguienteImagen() {
-         var imageId = buttsToyota[index]
-         var image = document.getElementById(imageId)
-         if (image) {
-           image.style.display = 'none'
-         }
-         index++;
-         if (index < buttsToyota.length) {
-           setTimeout(ocultarSiguienteImagen, 150)
-         } else {
-           var imgToyota = document.getElementById('toyota7')
-           imgToyota.style.display = 'flex'
-           casoEstudio.style.display = 'flex' 
-           casoEstudio.style.marginLeft = '7%'                                                                    
-           aumentarTamanosDeBotonesVI()
-         }
-     }
-     ocultarSiguienteImagen()
- }
+  chart12.update()  
+}
+function updateCarlosII() {
+  // Usar setTimeout para ejecutar las funciones con un intervalo de 0.3 segundos
+  setTimeout(function() {
+  graficosAutomaticos('canvasContainer4-II')
+},500) // 0.3 segundos
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer7-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer5-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer6-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+/*  setTimeout(function() {
+  graficosAutomaticos('canvasContainer8-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms) */ 
+setTimeout(function() {
+  graficosAutomaticos('canvasContainer9-II')
+}, 700) // 0.3 segundos (300 ms + 300 ms)
+var nuevosDatos = [/* Nuevos valores de datos */ 17,99,44,0,7,5]
+// Actualiza los datos del gráfico
+chart7II.data.datasets[0].data = nuevosDatos;
+// Actualiza el gráfico
+chart7II.update()
+///////////////////////////////////////////////////////////////////
+var nuevosDatosI = [/* Nuevos valores de datos */ 27,33,84,6,15,97]
+// Actualiza los datos del gráfico
+chart8II.data.datasets[0].data = nuevosDatosI;
+// Actualiza el gráfico
+chart8II.update()
+//////////////////////////////////////////////////////////////////
+var nuevosDatosII = [/* Nuevos valores de datos */ 15,5,55,90,100,17]
+// Actualiza los datos del gráfico
+chart9II.data.datasets[0].data = nuevosDatosII;
+// Actualiza el gráfico
+chart9II.update() 
+  //////////////////////////////////////////////////////////////////
+  var nuevosDatosIII = [/* Nuevos valores de datos */ 20,97,27,80,7,77]
+  // Actualiza los datos del gráfico
+  chart10II.data.datasets[0].data = nuevosDatosIII;
+  // Actualiza el gráfico
+  chart10II.update()
+    //////////////////////////////////////////////////////////////////
+  var nuevosDatosIIII = [/* Nuevos valores de datos */ 50,91,17,77,33,89]
+  // Actualiza los datos del gráfico
+  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  // Actualiza el gráfico
+  chart11II.update() 
+//////////////////////////////////////////////////////////////////
+var nuevosDatosV = [/* Nuevos valores de datos */ 17,37,22,30,5,60,77,80]
+// Actualiza los datos del gráfico
+chart12II.data.datasets[0].data = nuevosDatosV;
+// Actualiza el gráfico
+chart12II.update()  
+}
+function deslizaMosaicoII(idElement) {
+  var contLinkMant = document.getElementById('linksMA')
+  var elementoAnterior = null;
+  var elementoActual = null;
+
+  if (contLinkMant !== null && contImgEntrenos !== null) {
+    contLinkMant.style.display = 'none'
+    contImgEntrenos.style.display = 'none'
+  }
+  // Verificar si el elemento ya está en el array
+  if (!arrayPosicionnador.includes(idElement)) {
+    arrayPosicionnador.push(idElement)
+  }
+  var contenedor = document.getElementById(idElement)  
+  contenedor.style.display = 'flex'
+  contenedor.style.left = '257px'
+  var inicio = 1100;
+  var velocidad = 500;
+  var duracion = Math.abs(destino - inicio) / velocidad * 100;
+  var inicioTiempo = null;
+  function animar(tiempo) {
+    if (!inicioTiempo) inicioTiempo = tiempo;
+    var progreso = (tiempo - inicioTiempo) / duracion;
+    var izquierda = inicio + progreso * (destino - inicio)
+    if (progreso < 1) {
+      contenedor.style.left = izquierda + 'px'
+      requestAnimationFrame(animar)
+    } else {
+      contenedor.style.left = destino + 'px'
+    }
+  }
+  requestAnimationFrame(animar)
+
+  for (var i = 1; i < arrayPosicionnador.length; i++) {
+    var elementoActual = document.getElementById(arrayPosicionnador[i])
+    var elementoAnterior = document.getElementById(arrayPosicionnador[i - 1])
+
+    if (elementoActual && elementoAnterior) {
+      var estiloAnterior = window.getComputedStyle(elementoAnterior)
+      var posicionAnterior = parseFloat(estiloAnterior.getPropertyValue('left'))
+      var anchoAnterior = parseFloat(estiloAnterior.getPropertyValue('width'))
+
+      destino = posicionAnterior + anchoAnterior;
+    }
+  }
+
+}
+function ampliaIndicaciones(index) {
+  var botonConico = document.getElementById('bot-indicacionesII')
+  var indicEjeI = document.getElementById('indicaciones-conico')
+  var indicEje = document.getElementById('indicaciones-eje') 
+  var conico = document.getElementById('conico')
+  var eje = document.getElementById('eje')
+
+  switch (index) {
+    case 'eje':
+    eje.style.width = (window.innerWidth * 0.75) + 'px' 
+    eje.style.height = window.innerHeight + 'px' 
+    indicEje.style.display = 'flex'
+    eje.style.position = 'fixed'
+    conico.style.zIndex = '0'     
+    eje.style.zIndex = '999'
+    eje.style.left = '0' 
+    eje.style.top = '0' 
+    
+    break;
+    case 'conico':
+      botonConico.style.display = 'block'
+      indicEjeI.style.display = 'flex' 
+      conico.style.position = 'fixed'
+      conico.style.height = window.innerHeight + 'px' 
+      conico.style.width = (window.innerWidth * 0.75) + 'px'    
+      conico.style.zIndex = '999'
+      conico.style.left = '0' 
+      conico.style.top = '0'    
+      break;
+    case 2:
+    break;
+    case 3:
+    break;
+    default:
+    break;
+  }
+}
+function ocultarIndicaciones(idIndicador) {
+  var indicEjeI = document.getElementById('indicaciones-conico')
+  var indicEje = document.getElementById('indicaciones-eje')
+  var conico = document.getElementById('conico')
+  var eje = document.getElementById('eje')
+
+  switch(idIndicador) {
+    case 'eje':
+      indicEje.style.display = 'none'
+      eje.style.position = 'relative'
+      eje.style.height = '117px'
+      eje.style.display = 'flex'
+      eje.style.width = '143px'
+    break;
+    case 'conico':
+      conico.style.position = 'relative'
+      indicEjeI.style.display = 'none'
+      conico.style.display = 'flex'  
+      conico.style.height = '117px'
+      conico.style.width = '143px'
+    break;  
+    default:
+  }
+  linkListI.style.display = "none";  
+  linkList.style.display = "none";
+
+}
+function rodillosKaizen(idButton,vidElem) {
+  var buttsTerceros = document.getElementsByClassName('butt-mautonomo-planos') 
+  var imgsEstudio = document.getElementById('mejoras-kai')
+  var casoEstudio = document.getElementById('casos-kaizen')
+  var contMateriales = document.getElementById('materiales-kaizen')
+  var contplanosKaizen = document.getElementById('planos-kaizen')
+  var videoKaizen = document.getElementById('videoElem')
+  var imgsPlanos = document.getElementsByClassName('imgs-Planos')
+  var contBotKaizen = document.getElementById('conti-boton-kaizen')
+  var conPlanos = document.getElementById('planos-kaizen')
+  var bton12 = document.getElementById('btn12')
+  if (bton12 !== null) {
+    bton12.style.backgroundColor = '' 
+    bton12.style.color = ''
+    bton12.innerText = 'IMPLEMENTADOS'
+  }
+  switch(idButton){
+    case 'btn10':
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      } 
+      if(screenWidth < 500){
+        for (var i = 0; i < buttsToyota.length; i++) {
+        var elemento = document.getElementById(buttsToyota[i])      
+          var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')
+          elemento.style.display = 'none'
+        }
+        imgsEstudio.classList.remove('move-casos')        
+        casoEstudio.removeAttribute('style')
+        casoEstudio.style.display = 'none' 
+        casoEstudio.style.left=''
+        imgsEstudio.style.display = 'none'       
+        const imagenes = document.querySelectorAll('.imgs-toyota');
+        imagenes.forEach((imagen, index) => {
+          setTimeout(() => {
+              imagen.style.display = 'block';
+          }, 400 + index * 177);
+          desactivarClicsPorUnTiempoII()
+          setTimeout(() => {
+            imgsEstudio.style.display = 'flex'       
+            casoEstudio.style.display = 'flex'  
+            casoEstudio.classList.remove('move-label')    
+          }, 1700);
+          setTimeout(() => {
+            casoEstudio.classList.add('move-label')         
+          }, 1710);
+          setTimeout(() => {
+            imgsEstudio.classList.add('move-casos')         
+          }, 1910);  
+        });
+      } else{               
+      for (var i = 0; i < buttsToyota.length; i++) {
+        var elemento = document.getElementById(buttsToyota[i])      
+        if (elemento) {
+          // Accede a la propiedad 'display' utilizando window.getComputedStyle
+          var estiloDisplay = window.getComputedStyle(elemento).getPropertyValue('display')       
+          // Verifica si la propiedad 'display' es 'none' y cámbiala a 'flex' si es necesario
+          if (estiloDisplay === 'none') {
+            elemento.style.display = 'flex'
+          }
+        }
+      }
+      transicionImagenes()
+    } 
+    break;
+    case 'btn11':
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }  
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
+        var elemento = document.getElementById(arrayButtsPlanos[i])
+        if (elemento) {
+          elemento.style.display = 'none'
+        }
+      }
+    break; 
+    case 'btn12':
+      var miBot = document.getElementById('btn12')
+      var videoKaizen = document.getElementById('vidElem')
+      var contBotKaizen = document.getElementById('conti-boton-kaizen')
+      contadorClicks++;
+      console.log(contadorClicks)
+      if (contadorClicks === 1) {
+        miBot.innerText = 'ANTES';
+        miBot.style.backgroundColor = 'red' 
+        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','toyota-kaizen-antes']
+        for (var i = 0; i < allContenedores.length; i++) { 
+          var elemento = document.getElementById(allContenedores[i])  
+          if (elemento) {
+            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+          }
+        } 
+        if (screenWidth < 500){
+          /* contiButts.style.top = '7%'
+          contiButts.removeAttribute('style')
+          contBotKaizen.removeAttribute('style') */
+        }
+      } else if (contadorClicks === 2) {
+          miBot.innerText = 'DESPUES';
+          miBot.style.backgroundColor = 'green' 
+          var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','vidElem']  
+          for (var i = 0; i < allContenedores.length; i++) { 
+            var elemento = document.getElementById(allContenedores[i])  
+            if (elemento) {
+              elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+            }
+          } 
+          videoKaizen.style.display = 'flex'
+          videoKaizen.currentTime = 0
+          videoKaizen.play()  
+          // Reiniciar la variable a cero después del segundo clic
+          contadorClicks = 0;
+          if (screenWidth < 500){
+            contBotKaizen.removeAttribute('style')
+            document.getElementById('conti-boton-kaizen').style.display='flex'
+          }
+        }
+      for (var i = 0; i < buttsTerceros.length; i++) {
+        var boton = buttsTerceros[i]
+        setTimeout(function(currentBoton) { 
+          return function() {
+            currentBoton.style.display = 'block'
+            setTimeout(function() {
+              currentBoton.style.transform = 'scale(4)'
+              setTimeout(function() {
+                currentBoton.style.transform = 'scale(1)'
+              }, 200)
+            }, 200)
+          };
+        }(boton), i * 100) // Multiplicar por i para aplicar el intervalo adecuado
+      }       
+    break;
+    case 'btn13':
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','planos-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }  
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
+        var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
+        if (element) {
+          element.style.display = 'inline-block'
+        }
+      })
+      conPlanos.style.display = 'flex'
+      for(var i = 0; i < imgsPlanos.length; i ++ ){
+        var elto = imgsPlanos[i]
+        if(elto){
+          elto.style.display = 'flex'
+        }
+      }
+      contplanosKaizen.style.display = 'flex'
+    break;  
+    case 'btn14':
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }  
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
+        var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
+        if (element) {
+          element.style.display = 'inline-block'
+        }
+      })
+      contMateriales.style.display = 'flex'
+    break;  
+    case 'btn15':
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }  
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
+        var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
+        if (element) {
+          element.style.display = 'inline-block'
+        }
+      })
+    break;
+    case 'btn17':
+      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      } 
+    break;       
+    default:
+  }
+}
+function transicionImagenes() {
+  var casoEstudio = document.getElementById('casos-kaizen')
+  var index = 0;
+  casoEstudio.style.display = 'none'
+
+    function ocultarSiguienteImagen() {
+        var imageId = buttsToyota[index]
+        var image = document.getElementById(imageId)
+        if (image) {
+          image.style.display = 'none'
+        }
+        index++;
+        if (index < buttsToyota.length) {
+          setTimeout(ocultarSiguienteImagen, 150)
+        } else {
+          var imgToyota = document.getElementById('toyota7')
+          imgToyota.style.display = 'flex'
+          casoEstudio.style.display = 'flex' 
+          casoEstudio.style.marginLeft = '7%'                                                                    
+          aumentarTamanosDeBotonesVI()
+        }
+    }
+    ocultarSiguienteImagen()
+}
 function mostrarBotonConRetardo(index) {
   let arrayButtCasos = ['caso1', 'caso2', 'caso3']
 
@@ -5112,19 +5112,45 @@ document.getElementById('butt-sitio').addEventListener('click', () => {
   document.getElementById('butt-sitio').style.display='none'
   abrirSeccionContinua()
 })
+function isVisible(element) {
+  const style = window.getComputedStyle(element);
+  return (
+    style.display !== 'none' &&
+    style.visibility !== 'hidden' &&
+    element.offsetWidth > 0 &&
+    element.offsetHeight > 0
+  );
+}
+
 function cerrarVentanasII(){
-  var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+  if(screenWidth < 500){
+    reponerEstilos()
+    let contFreno = document.getElementById('grilla-frena');
+    let lubricantes = document.getElementById('lubricantes'); 
+    let rodamientos = document.getElementById('inicio');
+    if (isVisible(lubricantes)) {
+      LubricaDesbobinador('btn1');
     }
-  }
-  reponerEstilos()
-  document.getElementById('troubleshooting').style.display='grid'
-  const ventanas = document.querySelectorAll('.ventana');
-  for (let i = 0; i < ventanas.length; i++) {
-    ventanas[i].style.display = 'none';
+    if (isVisible(contFreno)) {
+      abrirSeccionContinua('pantalla-inicial');
+    }
+    if (isVisible(rodamientos)) {
+      abrirSeccionContinua('pantalla-inicial');
+    }
+  }else{
+    var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }
+    reponerEstilos()
+    document.getElementById('troubleshooting').style.display='grid'
+    const ventanas = document.querySelectorAll('.ventana');
+    for (let i = 0; i < ventanas.length; i++) {
+      ventanas[i].style.display = 'none';
+    }
   }
 
 }
