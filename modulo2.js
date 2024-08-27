@@ -5116,6 +5116,10 @@ function cerrarVentanasII(){
     let rodillos = document.getElementById('abuelo-cuadricula')
     let vidManometros = document.getElementById('vid_festo')
     let padreManometros = document.getElementById('padre-1')
+    let vidZapatas = document.getElementById('padre-2')
+    let vidBailarina = document.getElementById('contImaginario')
+    let rugosos = document.getElementById('contImaginario-II')
+    let instrucciones = document.getElementById('puesta-punto')
     if (isVisible(lubricantes)) {
       LubricaDesbobinador('btn1');
     }
@@ -5134,6 +5138,21 @@ function cerrarVentanasII(){
     if (isVisible(vidManometros)) {
       imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
     }
+    if (isVisible(vidZapatas)) {
+      listaEntrenamientosII('archivo')
+    }
+    if (isVisible(vidBailarina)) {
+      listaEntrenamientosII('archivo')
+    }
+    if (isVisible(rugosos)) {
+      listaEntrenamientosII('archivo')
+    }
+    if (isVisible(instrucciones)) {
+      listaEntrenamientosII('archivo')
+    }
+
+
+
 
   }else{
     var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
