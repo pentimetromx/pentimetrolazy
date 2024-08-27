@@ -1,7 +1,7 @@
 function deslizaContenedor(identificador, idButton) {
   reponerEstilos()
   clearAllIntervals() 
-  desactivarClicsPorUnTiempoIII()
+  desactivarClicsPorUnTiempo(500)
   arrayIdButtsMA.forEach(element => {                                                                                                        
     var elemento = document.getElementById(element)
     if (elemento) {
@@ -1215,7 +1215,7 @@ function rodillosKaizen(idButton,vidElem) {
           setTimeout(() => {
               imagen.style.display = 'block';
           }, 400 + index * 177);
-          desactivarClicsPorUnTiempoII()
+          desactivarClicsPorUnTiempo(3000)
           setTimeout(() => {
             imgsEstudio.style.display = 'flex'       
             casoEstudio.style.display = 'flex'  
@@ -3857,29 +3857,14 @@ function trasladarOblicuos(){
   contOblicuosXI.classList.add('move-oblicuos');
   console.log('se AGREGO la clase')
 }
-function desactivarClicsPorUnTiempoIII() {
-  // Desactivar los clics
+function desactivarClicsPorUnTiempo(tiempoDuracion) {
+  function bloquearClic(e) {
+    e.stopPropagation();
+    e.preventDefault();  }
   document.addEventListener('click', bloquearClic, true);
-  // Volver a habilitar los clics después de 1 segundo
   setTimeout(function() {
-      document.removeEventListener('click', bloquearClic, true);
-  }, 500);
-}
-function desactivarClicsPorUnTiempoII() {
-  // Desactivar los clics
-  document.addEventListener('click', bloquearClic, true);
-  // Volver a habilitar los clics después de 1 segundo
-  setTimeout(function() {
-      document.removeEventListener('click', bloquearClic, true);
-  }, 3000);
-}
-function desactivarClicsPorUnTiempo() {
-  // Desactivar los clics
-  document.addEventListener('click', bloquearClic, true);
-  // Volver a habilitar los clics después de 1 segundo
-  setTimeout(function() {
-      document.removeEventListener('click', bloquearClic, true);
-  }, 4000);
+    document.removeEventListener('click', bloquearClic, true);
+  }, tiempoDuracion);
 }
 function bloquearClic(event) {
 event.stopPropagation();
@@ -5128,6 +5113,9 @@ function cerrarVentanasII(){
     let contFreno = document.getElementById('grilla-frena');
     let lubricantes = document.getElementById('lubricantes'); 
     let rodamientos = document.getElementById('inicio');
+    let rodillos = document.getElementById('abuelo-cuadricula')
+    let vidManometros = document.getElementById('vid_festo')
+    let padreManometros = document.getElementById('padre-1')
     if (isVisible(lubricantes)) {
       LubricaDesbobinador('btn1');
     }
@@ -5137,6 +5125,16 @@ function cerrarVentanasII(){
     if (isVisible(rodamientos)) {
       abrirSeccionContinua('pantalla-inicial');
     }
+    if (isVisible(rodillos)) {
+      abrirSeccionContinua('pantalla-inicial'); 
+    }
+    if (isVisible(padreManometros)) {
+      listaEntrenamientosII('archivo')
+    }
+    if (isVisible(vidManometros)) {
+      imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
+    }
+
   }else{
     var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
     for (var i = 0; i < allContenedores.length; i++) { 

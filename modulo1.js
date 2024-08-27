@@ -3058,7 +3058,7 @@ function toggleFullScreen(element) {
   }
 }
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
-  desactivarClicsPorUnTiempoIII()
+  desactivarClicsPorUnTiempo(500)
   let solucionador = document.getElementById('troubleshooting')
   solucionador.style.display='grid'
   var linkOrange = document.getElementById(id)

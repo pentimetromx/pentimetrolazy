@@ -354,7 +354,7 @@ function abrirInterfaz() {
     elementoPadre.classList.remove('move-oblicuos');
     setTimeout(function () {
     elementoPadre.classList.add ('move-oblicuos');
-    desactivarClicsPorUnTiempo()
+    desactivarClicsPorUnTiempo(4000)
     }, 177);
     setTimeout(() => {
       alternarColorVerde() 
@@ -378,7 +378,7 @@ function abrirInterfaz() {
     elementoPadre.classList.remove('move-oblicuosII');
     setTimeout(function () {
     elementoPadre.classList.add('move-oblicuosII');
-    desactivarClicsPorUnTiempo()
+    desactivarClicsPorUnTiempo(4000)
     }, 177);
     setTimeout(() => {
       titulo.classList.add('move-title')    
@@ -609,7 +609,7 @@ function changeButtonStyles(elementId){
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
         }
       } 
-      desactivarClicsPorUnTiempoIII()
+      desactivarClicsPorUnTiempo(500)
       const botonElement = document.querySelectorAll('.boton-g, .image-isopropil')
       var delay = 100;
       for (var i = 0; i < botonElement.length; i++) {
@@ -810,7 +810,7 @@ function secuenciaEntrena(){
   padre.style.left='40vw'
   document.getElementById('butt-links-II').style.display='flex'
   document.getElementById('butt-links-II').style.left='68vw'
-  document.getElementById('butt-links-II').style.top='95vh'
+  document.getElementById('butt-links-II').style.top='85vh'
   if(screenWidth < 500){
     document.getElementById('butt-links-II').style.display='flex'
     document.getElementById('butt-links-II').style.left=''
