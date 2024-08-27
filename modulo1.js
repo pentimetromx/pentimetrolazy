@@ -4210,7 +4210,14 @@ function rodillosTeñido(botId) {
       } 
       const childI = document.getElementById('item-movil');
       const parentI = document.getElementById('grilla-durezas');
-      moveElement(childI,parentI)      
+      moveElement(childI,parentI)
+
+      if(screenWidth < 500){
+        let boton = document.getElementById('butt-links-II')
+        boton.style.display='flex'
+        boton.style.top='77vh'
+      }
+      
     break;
     case 'btn08':
       var childContainers = rodilleria.children;

@@ -5106,7 +5106,6 @@ function isVisible(element) {
     element.offsetHeight > 0
   );
 }
-
 function cerrarVentanasII(){
   if(screenWidth < 500){
     reponerEstilos()
@@ -5120,6 +5119,7 @@ function cerrarVentanasII(){
     let vidBailarina = document.getElementById('contImaginario')
     let rugosos = document.getElementById('contImaginario-II')
     let instrucciones = document.getElementById('puesta-punto')
+    let imgsDurezas = document.getElementById('grilla-durezas')
     if (isVisible(lubricantes)) {
       LubricaDesbobinador('btn1');
     }
@@ -5150,10 +5150,9 @@ function cerrarVentanasII(){
     if (isVisible(instrucciones)) {
       listaEntrenamientosII('archivo')
     }
-
-
-
-
+    if (isVisible(imgsDurezas)) {
+      abrirSeccionContinua('pantalla-inicial'); 
+    }
   }else{
     var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -5169,7 +5168,6 @@ function cerrarVentanasII(){
       ventanas[i].style.display = 'none';
     }
   }
-
 }
 function cerrarPilares(){
   document.getElementById('linkListI').style.display='none'
@@ -5360,6 +5358,12 @@ const elementosPrePren = document.querySelectorAll('#contenedorElementos .conte-
 let listadoPrePrensa = document.getElementById('contenedorElementos')
 listadoPrePrensa.addEventListener('mouseleave',() =>{
   listadoPrePrensa.style.display='none'
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      elemento.style.removeProperty('filter');
+    }
+  }
 })
 let subMenu = document.getElementById('segundaLista')
 subMenu.addEventListener('mouseleave',() =>{
