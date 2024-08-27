@@ -5367,6 +5367,12 @@ listadoPrePrensa.addEventListener('mouseleave',() =>{
 })
 let subMenu = document.getElementById('segundaLista')
 subMenu.addEventListener('mouseleave',() =>{
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]);  
+    if (elemento) {
+      elemento.style.removeProperty('filter');
+    }
+  }
   subMenu.style.display='none'
 })
 function muestraMenu(){
