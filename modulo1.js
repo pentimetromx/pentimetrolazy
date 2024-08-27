@@ -3124,7 +3124,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       document.getElementById('links-iniciales').style.left='127vw'
       solucionador.style.display='grid'
       solucionador.style.left='11.5%'
-      document.getElementById('butt-links').style.display='none'
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3155,7 +3154,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       document.getElementById('links-iniciales').style.left='127vw'
       solucionador.style.display='grid'
       solucionador.style.left='11.5%'
-      document.getElementById('butt-links').style.display='none'
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
