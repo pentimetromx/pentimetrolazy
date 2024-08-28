@@ -8625,7 +8625,7 @@ height:21%;
     position:relative;
     flex-direction: row;
     display: flex;
-    top:-54%;
+    top:-52%;
     left: -96%;
     width: 80%;
     height: 11%;
@@ -8633,7 +8633,6 @@ height:21%;
     gap: 2x;
     display: none;
   }
-
   .butt-mautonomo-kaizen{
     position: relative;
     flex: 1;
@@ -8723,14 +8722,14 @@ height:21%;
   #planos-kaizen{
     position: absolute;
     left:35%;
-    top: 54%;
+    top: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #000;
     border-radius: 15px;
-    width: 261px;
-    height: 150px;
+    width:62vw;
+    height:26vh;
     margin: 0 auto;
     display: none;
   }
@@ -9626,7 +9625,7 @@ height:21%;
     display: flex;
     flex-direction: column;
     left:47%;
-    top:14%;
+    top:16%;
     width:40%;
     height:71.4%;
     gap:3px ;
@@ -9724,7 +9723,7 @@ height:21%;
   #patern{
     position:absolute;
     display:grid;
-    top: 0;
+    top: 2%;
     left: 60%;
     width: 40%;
     height: 72.7%;
@@ -9738,7 +9737,7 @@ height:21%;
     width:20%;
     height: 72.7%;
     left:35%;
-    top:0;
+    top:2%;
     display: none;
   }
   #contImagGraf img,
@@ -9750,7 +9749,7 @@ height:21%;
   #equalizer{
     position: absolute;
     display: flex;
-    top: 0;
+    top: 2%;
     left: 60%;
     width: 25%;
     height:63%;
