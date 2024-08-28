@@ -40,6 +40,8 @@ function deslizaContenedor(identificador, idButton) {
       mostrarTroublesshIntervalo()
       cambiaColorBotones()
       if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+        document.getElementById('conti-boton').style.top=''
         reponerEstilos()
       }
     break;
@@ -96,7 +98,7 @@ function deslizaContenedor(identificador, idButton) {
         if (canvas3 !== null) {
           canvas3.style.marginTop = '12%';
         }
-        document.getElementById('conti-boton').style.top='14vh'
+        document.getElementById('conti-boton').style.top='18vh'
         document.getElementById('conti-boton').style.display='flex'
       }
     break;
