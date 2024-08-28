@@ -3655,7 +3655,7 @@ function dañarLogo() {
 
 }
 
-document.addEventListener('touchstart', function() {
+/* document.addEventListener('touchstart', function() {
   let vinculos = document.getElementById('contenedorElementos')
     if(vinculos.style.display !== 'block'){
       for (var i = 0; i < allContenedores.length; i++) { 
@@ -3665,7 +3665,7 @@ document.addEventListener('touchstart', function() {
         }
       }
     }
-});
+}); */
 
 let ocultarTimer = null; 
 function mostrarElementos() {
@@ -5071,6 +5071,15 @@ document.addEventListener('touchstart', (event) => {
   if (!contextMenu.contains(event.target) && !targetDiv.contains(event.target)) {
     contextMenu.style.display = 'none';
     shouldShowMenu = false;
+  }
+  let vinculos = document.getElementById('contenedorElementos')
+  if(vinculos.style.display !== 'block'){
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i]) 
+      if (elemento) {
+        elemento.style.filter = 'none';
+      }
+    }
   }
 });
 const elementosPrePren = document.querySelectorAll('#contenedorElementos .conte-listado, #contenedorElementos .listado');
