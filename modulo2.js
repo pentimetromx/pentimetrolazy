@@ -3654,6 +3654,17 @@ function dañarLogo() {
   }, 350);  
 
 }
+elemento.addEventListener('touchend', function() {
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]) 
+    if (elemento) {
+      elemento.style.filter = 'none';
+
+    }
+  }
+
+});
+
 let ocultarTimer = null; 
 function mostrarElementos() {
   const contenedorElementos = document.getElementById('contenedorElementos');
@@ -3686,7 +3697,6 @@ function ocultarElementos(eltoID) {
     case 'contenedorElementos':
       if (segundoListado.style.display === 'none') {   
         ocultarTimer = setTimeout(() => {
-          // Verifica si el ratón todavía está sobre el contenedor
           if (!contenedorElementos.matches(':hover')) {
             contenedorElementos.style.display = 'none';
           }
@@ -3699,8 +3709,7 @@ function ocultarElementos(eltoID) {
     case 'imagen-ayudas':
       const imagenAyudas = document.getElementById('imagen-ayudas');
       imagenAyudas.style.display = 'flex'
-      if (conteElementos.style.display === 'block') { // Asegúrate de usar `===` para comparación
-        // Espera 500 ms antes de ocultar el elemento
+      if (conteElementos.style.display === 'block') { 
         setTimeout(() => {
           // Solo oculta el elemento si el ratón no está sobre él
           if (!isMouseOver) {

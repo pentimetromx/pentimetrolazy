@@ -514,8 +514,10 @@ function changeButtonStyles(elementId){
           if (video.id === 'vidTintero') {
             video.style.top = '-4.5vh'
             video.style.left='65vw'
-            video.style.display = 'block'
-            video.play();
+            video.style.display = 'block'            
+            video.addEventListener('canplay', function() {
+              video.play().catch(error => console.error('Error al intentar reproducir el video:', error));
+            }, { once: true });            
             setTimeout(function () {
               video.style.display = 'none'
             }, 977);
