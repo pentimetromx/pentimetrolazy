@@ -3672,7 +3672,6 @@ document.addEventListener('touchstart', function() {
   }
 });
 
-
 let ocultarTimer = null; 
 function mostrarElementos() {
   const contenedorElementos = document.getElementById('contenedorElementos');
