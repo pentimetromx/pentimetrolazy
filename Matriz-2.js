@@ -428,6 +428,7 @@ function abrirInterfaz() {
     }, 3400);      
   }
 }
+
 function activarPantallaCompleta(){
   if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
@@ -448,11 +449,11 @@ function salirPantallaCompleta() {
       document.msExitFullscreen();
   }
 }
+
 let contadorDeClics = 0;
-const buttFull = document.getElementById('iniciar');
-buttFull.addEventListener('click', () => {
+const miBoton = document.getElementById('iniciar');
+miBoton.addEventListener('click', () => {
   contadorDeClics++;
-  
   if (contadorDeClics === 1) {
     activarPantallaCompleta()
   } else if (contadorDeClics === 2) {

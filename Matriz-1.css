@@ -6876,12 +6876,11 @@ height:21%;
     cursor: pointer;
     z-index: 0;
 }
-  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #links-inicialesI{
     position: absolute;
     display: flex;
     font-family: 'GothamRounded', sans-serif;
-    top: 12vh;
+    top: 14vh;
     left:0;
     height:33vh;
     width:39vw;
@@ -6891,7 +6890,7 @@ height:21%;
     position: absolute;
     display: flex;
     font-family: 'GothamRounded', sans-serif;
-    top: 12vh;
+    top: 14vh;
     left:57vw;
     height:33vh;
     width:39vw;
