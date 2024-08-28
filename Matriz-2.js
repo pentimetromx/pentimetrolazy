@@ -341,9 +341,9 @@ function manejarLogica() {
 function abrirSeccionOperativa(elementId){
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen(); // Método estándar
-  } else if (document.documentElement.webkitRequestFullscreen) { // Safari
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
     document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { // IE11
+  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
     document.documentElement.msRequestFullscreen();
   }
   const buttsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
@@ -428,16 +428,39 @@ function abrirInterfaz() {
     }, 3400);      
   }
 }
-function activarPantallaCompletaPC(){
-  // Verifica si el navegador admite la API de pantalla completa
+function activarPantallaCompleta(){
   if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen(); // Método estándar
-  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+      document.documentElement.requestFullscreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
       document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+  } else if (document.documentElement.msRequestFullscreen) {
       document.documentElement.msRequestFullscreen();
   }
 }
+function salirPantallaCompleta() {
+  if (document.exitFullscreen) {
+      document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+  }
+}
+let contadorDeClics = 0;
+const buttFull = document.getElementById('iniciar');
+buttFull.addEventListener('click', () => {
+  contadorDeClics++;
+  
+  if (contadorDeClics === 1) {
+    activarPantallaCompleta()
+  } else if (contadorDeClics === 2) {
+    salirPantallaCompleta()
+    contadorDeClics = 0;
+  }
+});
+
 function VolveraInicio(){
   location.reload()
   idsArray = []
@@ -550,7 +573,6 @@ function changeButtonStyles(elementId){
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
-        activarPantallaCompletaPC()
         videoElements.forEach(video => {
           if (video.id === 'vidTintero') {
             video.style.top = '-4.5vh'
