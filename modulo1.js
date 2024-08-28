@@ -1499,6 +1499,15 @@ function alternarColorVerdeInverso() {
   });
 }
 function abrirSeccionOperativa(elementId){
+
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen(); // Método estándar
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+      document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+      document.documentElement.msRequestFullscreen();
+  }
+
   const buttsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
   var elementosExcluidos = ['container01','buscador','search-form','links-inicialesI','links-iniciales','cont-titulo-operacion','image-background']  
   for (var i = 0; i < allContenedores.length; i++) { 

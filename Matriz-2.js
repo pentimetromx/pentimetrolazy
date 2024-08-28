@@ -302,7 +302,7 @@ function manejarLogica() {
     if (inputs.length > 0) {
       inputs[0].focus();
       var tituloAncho = document.getElementById('titulo-ancho');
-      tituloAncho.style.width = '100%'      
+      tituloAncho.style.width = '100%'
     }
     function manejarEntrada(event) {
       const inputActual = event.target;
@@ -337,7 +337,6 @@ function manejarLogica() {
   }
   let imgBackgound = document.getElementById('image-background')
   imgBackgound.style.display = 'flex'
-
 }
 function abrirInterfaz() {
   var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
@@ -398,6 +397,17 @@ function abrirInterfaz() {
     }, 3400);      
   }
 }
+function activarPantallaCompletaPC() {
+  // Verifica si el navegador admite la API de pantalla completa
+  if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen(); // Método estándar
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+      document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+      document.documentElement.msRequestFullscreen();
+  }
+}
+
 function VolveraInicio(){
   location.reload()
   idsArray = []
@@ -510,6 +520,7 @@ function changeButtonStyles(elementId){
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
           }
         }
+        activarPantallaCompletaPC()
         videoElements.forEach(video => {
           if (video.id === 'vidTintero') {
             video.style.top = '-4.5vh'

@@ -183,7 +183,6 @@ document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        
         abrirSeccionOperativa('cont-titulo-operacion')       
         setTimeout(function() {
           ElementosMaII('pantalla-inicial')        
@@ -4958,6 +4957,14 @@ function moverVideoDerecha() {
     });
   }
 }
+document.getElementById('ventana-lateral').addEventListener('mouseleave',() =>{
+  const videos = document.querySelectorAll('.vid-prepress');
+  videos.forEach(function(video) {
+    if (video.style.display === 'flex') {
+      video.classList.remove('move-video-right')
+    }
+  });
+})
 function reponerEstilos(){
   let padreSolucionador = document.getElementById('troubleshooting')
   padreSolucionador.style.gridTemplateColumns = '';
