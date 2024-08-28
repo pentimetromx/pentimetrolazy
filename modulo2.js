@@ -3654,15 +3654,24 @@ function dañarLogo() {
   }, 350);  
 
 }
-document.getElementById('contenedorElementos').addEventListener('touchend', function() {
+/* document.getElementById('contenedorElementos').addEventListener('touchend', function() {
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
       elemento.style.filter = 'none';
     }
   }
+}); */
 
+document.addEventListener('touchstart', function() {
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]) 
+    if (elemento) {
+      elemento.style.filter = 'none';
+    }
+  }
 });
+
 
 let ocultarTimer = null; 
 function mostrarElementos() {
