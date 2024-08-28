@@ -3654,12 +3654,11 @@ function dañarLogo() {
   }, 350);  
 
 }
-elemento.addEventListener('touchend', function() {
+document.getElementById('contenedorElementos').addEventListener('touchend', function() {
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]) 
     if (elemento) {
       elemento.style.filter = 'none';
-
     }
   }
 
