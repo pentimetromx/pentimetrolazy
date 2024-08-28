@@ -4955,6 +4955,9 @@ input.numero:focus {
 .move_containerII{
   transform: translateY(-277px);
 }
+.move-video-right{
+  transform: translateX(15vw);
+}
  #first_half {
   position: relative;
   display: grid;
@@ -8592,10 +8595,6 @@ height:21%;
     width: 30%;
     left: 50%;
     top:-30%;
-/*     height: 12vh;
-    width: 30vw;
-    left: 50vw;
-    top:-33vh; */  
     z-index: 7;
     display: none;
     padding: 0;

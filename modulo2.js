@@ -3654,19 +3654,6 @@ function dañarLogo() {
   }, 350);  
 
 }
-
-/* document.addEventListener('touchstart', function() {
-  let vinculos = document.getElementById('contenedorElementos')
-    if(vinculos.style.display !== 'block'){
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.filter = 'none';
-        }
-      }
-    }
-}); */
-
 let ocultarTimer = null; 
 function mostrarElementos() {
   const contenedorElementos = document.getElementById('contenedorElementos');
@@ -4963,27 +4950,12 @@ function desenrrollarVentana() {
 }
 function moverVideoDerecha() {
   if(screenWidth > 500){
-    let video = document.getElementById('prisma-vid-II');
-    video.style.left = ''; // Asegurarse de que no haya un valor fijo previamente  
-    // Obtener la posición inicial en vw
-    let posicionInicial = parseFloat(window.getComputedStyle(video).left) / window.innerWidth * 100;
-    let posicionFinal = 19; // Mover a 50vw hacia la derecha
-    let duracion = 1000;
-    let startTime = null;
-    function animar(timestamp) {
-      if (!startTime) startTime = timestamp;
-      let tiempoTranscurrido = timestamp - startTime;
-      let progreso = tiempoTranscurrido / duracion;
-      let easeOutProgress = 1 - Math.pow(1 - progreso, 3);
-      let posicionActual = posicionInicial + (posicionFinal - posicionInicial) * easeOutProgress;
-      video.style.left = posicionActual + 'vw';
-      if (tiempoTranscurrido < duracion) {
-        requestAnimationFrame(animar);
-      } else {
-        video.style.left = posicionFinal + 'vw';
-      }
-    }
-    requestAnimationFrame(animar);  
+    const videos = document.querySelectorAll('.vid-prepress');
+    videos.forEach(function(video) {
+        if (video.style.display === 'flex') {
+          video.classList.add('move-video-right')
+        }
+    });
   }
 }
 function reponerEstilos(){
