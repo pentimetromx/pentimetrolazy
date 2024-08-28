@@ -1498,39 +1498,6 @@ function alternarColorVerdeInverso() {
       }
   });
 }
-function abrirSeccionOperativa(elementId){
-
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen(); // Método estándar
-  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-      document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
-      document.documentElement.msRequestFullscreen();
-  }
-
-  const buttsIniciales = ['bot-atras','bot-inicial','iniciar','bot-atras12']
-  var elementosExcluidos = ['container01','buscador','search-form','links-inicialesI','links-iniciales','cont-titulo-operacion','image-background']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  }
-  buttsIniciales.forEach(element => {
-    var boton = document.getElementById(element)
-    boton.style.backgroundColor = 'rgba(255, 24, 55)'
-    boton.style.color = 'white'
-  });
-  animateScroll('agrupaOblicuos-XII')
-  if (typeof elementId !== 'undefined') {
-    const index = idsArray.indexOf(elementId);
-    if (index !== -1) {
-      idsArray.splice(index, 1);
-    }
-    idsArray.push(elementId);
-    console.log(idsArray);
-  }  
-}
 function abrirSeccionAdministrativa(elementId) {  
   allContenedores.forEach(elemen => {
     var element = document.getElementById(elemen)
