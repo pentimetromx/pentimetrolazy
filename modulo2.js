@@ -190,18 +190,18 @@ document.addEventListener('keydown', function(event) {
           ElementosMaII('pantalla-inicial')        
         },577)
         setTimeout(function() {
-          deslizaContenedor('troubleshooting','troubleshoot')
+          abrirSeccionContinua('pantalla-inicial')
         },977) 
         setTimeout(function() {
-          listaEntrenamientosII('archivo')
+          changeButtonStyles('pantalla-tintero')
         },1177) 
         setTimeout(function() {
-          deslizaContenedor('conti-boton-kaizen','kaizen')
+          resultadosMA()
         },1377)
-        /*setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')                       
-        },1677) 
         setTimeout(function() {
+          resultadosEmpleado('icon-ana','updateAna','img7','true')        
+          },1677) 
+        /*setTimeout(function() {
           interfazAvance()
         },1977)
         setTimeout(function() {
@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('butt-links-II') 
+  var contiBoton = document.getElementById('MiGrafica4') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -4519,10 +4519,10 @@ function inicioTracker() {
   // Iniciar nuevos timeouts
   const delay = 122; // Retraso de 122ms entre cada llamada
   for (let i = 0; i < barras.length; i++) {
-      let handle = setTimeout(() => {
-          controlHeight(i);
-      }, i * delay);
-      timeoutHandles.push(handle); // Almacenar el identificador del setTimeout
+    let handle = setTimeout(() => {
+      controlHeight(i);
+    }, i * delay);
+    timeoutHandles.push(handle); // Almacenar el identificador del setTimeout
   }
   trackerStarted = true; // Marcar que inicioTracker ha sido ejecutado
 }
@@ -5037,7 +5037,6 @@ contextMenu.addEventListener('mouseleave', () => {
 });
 // En moviles
 let shouldShowMenu = true;
-
 targetDiv.addEventListener('touchstart', function(event) {
   shouldShowMenu = true;
   setTimeout(() => {
@@ -5064,7 +5063,7 @@ document.addEventListener('touchstart', (event) => {
   }
 });
 const elementosPrePren = document.querySelectorAll('#contenedorElementos .conte-listado, #contenedorElementos .listado');
-    elementosPrePren.forEach(elemento => {
+  elementosPrePren.forEach(elemento => {
     elemento.addEventListener('mouseover', () => {
       elemento.classList.add('hover-style'); // Agregar la clase al elemento actual
     });
@@ -5095,3 +5094,41 @@ subMenu.addEventListener('mouseleave',() =>{
 function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
+function openGraphics(elementId){
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos']  
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i]) 
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+    }
+  }
+  const grafico = document.getElementById(elementId)
+
+  // Elimina cualquier transición anterior
+  grafico.style.transition = 'none';
+  // Forzar un reflujo para asegurar que la eliminación de la transición surta efecto
+  /* grafico.offsetHeight; // Acceder a offsetHeight desencadena el reflujo */
+
+  grafico.style.transition = 'transform 1.6s ease';
+  grafico.style.display='block'
+
+  switch(elementId){
+    case 'canvasContainer4' :
+      grafico.style.transform = 'translateX(-9vw) translateY(-17vh)';
+    break;
+    case 'canvasContainer5' :
+      grafico.style.transform = 'translateX(-15vw) translateY(-17vh)';
+    break;
+    default:
+      console.warn(`No se ha definido una transformación para el elemento con ID "${elementId}".`);
+  }
+
+/*   const grafico = document.getElementById(elementId);
+  grafico.style.display='block'
+  if (grafico) {
+    grafico.classList.add('move-elto');
+  } else {
+    console.error(`Elemento con ID "${elementId}" no encontrado.`);
+  } */
+}
+

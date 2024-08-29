@@ -487,7 +487,7 @@ var imgsContra = document.getElementById('impresorImg')
     }
   break;       
   case 'contPortManta':
-    var elementosExcluidos = ['buscador','search-form','contPortManta', 'container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];           
+    var elementosExcluidos = ['buscador','search-form','contPortManta','manta','container01','agrupaOblicuos-IX','links-iniciales','links-inicialesI'];           
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);  
       if (elemento) {
@@ -1432,13 +1432,16 @@ function videosImpresor(videoId) {
   } 
 } 
 function abrirSeccionContinua(elementId) {  
-  var elementosExcluidos = ['buscador','search-form','toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado'];
+  var elementosExcluidos = ['buscador','search-form','toggleVideoButton','container01','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','gran-cortina'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
     }
   }
+  setTimeout(() => {
+    document.getElementById('gran-cortina').style.display='none'
+  }, 500);
   reponerEstilos()
   document.body.style.zoom = "100%"
   if (typeof elementId !== 'undefined') {
@@ -3097,10 +3100,11 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
       }
       reponerEstilos()
-      document.getElementById('links-inicialesI').style.left='107vw'
-      document.getElementById('links-iniciales').style.left='127vw'
       solucionador.style.display='grid'
       solucionador.style.left='11.5%'
+
+      document.getElementById('links-inicialesI').style.left='107vw'
+      document.getElementById('links-iniciales').style.left='127vw'
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
       for (var i = 0; i < botones.length; i++) {
@@ -3116,7 +3120,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           }
         }  
       }
-      reponerEstilos()
     break;
     case 'link3':
       var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','largoImpresion','linksMA','linkLis','butt-links-II','conteneMantaut','conti-boton','largoImpresion','contImgEntrenos','padre-neumat','contImaginario','imag3','bailarina']  
@@ -4358,7 +4361,7 @@ function ubicaPerfil(idEmpleado) {
         element.style.display = 'flex'
         element.style.height = '12vh'
         element.style.width = '25vw'
-        element.style.top = '-4vh'
+        element.style.top = '-1vh'
         element.style.left = '2vw'
         var label = element.querySelector('label')
         if (label) {
@@ -4463,6 +4466,10 @@ function resultadosMA(){
     }
   }
   if(screenWidth < 500){
+    document.getElementById('gran-cortina').style.display='flex'
+    setTimeout(() => {
+      document.getElementById('gran-cortina').style.display='none'
+    }, 500);
     var etiquetasIconos = document.getElementsByClassName('lblNombres');
     for(var i = 0; i < etiquetasIconos.length; i++){
       var labelIcon = etiquetasIconos[i];

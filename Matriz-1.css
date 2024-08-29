@@ -1031,6 +1031,7 @@ width:447px ;
   top: 2%;  
   width: 350px;
   height: 255px;
+  cursor: pointer;
 }
 #canvasContainer5{
   position: absolute;
@@ -1039,6 +1040,7 @@ width:447px ;
   top: 2%;  
   width: 357px;
   height: 255px;
+  cursor: pointer;
 }  
 #canvasContainer6{
   position: absolute;
@@ -1047,7 +1049,7 @@ width:447px ;
   top: 2%;  
   width: 343px;
   height: 255px;
-
+  cursor: pointer;
 }
 #canvasContainer7{
   position: absolute;
@@ -1056,6 +1058,7 @@ width:447px ;
   top: 40%;  
   width: 350px;
   height: 255px;
+  cursor: pointer;
 }
 #canvasContainer8{
   position: absolute;
@@ -1064,6 +1067,7 @@ width:447px ;
   top: 40%;  
   width: 350px;
   height: 255px;
+  cursor: pointer;
 }
 #canvasContainer9{
   position: absolute;
@@ -1072,23 +1076,7 @@ width:447px ;
   top:56%;  
   width: 333px;
   height: 255px;
-
-}
-#pantalla-servicio,
-#pantalla-mandos,
-#pantalla-frente,
-#pantalla-atras,
-#contLinksTorre,  
-#pantalla-tintero{
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center; 
-  top:14vh;
-  left:0;
-  height: 80vh;
-  width: 99vw;
-  display: none;
+  cursor: pointer;
 }
 #cont-links {
   position: absolute;
@@ -1584,24 +1572,43 @@ width:447px ;
   width: 503px;
   border-radius: 10px; 
 }
+#pantalla-servicio,
+#pantalla-mandos,
+#pantalla-frente,
+#pantalla-atras,
+#contLinksTorre,  
+#pantalla-tintero{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  top:14vh;
+  left:0;
+  height: 80vh;
+  width: 99vw;
+  display: none;
+}
 #imgsRepuestos-V,
 #imgsRepuestos-IV,
 #imgsRepuestos-III,
-#imgsRepuestos-II{
+#imgsRepuestos-II {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  left:5%;
-  top:0;
+  display: flex; /* Define al contenedor como flexbox */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  left: 5%;
+  top: 0;
+  gap:1%;
+  width: 13%;
+  height: 78%; /* Altura total del contenedor */
 }
-#imgsRepuestos-V img,
-#imgsRepuestos-IV img,
-#imgsRepuestos-III img,
-#imgsRepuestos-II img{
-  height:15.5vh;
-  width:11.5vw;
+#imgsRepuestos-V .img-pantalla,
+#imgsRepuestos-IV .img-pantalla,
+#imgsRepuestos-III .img-pantalla,
+#imgsRepuestos-II .img-pantalla{
+  height: 25%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 20px;
-  padding: 7px;
 }
 #contPortPlaca,
 #contPortManta,
@@ -4958,6 +4965,10 @@ input.numero:focus {
 .move-video-right{
   transform: translateX(15vw);
 }
+.move-elto {
+  transform: translateX(-19vw) translateY(-25vh);
+  transition: transform 1.6s ease;
+}
  #first_half {
   position: relative;
   display: grid;
@@ -5902,7 +5913,7 @@ height:21%;
     display: flex;
     cursor: pointer;
     text-align: center;
-    top:52%;
+    top:51%;
     left:24%;
     height:3.7vh;
     width:46vw;
@@ -6757,21 +6768,31 @@ height:21%;
   #imgsRepuestos-V,
   #imgsRepuestos-IV,
   #imgsRepuestos-III,
-  #imgsRepuestos-II{
+  #imgsRepuestos-II {
     position: absolute;
-    flex-direction: column;
     display: flex;
-    margin-top: 56%;
-    margin-left: 20%; 
+    top: 35%;
+    left: 25%;
+    height:20%; 
+    width: 26%;
+    display: grid; /* Define al contenedor como grid */
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px; /* Espacio entre las imágenes */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
+  
   #imgsRepuestos-V img,
   #imgsRepuestos-IV img,
   #imgsRepuestos-III img,
   #imgsRepuestos-II img,
   #imgsRepuestos img{
-   height:10vh;
-   width:22.8vw;
-  } 
+    width: 100%; /* Hace que cada imagen ocupe todo el espacio de su celda */
+    height:100%; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra toda su celda sin distorsión */
+    border: 1px solid #ddd; /* Opcional: añade un borde alrededor de las imágenes */
+    border-radius: 5px; /* Opcional: añade bordes redondeados a las imágenes */
+  }
   #imgTorre-a,
   #imgTorre-f{
     position: absolute;
@@ -6786,19 +6807,30 @@ height:21%;
   #agrupaOblicuos-C,
   #agrupaOblicuos-XC,
   #agrupaOblicuos-DXXX,
+  #agrupaOblicuos-XXX {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    left:81%;
+    top: 0;
+    width: 11%;
+    height:40%;
+}
+  #agrupaOblicuos-XXX,
   #agrupaOblicuos-DXX,
   #agrupaOblicuos-DX,
-  #agrupaOblicuos-D,
   #agrupaOblicuos-XD,
-  #agrupaOblicuos-XXX {
-  position:absolute;
-  display: flex;
-  flex-direction: column;
-  left:81%;
-  top: 0;
-  width: 11%;
-  height:40%;
-}
+  #agrupaOblicuos-D{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    left:81%;
+    top: 0;
+    width: 11%;
+    height:18.6%;
+
+  }
+
 .cont-oblicuos {
   position: absolute;
   display: flex;
@@ -6934,7 +6966,8 @@ height:21%;
     justify-content: center;
     left: 23%;  
     top:0;
-    width:15vw;  
+    width:25vw;
+    height: 6vh; 
     cursor: pointer;
     z-index: 3;
   }
@@ -6944,6 +6977,13 @@ height:21%;
     display: flex;
     font-size: 3vw;
     top: 0;
+  }
+  #textToColor{
+    position: relative;
+    color: white;
+    transition: color 0.2s;
+    cursor: pointer;
+    width:100%;
   }
   .iridescent-element li {
     padding: 10px;
@@ -6984,7 +7024,6 @@ height:21%;
   #contenedor-7-II button{
     height: 50px;
   } 
-  /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */
   #subtitulo-calidad,
   #subtitulo-comercial{
     position: absolute;
@@ -7950,7 +7989,7 @@ height:21%;
     flex-direction: row;
     justify-content: center;
     width:98vw;
-    height:41vh;
+    height:88vh;
     top:10vh;
     left: 1vw;
     display: none;
@@ -7959,7 +7998,7 @@ height:21%;
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: -2.1vh;
+    top:-7vh;
     left:28%;    
     height: 67%;  
     width: 27%;    
@@ -7967,9 +8006,9 @@ height:21%;
   #imgTorre{
     position: absolute;
     display: flex;
-    left: 0;
-    top:0;
-    height:80%;
+    left: 0.5%;
+    top:0.5%;
+    height:36.4%;
     width: 75%;
     border-radius: 8px;
   }
@@ -8786,12 +8825,15 @@ height:21%;
     display: flex;
     flex-direction: column;
     left: 37%;
-    top:2%;
+    top:5%;
     width: 61%;
     height:93%;
     gap: 2px;
     border-radius: 21px;
     display: none;
+  }
+  .graphs{
+    cursor: pointer;
   }
   .graphs-employee {
     flex: 1;
@@ -8811,7 +8853,7 @@ height:21%;
     position:absolute;
     display: flex;
     flex-direction: column;
-    top:27%;
+    top:30%;
     left:0.7%;
     width:31%;
     height:65.5%;
@@ -9791,6 +9833,16 @@ height:21%;
     color: black;
     font-weight: bold;
   }
+  #gran-cortina {
+    position: fixed; /* Usa 'fixed' para que cubra toda la ventana de visualización */
+    display: none; /* Inicialmente está oculto */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Cubre todo el ancho de la ventana */
+    height: 100vh; /* Cubre todo el alto de la ventana */
+    background-color: rgba(0, 0, 0, 0.1); /* Semitransparente para ver los elementos detrás */
+    z-index: 5; /* Asegura que esté sobre otros elementos */
+  }  
 }
 
 
