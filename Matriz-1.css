@@ -972,10 +972,12 @@ width:447px ;
 }
 #contLineas{
   position: relative;
-  left: 16%;
-  margin-top: 5.3%;
-  width: 84%; /* 100% - 16% */
-  height: 500px;
+  left: 17%;
+  margin-top:3%;
+  width: 82%;
+  height:65%;
+  border-radius: 15px;
+  background-color: rgb(0, 0, 17);
   display: none;
 }
 #canvasContainer2{
@@ -1025,58 +1027,64 @@ width:447px ;
   border-radius: 17px;
 }
 #canvasContainer4{
-  position: absolute;
+  position:fixed;
   display: flex;
-  left: 1.4%;
-  top: 2%;  
-  width: 350px;
-  height: 255px;
+  left:17vw;
+  top: 32vh;  
+  width:26vw;
+  height:35.4vh;
   cursor: pointer;
+  transition: left 1.5s ease, top 1.5s ease; 
 }
 #canvasContainer5{
-  position: absolute;
+  position:fixed;
   display: flex;
-  left: 33%;
-  top: 2%;  
-  width: 357px;
-  height: 255px;
+  left:44vw;
+  top:32vh; 
+  width:26vw;
+  height:35.4vh;
   cursor: pointer;
+  transition: left 1.5s ease, top 1.5s ease; 
 }  
 #canvasContainer6{
-  position: absolute;
+  position:fixed;
   display: flex;
-  left: 67%;
-  top: 2%;  
-  width: 343px;
-  height: 255px;
+  left: 71vw;
+  top:32vh;  
+  width:26vw;
+  height:35.4vh;
   cursor: pointer;
+  transition: left 1.5s ease, top 1.5s ease; 
 }
 #canvasContainer7{
-  position: absolute;
+  position:fixed;
   display: flex;
-  left: 3%;
-  top: 40%;  
-  width: 350px;
-  height: 255px;
+  left:17vw;
+  top: 59vh;  
+  width:26vw;
+  height:35.4vh;
   cursor: pointer;
+  transition: left 1.5s ease, top 1.5s ease; 
 }
 #canvasContainer8{
-  position: absolute;
+  position:fixed;
   display: flex;
-  left: 36%;
-  top: 40%;  
-  width: 350px;
-  height: 255px;
+  left:44vw;
+  top:59vh;  
+  width:26vw;
+  height:35.4vh;
   cursor: pointer;
+  transition: left 1.5s ease, top 1.5s ease; 
 }
 #canvasContainer9{
-  position: absolute;
+  position:fixed;
   display: flex;
-  left: 67.5%;
-  top:56%;  
-  width: 333px;
-  height: 255px;
+  left:71vw;
+  top:59vh;  
+  width:26vw;
+  height:35.4vh;
   cursor: pointer;
+  transition: left 1.5s ease, top 1.5s ease; 
 }
 #cont-links {
   position: absolute;
@@ -1125,7 +1133,6 @@ width:447px ;
   width:13%;
   height:33%;
 }
-
 #frec-lubrica{
   position: absolute;
   display: flex;
@@ -8821,27 +8828,88 @@ height:21%;
     font-size:2.5vw;
   }
   #contLineas-II{
-    position:absolute;
+    position:relative;
     display: flex;
     flex-direction: column;
-    left: 37%;
-    top:5%;
-    width: 61%;
-    height:93%;
+    left:37vw;
+    top:3vh;
+    width:60vw;
+    height:79vh;
     gap: 2px;
     border-radius: 21px;
     display: none;
+  }
+  #canvasContainer4-II{
+    position:fixed;
+    display: flex;
+    left:37vw;
+    top:21vh;  
+    width:59vw;
+    height:13vh;
+    cursor: pointer;
+    transition: left 1.5s ease, top 1.5s ease; 
+  }
+  #canvasContainer5-II{
+    position:fixed;
+    display: flex;
+    left:37vw;
+    top:34vh; 
+    width:59vw;
+    height:13vh;
+    cursor: pointer;
+    transition: left 1.5s ease, top 1.5s ease; 
+  }  
+  #canvasContainer6-II{
+    position:fixed;
+    display: flex;
+    left:37vw;
+    top:47vh;  
+    width:59vw;
+    height:13vh;
+    cursor: pointer;
+    transition: left 1.5s ease, top 1.5s ease; 
+  }
+  #canvasContainer7-II{
+    position:fixed;
+    display: flex;
+    left:37vw;
+    top: 60vh;  
+    width:59vw;
+    height:13vh;
+    cursor: pointer;
+    transition: left 1.5s ease, top 1.5s ease; 
+  }
+  #canvasContainer8-II{
+    position:fixed;
+    display: flex;
+    left:37vw;
+    top:73vh;  
+    width:59vw;
+    height:13vh;
+    cursor: pointer;
+    transition: left 1.5s ease, top 1.5s ease; 
+  }
+  #canvasContainer9-II{
+    position:fixed;
+    display: flex;
+    left:37vw;
+    top:86vh;  
+    width:59vw;
+    height:13vh;
+    cursor: pointer;
+    transition: left 1.5s ease, top 1.5s ease; 
   }
   .graphs{
     cursor: pointer;
   }
   .graphs-employee {
-    flex: 1;
+    /* flex: 1; */
     background-color: rgb(0,0,33);
     border: 1px solid white;
     border-radius: 14px;
     display: flex;
     overflow: hidden;
+    cursor: pointer;
   }
   .canva-graphs {
     width: 100%;

@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('MiGrafica4') 
+  var contiBoton = document.getElementById('canvasContainer4-II') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -1938,7 +1938,7 @@ var chart10II = new Chart(miCanvas9II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 4
+            size: 7
           }
         }
       },
@@ -1949,7 +1949,7 @@ var chart10II = new Chart(miCanvas9II, {
         ticks: {
           color: 'rgb(255,255,255)',
           font: {
-            size: 5
+            size: 7
           },
           beginAtZero: true
         }
@@ -1964,7 +1964,7 @@ var chart10II = new Chart(miCanvas9II, {
         display: true,
         text: ' Ayudas de trabajo',
         font: {
-          size: 14
+          size: 20
         }
       }
     }
@@ -5095,40 +5095,47 @@ function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
 function openGraphics(elementId){
-  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos']  
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']  
   for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]) 
+    var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
     }
   }
-  const grafico = document.getElementById(elementId)
-
-  // Elimina cualquier transición anterior
-  grafico.style.transition = 'none';
-  // Forzar un reflujo para asegurar que la eliminación de la transición surta efecto
-  /* grafico.offsetHeight; // Acceder a offsetHeight desencadena el reflujo */
-
-  grafico.style.transition = 'transform 1.6s ease';
-  grafico.style.display='block'
-
-  switch(elementId){
-    case 'canvasContainer4' :
-      grafico.style.transform = 'translateX(-9vw) translateY(-17vh)';
-    break;
-    case 'canvasContainer5' :
-      grafico.style.transform = 'translateX(-15vw) translateY(-17vh)';
-    break;
-    default:
-      console.warn(`No se ha definido una transformación para el elemento con ID "${elementId}".`);
+  document.getElementById('contLineas').style.backgroundColor = '#333333';
+  const elementos = document.querySelectorAll('.graphs-lines');
+  elementos.forEach((miElemento) => {
+    if (miElemento.id === elementId) {
+      miElemento.style.display = 'block';
+      miElemento.style.left = '16vw';
+      miElemento.style.top = '15vh';
+      miElemento.style.backgroundColor='rgb(0,0,17)'
+      miElemento.style.borderRadius = '10px';
+    }
+  });
+  if(screenWidth < 500){
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      }
+    }
+    const elementos = document.querySelectorAll('.graphs-employee');
+    elementos.forEach((miElemento) => {
+      if (miElemento.id === elementId) {
+        miElemento.style.border='none'
+        miElemento.style.display = 'block';
+        miElemento.style.left = '0';
+        miElemento.style.top = '15vh';
+        miElemento.style.height='10vh'
+        miElemento.style.backgroundColor='rgb(0,0,17)'
+      }
+    });
+  
+  
+    return
   }
 
-/*   const grafico = document.getElementById(elementId);
-  grafico.style.display='block'
-  if (grafico) {
-    grafico.classList.add('move-elto');
-  } else {
-    console.error(`Elemento con ID "${elementId}" no encontrado.`);
-  } */
 }
 

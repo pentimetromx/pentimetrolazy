@@ -347,17 +347,19 @@ if (currentIndex < imageElements.length) {
 function applyImageEffects4() {
 const imageElements = document.querySelectorAll('#isopropil1,#isopropil2,#isopropil3')
 let currentIndex = 0;
-function applyEffect() {
-if (currentIndex < imageElements.length) {
-  const currentImage = imageElements[currentIndex]
-  currentImage.style.transition = 'transform 0.1s'
-  currentImage.style.transform = 'scale(2.0)'
-  setTimeout(() => {
-    currentImage.style.transition = 'transform 0.7s'
-    currentImage.style.transform = 'scale(1)'
-    currentIndex++;
-    applyEffect()
-  }, 177) }}applyEffect()
+  function applyEffect() {
+  if (currentIndex < imageElements.length) {
+    const currentImage = imageElements[currentIndex]
+    currentImage.style.transition = 'transform 0.1s'
+    currentImage.style.transform = 'scale(2.0)'
+    setTimeout(() => {
+      currentImage.style.transition = 'transform 0.7s'
+      currentImage.style.transform = 'scale(1)'
+      currentIndex++;
+      applyEffect()
+    }, 177)}
+  }
+  applyEffect()
 }
 function applyImageEffects5() {
 const imageElements = document.getElementsByClassName('butts-inicio')
@@ -4388,15 +4390,26 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     }
   } 
   if (iconosPermitidos.includes(icono)) {
-  } 
+  }
+  document.getElementById('contLineas').style.backgroundColor='rgb(0,0,17)'  
+  const elementos = document.querySelectorAll('.graphs-lines');
+  elementos.forEach((elemento) => {
+    elemento.removeAttribute('style');
+  });
+
   if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer9-II','MiGrafica9-II']
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
-    }  
+    } 
+    const elementos = document.querySelectorAll('.graphs-employee');
+    elementos.forEach((elemento) => {
+      elemento.removeAttribute('style');
+    });
+    
     if(state === 'true'){
       setTimeout(() => {
         animateScroll('contenedor-vertical')
