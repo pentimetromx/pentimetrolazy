@@ -1960,13 +1960,15 @@ var chart10II = new Chart(miCanvas9II, {
       legend: {
         display: false
       },
-      title: {
-        display: true,
-        text: ' Ayudas de trabajo',
-        font: {
-          size: 20
+        title: {
+          display: true,
+          text: 'Ayudas de trabajo',
+          font: {
+            size: 20
+          },
+          align: 'center',
         }
-      }
+
     }
   }
 })
@@ -5126,10 +5128,10 @@ function openGraphics(elementId){
       if (miElemento.id === elementId) {
         miElemento.style.border='none'
         miElemento.style.display = 'block';
-        miElemento.style.left = '0';
-        miElemento.style.top = '15vh';
-        miElemento.style.height='10vh'
-        miElemento.style.backgroundColor='rgb(0,0,17)'
+        miElemento.style.left = '33vw';
+        miElemento.style.top = '21.7vh';
+        miElemento.style.height='20vh'
+        /* miElemento.style.backgroundColor='rgb(0,0,17)' */
       }
     });
   
