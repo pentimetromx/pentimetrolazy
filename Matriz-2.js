@@ -428,40 +428,39 @@ function abrirInterfaz() {
     }, 3400);      
   }
 }
-
 function activarPantallaCompleta(){
-  if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-  } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) {
-      document.documentElement.msRequestFullscreen();
-  }
-}
-function salirPantallaCompleta() {
-  if (document.exitFullscreen) {
+  // Verificamos si el navegador está en modo de pantalla completa
+  if (
+    document.fullscreenElement || 
+    document.mozFullScreenElement ||
+    document.webkitFullscreenElement || 
+    document.msFullscreenElement 
+  ) {
+    // Si está en pantalla completa, salir
+    if (document.exitFullscreen) {
       document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) {
+    } else if (document.mozCancelFullScreen) { 
       document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) {
+    } else if (document.webkitExitFullscreen) {
       document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
+    } else if (document.msExitFullscreen) { 
       document.msExitFullscreen();
+    }
+  } else {
+    const docEl = document.documentElement;
+    if (docEl.requestFullscreen) {
+      docEl.requestFullscreen();
+    } else if (docEl.mozRequestFullScreen) {
+      docEl.mozRequestFullScreen();
+    } else if (docEl.webkitRequestFullscreen) {
+      docEl.webkitRequestFullscreen();
+    } else if (docEl.msRequestFullscreen) { 
+      docEl.msRequestFullscreen();
+    }
   }
+
+
 }
-
-let contadorDeClics = 0;
-const miBoton = document.getElementById('iniciar');
-miBoton.addEventListener('click', () => {
-  contadorDeClics++;
-  if (contadorDeClics === 1) {
-    activarPantallaCompleta()
-  } else if (contadorDeClics === 2) {
-    salirPantallaCompleta()
-    contadorDeClics = 0;
-  }
-});
-
 function VolveraInicio(){
   location.reload()
   idsArray = []

@@ -5131,7 +5131,7 @@ function openGraphics(elementId){
         miElemento.style.left = '33vw';
         miElemento.style.top = '21.7vh';
         miElemento.style.height='20vh'
-        /* miElemento.style.backgroundColor='rgb(0,0,17)' */
+        miElemento.style.backgroundColor='rgb(0,0,17)'
       }
     });
   
