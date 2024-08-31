@@ -5129,7 +5129,7 @@ function openGraphics(elementId){
         miElemento.style.border='none'
         miElemento.style.display = 'block';
         miElemento.style.left = '33vw';
-        miElemento.style.top = '21.7vh';
+        miElemento.style.top = '21vh';
         miElemento.style.height='20vh'
         miElemento.style.backgroundColor='rgb(0,0,17)'
       }
