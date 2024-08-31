@@ -5134,9 +5134,8 @@ function openGraphics(elementId){
         miElemento.style.backgroundColor='rgb(0,0,17)'
       }
     });
+    desactivarClicsPorUnTiempo(2000)  
   
-  
-    return
   }
 
 }
