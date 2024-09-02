@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('canvasContainer4-II') 
+  var contiBoton = document.getElementById('metas-diarias') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -5097,7 +5097,7 @@ function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
 function openGraphics(elementId){
-  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']  
+  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])
     if (elemento) {
@@ -5116,7 +5116,7 @@ function openGraphics(elementId){
     }
   });
   if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II']  
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II','metas-diarias']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])
       if (elemento) {
@@ -5134,9 +5134,25 @@ function openGraphics(elementId){
         miElemento.style.backgroundColor='rgb(0,0,17)'
       }
     });
-    desactivarClicsPorUnTiempo(2000)  
+    desactivarClicsPorUnTiempo(1500)
+    mostrarSecuencialmente()
   
   }
 
+}
+
+function mostrarSecuencialmente() {
+  const elementos = document.querySelectorAll("#metas-diarias li");
+  elementos.forEach((li, index) => {
+    setTimeout(() => {
+      li.classList.remove("visible");
+    }, index * 1); // 0.1 segundos de intervalo
+  });
+
+  elementos.forEach((li, index) => {
+    setTimeout(() => {
+      li.classList.add("visible");
+    }, index * 100); // 0.1 segundos de intervalo
+  });
 }
 

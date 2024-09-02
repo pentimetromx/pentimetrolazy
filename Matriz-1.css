@@ -1600,22 +1600,24 @@ width:447px ;
 #imgsRepuestos-III,
 #imgsRepuestos-II {
   position: absolute;
-  display: flex; /* Define al contenedor como flexbox */
-  flex-direction: column; /* Coloca los elementos en una columna */
+  display: flex;
+  flex-direction: column;
   left: 5%;
   top: 0;
   gap:1%;
-  width: 13%;
-  height: 78%; /* Altura total del contenedor */
+  width: 14%;
+  height: 83%;
 }
 #imgsRepuestos-V .img-pantalla,
 #imgsRepuestos-IV .img-pantalla,
 #imgsRepuestos-III .img-pantalla,
 #imgsRepuestos-II .img-pantalla{
-  height: 25%;
+  position:relative;
+  display: flex;
+  height: 24%;
   width: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 13px;
 }
 #contPortPlaca,
 #contPortManta,
@@ -1634,11 +1636,19 @@ width:447px ;
 #placa{
   position: absolute;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  gap: 2%;
   left: 2vw;
   top:0;
   width: 18%;
-  height: 84%;
+  height: 76%;
+}
+#impresorImg img,
+#manta img,
+#placa img{
+  position: relative;
+  width: 100%;
+  height: 32%;
 }
 #contPortManta video,
 #contImpresor video,
@@ -5818,6 +5828,14 @@ height:21%;
   color: black;
   font-weight: bold;
 }
+#metas-diarias{
+  position:relative;
+  display: flex;
+  left: 2vw;
+  top:40vh;
+  width: 97vw;
+  height: 60vh;
+}
 
 @media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
@@ -6778,27 +6796,24 @@ height:21%;
   #imgsRepuestos-II {
     position: absolute;
     display: flex;
+    flex-direction: column;
     top: 35%;
     left: 25%;
-    height:20%; 
+    height:55%; 
     width: 26%;
-    display: grid; /* Define al contenedor como grid */
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px; /* Espacio entre las imágenes */
-    box-sizing: border-box; /* Incluye padding y border en el ancho total */
-  }
-  
+    gap:1px;
+    box-sizing: border-box;
+  }  
   #imgsRepuestos-V img,
   #imgsRepuestos-IV img,
   #imgsRepuestos-III img,
   #imgsRepuestos-II img,
   #imgsRepuestos img{
-    width: 100%; /* Hace que cada imagen ocupe todo el espacio de su celda */
-    height:100%; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra toda su celda sin distorsión */
-    border: 1px solid #ddd; /* Opcional: añade un borde alrededor de las imágenes */
-    border-radius: 5px; /* Opcional: añade bordes redondeados a las imágenes */
+    width: 100%;
+    height: 24%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
   }
   #imgTorre-a,
   #imgTorre-f{
@@ -7949,8 +7964,9 @@ height:21%;
   #impresorImg img,
   #manta img,
   #placa img{
+    position: relative;
     width:100%;
-    height:27%;
+    height:30%;
     border-radius: 11px;  
   }
   #imagenes-impresor,
@@ -9911,6 +9927,35 @@ height:21%;
     background-color: rgba(0, 0, 0, 0.1); /* Semitransparente para ver los elementos detrás */
     z-index: 5; /* Asegura que esté sobre otros elementos */
   }  
+  #metas-diarias{
+    position:absolute;
+    display: flex;
+    font-family: "Oswald";
+    color: yellow;
+    font-size: 0.97em;    
+    left:0;
+    top:40vh;
+    width: 97vw;
+    height: 60vh;
+    transition: transform 0.5s ease;
+  }
+
+  #metas-diarias li {
+    opacity: 0; /* Oculta los elementos inicialmente */
+    color: yellow; /* Color del texto de las metas */
+    transition: opacity 0.5s ease; /* Transición suave de visibilidad */
+  }
+  
+  #metas-diarias li.visible {
+    opacity: 1; /* Hace visible el elemento */
+  }
+  
+  #metas-diarias li .indice {
+    color: rgb(0, 191, 255);
+  }
+  
+  
+
 }
 
 
