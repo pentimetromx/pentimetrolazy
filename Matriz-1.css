@@ -8913,19 +8913,19 @@ height:21%;
     width:59vw;
     height:13vh;
     cursor: pointer;
-    transition: left 1.5s ease, top 1.5s ease; 
+    /* transition: left 1.6s ease, top 1.6s ease;  */
   }
   .graphs{
     cursor: pointer;
   }
-  .graphs-employee {
-    /* flex: 1; */
+  .graphs-employee{
     background-color: rgb(0,0,33);
     border: 1px solid white;
     border-radius: 14px;
     display: flex;
     overflow: hidden;
     cursor: pointer;
+    transition: left 1.6s ease, top 1.6s ease; 
   }
   .canva-graphs {
     width: 100%;
@@ -9927,6 +9927,7 @@ height:21%;
     background-color: rgba(0, 0, 0, 0.1); /* Semitransparente para ver los elementos detrás */
     z-index: 5; /* Asegura que esté sobre otros elementos */
   }  
+  /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
   #metas-diarias{
     position:absolute;
     display: flex;
@@ -9939,20 +9940,52 @@ height:21%;
     height: 60vh;
     transition: transform 0.5s ease;
   }
-
   #metas-diarias li {
-    opacity: 0; /* Oculta los elementos inicialmente */
-    color: yellow; /* Color del texto de las metas */
-    transition: opacity 0.5s ease; /* Transición suave de visibilidad */
-  }
-  
+    opacity: 0;
+    color: yellow;
+    transition: opacity 0.5s ease;
+  }  
   #metas-diarias li.visible {
-    opacity: 1; /* Hace visible el elemento */
-  }
-  
+    opacity: 1;
+  }  
   #metas-diarias li .indice {
     color: rgb(0, 191, 255);
   }
+
+
+  #calendario-mes{
+    position: absolute;
+    display: grid;
+    left:10vw;
+    top:45vh;
+    gap: 5px;
+    width:80vw;
+    height: 33vh;
+    margin: auto;
+    display: none;
+  }  
+  .semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }  
+  .dia {
+    display:none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    color: rgb(0, 191, 255); /* Azul luminoso */
+    font-weight: bold;
+    height: 15%;
+  }  
+  .vacio {
+    background-color: #f0f0f0; /* Color para los días vacíos */
+    border: none;
+  }
+  
   
   
 

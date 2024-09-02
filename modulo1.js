@@ -4371,10 +4371,11 @@ function ubicaPerfil(idEmpleado) {
             label.style.color = colors[colorIndex]
             colorIndex = (colorIndex + 1) % colors.length;
           }, 200)
+        }
+      } else {
+        element.style.display = 'none'
       }
-    } else {
-      element.style.display = 'none'
-    }}
+    }
   
 
   }

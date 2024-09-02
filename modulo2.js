@@ -5116,13 +5116,19 @@ function openGraphics(elementId){
     }
   });
   if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II','metas-diarias']
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
+    const elementosLi = document.querySelectorAll("#metas-diarias li")
+    elementosLi.forEach((li, index) => {
+      setTimeout(() => {
+        li.classList.remove("visible");
+      }, index * 1);
+    });  
     const elementos = document.querySelectorAll('.graphs-employee');
     elementos.forEach((miElemento) => {
       if (miElemento.id === elementId) {
@@ -5135,24 +5141,44 @@ function openGraphics(elementId){
       }
     });
     desactivarClicsPorUnTiempo(1500)
-    mostrarSecuencialmente()
-  
+    if(elementId === 'canvasContainer9-II'){
+      setTimeout(() => {
+        mostrarSecuencialmente()
+      }, 1400);
+    } 
+    if(elementId === 'canvasContainer7-II'){
+      setTimeout(() => {
+        document.getElementById('calendario-mes').style.display='grid'
+          const dias = document.querySelectorAll(".dia"); // Selecciona todos los elementos con la clase .dia
+          let index = 0;
+        
+          const interval = setInterval(() => {
+            if (index < dias.length) {
+              dias[index].style.display = "flex"; // Hace visible el elemento actual
+              index++;
+            } else {
+              clearInterval(interval); // Detiene el intervalo cuando todos los elementos están visibles
+            }
+          }, 77); // Intervalo de 77 milisegundos
+        
+      }, 1400);
+    } 
   }
-
 }
 
 function mostrarSecuencialmente() {
-  const elementos = document.querySelectorAll("#metas-diarias li");
+  const padreElementos = document.getElementById('metas-diarias')
+  const elementos = document.querySelectorAll("#metas-diarias li")
+  padreElementos.style.display = 'flex'
   elementos.forEach((li, index) => {
     setTimeout(() => {
       li.classList.remove("visible");
-    }, index * 1); // 0.1 segundos de intervalo
+    }, index * 1);
   });
-
   elementos.forEach((li, index) => {
     setTimeout(() => {
       li.classList.add("visible");
-    }, index * 100); // 0.1 segundos de intervalo
+    }, index * 100); 
   });
 }
 
