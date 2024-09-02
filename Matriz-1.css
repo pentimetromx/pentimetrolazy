@@ -9956,7 +9956,7 @@ height:21%;
   #calendario-mes{
     position: absolute;
     display: grid;
-    left:10vw;
+    left:17vw;
     top:45vh;
     gap: 5px;
     width:80vw;
@@ -9985,9 +9985,34 @@ height:21%;
     background-color: #f0f0f0; /* Color para los días vacíos */
     border: none;
   }
-  
-  
-  
+
+  #meses{
+    position: absolute;
+    top: 45vh;
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    gap: 5px;
+    height: 51vh;
+    width: 8vw;
+  }
+  .mes{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(0, 191, 255);
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    color: rgb(0, 191, 255);
+    background-color: rgb(0, 0, 17);
+    font-weight: bold;
+    font-size: 0.6em;
+    width: 100%;
+    cursor: pointer;
+  }
+  .mes:hover {
+    background-color: #eee;
+  } 
 
 }
 

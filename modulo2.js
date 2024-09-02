@@ -5165,7 +5165,6 @@ function openGraphics(elementId){
     } 
   }
 }
-
 function mostrarSecuencialmente() {
   const padreElementos = document.getElementById('metas-diarias')
   const elementos = document.querySelectorAll("#metas-diarias li")
@@ -5182,3 +5181,69 @@ function mostrarSecuencialmente() {
   });
 }
 
+
+
+  // Seleccionar todos los elementos de mes
+  const meses = document.querySelectorAll("#meses .mes");
+  const calendarioMes = document.getElementById("calendario-mes");
+
+  // Configuración de los días por mes
+  const diasPorMes = {
+    Enero: 31,
+    Febrero: 28,
+    Marzo: 31,
+    Abril: 30,
+    Mayo: 31,
+    Junio: 30,
+    Julio: 31,
+    Agosto: 31,
+    Septiembre: 30,
+    Octubre: 31,
+    Noviembre: 30,
+    Diciembre: 31,
+  };
+
+  // Función para mostrar el calendario según el mes
+  function mostrarCalendario(mesSeleccionado) {
+    const diasDelMes = diasPorMes[mesSeleccionado];
+
+    // Limpiar el calendario
+    calendarioMes.innerHTML = "";
+
+    // Crear semanas y días
+    let semana = document.createElement("div");
+    semana.className = "semana";
+    for (let dia = 1; dia <= diasDelMes; dia++) {
+      const diaElemento = document.createElement("div");
+      diaElemento.style.display='flex'
+      diaElemento.className = "dia";
+      diaElemento.textContent = dia;
+      semana.appendChild(diaElemento);
+
+      // Añadir nueva fila para cada semana
+      if (dia % 7 === 0) {
+        calendarioMes.appendChild(semana);
+        semana = document.createElement("div");
+        semana.className = "semana";
+      }
+    }
+
+    // Añadir la última semana incompleta
+    if (semana.children.length > 0) {
+      calendarioMes.appendChild(semana);
+    }
+
+    // Rellenar días vacíos si es necesario
+    while (semana.children.length < 7) {
+      const diaVacio = document.createElement("div");
+      diaVacio.className = "dia vacio";
+      semana.appendChild(diaVacio);
+    }
+  }
+
+  // Asignar eventos de clic a cada mes
+  meses.forEach((mes) => {
+    mes.addEventListener("click", function () {
+      mostrarCalendario(mes.textContent);
+    });
+  });
