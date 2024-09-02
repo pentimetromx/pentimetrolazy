@@ -4406,6 +4406,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     } 
+    desactivarClicsPorUnTiempo(1600)
     const elementos = document.querySelectorAll('.graphs-employee');
     elementos.forEach((elemento) => {
       elemento.removeAttribute('style');

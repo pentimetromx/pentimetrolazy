@@ -5183,63 +5183,63 @@ function mostrarSecuencialmente() {
 
 
 
-  // Seleccionar todos los elementos de mes
-  const meses = document.querySelectorAll("#meses .mes");
-  const calendarioMes = document.getElementById("calendario-mes");
+const meses = document.querySelectorAll("#meses .mes");
+const calendarioMes = document.getElementById("calendario-mes");
+const monthDisplay = document.getElementById("month-display"); // Elemento para mostrar el nombre del mes
 
-  // Configuración de los días por mes
-  const diasPorMes = {
-    Enero: 31,
-    Febrero: 28,
-    Marzo: 31,
-    Abril: 30,
-    Mayo: 31,
-    Junio: 30,
-    Julio: 31,
-    Agosto: 31,
-    Septiembre: 30,
-    Octubre: 31,
-    Noviembre: 30,
-    Diciembre: 31,
-  };
+const diasPorMes = {
+  Enero: 31,
+  Febrero: 28,
+  Marzo: 31,
+  Abril: 30,
+  Mayo: 31,
+  Junio: 30,
+  Julio: 31,
+  Agosto: 31,
+  Septiembre: 30,
+  Octubre: 31,
+  Noviembre: 30,
+  Diciembre: 31,
+};
 
-  // Función para mostrar el calendario según el mes
-  function mostrarCalendario(mesSeleccionado) {
-    const diasDelMes = diasPorMes[mesSeleccionado];
+function mostrarCalendario(mesSeleccionado) {
+  const diasDelMes = diasPorMes[mesSeleccionado];
+  calendarioMes.innerHTML = ""; // Limpia el calendario para mostrar el mes seleccionado
 
-    // Limpiar el calendario
-    calendarioMes.innerHTML = "";
+  // Actualizar el texto del mes en el elemento 'month-display'
+  monthDisplay.textContent = mesSeleccionado;
 
-    // Crear semanas y días
-    let semana = document.createElement("div");
-    semana.className = "semana";
-    for (let dia = 1; dia <= diasDelMes; dia++) {
-      const diaElemento = document.createElement("div");
-      diaElemento.style.display='flex'
-      diaElemento.className = "dia";
-      diaElemento.textContent = dia;
-      semana.appendChild(diaElemento);
+  let semana = document.createElement("div");
+  semana.className = "semana";
+  
+  for (let dia = 1; dia <= diasDelMes; dia++) {
+    const diaElemento = document.createElement("div");
+    diaElemento.className = "dia";
+    diaElemento.textContent = dia;
+    diaElemento.style.display = 'flex'; // Asegurar que se muestre como 'flex'
+    semana.appendChild(diaElemento);
 
-      // Añadir nueva fila para cada semana
-      if (dia % 7 === 0) {
-        calendarioMes.appendChild(semana);
-        semana = document.createElement("div");
-        semana.className = "semana";
-      }
-    }
-
-    // Añadir la última semana incompleta
-    if (semana.children.length > 0) {
+    if (dia % 7 === 0) {
       calendarioMes.appendChild(semana);
-    }
-
-    // Rellenar días vacíos si es necesario
-    while (semana.children.length < 7) {
-      const diaVacio = document.createElement("div");
-      diaVacio.className = "dia vacio";
-      semana.appendChild(diaVacio);
+      semana = document.createElement("div");
+      semana.className = "semana";
     }
   }
+
+  // Añade la última semana si tiene días restantes
+  if (semana.children.length > 0) {
+    calendarioMes.appendChild(semana);
+  }
+
+  // Rellena la última semana con días vacíos
+  while (semana.children.length < 7) {
+    const diaVacio = document.createElement("div");
+    diaVacio.className = "dia vacio";
+    diaVacio.style.display = 'flex'; // Asegurar que también los días vacíos tengan display 'flex'
+    semana.appendChild(diaVacio);
+  }
+}
+
 
   // Asignar eventos de clic a cada mes
   meses.forEach((mes) => {
