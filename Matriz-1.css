@@ -9978,6 +9978,8 @@ height:21%;
     align-items: center;
     border: 1px solid #ccc;
     cursor: pointer;
+    font-size: 0.9em;
+
     font-family: Arial, sans-serif;
     border-radius: 5px;
     color: rgb(0, 191, 255);
