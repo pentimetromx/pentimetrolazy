@@ -5123,6 +5123,7 @@ function openGraphics(elementId){
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
+    document.getElementById('calendario-mes').style.display='none'
     const elementosLi = document.querySelectorAll("#metas-diarias li")
     elementosLi.forEach((li, index) => {
       setTimeout(() => {
@@ -5135,7 +5136,7 @@ function openGraphics(elementId){
         miElemento.style.border='none'
         miElemento.style.display = 'block';
         miElemento.style.left = '33vw';
-        miElemento.style.top = '21vh';
+        miElemento.style.top = '21vh';        
         miElemento.style.height='20vh'
         miElemento.style.backgroundColor='rgb(0,0,17)'
       }
@@ -5148,18 +5149,19 @@ function openGraphics(elementId){
     } 
     if(elementId === 'canvasContainer7-II'){
       setTimeout(() => {
+        document.getElementById('month-display').style.display='flex'
+        document.getElementById('meses').style.display='grid'
         document.getElementById('calendario-mes').style.display='grid'
-          const dias = document.querySelectorAll(".dia"); // Selecciona todos los elementos con la clase .dia
-          let index = 0;
-        
+          const dias = document.querySelectorAll(".dia");
+          let index = 0;        
           const interval = setInterval(() => {
-            if (index < dias.length) {
-              dias[index].style.display = "flex"; // Hace visible el elemento actual
+            if (index < dias.length) {  
+              dias[index].style.display = "flex";
               index++;
             } else {
               clearInterval(interval); // Detiene el intervalo cuando todos los elementos están visibles
             }
-          }, 77); // Intervalo de 77 milisegundos
+          }, 17);
         
       }, 1400);
     } 
@@ -5240,10 +5242,21 @@ function mostrarCalendario(mesSeleccionado) {
   }
 }
 
-
-  // Asignar eventos de clic a cada mes
-  meses.forEach((mes) => {
-    mes.addEventListener("click", function () {
-      mostrarCalendario(mes.textContent);
+// Asignar eventos de clic a cada mes
+meses.forEach((mes) => {
+  mes.addEventListener("click", function () {
+    // Restablece los estilos de todos los elementos
+    meses.forEach((m) => {
+      m.style.backgroundColor = "";
+      m.style.color = "";
     });
+
+    // Aplica los estilos solo al elemento en el que se hizo clic
+    mes.style.display = "flex";
+    mes.style.backgroundColor = "#ccc";
+    mes.style.color = "rgb(0,0,20)";
+
+    // Llama a la función para mostrar el calendario del mes seleccionado
+    mostrarCalendario(mes.textContent);
   });
+});

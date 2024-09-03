@@ -9933,8 +9933,8 @@ height:21%;
     display: flex;
     font-family: "Oswald";
     color: yellow;
-    font-size: 0.97em;    
-    left:0;
+    font-size: 0.7em;    
+    left:-8vw;
     top:40vh;
     width: 97vw;
     height: 60vh;
@@ -9950,6 +9950,7 @@ height:21%;
   }  
   #metas-diarias li .indice {
     color: rgb(0, 191, 255);
+    margin-right:6px;
   }
 
 
@@ -9974,6 +9975,7 @@ height:21%;
     justify-content: center;
     align-items: center;
     border: 1px solid #ccc;
+    cursor: pointer;
     padding: 10px;
     font-family: Arial, sans-serif;
     border-radius: 5px;
@@ -9994,6 +9996,7 @@ height:21%;
     gap: 5px;
     height: 51vh;
     width: 8vw;
+    display: none;
   }
   .mes{
     flex: 1;
@@ -10019,6 +10022,7 @@ height:21%;
     align-items: center;
     justify-content: center;
     background-color: rgb(0, 0, 17);
+    border: 1px solid rgb(0,0,255);
     font-family: Arial, sans-serif;
     font-size: 1em;
     color: RGB(144, 238, 144);
@@ -10028,6 +10032,7 @@ height:21%;
     left: 460%;
     width: 40vw;
     height: 6vh;
+    display: none;
   }
 
 }
