@@ -9972,6 +9972,7 @@ height:21%;
     gap: 5px;
   }  
   .dia {
+    position:relative;
     display:none;
     justify-content: center;
     align-items: center;

@@ -5238,6 +5238,7 @@ function mostrarCalendario(mesSeleccionado) {
     diaVacio.style.display = 'flex'; // Asegurar que también los días vacíos tengan display 'flex'
     semana.appendChild(diaVacio);
   }
+  asignarEventosDias();// asigna de inmediato el 'click'
 }
 
 meses.forEach((mes) => {
@@ -5281,13 +5282,20 @@ function mostrarSemanasSecuencialmente() {
   }, 33); // Intervalo de 77 milisegundos
 }
 
-const dias = document.querySelectorAll(".dia")
-dias.forEach((dia) => {
-  dia.addEventListener("click", () => {
-    dias.forEach((d) => {
-      alert('nada')
-      d.style.display = "none";
+function asignarEventosDias() {
+  const dias = document.querySelectorAll(".dia"); // Selecciona todos los elementos con la clase "dia"
+  dias.forEach((dia) => {
+    dia.addEventListener("click", () => {
+      // Oculta todos los días
+      dias.forEach((d) => {
+        d.style.display = "none"; // Oculta todos los elementos
+      });
+      // Muestra solo el día seleccionado
+      dia.style.display = "flex"; // Muestra el día al que se le dio clic
+      dia.style.position='fixed'
+      dia.style.height='2vh'
+      dia.style.top='50vh'
+      dia.style.left='50vw'
     });
-    dia.style.display = "flex";
   });
-});
+}
