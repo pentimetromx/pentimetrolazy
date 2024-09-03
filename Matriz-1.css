@@ -9943,18 +9943,16 @@ height:21%;
   }
   #metas-diarias li {
     opacity: 0;
-    color: yellow;
+    color: rgb(255,255,220);
     transition: opacity 0.5s ease;
   }  
   #metas-diarias li.visible {
     opacity: 1;
   }  
   #metas-diarias li .indice {
-    color: rgb(0, 191, 255);
+    color: rgb(177,255,255);
     margin-right:6px;
   }
-
-
   #calendario-mes{
     position: absolute;
     display: grid;
@@ -9992,7 +9990,6 @@ height:21%;
     background-color: #f0f0f0; /* Color para los días vacíos */
     border: none;
   }
-
   #meses{
     position: absolute;
     top: 45vh;
@@ -10039,7 +10036,6 @@ height:21%;
     height: 4vh;
     display: none;
   }
-
 }
 
 

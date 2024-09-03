@@ -5317,3 +5317,18 @@ function asignarEventosDias() {
     });
   });
 }
+
+function desvanecerDiasSimultaneamenteConIntervalo() {
+  const dias = document.querySelectorAll(".dia");
+  setInterval(() => { 
+    dias.forEach((dia) => {
+      dia.style.transition = 'opacity 0.5s';
+      dia.style.opacity = '0';
+    });
+    setTimeout(() => {
+      dias.forEach((dia) => {
+        dia.style.opacity = '1';
+      });
+    }, 577);
+   }, 1154);
+}
