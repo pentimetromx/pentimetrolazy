@@ -5292,14 +5292,14 @@ function asignarEventosDias() {
       dia.style.display = "flex";
       dia.style.position='fixed'
       dia.style.borderRadius='0 6px 6px 0'
-      dia.style.height='1vh'
+      dia.style.height='4vh'
       dia.style.top='50vh'
       dia.style.left='54vw'
 
       const nuevoElemento = document.createElement('div');
       nuevoElemento.textContent = 'Día'; 
       nuevoElemento.style.backgroundColor = 'rgb(0,0,50)'; 
-      nuevoElemento.style.color = 'rgb(0, 255, 255)';
+      nuevoElemento.style.color = 'rgb(0, 191, 255)';
       nuevoElemento.style.position = 'fixed';
       nuevoElemento.style.top = '50vh';
       nuevoElemento.style.left = '45.5vw';

@@ -9978,13 +9978,13 @@ height:21%;
     align-items: center;
     border: 1px solid #ccc;
     cursor: pointer;
-    padding: 10px;
     font-family: Arial, sans-serif;
     border-radius: 5px;
     color: rgb(0, 191, 255);
     background-color: rgb(0, 0, 50);
     font-weight: bold;
-    height:4vh;
+    height:7vh;
+    width: 10vw;
   }  
   .vacio {
     background-color: #f0f0f0; /* Color para los días vacíos */
