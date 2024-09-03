@@ -5283,19 +5283,36 @@ function mostrarSemanasSecuencialmente() {
 }
 
 function asignarEventosDias() {
-  const dias = document.querySelectorAll(".dia"); // Selecciona todos los elementos con la clase "dia"
+  const dias = document.querySelectorAll(".dia");
   dias.forEach((dia) => {
     dia.addEventListener("click", () => {
-      // Oculta todos los días
       dias.forEach((d) => {
-        d.style.display = "none"; // Oculta todos los elementos
+        d.style.display = "none"; 
       });
-      // Muestra solo el día seleccionado
-      dia.style.display = "flex"; // Muestra el día al que se le dio clic
+      dia.style.display = "flex";
       dia.style.position='fixed'
-      dia.style.height='2vh'
+      dia.style.borderRadius='0 6px 6px 0'
+      dia.style.height='1vh'
       dia.style.top='50vh'
       dia.style.left='50vw'
+
+      const nuevoElemento = document.createElement('div');
+      nuevoElemento.textContent = 'Día'; 
+      nuevoElemento.style.backgroundColor = 'rgb(0,0,50)'; 
+      nuevoElemento.style.color = 'rgb(0, 255, 255)';
+      nuevoElemento.style.position = 'fixed';
+      nuevoElemento.style.top = '50vh';
+      nuevoElemento.style.left = '41.5vw';
+      nuevoElemento.style.height='4vh'
+      nuevoElemento.style.width='8vw'
+      nuevoElemento.style.fontFamily= 'Arial, sans-serif';
+      nuevoElemento.style.alignContent='center'
+      nuevoElemento.style.justifyContent='center'
+      nuevoElemento.style.fontSize = '0.9em';
+      nuevoElemento.style.border='1px solid #ccc';
+      nuevoElemento.style.borderRadius='6px 0 0 6px'
+      // Agrega el nuevo elemento al body del documento
+      document.body.appendChild(nuevoElemento);
     });
   });
 }
