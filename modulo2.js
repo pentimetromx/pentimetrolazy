@@ -5157,6 +5157,7 @@ function openGraphics(elementId){
           const interval = setInterval(() => {
             if (index < dias.length) {  
               dias[index].style.display = "flex";
+              dias[index].textContent = '';
               index++;
             } else {
               clearInterval(interval); // Detiene el intervalo cuando todos los elementos están visibles
@@ -5182,12 +5183,9 @@ function mostrarSecuencialmente() {
     }, index * 100); 
   });
 }
-
-
-
 const meses = document.querySelectorAll("#meses .mes");
 const calendarioMes = document.getElementById("calendario-mes");
-const monthDisplay = document.getElementById("month-display"); // Elemento para mostrar el nombre del mes
+const monthDisplay = document.getElementById("month-display");
 
 const diasPorMes = {
   Enero: 31,

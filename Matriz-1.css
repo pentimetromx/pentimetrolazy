@@ -5430,7 +5430,7 @@ input.numero:focus {
   width:55%;
   height: 4vh;
   font-size: 1.8vw;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .dureza{
   width:44vw;
@@ -9451,6 +9451,7 @@ height:21%;
     font-family: 'GothamRounded', sans-serif;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
     color:whitesmoke ;
     background-color: #000;
     top:117%;
@@ -9958,7 +9959,7 @@ height:21%;
     position: absolute;
     display: grid;
     left:17vw;
-    top:45vh;
+    top:51vh;
     gap: 5px;
     width:80vw;
     height: 33vh;
@@ -9979,7 +9980,8 @@ height:21%;
     padding: 10px;
     font-family: Arial, sans-serif;
     border-radius: 5px;
-    color: rgb(0, 191, 255); /* Azul luminoso */
+    color: rgb(0, 191, 255);
+    background-color: rgb(0, 0, 50);
     font-weight: bold;
     height: 15%;
   }  
@@ -10026,12 +10028,12 @@ height:21%;
     font-family: Arial, sans-serif;
     font-size: 1em;
     color: RGB(144, 238, 144);
-    border-radius: 15px;
+    border-radius: 7px;
     font-weight: bold;
-    top: 70%;
+    top: 0;
     left: 460%;
-    width: 40vw;
-    height: 6vh;
+    width: 35vw;
+    height: 4vh;
     display: none;
   }
 
