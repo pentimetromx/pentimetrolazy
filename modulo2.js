@@ -5240,7 +5240,6 @@ function mostrarCalendario(mesSeleccionado) {
   }
 }
 
-// Asignar eventos de clic a cada mes
 meses.forEach((mes) => {
   mes.addEventListener("click", function () {
     // Restablece los estilos de todos los elementos
@@ -5248,13 +5247,47 @@ meses.forEach((mes) => {
       m.style.backgroundColor = "";
       m.style.color = "";
     });
-
     // Aplica los estilos solo al elemento en el que se hizo clic
     mes.style.display = "flex";
     mes.style.backgroundColor = "#ccc";
     mes.style.color = "rgb(0,0,20)";
-
     // Llama a la función para mostrar el calendario del mes seleccionado
     mostrarCalendario(mes.textContent);
+    setTimeout(() => {
+      mostrarSemanasSecuencialmente()
+    }, 50);
+  });
+
+});
+
+function mostrarSemanasSecuencialmente() {
+  const semanas = document.querySelectorAll(".semana"); // Selecciona todas las semanas
+  let index = 0; // Índice para rastrear la semana actual
+
+  // Inicializa la opacidad de todas las semanas a 0 (invisibles)
+  semanas.forEach((semana) => {
+    semana.style.opacity = "0";
+  });
+
+  // Función que se ejecutará a intervalos regulares
+  const interval = setInterval(() => {
+    if (index < semanas.length) {
+      semanas[index].style.transition = "opacity 0.5s"; // Añade una transición de opacidad
+      semanas[index].style.opacity = "1"; // Cambia la opacidad a 1 para mostrar la semana
+      index++;
+    } else {
+      clearInterval(interval); // Detiene el intervalo cuando todas las semanas son visibles
+    }
+  }, 33); // Intervalo de 77 milisegundos
+}
+
+const dias = document.querySelectorAll(".dia")
+dias.forEach((dia) => {
+  dia.addEventListener("click", () => {
+    dias.forEach((d) => {
+      alert('nada')
+      d.style.display = "none";
+    });
+    dia.style.display = "flex";
   });
 });
