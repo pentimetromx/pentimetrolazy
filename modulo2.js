@@ -5294,7 +5294,7 @@ function asignarEventosDias() {
       dia.style.borderRadius='0 6px 6px 0'
       dia.style.height='1vh'
       dia.style.top='50vh'
-      dia.style.left='50vw'
+      dia.style.left='54vw'
 
       const nuevoElemento = document.createElement('div');
       nuevoElemento.textContent = 'Día'; 
@@ -5302,7 +5302,7 @@ function asignarEventosDias() {
       nuevoElemento.style.color = 'rgb(0, 255, 255)';
       nuevoElemento.style.position = 'fixed';
       nuevoElemento.style.top = '50vh';
-      nuevoElemento.style.left = '41.5vw';
+      nuevoElemento.style.left = '45.5vw';
       nuevoElemento.style.height='4vh'
       nuevoElemento.style.width='8vw'
       nuevoElemento.style.fontFamily= 'Arial, sans-serif';
