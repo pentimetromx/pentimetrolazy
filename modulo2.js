@@ -5292,7 +5292,6 @@ function asignarEventosDias() {
       dia.style.display = "flex";
       dia.style.position='fixed'
       dia.style.borderRadius='0 6px 6px 0'
-      dia.style.height='4vh'
       dia.style.top='50vh'
       dia.style.left='54vw'
 
@@ -5306,11 +5305,13 @@ function asignarEventosDias() {
       nuevoElemento.style.height='4vh'
       nuevoElemento.style.width='8vw'
       nuevoElemento.style.fontFamily= 'Arial, sans-serif';
-      nuevoElemento.style.alignContent='center'
-      nuevoElemento.style.justifyContent='center'
       nuevoElemento.style.fontSize = '0.9em';
       nuevoElemento.style.border='1px solid #ccc';
       nuevoElemento.style.borderRadius='6px 0 0 6px'
+      nuevoElemento.style.justifyContent = 'center'; 
+      nuevoElemento.style.alignItems = 'center';
+      nuevoElemento.style.padding='5px'
+      nuevoElemento.style.boxSizing='border-box'
       // Agrega el nuevo elemento al body del documento
       document.body.appendChild(nuevoElemento);
     });
