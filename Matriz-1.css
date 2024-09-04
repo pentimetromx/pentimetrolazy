@@ -5843,6 +5843,7 @@ height:21%;
   flex-direction: column;
   display: none;
   font-family: "GothamRounded", sans-serif;
+  padding: 5px;
   border-radius: 7px 0 0 7px;
   overflow-y: auto;
   top: 55vh;
