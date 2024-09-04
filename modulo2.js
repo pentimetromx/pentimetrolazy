@@ -201,10 +201,10 @@ document.addEventListener('keydown', function(event) {
         setTimeout(function() {
           resultadosEmpleado('icon-ana','updateAna','img7','true')        
           },1677) 
-        /*setTimeout(function() {
-          interfazAvance()
-        },1977)
         setTimeout(function() {
+          openGraphics('canvasContainer7-II')
+        },1977)
+        /*setTimeout(function() {
           interfazAvance()       
         },2177)
         setTimeout(function() {
@@ -5002,7 +5002,6 @@ function reponerEstilos(){
   vidPrePre.forEach(child => {
     child.classList.remove('move_vid_pre')
   });
-  document.getElementById('dia').style.display='none'
   const dias = document.querySelectorAll(".dia");
   dias.forEach((dia) => {
     dia.removeAttribute("style");
@@ -5010,7 +5009,7 @@ function reponerEstilos(){
   });
   document.getElementById('month-display').textContent=''
   document.getElementById('month-display').classList.remove('move-month')
-  document.getElementById('dia').classList.remove('move-day')
+  if(document.getElementById('dia')){document.getElementById('dia').style.display='none'}
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
@@ -5300,17 +5299,16 @@ function asignarEventosDias() {
       dia.style.display = "flex";
       dia.style.position = 'fixed';
       dia.style.borderRadius = '0 6px 6px 0';
-      dia.style.top = '50vh';
-      dia.style.left = '54vw';
+      dia.style.top = '45.1vh';
+      dia.style.left = '68vw';
       day.style.display='flex'
       if (index === 2) {
         document.getElementById('tareas-lubricacion').style.display='flex'
         document.getElementById('month-display').classList.add('move-month')
-          day.classList.add('move-day');
         animateScroll('tareas-lubricacion')
       }
     });
-  });
+  });  
 }
 function desvanecerDiasSimultaneamenteConIntervalo() {
   const dias = document.querySelectorAll(".dia");
