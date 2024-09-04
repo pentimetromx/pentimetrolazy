@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('metas-diarias') 
+  var contiBoton = document.getElementById('dia') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -2370,204 +2370,201 @@ var colorClickLinks = document.querySelectorAll('.colorClick')
       imagenesPasoApaso(link.getAttribute('data-imagen'))
     })
 })
- function aumentarTamanosDeBotones() {
-   const buttons = [
-     document.getElementById("boton1"),
-     document.getElementById("boton2"),
-     document.getElementById("boton3"),
-     document.getElementById("boton4"),
-     document.getElementById("boton5"),
-     document.getElementById("boton6")
-   ]
-   // Función para aumentar el tamaño de un botón y pasar al siguiente
-   function aumentarSiguienteBoton(index) {
-     if (index < buttons.length) {
-       const boton = buttons[index]
-       boton.style.transform = "scale(7)";
-       setTimeout(() => {
-         restaurarTamanosBoton(boton)
-         aumentarSiguienteBoton(index + 1)
-       }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
-     }
-   }
-   // Función para restaurar el tamaño normal de un botón
-   function restaurarTamanosBoton(boton) {
-     boton.style.transform = "scale(1)";
-   }
-   aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
- }
- function aumentarTamanosDeBotonesII() {
-   const buttons = [
-     document.getElementById("boton7"),
-     document.getElementById("boton8"),
-     document.getElementById("boton9"),
-     document.getElementById("boton10"),
-     document.getElementById("boton11"),
-     document.getElementById("boton12")
-   ]
-   // Función para aumentar el tamaño de un botón y pasar al siguiente
-   function aumentarSiguienteBoton(index) {
-     if (index < buttons.length) {
-       const boton = buttons[index]
-       boton.style.transform = "scale(7)";
-       setTimeout(() => {
-         restaurarTamanosBoton(boton)
-         aumentarSiguienteBoton(index + 1)
-       }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
-     }
-   }
-   // Función para restaurar el tamaño normal de un botón
-   function restaurarTamanosBoton(boton) {
-     boton.style.transform = "scale(1)";
-   }
-   aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
- }
- function aumentarTamanosDeBotonesIII() {
-   const buttons = [
-     document.getElementById("boton13"),
-     document.getElementById("boton14"),
-     document.getElementById("boton15"),
-     document.getElementById("boton16"),
-     document.getElementById("boton17"),
-     document.getElementById("boton18")
-   ]
-   // Función para aumentar el tamaño de un botón y pasar al siguiente
-   function aumentarSiguienteBoton(index) {
-     if (index < buttons.length) {
-       const boton = buttons[index]
-       boton.style.transform = "scale(7)";
-       setTimeout(() => {
-         restaurarTamanosBoton(boton)
-         aumentarSiguienteBoton(index + 1)
-       }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
-     }
-   }
-   // Función para restaurar el tamaño normal de un botón
-   function restaurarTamanosBoton(boton) {
-     boton.style.transform = "scale(1)";
-   }
-   aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
- }
- function aumentarTamanosDeBotonesIV() {
-   const buttons = [
-     document.getElementById("boton19"),
-     document.getElementById("boton20"),
-     document.getElementById("boton21"),
-     document.getElementById("boton22"),
-     document.getElementById("boton23"),
-     document.getElementById("boton24")
-   ]
-   // Función para aumentar el tamaño de un botón y pasar al siguiente
-   function aumentarSiguienteBoton(index) {
-     if (index < buttons.length) {
-       const boton = buttons[index]
-       boton.style.transform = "scale(7)";
-       setTimeout(() => {
-         restaurarTamanosBoton(boton)
-         aumentarSiguienteBoton(index + 1)
-       }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
-     }
-   }
-   // Función para restaurar el tamaño normal de un botón
-   function restaurarTamanosBoton(boton) {
-     boton.style.transform = "scale(1)";
-   }
-   aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
- }
- function aumentarTamanosDeBotonesV() {
-   const buttons = [
-     document.getElementById("boton25"),
-     document.getElementById("boton26"),
-     document.getElementById("boton27"),
-     document.getElementById("boton28"),
-     document.getElementById("boton29"),
-     document.getElementById("boton30")
-   ]
-   // Función para aumentar el tamaño de un botón y pasar al siguiente
-   function aumentarSiguienteBoton(index) {
-     if (index < buttons.length) {
-       const boton = buttons[index]
-       boton.style.transform = "scale(7)";
-       setTimeout(() => {
-         restaurarTamanosBoton(boton)
-         aumentarSiguienteBoton(index + 1)
-       }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
-     }
-   }
-   // Función para restaurar el tamaño normal de un botón
-   function restaurarTamanosBoton(boton) {
-     boton.style.transform = "scale(1)";
-   }
-   aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
- }
- function aumentarTamanosDeBotonesVI() {
-   const buttons = [
-       document.getElementById("caso1"),
-       document.getElementById("caso2"),
-       document.getElementById("caso3")
-   ];
-   let caso1 = document.getElementById ('caso1')
-   contiButtCasos.style.display = 'flex'
-   /* caso1.style.display = 'flex' */
- 
-   function aumentarBotonCasos(index) {
-       if (index < buttons.length) {
-           const boton = buttons[index];
-           boton.style.display = 'flex'
-           boton.style.transform = "scale(2)";
-           setTimeout(() => {
-               restaurarTamanosBoton(boton);
-               aumentarBotonCasos(index + 1);
-           }, 200);
-       }
-   }
- 
-   function restaurarTamanosBoton(boton) {
-       boton.style.transform = "scale(1)";
-   }
- 
-   aumentarBotonCasos(0);
- }
- function moveScroll(container) {
-   // Mover el scroll 100px hacia abajo
-   container.scrollTop += 100;
-   // Reducir el número de iteraciones en 1
-   iterations--;
-   // Verificar si quedan más iteraciones
-   if (iterations > 0) {
-     // Llamar a la función nuevamente después de 1 segundo
-     setTimeout(function() {
-       // Restaurar el color de fondo del botón antes de mover el scroll
-       moveScroll(container);
-     }, 57);
-   } else {
-     // Cuando termina el desplazamiento, regresar a la parte superior
-     container.scrollTop = 0;
-   }
- }
- function scrollToBottom(element) {
+function aumentarTamanosDeBotones() {
+  const buttons = [
+    document.getElementById("boton1"),
+    document.getElementById("boton2"),
+    document.getElementById("boton3"),
+    document.getElementById("boton4"),
+    document.getElementById("boton5"),
+    document.getElementById("boton6")
+  ]
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index]
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton)
+        aumentarSiguienteBoton(index + 1)
+      }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesII() {
+  const buttons = [
+    document.getElementById("boton7"),
+    document.getElementById("boton8"),
+    document.getElementById("boton9"),
+    document.getElementById("boton10"),
+    document.getElementById("boton11"),
+    document.getElementById("boton12")
+  ]
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index]
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton)
+        aumentarSiguienteBoton(index + 1)
+      }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesIII() {
+  const buttons = [
+    document.getElementById("boton13"),
+    document.getElementById("boton14"),
+    document.getElementById("boton15"),
+    document.getElementById("boton16"),
+    document.getElementById("boton17"),
+    document.getElementById("boton18")
+  ]
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index]
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton)
+        aumentarSiguienteBoton(index + 1)
+      }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesIV() {
+  const buttons = [
+    document.getElementById("boton19"),
+    document.getElementById("boton20"),
+    document.getElementById("boton21"),
+    document.getElementById("boton22"),
+    document.getElementById("boton23"),
+    document.getElementById("boton24")
+  ]
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index]
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton)
+        aumentarSiguienteBoton(index + 1)
+      }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesV() {
+  const buttons = [
+    document.getElementById("boton25"),
+    document.getElementById("boton26"),
+    document.getElementById("boton27"),
+    document.getElementById("boton28"),
+    document.getElementById("boton29"),
+    document.getElementById("boton30")
+  ]
+  // Función para aumentar el tamaño de un botón y pasar al siguiente
+  function aumentarSiguienteBoton(index) {
+    if (index < buttons.length) {
+      const boton = buttons[index]
+      boton.style.transform = "scale(7)";
+      setTimeout(() => {
+        restaurarTamanosBoton(boton)
+        aumentarSiguienteBoton(index + 1)
+      }, 200) // Restaura el tamaño y pasa al siguiente botón después de 0.2 segundos
+    }
+  }
+  // Función para restaurar el tamaño normal de un botón
+  function restaurarTamanosBoton(boton) {
+    boton.style.transform = "scale(1)";
+  }
+  aumentarSiguienteBoton(0) // Comienza el proceso con el primer botón
+}
+function aumentarTamanosDeBotonesVI() {
+  const buttons = [
+      document.getElementById("caso1"),
+      document.getElementById("caso2"),
+      document.getElementById("caso3")
+  ];
+  let caso1 = document.getElementById ('caso1')
+  contiButtCasos.style.display = 'flex'
+  /* caso1.style.display = 'flex' */
+
+  function aumentarBotonCasos(index) {
+      if (index < buttons.length) {
+          const boton = buttons[index];
+          boton.style.display = 'flex'
+          boton.style.transform = "scale(2)";
+          setTimeout(() => {
+              restaurarTamanosBoton(boton);
+              aumentarBotonCasos(index + 1);
+          }, 200);
+      }
+  }
+
+  function restaurarTamanosBoton(boton) {
+      boton.style.transform = "scale(1)";
+  }
+
+  aumentarBotonCasos(0);
+}
+function moveScroll(container) {
+  // Mover el scroll 100px hacia abajo
+  container.scrollTop += 100;
+  // Reducir el número de iteraciones en 1
+  iterations--;
+  // Verificar si quedan más iteraciones
+  if (iterations > 0) {
+    // Llamar a la función nuevamente después de 1 segundo
+    setTimeout(function() {
+      // Restaurar el color de fondo del botón antes de mover el scroll
+      moveScroll(container);
+    }, 57);
+  } else {
+    // Cuando termina el desplazamiento, regresar a la parte superior
+    container.scrollTop = 0;
+  }
+}
+function scrollToTop(element) {
   const startTime = performance.now();
-  const duration = 1500; // 1.5 segundos
+  const duration = 1500; 
   const startScrollTop = element.scrollTop;
-  const scrollHeight = element.scrollHeight;
-  const endScrollTop = scrollHeight - element.clientHeight;
+  const endScrollTop = 0;  
   function animate(time) {
     const elapsedTime = time - startTime;
-    const progress = Math.min(elapsedTime / duration, 1);
-    element.scrollTop = startScrollTop + progress * (endScrollTop - startScrollTop);
+    const progress = Math.min(elapsedTime / duration, 1);    
+    element.scrollTop = startScrollTop - progress * startScrollTop;
     if (progress < 1) {
       requestAnimationFrame(animate);
     }
-  }
+  }  
   requestAnimationFrame(animate);
 }
 function animateScroll(elementId) {
   const element = document.getElementById(elementId);
   if (element) {
-    // Llevar la barra hasta la parte superior
-    element.scrollTop = 0;
-    // Iniciar el movimiento de la parte superior a la inferior
-    scrollToBottom(element);
+    element.scrollTop = element.scrollHeight - element.clientHeight;
+    scrollToTop(element);
   } else {
     console.error(`Element with ID ${elementId} not found.`);
   }
@@ -5012,6 +5009,8 @@ function reponerEstilos(){
     dia.style.display='none'
   });
   document.getElementById('month-display').textContent=''
+  document.getElementById('month-display').classList.remove('move-month')
+  document.getElementById('dia').classList.remove('move-day')
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
     if (elemento) {
@@ -5209,7 +5208,6 @@ const diasPorMes = {
   Noviembre: 30,
   Diciembre: 31,
 };
-
 function mostrarCalendario(mesSeleccionado) {
   const diasDelMes = diasPorMes[mesSeleccionado];
   calendarioMes.innerHTML = ""; // Limpia el calendario para mostrar el mes seleccionado
@@ -5251,6 +5249,8 @@ function mostrarCalendario(mesSeleccionado) {
 let nuevoElemento;
 meses.forEach((mes) => {
   mes.addEventListener("click", function () {
+    reponerEstilos()
+    document.getElementById('tareas-lubricacion').style.display='none'
     // Restablece los estilos de todos los elementos
     meses.forEach((m) => {
       reponerEstilos()
@@ -5268,8 +5268,7 @@ meses.forEach((mes) => {
     }, 50);
   });
 
-});
- 
+}); 
 function mostrarSemanasSecuencialmente() {
   const semanas = document.querySelectorAll(".semana"); // Selecciona todas las semanas
   let index = 0; // Índice para rastrear la semana actual
@@ -5290,8 +5289,8 @@ function mostrarSemanasSecuencialmente() {
     }
   }, 33); // Intervalo de 77 milisegundos
 }
-
 function asignarEventosDias() {
+  const day = document.getElementById('dia')
   const dias = document.querySelectorAll(".dia");  
   dias.forEach((dia, index) => {
     dia.addEventListener("click", () => {
@@ -5303,16 +5302,16 @@ function asignarEventosDias() {
       dia.style.borderRadius = '0 6px 6px 0';
       dia.style.top = '50vh';
       dia.style.left = '54vw';
-      document.getElementById('dia').style.display = 'flex'
-      // Mostrar alerta para el cuarto elemento
+      day.style.display='flex'
       if (index === 2) {
         document.getElementById('tareas-lubricacion').style.display='flex'
+        document.getElementById('month-display').classList.add('move-month')
+          day.classList.add('move-day');
+        animateScroll('tareas-lubricacion')
       }
     });
   });
 }
-
-
 function desvanecerDiasSimultaneamenteConIntervalo() {
   const dias = document.querySelectorAll(".dia");
   intervaloGlobal = setInterval(() => {
@@ -5327,7 +5326,6 @@ function desvanecerDiasSimultaneamenteConIntervalo() {
   }, 1154);
 
 }
-
 const dias = document.querySelectorAll('.dia');
 function mostrarDiaEspecifico(posicion) {
   dias.forEach((dia) => {
