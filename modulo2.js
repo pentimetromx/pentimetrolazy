@@ -5007,6 +5007,13 @@ function reponerEstilos(){
     dia.removeAttribute("style");
     dia.style.display='none'
   });
+  meses.forEach((mes) => {
+    meses.forEach((m) => {
+      m.style.backgroundColor = "";
+      m.style.color = "";
+    });
+  
+  });  
   document.getElementById('month-display').textContent=''
   document.getElementById('month-display').classList.remove('move-month')
   if(document.getElementById('dia')){document.getElementById('dia').style.display='none'}
@@ -5299,14 +5306,16 @@ function asignarEventosDias() {
       dia.style.display = "flex";
       dia.style.position = 'fixed';
       dia.style.borderRadius = '0 6px 6px 0';
-      dia.style.top = '45.1vh';
+      dia.style.top = '45.2vh';
       dia.style.left = '68vw';
       day.style.display='flex'
-      if (index === 2) {
         document.getElementById('tareas-lubricacion').style.display='flex'
         document.getElementById('month-display').classList.add('move-month')
         animateScroll('tareas-lubricacion')
-      }
+        if (index === 2) {
+          alert('Dia de Lubricacion')
+        }
+
     });
   });  
 }
