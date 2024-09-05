@@ -5309,16 +5309,24 @@ function asignarEventosDias() {
       dia.style.top = '45.2vh';
       dia.style.left = '68vw';
       day.style.display='flex'
-        document.getElementById('tareas-lubricacion').style.display='flex'
         document.getElementById('month-display').classList.add('move-month')
-        animateScroll('tareas-lubricacion')
         if (index === 2) {
-          alert('Dia de Lubricacion')
+          document.getElementById('actividad-lubricacion').style.display='flex'
+          document.getElementById('actividad-limpieza').style.display='flex'
         }
 
     });
   });  
 }
+document.getElementById('actividad-lubricacion').addEventListener('click',() =>{
+  document.getElementById('tareas-lubricacion').style.display='flex'
+  animateScroll('tareas-lubricacion')
+})
+document.getElementById('actividad-limpieza').addEventListener('click',() =>{
+  document.getElementById('tareas-limpieza').style.display='flex'
+  animateScroll('tareas-limpieza')
+})
+
 function desvanecerDiasSimultaneamenteConIntervalo() {
   const dias = document.querySelectorAll(".dia");
   intervaloGlobal = setInterval(() => {
