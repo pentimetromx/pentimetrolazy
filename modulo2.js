@@ -5317,10 +5317,12 @@ function asignarEventosDias() {
     });
   });  
 }
+const activLimpieza = document.getElementById('tareas-limpieza');  
+const activLubricacion = document.getElementById('tareas-lubricacion');
+
 actividadesLubricacion.addEventListener('click',() =>{
   actividadesLimpieza.removeAttribute('style')
-  const activLubricacion = document.getElementById('tareas-lubricacion')
-  const activLimpieza = document.getElementById('tareas-limpieza')
+  activLimpieza.classList.remove('move-tareas-limpieza')
   activLubricacion.style.display='flex'
   activLimpieza.style.display='flex'
   actividadesLubricacion.style.backgroundColor='rgb(0,255,0)'
@@ -5328,17 +5330,21 @@ actividadesLubricacion.addEventListener('click',() =>{
   actividadesLimpieza.style.display='flex'
   animateScroll('tareas-lubricacion')
 })
-actividadesLimpieza.addEventListener('click',() =>{
-  actividadesLubricacion.removeAttribute('style')
-  const activLimpieza = document.getElementById('tareas-limpieza')  
-  const activLubricacion = document.getElementById('tareas-lubricacion')
-  activLimpieza.style.display='flex'
-  activLubricacion.style.display='flex'
-  actividadesLimpieza.style.backgroundColor='rgb(0,255,0)'
-  actividadesLimpieza.style.color='rgb(33,0,0)'
-  actividadesLubricacion.style.display='flex'
-  animateScroll('tareas-limpieza')
-})
+
+actividadesLimpieza.addEventListener('click', () => {
+  activLimpieza.classList.remove('move-tareas-limpieza')
+  activLubricacion.removeAttribute('style');
+  activLimpieza.style.display = 'flex';
+  activLubricacion.style.display = 'flex';
+  actividadesLimpieza.style.backgroundColor = 'rgb(0,255,0)';
+  actividadesLimpieza.style.color = 'rgb(33,0,0)';
+  setTimeout(() => {
+    activLimpieza.classList.add('move-tareas-limpieza');    
+    animateScroll('tareas-limpieza');
+  }, 250); 
+
+});
+
 
 function desvanecerDiasSimultaneamenteConIntervalo() {
   const dias = document.querySelectorAll(".dia");

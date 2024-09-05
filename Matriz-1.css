@@ -4986,6 +4986,9 @@ input.numero:focus {
   transform: translateX(-19vw) translateY(-25vh);
   transition: transform 1.6s ease;
 }
+.move-tareas-limpieza{
+  transform: translateX(-83vw)
+}
  #first_half {
   position: relative;
   display: grid;
@@ -10045,18 +10048,20 @@ height:21%;
     top: 55vh;
     width: 78vw;
     height:42vh;
-    background-color: rgb(0, 0, 33);
     border: 1px solid rgb(0, 191, 255);
-    color: rgb(255, 255, 204);
     font-size: 0.7em;
   }
   #tareas-lubricacion{
+    background-color: rgb(0, 0, 33);
+    color: rgb(255, 255, 204);
     left:17vw;
   }
   #tareas-limpieza{
-    left:57vw;
+    background-color: rgb(255,255,204);
+    color: rgb(0, 0, 0);
+    left:100vw;
+    transition: transform 0.5s ease;
   }
-
   #dia{
     position :absolute;
     display: flex;
