@@ -5309,21 +5309,34 @@ function asignarEventosDias() {
       dia.style.top = '45.2vh';
       dia.style.left = '68vw';
       day.style.display='flex'
-        document.getElementById('month-display').classList.add('move-month')
-        if (index === 2) {
-          document.getElementById('actividad-lubricacion').style.display='flex'
-          document.getElementById('actividad-limpieza').style.display='flex'
-        }
-
+      document.getElementById('month-display').classList.add('move-month')
+      if (index === 2) {
+        document.getElementById('actividad-lubricacion').style.display='flex' 
+        document.getElementById('actividad-limpieza').style.display='flex'
+      }
     });
   });  
 }
-document.getElementById('actividad-lubricacion').addEventListener('click',() =>{
-  document.getElementById('tareas-lubricacion').style.display='flex'
+actividadesLubricacion.addEventListener('click',() =>{
+  actividadesLimpieza.removeAttribute('style')
+  const activLubricacion = document.getElementById('tareas-lubricacion')
+  const activLimpieza = document.getElementById('tareas-limpieza')
+  activLubricacion.style.display='flex'
+  activLimpieza.style.display='flex'
+  actividadesLubricacion.style.backgroundColor='rgb(0,255,0)'
+  actividadesLubricacion.style.color='rgb(33,0,0)'
+  actividadesLimpieza.style.display='flex'
   animateScroll('tareas-lubricacion')
 })
-document.getElementById('actividad-limpieza').addEventListener('click',() =>{
-  document.getElementById('tareas-limpieza').style.display='flex'
+actividadesLimpieza.addEventListener('click',() =>{
+  actividadesLubricacion.removeAttribute('style')
+  const activLimpieza = document.getElementById('tareas-limpieza')  
+  const activLubricacion = document.getElementById('tareas-lubricacion')
+  activLimpieza.style.display='flex'
+  activLubricacion.style.display='flex'
+  actividadesLimpieza.style.backgroundColor='rgb(0,255,0)'
+  actividadesLimpieza.style.color='rgb(33,0,0)'
+  actividadesLubricacion.style.display='flex'
   animateScroll('tareas-limpieza')
 })
 
