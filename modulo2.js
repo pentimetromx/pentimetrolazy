@@ -5330,9 +5330,10 @@ actividadesLubricacion.addEventListener('click',() =>{
   actividadesLubricacion.style.backgroundColor='rgb(0,255,0)'
   actividadesLubricacion.style.color='rgb(33,0,0)'
   actividadesLimpieza.style.display='flex'
-  animateScroll('tareas-lubricacion')
+  setTimeout(() => {
+    animateScroll('tareas-lubricacion')
+  }, 500); 
 })
-
 actividadesLimpieza.addEventListener('click', () => {
   activLimpieza.classList.remove('move-tareas-limpieza')
   activLimpieza.style.display = 'flex';
@@ -5344,8 +5345,7 @@ actividadesLimpieza.addEventListener('click', () => {
   activLimpieza.classList.add('move-tareas-limpieza');    
   setTimeout(() => {
     animateScroll('tareas-limpieza');
-  }, 250); 
-
+  }, 500); 
 });
 
 
