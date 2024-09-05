@@ -5321,7 +5321,9 @@ const activLimpieza = document.getElementById('tareas-limpieza');
 const activLubricacion = document.getElementById('tareas-lubricacion');
 
 actividadesLubricacion.addEventListener('click',() =>{
-  actividadesLimpieza.removeAttribute('style')
+  activLimpieza.style.display='flex'
+  actividadesLimpieza.style.backgroundColor=''
+  actividadesLimpieza.style.color=''
   activLimpieza.classList.remove('move-tareas-limpieza')
   activLubricacion.style.display='flex'
   activLimpieza.style.display='flex'
@@ -5333,13 +5335,14 @@ actividadesLubricacion.addEventListener('click',() =>{
 
 actividadesLimpieza.addEventListener('click', () => {
   activLimpieza.classList.remove('move-tareas-limpieza')
-  activLubricacion.removeAttribute('style');
   activLimpieza.style.display = 'flex';
+  actividadesLubricacion.style.backgroundColor=''
+  actividadesLubricacion.style.color=''
   activLubricacion.style.display = 'flex';
   actividadesLimpieza.style.backgroundColor = 'rgb(0,255,0)';
   actividadesLimpieza.style.color = 'rgb(33,0,0)';
+  activLimpieza.classList.add('move-tareas-limpieza');    
   setTimeout(() => {
-    activLimpieza.classList.add('move-tareas-limpieza');    
     animateScroll('tareas-limpieza');
   }, 250); 
 
