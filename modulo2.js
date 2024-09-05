@@ -5257,13 +5257,21 @@ meses.forEach((mes) => {
   mes.addEventListener("click", function () {
     reponerEstilos()
     document.getElementById('tareas-lubricacion').style.display='none'
-    // Restablece los estilos de todos los elementos
+    document.getElementById('tareas-limpieza').style.display='none'
+    document.getElementById('actividad-lubricacion').style.display='none'
+    document.getElementById('actividad-limpieza').style.display='none'
     meses.forEach((m) => {
       reponerEstilos()
       m.style.backgroundColor = "";
       m.style.color = "";
     });
-    // Aplica los estilos solo al elemento en el que se hizo clic
+    document.getElementById('actividad-lubricacion').style.backgroundColor=''
+    document.getElementById('actividad-lubricacion').style.color=''
+    document.getElementById('actividad-limpieza').style.backgroundColor=''
+    document.getElementById('actividad-limpieza').style.color=''
+
+    document.getElementById('actividad-limpieza').style.display='none'
+
     mes.style.display = "flex";
     mes.style.backgroundColor = "#ccc";
     mes.style.color = "rgb(0,0,20)";
