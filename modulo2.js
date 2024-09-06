@@ -5107,25 +5107,52 @@ function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
 function openGraphics(elementId){
-  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+  if(screenWidth > 500){
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+      }
     }
-  }
-  document.getElementById('contLineas').style.backgroundColor = '#333333';
-  const elementos = document.querySelectorAll('.graphs-lines');
-  elementos.forEach((miElemento) => {
-    if (miElemento.id === elementId) {
-      miElemento.style.display = 'block';
-      miElemento.style.left = '16vw';
-      miElemento.style.top = '15vh';
-      miElemento.style.backgroundColor='rgb(0,0,17)'
-      miElemento.style.borderRadius = '10px';
-    }
-  });
-  if(screenWidth < 500){
+    document.getElementById('contLineas').style.backgroundColor = '#333333';
+    const elementos = document.querySelectorAll('.graphs-lines');
+    elementos.forEach((miElemento) => {
+      if (miElemento.id === elementId) {
+        miElemento.style.display = 'block';
+        miElemento.style.left = '16vw';
+        miElemento.style.top = '15vh';
+        miElemento.style.backgroundColor='rgb(0,0,17)'
+        miElemento.style.borderRadius = '10px';
+      }
+    });
+    if(elementId === 'canvasContainer7'){
+      const elementosDia = document.querySelectorAll('.dia');
+      elementosDia.forEach((elemento) => {
+        elemento.removeAttribute('style');
+      });
+      setTimeout(() => {
+        document.getElementById('month-display').style.display='flex'
+        document.getElementById('meses').style.display='grid'
+        document.getElementById('calendario-mes').style.display='grid'
+        const dias = document.querySelectorAll(".dia");
+        let index = 0;        
+        const interval = setInterval(() => {
+          if (index < dias.length) {  
+            dias[index].style.display = "flex";
+            dias[index].textContent = '';
+            index++;
+          } else {
+            clearInterval(interval);
+          }
+        }, 17);
+        
+      }, 1400);
+      setTimeout(() => {
+        desvanecerDiasSimultaneamenteConIntervalo()
+      }, 1400);
+    } 
+  }else {
     var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])
@@ -5180,28 +5207,7 @@ function openGraphics(elementId){
         desvanecerDiasSimultaneamenteConIntervalo()
       }, 1400);
     } 
-  }else{
-    setTimeout(() => {
-      document.getElementById('month-display').style.display='flex'
-      document.getElementById('meses').style.display='grid'
-      document.getElementById('calendario-mes').style.display='grid'
-      const dias = document.querySelectorAll(".dia");
-      let index = 0;        
-      const interval = setInterval(() => {
-        if (index < dias.length) {  
-          dias[index].style.display = "flex";
-          dias[index].textContent = '';
-          index++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 17);
-      
-    }, 1400);
-    setTimeout(() => {
-      desvanecerDiasSimultaneamenteConIntervalo()
-    }, 1400);
-}
+  }
 }
 function mostrarSecuencialmente() {
   const padreElementos = document.getElementById('metas-diarias')
