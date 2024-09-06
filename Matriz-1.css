@@ -4987,7 +4987,7 @@ input.numero:focus {
   transition: transform 1.6s ease;
 }
 .move-tareas-limpieza{
-  transform: translateX(-83vw)
+  transform: translateX(-57vw)
 }
  #first_half {
   position: relative;
@@ -5830,6 +5830,164 @@ height:21%;
   background-color: rgb(0,255,0);
   color: black;
   font-weight: bold;
+}
+#calendario-mes{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left:45vw;
+  top:25vh;
+  gap: 5px;
+  width:50vw;
+  height: 33vh;
+  margin: auto;
+  display: none;
+}
+.semana {
+  position: relative;
+  display:flex;
+  flex-direction: row;
+  gap: 5px;
+  height:100%;
+  width: 100%;
+}  
+.dia {
+  position:relative;
+  display:none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  color: rgb(0, 191, 255);
+  background-color: rgb(0, 0, 50);
+  font-weight: bold;
+  box-sizing: border-box;
+  height:100%;
+  width:14.2%;
+}  
+.vacio {
+  background-color: #f0f0f0; /* Color para los días vacíos */
+  border: none;
+}
+#meses{
+  position: absolute;
+  top: 45vh;
+  left: 4vw;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  gap: 5px;
+  height: 51vh;
+  width: 8vw;
+  display: none;
+}
+.mes{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 191, 255);
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  color: rgb(0, 191, 255);
+  background-color: rgb(0, 0, 17);
+  font-weight: bold;
+  font-size: 0.6em;
+  width: 100%;
+  cursor: pointer;
+}
+.mes:hover {
+  background-color: #eee;
+} 
+#month-display{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 17);
+  border: 1px solid rgb(255,255,255); 
+  font-family: Arial, sans-serif;
+  transition: transform 1.6s ease;
+  font-size: 1em;
+  color: RGB(144, 238, 144);
+  border-radius: 7px;
+  font-weight: bold;
+  top:-30vh;
+  left:760%;
+  width: 10vw;
+  height: 4vh;
+  display: none;
+}
+.conjunto-tareas{
+  position: absolute;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  display: none;
+  font-family: "GothamRounded", sans-serif;
+  padding: 5px;
+  border-radius: 7px 0 0 7px;
+  overflow-y: auto;
+  top: 31vh;
+  width: 55vw;
+  height:42vh;
+  border: 1px solid rgb(0, 191, 255);
+  font-size: 0.7em;
+}
+#tareas-lubricacion{
+  background-color: rgb(0, 0, 33);
+  color: rgb(255, 255, 204);
+  left:43vw;
+}
+#tareas-limpieza{
+  background-color: rgb(255,255,204);
+  color: rgb(0, 0, 0);
+  left:100vw;
+  transition: transform 0.5s ease;
+}
+#dia {
+  position: absolute;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  top: 20vh;
+  left:64.8vw;
+  height: 4vh;
+  width: 6vw;
+  background-color: rgb(0,0,50); 
+  color: rgb(0, 191, 255);
+  font-family: "GothamRounded", sans-serif;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  box-sizing: border-box;
+}
+.tarea {
+  margin-bottom: 5px;
+}
+.actividades{
+  position: absolute;
+  display: flex;
+  font-family: "GothamRounded", sans-serif;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+  border-radius: 5px;
+  font-size: 0.8em;
+  background-color: rgb(0, 0, 17);
+  color: #aaa;    
+  top:26vh;
+  height: 3vh;
+  width: 20vw;
+}
+#actividad-limpieza{
+  left:70vw;
+}
+#actividad-lubricacion{
+  left: 52vw;
 }
 
 @media only screen and (max-width: 420px) {
@@ -9644,6 +9802,9 @@ height:21%;
   .move-month{
     transform: translateX(-13vw);
   }
+  .move-tareas-limpieza{
+    transform: translateX(-83vw)
+  }
   .contenedor{
     position: relative;
     width: 300px;
@@ -9991,6 +10152,7 @@ height:21%;
   #meses{
     position: absolute;
     top: 45vh;
+    left:1vw;
     display: grid;
     grid-template-rows: repeat(12, 1fr);
     gap: 5px;

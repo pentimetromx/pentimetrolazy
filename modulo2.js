@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('dia') 
+  var contiBoton = document.getElementById('calendario-mes') 
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -3188,7 +3188,7 @@ const applyFiltersV = () => {
 const applyFiltersIII = () => {
   videoStore.forEach(videoElement => {
     videoElement.style.transform = `scale(${zoomAmount}%) rotate(${degreesAmount}deg)`;
-  });
+});
 
   
 };
@@ -5180,7 +5180,28 @@ function openGraphics(elementId){
         desvanecerDiasSimultaneamenteConIntervalo()
       }, 1400);
     } 
-  }
+  }else{
+    setTimeout(() => {
+      document.getElementById('month-display').style.display='flex'
+      document.getElementById('meses').style.display='grid'
+      document.getElementById('calendario-mes').style.display='grid'
+      const dias = document.querySelectorAll(".dia");
+      let index = 0;        
+      const interval = setInterval(() => {
+        if (index < dias.length) {  
+          dias[index].style.display = "flex";
+          dias[index].textContent = '';
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 17);
+      
+    }, 1400);
+    setTimeout(() => {
+      desvanecerDiasSimultaneamenteConIntervalo()
+    }, 1400);
+}
 }
 function mostrarSecuencialmente() {
   const padreElementos = document.getElementById('metas-diarias')
@@ -5305,36 +5326,58 @@ function mostrarSemanasSecuencialmente() {
 }
 function asignarEventosDias() {
   const day = document.getElementById('dia')
-  const dias = document.querySelectorAll(".dia");  
-  dias.forEach((dia, index) => {
-    dia.addEventListener("click", () => {
-      dias.forEach((d) => {
-        d.style.display = "none"; 
+  const dias = document.querySelectorAll(".dia"); 
+  if(screenWidth < 500){  
+    dias.forEach((dia, index) => {
+      dia.addEventListener("click", () => {
+        dias.forEach((d) => {
+          d.style.display = "none"; 
+        });
+        dia.style.display = "flex";
+        dia.style.position = 'fixed';
+        dia.style.borderRadius = '0 6px 6px 0';
+        dia.style.top = '45.2vh';
+        dia.style.left = '68vw';
+        day.style.display='flex'
+        document.getElementById('month-display').classList.add('move-month')
+        if (index === 2) {
+          document.getElementById('actividad-lubricacion').style.display='flex' 
+          document.getElementById('actividad-limpieza').style.display='flex'
+        }
       });
-      dia.style.display = "flex";
-      dia.style.position = 'fixed';
-      dia.style.borderRadius = '0 6px 6px 0';
-      dia.style.top = '45.2vh';
-      dia.style.left = '68vw';
-      day.style.display='flex'
-      document.getElementById('month-display').classList.add('move-month')
-      if (index === 2) {
-        document.getElementById('actividad-lubricacion').style.display='flex' 
-        document.getElementById('actividad-limpieza').style.display='flex'
-      }
     });
-  });  
-}
+  }else{
+    dias.forEach((dia, index) => {
+      dia.addEventListener("click", () => {
+        dias.forEach((d) => {
+          d.style.display = "none"; 
+        });
+        dia.style.display = "flex";
+        dia.style.position = 'fixed';
+        dia.style.borderRadius = '0 6px 6px 0';
+        dia.style.top = '20vh';
+        dia.style.left = '70vw';
+        dia.style.height='4vh'
+        dia.style.width='5vw'
+        day.style.display='flex'
+        document.getElementById('month-display').classList.add('move-month')
+        if (index === 2) {
+          document.getElementById('actividad-lubricacion').style.display='flex' 
+          document.getElementById('actividad-limpieza').style.display='flex'
+        }
+      });
+    });
+
+  }  
+} 
 const activLimpieza = document.getElementById('tareas-limpieza');  
 const activLubricacion = document.getElementById('tareas-lubricacion');
-
 actividadesLubricacion.addEventListener('click',() =>{
   activLimpieza.style.display='flex'
   actividadesLimpieza.style.backgroundColor=''
   actividadesLimpieza.style.color=''
   activLimpieza.classList.remove('move-tareas-limpieza')
   activLubricacion.style.display='flex'
-  activLimpieza.style.display='flex'
   actividadesLubricacion.style.backgroundColor='rgb(0,255,0)'
   actividadesLubricacion.style.color='rgb(33,0,0)'
   actividadesLimpieza.style.display='flex'
@@ -5343,20 +5386,19 @@ actividadesLubricacion.addEventListener('click',() =>{
   }, 500); 
 })
 actividadesLimpieza.addEventListener('click', () => {
-  activLimpieza.classList.remove('move-tareas-limpieza')
-  activLimpieza.style.display = 'flex';
-  actividadesLubricacion.style.backgroundColor=''
-  actividadesLubricacion.style.color=''
-  activLubricacion.style.display = 'flex';
-  actividadesLimpieza.style.backgroundColor = 'rgb(0,255,0)';
+  activLimpieza.style.left=''
+  activLimpieza.style.display='flex'
+  actividadesLimpieza.style.backgroundColor = 'rgb(0,255,0)'; // boton
   actividadesLimpieza.style.color = 'rgb(33,0,0)';
-  activLimpieza.classList.add('move-tareas-limpieza');    
+  actividadesLubricacion.style.backgroundColor='' // boton
+  actividadesLubricacion.style.color=''  
   setTimeout(() => {
-    animateScroll('tareas-limpieza');
+    activLimpieza.classList.add('move-tareas-limpieza'); // cajon  
+  }, 100); 
+  setTimeout(() => {
+    animateScroll('tareas-limpieza');    
   }, 500); 
 });
-
-
 function desvanecerDiasSimultaneamenteConIntervalo() {
   const dias = document.querySelectorAll(".dia");
   intervaloGlobal = setInterval(() => {
