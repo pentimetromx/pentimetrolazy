@@ -5126,6 +5126,11 @@ function openGraphics(elementId){
         miElemento.style.borderRadius = '10px';
       }
     });
+    if(elementId === 'canvasContainer9'){
+      setTimeout(() => {
+        mostrarSecuencialmente()
+      }, 1400);
+    } 
     if(elementId === 'canvasContainer7'){
       const elementosDia = document.querySelectorAll('.dia');
       elementosDia.forEach((elemento) => {

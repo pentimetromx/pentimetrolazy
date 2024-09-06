@@ -5843,6 +5843,30 @@ height:21%;
   margin: auto;
   display: none;
 }
+#metas-diarias{
+  position:absolute;
+  display: flex;
+  font-family: "Oswald";
+  color: yellow;
+  font-size: 0.7em;    
+  left:42vw;
+  top:14vh;
+  width: 97vw;
+  height: 60vh;
+  transition: transform 0.5s ease;
+}
+#metas-diarias li {
+  opacity: 0;
+  color: rgb(255,255,220);
+  transition: opacity 0.5s ease;
+}  
+#metas-diarias li.visible {
+  opacity: 1;
+}  
+#metas-diarias li .indice {
+  color: rgb(177,255,255);
+  margin-right:6px;
+}
 .semana {
   position: relative;
   display:flex;
@@ -5963,6 +5987,7 @@ height:21%;
   border: 1px solid #ccc;
   border-radius: 6px 0 0 6px;
   box-sizing: border-box;
+  display: none;
 }
 .tarea {
   margin-bottom: 5px;
@@ -10077,7 +10102,7 @@ height:21%;
     color: black;
     font-weight: bold;
   }
-  #gran-cortina {
+  #gran-cortina{
     position: fixed; /* Usa 'fixed' para que cubra toda la ventana de visualización */
     display: none; /* Inicialmente está oculto */
     left: 0;
@@ -10095,7 +10120,7 @@ height:21%;
     color: yellow;
     font-size: 0.7em;    
     left:-8vw;
-    top:40vh;
+    top:42vh;
     width: 97vw;
     height: 60vh;
     transition: transform 0.5s ease;
