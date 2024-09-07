@@ -5418,3 +5418,35 @@ function mostrarDiaEspecifico(posicion) {
     console.error('Posición fuera del rango de elementos disponibles.');
   }
 }
+function animarTextoSecuencialmente() {
+  const textoLabel = document.getElementById('texto');
+  const letras = textoLabel.textContent.split(''); // Divide el texto en letras
+  textoLabel.innerHTML = ''; // Limpia el contenido actual
+
+  // Crear spans para cada letra
+  letras.forEach((letra) => {
+      const span = document.createElement('span');
+      
+      // Verificar si la letra es un espacio
+      if (letra === ' ') {
+          span.innerHTML = '&nbsp;'; // Usa un espacio no separable para mantener el espacio
+      } else {
+          span.textContent = letra;
+      }
+      
+      textoLabel.appendChild(span);
+  });
+
+  const spans = textoLabel.querySelectorAll('span');
+
+  spans.forEach((span, index) => {
+      setTimeout(() => {
+          span.classList.add('letra-aumentada');
+
+          // Retorna a su tamaño normal después de 300ms
+          setTimeout(() => {
+              span.classList.remove('letra-aumentada');
+          }, 300);
+      }, 100 * index); // Intervalo de 100ms entre letras
+  });
+}

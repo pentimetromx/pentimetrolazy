@@ -5447,7 +5447,7 @@ input.numero:focus {
   left: 23%;
   width:55%;
   height: 4vh;
-  font-size: 1.8vw;
+  /* font-size: 1.8vw; */
   border-radius: 7px;
 }
 .dureza{
@@ -6044,7 +6044,7 @@ height:21%;
     display: flex;
     height:90vh;
     width:99vw;
-    top: 7vh;
+    top: 12vh;
     left: 0;
   }
   #cont-titulo-operacion h4{
@@ -9665,17 +9665,29 @@ height:21%;
     position:absolute;
     display: flex;
     font-family: 'GothamRounded', sans-serif;
-    align-items: center;
-    justify-content: center;
     border-radius: 5px;
     color:whitesmoke ;
     background-color: #000;
     top:117%;
-    left: 29.5%;
-    width:40%;
+    left:23%;
+    width:47%;
     height: 4vh;
-    font-size: 3.4vw;
   }
+  .contraseña label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .letra-aumentada {
+    font-size:2.5em;
+    transition: font-size 0.6s ease;
+  }
+
   input.numero {
     position: relative;
     display: flex;
@@ -10335,5 +10347,6 @@ height:21%;
   #actividad-lubricacion{
     left: 17vw;
   }
+
 }
 

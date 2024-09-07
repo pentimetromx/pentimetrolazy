@@ -277,7 +277,6 @@ function manejarLogica() {
         inputs[0].focus();
       }
     },2500);
-  
     function manejarEntrada(event) {
       const inputActual = event.target;
       const valor = parseInt(inputActual.value);
