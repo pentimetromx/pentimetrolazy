@@ -266,20 +266,17 @@ function manejarLogica() {
   let valoresIngresados = [0, 0, 0, 0];
   if(screenWidth < 500){
     setTimeout(() => {
-      document.getElementById('contenedor-principal').style.display='flex'
-    }, 1000);
-    setTimeout(() => {
-      if (inputs.length > 0) {
         var tituloAngosto = document.getElementById('img-logo');
         tituloAngosto.style.width = '100%';      
-      }
-    }, 1200);
+    }, 1000);
+    setTimeout(() => {
+      document.getElementById('contenedor-principal').style.display='flex'
+    }, 1900);
     setTimeout(() => {
       if (inputs.length > 0) {
         inputs[0].focus();
       }
-    }, 1800);
-
+    },2500);
   
     function manejarEntrada(event) {
       const inputActual = event.target;
@@ -348,8 +345,8 @@ function manejarLogica() {
       input.addEventListener('input', manejarEntrada);
     });
   }
-  let imgBackgound = document.getElementById('image-background')
-  imgBackgound.style.display = 'flex'
+/*   let imgBackgound = document.getElementById('image-background')
+  imgBackgound.style.display = 'flex' */
 }
 function abrirSeccionOperativa(elementId){
   if (document.documentElement.requestFullscreen) {
