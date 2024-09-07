@@ -4984,7 +4984,7 @@ function reponerEstilos(){
   if(document.getElementById('dia')){document.getElementById('dia').style.display='none'}
 
   var intervalos = [intervaloActualizar, intervaloActualizarII];
-  intervalos.forEach(function(intervalo, index) {
+  intervalos.forEach(function(intervalo) {
     if (intervalo) {
       clearInterval(intervalo);
     }

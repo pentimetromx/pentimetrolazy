@@ -4397,12 +4397,12 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   elementos.forEach((elemento) => {
     elemento.removeAttribute('style');
   });
-  if (intervaloActualizar) {
+  /* if (intervaloActualizar) {
     clearInterval(intervaloActualizar);
     console.log("Intervalo detenido.");
-  }
+  } */
   if(screenWidth < 500){
-    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
+    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','dynamic-graphs-II','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
@@ -4424,12 +4424,21 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     }
     ubicaPerfil(idEmpleado)
     document.getElementById('links-iniciales').style.left='16vw'
-    if (intervaloActualizarII) {
-      clearInterval(intervaloActualizarII);
-      console.log("Intervalo detenido.");
-    }  
-  }else{
+    var intervalos = [intervaloActualizar, intervaloActualizarII];
+    intervalos.forEach(function(intervalo) {
+      if (intervalo) {
+        clearInterval(intervalo);
+      }
+    });
+    }else{
     ubicaPerfil(idEmpleado)
+    var intervalos = [intervaloActualizar, intervaloActualizarII];
+    intervalos.forEach(function(intervalo) {
+      if (intervalo) {
+        clearInterval(intervalo);
+      }
+    });
+
   }
   switch (functionExe) {
     case 'updateAna':

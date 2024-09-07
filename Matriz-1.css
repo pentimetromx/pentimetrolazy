@@ -9041,7 +9041,7 @@ height:21%;
     text-align: center;
     font-size:2.5vw;
   }
-  #dynamic-graphs{
+  #dynamic-graphs-II{
     position:absolute;
     display: flex;
     align-items: center;
@@ -9055,6 +9055,7 @@ height:21%;
     font-size: 0.8em;
     border-radius: 8px;
     color: rgb(255,255,200);
+    display: none;
   }
   
   #contLineas-II{
