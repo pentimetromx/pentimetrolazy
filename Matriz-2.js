@@ -270,11 +270,16 @@ function manejarLogica() {
     }, 1000);
     setTimeout(() => {
       if (inputs.length > 0) {
-        inputs[0].focus();
         var tituloAngosto = document.getElementById('img-logo');
         tituloAngosto.style.width = '100%';      
       }
-      }, 1200);
+    }, 1200);
+    setTimeout(() => {
+      if (inputs.length > 0) {
+        inputs[0].focus();
+      }
+    }, 1800);
+
   
     function manejarEntrada(event) {
       const inputActual = event.target;
