@@ -263,6 +263,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
+  setTimeout(() => {
+    document.getElementById('contenedor-principal').style.display='flex'
+  }, 1000);
   let valoresIngresados = [0, 0, 0, 0];
   if(screenWidth < 500){
     if (inputs.length > 0) {

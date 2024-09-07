@@ -9659,6 +9659,7 @@ height:21%;
     border-radius: 10px;
     background-color: transparent;
     z-index: 37;
+    display: none;
   }
   .contraseña{
     position:absolute;
