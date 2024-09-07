@@ -4397,10 +4397,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   elementos.forEach((elemento) => {
     elemento.removeAttribute('style');
   });
-  /* if (intervaloActualizar) {
-    clearInterval(intervaloActualizar);
-    console.log("Intervalo detenido.");
-  } */
+
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','dynamic-graphs-II','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -4431,7 +4428,9 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
       }
     });
     }else{
+      desactivarClicsPorUnTiempo(1600)
     ubicaPerfil(idEmpleado)
+    document.getElementById('dynamic-graphs').style.display = 'flex'
     var intervalos = [intervaloActualizar, intervaloActualizarII];
     intervalos.forEach(function(intervalo) {
       if (intervalo) {

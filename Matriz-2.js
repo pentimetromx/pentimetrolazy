@@ -263,16 +263,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
-  setTimeout(() => {
-    document.getElementById('contenedor-principal').style.display='flex'
-  }, 1000);
   let valoresIngresados = [0, 0, 0, 0];
   if(screenWidth < 500){
-    if (inputs.length > 0) {
-      inputs[0].focus();
-      var tituloAngosto = document.getElementById('img-logo');
-      tituloAngosto.style.width = '100%';      
-    }
+    setTimeout(() => {
+      document.getElementById('contenedor-principal').style.display='flex'
+    }, 1000);
+    setTimeout(() => {
+      if (inputs.length > 0) {
+        inputs[0].focus();
+        var tituloAngosto = document.getElementById('img-logo');
+        tituloAngosto.style.width = '100%';      
+      }
+      }, 1200);
+  
     function manejarEntrada(event) {
       const inputActual = event.target;
       const valor = parseInt(inputActual.value);

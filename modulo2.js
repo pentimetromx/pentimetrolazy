@@ -5088,6 +5088,8 @@ function openGraphics(elementId){
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
+    desactivarClicsPorUnTiempo(1500)
+    document.getElementById('dynamic-graphs').style.display = 'none'
     document.getElementById('contLineas').style.backgroundColor = '#333333';'dia'
     document.getElementById('month-display').textContent = ''
     const month = document.querySelectorAll('.mes')
