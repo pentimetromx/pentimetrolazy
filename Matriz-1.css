@@ -970,6 +970,21 @@ width:447px ;
   height:100%;
   background-color: rgba(255,0,255, 1);
 }
+#dynamic-graphs{
+  position:absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
+  top: -11%;
+  left: 44.5%;
+  height: 9%;
+  width: 10%;
+  background-color: rgb(125,125,125);
+  font-size: 0.8em;
+  border-radius: 7px;
+  color: rgb(255,255,200);
+}
 #contLineas{
   position: relative;
   left: 17%;
@@ -2772,8 +2787,8 @@ h6{
 #title-interfaz{
   position: absolute;
   display: flex;
-  top: 0.1%;
-  left: 20%;
+  top: 4%;
+  left: 27%;
   width: 60%;
   font-family: "GothamRounded", sans-serif;
   text-align: center;
@@ -5989,6 +6004,11 @@ height:21%;
   box-sizing: border-box;
   display: none;
 }
+.dia:hover{
+  background-color: rgb(0,255,0);
+  color: rgb(40, 0, 0);
+}
+
 .tarea {
   margin-bottom: 5px;
 }
@@ -9021,6 +9041,22 @@ height:21%;
     text-align: center;
     font-size:2.5vw;
   }
+  #dynamic-graphs{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    top: -8%;
+    left: 36%;
+    height: 7%;
+    width: 28%;
+    background-color: rgb(125,125,125);
+    font-size: 0.8em;
+    border-radius: 8px;
+    color: rgb(255,255,200);
+  }
+  
   #contLineas-II{
     position:relative;
     display: flex;
@@ -10169,7 +10205,11 @@ height:21%;
     box-sizing: border-box;
     height:4vh;
     width: 10vw;
-  }  
+  }
+  .dia:hover{
+    background-color: rgb(0,255,0);
+    color: rgb(40, 0, 0);
+  }
   .vacio {
     background-color: #f0f0f0; /* Color para los días vacíos */
     border: none;

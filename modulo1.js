@@ -4397,7 +4397,10 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   elementos.forEach((elemento) => {
     elemento.removeAttribute('style');
   });
-
+  if (intervaloActualizar) {
+    clearInterval(intervaloActualizar);
+    console.log("Intervalo detenido.");
+  }
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -4420,6 +4423,11 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     if (iconosPermitidos.includes(icono)) {
     }
     ubicaPerfil(idEmpleado)
+    document.getElementById('links-iniciales').style.left='16vw'
+    if (intervaloActualizarII) {
+      clearInterval(intervaloActualizarII);
+      console.log("Intervalo detenido.");
+    }  
   }else{
     ubicaPerfil(idEmpleado)
   }
@@ -4508,25 +4516,25 @@ function aumentarTamaño(element, factor, tiempo) {
   }, tiempo * 500)
 }
 function deslizaMosaico(){
-    deslizaMosaicoII('icon-carlos', 'troubleshoot')  
+  deslizaMosaicoII('icon-carlos', 'troubleshoot')  
+  setTimeout(function() {
+    deslizaMosaicoII('icon-andres', 'def1')  
     setTimeout(function() {
-      deslizaMosaicoII('icon-andres', 'def1')  
+      deslizaMosaicoII('icon-jorge', 'def2')  
       setTimeout(function() {
-        deslizaMosaicoII('icon-jorge', 'def2')  
+        deslizaMosaicoII('icon-jesus', 'adtBut')  
         setTimeout(function() {
-          deslizaMosaicoII('icon-jesus', 'adtBut')  
+          deslizaMosaicoII('icon-sandra', 'fua1')  
           setTimeout(function() {
-            deslizaMosaicoII('icon-sandra', 'fua1')  
+            deslizaMosaicoII('icon-mario', 'lup')
             setTimeout(function() {
-              deslizaMosaicoII('icon-mario', 'lup')
-              setTimeout(function() {
-              deslizaMosaicoII('icon-ana', 'lup')
-            }, 300)
+            deslizaMosaicoII('icon-ana', 'lup')
           }, 300)
         }, 300)
       }, 300)
     }, 300)
-    }, 300)
+  }, 300)
+  }, 300)
 }
 function graficosAutomaticos(idGrafico){
 
@@ -4599,7 +4607,6 @@ document.getElementById('textToColor').addEventListener('click', () => {
   }
 }
 );
-// Links desplegables
 let intervaloAltura = null; 
 let intervaloAlturaI = null;
 let alturaObjetivoAlcanzada = false;
