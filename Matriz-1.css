@@ -5444,11 +5444,11 @@ input.numero:focus {
   color:whitesmoke ;
   background-color: #000;
   top:117%;
-  left: 23%;
+  left:-28%;
   width:55%;
   height: 4vh;
-  /* font-size: 1.8vw; */
   border-radius: 7px;
+  transform: transition 0.3s ease;
 }
 .dureza{
   width:44vw;
@@ -9645,22 +9645,6 @@ height:21%;
     margin: 0.1px 0;
     left: 7px;
   }
-  #contenedor-principal{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 7px; 
-    top: 33%;
-    margin: 0 auto;  
-    width:77vw;
-    height:12vh;
-    border-radius: 10px;
-    background-color: transparent;
-    z-index: 37;
-    display: none;
-  }
   .contraseña{
     position:absolute;
     display: flex;
@@ -9668,9 +9652,9 @@ height:21%;
     border-radius: 5px;
     color:whitesmoke ;
     background-color: #000;
-    top:117%;
+    top:60%;
     left:23%;
-    width:47%;
+    width:40%;
     height: 4vh;
   }
   .contraseña label {
@@ -9682,28 +9666,44 @@ height:21%;
     width: 100%;
     font-size: 1em;
   }
-
   .letra-aumentada {
     font-size:2.5em;
     transition: font-size 0.6s ease;
   }
-
   input.numero {
-    position: relative;
+    position: absolute;
     display: flex;
     bottom: 5px;
-    width: 44%;
-    height: 80%;  
+    width: 11%;
+    height: 10%; 
+    top: 44%; 
     color: rgb(0,255,0);
     background-color: rgb(0,0,0);
     border-color: goldenrod;
     border-radius: 11px;
     font-size: 40px;
-     text-align: center;
+    text-align: center;
     font-family: Arial, sans-serif;
     border: 2px solid transparent;
-
+    z-index: 37;
   }
+  #input1{
+    left: -28vw;
+    transition: transform 0.3s ease;
+  }
+  #input2{
+    left: -28vw;
+    transition: transform 0.3s ease;
+  }
+  #input3{
+    left: -28vw;
+    transition: transform 0.3s ease;
+  }
+  #input4{
+    left: -28vw;
+    transition: transform 0.3s ease; 
+  }
+
   input.numero:focus {
     border-color: blue;
   }
@@ -9880,6 +9880,24 @@ height:21%;
   .move-tareas-limpieza{
     transform: translateX(-83vw)
   }
+  .move-inputI{
+    transform: translateX(45vw)      
+  }
+  .move-inputII{
+    transform: translateX(60vw)     
+  }
+  .move-inputIII{
+    transform: translateX(75vw)     
+  }
+  .move-inputIV{
+    transform: translateX(90vw)     
+  }  
+  .move-contraseña{
+    transform: translateX(90vw)     
+  }
+
+
+  
   .contenedor{
     position: relative;
     width: 300px;

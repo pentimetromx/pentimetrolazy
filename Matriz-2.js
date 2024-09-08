@@ -270,12 +270,18 @@ function manejarLogica() {
         tituloAngosto.style.width = '100%';      
     }, 1000);
     setTimeout(() => {
-      document.getElementById('contenedor-principal').style.display='flex'
+      document.getElementById('input1').classList.add('move-inputI')
+      document.getElementById('input2').classList.add('move-inputII')
+      document.getElementById('input3').classList.add('move-inputIII')
+      document.getElementById('input4').classList.add('move-inputIV')
+
+
     }, 1900);
     setTimeout(() => {
       if (inputs.length > 0) {
         inputs[0].focus();
       }
+      animarTextoSecuencialmente()
     },2500);
     function manejarEntrada(event) {
       const inputActual = event.target;
