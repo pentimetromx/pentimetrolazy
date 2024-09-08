@@ -321,12 +321,25 @@ function manejarLogica() {
       input.addEventListener('input', manejarEntrada);
     });
   }else{
-    if (inputs.length > 0) {
-      inputs[0].focus();
+    setTimeout(()=>{
       var tituloAncho = document.getElementById('titulo-ancho');
       tituloAncho.style.width = '100%'
-    }
-    function manejarEntrada(event) {
+    },1500 )
+    setTimeout(()=>{
+      document.getElementById('input1').classList.add('move-inputI')
+      document.getElementById('input2').classList.add('move-inputII')
+      document.getElementById('input3').classList.add('move-inputIII')
+      document.getElementById('input4').classList.add('move-inputIV')
+      document.getElementById('contraseña').classList.add('move-contraseña')
+      },1900)
+    setTimeout(()=>{
+      if (inputs.length > 0) {
+        inputs[0].focus();          
+      }
+      animarTextoSecuencialmente()
+    },2500)
+
+    /* function manejarEntrada(event) {
       const inputActual = event.target;
       const valor = parseInt(inputActual.value);
       let suma = 0;
@@ -351,13 +364,45 @@ function manejarLogica() {
         input.value = '';
         });         
       }
-    }
-    inputs.forEach(input => {
+    } */
+    
+      function manejarEntrada(event) {
+        const inputActual = event.target;
+        const valor = parseInt(inputActual.value);
+        let suma = 0;
+        const indice = Array.from(inputs).indexOf(inputActual);
+        if (!isNaN(valor)) {
+          valoresIngresados[indice] = valor;
+        } else {
+          valoresIngresados[indice] = 0;
+        }
+          setTimeout(() => {
+          inputActual.value = '*';
+          if (indice < inputs.length - 1) {
+            inputs[indice + 1].focus();
+          }
+        }, 177);
+        suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
+        if (suma === masterKey[0]) {
+  
+          inputs.forEach(input => {
+            input.style.display = 'none';
+          });
+          document.getElementById('contraseña').style.display='none'
+          setTimeout(() => {
+            abrirInterfaz();
+          }, 200);
+          inputs.forEach(input => {
+          input.value = '';
+          });         
+        }
+      }
+    
+      inputs.forEach(input => {
       input.addEventListener('input', manejarEntrada);
     });
+
   }
-/*   let imgBackgound = document.getElementById('image-background')
-  imgBackgound.style.display = 'flex' */
 }
 function abrirSeccionOperativa(elementId){
   if (document.documentElement.requestFullscreen) {

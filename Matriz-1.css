@@ -236,6 +236,7 @@ color: white;
   width: 20%;
   height: 6%;
   background-color: #333333;
+  display: none;
 }
 #search-form{
   position:relative;
@@ -4068,21 +4069,44 @@ h4{
   z-index: 5;
   background-color: transparent;
 }
-input.numero {
-  position: relative;
+input.numero{
+  position: absolute;
   display: flex;
   bottom: 5px;
-  width: 25%;
-  height: 80%;
+  top: 40%;
+  width: 4%;
+  height: 15%;
   color: rgb(0,255,0);
   background-color: rgb(0,0,0);
-  border-color: goldenrod; /* Cambia el color del borde cuando el input está enfocado */
+  border-color: goldenrod;
   border-radius: 11px;
   font-size: 40px;
   text-align: center;
   font-family: Arial, sans-serif;
   border: 2px solid transparent;
-    }
+  }
+
+#input1{
+  left: -28vw;
+  transition: transform 0.3s ease;
+  display: none;
+}
+#input2{
+  left: -28vw;
+  transition: transform 0.3s ease;
+  display: none;
+}
+#input3{
+  left: -28vw;
+  transition: transform 0.3s ease;  
+  display: none;
+}
+#input4{
+  left: -28vw;
+  transition: transform 0.3s ease;
+  display: none;
+}
+
 input.numero:focus {
   border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
 }
@@ -5004,6 +5028,21 @@ input.numero:focus {
 .move-tareas-limpieza{
   transform: translateX(-57vw)
 }
+.move-inputI{
+  transform: translateX(62vw)      
+}
+.move-inputII{
+  transform: translateX(70vw)     
+}
+.move-inputIII{
+  transform: translateX(78vw)     
+}
+.move-inputIV{
+  transform: translateX(86vw)     
+}  
+.move-contraseña{
+  transform: translateX(75vw)     
+}
  #first_half {
   position: relative;
   display: grid;
@@ -5443,12 +5482,20 @@ input.numero:focus {
   justify-content: center;
   color:whitesmoke ;
   background-color: #000;
-  top:117%;
-  left:-28%;
-  width:55%;
+  top:60%;
+  left:-35%;
+  width:19%;
   height: 4vh;
   border-radius: 7px;
 }
+#contraseña{
+  transition: transform 0.9s ease;
+}  
+.letra-aumentada {
+  font-size:2.5em;
+  transition: font-size 0.6s ease;
+}
+
 .dureza{
   width:44vw;
   height:55vh;
@@ -9659,7 +9706,7 @@ height:21%;
   #contraseña{
     transition: transform 0.9s ease;
   }  
-  .contraseña label {
+  .contraseña label{
     position: absolute;
     display: flex;
     align-items: center;
