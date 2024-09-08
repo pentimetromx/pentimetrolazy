@@ -5448,7 +5448,6 @@ input.numero:focus {
   width:55%;
   height: 4vh;
   border-radius: 7px;
-  transform: transition 0.3s ease;
 }
 .dureza{
   width:44vw;
@@ -9652,11 +9651,14 @@ height:21%;
     border-radius: 5px;
     color:whitesmoke ;
     background-color: #000;
-    top:60%;
-    left:23%;
+    top:58%;
+    left:-42%;
     width:40%;
     height: 4vh;
   }
+  #contraseña{
+    transition: transform 0.9s ease;
+  }  
   .contraseña label {
     position: absolute;
     display: flex;
@@ -9893,7 +9895,7 @@ height:21%;
     transform: translateX(90vw)     
   }  
   .move-contraseña{
-    transform: translateX(90vw)     
+    transform: translateX(70vw)     
   }
 
 

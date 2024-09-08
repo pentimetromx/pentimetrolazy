@@ -274,8 +274,7 @@ function manejarLogica() {
       document.getElementById('input2').classList.add('move-inputII')
       document.getElementById('input3').classList.add('move-inputIII')
       document.getElementById('input4').classList.add('move-inputIV')
-
-
+      document.getElementById('contraseña').classList.add('move-contraseña')
     }, 1900);
     setTimeout(() => {
       if (inputs.length > 0) {
