@@ -1169,7 +1169,7 @@ function showButtonsPlanosRetraso() {
   mostrarConRetraso(0) // Comienza desde el primer botón
 }
 function aumentoBotonesBody() {
-  var elementosExcluidos = ['buscador','search-form','franja-Blanca','cont-titulo','subtitulo-I','descripcion-I','contenedor-principal']
+  var elementosExcluidos = ['buscador','search-form','franja-Blanca','cont-titulo','subtitulo-I','descripcion-I']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {

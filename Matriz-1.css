@@ -9692,18 +9692,22 @@ height:21%;
   #input1{
     left: -28vw;
     transition: transform 0.3s ease;
+    display: none;
   }
   #input2{
     left: -28vw;
     transition: transform 0.3s ease;
+    display: none;
   }
   #input3{
     left: -28vw;
     transition: transform 0.3s ease;
+    display: none;
   }
   #input4{
     left: -28vw;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
+    display: none;
   }
 
   input.numero:focus {
