@@ -732,6 +732,7 @@ color: white;
   height:100%;
   object-fit: fill;      
 }
+.boton-e,
 .boton-c {
   position: relative;
   display: flex;
@@ -739,14 +740,15 @@ color: white;
   height:6vh;
   width:6.7vw;
   background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);  
-  font-size:0.9vw;                     
-  color: rgb(0, 0, 0);
+  font-size:0.9em;                     
+  color: rgb(0,0,77);
+  font-weight: bold;
   border-radius: 5px;
   margin-right:1.6vw;
   margin-bottom:2.3vh;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.9s; 
+  transition: transform 0.2s; 
 }
 .boton-d{
   position: relative;
@@ -764,7 +766,7 @@ color: white;
   cursor: pointer; 
   transition: transform 0.1s;
 }
-.boton-e{
+/* .boton-e{
   position: relative;
   display: flex;
   align-items: center;
@@ -779,7 +781,7 @@ color: white;
   text-align: left;    
   cursor: pointer; 
   transition: transform 0.1s; 
-}
+} */
 .boton-c > span {
   margin-left: 20px;
 }
@@ -4073,14 +4075,14 @@ input.numero{
   position: absolute;
   display: flex;
   bottom: 5px;
-  top: 40%;
-  width: 4%;
-  height: 15%;
+  top: 47%;
+  width: 3%;
+  height: 7%;
   color: rgb(0,255,0);
   background-color: rgb(0,0,0);
   border-color: goldenrod;
   border-radius: 11px;
-  font-size: 40px;
+  font-size: 1.5em;
   text-align: center;
   font-family: Arial, sans-serif;
   border: 2px solid transparent;
@@ -5029,19 +5031,19 @@ input.numero:focus {
   transform: translateX(-57vw)
 }
 .move-inputI{
-  transform: translateX(62vw)      
+  transform: translateX(69vw)      
 }
 .move-inputII{
-  transform: translateX(70vw)     
+  transform: translateX(73vw)     
 }
 .move-inputIII{
-  transform: translateX(78vw)     
+  transform: translateX(77vw)     
 }
 .move-inputIV{
-  transform: translateX(86vw)     
+  transform: translateX(81vw)     
 }  
 .move-contraseña{
-  transform: translateX(75vw)     
+  transform: translateX(77vw)     
 }
  #first_half {
   position: relative;
@@ -5484,7 +5486,7 @@ input.numero:focus {
   background-color: #000;
   top:60%;
   left:-35%;
-  width:19%;
+  width:15.6%;
   height: 4vh;
   border-radius: 7px;
 }
@@ -6217,8 +6219,8 @@ height:21%;
   .boton-c {
     position: relative;
     display: flex;
-    height:3.6vh;
-    width:11vw;
+    height:4vh;
+    width:13vw;
     font-size: 1.7vw;
   }
   .boton-b{
@@ -9695,11 +9697,11 @@ height:21%;
     position:absolute;
     display: flex;
     font-family: 'GothamRounded', sans-serif;
-    border-radius: 5px;
+    border-radius: 6px;
     color:whitesmoke ;
     background-color: #000;
-    top:58%;
-    left:-42%;
+    top:52%;
+    left:-40%;
     width:40%;
     height: 4vh;
   }
@@ -9723,14 +9725,14 @@ height:21%;
     position: absolute;
     display: flex;
     bottom: 5px;
-    width: 11%;
-    height: 10%; 
+    width: 7%;
+    height:6%; 
     top: 44%; 
     color: rgb(0,255,0);
     background-color: rgb(0,0,0);
     border-color: goldenrod;
     border-radius: 11px;
-    font-size: 40px;
+    font-size:1em;
     text-align: center;
     font-family: Arial, sans-serif;
     border: 2px solid transparent;
@@ -9934,16 +9936,16 @@ height:21%;
     transform: translateX(-83vw)
   }
   .move-inputI{
-    transform: translateX(45vw)      
+    transform: translateX(54vw)      
   }
   .move-inputII{
-    transform: translateX(60vw)     
+    transform: translateX(65vw)     
   }
   .move-inputIII{
-    transform: translateX(75vw)     
+    transform: translateX(76vw)     
   }
   .move-inputIV{
-    transform: translateX(90vw)     
+    transform: translateX(87vw)     
   }  
   .move-contraseña{
     transform: translateX(70vw)     
