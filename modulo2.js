@@ -5325,6 +5325,7 @@ function asignarEventosDias() {
   const dias = document.querySelectorAll(".dia");
   const displayLimpieza = document.getElementById('actividad-limpieza')
   const displayLubrica = document.getElementById('actividad-lubricacion')
+  desactivarClicsPorUnTiempo(500)
   if(screenWidth < 500){  
     dias.forEach((dia, index) => {
       dia.addEventListener("click", () => {
@@ -5341,7 +5342,6 @@ function asignarEventosDias() {
         if (index === 2) {
           displayLubrica.style.display='flex'
           displayLimpieza.style.display='flex'
-
         }
       });
     });
