@@ -338,8 +338,7 @@ function manejarLogica() {
       }
       animarTextoSecuencialmente()
     },2500)
-
-    /* function manejarEntrada(event) {
+    function manejarEntrada(event) {
       const inputActual = event.target;
       const valor = parseInt(inputActual.value);
       let suma = 0;
@@ -357,6 +356,11 @@ function manejarLogica() {
       }, 177);
       suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
       if (suma === masterKey[0]) {
+
+        inputs.forEach(input => {
+          input.style.display = 'none';
+        });
+        document.getElementById('contraseña').style.display='none'
         setTimeout(() => {
           abrirInterfaz();
         }, 200);
@@ -364,44 +368,11 @@ function manejarLogica() {
         input.value = '';
         });         
       }
-    } */
-    
-      function manejarEntrada(event) {
-        const inputActual = event.target;
-        const valor = parseInt(inputActual.value);
-        let suma = 0;
-        const indice = Array.from(inputs).indexOf(inputActual);
-        if (!isNaN(valor)) {
-          valoresIngresados[indice] = valor;
-        } else {
-          valoresIngresados[indice] = 0;
-        }
-          setTimeout(() => {
-          inputActual.value = '*';
-          if (indice < inputs.length - 1) {
-            inputs[indice + 1].focus();
-          }
-        }, 177);
-        suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
-        if (suma === masterKey[0]) {
-  
-          inputs.forEach(input => {
-            input.style.display = 'none';
-          });
-          document.getElementById('contraseña').style.display='none'
-          setTimeout(() => {
-            abrirInterfaz();
-          }, 200);
-          inputs.forEach(input => {
-          input.value = '';
-          });         
-        }
-      }
+    }
     
       inputs.forEach(input => {
       input.addEventListener('input', manejarEntrada);
     });
-
   }
 }
 function abrirSeccionOperativa(elementId){

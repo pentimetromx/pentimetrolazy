@@ -285,8 +285,6 @@ var nuevosDatosIII = [5, 17, 8, 30, 44, 10];
 var nuevosDatosIIII = [11, 50, 20, 80, 10, 100];
 var nuevosDatosV = [5, 17, 33, 45, 51, 57, 67, 99];
 
-var intervaloActualizarII;
-var intervaloActualizar;
 function actualizarDatos() {
   intervaloActualizar = setInterval(function() {
     [nuevosDatos, nuevosDatosI, nuevosDatosII, nuevosDatosIII, nuevosDatosIIII, nuevosDatosV].forEach(function(array, index) {
@@ -304,27 +302,6 @@ function actualizarDatos() {
         case 3: chart10.data.datasets[0].data = array; chart10.update(); break;
         case 4: chart11.data.datasets[0].data = array; chart11.update(); break;
         case 5: chart12.data.datasets[0].data = array; chart12.update(); break;
-      }
-    });
-  }, 1000);
-}
-function actualizarDatosII() {
-  intervaloActualizarII = setInterval(function() {
-    [nuevosDatos, nuevosDatosI, nuevosDatosII, nuevosDatosIII, nuevosDatosIIII, nuevosDatosV].forEach(function(array, index) {
-      for (var i = 0; i < array.length; i++) {
-        array[i] += 17;
-        if (array[i] > 100) {
-          array[i] = 0;   
-        }
-      }      
-      // Actualizar los gráficos
-      switch (index) {
-        case 0: chart7II.data.datasets[0].data = array; chart7II.update(); break;
-        case 1: chart8II.data.datasets[0].data = array; chart8II.update(); break;
-        case 2: chart9II.data.datasets[0].data = array; chart9II.update(); break;
-        case 3: chart10II.data.datasets[0].data = array; chart10II.update(); break;
-        case 4: chart11II.data.datasets[0].data = array; chart11II.update(); break;
-        case 5: chart12II.data.datasets[0].data = array; chart12II.update(); break;
       }
     });
   }, 1000);
@@ -747,6 +724,33 @@ function updateDinamicoII() {
   chart12II.data.datasets[0].data = nuevosDatosV;
   chart12II.update();
   actualizarDatosII()
+}
+
+function actualizarDatosII() {
+  if (intervaloActualizarII) {
+    clearInterval(intervaloActualizarII);
+    intervaloActualizarII = null; // Reiniciar la variable
+  }
+
+  intervaloActualizarII = setInterval(function() {
+    [nuevosDatos, nuevosDatosI, nuevosDatosII, nuevosDatosIII, nuevosDatosIIII, nuevosDatosV].forEach(function(array, index) {
+      for (var i = 0; i < array.length; i++) {
+        array[i] += 17;
+        if (array[i] > 100) {
+          array[i] = 0;   
+        }
+      }      
+      // Actualizar los gráficos
+      switch (index) {
+        case 0: chart7II.data.datasets[0].data = array; chart7II.update(); break;
+        case 1: chart8II.data.datasets[0].data = array; chart8II.update(); break;
+        case 2: chart9II.data.datasets[0].data = array; chart9II.update(); break;
+        case 3: chart10II.data.datasets[0].data = array; chart10II.update(); break;
+        case 4: chart11II.data.datasets[0].data = array; chart11II.update(); break;
+        case 5: chart12II.data.datasets[0].data = array; chart12II.update(); break;
+      }
+    });
+  }, 1000);
 }
 
 
@@ -5440,4 +5444,15 @@ function animarTextoSecuencialmente() {
       }, 300);
     }, 33 * index);
 });
+}
+
+function pruebas() {
+  var intervalos = [intervaloActualizar, intervaloActualizarII];
+  intervalos.forEach(function(intervalo, index) {
+    if (intervalo) {
+      clearInterval(intervalo);
+      if (index === 0) intervaloActualizar = null;
+      if (index === 1) intervaloActualizarII = null;
+    }
+  });
 }

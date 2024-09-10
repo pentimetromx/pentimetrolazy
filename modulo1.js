@@ -4381,6 +4381,9 @@ function ubicaPerfil(idEmpleado) {
   }
 }
 let llamadaEjecutada = false;
+var intervaloActualizarII = null;
+var intervaloActualizar = null;
+
 function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
   var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
@@ -4397,7 +4400,14 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   elementos.forEach((elemento) => {
     elemento.removeAttribute('style');
   });
-
+  var intervalos = [intervaloActualizar, intervaloActualizarII];
+  intervalos.forEach(function(intervalo, index) {
+    if (intervalo) {
+      clearInterval(intervalo);
+      if (index === 0) intervaloActualizar = null;
+      if (index === 1) intervaloActualizarII = null;
+    }
+  });
   if(screenWidth < 500){
     var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','dynamic-graphs-II','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -4407,7 +4417,7 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
       }
     } 
     reponerEstilos()
-    desactivarClicsPorUnTiempo(1600)
+    desactivarClicsPorUnTiempo(1000)
     const elementos = document.querySelectorAll('.graphs-employee');
     elementos.forEach((elemento) => {
       elemento.removeAttribute('style');
@@ -4421,23 +4431,11 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     }
     ubicaPerfil(idEmpleado)
     document.getElementById('links-iniciales').style.left='16vw'
-    var intervalos = [intervaloActualizar, intervaloActualizarII];
-    intervalos.forEach(function(intervalo) {
-      if (intervalo) {
-        clearInterval(intervalo);
-      }
-    });
+
     }else{
       desactivarClicsPorUnTiempo(1600)
-    ubicaPerfil(idEmpleado)
-    document.getElementById('dynamic-graphs').style.display = 'flex'
-    var intervalos = [intervaloActualizar, intervaloActualizarII];
-    intervalos.forEach(function(intervalo) {
-      if (intervalo) {
-        clearInterval(intervalo);
-      }
-    });
-
+      ubicaPerfil(idEmpleado)
+      document.getElementById('dynamic-graphs').style.display = 'flex'
   }
   switch (functionExe) {
     case 'updateAna':
