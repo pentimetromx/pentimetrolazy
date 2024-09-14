@@ -5446,6 +5446,8 @@ function animarTextoSecuencialmente() {
 });
 }
 
+/* ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
+
 function pruebas() {
   var intervalos = [intervaloActualizar, intervaloActualizarII];
   intervalos.forEach(function(intervalo, index) {
@@ -5456,3 +5458,34 @@ function pruebas() {
     }
   });
 }
+
+
+
+const elemento = document.getElementById('padre-naranja');
+let desplazamientoX = 0;
+let desplazamientoY = 0;
+let activo = false;
+
+// Iniciar el arrastre cuando se toca el elemento
+elemento.addEventListener('touchstart', (event) => {
+  activo = true;
+  const touch = event.touches[0];
+  desplazamientoX = touch.clientX - elemento.offsetLeft;
+  desplazamientoY = touch.clientY - elemento.offsetTop;
+});
+
+// Mover el elemento mientras se arrastra
+document.addEventListener('touchmove', (event) => {
+  if (activo) {
+    const touch = event.touches[0];
+    const x = touch.clientX - desplazamientoX;
+    const y = touch.clientY - desplazamientoY;
+    elemento.style.left = `${x}px`;
+    elemento.style.top = `${y}px`;
+  }
+});
+
+// Detener el arrastre cuando se suelta
+document.addEventListener('touchend', () => {
+  activo = false;
+});
