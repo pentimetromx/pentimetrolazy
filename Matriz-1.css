@@ -83,18 +83,6 @@ body,html {
 h1, h2, h3 {
   font-family: "GothamRounded";
 }
-.boton-a{
-  height:6.5vh;
-  width:41.6vw;
-  font-size: 1vw;
-  text-align: center;
-  background-color: rgba(255, 24, 55);
-  color: white;
-  cursor: pointer;
-  border-radius: 7px;
-  position: absolute;
-  top:0.7vh;
-}
 #toggleVideoButton{
   position: absolute;
   display: flex;
@@ -120,7 +108,7 @@ h1, h2, h3 {
 .boton-g:hover,
 .boton-h:hover{
 transform: scale(1.1);
-background: blue;
+background:  blue;
 color: white;
 }
 .boton-d:hover {
@@ -379,28 +367,86 @@ color: white;
 .contene-9,
 .contene-99{
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   position: absolute;
   top:1vh;
 }
-#container01{
-  position:absolute;
+.boton-a{
+  height:100%;
+  width:100%;
+  font-size: 1vw;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+  top:0.7vh;
+}
+#back-container {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 8% 40% 40% 8%;
+  top: 3vh;
+  left: 33vw;
+  width: 35vw;
+  height: 4vw;
+  align-items: center;
+  justify-items: center;
+  z-index: -1;
+}
+
+/* Botones de fondo (rojos) */  
+.butt-back {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  top:3%;
-  left: 50%;
-  width:35%;
+  display: none;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%);  
-  display: none;
-}
-#bot-atras{
+  height: 60%;
+  width: 60%;
+  font-size: 1vw;
   text-align: center;
-  width: 47px;
-  position:relative;
-  top: 5px;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: rgba(255, 0, 0, 1); 
+  z-index: -1;
 }
+
+
+#container01 {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+  display: none;
+  top: 3vh;
+  left: 33vw;
+  width: 35vw;
+  height: 4vw;
+  align-items: center;
+  justify-items: center;
+  border-radius: 7px;
+  background-color: rgba(30, 24, 24, 0.2);
+  backdrop-filter: blur(7px);
+  z-index: 1;
+}
+
+#container01 > button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1vw;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: rgba(255, 24, 55, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+
 .rebobinador,
 .unidProceso,
 .alimentadorId,
@@ -766,22 +812,6 @@ color: white;
   cursor: pointer; 
   transition: transform 0.1s;
 }
-/* .boton-e{
-  position: relative;
-  display: flex;
-  align-items: center;
-  height:6vh;
-  width:6.7vw;
-  background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);                       
-  color: black;
-  border-radius: 5px;
-  margin-right:1.6vw;
-  margin-bottom:1.4vh;
-  font-size:0.9vw;
-  text-align: left;    
-  cursor: pointer; 
-  transition: transform 0.1s; 
-} */
 .boton-c > span {
   margin-left: 20px;
 }
@@ -973,20 +1003,34 @@ width:447px ;
   height:100%;
   background-color: rgba(255,0,255, 1);
 }
-#dynamic-graphs{
-  position:absolute;
-  display: flex;
+.estilo-igual,
+.desactivar{
   align-items: center;
   justify-content: center;
   cursor:pointer;
-  top: -11%;
-  left: 44.5%;
-  height: 9%;
-  width: 10%;
   background-color: rgb(125,125,125);
   font-size: 0.8em;
-  border-radius: 7px;
+  border-radius: 8px;
   color: rgb(255,255,200);
+}
+#conte-butts-graphs{
+  position: absolute;
+  display: grid;
+  display: none;
+  grid-template-columns: 50% 50%;
+  gap: 5px;
+  top: 22vh;
+  left:17vw;
+  width: 15vw;
+  min-height: 7vh;
+  z-index: 40;
+}
+#static-graphs,
+#dynamic-graphs{
+  position: relative;
+  display: block;
+  height:100%;
+  width: 100%;
 }
 #contLineas{
   position: relative;
@@ -1109,7 +1153,7 @@ width:447px ;
   display: flex;
   flex-direction: column;
   top: 7%;
-  left:44%;
+  left:46%;
   width: 27%;
   height: 67%;  
   z-index: 9;
@@ -1162,11 +1206,9 @@ width:447px ;
 }
 #vidTintero{
   position: absolute;
-  left: 10%;
-  top:-4%;  
-  height: 83%;
-  width: 62%;  
-
+  left: 17.5%;
+  height: 82%;
+  width: 63%;
 }
 #imgTorre-s,
 #imgTorre-m{
@@ -5451,7 +5493,7 @@ input.numero:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  top:107vh;
+  top:110vh;
   left:105vw;
   z-index: 34;    
   display: none;
@@ -6081,6 +6123,9 @@ height:21%;
 }
 #actividad-lubricacion{
   left: 52vw;
+}
+.canva-graphs {
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 420px) {
@@ -7018,17 +7063,41 @@ height:21%;
   .mostrar-cont{
     display: flex;
   }
+  /* #back-container{
+    left: 10%;
+    top: 6%;
+    width:85%; 
+    height:5%;
+  }
+  #back-container > button{
+    background-color: transparent;
+  } */
   #container01{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 50%;
+    left: 10%;
     top: 6%;
     width:83%; 
+    height:5%;
     z-index: 3;
     display: none;
-  } 
+  }
+  #container01 > button {
+    font-size: 0.7em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: rgba(255, 24, 55, 0.4);
+  }
   #imgsRepuestos{
     position: fixed;
     display: flex;
@@ -7098,7 +7167,6 @@ height:21%;
     height:18.6%;
 
   }
-
 .cont-oblicuos {
   position: absolute;
   display: flex;
@@ -9089,21 +9157,21 @@ height:21%;
     text-align: center;
     font-size:2.5vw;
   }
-  #dynamic-graphs-II{
-    position:absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor:pointer;
-    top: -8%;
-    left: 36%;
+  #butts-graphs{
+    position: absolute;
+    display:grid;
+    grid-template-rows: 50% 50%;
+    gap: 5px;
+    top: -5%;
+    left: 33%;
+    width: 37%;
     height: 7%;
-    width: 28%;
-    background-color: rgb(125,125,125);
-    font-size: 0.8em;
-    border-radius: 8px;
-    color: rgb(255,255,200);
-    display: none;
+  }
+  #butts-graphs > button{
+    border-radius: 4px;
+    background-color: rgba(255, 0, 0, 1); 
+    color: white;
+    cursor: pointer;
   }
   
   #contLineas-II{
@@ -10239,10 +10307,11 @@ height:21%;
   #metas-diarias{
     position:absolute;
     display: flex;
+    display: none;
     font-family: "Oswald";
     color: yellow;
     font-size: 0.7em;    
-    left:-8vw;
+    left:45vw;
     top:42vh;
     width: 97vw;
     height: 60vh;
@@ -10420,6 +10489,7 @@ height:21%;
   #actividad-lubricacion{
     left: 17vw;
   }
-
+  .canva-graphs {
+    pointer-events: none;
+  }
 }
-

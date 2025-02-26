@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Lazy Loading</title>
+    <title>Lazy Loading 19022025</title>
     <link rel="stylesheet" href="./Matriz-1.css">
   </head>
-  <body onload="manejarLogica()">
+  <body onload="manejarLogica()">   
     <header class="buscador" id="buscador">
       <form id="search-form">
           <input type="text" id="search-input" placeholder="Buscar..."> 
@@ -18,7 +18,7 @@
     <div id="over_size"></div>
     <div id="over_side"></div>
     <div id="logo-grande">
-      <img src="./assets/cadena logo big.png"  id="titulo-ancho" alt="logo">
+      <img src="./assets/cadena logo big.png"  id="titulo-ancho" alt="logo"> 
     </div>
     <div id="franja-Blanca">
       <img src="./assets/cadena logo.png" id="img-logo" alt="logo">
@@ -451,7 +451,7 @@
       Tu navegador no soporta el elemento de video.
     </video>
     <img src="./assets/eintein.png"  id="image-background" alt="einst">
-    <div class="links-inicialesI" id="links-inicialesI">      
+    <div class="links-inicialesI ocultos" id="links-inicialesI">      
       <div id="titleContainerI" class="cont-titulo-pilares">
         <p id="textToColorI">Pilares<span>&#9660;</span></p>
       </div>      
@@ -465,7 +465,7 @@
         <li onclick="cerrarPilares()">Salir</li>
       </ul>
     </div>
-    <div class="links-iniciales" id="links-iniciales">
+    <div class="links-iniciales ocultos" id="links-iniciales">
       <div id="titleContainer">
         <p id="textToColor">Entrenamientos <span>&#9660;</span></p>
       </div>
@@ -479,6 +479,7 @@
         <li onclick="abrirSeccionDemo('planetary')">Demostrativo</li>
         <li onclick="abrirPrepress('pre-prensa')">Teoria del color</li>
         <li onclick="abrirDensitometria('densitometria')">Densitometría</li>
+        <li>Simulador rotativa RK-300</li>
         <li onclick="cerrarPilares()">Salir</li>
       </ul>
     </div>   
@@ -583,13 +584,20 @@
         </div>
       </div> 
     </div>
-    <div id="container01">
-      <button class="boton-a" id="bot-atras" onclick="irContenedorAnterior('contPortPlaca')"></button>
-      <button class="boton-a" id="bot-inicial" style="text-align: center;;position: relative;color: white;" onclick="VolveraInicio()">Panel Inicio</button>
-      <button class="boton-a" id="iniciar" onclick="activarPantallaCompleta()" style="position: relative;">Exit / Full Screen</button>
-      <button class="boton-a" id="bot-atras12" style="text-align: center;width: 47px;position:relative;top: 5px;" onclick="irContenedorSiguiente()"></button>
+    <div id="back-container">
+      <button class="butt-back"></button>
+      <button class="butt-back"></button>
+      <button class="butt-back"></button>
+      <button class="butt-back"></button>
+    </div>
 
-    </div><br>
+    <div id="container01">
+      <button id="bot-atras" onclick="irContenedorAnterior('contPortPlaca')"></button>
+      <button id="bot-inicial" onclick="VolveraInicio()">Panel Inicio</buttonclass=>
+      <button id="iniciar" onclick="activarPantallaCompleta()">Exit / Full Screen</buttonclass=>
+      <button id="bot-atras12" onclick="irContenedorSiguiente()"></buttonclass=>
+    </div>
+
     <div id="pantalla-tintero">  
       <div id="cont-links">
         <a href="#" class="custom-link" id="linkDistribuidor"onclick="showRepuesto('contImgDistribuidor')">Rodillo distribuidor</a>
@@ -598,10 +606,12 @@
         <a href="#" class="custom-link" id="linkManta" onclick="showRepuesto('contPortManta', 'videoTrain03')">Porta mantilla</a>
         <a href="#" class="custom-link" id="linkImpresor" onclick="showRepuesto('contImpresor', 'videoTrain01')">Cilindro impresor</a>
       </div>
-      <img data-src="./assets/Arriba abajo.jpg" class="lazy" id="imgTorre" alt="imagen-torre">      
+      <img data-src="./assets/Arriba abajo.jpg" class="lazy" id="imgTorre" alt="imagen-torre"> 
+
       <video class="lazy video-training" id="vidTintero" >
         <source data-src="./assets/Arriba abajo.mp4" type="video/mp4">
-      </video>      
+      </video>
+
       <div id="imgsRepuestos">
         <img data-src="./assets/galgas.jpg" class="image-trainings" id="eje" onclick="ampliaIndicaciones('eje')" class="lazy" alt="eje">
         <img data-src="./assets/conico.jpg" class="image-trainings" id="conico" onclick="ampliaIndicaciones('conico')" class="lazy" alt="cónico">
@@ -824,7 +834,7 @@
         <button class="boton-f " onclick="muestraRodillo('videoElement7')">Montaje distribuidor trasero <div class="linea-horizontal"></div></button>  
       </div>
       <div id="conti-video-entintador">
-        <video class="lazy video-training" id="videoElement3" autoplay loop muted>
+        <video class="lazy video-training" id="videoElement3" autoplay loop muted>  
           <source data-src="./assets/Montaje entintador.mp4" type="video/mp4">
         </video>
       </div>      
@@ -850,7 +860,7 @@
           <source data-src="./assets/plate smed.mp4" type="video/mp4">
         </video>
       </div>
-      <div id="images-smed">
+      <div id="images-smed"> 
           <img data-src="./assets/dobladora.png" class="lazy image-trainings1" id="imageElement11" alt="Entintador">
           <img data-src="./assets/instrumento.png" class="lazy image-trainings1" id="imageElement22" alt="Rodamiento entintador">
           <img data-src="./assets/vinil.png" class="lazy image-trainings1" id="imageElement33" alt="Rodamiento entintador">
@@ -876,7 +886,7 @@
       </div> 
 
       <div id="troubleshooting" class="contenedor-pariente class-line">
-        <button class="miBoton" id="archivo" onclick="listaEntrenamientosII('archivo')">Largo de impresion</button>
+        <button class="miBoton" id="archivo" onclick="listaEntrenamientosII('archivo')">Largo de impresion</button>   
         <button class="miBoton" id="btt2" onclick="listaEntrenamientosII('btt2')">Aditivos solución de fuente</button>
         <button class="miBoton" id="btt3" onclick="listaEntrenamientosII('btt3')">Reproceso adelantado</button>
         <button class="miBoton" id="btt4" onclick="listaEntrenamientosII('btt4')">Reproceso atrazado</button>
@@ -1151,7 +1161,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>   
     <div id="rodilleria">
       
       <div class="conti-boton" id="conti-boton-rodilleria">
@@ -1411,6 +1421,7 @@
         </div>
       </div>
     </div>
+    
     <div id="cont-secador">
       <div class="video-container">
         <video class="lazy video-training" id="curado-uv" autoplay loop muted>
@@ -1527,7 +1538,7 @@
     </div>
     <div id="pre-prensa">      
       <div id="vidColor">
-        <video class="lazy video-training vid-prepress" id="prisma-vid" autoplay loop onclick="abrirPrepress('pre-prensa')">
+        <video class="lazy video-training vid-prepress" id="prisma-vid" autoplay loop onclick="abrirPrepress('pre-prensa')">  
           <source data-src="./assets/prisma.mp4" type="video/mp4">
         </video>
       </div>
@@ -1592,7 +1603,7 @@
       <video    class="lazy vid-prepress" id="vid04" onclick="abrirPrepress('pre-prensa')" autoplay loop>
         <source data-src="./assets/luz.mp4" type="video/mp4">
       </video>
-      <video class="lazy vid-prepress" id="vid05" onclick="abrirPrepress('pre-prensa')" autoplay loop>
+      <video class="lazy vid-prepress" id="vid05" onclick="abrirPrepress('pre-prensa')" autoplay loop>  
         <source data-src="./assets/luz2.mp4" type="video/mp4">
       </video>
       <video class="lazy vid-prepress" id="vid06" onclick="abrirPrepress('pre-prensa')" autoplay loop>
@@ -1722,7 +1733,7 @@
       <div class="parrafo_video"> 
         <video class="lazy" muted loop autoplay controls>
           <source data-src="./assets/festo-III.mp4" type="video/mp4">
-        </video>
+        </video>  
       </div>
     </div>  
     <div id="etqts-festo">
@@ -1867,9 +1878,17 @@
         <img data-src="./assets/grafilado.jpg" class="lazy img-flex" id="imgGrafilado1" alt="neuma7">
         <img data-src="./assets/grafilado2.jpg" class="lazy img-flex" id="imgGrafilado2" alt="neuma8">
         <img data-src="./assets/grafilado4.jpg" class="lazy img-flex" id="imgGrafilado3" alt="neuma9">
-        <img data-src="./assets/grafilado5.jpg" class="lazy img-flex" id="imgGrafilado4" alt="neuma10">
+        <img data-src="./assets/grafilado5.jpg" class="lazy img-flex" id="imgGrafilado4" alt="neuma10">  
       </div>
     </div>
+
+    <div id="conte-butts-graphs">
+      <button id="dynamic-graphs" class="desactivar" onclick="updateDinamico()">Dinamico</button>      
+      <button id="static-graphs" class="estilo-igual" onclick="detenerDinamica()">Estatico</button>
+    </div>
+
+
+
     <div id="iconos">
       <h1 id="title-interfaz">Interfaz de seguimiento Mantenimiento Autonomo</h1>
 
@@ -1903,14 +1922,15 @@
           <label for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
+
+       
       <div id="contLineas">
-        <button id="dynamic-graphs" onclick="updateDinamico()">Grafico Dinamico</button>
         <div id="canvasContainer4" class="graphs-lines" onclick="openGraphics('canvasContainer4')">
           <canvas id="MiGrafica4"></canvas> 
         </div> 
         <div id="canvasContainer5" class="graphs-lines" onclick="openGraphics('canvasContainer5')">
           <canvas id="MiGrafica5"></canvas> 
-        </div>  
+        </div> 
         <div id="canvasContainer6" class="graphs-lines" onclick="openGraphics('canvasContainer6')">
           <canvas id="MiGrafica6"></canvas> 
         </div>        
@@ -1924,8 +1944,13 @@
           <canvas id="MiGrafica9"></canvas>
         </div>         
       </div>
+
       <div id="contLineas-II">
-        <button id="dynamic-graphs-II" onclick="updateDinamicoII()">Grafico Dinamico</button>
+        <div id="butts-graphs">
+          <button onclick="updateDinamicoII()">Dinamico</button>
+          <button onclick="detenerDinamica()">Estatico</button>
+        </div>
+
         <div id="canvasContainer4-II" class="graphs-employee" onclick="openGraphics('canvasContainer4-II')">
           <canvas id="MiGrafica4-II"  class="canva-graphs"></canvas> 
         </div> 
@@ -1945,6 +1970,7 @@
           <canvas id="MiGrafica9-II"  class="canva-graphs"></canvas>
         </div>  
       </div>
+
       <div class="contenedor-vertical" id="contenedor-vertical">
         <div class="cont-userI" id="icon-carlos-I">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user-I imgEmploye"  onclick="resultadosEmpleado('icon-carlos','updateCarlos','false')" alt="icono">
@@ -1975,7 +2001,9 @@
           <label class="lblNombres" for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
+      
     </div>
+    
     <div id="padre-circle">
       <div id="circle" onclick="abrirAyudas()">
         <div class="line"></div>
@@ -2417,6 +2445,7 @@
       <li>Ayudas</li>
       <li onclick="listaEntrenamientosII('archivo')">Volver</li>
     </ul>
+
     <div id="metas-diarias">
       <ol>
         <li><span class="indice">1.</span> Establece objetivos claros y alcanzables para cada día.</li>

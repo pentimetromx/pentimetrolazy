@@ -1,225 +1,17 @@
-function deslizaContenedor(identificador, idButton) {
-  reponerEstilos()
-  clearAllIntervals() 
-  desactivarClicsPorUnTiempo(500)
-  arrayIdButtsMA.forEach(element => {                                                                                                        
-    var elemento = document.getElementById(element)
-    if (elemento) {
-      if (element === idButton) {
-         elemento.style.backgroundColor = 'orange'
-         elemento.style.color = 'black'
-      } else {
-        elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
-        elemento.style.color = ''
-      }
-    }
-  })
-  contiBtt.forEach(element => {                                                                                                                                                   
-    var elemento = document.getElementById(element)
-    if (elemento) {
-      elemento.style.backgroundColor = ''
-    }
-  })  
-  if (document.body.style.zoom !== "100%") {                                                                                          
-    document.body.style.zoom = "100%";
-  }
-  switch(identificador){
-    case 'troubleshooting' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conti-boton','conteneMantaut']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      reponerEstilos()
-      var contenedorPadre = document.getElementById(identificador)
-      if (contenedorPadre) {
-        contenedorPadre.style.display = 'grid'  
-      }
-      mostrarTroublesshIntervalo()
-      cambiaColorBotones()
-      if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='flex'
-        document.getElementById('conti-boton').style.top=''
-        reponerEstilos()
-      }
-    break;
-    case 'canvasContainer2' :
-      var elementosExcluidos = ['def2','buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
-      for (var i = 0; i < allContenedores.length; i++) {
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='flex'
-        document.getElementById('conti-boton').style.top=''
-      }
-      incrementoHeightVII()
-    break;
-    case 'contChecks' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','general','first_half']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      document.getElementById('conti-boton').removeAttribute('style');
-      stopWidth = false
-      let mitad1 = document.getElementById('first_half')
-      let general = document.getElementById('general')
-      general.style.display = 'block'
-      mitad1.style.display = 'grid'
-
-      setTimeout(() => {
-        firstMovement()
-      }, 7);
-      setTimeout(() => {
-        secondMovement()
-      }, 117);
-      if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='flex'
-      }  
-    break;
-    case 'canvasContainer3' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      inicioTracker()
-      if(screenWidth < 500){        
-        var canvas3 = document.getElementById(identificador);
-        if (canvas3 !== null) {
-          canvas3.style.marginTop = '12%';
-        }
-        document.getElementById('conti-boton').style.top='20vh'
-        document.getElementById('conti-boton').style.display='flex'
-      }
-    break;
-    case 'contImagNeg' :  
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      document.getElementById('conti-boton').removeAttribute('style');
-      changeColorToGreen()
-      const numeros = document.querySelectorAll('.column_spans')
-      document.getElementById('column_2').style.marginTop = '-6%'
-      numeros.forEach((numero) => {
-        numero.style.marginTop = '260%'
-      });
-      if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='flex'
-      }  
-    break;
-    case 'contImagGraf' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      document.getElementById('conti-boton').removeAttribute('style');
-      detenerCicodelia()
-      let padre = document.getElementById('patern')
-      padre.style.display = 'grid'
-      changeColors()
-        if(screenWidth < 500){
-          document.getElementById('conti-boton').style.display='flex'  
-        }
-    break;
-    case 'conti-boton-kaizen' :
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i]) 
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-        }
-      }
-      document.getElementById('conti-boton').removeAttribute('style');
-      hideButtonsKaizenRetraso()
-      setTimeout(function() {
-        showButtonsKaizenRetraso();
-      }, 500);
-      if(screenWidth < 500){
-        document.getElementById('conti-boton').style.display='flex'  
-      }
-    break;
-    default:
-  }
-}
-function resetearBarras(){
-  let ensayos = document.querySelectorAll('.first_table .barras .horizontales');
-  ensayos.forEach(ensayo => {
-    ensayo.style.top = '';
-    ensayo.style.height = '';
-    ensayo.style.width = '';
-  });
-  imgWallStreetI.style.width = ''
-  imgWallStreet.style.height = ''
-  parentElements.style.display = 'none'
-
-  isAnimatingXIII = false      
-  isAnimatingXIV = false      
-  isAnimatingXV = false 
-  isAnimatingXII = false
-  isAnimatingXI = false
-  isAnimatingX = false
-  isAnimatingIX = false
-  isAnimatingVIII = false
-  isAnimatingVII = false
-  isAnimatingVI = false
-  /* isAnimatingXVI = false */
-}
-document.addEventListener('keydown', function(event) {             
+document.addEventListener('keydown', function(event) {               
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
-        abrirSeccionOperativa('cont-titulo-operacion')       
-        setTimeout(function() {
-          ElementosMaII('pantalla-inicial')        
-        },577)
-        setTimeout(function() {
-          abrirSeccionContinua('pantalla-inicial')
-        },977) 
-        setTimeout(function() {
-          changeButtonStyles('pantalla-tintero')
-        },1177) 
-        setTimeout(function() {
+        abrirSeccionOperativa('cont-titulo-operacion')
+        setTimeout(() => {
+          ElementosMaII('conteneMantaut')
+        }, 1000);
+        setTimeout(() => {
           resultadosMA()
-        },1377)
-        /*setTimeout(function() {
-          resultadosEmpleado('icon-ana','updateAna','img7','true')        
-          },1677) 
-        setTimeout(function() {
-          openGraphics('canvasContainer7-II')
-        },1977)
-        setTimeout(function() {
-          interfazAvance()       
-        },2177)
-        setTimeout(function() {
-          imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')
-        },3077) 
-        setTimeout(function() {
-          rodillosTeñido('btn06')
-        },3377)
-        setTimeout(function() {
-          lubricaDiario('lub-diario','labl1')
-        },3677) */
-      
+        }, 2000);
       break;
-      case 'H': 
-        cambiaColorBotones()     
+      case 'H':
+        verificarPosicionTop(['dynamic-graphs']); 
       break;
       case 'X':
         Geometria()
@@ -229,7 +21,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('dynamic-graphs') 
+  var contiBoton = document.getElementById('static-graphs')  
   var rect = contiBoton.getBoundingClientRect();
   var topPosition = rect.top;
   var leftPosition = rect.left;
@@ -269,7 +61,199 @@ function Geometria() {
   console.log('2 :','Position:', positionType);
   console.log('2 :','Display:', displayType);
   console.log('2 :','Visibility:', visibilityType);
-  console.log('2 :','Is Visible:', isVisible);
+  console.log('2 :','Is Visible:', isVisible); 
+}
+
+
+function deslizaContenedor(identificador, idButton) {
+  restablecerPosiciones(['.ocultos', '.class-line'])     
+  let contenedor = document.querySelector('#troubleshooting')
+  contenedor.style.top=''
+  contenedor.style.left=''
+  clearAllIntervals()   
+  desactivarClicsPorUnTiempo(500)
+  arrayIdButtsMA.forEach(element => {                                                                                                        
+    var elemento = document.getElementById(element)
+    if (elemento) {
+      if (element === idButton) {
+         elemento.style.backgroundColor = 'orange'
+         elemento.style.color = 'black'
+      } else {
+        elemento.style.backgroundColor = 'rgba(83, 82, 82, 0.678)'
+        elemento.style.color = ''
+      }
+    }
+  })
+  contiBtt.forEach(element => {                                                                                                                                                   
+    var elemento = document.getElementById(element)
+    if (elemento) {
+      elemento.style.backgroundColor = ''
+    }
+  })  
+  if (document.body.style.zoom !== "100%") {                                                                                          
+    document.body.style.zoom = "100%";
+  }
+  switch(identificador){
+    case 'troubleshooting' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton','conteneMantaut']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      var contenedorPadre = document.getElementById(identificador)
+      if (contenedorPadre) {
+        contenedorPadre.style.display = 'grid'  
+      }
+      mostrarTroublesshIntervalo()
+      cambiaColorBotones()
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+        document.getElementById('conti-boton').style.top=''
+      }
+    break;
+    case 'canvasContainer2' :
+      var elementosExcluidos = ['def2','buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer2','MiGrafica','wall_street_II','general']
+      for (var i = 0; i < allContenedores.length; i++) {
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+        document.getElementById('conti-boton').style.top=''
+      }
+      incrementoHeightVII()
+    break;
+    case 'contChecks' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','general','first_half']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      document.getElementById('conti-boton').removeAttribute('style');
+      stopWidth = false
+      let mitad1 = document.getElementById('first_half')
+      let general = document.getElementById('general')
+      general.style.display = 'block'
+      mitad1.style.display = 'grid'
+
+      setTimeout(() => {
+        firstMovement()
+      }, 7);
+      setTimeout(() => {
+        secondMovement()
+      }, 117);
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+      }  
+    break;
+    case 'canvasContainer3' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','canvasContainer3','general','padre']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      inicioTracker()
+      if(screenWidth < 500){        
+        var canvas3 = document.getElementById(identificador);
+        if (canvas3 !== null) {
+          canvas3.style.marginTop = '12%';
+        }
+        document.getElementById('conti-boton').style.top='20vh'
+        document.getElementById('conti-boton').style.display='flex'
+      }
+    break;
+    case 'contImagNeg' :  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagNeg','general','equalizer']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      document.getElementById('conti-boton').removeAttribute('style');
+      changeColorToGreen()
+      const numeros = document.querySelectorAll('.column_spans')
+      document.getElementById('column_2').style.marginTop = '-6%'
+      numeros.forEach((numero) => {
+        numero.style.marginTop = '260%'
+      });
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'
+      }  
+    break;
+    case 'contImagGraf' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conteneMantaut','contImagGraf','general','patern']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      document.getElementById('conti-boton').removeAttribute('style');
+      detenerCicodelia()
+      let padre = document.getElementById('patern')
+      padre.style.display = 'grid'
+      changeColors()
+        if(screenWidth < 500){
+          document.getElementById('conti-boton').style.display='flex'  
+        }
+    break;
+    case 'conti-boton-kaizen' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]) 
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
+        }
+      }
+      container1.style.display='grid'
+      document.getElementById('conti-boton').removeAttribute('style');
+      hideButtonsKaizenRetraso()
+      setTimeout(function() {
+        showButtonsKaizenRetraso();
+      }, 500);
+      if(screenWidth < 500){
+        document.getElementById('conti-boton').style.display='flex'  
+      }
+    break;
+    default:
+  }
+}
+function resetearBarras(){
+  let ensayos = document.querySelectorAll('.first_table .barras .horizontales');
+  ensayos.forEach(ensayo => {
+    ensayo.style.top = '';
+    ensayo.style.height = '';
+    ensayo.style.width = '';
+  });
+  imgWallStreetI.style.width = ''
+  imgWallStreet.style.height = ''
+  parentElements.style.display = 'none'
+
+  isAnimatingXIII = false      
+  isAnimatingXIV = false      
+  isAnimatingXV = false 
+  isAnimatingXII = false
+  isAnimatingXI = false
+  isAnimatingX = false
+  isAnimatingIX = false
+  isAnimatingVIII = false
+  isAnimatingVII = false
+  isAnimatingVI = false
 }
 function cerrarAyudas(){
   let ayudas = document.getElementById('ventana-lateral')
@@ -353,7 +337,7 @@ function updateAnaII() {
   chart10II.data.datasets[0].data = nuevosDatosIII;
   chart10II.update()
   var nuevosDatosIIII = [ 11,50,20,80,10,100]
-  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  chart11II.data.datasets[0].data = nuevosDatosIIII; 
   chart11II.update() 
   var nuevosDatosV = [ 5,17,33,45,51,57,67,99]
   chart12II.data.datasets[0].data = nuevosDatosV;
@@ -664,20 +648,23 @@ function updateCarlosII() {
   var nuevosDatosIII = [ 20,97,27,80,7,77]
   chart10II.data.datasets[0].data = nuevosDatosIII;
   chart10II.update()
-  var nuevosDatosIIII = [ 50,91,17,77,33,89]
-  chart11II.data.datasets[0].data = nuevosDatosIIII;
+  var nuevosDatosIIII = [ 50,91,17,77,33,89]  
+  chart11II.data.datasets[0].data = nuevosDatosIIII; 
   chart11II.update() 
   var nuevosDatosV = [ 17,37,22,30,5,60,77,80]
   chart12II.data.datasets[0].data = nuevosDatosV
   chart12II.update()  
 }
 function updateDinamico() {
-  setTimeout(function() { graficosAutomaticos('canvasContainer4'); }, 500);
-  setTimeout(function() { graficosAutomaticos('canvasContainer7'); }, 700);
-  setTimeout(function() { graficosAutomaticos('canvasContainer5'); }, 900);
-  setTimeout(function() { graficosAutomaticos('canvasContainer6'); }, 1100);
-  setTimeout(function() { graficosAutomaticos('canvasContainer8'); }, 700);
-  setTimeout(function() { graficosAutomaticos('canvasContainer9'); }, 1200); 
+  desactivarClick(['.desactivar'])
+  if(turnBlock === false){
+    setTimeout(function() { graficosAutomaticos('canvasContainer4'); }, 500);
+    setTimeout(function() { graficosAutomaticos('canvasContainer7'); }, 700);
+    setTimeout(function() { graficosAutomaticos('canvasContainer5'); }, 900);
+    setTimeout(function() { graficosAutomaticos('canvasContainer6'); }, 1100);
+    setTimeout(function() { graficosAutomaticos('canvasContainer8'); }, 700);
+    setTimeout(function() { graficosAutomaticos('canvasContainer9'); }, 1200); 
+  }
   var nuevosDatos = [0,70,30,70,50,90];
   chart7.data.datasets[0].data = nuevosDatos;
   chart7.update();  
@@ -699,22 +686,24 @@ function updateDinamico() {
   actualizarDatos()
 }
 function updateDinamicoII() {
-  setTimeout(function() { graficosAutomaticos('canvasContainer4-II'); }, 500);
-  setTimeout(function() { graficosAutomaticos('canvasContainer7-II'); }, 700);
-  setTimeout(function() { graficosAutomaticos('canvasContainer5-II'); }, 900);
-  setTimeout(function() { graficosAutomaticos('canvasContainer6-II'); }, 1100);
-  setTimeout(function() { graficosAutomaticos('canvasContainer8-II'); }, 700);
-  setTimeout(function() { graficosAutomaticos('canvasContainer9-II'); }, 1200); 
+  if(turnBlock === false){
+    setTimeout(function() { graficosAutomaticos('canvasContainer4-II'); }, 500);
+    setTimeout(function() { graficosAutomaticos('canvasContainer7-II'); }, 700);
+    setTimeout(function() { graficosAutomaticos('canvasContainer5-II'); }, 900);
+    setTimeout(function() { graficosAutomaticos('canvasContainer6-II'); }, 1100);
+    setTimeout(function() { graficosAutomaticos('canvasContainer8-II'); }, 700);
+    setTimeout(function() { graficosAutomaticos('canvasContainer9-II'); }, 1200); 
+  }
   var nuevosDatos = [0,70,30,70,50,90];
-  chart7II.data.datasets[0].data = nuevosDatos;
-  chart7II.update();  
+  chart7II.data.datasets[0].data = nuevosDatos; 
+  chart7II.update();    
   var nuevosDatosI = [55,5,95,30,10,10];
   chart8II.data.datasets[0].data = nuevosDatosI;
   chart8II.update();  
   var nuevosDatosII = [30,50,60,77,20,8];
   chart9II.data.datasets[0].data = nuevosDatosII;
   chart9II.update();  
-  var nuevosDatosIII = [5,17,8,30,44,10];
+  var nuevosDatosIII = [5,17,8,30,44,10];  
   chart10II.data.datasets[0].data = nuevosDatosIII;
   chart10II.update();  
   var nuevosDatosIIII = [11,50,20,80,10,100];
@@ -725,6 +714,19 @@ function updateDinamicoII() {
   chart12II.update();
   actualizarDatosII()
 }
+function detenerDinamica(){
+  restablecerClick(['.desactivar'])
+  var intervalos = [intervaloActualizar, intervaloActualizarII];
+  intervalos.forEach(function(intervalo, index) {
+    if (intervalo) {
+      clearInterval(intervalo);
+      if (index === 0) intervaloActualizar = null;
+      if (index === 1) intervaloActualizarII = null;
+    }
+  });
+}
+
+
 
 function actualizarDatosII() {
   if (intervaloActualizarII) {
@@ -752,8 +754,6 @@ function actualizarDatosII() {
     });
   }, 1000);
 }
-
-
 function deslizaMosaicoII(idElement) {
   var contLinkMant = document.getElementById('linksMA')
   var elementoAnterior = null;
@@ -883,13 +883,14 @@ function rodillosKaizen(idButton,vidElem) {
   }
   switch(idButton){
     case 'btn10':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','toyota-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
+      container1.style.display='grid'
       if(screenWidth < 500){
         for (var i = 0; i < buttsToyota.length; i++) {
         var elemento = document.getElementById(buttsToyota[i])      
@@ -935,13 +936,14 @@ function rodillosKaizen(idButton,vidElem) {
     } 
     break;
     case 'btn11':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }  
+      } 
+      container1.style.display='grid' 
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       for (var i = 0; i < arrayButtsPlanos.length; i++) {                                                                            /// OCULTA TERCEROS BOTONES
         var elemento = document.getElementById(arrayButtsPlanos[i])
@@ -959,27 +961,28 @@ function rodillosKaizen(idButton,vidElem) {
       if (contadorClicks === 1) {
         miBot.innerText = 'ANTES';
         miBot.style.backgroundColor = 'red' 
-        var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','toyota-kaizen-antes']
+        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','toyota-kaizen-antes']
         for (var i = 0; i < allContenedores.length; i++) { 
           var elemento = document.getElementById(allContenedores[i])  
           if (elemento) {
             elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
           }
         } 
+        container1.style.display='grid'
       } else if (contadorClicks === 2) {
           miBot.innerText = 'DESPUES';
           miBot.style.backgroundColor = 'green' 
-          var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','vidElem']  
+          var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','vidElem']  
           for (var i = 0; i < allContenedores.length; i++) { 
             var elemento = document.getElementById(allContenedores[i])  
             if (elemento) {
               elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
             }
           } 
+          container1.style.display='grid'
           videoKaizen.style.display = 'flex'
           videoKaizen.currentTime = 0
           videoKaizen.play()  
-          // Reiniciar la variable a cero después del segundo clic
           contadorClicks = 0;
           if (screenWidth < 500){
             contBotKaizen.removeAttribute('style')
@@ -1002,16 +1005,16 @@ function rodillosKaizen(idButton,vidElem) {
       }       
     break;
     case 'btn13':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','planos-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','planos-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }  
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
-        var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
+      container1.style.display='grid'
+      Array.from(buttsTerceros).forEach(elemento => { 
+        var element = document.getElementById(elemento.id)
         if (element) {
           element.style.display = 'inline-block'
         }
@@ -1026,13 +1029,14 @@ function rodillosKaizen(idButton,vidElem) {
       contplanosKaizen.style.display = 'flex'
     break;  
     case 'btn14':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','materiales-kaizen','conteneMantaut','conti-boton-kaizen','conti-boton','conti-boton-planos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }  
+      } 
+      container1.style.display='grid' 
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
@@ -1043,13 +1047,14 @@ function rodillosKaizen(idButton,vidElem) {
       contMateriales.style.display = 'flex'
     break;  
     case 'btn15':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-planos','conti-boton-kaizen']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-      }  
+      } 
+      container1.style.display='grid' 
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       Array.from(buttsTerceros).forEach(elemento => {                                                                                /// MOSTRAR BOTONES TERCEROS
         var element = document.getElementById(elemento.id) // Aquí asumo que cada elemento tiene un atributo 'id'
@@ -1059,13 +1064,14 @@ function rodillosKaizen(idButton,vidElem) {
       })
     break;
     case 'btn17':
-      var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','conti-boton-kaizen','kaizen-propuestos']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       } 
+      container1.style.display='grid'
     break;       
     default:
   }
@@ -1203,16 +1209,16 @@ function aumentoBotonesBody() {
   aumentarYRestaurar(0);
 }
 function tamaño100(){
-  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
+  var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conteneMantaut','conti-boton','troubleshooting','linksMA','linkLis']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }  
+  container1.style.display='grid'
   troublesh.removeAttribute('style')
   document.body.style.zoom = "100%"
-  reponerEstilos()   
 }
 const imagenesAumentar = document.querySelectorAll('img.aumentar')
 imagenesAumentar.forEach(image => {
@@ -1244,11 +1250,6 @@ botones.forEach(function(boton) {
 var id = boton.getAttribute('id')
 alternarVisibilidad(id)
 }) 
-document.addEventListener("DOMContentLoaded", function() {
-  toggleVideoButton.addEventListener("click", function() {
-    video.pause()
-  })
-})
 images.forEach(image => {
   let isFullscreen = false;
   image.addEventListener('click', () => {
@@ -3131,13 +3132,14 @@ function restablecerEstilos(elemento) {
   elemento.classList.add('clase-contenedor-7');  // Ajusta el nombre de la clase según tu caso
 }
 function volverApre(){
-  var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
+  var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pre-prensa','imgs-prepress','primerCont','vidCicodelia']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }  
+  container1.style.display='grid'
 }
 const applyFilters = () => {
   videoStore.forEach(videoElement => {
@@ -3768,14 +3770,14 @@ const INTERVALOSHORIZONTALES = {
   intervaloXLVIII: null,
 }
 function barraInteligente() {
-  var elementosExcluidos = ['first_half','buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['first_half','buscador','search-form','conteneMantaut','conti-boton','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-
+  container1.style.display='grid'
   const elementos = document.querySelectorAll('nicho_spans .estilos'); 
   elementos.forEach(elemento => {
     elemento.removeAttribute('style');
@@ -4579,13 +4581,14 @@ function secondMovement(){
       hijos[i].style.display = 'none';
     }
   }
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales']  
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','buscador','search-form','conteneMantaut','conti-boton','links-inicialesI','links-iniciales']  
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  container1.style.display='grid'
   clearInterval(INTERVALOS.intervaloI);
   clearInterval(INTERVALOS.intervaloII);
   clearInterval(INTERVALOS.intervaloIII);
@@ -4658,13 +4661,14 @@ function thirdMovement(){
   incrementoHeightVII()
 }
 function fourthMovement(){
-var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','search-form','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','buscador','search-form','cortina','conteneMantaut','conti-boton','links-inicialesI','links-iniciales'];
 for (var i = 0; i < allContenedores.length; i++) { 
   var elemento = document.getElementById(allContenedores[i])  
   if (elemento) {
     elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
   }
 }
+container1.style.display='grid'
 var padre = document.getElementById('equalizer');    
 if (padre) {
   padre.style = ''
@@ -4676,13 +4680,14 @@ if (padre) {
 changeColorToGreen()
 }
 function fifthMovement(){
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','search-form','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','buscador','search-form','cortina','conteneMantaut','conti-boton','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
+  container1.style.display='grid'
   var slider1 = document.getElementById('padre')
   var estilosAplicados = window.getComputedStyle(slider1)
   for (var i = 0; i < estilosAplicados.length; i++) {
@@ -4692,14 +4697,14 @@ function fifthMovement(){
   inicioTracker()
 }
 function sixthMovement(){
-  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','search-form','cortina','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales'];
+  var elementosExcluidos = ['def2','general','first_half','second_half','nicho_spans','wall_street_II','equalizer','padre','patern','buscador','search-form','cortina','conteneMantaut','conti-boton','links-inicialesI','links-iniciales'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
   }
-
+  container1.style.display='grid'
   var padre = document.getElementById('patern');    
   if (padre) {
     padre.style = ''
@@ -4770,13 +4775,14 @@ function moveElement(element, parent) {
   }, speed * 2);
 }
 document.getElementById('butt-sitio').addEventListener('click', () => {
-  var elementosExcluidos = ['buscador','search-form','container01','sitema-humedad','links-inicialesI','links-iniciales']
+  var elementosExcluidos = ['buscador','search-form','sitema-humedad','links-inicialesI','links-iniciales']
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
     }
-  } 
+  }
+  container1.style.display='grid' 
   document.getElementById('butt-sitio').style.display='none'
   abrirSeccionContinua()
 })
@@ -4790,8 +4796,10 @@ function isVisible(element) {
   );
 }
 function cerrarVentanasII(){
+  let botonVuelve = document.querySelector('#butt-links-II')
+  botonVuelve.style.left = ''
+  botonVuelve.style.top = ''
   if(screenWidth < 500){
-    reponerEstilos()
     let contFreno = document.getElementById('grilla-frena');
     let lubricantes = document.getElementById('lubricantes'); 
     let rodamientos = document.getElementById('inicio');
@@ -4837,14 +4845,14 @@ function cerrarVentanasII(){
       abrirSeccionContinua('pantalla-inicial'); 
     }
   }else{
-    var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','container01','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
+    var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos','linksMA','linkLis']  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])  
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
       }
     }
-    reponerEstilos()
+    container1.style.display='grid'
     document.getElementById('troubleshooting').style.display='grid'
     const ventanas = document.querySelectorAll('.ventana');
     for (let i = 0; i < ventanas.length; i++) {
@@ -4935,6 +4943,8 @@ document.getElementById('ventana-lateral').addEventListener('mouseleave',() =>{
     }
   });
 })
+
+
 function reponerEstilos(){
   let padreSolucionador = document.getElementById('troubleshooting')
   padreSolucionador.style.gridTemplateColumns = '';
@@ -5001,6 +5011,7 @@ function reponerEstilos(){
     }
   }
 }
+
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 function showContextMenu(x, y) {
@@ -5083,18 +5094,26 @@ subMenu.addEventListener('mouseleave',() =>{
 function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
+
+
+
+
 function openGraphics(elementId){
+  if(turnBlock === false){
+    turnBlock = true
+  }
+
   if(screenWidth > 500){
-    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']
+    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
-      }
+      }   
     }
+    container1.style.display='grid'
     desactivarClicsPorUnTiempo(1500)
-    document.getElementById('dynamic-graphs').style.display = 'none'
-    document.getElementById('contLineas').style.backgroundColor = '#333333';'dia'
+    document.getElementById('contLineas').style.backgroundColor = '#333333';
     document.getElementById('month-display').textContent = ''
     const month = document.querySelectorAll('.mes')
     month.forEach((mes) => {
@@ -5115,7 +5134,7 @@ function openGraphics(elementId){
       setTimeout(() => {
         mostrarSecuencialmente()
       }, 1400);
-    } 
+    }    
     if(elementId === 'canvasContainer7'){
       const elementosDia = document.querySelectorAll('.dia');
       elementosDia.forEach((elemento) => {
@@ -5141,16 +5160,22 @@ function openGraphics(elementId){
       setTimeout(() => {
         desvanecerDiasSimultaneamenteConIntervalo()
       }, 1400);
-    } 
+    }
+    setTimeout(() => {   
+      if(turnGraphic === false){
+        turnGraphic = true
+        moverElementos(["conte-butts-graphs"], 27, -7);
+      }
+    }, 1300);
   }else {
-    var elementosExcluidos = ['buscador','search-form','container01','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II']
+    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','contLineas-II','iconos','conte-secundario','MiGrafica9-II']
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i])
       if (elemento) {
         elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none' 
       }
     }
-    reponerEstilos()
+    container1.style.display='grid'
     document.getElementById('calendario-mes').style.display='none'
     const elementosLi = document.querySelectorAll("#metas-diarias li")
     elementosLi.forEach((li, index) => {
@@ -5198,11 +5223,21 @@ function openGraphics(elementId){
       }, 1400);
     } 
   }
+
 }
+
 function mostrarSecuencialmente() {
   const padreElementos = document.getElementById('metas-diarias')
   const elementos = document.querySelectorAll("#metas-diarias li")
   padreElementos.style.display = 'flex'
+
+  if(screenWidth < 500){
+    padreElementos.style.top = '40vh'
+    padreElementos.style.left = '23vw'
+  }else{
+    padreElementos.style.left = '41vw';
+    }
+
   elementos.forEach((li, index) => {
     setTimeout(() => {
       li.classList.remove("visible");
@@ -5272,13 +5307,11 @@ function mostrarCalendario(mesSeleccionado) {
 let nuevoElemento;
 meses.forEach((mes) => {
   mes.addEventListener("click", function () {
-    reponerEstilos()
     document.getElementById('tareas-lubricacion').style.display='none'
     document.getElementById('tareas-limpieza').style.display='none'
     document.getElementById('actividad-lubricacion').style.display='none'
     document.getElementById('actividad-limpieza').style.display='none'
     meses.forEach((m) => {
-      reponerEstilos()
       m.style.backgroundColor = "";
       m.style.color = "";
     });
@@ -5447,20 +5480,6 @@ function animarTextoSecuencialmente() {
 }
 
 /* ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
-
-function pruebas() {
-  var intervalos = [intervaloActualizar, intervaloActualizarII];
-  intervalos.forEach(function(intervalo, index) {
-    if (intervalo) {
-      clearInterval(intervalo);
-      if (index === 0) intervaloActualizar = null;
-      if (index === 1) intervaloActualizarII = null;
-    }
-  });
-}
-
-
-
 const elemento = document.getElementById('padre-naranja');
 let desplazamientoX = 0;
 let desplazamientoY = 0;
@@ -5482,10 +5501,28 @@ document.addEventListener('touchmove', (event) => {
     const y = touch.clientY - desplazamientoY;
     elemento.style.left = `${x}px`;
     elemento.style.top = `${y}px`;
-  }
+  }   
 });
 
 // Detener el arrastre cuando se suelta
 document.addEventListener('touchend', () => {
   activo = false;
 });
+
+
+function verificarPosicionTop(childID) {
+  let elementos = childID  
+  elementos.forEach(id => {
+    let elemento = document.getElementById(id);      
+    if (elemento) {
+      // Obtener la posición actual en píxeles
+      let posicionTopPx = elemento.getBoundingClientRect().top;          
+      // Convertir 32vh a píxeles según la altura de la ventana
+      let limiteVH = (window.innerHeight * 10) / 100; 
+      // Verificar si la posición top es menor al límite
+      if (posicionTopPx < limiteVH) {
+        restaurarEstilosPadre("contLineas");
+      }
+    }
+  });
+}
