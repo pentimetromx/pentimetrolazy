@@ -1,70 +1,3 @@
-document.addEventListener('keydown', function(event) {               
-  if (event.ctrlKey && event.shiftKey) {
-    switch (event.key) {
-      case 'Z':
-        abrirSeccionOperativa('cont-titulo-operacion')
-        setTimeout(() => {
-          ElementosMaII('conteneMantaut')
-        }, 1000);
-        setTimeout(() => {
-          resultadosMA()
-        }, 2000);
-      break;
-      case 'H':
-        verificarPosicionTop(['dynamic-graphs']); 
-      break;
-      case 'X':
-        Geometria()
-      break;                  
-    }
-  }
-});
-function Geometria() {
-  console.clear();  
-  var contiBoton = document.getElementById('static-graphs')  
-  var rect = contiBoton.getBoundingClientRect();
-  var topPosition = rect.top;
-  var leftPosition = rect.left;
-  var widthValue = rect.width;
-  var heightValue = rect.height;
-  var style = window.getComputedStyle(contiBoton);
-  var positionType = style.position;
-  var displayType = style.display;
-  var visibilityType = style.visibility;
-  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-  console.log('1 :','ID:', contiBoton.id);
-  console.log('1 :','Top:', topPosition);
-  console.log('1 :','Left:', leftPosition);
-  console.log('1 :','Height:', heightValue);
-  console.log('1 :','Width:', widthValue);
-  console.log('1 :','Position:', positionType);
-  console.log('1 :','Display:', displayType);
-  console.log('1 :','Visibility:', visibilityType);
-  console.log('1 :','Is Visible:', isVisible);
-  
-  var contiBotonI = document.getElementById('lubricantes') 
-  var rect = contiBotonI.getBoundingClientRect();
-  var topPosition = rect.top;
-  var leftPosition = rect.left;
-  var widthValue = rect.width;
-  var heightValue = rect.height;
-  var style = window.getComputedStyle(contiBotonI);
-  var positionType = style.position;
-  var displayType = style.display;
-  var visibilityType = style.visibility;
-  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-  console.log('2 :','ID:', contiBotonI.id);
-  console.log('2 :','Top:', topPosition);
-  console.log('2 :','Left:', leftPosition);
-  console.log('2 :','Height:', heightValue);
-  console.log('2 :','Width:', widthValue);
-  console.log('2 :','Position:', positionType);
-  console.log('2 :','Display:', displayType);
-  console.log('2 :','Visibility:', visibilityType);
-  console.log('2 :','Is Visible:', isVisible); 
-}
-
-
 function deslizaContenedor(identificador, idButton) {
   restablecerPosiciones(['.ocultos', '.class-line'])     
   let contenedor = document.querySelector('#troubleshooting')
@@ -261,14 +194,12 @@ function cerrarAyudas(){
   let video = document.getElementById('prisma-vid-II');
   video.style.left = '';  
 }
-
 var nuevosDatos = [0, 70, 30, 70, 50, 90];
 var nuevosDatosI = [55, 5, 95, 30, 10, 10];
 var nuevosDatosII = [30, 50, 60, 77, 20, 8];
 var nuevosDatosIII = [5, 17, 8, 30, 44, 10];
 var nuevosDatosIIII = [11, 50, 20, 80, 10, 100];
 var nuevosDatosV = [5, 17, 33, 45, 51, 57, 67, 99];
-
 function actualizarDatos() {
   intervaloActualizar = setInterval(function() {
     [nuevosDatos, nuevosDatosI, nuevosDatosII, nuevosDatosIII, nuevosDatosIIII, nuevosDatosV].forEach(function(array, index) {
@@ -290,7 +221,6 @@ function actualizarDatos() {
     });
   }, 1000);
 }
-
 function updateAna() {
   setTimeout(function() { graficosAutomaticos('canvasContainer4'); }, 500);
   setTimeout(function() { graficosAutomaticos('canvasContainer7'); }, 700);
@@ -2180,34 +2110,7 @@ zoomableImages.forEach((zoomableImage) => {
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const suggestionsList = document.getElementById('suggestions')
-const sugerencias = [
-'autonomo',
-'bateria',
-'contra',
-'contraPresion',
-'densitometria',
-'impresorImg',
-'inicio',
-'manta',
-'mantenimiento autonomo',
-'mantilla',
-'pantalla-inicial',
-'planas',
-'plancha',
-'porta mantilla',
-'porta plancha',
-'pre',
-'preprensa',
-'rotatek',
-'secador',
-'secador uv',
-'smed',
-'resultados',
-'tintero',
-'torre',
-'variable'
-  
-]
+
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault() // Evita que se envíe el formulario
   const searchTerm = searchInput.value.toLowerCase() // Obtenemos el término de búsqueda y lo convertimos a minúsculas
@@ -2300,20 +2203,8 @@ searchForm.addEventListener('submit', function (e) {
       alert("No se encontró ninguna coincidencia para la búsqueda: " + searchTerm)  
     break;
   }
-  // Verifica si suggestionsList no es nulo antes de intentar establecer su propiedad innerHTML
-  if (suggestionsList) {
-    // Puedes agregar una lógica para autocompletar el término de búsqueda
-    if (sugerencias.includes(searchTerm)) {
-      // Si el término de búsqueda coincide con una sugerencia, lo autocompletamos
-      suggestionsList.innerHTML = ''; // Borra cualquier sugerencia anterior
-      const suggestionOption = document.createElement('option');
-      suggestionOption.value = searchTerm;
-      suggestionsList.appendChild(suggestionOption);
-    }
-  } else {
-    console.error('No se encontró el elemento con ID "suggestions"');
-  }
 })
+
 const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
 const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
 const canvasElements4 = document.querySelectorAll('#contChecks input')
@@ -5095,14 +4986,13 @@ function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
 
-
-
+let intervalEnEjecucion = false;
 
 function openGraphics(elementId){
   if(turnBlock === false){
     turnBlock = true
   }
-
+  desactivarClick(['.graphs-lines'])
   if(screenWidth > 500){
     var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','contLineas','iconos','conte-secundario']
     for (var i = 0; i < allContenedores.length; i++) { 
@@ -5144,23 +5034,13 @@ function openGraphics(elementId){
         document.getElementById('month-display').style.display='flex'
         document.getElementById('meses').style.display='grid'
         document.getElementById('calendario-mes').style.display='grid'
-        const dias = document.querySelectorAll(".dia");
-        let index = 0;        
-        const interval = setInterval(() => {
-          if (index < dias.length) {  
-            dias[index].style.display = "flex";
-            dias[index].textContent = '';
-            index++;
-          } else {
-            clearInterval(interval);
-          }
-        }, 17);
-        
+        iniciarAnimacionDias()
       }, 1400);
       setTimeout(() => {
         desvanecerDiasSimultaneamenteConIntervalo()
       }, 1400);
     }
+    
     setTimeout(() => {   
       if(turnGraphic === false){
         turnGraphic = true
@@ -5177,12 +5057,14 @@ function openGraphics(elementId){
     }
     container1.style.display='grid'
     document.getElementById('calendario-mes').style.display='none'
+
     const elementosLi = document.querySelectorAll("#metas-diarias li")
     elementosLi.forEach((li, index) => {
       setTimeout(() => {
         li.classList.remove("visible");
       }, index * 1);
     });  
+    
     const elementos = document.querySelectorAll('.graphs-employee');
     elementos.forEach((miElemento) => {
       if (miElemento.id === elementId) {
@@ -5223,31 +5105,59 @@ function openGraphics(elementId){
       }, 1400);
     } 
   }
-
 }
+
+function iniciarAnimacionDias() {
+  if (intervalEnEjecucion) return;
+  setTimeout(() => {
+    intervalEnEjecucion = true; //intervalo en ejecución
+  }, 50);
+  setTimeout(() => {
+    const dias = document.querySelectorAll(".dia");
+    let index = 0;
+  
+    const interval = setInterval(() => {
+      if (index < dias.length) {
+        dias[index].style.display = "flex";
+        dias[index].textContent = '';
+        index++;
+      } else {
+        clearInterval(interval);
+        intervalEnEjecucion = false; // Restablecer intervalo
+      }
+    }, 17);
+  }, 100);
+}
+
 
 function mostrarSecuencialmente() {
   const padreElementos = document.getElementById('metas-diarias')
   const elementos = document.querySelectorAll("#metas-diarias li")
-  padreElementos.style.display = 'flex'
 
   if(screenWidth < 500){
     padreElementos.style.top = '40vh'
     padreElementos.style.left = '23vw'
   }else{
     padreElementos.style.left = '41vw';
-    }
+  }
 
   elementos.forEach((li, index) => {
-    setTimeout(() => {
+  setTimeout(() => {
       li.classList.remove("visible");
     }, index * 1);
   });
-  elementos.forEach((li, index) => {
-    setTimeout(() => {
-      li.classList.add("visible");
-    }, index * 100); 
-  });
+  setTimeout(() => {
+    padreElementos.style.display = 'flex'
+  }, 250);
+
+  setTimeout(() => {
+    elementos.forEach((li, index) => {
+      setTimeout(() => {
+        li.classList.add("visible");
+      }, index * 20); 
+    });
+  }, 300);
+  
 }
 const meses = document.querySelectorAll("#meses .mes");
 const calendarioMes = document.getElementById("calendario-mes");
@@ -5455,30 +5365,6 @@ function mostrarDiaEspecifico(posicion) {
     console.error('Posición fuera del rango de elementos disponibles.');
   }
 }
-function animarTextoSecuencialmente() {
-  const textoLabel = document.getElementById('texto');
-  const letras = textoLabel.textContent.split(''); // Divide el texto en letras
-  textoLabel.innerHTML = '';
-  letras.forEach((letra) => {
-    const span = document.createElement('span');
-    if (letra === ' ') {
-      span.innerHTML = '&nbsp;';
-    } else {
-      span.textContent = letra;
-    }    
-    textoLabel.appendChild(span);
-  });
-  const spans = textoLabel.querySelectorAll('span');
-  spans.forEach((span, index) => {
-    setTimeout(() => {
-      span.classList.add('letra-aumentada');
-      setTimeout(() => {
-        span.classList.remove('letra-aumentada');
-      }, 300);
-    }, 33 * index);
-});
-}
-
 /* ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
 const elemento = document.getElementById('padre-naranja');
 let desplazamientoX = 0;

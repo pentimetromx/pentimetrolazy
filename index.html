@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Lazy Loading 19022025</title>
+    <title>Lazy Loading 26022025</title>
     <link rel="stylesheet" href="./Matriz-1.css">
+    <link rel="stylesheet" href="./Matriz-2.css">
   </head>
   <body onload="manejarLogica()">   
+
     <header class="buscador" id="buscador">
       <form id="search-form">
-          <input type="text" id="search-input" placeholder="Buscar..."> 
-          <datalist id="suggestions"></datalist>      
-            <img data-src="./assets/lupa.jpg" class="lazy" alt="Buscar">  
+        <input type="text" id="search-input" placeholder="Buscar...">   
+        <datalist id="suggestions"></datalist>                                             
+        <img data-src="./assets/lupa.jpg" class="busqueda lazy" alt="Buscar">  
       </form>
     </header>
+    
     <div id="gran-cortina"></div>
     <div id="over_size"></div>
     <div id="over_side"></div>
@@ -472,7 +475,7 @@
       
       <ul id="linkList" class="iridescent-element">
         <li onclick="abrirSeccionContinua('pantalla-inicial')">Impresion rotativa / flexográfica</li>
-        <li onclick="">Simulador impresion</li>
+        <li onclick="iniciarAnimaciones()">Simulador impresion</li>
         <li onclick="abrirSeccionVariable('cont-variable')">Impresion variable</li>
         <li onclick="abrirSeccionPlanas('cont-plana')">Impresion plana</li>
         <li onclick="abrirSeccionCurado('cont-secador')">Curado UV</li>
@@ -2016,7 +2019,7 @@
       <img data-src="./assets/ayudas.png" class="lazy" id="imagen-ayudas" onclick="alternarAyudas()" onmouseout="ocultarElementos('imagen-ayudas')" alt="">
       <h6 id="ayudas-video">Ayudas</h6>
     </div>
-    <div class="contenedor">
+    <div class="contenedor" id="contiene-lineas"> 
       <div class="linea"></div>
       <div class="linea1"></div>
       <div class="linea2"></div>
@@ -2481,6 +2484,7 @@
         <li><span class="indice">31.</span> Recuerda que cada día es una nueva oportunidad para mejorar.</li>
       </ol>
     </div>
+
     <div id="calendario-mes">
       <div class="semana">
         <div class="dia">1</div>
@@ -2592,7 +2596,539 @@
     </div>
 
     <div id="simulador">
-              
+      <div class="sections">
+        <div class="section" onclick="ocultarElementos('segunda-pantalla')">Section 1</div>
+        <div class="section" onclick="ocultarElementos('water-background','clock','cronometro','botonera','cronos')">Section 2</div>
+        <div class="section" onclick="ocultarElementos('colorDisplay','padre-controles')">RGB</div>
+        <div class="section" onclick="ocultarElementos('control-panel')">Section 4</div>
+        <div class="section" onclick="ocultarElementos('interfaz-registro')">Section 5</div>
+        <div class="section" onclick="iniciarAnimaciones()">Section 6</div>
+        <div class="section" onclick="ocultarElementos('colorBox')">CMYK</div>
+        <div class="section" onclick="traerAlmacenObjetos()">Objeto Global</div>
+      </div>    
+      <div class="digital-clock" id="clock">  
+        00:00:00
+      </div>       
+      <div class="cronometro-container" id="cronos">
+        <div class="cronometro-display" id="cronometro">00:00:00.0</div>
+        <div id="botonera">
+          <button id="startButton" class="butts-crono">Iniciar / Continuar</button>   
+          <button id="stopButton" class="butts-crono">Detener</button>
+          <button id="resetButton" class="butts-crono">Restablecer</button> 
+        </div>
+      </div>
+      <div id="water-background">
+        <div id="pantalla">
+          <div id="sub-pantalla"></div>
+        </div>
+        <div id="columna-botones">
+          <button id="opcion1" class="opcion"></button>
+          <button id="opcion2" class="opcion"></button>
+          <button id="opcion3" class="opcion"></button>
+          <button id="opcion4" class="opcion"></button>
+          <button id="opcion5" class="opcion"></button>
+          <button id="opcion6" class="opcion"></button>
+          <div id="cuadros">
+            <div class="cuadros"></div>
+            <div class="cuadros"></div>
+            <div class="cuadros"></div>
+            <div class="cuadros" style="background-color: rgb(0,0,20);"></div>
+          </div>
+          <div id="cuadros">
+            <div class="cuadros" style="background-color: rgb(0,0,20);"></div>
+            <div class="cuadros"></div>
+            <div class="cuadros"></div>
+            <div class="cuadros"></div>
+          </div>
+          <div id="cuadros">
+            <div class="cuadros"></div>
+            <div class="cuadros" style="background-color: rgb(0,0,20);"></div>
+            <div class="cuadros"></div>
+            <div class="cuadros"></div>
+          </div>
+          <div id="cuadros">
+            <div class="cuadros"></div>
+            <div class="cuadros"></div>
+            <div class="cuadros" style="background-color: rgb(0,0,20);"></div>
+            <div class="cuadros"></div>
+          </div>
+        </div>        
+      </div>
+      <div id="segunda-pantalla">
+        <img id="loguito" src="./assets/loguito.png" alt="loguito">
+        <div id="pantalla-1"></div>
+        <div id="pantalla-2">
+  
+          <div id="pantalla-6">
+            <div id="panta-6-1" class="incremento"></div>
+            <div id="panta-6-2" class="incremento"></div>
+          </div>
+  
+          <div id="butts-aux">
+            <div class="incremento">0</div>
+            <div class="incremento">0</div>
+            <div class="incremento"></div>
+            <div class="incremento"></div>
+            <div class="incremento"></div>
+            <div class="incremento"></div>
+            <div class="incremento"></div>
+            <div class="incremento"></div>
+            <div class="incremento"></div>
+          </div>
+        </div>
+        <div id="pantalla-3"></div>
+        <div id="pantalla-4">
+          <div id="sombra"></div>
+          <div id="back-yellow"></div>
+          <img id="emergency" class="emergencia" src="./assets/emergencia.png" alt="emergency">
+  
+          <div id="component1">
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+            <button class="component incremento">
+              <div class="equal"></div>
+            </button>
+          </div>
+          <div id="component2">
+            <button class="intermitencia incremento"></button>
+            <button class="intermitencia incremento"></button>
+            <button class="intermitencia incremento"></button>
+          </div>  
+        </div>
+  
+        <div id="pantalla-5">
+          <div class="panta5-sub incremento">3000</div>
+          <div class="panta5-sub incremento">3000</div>
+          <div class="panta5-sub incremento">7500</div>
+          <div class="panta5-sub incremento">12500</div>
+          <div class="incremento">Speed Preselection</div>
+          <div class="incremento"></div>
+        </div>
+        <span id="reflejo"></span>
+        <img id="baliza" src="./assets/baliza.png" alt="">
+      </div>   
+      <div class="contenedor" id="conte-colors"></div>
+      <div id="control-panel">
+        <button onclick="girarElemento('top-left')">Seleccionar entrenamiento</button>
+        <div class="rectangulo" id="miRectangulo">IBM 5000</div>
+        <div class="rectangulo" id="miRectangulo1">IBM Infoprint</div>
+        <div class="rectangulo" id="miRectangulo2">GTO 52</div>
+        <div class="rectangulo" id="miRectangulo3">Pinza</div>
+        <div class="rectangulo" id="miRectangulo4">Heidelberg SORMZ</div>
+        <div class="rectangulo" id="miRectangulo5">rotatek RK-200</div>
+        <div class="rectangulo" id="miRectangulo6">rotatek RK-300</div>
+      </div>
+      <div id="interfaz-registro">
+        <div id="pantalla-registro">
+          <button id="alterna1" class="alternador">Registro</button>
+          <div id="sub-registros">
+            <span class="conteo-grados" id="conteo-sup"></span>
+            <div id="guia-1" class="botones-registro"> </div>
+            <div id="guia-2" class="botones-registro"> </div>
+            <div id="guia-3" class="botones-registro"> </div>
+            <div id="guia-4" class="botones-registro"> </div>
+            <div id="guia-5" class="botones-registro"> </div>
+            <div id="guia-6" class="botones-registro"> </div>
+            <span class="conteo-grados" id="conteo-inf"></span>
+            <div id="ventana-registros">
+              <div id="pliego"></div>
+            </div>
+          </div>    
+          <div id="guias-auxiliares">
+            <div id="guia-7" class="botones-registro"> </div>
+            <div id="guia-8" class="botones-registro"> </div>
+            <div id="muestra-guia"><div id="muestra-guias" onclick="resetRegistros()"></div></div>
+            <span id="conteo-escuadra" class="conteo-grados"></span>
+            <span id="reset-escuadra" class="conteo-grados">Reset</span>
+          </div>
+          <div id="cuadro-guias"></div>
+        </div> 
+  
+        <div id="pantalla-guias">
+          <button id="alterna2" class="alternador">Guias de arrastre</button>   
+  
+        </div>
+      </div>  
+      <div id="blur-interfaz-perfiles"></div>  
+
+      <div id="interfaz-perfiles">
+        <span id="botonera-fondo" class="fondo-btn">
+          <span id="spn-blur-1" class="btn-respaldo"></span><span id="spn-blur-2" class="btn-respaldo"></span><span id="spn-blur-3" class="btn-respaldo"></span><span id="spn-blur-4" class="btn-respaldo"></span>
+          <span id="spn-blur-5" class="btn-respaldo"></span><span id="spn-blur-6" class="btn-respaldo"></span><span id="spn-blur-7" class="btn-respaldo"></span>
+        </span>
+        <button id="butt-perfil-tinta" class="butt-perfiles perfiles">Perfil general</button>
+        <button id="butt-control-tinta" class="butt-perfiles perfiles">Perfil por color</button>
+        <button id="butt-perfil" class="butt-perfiles">Gestionar perfiles</button>
+        <button id="butt-job-track" class="butt-perfiles">Job Track</button>
+        <button id="boton-perfiles" class="butt-perfiles">Crear perfil</button>
+        <button id="boton-reseteo" class="butt-perfiles">Reset perfiles</button>
+        <button id="bot-revertir" class="butt-perfiles butt-revierte cont-vacio">Abandonar proceso</button>
+  
+        <div id="alerta-perfiles" class="alerta-perfiles">
+          Esta acción elimina definitivamente los perfiles guardados 
+          <span id="aceptar-eliminar" class="alerta-perfiles">Aceptar</span>
+          <span id="cancelar-eliminar">Cancelar</span>
+        </div>  
+  
+        <div id="perfiles-entintado" class="perfiles-tinta">
+          <div id="linea-profundidad-horizontal-3"></div>   
+          <button id="selecc-gral"></button>
+  
+          <span id="respaldo-encabezado">
+            <span class="respaldo-boton"></span>
+            <span class="respaldo-boton"></span>
+            <span class="respaldo-boton"></span>
+            <span class="respaldo-boton"></span>
+            <span class="respaldo-boton"></span>
+            <span class="respaldo-boton"></span>
+            <span class="respaldo-boton"></span>
+          </span>
+  
+          <div id="encabezado">
+            <div class="cabeza" id="cabeza-negro"> <span class="texto-selectores">Negro</span></div>
+            <div class="cabeza" id="cabeza-azul"><span class="texto-selectores">Cian</span></div>
+            <div class="cabeza" id="cabeza-magenta"><span class="texto-selectores">Magenta</span></div>
+            <div class="cabeza" id="cabeza-amarillo"><span class="texto-selectores">Amarillo</span></div>
+            <div class="cabeza" id="cabeza-especial"><span class="texto-selectores">Especial</span></div>
+            <div class="cabeza" id="cabeza-barniz"><span class="texto-selectores">Barniz</span></div>
+          </div>          
+          <div id="perfil-negro" class="perfil"></div>
+          <div id="regla-negro" class="regla-perfil"></div>
+          <div id="perfil-azul" class="perfil"></div>
+          <div id="regla-azul" class="regla-perfil"></div>          
+          <div id="perfil-magenta" class="perfil"></div>
+          <div id="regla-magenta" class="regla-perfil"></div>
+          <div id="perfil-amarillo" class="perfil"></div>
+          <div id="regla-amarillo" class="regla-perfil"></div>
+          <div id="perfil-especial" class="perfil"></div>
+          <div id="regla-especial" class="regla-perfil"></div>
+          <div id="perfil-barniz" class="perfil"></div>
+          <div id="regla-barniz" class="regla-perfil"></div>
+  
+          <div id="footer-perfiles">
+            <div id="footer-negro" class="foot">
+              <div id="footer-1" class="foot-1"></div>
+              <div id="footer-2" class="foot-1 foot-2"></div>
+            </div>
+            <div id="footer-azul" class="foot">
+              <div id="footer-3" class="foot-1"></div>
+              <div id="footer-4" class="foot-1 foot-2"></div>
+            </div>
+            <div id="footer-magenta" class="foot">
+              <div id="footer-5" class="foot-1"></div>
+              <div id="footer-6" class="foot-1 foot-2"></div>
+            </div>
+            <div id="footer-amarillo" class="foot">
+              <div id="footer-7" class="foot-1"></div>
+              <div id="footer-8" class="foot-1 foot-2"></div>
+            </div>
+            <div id="footer-especial" class="foot">
+              <div id="footer-9" class="foot-1"></div>
+              <div id="footer-10" class="foot-1 foot-2"></div>
+            </div>
+            <div id="footer-barniz" class="foot">
+              <div id="footer-11" class="foot-1"></div>
+              <div id="footer-12" class="foot-1 foot-2"></div>
+            </div>
+          </div>
+          <div id="ctrl-gral-tinta" class="ctroles">
+            <div class="mod-tinta"></div>
+            <img src="./assets/gotas tintas.png" alt=""> 
+            <div class="mod-tinta"></div>
+          </div>
+          <div id="ctrl-gral-agua" class="ctroles">  
+            <div class="mod-tinta"></div>
+            <img src="./assets/agua.png" alt="">  
+            <div class="mod-tinta"></div>
+          </div>
+        </div>
+      </div> 
+
+      <span id="cliente-nombre" class="nombre-cliente"></span>
+      <div id="perfil-individual" class="perf-individual">
+        <div id="inerfaz-ajuste-fino">
+  
+          <div id="respaldo-selectores">
+            <span class="respaldo-selector"></span>
+            <span class="respaldo-selector"></span>
+            <span class="respaldo-selector"></span>
+            <span class="respaldo-selector"></span>
+            <span class="respaldo-selector"></span>
+            <span class="respaldo-selector"></span>
+          </div>
+  
+          <div id="butts-selectores">
+            <div class="butt-selector"><span class="texto-selectores"></span>N</div>
+            <div class="butt-selector"><span class="texto-selectores"></span>C</div>
+            <div class="butt-selector"><span class="texto-selectores"></span>M</div>
+            <div class="butt-selector"><span class="texto-selectores"></span>A</div>
+            <div class="butt-selector"><span class="texto-selectores"></span>E-1</div>
+            <div class="butt-selector"><span class="texto-selectores"></span>E-2</div>
+          </div>  
+  
+          <div id="indexado"></div>
+          <div id="columna-70" class="columna-70">
+          </div>
+          <div id="puntos"></div>
+          <div id="columna-30" class="columna-30"></div>
+          <div id="ctrl-gral">
+            <div class="div-ctrl"> <span id="tinta-perc">0%</span> </div>
+            <div class="div-ctrl"> <span id="solucion-porcentaje">0%</span> </div>
+            <div id="tanque-tinta" class="div-ctrl ctrl"></div>        
+            <div id="tanque-solucion" class="div-ctrl ctrl"></div>
+            <div class="div-ctrl ctrl"></div>
+            <div class="div-ctrl ctrl"></div>
+            <div class="div-ctrl ctrl"></div>
+            <div class="div-ctrl ctrl"></div> 
+          </div>
+          <div id="seleccion-gral" onclick="ensayoAplicacion()"></div>
+          <div id="linea-profundidad-inf"></div>
+          <div id="linea-profundidad-lateral"></div>
+          <div id="linea-profundidad-lateral-2"></div>
+          <div id="linea-profundidad-lateral-3"></div>
+          <div id="linea-profundidad-lateral-4"></div>
+          <div id="linea-profundidad-lateral-5"></div>
+          <div id="linea-profundidad-vertical"></div>
+          <div id="linea-profundidad-vertical-2"></div>
+          <div id="linea-profundidad-horizontal"></div>
+  
+        </div>
+        <div id="control-perfiles"></div>
+        <span id="current-Color"></span>
+        <div id="linea-profundidad-horizontal-2"></div>
+      </div>
+      <div id="admin-perfiles">
+        <div id="perfil-unico" class="perfilador">
+          <span id="texto-admin">Administrar perfiles</span>
+          <span id="texto-perf-indiv" class="txt-perfiles">Perfil individual</span>
+          <span id="texto-perf-todos" class="txt-perfiles">Perfiles</span>
+          <span id="show-todos"></span>
+  
+          <span id="info-perfiles">
+            <span id="Reset-perfil" class="selec-perfil">Resetear perfil</span>
+            <span id="Guardar-perfil" class="selec-perfil">Guardar perfil</span>
+            <span id="Reset-perfil" class="selec-perfil">Modificar perfil</span>
+          </span>
+  
+          <span id="cont-modificadores" class="bot-modific">
+            <span class="bot-perfil"></span>
+            <span class="bot-perfil"></span>
+            <span class="bot-perfil"></span>
+          </span>
+          <div id="por-color">
+            <div class="color-ind" data-index="1"></div>
+            <div class="color-ind" data-index="2"></div>
+            <div class="color-ind" data-index="3"></div>
+            <div class="color-ind" data-index="4"></div>
+            <div class="color-ind" data-index="5"></div>
+            <div class="color-ind" data-index="6"></div>      
+            <span id="conte-img"></span>
+          </div>
+        </div>
+        <div id="perfil-general" class="perfilador">
+          <span id="texto-perf-indiv" class="txt-perfiles">Perfil general</span>
+        </div>
+  
+        <div id="dialogo-flotante">
+          Espere mientras se actualiza el estado ...
+        </div>
+  
+      </div>
+      <div id="unit-job-track">
+  
+        <div id="job-files" class="files-job">  
+          <div class="jobs">
+            <span id="clientes" class="base-datos estilo-1">Cliente</span> <span id="panel-uno" class="base-datos datos-base"></span>
+          </div>        
+          <div class="jobs">
+            <span id="lineas" class="base-datos estilo-1">Linea</span> <span id="panel-dos" class="base-datos datos-base"></span>
+          </div>
+          <div class="jobs">
+            <span id="tirajes" class="base-datos estilo-1">Tiraje</span>  
+            <span class="base-datos">
+              <div id="display-cantidad">
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+                <div class="cantidad-display datos-base"></div>
+              </div>  
+            </span>
+          </div>
+          <button id="ir-consola" class="consola-ir">Ir a consola</button>
+        </div>
+      </div>
+      <div id="calculadora">
+        <div id="tirada">
+          <div class="digito">
+            <div id="resultado-calculadora">
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+              <div class="number"></div>
+            </div>
+          </div>
+          <div class="digito digit" id="digito-1">1</div>
+          <div class="digito digit" id="digito-2">2</div>
+          <div class="digito digit" id="digito-3">3</div>
+          <div class="digito digit" id="digito-4">4</div>
+          <div class="digito digit" id="digito-5">5</div>
+          <div class="digito digit" id="digito-6">6</div>
+          <div class="digito digit" id="digito-7">7</div>
+          <div class="digito digit" id="digito-8">8</div>
+          <div class="digito digit" id="digito-9">9</div>
+          <div class="digito digit" id="digito-10">0</div>
+          <div class="digito eraser">Borrar</div>
+          <div class="digito"></div>
+        </div>  
+        <div id="conte-butts-calculadora">
+          <div class="butts-calculadora estilo-2"></div>
+          <div class="butts-calculadora"></div>   
+        </div>    
+      </div>
+      <div id="lista-clientes" class="listado-clientes"></div>  
+      <div id="lista-lineas" class="listado-lineas">
+        <div>Valores</div>
+        <div>Formas</div>
+        <div>Digital</div>
+        <div>Boletería</div>
+        <div>Facturas</div>
+        <div>Especiales</div>
+        <div>Oficial</div>
+      </div> 
+      <span class="alerta-vacio cerrar" id="alerta-uno">
+        No se ha seleccionado el cliente ...
+      </span>
+      <span class="alerta-vacio cerrar" id="alerta-dos">
+        No se ha seleccionado linea de producto ...
+      </span>
+      <span class="alerta-vacio cerrar" id="alerta-tres">
+        Debe seleccionar un cliente y linea de producto ...
+      </span>
+      <span class="alerta-normal cerrar" id="alerta-cuatro">
+        Ingrese tiraje para este producto ...
+      </span>
+      <span class="alerta-normal cerrar" id="alerta-cinco">
+        Darle ENTRAR para ingesar la informacion
+      </span>
+      <span class="seis-alerta cerrar aviso-cargar" id="alerta-seis">
+        No se ha cargado la base de datos
+        <span id="perfil-existe" class="interno">Ir a base de datos</span>
+        <span id="perfil-crear" class="interno">Crear perfil</span>
+        <span class="interno">Salir</span>
+      </span>
+  
+      <div id="alerta-siete">
+        <span id="actual-nombre">Nombre actualizado :</span>
+        <span id="span-nombre" class="span-alerta"></span>
+        <span id="perfil-cambio" class="span-alerta">Aceptar</span>
+      </div>  
+  
+      <span id="alerta-ocho"class="alerta-normal cerrar">
+        Ya existe un cliente con este nombre
+      </span>    
+      <span class="alerta-botones cerrar">
+        Seleccione el color para perfilar   
+      </span>
+      <span class="alerta-perfil cerrar"> 
+        Seleccione el perfil para aplicarlo   
+      </span>
+      <div id="formulario-perfiles" class="formulario">
+        <span id="span-creacion">Creacion de perfil</span>
+        <span id="span-nombres">Nombre perfil / cliente</span>
+  
+        <input type="text" id="nombreCliente" placeholder="Ingrese nombre de perfil">
+  
+        <div class="botones">
+          <button id="btn1">Crear Perfil</button>
+        </div>
+      </div>
+      <div id="ventanaEmergente" class="oculta">
+        <div class="contenidoEmergente">
+          <p id="mensajeEmergente">Por favor, ingrese un nombre válido</p>
+          <button id="cerrarEmergente">Cerrar</button>
+        </div>
+      </div>
+      <div id="menu-derecha">
+        <span class="option">Editar</span>
+        <span class="option">Eliminar</span>
+        <span class="option">Detalles</span>    
+      </div>
+  
+  
+      <!-- ************************************************************************************************************************************* -->
+  
+      <div id="colorDisplay"></div>
+      <div id="padre-controles">
+        <div class="slid-container">
+          Rojo: <input id="redSlider"  type="range"min="0" max="255" value="255">
+          <span id="redValue" class="span-luz">255</span>
+        </div>       
+        <div class="slid-container">
+          Verde: <input id="greenSlider"  type="range"min="0" max="255" value="255">
+          <span id="greenValue" class="span-luz">255</span>
+        </div>        
+        <div class="slid-container">
+          Azul: <input id="blueSlider"  type="range"min="0" max="255" value="255">
+          <span id="blueValue" class="span-luz">255</span>
+        </div>      
+      </div>    
+  
+  
+      <div id="colorBox"></div>
+  
+      <div id="container-slider" class="slider-container">
+  
+        <div class="slider-group">
+          Cian: <input type="range" id="c" min="0" max="100" value="0">
+          <span id="c-span">0</span>
+        </div>  
+            
+        <div class="slider-group">
+          Magenta: <input type="range" id="m" min="0" max="100" value="0">
+          <span id="m-span">0</span>
+        </div>
+        <div class="slider-group">
+          Amarillo: <input type="range" id="y" min="0" max="100" value="0">
+          <span id="y-span">0</span>
+        </div>
+        <div class="slider-group">
+          Negro: <input type="range" id="k" min="0" max="100" value="0">
+          <span id="k-span">0</span>
+        </div>
+        <div class="slider-group">
+          Blanco: <input type="range" id="w" min="0" max="100" value="0">  
+          <span id="w-span">0</span>
+        </div>
+        
+      </div>
     </div>
 
     <script src="./Matriz-2.js"></script>
@@ -2600,6 +3136,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <script src="./modulo1.js"></script>
     <script src="./modulo2.js"></script>
-
+    <script src="./modulo3.js"></script>
   </body>
 </html>

@@ -4443,7 +4443,9 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
     }
     restaurarPosicion(["conte-butts-graphs"]);
     container1.style.display='grid'
-    if(turnBlock === 'false'){  restablecerClick(['.desactivar'])}
+    if(turnBlock === 'false'){
+      restablecerClick(['.desactivar', '.graphs-lines'])
+    }
 
     document.getElementById('contLineas').style.backgroundColor='rgb(0,0,17)'
     const elementos = document.querySelectorAll('.graphs-lines');
@@ -4513,25 +4515,6 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
 
   }, 100);
 }
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function resultadosMA(){
   restablecerPosiciones(['.ocultos'])      

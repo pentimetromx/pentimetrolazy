@@ -1,13 +1,8 @@
-TAREA : estamos ubicando los botones para dinamizar graficos , 
-	darles estilos definitivos y ajustar sus posiciones
+TAREA : 
 
-TAREA : 	eliminar efecto del texto que dice 'INGRESE CONTRASEÑA'
-	los 4 inputs de la contraseña pueden recibir 4 entradas equivocadas
-	entonces agregar logica que verifique en el 4º input, si no corresponde
-	debe lanzar alerta
+TAREA : 	
 
-TAREA : 	centrar 'container01' al iniciar , mirar que voy a hacer con los botones
-	back en container01
+TAREA : 	
 
 TAREA : el buscador hay que revisarlo
 	 
