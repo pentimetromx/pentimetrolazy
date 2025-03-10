@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Lazy Loading 26022025</title>
+    <title>Lazy desde programar</title>
     <link rel="stylesheet" href="./Matriz-1.css">
     <link rel="stylesheet" href="./Matriz-2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" href="./Matriz-2.css">
   </head>
   <body onload="manejarLogica()">   
 
@@ -480,7 +481,7 @@
         <li onclick="abrirSeccionPlanas('cont-plana')">Impresion plana</li>
         <li onclick="abrirSeccionCurado('cont-secador')">Curado UV</li>
         <li onclick="abrirSeccionDemo('planetary')">Demostrativo</li>
-        <li onclick="abrirPrepress('pre-prensa')">Teoria del color</li>
+        <li onclick="abrirPrepress('pre-prensa')">Teoria del color</li> 
         <li onclick="abrirDensitometria('densitometria')">Densitometría</li>
         <li>Simulador rotativa RK-300</li>
         <li onclick="cerrarPilares()">Salir</li>
@@ -2596,16 +2597,25 @@
     </div>
 
     <div id="simulador">
+
+      <span id="sections-fondo" class="sections-btn">
+        <span id="spn-blur-8" class="btn-sections"></span><span id="spn-blur-9" class="btn-sections"></span><span id="spn-blur-10" class="btn-sections"></span><span id="spn-blur-11" class="btn-sections"></span>
+        <span id="spn-blur-12" class="btn-sections"></span><span id="spn-blur-13" class="btn-sections"></span><span id="spn-blur-14" class="btn-sections"></span><span id="spn-blur-15" class="btn-sections"></span>
+      </span>
+
+
       <div class="sections">
-        <div class="section" onclick="ocultarElementos('segunda-pantalla')">Section 1</div>
-        <div class="section" onclick="ocultarElementos('water-background','clock','cronometro','botonera','cronos')">Section 2</div>
-        <div class="section" onclick="ocultarElementos('colorDisplay','padre-controles')">RGB</div>
-        <div class="section" onclick="ocultarElementos('control-panel')">Section 4</div>
-        <div class="section" onclick="ocultarElementos('interfaz-registro')">Section 5</div>
-        <div class="section" onclick="iniciarAnimaciones()">Section 6</div>
-        <div class="section" onclick="ocultarElementos('colorBox')">CMYK</div>
-        <div class="section" onclick="traerAlmacenObjetos()">Objeto Global</div>
-      </div>    
+        <div class="section" onclick="ocultaElementos('segunda-pantalla')">Section 1</div>
+        <div class="section" onclick="ocultaElementos('water-background','clock','cronometro','botonera','cronos')">Section 2</div> 
+        <div class="section" onclick="ocultaElementos('control-panel')">Section 4</div>
+        <div class="section" onclick="ocultaElementos('interfaz-registro')">Section 5</div>
+        <div class="section" onclick="iniciaAnimaciones()">Consola</div>
+        <div class="section" onclick="cmykFlotante()">CMYK</div>
+        <div class="section" onclick="rgbFlotante()">RGB</div>
+        <!-- <div class="section" onclick="traerAlmacenObjetos()">Objeto Global</div> -->
+        <div class="section" onclick="aparecerPadreCmyk()">Objeto Global</div>
+
+      </div>   
       <div class="digital-clock" id="clock">  
         00:00:00
       </div>       
@@ -2768,17 +2778,19 @@
       <div id="blur-interfaz-perfiles"></div>  
 
       <div id="interfaz-perfiles">
+
         <span id="botonera-fondo" class="fondo-btn">
           <span id="spn-blur-1" class="btn-respaldo"></span><span id="spn-blur-2" class="btn-respaldo"></span><span id="spn-blur-3" class="btn-respaldo"></span><span id="spn-blur-4" class="btn-respaldo"></span>
-          <span id="spn-blur-5" class="btn-respaldo"></span><span id="spn-blur-6" class="btn-respaldo"></span><span id="spn-blur-7" class="btn-respaldo"></span>
+          <span id="spn-blur-5" class="btn-respaldo"></span><span id="spn-blur-6" class="btn-respaldo"></span>
         </span>
+
         <button id="butt-perfil-tinta" class="butt-perfiles perfiles">Perfil general</button>
         <button id="butt-control-tinta" class="butt-perfiles perfiles">Perfil por color</button>
         <button id="butt-perfil" class="butt-perfiles">Gestionar perfiles</button>
         <button id="butt-job-track" class="butt-perfiles">Job Track</button>
         <button id="boton-perfiles" class="butt-perfiles">Crear perfil</button>
         <button id="boton-reseteo" class="butt-perfiles">Reset perfiles</button>
-        <button id="bot-revertir" class="butt-perfiles butt-revierte cont-vacio">Abandonar proceso</button>
+        <!-- <button id="bot-revertir" class="butt-perfiles butt-revierte cont-vacio">Abandonar proceso</button> -->
   
         <div id="alerta-perfiles" class="alerta-perfiles">
           Esta acción elimina definitivamente los perfiles guardados 
@@ -2976,7 +2988,9 @@
               </div>  
             </span>
           </div>
+          <button id="abandonar-perfiles">Abandonar</button>
           <button id="ir-consola" class="consola-ir">Ir a consola</button>
+
         </div>
       </div>
       <div id="calculadora">
@@ -3038,6 +3052,7 @@
       <span class="alerta-normal cerrar" id="alerta-cinco">
         Darle ENTRAR para ingesar la informacion
       </span>
+      
       <span class="seis-alerta cerrar aviso-cargar" id="alerta-seis">
         No se ha cargado la base de datos
         <span id="perfil-existe" class="interno">Ir a base de datos</span>
@@ -3067,8 +3082,12 @@
         <input type="text" id="nombreCliente" placeholder="Ingrese nombre de perfil">
   
         <div class="botones">
-          <button id="btn1">Crear Perfil</button>
+          <button id="btn-crea-perfil">Crear Perfil</button>
         </div>
+        <div class="btn-sale">
+          <button onclick="ocultarConsultas()">Salir</button>
+        </div>
+
       </div>
       <div id="ventanaEmergente" class="oculta">
         <div class="contenidoEmergente">
@@ -3084,58 +3103,99 @@
   
   
       <!-- ************************************************************************************************************************************* -->
-  
-      <div id="colorDisplay"></div>
-      <div id="padre-controles">
-        <div class="slid-container">
-          Rojo: <input id="redSlider"  type="range"min="0" max="255" value="255">
-          <span id="redValue" class="span-luz">255</span>
-        </div>       
-        <div class="slid-container">
-          Verde: <input id="greenSlider"  type="range"min="0" max="255" value="255">
-          <span id="greenValue" class="span-luz">255</span>
-        </div>        
-        <div class="slid-container">
-          Azul: <input id="blueSlider"  type="range"min="0" max="255" value="255">
-          <span id="blueValue" class="span-luz">255</span>
-        </div>      
-      </div>    
-  
-  
-      <div id="colorBox"></div>
-  
-      <div id="container-slider" class="slider-container">
-  
-        <div class="slider-group">
-          Cian: <input type="range" id="c" min="0" max="100" value="0">
-          <span id="c-span">0</span>
-        </div>  
-            
-        <div class="slider-group">
-          Magenta: <input type="range" id="m" min="0" max="100" value="0">
-          <span id="m-span">0</span>
+
+      <div id="padre-rgb">
+        <div class="esquina esquina-rgb"></div>
+        <div id="colorDisplay"></div>      
+        <div id="padre-controles" class="slider">
+
+          <div class="slid-container">
+            <span id="c-span-rgb">0</span>
+            <div class="slider-track-rgb" id="slid-rojo-rgb">
+              <button class="slider-thumb-rgb"></button>
+            </div>
+            <label for="colorgb">R</label>
+          </div>
+
+          <div class="slid-container">
+            <span id="m-span-rgb">0</span>
+            <div class="slider-track-rgb" id="slid-verde-rgb">
+              <button class="slider-thumb-rgb"></button>
+            </div>
+            <label for="colorgb">G</label>
+          </div>      
+          <div class="slid-container">
+            <span id="y-span-rgb">0</span>
+            <div class="slider-track-rgb" id="slid-azul-rgb">
+              <button class="slider-thumb-rgb"></button>
+            </div>
+            <label for="colorgb">B</label>
+          </div>    
+          <button id="boton-rgb" class="cmyRgb-group"></button>
+          <label id="lab-rgb" class="lbls-cmyRgb" for="color-rgb">Reset</label>    
+          <button id="boton-rgb-alternar" class="cmyRgb-group"></button>
+          <label id="lab-alternar" class="lbls-cmyRgb" for="color-rgb">CMYK</label>
+          <button id="boton-rgb-salir" class="cmyRgb-group" onclick="desvanecerColor('#padre-rgb')"></button>
+          <label id="lab-salir-rgb" class="lbls-cmyRgb" for="color-rgb">Salir</label>
         </div>
-        <div class="slider-group">
-          Amarillo: <input type="range" id="y" min="0" max="100" value="0">
-          <span id="y-span">0</span>
-        </div>
-        <div class="slider-group">
-          Negro: <input type="range" id="k" min="0" max="100" value="0">
-          <span id="k-span">0</span>
-        </div>
-        <div class="slider-group">
-          Blanco: <input type="range" id="w" min="0" max="100" value="0">  
-          <span id="w-span">0</span>
-        </div>
-        
       </div>
+
+      <div id="padre-cmyk">  
+        <div class="esquina esquina-cmyk"></div>
+        <div id="colorBox"></div>        
+        <div id="container-slider" class="slider">
+          <div class="slider-group">
+            <span id="c-span">0</span>
+            <div class="slider-track" id="slid-cian">
+              <button class="slider-thumb"></button>
+            </div>
+            <label for="color">C</label>
+          </div>
+          <div class="slider-group">
+            <span id="m-span">0</span>
+            <div class="slider-track" id="slid-magenta">
+              <button class="slider-thumb"></button>
+            </div>
+            <label for="color">M</label>
+          </div>
+          <div class="slider-group">
+            <span id="y-span">0</span>
+            <div class="slider-track" id="slid-amarillo">
+              <button class="slider-thumb"></button>
+            </div>
+            <label for="color">Y</label>
+          </div>
+          <div class="slider-group">
+            <span id="k-span">0</span>
+            <div class="slider-track" id="slid-negro">
+              <button class="slider-thumb"></button>
+            </div>
+            <label for="color">K</label>
+          </div>
+          <div class="slider-group">
+            <span id="w-span">0</span>
+            <div class="slider-track" id="slid-blanco">
+              <button class="slider-thumb"></button>
+            </div>
+            <label for="color">W</label>
+          </div>       
+          <button id="boton-seis" class="cmyRgb-group"></button>
+          <label id="lab-seis" class="lbls-cmyRgb" for="color">Reset</label>  
+          <button id="boton-cmyk" class="cmyRgb-group"></button>
+          <label id="lab-cmyk" class="lbls-cmyRgb" for="color">RGB</label> 
+          <button id="boton-cmyk-salir" class="cmyRgb-group" onclick="desvanecerColor('#padre-cmyk')"></button>
+          <label id="lab-salir-cmyk" class="lbls-cmyRgb" for="color-rgb">Salir</label>
+
+        </div>
+      </div>
+
     </div>
 
-    <script src="./Matriz-2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--LIBRERIA DE GRAFICOS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="./Matriz-2.js"></script> <!-- Este antes -->
     <script src="./modulo1.js"></script>
     <script src="./modulo2.js"></script>
-    <script src="./modulo3.js"></script>
-  </body>
+    <script src="./modulo3.js"></script> <!-- Este después -->
+      </body>
 </html>

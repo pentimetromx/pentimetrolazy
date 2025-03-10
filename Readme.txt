@@ -1,14 +1,2 @@
-TAREA : 
-
-TAREA : 	
-
-TAREA : 	
-
-TAREA : el buscador hay que revisarlo
-	 
-n updateDinamico  [ boton dinamico]
-n openGraphics      [ click en grafico]
-n resultadosEmpleado  [click empleado]
-
-
-
+TAREA : 	pendiente que al dar enter en la calculadora, aparezca 'job-files'
+	pero que se oculte el boton de ABANDONAR

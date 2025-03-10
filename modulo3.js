@@ -1,3 +1,83 @@
+document.addEventListener('keydown', function(event) {               
+  if (event.ctrlKey && event.shiftKey) {
+    switch (event.key) {
+      case 'Z':
+        abrirSeccionOperativa('cont-titulo-operacion')
+        setTimeout(() => {
+          iniciarAnimaciones()
+        }, 1000);
+      break;
+      case 'H':
+        document.addEventListener("contextmenu", (event) => {
+          event.stopPropagation(); // Evita que otros eventos bloqueen el menú
+        }, true); // 'true' hace que capture antes que otros eventos
+        
+
+      break;
+      case 'X':
+        Geometria()
+      break;                  
+    }
+  }
+});
+function Geometria() {
+  console.clear();  
+  var contiBoton = document.getElementById('padre-cmyk');  
+  var rect = contiBoton.getBoundingClientRect(); 
+  var topPosition = rect.top;  
+  var leftPosition = rect.left;  
+  var widthValue = rect.width;  
+  var heightValue = rect.height;  
+  var style = window.getComputedStyle(contiBoton);  
+  var positionType = style.position;  
+  var displayType = style.display;  
+  var visibilityType = style.visibility;  
+  var zIndexValue = style.zIndex;  
+  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';  
+  
+  console.log("ID:", contiBoton.id);  
+  console.log("Top:", topPosition);  
+  console.log("Left:", leftPosition);  
+  console.log("Height:", heightValue);  
+  console.log("Width:", widthValue);  
+  console.log("Position:", positionType);  
+  console.log("Display:", displayType);  
+  console.log("Visibility:", visibilityType);  
+  console.log("Z-Index:", zIndexValue);  
+  console.log("Is Visible:", isVisible);
+  console.log('1 :','ID:', contiBoton.id);
+  console.log('1 :','Top:', topPosition);
+  console.log('1 :','Left:', leftPosition);
+  console.log('1 :','Height:', heightValue);
+  console.log('1 :','Width:', widthValue);
+  console.log('1 :','Position:', positionType);
+  console.log('1 :','Display:', displayType);
+  console.log('1 :','Visibility:', visibilityType);
+  console.log('1 :','Is Visible:', isVisible);
+  console.log("Z-Index:", style.zIndex);
+  
+  var contiBotonI = document.getElementById('padre-rgb') 
+  var rect = contiBotonI.getBoundingClientRect();
+  var topPosition = rect.top;
+  var leftPosition = rect.left;
+  var widthValue = rect.width;
+  var heightValue = rect.height;
+  var style = window.getComputedStyle(contiBotonI);
+  var positionType = style.position;
+  var displayType = style.display;
+  var visibilityType = style.visibility;
+  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
+  console.log('2 :','ID:', contiBotonI.id);
+  console.log('2 :','Top:', topPosition);
+  console.log('2 :','Left:', leftPosition);
+  console.log('2 :','Height:', heightValue);
+  console.log('2 :','Width:', widthValue);
+  console.log('2 :','Position:', positionType);
+  console.log('2 :','Display:', displayType);
+  console.log('2 :','Visibility:', visibilityType);
+  console.log('2 :','Is Visible:', isVisible); 
+  console.log("Z-Index:", style.zIndex);
+}
 
 let color = ''
 class objetoColores {
@@ -11,7 +91,7 @@ class objetoColores {
       colorElemento: '',
       posicionTopDisplay: 0,           
       posicionTopAgua: 0
-    };
+    };   
 
     // Agregar propiedades adicionales con la misma estructura                      
     this.magenta = this.crearPropiedadColor();
@@ -89,12 +169,11 @@ const nombreCliente = document.querySelector('.nombre-cliente')
  
 const verdeAgua = 'rgb(127, 255, 212)';
 const azul = 'blue'
-/* const azul = 'rgb(0,174,239)' */
 const verde = 'rgb(0,255,0)'
 const rojo = 'rgba(255, 0, 0, 0.63)'
 const amarillo ='rgb(255,255,0)'
 const cian = 'rgb(0,255,255)'
-const magenta = 'rgb(255,0,255)'
+const magenta = 'rgb(255,0,255)'  
 const negro = 'rgb(0,0,0)'
 const especial = 'rgb(255,130,0)' 
 const barniz = 'rgb(200,200,200)'
@@ -106,73 +185,11 @@ let botonReseteo = document.getElementById('resetButton')
 let flagAplicacion = false
 let iniciador = document.getElementById('iniciador')
 let retroceder = document.getElementById('iniciador-I')
-let botRevertir = document.querySelector('#bot-revertir')
 let almacenObjetos = JSON.parse(localStorage.getItem('almacenObjetos')) || {}; 
 let objetoGlobal = null
 
-document.addEventListener('keydown', function(event) {               
-  if (event.ctrlKey && event.shiftKey) {
-    switch (event.key) {
-      case 'Z':
-        abrirSeccionOperativa('cont-titulo-operacion')
-        setTimeout(() => {
-          iniciarAnimaciones()
-        }, 1000);
-      break;
-      case 'H':
-        verificarPosicionTop(['dynamic-graphs']); 
-      break;
-      case 'X':
-        Geometria()
-      break;                  
-    }
-  }
-});
-function Geometria() {
-  console.clear();  
-  var contiBoton = document.getElementById('container-slider')  
-  var rect = contiBoton.getBoundingClientRect();
-  var topPosition = rect.top;
-  var leftPosition = rect.left;
-  var widthValue = rect.width;
-  var heightValue = rect.height;
-  var style = window.getComputedStyle(contiBoton);
-  var positionType = style.position;
-  var displayType = style.display;
-  var visibilityType = style.visibility;
-  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-  console.log('1 :','ID:', contiBoton.id);
-  console.log('1 :','Top:', topPosition);
-  console.log('1 :','Left:', leftPosition);
-  console.log('1 :','Height:', heightValue);
-  console.log('1 :','Width:', widthValue);
-  console.log('1 :','Position:', positionType);
-  console.log('1 :','Display:', displayType);
-  console.log('1 :','Visibility:', visibilityType);
-  console.log('1 :','Is Visible:', isVisible);
-  
-  var contiBotonI = document.getElementById('lubricantes') 
-  var rect = contiBotonI.getBoundingClientRect();
-  var topPosition = rect.top;
-  var leftPosition = rect.left;
-  var widthValue = rect.width;
-  var heightValue = rect.height;
-  var style = window.getComputedStyle(contiBotonI);
-  var positionType = style.position;
-  var displayType = style.display;
-  var visibilityType = style.visibility;
-  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-  console.log('2 :','ID:', contiBotonI.id);
-  console.log('2 :','Top:', topPosition);
-  console.log('2 :','Left:', leftPosition);
-  console.log('2 :','Height:', heightValue);
-  console.log('2 :','Width:', widthValue);
-  console.log('2 :','Position:', positionType);
-  console.log('2 :','Display:', displayType);
-  console.log('2 :','Visibility:', visibilityType);
-  console.log('2 :','Is Visible:', isVisible); 
-}
-function ocultarElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13,id14){
+
+function ocultaElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13,id14){
   var elementosExcluidos = [id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13,id14]  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
@@ -195,7 +212,7 @@ function ocultarElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id1
         interfaz.style.display = 'flex'
       }
     break;
-    case 'colorDisplay':
+/*     case 'colorDisplay':
       let contenedor = document.querySelector('#padre-controles')
       contenedor.style.display = 'grid'
     break;
@@ -203,8 +220,8 @@ function ocultarElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id1
       document.querySelector('#container-slider').style.display = 'grid'
       document.querySelectorAll('.slider-group').forEach(element => {
         element.style.display = 'grid'
-      });      
-      break;
+      });
+      break; */
     case 'interfaz-perfiles':
     break;
   }  
@@ -2774,7 +2791,7 @@ function renderObjeto() {
     
     if (index >= 0) {  // Verifica que el índice no sea negativo
       elementos[index].style.backgroundColor = 'yellow';  // Aplica el color amarillo
-    }
+    }   
   }
   // 4. Actualiza el porcentaje de tinta en el elemento de texto
   const porcentajeTinta = document.getElementById('tinta-perc'); // Obtiene el elemento donde mostrar el porcentaje
@@ -2788,7 +2805,7 @@ document.getElementById('butt-perfil-tinta').addEventListener('click', () =>{
   let interfazPerfiles = document.getElementById('perfiles-entintado')
   interfazPerfiles.classList.remove('move-perfiles-entintado')
   desactivarClick(['.butt-perfiles', '.cabeza', '.mod-tinta']); 
-  var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7'] 
+  var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6'] 
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -2799,7 +2816,6 @@ document.getElementById('butt-perfil-tinta').addEventListener('click', () =>{
   if(objetoGlobal === null || objetoGlobal === ''){nombreDatos.textContent = ''}
   setTimeout(() => {
     interfazPerfiles.classList.add('move-perfiles-entintado')
-      botRevertir.style.display='block'
   }, 100);
   setTimeout(() => {
     document.querySelector('.nombre-cliente').style.display='flex'
@@ -2810,7 +2826,6 @@ document.getElementById('butt-perfil-tinta').addEventListener('click', () =>{
     document.querySelectorAll('.butt-perfiles').forEach(elemento => {  
     elemento.style.display = 'flex'; 
   });
-
 })
 document.getElementById('butt-perfil').addEventListener('click', () =>{
   var elementosExcluidos = ['simulador','inerfaz-ajuste-fino','perfil-individual','control-perfiles','admin-perfiles','texto-perf-indiv','blur-interfaz-perfiles','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4']  
@@ -2981,14 +2996,18 @@ document.getElementById('butt-control-tinta').addEventListener('click', () =>{
       elemento.style.display = 'block'; 
     });   
     restablecerClick(['.butt-selector'])      
-    botRevertir.style.display='block'      
   }, 10);
 })
+
+
+
+
+
 document.getElementById('butt-job-track').addEventListener('click', () =>{
   ["panel-uno", "panel-dos"].forEach(id => document.getElementById(id)?.removeAttribute("style"));
   const conteJobTrack = document.querySelector('#job-files')
   conteJobTrack.classList.remove('move-job-track')
-  var elementosExcluidos = ['simulador','unit-job-track','interfaz-perfiles', 'boton-perfiles' , 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7'] 
+  var elementosExcluidos = ['simulador','unit-job-track','interfaz-perfiles', 'boton-perfiles' , 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6'] 
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -3006,11 +3025,18 @@ document.getElementById('butt-job-track').addEventListener('click', () =>{
   });  
   setTimeout(() => {
     conteJobTrack.classList.add('move-job-track') 
-    botRevertir.style.display='block'        
   }, 100);
 })
+
+
+
+
+
+
+
+
 document.getElementById('conte-img').addEventListener('click', () =>{
-  var elementosExcluidos = ['simulador','interfaz-perfiles','inerfaz-ajuste-fino','perfil-individual','control-perfiles']  
+  var elementosExcluidos = ['simulador','interfaz-perfiles','inerfaz-ajuste-fino','perfil-individual','control-perfiles','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -3018,7 +3044,7 @@ document.getElementById('conte-img').addEventListener('click', () =>{
     }
   }  
 })
-container1.style.display = 'none'
+/* container1.style.display = 'none' */
 let menuHambrgr = document.getElementById('show-todos')
 let txtHambrgr = document.getElementById('texto-perf-todos')
 // Función común para manejar el cambio de color y las acciones relacionadas
@@ -3229,13 +3255,13 @@ function idPadreCantidadClaseTextId(contPadre, numeroDeLineas, classElto, claseD
   if (contenedorDestino) {
     contenedorDestino.appendChild(spanAgua);
   } else {
-    console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`);
+    /* console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`); */
   }
 
   if (contenedorTinta) {
     contenedorTinta.appendChild(spanTinta);
   } else {
-    console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`);
+    /* console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`); */
   }
 
   // Crear múltiples spans dentro del contenedorPrincipal usando el bucle
@@ -3829,7 +3855,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if(objetoGlobal === null || objetoGlobal === ''){nombreDatos.textContent = ''}
     setTimeout(() => {
       interfazPerfiles.classList.add('move-perfiles-entintado')
-        botRevertir.style.display='block'
     }, 100);
     setTimeout(() => {
       document.querySelector('.nombre-cliente').style.display='flex'
@@ -3846,39 +3871,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#butt-perfil-tinta').style.backgroundColor='rgb(0,255,0)'
     irAconsola.style.display='none'
       restablecerClick(['.perfiles'])
-  })
-
-  /* *************************************************************************************************************************** */
-  let red = 255, green = 255, blue = 255;
-  function updateColorDisplay() {
-    document.getElementById('colorDisplay').style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-    document.getElementById('redValue').textContent = red;
-    document.getElementById('greenValue').textContent = green;
-    document.getElementById('blueValue').textContent = blue;
-  }
-  function updateColor(channel, value) {
-    value = parseInt(value); // Convertir el valor del slider a número
-
-    if (channel === 'red') red = value;
-    if (channel === 'green') green = value;
-    if (channel === 'blue') blue = value;
-
-    updateColorDisplay();
-  }
-  // Detectar cambios en los sliders
-  document.getElementById("redSlider").addEventListener("input", function() {
-    updateColor('red', this.value);
-  });
-  document.getElementById("greenSlider").addEventListener("input", function() {
-    updateColor('green', this.value);
-  });
-  document.getElementById("blueSlider").addEventListener("input", function() {
-    updateColor('blue', this.value);
-  });
-  // Inicializar el color al cargar la página
-  updateColorDisplay();
-  
-  
+  })  
 });  
 function crearLedsSpan() {
   // Ciclo para crear 22 padres con IDs secuenciales y 24 spans en cada uno
@@ -4231,16 +4224,6 @@ function vaciarObjeto(){
   guardarObjetoEnLocalStorage();
 }
 
-
-
-
-
-
-
-
-
-
-
 function vaciarAlmacenObjetos() {
   // 1. Traer el objeto almacenado en localStorage
   const almacenJSON = localStorage.getItem('almacenObjetos');
@@ -4373,9 +4356,6 @@ function guardarObjetoEnLocal(objeto) {
   localStorage.setItem('informacionCopia', objetoString);
   
 }
-
-
-
 
 function guardarObjetoAmarillo(objetoAmarillo) {   
   try {
@@ -4555,7 +4535,7 @@ document.querySelector('#boton-reseteo').addEventListener('click', () =>{
   });
 })
 document.querySelector('#boton-perfiles').addEventListener('click', () =>{
-  var elementosExcluidos = ['simulador','butt-perfil-tinta', 'butt-control-tinta', 'butt-perfil', 'butt-job-track', 'boton-perfiles', 'interfaz-perfiles', 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7']  
+  var elementosExcluidos = ['simulador','butt-perfil-tinta', 'butt-control-tinta', 'butt-perfil', 'butt-job-track', 'boton-perfiles', 'interfaz-perfiles', 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -4565,9 +4545,6 @@ document.querySelector('#boton-perfiles').addEventListener('click', () =>{
   container1.style.display = 'none'
   desactivarClick(['.butt-perfiles']); 
   restablecerClick(['.butt-revierte'])
-  setTimeout(() => {
-    botRevertir.style.display='block'  
-  }, 10);
   setTimeout(() => {
     moverFormulario()
     document.getElementById('nombreCliente').focus();
@@ -4989,7 +4966,7 @@ function guardarCambios(nombreClave) {
 
 function cargarInstanciaDesdeLocalStorage(nombreClave) {
   const instanciaGuardada = localStorage.getItem(nombreClave);
-
+    
   if (instanciaGuardada) {
     try {
       objetoGlobal = JSON.parse(instanciaGuardada);
@@ -5011,8 +4988,7 @@ function vaciarTodoAlmacenObjetos() {
 }
 
 
-document.getElementById('btn1').addEventListener('click', () => {
-
+document.getElementById('btn-crea-perfil').addEventListener('click', () => {
   // Capturar el valor del input
   let inputNombre = document.getElementById('nombreCliente').value.trim();
   if (inputNombre === '') {
@@ -5066,21 +5042,6 @@ document.getElementById('btn1').addEventListener('click', () => {
   }
   restablecerClick(['.butt-perfiles'])
 });
-
-
-/* document.querySelector('#salir-frm').addEventListener('click', () =>{ 
-  ocultarElemento('.formulario')
-  document.querySelector('#unit-job-track').style.display='flex'
-  const conteJobTrack = document.querySelector('#job-files')
-  conteJobTrack.classList.add('move-job-track')
-  document.querySelector('#nombreCliente').value = '';
-  document.querySelectorAll('.datos-base').forEach((elemento) => { 
-    elemento.textContent = ''
-  });    
-  setTimeout(() => {
-    mostrarElemento('.files-job')
-  }, 500);
-}) */
 
 // Función para capitalizar la primera letra de cada palabra
 function capitalizarTexto(texto) {
@@ -5366,7 +5327,7 @@ document.querySelector('#cont-modificadores span:nth-child(1)').addEventListener
   desactivarEventos()
 })
 document.querySelector('#cont-modificadores span:nth-child(3)').addEventListener('click', () =>{
-  var elementosExcluidos = ['interfaz-perfiles','inerfaz-ajuste-fino','perfil-individual','control-perfiles']  
+  var elementosExcluidos = ['simulador','interfaz-perfiles','inerfaz-ajuste-fino','perfil-individual','control-perfiles']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -5603,7 +5564,6 @@ function actualizarTinta(color) {
 const botonesPerfiles = document.querySelectorAll('.butt-perfiles');   
 botonesPerfiles.forEach(boton => {
   boton.addEventListener('click', () => {
-    botRevertir.style.display='none'
     botonesPerfiles.forEach(b => b.style.backgroundColor = '');
     boton.style.backgroundColor = '#00FF00';
   });
@@ -5701,15 +5661,14 @@ buttsJobs.forEach(boton => {
     switch(boton.id) {
       case 'clientes':      
         document.querySelectorAll('.butt-perfiles').forEach(elemento => {   
-          elemento.style.display = 'block'; 
+          elemento.style.display = 'block';   
         });
-        botRevertir.style.display='block'
         let listaClientes = document.querySelector('#lista-clientes')  
         listaClientes.style.top='43vh'
         limpiarColoresDeFondo()
         desactivarClick(['.butt-perfiles', '.estilo-1']);  
         listaClientes.style.display = 'block'
-        mostrarNombresDeObjetos();  
+        mostrarNombresDeObjetos(); 
         setTimeout(() => {
           if (listaClientes && listaClientes.children.length === 0) {
             alertaCuatro.style.display='flex'
@@ -5938,6 +5897,11 @@ document.querySelector('#tirada > div:nth-child(12)').addEventListener('click', 
   actualizarDisplay();  
   detenerAlternarColor();
 });
+
+document.querySelector('#abandonar-perfiles').addEventListener('click', () => {
+  document.querySelector('#job-files').style.display = 'none'
+  restablecerClick(['.butt-perfiles'])  
+})
 
 document.querySelector('#tirada > div:nth-child(13)').addEventListener('click', () => {
   desactivarClick(['.butt-perfiles','.digit', '.estilo-1','digito']);
@@ -6251,7 +6215,7 @@ function mostrarNombresDeObjetos() {
       almacenCapitalizado[nombreCapitalizado] = almacenRecuperado[nombreObjeto];
     });
 
-    // Sobrescribir almacenObjetos en localStorage con los nombres capitalizados
+    // Sobrescribir almacenObjetos en localStorage con los nombres capitalizados 
     localStorage.setItem('almacenObjetos', JSON.stringify(almacenCapitalizado));
 
     // Seleccionar el contenedor de la lista
@@ -6264,7 +6228,7 @@ function mostrarNombresDeObjetos() {
 
     // Agregar opciones al menú contextual
     const opcionesMenu = ['Editar', 'Ver detalles', 'Eliminar'];
-    opcionesMenu.forEach(opcion => {
+    opcionesMenu.forEach(opcion => {  
       const menuItem = document.createElement('div');
       menuItem.className = 'opcion';
       menuItem.textContent = opcion;
@@ -6283,7 +6247,7 @@ function mostrarNombresDeObjetos() {
       });
       menuContextual.appendChild(menuItem);
       menuContextual.addEventListener('mouseleave', () =>{
-        menuContextual.style.display = 'none';
+      menuContextual.style.display = 'none';
       })
 
     });
@@ -6374,7 +6338,7 @@ function eliminarObjeto(nombreObjeto) {
   nombreElemento.className =  'span-nueve'
   nombreElemento.textContent = `${nombreObjeto}`;
 
-  spanConfirmar.textContent = 'Aceptar';
+  spanConfirmar.textContent = 'Eliminar';
   spanConfirmar.id = 'perfil-eliminar';
   spanConfirmar.className =  'nueve-span'
 
@@ -6545,15 +6509,15 @@ document.querySelector('#perfil-cambio').addEventListener('click', () =>{
 function verDetallesObjeto(nombreObjeto) {
   console.log(`Mostrando detalles del objeto "${nombreObjeto}"`);  
 }
-botRevertir.addEventListener('click', () =>{
+
+function ocultarConsultas(){
   let alertas = document.querySelectorAll('.cerrar')
   let menu = document.querySelector('#menu-contextual')
   let alerta = document.querySelector('#alerta-siete')
   ocultarElemento('.formulario, .files-job, .listado-clientes, .consola-ir')
-  document.querySelector('#spn-blur-7').style.display='none'
   document.querySelectorAll('.butt-perfiles').forEach(elemento => {
     elemento.style.display = 'block';
-  })  
+  }) 
   detenerAlternarColor();
   alertas.forEach(alerta =>{
     alerta.style.display='none'
@@ -6561,18 +6525,17 @@ botRevertir.addEventListener('click', () =>{
   document.querySelectorAll('.datos-base').forEach((elemento) => {
   elemento.textContent = ''
   })
-  restablecerClick(['.butt-perfiles', '.estilo-1','.digit','.digito']);  
-  calculadora.classList.add('move-calculadora')
+  restablecerClick(['.butt-perfiles', '.estilo-1','.digit','.digito']);
+    calculadora.classList.add('move-calculadora')
   if(menu){
     menu.style.display = 'none'
   }
   alerta.style.display = 'none'
-  botRevertir.style.display='none'
   if(document.querySelector('#butt-job-track').style.backgroundColor === 'rgb(0,255,0)' && document.querySelector('#boton-perfiles').style.backgroundColor === 'rgb(0,255,0)' ){
     objetoGlobal = ''
   }
   console.log('OBJETO GLOBAL ', objetoGlobal)
-})
+}
 function consultarCapacidadAlamcenamiento() {
   // Verificar uso actual
   let totalUsed = 0;
@@ -6627,9 +6590,9 @@ function moverFormulario() {
   // Restaurar la transición
   formulario.style.transition = 'transform 0.5s ease-in-out';
   // Asegurar que el formulario es visible antes de moverlo
-  formulario.style.display = 'flex';
+  formulario.style.display = 'grid';
   setTimeout(() => {
-    formulario.style.display='flex'
+    formulario.style.display='grid'
     formulario.classList.add('mover-izquierda');
   }, 50);
 }
@@ -6679,89 +6642,154 @@ function mostrarElemento(selectores) {
     }
   }, intervalo);
 }
-/* ************************************************************************************************************************************** */
-
-/* Bloque para manejar y renderizar colores en RGB*/
-let red = 0, green = 0, blue = 0; 
-let intervalRgb;
-function updateColorDisplay() {
-  document.getElementById('colorDisplay').style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-  document.getElementById('redValue').textContent = red;
-  document.getElementById('greenValue').textContent = green;
-  document.getElementById('blueValue').textContent = blue;
+function iniciaAnimaciones() {
+  var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  container1.style.display = 'none'
+  document.querySelector('#contiene-lineas').style.display = 'none'
+  animarColorSecuencia();
+  animarSecuenciaPerfiles();
 }
-function changeColor(channel, change) {
-  if (channel === 'red') red = Math.min(255, Math.max(0, red + change));
-  if (channel === 'green') green = Math.min(255, Math.max(0, green + change));
-  if (channel === 'blue') blue = Math.min(255, Math.max(0, blue + change));
+document.querySelectorAll('.section').forEach((btn, index) => {
+  btn.addEventListener('mouseover', () => {
+    let buttBlur = document.querySelectorAll('.btn-sections')[index]
+    if (buttBlur) {
+      buttBlur.style.backgroundColor = 'rgb(255,255,0)'
+      btn.style.border = '1px solid rgb(111,111,111)'
+    }
+  })
+
+  btn.addEventListener('mouseout', () => {
+    let buttBlur = document.querySelectorAll('.btn-sections')[index]
+    if (buttBlur) {
+      buttBlur.style.backgroundColor = ''
+      btn.style.border = ''
+    }
+  })
+})
+
+/* ************************************************************************************************************************************** */
+// mueve botones mezcladores DA COLOR NARANJA Y COLOR A PANTALLAS RGB Y CMYK
+let red = 0, green = 0, blue = 0; 
+function initSlider(trackId, spanId, channel) {
+  let track = document.getElementById(trackId);
+  let thumb = track.querySelector(".slider-thumb");
+  let span = document.getElementById(spanId); 
+  let isDragging = false;
+  thumb.addEventListener("mousedown", () => {
+    isDragging = true;
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", stopDragging);
+  });
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    let rect = track.getBoundingClientRect();
+    let offsetY = rect.bottom - e.clientY;
+    let porcentaje = Math.max(0, Math.min(100, (offsetY / rect.height) * 100));
+    thumb.style.bottom = `${(porcentaje/100) * (rect.height - thumb.offsetHeight)}px`;
+    track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+    values[channel] = porcentaje;
+    updateColor();
+  }
+  function stopDragging() {
+    isDragging = false;
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", stopDragging);
+  }
+}
+function initSliderII(trackId, spanId, channel) {
+  let track = document.getElementById(trackId);
+  let thumb = track.querySelector(".slider-thumb-rgb");
+  let span = document.getElementById(spanId);
+  let isDragging = false;
+
+  thumb.addEventListener("mousedown", () => {
+    isDragging = true;
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", stopDragging);
+  });
+
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    let rect = track.getBoundingClientRect();
+    let offsetY = rect.bottom - e.clientY;
+    let porcentaje = Math.max(0, Math.min(100, (offsetY / rect.height) * 100));
+
+    thumb.style.bottom = `${(porcentaje / 100) * (rect.height - thumb.offsetHeight)}px`;
+    track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+
+    // Almacena el valor normalizado directamente en escala RGB (0-255)
+    values[channel] = Math.round((porcentaje / 100) * 255);
+    span.textContent = values[channel];
+    updateColorDisplay();
+  }
+
+  function stopDragging() {
+    isDragging = false;
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", stopDragging);
+  }
+}
+function updateColorDisplay() {
+  let rgb = `rgb(${values.R}, ${values.G}, ${values.B})`;
+  document.getElementById("colorDisplay").style.backgroundColor = rgb;
+  document.getElementById("c-span-rgb").textContent = values.R;
+  document.getElementById("m-span-rgb").textContent = values.G;
+  document.getElementById("y-span-rgb").textContent = values.B;
+}
+function updateColor() {
+  let rgb = cmykwToRgb(values.C, values.M, values.Y, values.K, values.W);
+  document.getElementById("colorBox").style.backgroundColor = rgb;
+  document.getElementById("c-span").textContent = values.C.toFixed(0);
+  document.getElementById("m-span").textContent = values.M.toFixed(0);
+  document.getElementById("y-span").textContent = values.Y.toFixed(0);
+  document.getElementById("k-span").textContent = values.K.toFixed(0);
+  document.getElementById("w-span").textContent = values.W.toFixed(0);  
+}
+let values = { C: 0, M: 0, Y: 0, K: 0, W: 0, R: 0, G: 0, B: 0 };
+document.addEventListener("DOMContentLoaded", () => {
+  initSlider("slid-cian", "c-span", "C");
+  initSlider("slid-magenta", "m-span", "M");
+  initSlider("slid-amarillo", "y-span", "Y");
+  initSlider("slid-negro", "k-span", "K");
+  initSlider("slid-blanco", "w-span", "W");
+
+  initSliderII("slid-rojo-rgb", "c-span-rgb", "R");
+  initSliderII("slid-verde-rgb", "m-span-rgb", "G");
+  initSliderII("slid-azul-rgb", "y-span-rgb", "B");
 
   updateColorDisplay();
-}
-function startChange(channel, change) {
-  if (intervalRgb) clearInterval(intervalRgb); // Detener cualquier intervalo activo antes de iniciar uno nuevo
-
-  changeColor(channel, change); // Aplicar el cambio inmediato
-
-  intervalRgb = setInterval(() => changeColor(channel, change), 27); // Cambio continuo si se mantiene presionado
-}
-function stopChange() {
-  clearInterval(intervalRgb);
-  intervalRgb = null; // Asegurar que la variable se resetee
-}
-updateColorDisplay();
-/* ************************************************************************************************************************************** */
-function normalizeCMYK(c, m, y, k) {
+});
+function normalizeCMYK(c, m, y, k) { //CMYK
   let max = Math.max(c, m, y, k);
-
   if (max > 0) {
     c = (c / max) * 100;
     m = (m / max) * 100;
     y = (y / max) * 100;
     k = (k / max) * 100;
   }
-
   return { c, m, y, k };
 }
-function cmykwToRgb(c, m, y, k, w) {
-  // Normalizamos CMYK antes de convertir a RGB
+function cmykwToRgb(c, m, y, k, w) {  // RGB
   let normalized = normalizeCMYK(c, m, y, k);
   c = normalized.c;
   m = normalized.m;
   y = normalized.y;
   k = normalized.k;
-
-  // Convertimos CMYK a RGB
   let r = 255 * (1 - c / 100) * (1 - k / 100);
   let g = 255 * (1 - m / 100) * (1 - k / 100);
   let b = 255 * (1 - y / 100) * (1 - k / 100);
-
-  // Aplicamos el canal Blanco sin romper la relación de color
   let factorBlanco = w / 100;
   r = r + (255 - r) * factorBlanco;
   g = g + (255 - g) * factorBlanco;
   b = b + (255 - b) * factorBlanco;
-
   return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
 }
-function updateColor() {
-  let c = parseFloat(document.getElementById("c").value);
-  let m = parseFloat(document.getElementById("m").value);
-  let y = parseFloat(document.getElementById("y").value);
-  let k = parseFloat(document.getElementById("k").value);
-  let w = parseFloat(document.getElementById("w").value); // Nuevo canal Blanco
-
-  document.getElementById("colorBox").style.backgroundColor = cmykwToRgb(c, m, y, k, w);
-
-  document.getElementById("c-span").textContent = c;
-  document.getElementById("m-span").textContent = m;
-  document.getElementById("y-span").textContent = y;
-  document.getElementById("k-span").textContent = k;
-  document.getElementById("w-span").textContent = w;
-}
-document.querySelectorAll("input[type='range']").forEach(slider => {
-  slider.addEventListener("input", updateColor);
-});
-updateColor();
 /* ************************************************************************************************************************************** */
 function animarColorSecuencia() {
   desactivarClick(['.butt-perfiles']);
@@ -6862,18 +6890,212 @@ function animarSecuenciaPerfiles() {
 
   cambiarColor(); // Inicia la secuencia
 }
+// arrastre PADRES mezcladores
+function initDrag(elemento) {
+  let isDragging = false;
+  let offsetX, offsetY;
 
+  elemento.addEventListener("mousedown", (e) => {
+    if (e.target === elemento) {
+      isDragging = true;
+      offsetX = e.clientX - elemento.offsetLeft;
+      offsetY = e.clientY - elemento.offsetTop;
+    }
+  });
 
-function iniciarAnimaciones() {
-  var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      elemento.style.left = `${e.clientX - offsetX}px`;
+      elemento.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+  elemento.querySelectorAll("button, input[type='range']").forEach((btn) => {
+    btn.addEventListener("mousedown", (e) => {
+      e.stopPropagation();
+    });
+  });
+}
+initDrag(document.getElementById("padre-rgb"));
+initDrag(document.getElementById("padre-cmyk"));
+
+function rgbFlotante() {
+  let padreRgb = document.querySelector('#padre-rgb');
+  let padreControles = document.querySelector('#padre-controles');
+  let pantallaColor = document.querySelector('#colorDisplay');
+  let padreCmyk = document.querySelector('#padre-cmyk');
+  if(padreCmyk){
+    padreCmyk.style.display = 'none'
+  }
+  padreRgb.style.opacity = "0";
+  padreRgb.style.display = "grid";
+  setTimeout(() => {
+    padreRgb.style.transition = "opacity 1s ease"; // Reaplicar transición
+    padreRgb.style.opacity = "1"; // Hacerlo visible
+  }, 50);     
+  padreRgb.style.zIndex = "200";
+  pantallaColor.style.display = "block";
+  padreControles.style.display = "grid";
+  padreControles.style.left = "";
+}
+function cmykFlotante() {
+  let padreCmyk = document.querySelector("#padre-cmyk");
+  let padreControles = document.querySelector("#container-slider");
+  let pantallaColor = document.querySelector("#colorBox");
+  let padreRgb = document.querySelector("#padre-rgb");
+  if(padreRgb){
+    padreRgb.style.display = 'none'
+  }
+  // Restablecer propiedades antes de hacerlo visible
+  padreCmyk.style.opacity = "0"; // Mantenerlo invisible al principio
+  padreCmyk.style.display = "grid"; // Mostrar antes de la animación
+  // Pequeño retardo para que el navegador registre el cambio en `display`
+  setTimeout(() => {
+    padreCmyk.style.transition = "opacity 1s ease"; // Reaplicar transición
+    padreCmyk.style.opacity = "1"; // Hacerlo visible
+  }, 50); 
+  padreCmyk.style.zIndex = "200";
+  pantallaColor.style.display = "block";
+  padreControles.style.display = "grid";
+  padreControles.style.left = "";
+}
+document.querySelector('#boton-cmyk').addEventListener('click', () =>{
+  document.querySelector('#padre-cmyk').style.display = 'none'
+  setTimeout(() => {
+    document.querySelector('#padre-rgb').style.display = 'grid'
+    document.querySelector('#padre-rgb').style.zIndex = 200
+    document.querySelector('#padre-controles').style.display = 'grid' 
+    document.querySelector('#colorDisplay').style.display = 'flex'
+  }, 200);
+})
+document.querySelector('#boton-rgb-alternar').addEventListener('click', () =>{
+  document.querySelector('#padre-rgb').style.display = 'none'
+  setTimeout(() => {
+    document.querySelector('#padre-cmyk').style.display = 'grid'
+    document.querySelector('#padre-cmyk').style.zIndex = 200
+    document.querySelector('#container-slider').style.display = 'grid' 
+    document.querySelector('#colorBox').style.display = 'flex'
+  }, 200);
+})
+// controlan redimensionado
+function initResize(contenedor, esquina) {
+  const MIN_WIDTH = 200;
+  const MIN_HEIGHT = 200;
+  let isResizing = false, offsetX, offsetY;
+
+  esquina.addEventListener("mousedown", (e) => {
+    isResizing = true;
+    offsetX = e.clientX;
+    offsetY = e.clientY;
+    document.addEventListener("mousemove", resize);
+    document.addEventListener("mouseup", stopResize);
+  });
+
+  function resize(e) {
+    if (!isResizing) return;
+
+    let nuevoAncho = e.clientX - contenedor.getBoundingClientRect().left;
+    let nuevoAlto = e.clientY - contenedor.getBoundingClientRect().top;
+
+    if (nuevoAncho >= MIN_WIDTH) {
+      contenedor.style.width = `${nuevoAncho}px`;
+    }
+    if (nuevoAlto >= MIN_HEIGHT) {
+      contenedor.style.height = `${nuevoAlto}px`;
     }
   }
-  container1.style.display = 'none'
-  document.querySelector('#contiene-lineas').style.display = 'none'
-  animarColorSecuencia();
-  animarSecuenciaPerfiles();
+
+  function stopResize() {
+    isResizing = false;
+    document.removeEventListener("mousemove", resize);
+    document.removeEventListener("mouseup", stopResize);
+  }
+}
+initResize(
+  document.querySelector("#padre-rgb"),
+  document.querySelector(".esquina-rgb")
+);
+initResize(
+  document.querySelector("#padre-cmyk"),
+  document.querySelector(".esquina-cmyk")
+);
+
+function resetBotonMezclador() {
+  document.querySelectorAll(".slider-thumb, .slider-thumb-rgb").forEach(mezclador => {
+    mezclador.style.transition = "bottom 0.8s ease"; // Aplicamos transición para el reseteo
+    mezclador.style.bottom = "0%"; // Se mueve progresivamente a la posición inicial
+
+    // Una vez terminada la animación, eliminamos la transición para evitar retrasos
+    setTimeout(() => {
+      mezclador.style.transition = "";
+    }, 800);
+  });
+
+  document.querySelectorAll(".slider-track, .slider-track-rgb").forEach(track => {
+    track.style.transition = "background 0.8s ease"; // Transición suave para el degradado
+    let porcentaje = 0; // Volvemos el degradado al estado inicial
+    track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+
+    // También eliminamos la transición para que el degradado responda sin retraso
+    setTimeout(() => {
+      track.style.transition = "";
+    }, 800);
+  });
+
+  document.querySelector("#colorBox").style.backgroundColor = ""; // Reset del color
+  document.querySelector("#colorDisplay").style.backgroundColor = ""; 
+
+  // Opcional: Reiniciar los valores del objeto global
+  values = { C: 0, M: 0, Y: 0, K: 0, W: 0, R: 0, G: 0, B: 0 };  
+  updateColor(); // Volver a calcular el color final
+}
+
+function configurarBoton(selector,contenedor, callback) {
+  const boton = document.querySelector(selector)
+  const padre = document.querySelector(contenedor)
+
+  if (!boton) return
+  // Envolvemos la lógica original del botón
+  boton.addEventListener('click', () => {
+    padre.style.width = '50vw'
+    padre.style.height = '68vh'
+    padre.style.zIndex = 200
+    padre.style.backgroundColor = ''
+    if (callback) callback() // Llama la función deseada
+  })
+  boton.addEventListener('mousedown', () => {
+    boton.style.backgroundColor = 'rgb(255,0,0)'
+  })
+  boton.addEventListener('mouseup', () => {
+    boton.style.backgroundColor = ''
+  })
+}
+configurarBoton('#boton-seis', '#padre-cmyk', resetBotonMezclador)     
+configurarBoton('#boton-rgb','#padre-rgb', resetBotonMezclador)
+configurarBoton('#boton-cmyk','#padre-cmyk', '')
+configurarBoton('#boton-rgb-alternar','#padre-rgb', '') 
+configurarBoton('#boton-rgb-salir','#padre-rgb', '')
+configurarBoton('#boton-cmyk-salir','#padre-cmyk', '')
+
+function desvanecerColor(contenedor) {
+  let padreCmyk = document.querySelector(contenedor)
+  let propiedadesOriginales = {
+    opacity: padreCmyk.style.opacity,
+    display: padreCmyk.style.display,
+    transition: padreCmyk.style.transition
+  };
+  // Aplicar transición de opacidad
+  padreCmyk.style.transition = "opacity 1.5s ease";
+  padreCmyk.style.opacity = "0";
+  // Esperar 1.5 segundos y ocultar completamente el elemento
+  setTimeout(() => {
+    padreCmyk.style.display = "none";
+    // Restaurar propiedades originales
+    padreCmyk.style.opacity = propiedadesOriginales.opacity;
+    padreCmyk.style.transition = propiedadesOriginales.transition;
+  }, 1500);
 }

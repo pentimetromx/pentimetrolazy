@@ -6,7 +6,7 @@ function cierraContenedores(elementId,buttonID){
   if (button) {
     document.getElementById(button).style.backgroundColor = ''   
   }
-  }   
+  }      
   if (firstClick) { 
     if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {  
       idsArray.push(elementId);
@@ -379,19 +379,19 @@ if (elementosParaAlternar[i].id === docId) {
 
 }
 function mostrarBotMa(id) {
-var elemento = document.getElementById(id)
-if (elemento.style.display === 'none') {
-  elemento.style.display = 'block'
-} else {
-  elemento.style.display = 'none'
-}
+  var elemento = document.getElementById(id)
+  if (elemento.style.display === 'none') {
+    elemento.style.display = 'block'
+  } else {
+    elemento.style.display = 'none'
+  }
 }
 function showNextGraf() {
-if (nowIndex < inpt.length ){
-inpt[nowIndex].style.display = 'block'
-nowIndex++;
-setTimeout(showNextGraf, 57)
-}
+  if (nowIndex < inpt.length ){
+  inpt[nowIndex].style.display = 'block'
+  nowIndex++;
+  setTimeout(showNextGraf, 57)
+  }
 }
 function showRepuesto(elementId) {
   switch (elementId) {
@@ -1431,18 +1431,22 @@ function videosImpresor(videoId) {
   } 
 } 
 
-
-
-
-
-
-
-
-
-
-
-
-
+function iniciarAnimaciones(){
+  var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','bot-revertir','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7'] 
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  container1.style.display = 'none'
+  setTimeout(() => {
+    animarColorSecuencia();
+  }, 100);
+  setTimeout(() => {
+    animarSecuenciaPerfiles();
+  }, 200);
+}
 
 function abrirSeccionContinua(elementId) {  
   var elementosExcluidos = ['buscador','search-form','toggleVideoButton','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','gran-cortina'];
