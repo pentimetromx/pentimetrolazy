@@ -4,18 +4,21 @@ document.addEventListener('keydown', function(event) {
       case 'Z':
         abrirSeccionOperativa('cont-titulo-operacion')
         setTimeout(() => {
-          iniciarAnimaciones()
+          abrirSeccionContinua('pantalla-inicial')
         }, 1000);
       break;
       case 'H':
         document.addEventListener("contextmenu", (event) => {
-          event.stopPropagation(); // Evita que otros eventos bloqueen el menú
+          event.stopPropagation(); // Evita que otros eventos bloqueen el menú  
         }, true); // 'true' hace que capture antes que otros eventos
         
 
       break;
       case 'X':
         Geometria()
+        alert()
+        document.querySelector('#colorDisplay').style.backgroundColor = 'rgb(255,0,0)' 
+        console.log('color aplicado ')
       break;                  
     }
   }
@@ -2999,15 +3002,11 @@ document.getElementById('butt-control-tinta').addEventListener('click', () =>{
   }, 10);
 })
 
-
-
-
-
 document.getElementById('butt-job-track').addEventListener('click', () =>{
   ["panel-uno", "panel-dos"].forEach(id => document.getElementById(id)?.removeAttribute("style"));
   const conteJobTrack = document.querySelector('#job-files')
   conteJobTrack.classList.remove('move-job-track')
-  var elementosExcluidos = ['simulador','unit-job-track','interfaz-perfiles', 'boton-perfiles' , 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6'] 
+  var elementosExcluidos = ['simulador','unit-job-track','interfaz-perfiles', 'boton-perfiles' , 'boton-reseteo','abandonar-perfiles','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6'] 
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -5572,7 +5571,7 @@ botonesPerfiles.forEach(boton => {
 
 let intervalColor;
 function alternarColor() {
-  const elemento = document.querySelector('#tirada > div:nth-child(13)')   
+  const elemento = document.querySelector('#grid-numbers > div:nth-child(12)')   
   
   if (!intervalColor) {
     // Cambia el color inmediatamente
@@ -5591,20 +5590,8 @@ function alternarColor() {
   }
 }
 
-
 function detenerAlternarColor() {
-  if (intervalColor) {
-    clearInterval(intervalColor); // Detiene la ejecución del intervalo
-    intervalColor = null; // Restablece la variable para poder iniciarlo nuevamente
-    document.querySelector('#tirada > div:nth-child(13)').style.backgroundColor = 'transparent'; // Restablece el color
-    console.log('Alternancia de color detenida.');
-  } else {
-    console.log('No hay alternancia en ejecución.');
-  }
-}
-// Para detener el intervalColor (si es necesario)
-function detenerAlternarColor() {
-  const elemento = document.querySelector('#tirada > div:nth-child(13)');  
+  const elemento = document.querySelector('#grid-numbers > div:nth-child(12)');  
   if (intervalColor) {
     clearInterval(intervalColor);
     elemento.style.backgroundColor = '';
@@ -5612,6 +5599,8 @@ function detenerAlternarColor() {
     console.log('El intervalColor ha sido detenido.');
   }
 }
+
+
 document.querySelector('#conte-butts-calculadora > div:nth-child(1)').addEventListener('click', ()=>{ 
   const numeros = document.querySelectorAll('.number'); // Selecciona todos los elementos con la clase .number  
   const algunoConContenido = Array.from(numeros).some(numero => numero.textContent.trim() !== '');
@@ -5635,7 +5624,7 @@ const contenedorResultado = document.querySelector('#resultado-calculadora');
 const spansNumeros = contenedorResultado.querySelectorAll('.number');
 const contenedorCantidad = document.querySelector('#display-cantidad')
 const spansCantidades = contenedorCantidad.querySelectorAll('.cantidad-display'); 
-const digitos = document.querySelectorAll('.digit');  
+const digitos = document.querySelectorAll('.grid-item');  
 const buttsPerfiles = document.querySelectorAll('.butt-perfiles');
 const buttsAguaGral = document.querySelectorAll('.mod-tinta');
 const buttsAguaSingle = document.querySelectorAll('.div-ctrl');
@@ -5697,6 +5686,7 @@ buttsJobs.forEach(boton => {
           calculadora.classList.remove('move-calculadora')
           calculadora.classList.remove('move-calculadora-1')
           setTimeout(() => {
+            document.querySelector('#grid-numbers').style.display = 'grid'
             calculadora.classList.add('move-calculadora-1') 
           }, 100);
         }
@@ -5892,7 +5882,7 @@ alertaNormal.forEach((alerta) => {
     reactivarClicEnElementos(digitos, buttsClientes);
   });
 });
-document.querySelector('#tirada > div:nth-child(12)').addEventListener('click', () => {
+document.querySelector('#grid-numbers > div:nth-child(11)').addEventListener('click', () => {
   coleccionNumeros.length = 0;
   actualizarDisplay();  
   detenerAlternarColor();
@@ -5903,7 +5893,7 @@ document.querySelector('#abandonar-perfiles').addEventListener('click', () => {
   restablecerClick(['.butt-perfiles'])  
 })
 
-document.querySelector('#tirada > div:nth-child(13)').addEventListener('click', () => {
+document.querySelector('#grid-numbers > div:nth-child(12)').addEventListener('click', () => {
   desactivarClick(['.butt-perfiles','.digit', '.estilo-1','digito']);
 
   detenerAlternarColor()
@@ -5918,6 +5908,9 @@ document.querySelector('#tirada > div:nth-child(13)').addEventListener('click', 
   }else{
     document.querySelectorAll('.butt-perfiles, .btn-respaldo').forEach(elemento => {  
       elemento.style.display = 'none';
+      document.querySelector('#abandonar-perfiles').style.display = 'none'
+      document.querySelector('#alerta-cuatro').style.display='none'
+
     }); 
   
     coleccionNumeros.length = 0;        
@@ -5927,11 +5920,6 @@ document.querySelector('#tirada > div:nth-child(13)').addEventListener('click', 
       
       irAconsola.style.display='block'
     }, 1000); 
-    setTimeout(() => {
-      if(document.querySelector('#alerta-cuatro').style.display === 'flex'){
-        document.querySelector('#alerta-cuatro').style.display='none'
-      }
-    }, 1550); 
     setTimeout(() => {
       desactivarClick(['.butt-perfiles'])    
     }, 1700);
@@ -6161,7 +6149,7 @@ function desactivarClick(classElements) {
     });
   });
 }
- function restablecerClick(classElements) { 
+function restablecerClick(classElements) { 
   if (!Array.isArray(classElements)) {
     console.error('El parámetro debe ser un array de selectores.');
     return;
@@ -6526,7 +6514,7 @@ function ocultarConsultas(){
   elemento.textContent = ''
   })
   restablecerClick(['.butt-perfiles', '.estilo-1','.digit','.digito']);
-    calculadora.classList.add('move-calculadora')
+    /* calculadora.classList.add('move-calculadora') */
   if(menu){
     menu.style.display = 'none'
   }
@@ -6723,9 +6711,14 @@ function initSliderII(trackId, spanId, channel) {
     thumb.style.bottom = `${(porcentaje / 100) * (rect.height - thumb.offsetHeight)}px`;
     track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
 
-    // Almacena el valor normalizado directamente en escala RGB (0-255)
-    values[channel] = Math.round((porcentaje / 100) * 255);
-    span.textContent = values[channel];
+    // Normalización a escala de 0-255 (excepto W que irá de 0 a 1)
+    if (channel === "W") {
+      values[channel] = porcentaje / 100; // Opacidad en escala 0-1
+    } else {
+      values[channel] = Math.round((porcentaje / 100) * 255);
+    }
+
+    span.textContent = channel === "W" ? values[channel].toFixed(2) : values[channel];
     updateColorDisplay();
   }
 
@@ -6736,11 +6729,12 @@ function initSliderII(trackId, spanId, channel) {
   }
 }
 function updateColorDisplay() {
-  let rgb = `rgb(${values.R}, ${values.G}, ${values.B})`;
-  document.getElementById("colorDisplay").style.backgroundColor = rgb;
+  let rgba = `rgba(${values.R}, ${values.G}, ${values.B}, ${values.W})`;
+  document.getElementById("colorDisplay").style.backgroundColor = rgba;
   document.getElementById("c-span-rgb").textContent = values.R;
   document.getElementById("m-span-rgb").textContent = values.G;
   document.getElementById("y-span-rgb").textContent = values.B;
+  document.getElementById("w-span-rgb").textContent = values.W.toFixed(2);
 }
 function updateColor() {
   let rgb = cmykwToRgb(values.C, values.M, values.Y, values.K, values.W);
@@ -6751,18 +6745,12 @@ function updateColor() {
   document.getElementById("k-span").textContent = values.K.toFixed(0);
   document.getElementById("w-span").textContent = values.W.toFixed(0);  
 }
-let values = { C: 0, M: 0, Y: 0, K: 0, W: 0, R: 0, G: 0, B: 0 };
+let values = { C: 0, M: 0, Y: 0, K: 0, W: 0, R: 0, G: 0, B: 0, W:0 };
 document.addEventListener("DOMContentLoaded", () => {
-  initSlider("slid-cian", "c-span", "C");
-  initSlider("slid-magenta", "m-span", "M");
-  initSlider("slid-amarillo", "y-span", "Y");
-  initSlider("slid-negro", "k-span", "K");
-  initSlider("slid-blanco", "w-span", "W");
-
   initSliderII("slid-rojo-rgb", "c-span-rgb", "R");
   initSliderII("slid-verde-rgb", "m-span-rgb", "G");
   initSliderII("slid-azul-rgb", "y-span-rgb", "B");
-
+  initSliderII("slid-blanco-rgb", "w-span-rgb", "W");
   updateColorDisplay();
 });
 function normalizeCMYK(c, m, y, k) { //CMYK
@@ -6790,6 +6778,65 @@ function cmykwToRgb(c, m, y, k, w) {  // RGB
   b = b + (255 - b) * factorBlanco;
   return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
 }
+
+function animarVariosSlidersConControl(sliderConfigs, duracion = 1000) {
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    let progress = (timestamp - startTime) / duracion;
+    if (progress > 1) progress = 1;
+
+    sliderConfigs.forEach(({ trackId, spanId, channel, porcentajeDestino }) => {
+      let track = document.getElementById(trackId);
+      let thumb = track.querySelector(".slider-thumb-rgb");
+      let span = document.getElementById(spanId);
+      let rect = track.getBoundingClientRect();
+      
+      // Cálculo de la posición final según el porcentaje destino
+      let endValue = (porcentajeDestino / 255) * (rect.height - thumb.offsetHeight);
+      let newValue = progress * endValue;
+
+      thumb.style.bottom = `${newValue}px`;
+      let porcentaje = (newValue / (rect.height - thumb.offsetHeight)) * 100;
+
+      track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+
+      if (channel === "W") {
+        values[channel] = porcentaje / 100; // Opacidad en escala 0-1
+      } else {
+        values[channel] = Math.round((porcentaje / 100) * 255);
+      }
+
+      span.textContent = channel === "W" ? values[channel].toFixed(2) : values[channel];
+    });
+
+    updateColorDisplay();
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+document.getElementById("animate-btn").addEventListener("click", () => {
+  let rValue = parseInt(document.getElementById("input-r").value) || 0;
+  let gValue = parseInt(document.getElementById("input-g").value) || 0;
+  let bValue = parseInt(document.getElementById("input-b").value) || 0;
+  let wValue = parseInt(document.getElementById("input-w").value) || 0;
+
+  animarVariosSlidersConControl([
+    { trackId: "slid-rojo-rgb", spanId: "c-span-rgb", channel: "R", porcentajeDestino: rValue },
+    { trackId: "slid-verde-rgb", spanId: "m-span-rgb", channel: "G", porcentajeDestino: gValue },
+    { trackId: "slid-azul-rgb", spanId: "y-span-rgb", channel: "B", porcentajeDestino: bValue },
+    { trackId: "slid-blanco-rgb", spanId: "w-span-rgb", channel: "W", porcentajeDestino: wValue }
+  ]);
+});
+
+
+
 /* ************************************************************************************************************************************** */
 function animarColorSecuencia() {
   desactivarClick(['.butt-perfiles']);

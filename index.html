@@ -12,7 +12,7 @@
 
     <header class="buscador" id="buscador">
       <form id="search-form">
-        <input type="text" id="search-input" placeholder="Buscar...">   
+        <input type="text" id="search-input" placeholder="Buscar..."> 
         <datalist id="suggestions"></datalist>                                             
         <img data-src="./assets/lupa.jpg" class="busqueda lazy" alt="Buscar">  
       </form>
@@ -2802,16 +2802,6 @@
           <div id="linea-profundidad-horizontal-3"></div>   
           <button id="selecc-gral"></button>
   
-          <span id="respaldo-encabezado">
-            <span class="respaldo-boton"></span>
-            <span class="respaldo-boton"></span>
-            <span class="respaldo-boton"></span>
-            <span class="respaldo-boton"></span>
-            <span class="respaldo-boton"></span>
-            <span class="respaldo-boton"></span>
-            <span class="respaldo-boton"></span>
-          </span>
-  
           <div id="encabezado">
             <div class="cabeza" id="cabeza-negro"> <span class="texto-selectores">Negro</span></div>
             <div class="cabeza" id="cabeza-azul"><span class="texto-selectores">Cian</span></div>
@@ -2875,16 +2865,6 @@
       <span id="cliente-nombre" class="nombre-cliente"></span>
       <div id="perfil-individual" class="perf-individual">
         <div id="inerfaz-ajuste-fino">
-  
-          <div id="respaldo-selectores">
-            <span class="respaldo-selector"></span>
-            <span class="respaldo-selector"></span>
-            <span class="respaldo-selector"></span>
-            <span class="respaldo-selector"></span>
-            <span class="respaldo-selector"></span>
-            <span class="respaldo-selector"></span>
-          </div>
-  
           <div id="butts-selectores">
             <div class="butt-selector"><span class="texto-selectores"></span>N</div>
             <div class="butt-selector"><span class="texto-selectores"></span>C</div>
@@ -2989,10 +2969,12 @@
             </span>
           </div>
           <button id="abandonar-perfiles">Abandonar</button>
-          <button id="ir-consola" class="consola-ir">Ir a consola</button>
+          <button id="ir-consola" class="consola-ir">Ir a la consola</button>
 
         </div>
       </div>
+
+
       <div id="calculadora">
         <div id="tirada">
           <div class="digito">
@@ -3009,24 +2991,29 @@
               <div class="number"></div>
             </div>
           </div>
-          <div class="digito digit" id="digito-1">1</div>
-          <div class="digito digit" id="digito-2">2</div>
-          <div class="digito digit" id="digito-3">3</div>
-          <div class="digito digit" id="digito-4">4</div>
-          <div class="digito digit" id="digito-5">5</div>
-          <div class="digito digit" id="digito-6">6</div>
-          <div class="digito digit" id="digito-7">7</div>
-          <div class="digito digit" id="digito-8">8</div>
-          <div class="digito digit" id="digito-9">9</div>
-          <div class="digito digit" id="digito-10">0</div>
-          <div class="digito eraser">Borrar</div>
-          <div class="digito"></div>
+    
+          <div id="grid-numbers">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">0</div>
+            <div class="digito eraser">Borrar</div>
+            <div class="digito"></div>  
+          </div>
         </div>  
+    
         <div id="conte-butts-calculadora">
           <div class="butts-calculadora estilo-2"></div>
           <div class="butts-calculadora"></div>   
         </div>    
       </div>
+
       <div id="lista-clientes" class="listado-clientes"></div>  
       <div id="lista-lineas" class="listado-lineas">
         <div>Valores</div>
@@ -3050,7 +3037,7 @@
         Ingrese tiraje para este producto ...
       </span>
       <span class="alerta-normal cerrar" id="alerta-cinco">
-        Darle ENTRAR para ingesar la informacion
+      Click en ENTRAR para ingesar la informacion
       </span>
       
       <span class="seis-alerta cerrar aviso-cargar" id="alerta-seis">
@@ -3116,7 +3103,6 @@
             </div>
             <label for="colorgb">R</label>
           </div>
-
           <div class="slid-container">
             <span id="m-span-rgb">0</span>
             <div class="slider-track-rgb" id="slid-verde-rgb">
@@ -3130,7 +3116,15 @@
               <button class="slider-thumb-rgb"></button>
             </div>
             <label for="colorgb">B</label>
-          </div>    
+          </div>
+          <div class="slid-container">
+            <span id="w-span-rgb">0.00</span>
+            <div class="slider-track-rgb" id="slid-blanco-rgb">
+              <button class="slider-thumb-rgb"></button>
+            </div>
+            <label for="colorgb">A</label>
+          </div> 
+    
           <button id="boton-rgb" class="cmyRgb-group"></button>
           <label id="lab-rgb" class="lbls-cmyRgb" for="color-rgb">Reset</label>    
           <button id="boton-rgb-alternar" class="cmyRgb-group"></button>
@@ -3188,6 +3182,21 @@
 
         </div>
       </div>
+
+      <div id="control-panel-rgb">
+
+        <div id="lbl-control-rgb">
+          <label>R : <input type="number" id="input-r" min="0" max="100" value="50"></label>
+          <label>G : <input type="number" id="input-g" min="0" max="100" value="50"></label> 
+          <label>B : <input type="number" id="input-b" min="0" max="100" value="50"></label>
+          <label>A : <input type="number" id="input-w" min="0" max="100" value="50"></label> 
+        </div>
+        <div id="control-btn-rgb">
+          <button id="animate-btn">Actualizar color</button>
+        </div>
+
+      </div>
+      
 
     </div>
 

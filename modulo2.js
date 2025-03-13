@@ -5003,7 +5003,7 @@ function openGraphics(elementId){
     }
     container1.style.display='grid'
     desactivarClicsPorUnTiempo(1500)
-    document.getElementById('contLineas').style.backgroundColor = '#333333';
+    document.getElementById('contLineas').style.backgroundColor = 'rgb(30,30,30)';
     document.getElementById('month-display').textContent = ''
     const month = document.querySelectorAll('.mes')
     month.forEach((mes) => {
