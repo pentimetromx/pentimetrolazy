@@ -16,16 +16,13 @@ document.addEventListener('keydown', function(event) {
       break;
       case 'X':
         Geometria()
-        alert()
-        document.querySelector('#colorDisplay').style.backgroundColor = 'rgb(255,0,0)' 
-        console.log('color aplicado ')
       break;                  
     }
   }
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('padre-cmyk');  
+  var contiBoton = document.getElementById('perfiles-color');  
   var rect = contiBoton.getBoundingClientRect(); 
   var topPosition = rect.top;  
   var leftPosition = rect.left;  
@@ -4533,6 +4530,7 @@ document.querySelector('#boton-reseteo').addEventListener('click', () =>{
     alertaPerfiles.style.display = 'flex';
   });
 })
+
 document.querySelector('#boton-perfiles').addEventListener('click', () =>{
   var elementosExcluidos = ['simulador','butt-perfil-tinta', 'butt-control-tinta', 'butt-perfil', 'butt-job-track', 'boton-perfiles', 'interfaz-perfiles', 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6']  
   for (var i = 0; i < allContenedores.length; i++) {
@@ -4550,6 +4548,7 @@ document.querySelector('#boton-perfiles').addEventListener('click', () =>{
     document.getElementById('nombreCliente').value = ''
   }, 20);
 })  
+
 document.querySelector('#aceptar-eliminar').addEventListener('click', () =>{
   const contenedor = document.getElementById('botonera-fondo');
   const alertasPerfiles = document.querySelectorAll('.alerta-perfiles');  
@@ -5153,7 +5152,7 @@ document.getElementById('cerrarEmergente').addEventListener('click', () => {
     desactivarClick(['.butt-perfiles'])
     restablecerClick(['.cont-vacio'])
     setTimeout(() => {
-      ocultarElemento('.formulario')
+      ocultarElemento('#formulario-perfiles')
     }, 200);   
     setTimeout(() => {
       mostrarElemento('.files-job')
@@ -6502,7 +6501,7 @@ function ocultarConsultas(){
   let alertas = document.querySelectorAll('.cerrar')
   let menu = document.querySelector('#menu-contextual')
   let alerta = document.querySelector('#alerta-siete')
-  ocultarElemento('.formulario, .files-job, .listado-clientes, .consola-ir')
+  ocultarElemento('#formulario-perfiles, .files-job, .listado-clientes, .consola-ir')
   document.querySelectorAll('.butt-perfiles').forEach(elemento => {
     elemento.style.display = 'block';
   }) 
@@ -6524,6 +6523,8 @@ function ocultarConsultas(){
   }
   console.log('OBJETO GLOBAL ', objetoGlobal)
 }
+
+
 function consultarCapacidadAlamcenamiento() {
   // Verificar uso actual
   let totalUsed = 0;
@@ -6568,7 +6569,7 @@ function traerAlmacenObjetos(){
   console.log('OBJETO GLOBAL ', objetoGlobal)
 }
 function moverFormulario() {
-  const formulario = document.querySelector('.formulario'); 
+  const formulario = document.querySelector('#formulario-perfiles'); 
   formulario.style.display='none' 
   // Deshabilitar la transición para que el cambio sea inmediato
   formulario.style.transition = 'none';
@@ -6669,18 +6670,22 @@ function initSlider(trackId, spanId, channel) {
   let thumb = track.querySelector(".slider-thumb");
   let span = document.getElementById(spanId); 
   let isDragging = false;
+
   thumb.addEventListener("mousedown", () => {
     isDragging = true;
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseup", stopDragging);
   });
+
   function onMouseMove(e) {
     if (!isDragging) return;
     let rect = track.getBoundingClientRect();
     let offsetY = rect.bottom - e.clientY;
     let porcentaje = Math.max(0, Math.min(100, (offsetY / rect.height) * 100));
+    
     thumb.style.bottom = `${(porcentaje/100) * (rect.height - thumb.offsetHeight)}px`;
     track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+    
     values[channel] = porcentaje;
     updateColor();
   }
@@ -6690,6 +6695,8 @@ function initSlider(trackId, spanId, channel) {
     document.removeEventListener("mouseup", stopDragging);
   }
 }
+
+
 function initSliderII(trackId, spanId, channel) {
   let track = document.getElementById(trackId);
   let thumb = track.querySelector(".slider-thumb-rgb");
@@ -6728,6 +6735,8 @@ function initSliderII(trackId, spanId, channel) {
     document.removeEventListener("mouseup", stopDragging);
   }
 }
+
+
 function updateColorDisplay() {
   let rgba = `rgba(${values.R}, ${values.G}, ${values.B}, ${values.W})`;
   document.getElementById("colorDisplay").style.backgroundColor = rgba;
@@ -6753,6 +6762,17 @@ document.addEventListener("DOMContentLoaded", () => {
   initSliderII("slid-blanco-rgb", "w-span-rgb", "W");
   updateColorDisplay();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  initSlider("slid-cian", "c-span-", "C");
+  initSlider("slid-magenta", "m-span", "M");
+  initSlider("slid-amarillo", "y-span", "Y");
+  initSlider("slid-negro", "k-span", "K");
+  initSlider("slid-blanco", "w-span", "W");
+  updateColor();
+});
+
+
 function normalizeCMYK(c, m, y, k) { //CMYK
   let max = Math.max(c, m, y, k);
   if (max > 0) {
@@ -6810,14 +6830,11 @@ function animarVariosSlidersConControl(sliderConfigs, duracion = 1000) {
 
       span.textContent = channel === "W" ? values[channel].toFixed(2) : values[channel];
     });
-
     updateColorDisplay();
-
     if (progress < 1) {
       requestAnimationFrame(step);
     }
   }
-
   requestAnimationFrame(step);
 }
 
@@ -6832,6 +6849,22 @@ document.getElementById("animate-btn").addEventListener("click", () => {
     { trackId: "slid-verde-rgb", spanId: "m-span-rgb", channel: "G", porcentajeDestino: gValue },
     { trackId: "slid-azul-rgb", spanId: "y-span-rgb", channel: "B", porcentajeDestino: bValue },
     { trackId: "slid-blanco-rgb", spanId: "w-span-rgb", channel: "W", porcentajeDestino: wValue }
+  ]);
+});
+
+document.getElementById("animate-btn-cmyk").addEventListener("click", () => {
+  let cValue = parseInt(document.getElementById("input-c").value) || 0;
+  let mValue = parseInt(document.getElementById("input-m").value) || 0;
+  let yValue = parseInt(document.getElementById("input-y").value) || 0;
+  let kValue = parseInt(document.getElementById("input-k").value) || 0;
+  let oValue = parseInt(document.getElementById("input-b").value) || 0;
+
+  animarVariosSlidersConControl([
+    { trackId: "slid-cian", spanId: "c-span", channel: "C", porcentajeDestino: cValue },
+    { trackId: "slid-magenta", spanId: "m-span", channel: "M", porcentajeDestino: mValue },
+    { trackId: "slid-amarillo", spanId: "y-span", channel: "Y", porcentajeDestino: yValue },
+    { trackId: "slid-negro", spanId: "w-span", channel: "K", porcentajeDestino: kValue },
+    { trackId: "slid-blanco", spanId: "w-span", channel: "W", porcentajeDestino: oValue }
   ]);
 });
 
@@ -6975,6 +7008,12 @@ function rgbFlotante() {
   let padreControles = document.querySelector('#padre-controles');
   let pantallaColor = document.querySelector('#colorDisplay');
   let padreCmyk = document.querySelector('#padre-cmyk');
+
+  if('perfiles-color' || 'control-panel-rgb'){
+    document.querySelector('#control-panel-rgb').style.display = 'none'
+    document.querySelector('#perfiles-color').style.display = 'none'
+    padreRgb.classList.remove('move-panel-rgb')
+  }
   if(padreCmyk){
     padreCmyk.style.display = 'none'
   }
@@ -6983,6 +7022,7 @@ function rgbFlotante() {
   setTimeout(() => {
     padreRgb.style.transition = "opacity 1s ease"; // Reaplicar transición
     padreRgb.style.opacity = "1"; // Hacerlo visible
+    padreRgb.classList.remove('move-panel-rgb')
   }, 50);     
   padreRgb.style.zIndex = "200";
   pantallaColor.style.display = "block";
@@ -6994,6 +7034,12 @@ function cmykFlotante() {
   let padreControles = document.querySelector("#container-slider");
   let pantallaColor = document.querySelector("#colorBox");
   let padreRgb = document.querySelector("#padre-rgb");
+
+  if('perfiles-color' || 'control-panel-rgb'){
+    document.querySelector('#control-panel-rgb').style.display = 'none'
+    document.querySelector('#perfiles-color').style.display = 'none'
+    padreCmyk.classList.remove('move-panel-cmyk')
+  }
   if(padreRgb){
     padreRgb.style.display = 'none'
   }
@@ -7004,6 +7050,7 @@ function cmykFlotante() {
   setTimeout(() => {
     padreCmyk.style.transition = "opacity 1s ease"; // Reaplicar transición
     padreCmyk.style.opacity = "1"; // Hacerlo visible
+    padreCmyk.classList.remove('move-panel-cmyk')
   }, 50); 
   padreCmyk.style.zIndex = "200";
   pantallaColor.style.display = "block";
@@ -7019,15 +7066,53 @@ document.querySelector('#boton-cmyk').addEventListener('click', () =>{
     document.querySelector('#colorDisplay').style.display = 'flex'
   }, 200);
 })
-document.querySelector('#boton-rgb-alternar').addEventListener('click', () =>{
-  document.querySelector('#padre-rgb').style.display = 'none'
-  setTimeout(() => {
-    document.querySelector('#padre-cmyk').style.display = 'grid'
-    document.querySelector('#padre-cmyk').style.zIndex = 200
-    document.querySelector('#container-slider').style.display = 'grid' 
-    document.querySelector('#colorBox').style.display = 'flex'
-  }, 200);
-})
+
+function alternarControles(controlador){
+  let elemento = document.querySelector('#perfiles-color');
+  let complemento = document.querySelector('#control-panel-rgb');
+  let ayudante = document.querySelector('#control-panel-cmyk');
+  let padreRGB = document.querySelector('#padre-rgb');
+  let padreCMYK = document.querySelector('#padre-cmyk');  
+
+  if (elemento && getComputedStyle(elemento).display !== 'grid' && padreRGB) {
+    padreRGB.classList.remove('move-panel-rgb');
+  }
+  if (elemento && getComputedStyle(elemento).display !== 'grid' && padreCMYK) {
+    padreCMYK.classList.remove('move-panel-cmyk');
+  }
+
+
+
+    
+  if ((elemento && getComputedStyle(elemento).display === 'grid') || 
+    (complemento && getComputedStyle(complemento).display === 'grid') ||
+    (ayudante && getComputedStyle(ayudante).display === 'grid')) {
+    if (elemento) elemento.style.display = 'none';
+    if (complemento) complemento.style.display = 'none';
+    if (ayudante) ayudante.style.display = 'none';
+  }    
+  switch(controlador){
+    case 'rgb':
+      document.querySelector('#padre-rgb').style.display = 'none'
+      setTimeout(() => {
+        document.querySelector('#padre-cmyk').style.display = 'grid'
+        document.querySelector('#padre-cmyk').style.zIndex = 200
+        document.querySelector('#container-slider').style.display = 'grid' 
+        document.querySelector('#colorBox').style.display = 'flex'    
+      }, 200);   
+    break;
+    case 'cmyk':
+      document.querySelector('#padre-cmyk').style.display = 'none'
+      setTimeout(() => {
+        document.querySelector('#padre-rgb').style.display = 'grid'
+        document.querySelector('#padre-rgb').style.zIndex = 200
+        document.querySelector('#padre-controles').style.display = 'grid' 
+        document.querySelector('#colorDisplay').style.display = 'flex'    
+      }, 200);   
+    break;
+  }
+}
+
 // controlan redimensionado
 function initResize(contenedor, esquina) {
   const MIN_WIDTH = 200;
@@ -7071,35 +7156,54 @@ initResize(
   document.querySelector(".esquina-cmyk")
 );
 
-function resetBotonMezclador() {
-  document.querySelectorAll(".slider-thumb, .slider-thumb-rgb").forEach(mezclador => {
-    mezclador.style.transition = "bottom 0.8s ease"; // Aplicamos transición para el reseteo
-    mezclador.style.bottom = "0%"; // Se mueve progresivamente a la posición inicial
 
-    // Una vez terminada la animación, eliminamos la transición para evitar retrasos
+function resetBotonMezclador(parentContiner) {
+  if (typeof parentContiner !== "string") return;
+  parentContiner = parentContiner.trim().toLowerCase();
+
+  let isCMYK = parentContiner === 'padre-cmyk';
+  let sliders = document.querySelectorAll(isCMYK ? ".slider-thumb" : ".slider-thumb-rgb");
+  
+  sliders.forEach(mezclador => {
+    mezclador.style.transition = "bottom 0.8s ease"; 
+    mezclador.style.bottom = "0%"; 
+
     setTimeout(() => {
       mezclador.style.transition = "";
     }, 800);
   });
 
-  document.querySelectorAll(".slider-track, .slider-track-rgb").forEach(track => {
-    track.style.transition = "background 0.8s ease"; // Transición suave para el degradado
-    let porcentaje = 0; // Volvemos el degradado al estado inicial
-    track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+  let colorElement = document.querySelector(isCMYK ? "#colorBox" : "#colorDisplay");
+  if (colorElement) colorElement.style.backgroundColor = "";  
 
-    // También eliminamos la transición para que el degradado responda sin retraso
+  // Reseteo de los valores de mezcla
+  if (typeof values !== "object") values = {};
+  Object.assign(values, isCMYK ? 
+    { C: 0, M: 0, Y: 0, K: 0, W: 0 } : 
+    { R: 0, G: 0, B: 0, W: 0 }
+  );
+
+  // **Aquí se restablece el degradado en el slider-track**
+  let sliderTracks = document.querySelectorAll(isCMYK ? ".slider-track" : ".slider-track-rgb");
+  sliderTracks.forEach(track => {
+    track.style.transition = "background 0.8s ease";
+    track.style.background = `linear-gradient(to top, rgb(255,120,0) 0%, rgb(0,0,17) 0%)`;
+
     setTimeout(() => {
       track.style.transition = "";
     }, 800);
   });
 
-  document.querySelector("#colorBox").style.backgroundColor = ""; // Reset del color
-  document.querySelector("#colorDisplay").style.backgroundColor = ""; 
-
-  // Opcional: Reiniciar los valores del objeto global
-  values = { C: 0, M: 0, Y: 0, K: 0, W: 0, R: 0, G: 0, B: 0 };  
-  updateColor(); // Volver a calcular el color final
+  // Llamar a la función de actualización correspondiente
+  if (isCMYK) {
+    updateColor();  
+  } else {
+    values.W = parseFloat(values.W) || 0;  
+    updateColorDisplay();
+  }
 }
+
+
 
 function configurarBoton(selector,contenedor, callback) {
   const boton = document.querySelector(selector)
@@ -7121,28 +7225,78 @@ function configurarBoton(selector,contenedor, callback) {
     boton.style.backgroundColor = ''
   })
 }
-configurarBoton('#boton-seis', '#padre-cmyk', resetBotonMezclador)     
-configurarBoton('#boton-rgb','#padre-rgb', resetBotonMezclador)
+configurarBoton('#boton-seis', '#padre-cmyk', () => resetBotonMezclador('padre-cmyk'));
+configurarBoton('#boton-rgb', '#padre-rgb', () => resetBotonMezclador('padre-rgb'));
 configurarBoton('#boton-cmyk','#padre-cmyk', '')
 configurarBoton('#boton-rgb-alternar','#padre-rgb', '') 
 configurarBoton('#boton-rgb-salir','#padre-rgb', '')
 configurarBoton('#boton-cmyk-salir','#padre-cmyk', '')
 
-function desvanecerColor(contenedor) {
-  let padreCmyk = document.querySelector(contenedor)
-  let propiedadesOriginales = {
-    opacity: padreCmyk.style.opacity,
-    display: padreCmyk.style.display,
-    transition: padreCmyk.style.transition
-  };
-  // Aplicar transición de opacidad
-  padreCmyk.style.transition = "opacity 1.5s ease";
-  padreCmyk.style.opacity = "0";
-  // Esperar 1.5 segundos y ocultar completamente el elemento
+
+function secuenciaAparicion(canal) { 
+  let panelRgb = document.getElementById('padre-rgb');
+  let panelCmyk = document.getElementById('padre-cmyk');
+  let perfilesRgb = document.getElementById("perfiles-color");
+  switch(canal){
+    case 'rgb' :
+      if (panelRgb) {
+        panelRgb.classList.remove("move-panel-rgb");
+        panelRgb.style.display = 'grid';  // Asegura que sea visible antes de animar
+        panelRgb.style.opacity = '1';     // Suaviza la aparición
+        panelRgb.classList.add("move-panel-rgb");
+      }     
+      setTimeout(() => {
+        if (perfilesRgb) {
+          document.querySelector('#control-panel-rgb').style.display = 'none'
+          document.querySelector('#control-panel-cmyk').style.display = 'none'
+          aparecerColor('#perfiles-color')
+          perfilesRgb.style.top = '41vh';
+          perfilesRgb.classList.add("move-perfil-color"); 
+        }
+      }, 100);
+    break
+    case 'cmyk' :
+      if (panelCmyk) {
+        panelCmyk.classList.remove("move-panel-cmyk");
+        panelCmyk.style.display = 'grid';  // Asegura que sea visible antes de animar
+        panelCmyk.style.opacity = '1';     // Suaviza la aparición
+        panelCmyk.classList.add("move-panel-cmyk");
+      }
+      setTimeout(() => {
+        if (perfilesRgb) {
+          document.querySelector('#control-panel-cmyk').style.display = 'none'
+          document.querySelector('#control-panel-rgb').style.display = 'none'
+          aparecerColor('#perfiles-color')
+          perfilesRgb.style.top = '41vh';
+          perfilesRgb.classList.add("move-perfil-color");
+        }
+      }, 100);    
+    break
+
+  }
+}
+ 
+document.querySelector('#btn-salir-perfiles').addEventListener('click', ()=>{
+  let panel = document.getElementById('padre-rgb');
+  let panelcmyk = document.getElementById('padre-cmyk');
+  desvanecerColor('#perfiles-color')
   setTimeout(() => {
-    padreCmyk.style.display = "none";
-    // Restaurar propiedades originales
-    padreCmyk.style.opacity = propiedadesOriginales.opacity;
-    padreCmyk.style.transition = propiedadesOriginales.transition;
-  }, 1500);
+    panel.classList.remove("move-panel-rgb");
+    panelcmyk.classList.remove("move-panel-cmyk");
+  }, 800);
+
+})
+
+function alternarTeccnologia(tecnologia){
+  switch(tecnologia){
+    case 'rgb':
+      desvanecerColor('#perfiles-color')
+      aparecerColor('#control-panel-rgb')  
+    break;
+    case 'cmyk':
+      desvanecerColor('#perfiles-color')
+      aparecerColor('#control-panel-cmyk')  
+    break;
+
+  }
 }
