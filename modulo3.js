@@ -1,4 +1,4 @@
-document.addEventListener('keydown', function(event) {               
+document.addEventListener('keydown', function(event) {                
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
       case 'Z':
@@ -6731,30 +6731,32 @@ function initSliderII(trackId, spanId, channel) {
 
   function stopDragging() {
     isDragging = false;
-    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mousemove", onMouseMove); 
     document.removeEventListener("mouseup", stopDragging);
   }
 }
 
 
-function updateColorDisplay() {
-  let rgba = `rgba(${values.R}, ${values.G}, ${values.B}, ${values.W})`;
+function updateColorDisplay() { // RGB
+  let rgba = `rgba(${values.R}, ${values.G}, ${values.B}, ${values.W})`;  
   document.getElementById("colorDisplay").style.backgroundColor = rgba;
   document.getElementById("c-span-rgb").textContent = values.R;
   document.getElementById("m-span-rgb").textContent = values.G;
   document.getElementById("y-span-rgb").textContent = values.B;
   document.getElementById("w-span-rgb").textContent = values.W.toFixed(2);
 }
-function updateColor() {
-  let rgb = cmykwToRgb(values.C, values.M, values.Y, values.K, values.W);
+
+let values = { C: 0, M: 0, Y: 0, K: 0, A: 0, R: 0, G: 0, B: 0, W:0 };
+function updateColor() { // CMYK
+  let rgb = cmykwToRgb(values.C, values.M, values.Y, values.K, values.A);
   document.getElementById("colorBox").style.backgroundColor = rgb;
-  document.getElementById("c-span").textContent = values.C.toFixed(0);
+  document.getElementById("c-span").textContent = values.C.toFixed(0); 
   document.getElementById("m-span").textContent = values.M.toFixed(0);
   document.getElementById("y-span").textContent = values.Y.toFixed(0);
   document.getElementById("k-span").textContent = values.K.toFixed(0);
-  document.getElementById("w-span").textContent = values.W.toFixed(0);  
+  document.getElementById("w-span").textContent = values.A.toFixed(0);  
 }
-let values = { C: 0, M: 0, Y: 0, K: 0, W: 0, R: 0, G: 0, B: 0, W:0 };
+
 document.addEventListener("DOMContentLoaded", () => {
   initSliderII("slid-rojo-rgb", "c-span-rgb", "R");
   initSliderII("slid-verde-rgb", "m-span-rgb", "G");
@@ -6768,7 +6770,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSlider("slid-magenta", "m-span", "M");
   initSlider("slid-amarillo", "y-span", "Y");
   initSlider("slid-negro", "k-span", "K");
-  initSlider("slid-blanco", "w-span", "W");
+  initSlider("slid-blanco", "w-span", "A");
   updateColor();
 });
 
@@ -6783,7 +6785,7 @@ function normalizeCMYK(c, m, y, k) { //CMYK
   }
   return { c, m, y, k };
 }
-function cmykwToRgb(c, m, y, k, w) {  // RGB
+function cmykwToRgb(c, m, y, k, a) {  // RGB
   let normalized = normalizeCMYK(c, m, y, k);
   c = normalized.c;
   m = normalized.m;
@@ -6792,14 +6794,14 @@ function cmykwToRgb(c, m, y, k, w) {  // RGB
   let r = 255 * (1 - c / 100) * (1 - k / 100);
   let g = 255 * (1 - m / 100) * (1 - k / 100);
   let b = 255 * (1 - y / 100) * (1 - k / 100);
-  let factorBlanco = w / 100;
+  let factorBlanco = a / 100;
   r = r + (255 - r) * factorBlanco;
   g = g + (255 - g) * factorBlanco;
   b = b + (255 - b) * factorBlanco;
   return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
 }
 
-function animarVariosSlidersConControl(sliderConfigs, duracion = 1000) {
+function animarSlidersRGB(sliderConfigs, duracion = 1000) {
   let startTime = null;
 
   function step(timestamp) {
@@ -6838,13 +6840,52 @@ function animarVariosSlidersConControl(sliderConfigs, duracion = 1000) {
   requestAnimationFrame(step);
 }
 
+function animarSlidersCMYK(sliderConfigs, duracion = 1000) {
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    let progress = (timestamp - startTime) / duracion;
+    if (progress > 1) progress = 1;
+
+    sliderConfigs.forEach(({ trackId, spanId, channel, porcentajeDestino }) => {
+      let track = document.getElementById(trackId);
+      let thumb = track.querySelector(".slider-thumb");
+      let span = document.getElementById(spanId);
+      let rect = track.getBoundingClientRect();
+      
+      // Cálculo de la posición final según el porcentaje destino
+      let endValue = (porcentajeDestino / 100) * (rect.height - thumb.offsetHeight);
+      let newValue = progress * endValue;
+
+      thumb.style.bottom = `${newValue}px`;
+      let porcentaje = (newValue / (rect.height - thumb.offsetHeight)) * 100;
+
+      track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+
+      values[channel] = Math.round(porcentaje); // ✅ Ahora W se mantiene en escala 0-100 como los demás      
+
+      span.textContent = Math.round(values[channel]); 
+    });
+    updateColor();
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+
+
+
+
 document.getElementById("animate-btn").addEventListener("click", () => {
   let rValue = parseInt(document.getElementById("input-r").value) || 0;
   let gValue = parseInt(document.getElementById("input-g").value) || 0;
   let bValue = parseInt(document.getElementById("input-b").value) || 0;
   let wValue = parseInt(document.getElementById("input-w").value) || 0;
 
-  animarVariosSlidersConControl([
+  animarSlidersRGB([
     { trackId: "slid-rojo-rgb", spanId: "c-span-rgb", channel: "R", porcentajeDestino: rValue },
     { trackId: "slid-verde-rgb", spanId: "m-span-rgb", channel: "G", porcentajeDestino: gValue },
     { trackId: "slid-azul-rgb", spanId: "y-span-rgb", channel: "B", porcentajeDestino: bValue },
@@ -6857,14 +6898,14 @@ document.getElementById("animate-btn-cmyk").addEventListener("click", () => {
   let mValue = parseInt(document.getElementById("input-m").value) || 0;
   let yValue = parseInt(document.getElementById("input-y").value) || 0;
   let kValue = parseInt(document.getElementById("input-k").value) || 0;
-  let oValue = parseInt(document.getElementById("input-b").value) || 0;
+  let oValue = parseInt(document.getElementById("input-a").value) || 0;
 
-  animarVariosSlidersConControl([
+  animarSlidersCMYK([
     { trackId: "slid-cian", spanId: "c-span", channel: "C", porcentajeDestino: cValue },
     { trackId: "slid-magenta", spanId: "m-span", channel: "M", porcentajeDestino: mValue },
     { trackId: "slid-amarillo", spanId: "y-span", channel: "Y", porcentajeDestino: yValue },
-    { trackId: "slid-negro", spanId: "w-span", channel: "K", porcentajeDestino: kValue },
-    { trackId: "slid-blanco", spanId: "w-span", channel: "W", porcentajeDestino: oValue }
+    { trackId: "slid-negro", spanId: "k-span", channel: "K", porcentajeDestino: kValue },
+    { trackId: "slid-blanco", spanId: "w-span", channel: "A", porcentajeDestino: oValue }
   ]);
 });
 
@@ -7080,10 +7121,6 @@ function alternarControles(controlador){
   if (elemento && getComputedStyle(elemento).display !== 'grid' && padreCMYK) {
     padreCMYK.classList.remove('move-panel-cmyk');
   }
-
-
-
-    
   if ((elemento && getComputedStyle(elemento).display === 'grid') || 
     (complemento && getComputedStyle(complemento).display === 'grid') ||
     (ayudante && getComputedStyle(ayudante).display === 'grid')) {
@@ -7112,6 +7149,7 @@ function alternarControles(controlador){
     break;
   }
 }
+
 
 // controlan redimensionado
 function initResize(contenedor, esquina) {
@@ -7155,8 +7193,6 @@ initResize(
   document.querySelector("#padre-cmyk"),
   document.querySelector(".esquina-cmyk")
 );
-
-
 function resetBotonMezclador(parentContiner) {
   if (typeof parentContiner !== "string") return;
   parentContiner = parentContiner.trim().toLowerCase();
@@ -7179,7 +7215,7 @@ function resetBotonMezclador(parentContiner) {
   // Reseteo de los valores de mezcla
   if (typeof values !== "object") values = {};
   Object.assign(values, isCMYK ? 
-    { C: 0, M: 0, Y: 0, K: 0, W: 0 } : 
+    { C: 0, M: 0, Y: 0, K: 0, A: 0 } : 
     { R: 0, G: 0, B: 0, W: 0 }
   );
 
@@ -7198,13 +7234,10 @@ function resetBotonMezclador(parentContiner) {
   if (isCMYK) {
     updateColor();  
   } else {
-    values.W = parseFloat(values.W) || 0;  
+    values.A = parseFloat(values.A) || 0;  
     updateColorDisplay();
   }
 }
-
-
-
 function configurarBoton(selector,contenedor, callback) {
   const boton = document.querySelector(selector)
   const padre = document.querySelector(contenedor)
@@ -7231,6 +7264,7 @@ configurarBoton('#boton-cmyk','#padre-cmyk', '')
 configurarBoton('#boton-rgb-alternar','#padre-rgb', '') 
 configurarBoton('#boton-rgb-salir','#padre-rgb', '')
 configurarBoton('#boton-cmyk-salir','#padre-cmyk', '')
+
 
 
 function secuenciaAparicion(canal) { 
@@ -7274,8 +7308,7 @@ function secuenciaAparicion(canal) {
     break
 
   }
-}
- 
+} 
 document.querySelector('#btn-salir-perfiles').addEventListener('click', ()=>{
   let panel = document.getElementById('padre-rgb');
   let panelcmyk = document.getElementById('padre-cmyk');
@@ -7286,17 +7319,37 @@ document.querySelector('#btn-salir-perfiles').addEventListener('click', ()=>{
   }, 800);
 
 })
-
 function alternarTeccnologia(tecnologia){
   switch(tecnologia){
     case 'rgb':
+      desvanecerColor('#padre-cmyk')
+      rgbFlotante()
       desvanecerColor('#perfiles-color')
-      aparecerColor('#control-panel-rgb')  
+      aparecerColor('#control-panel-rgb')
+      setTimeout(() => {
+        document.querySelector('#padre-rgb').classList.add('move-panel-rgb')  
+      }, 100); 
     break;
     case 'cmyk':
+      desvanecerColor('#padre-rgb')
+      cmykFlotante()
       desvanecerColor('#perfiles-color')
-      aparecerColor('#control-panel-cmyk')  
+      aparecerColor('#control-panel-cmyk') 
+      setTimeout(() => {
+        document.querySelector('#padre-cmyk').classList.add('move-panel-cmyk')  
+      }, 100);
     break;
 
   }
 }
+
+document.querySelectorAll('.alterna-panel').forEach(btn => {
+  btn.addEventListener('click', () => {
+    desvanecerColor('#control-panel-cmyk');
+    desvanecerColor('#control-panel-rgb');
+    setTimeout(() => {
+      document.querySelector('#padre-rgb').classList.remove('move-panel-rgb')
+      document.querySelector('#padre-cmyk').classList.remove('move-panel-cmyk')  
+    }, 500);
+  });
+});

@@ -4,7 +4,7 @@ function cierraContenedores(elementId,buttonID){
   for (var i = 0; i < arrayButtsRojos.length; i++) {
   var button = arrayButtsRojos[i]
   if (button) {
-    document.getElementById(button).style.backgroundColor = ''   
+    document.getElementById(button).style.backgroundColor = ''    
   }
   }      
   if (firstClick) { 
