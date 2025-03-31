@@ -1,7 +1,7 @@
 document.addEventListener('keydown', function(event) {                
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
-      case 'Z':
+      case 'Z':   
         abrirSeccionOperativa('cont-titulo-operacion')
         setTimeout(() => {
           abrirSeccionContinua('pantalla-inicial')
@@ -9,13 +9,17 @@ document.addEventListener('keydown', function(event) {
       break;
       case 'H':
         document.addEventListener("contextmenu", (event) => {
-          event.stopPropagation(); // Evita que otros eventos bloqueen el menú  
-        }, true); // 'true' hace que capture antes que otros eventos
-        
+          event.stopPropagation(); 
+        }, true);
 
+        /* colorRenderizado() */
+
+        renderizaMezclaRGB()
       break;
       case 'X':
         Geometria()
+        renderizaMezclaCMYK()
+
       break;                  
     }
   }
@@ -33,9 +37,9 @@ function Geometria() {
   var displayType = style.display;  
   var visibilityType = style.visibility;  
   var zIndexValue = style.zIndex;  
-  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';  
+  var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';   
   
-  console.log("ID:", contiBoton.id);  
+  console.log("PADRE :", contiBoton.id);  
   console.log("Top:", topPosition);  
   console.log("Left:", leftPosition);  
   console.log("Height:", heightValue);  
@@ -45,16 +49,6 @@ function Geometria() {
   console.log("Visibility:", visibilityType);  
   console.log("Z-Index:", zIndexValue);  
   console.log("Is Visible:", isVisible);
-  console.log('1 :','ID:', contiBoton.id);
-  console.log('1 :','Top:', topPosition);
-  console.log('1 :','Left:', leftPosition);
-  console.log('1 :','Height:', heightValue);
-  console.log('1 :','Width:', widthValue);
-  console.log('1 :','Position:', positionType);
-  console.log('1 :','Display:', displayType);
-  console.log('1 :','Visibility:', visibilityType);
-  console.log('1 :','Is Visible:', isVisible);
-  console.log("Z-Index:", style.zIndex);
   
   var contiBotonI = document.getElementById('padre-rgb') 
   var rect = contiBotonI.getBoundingClientRect();
@@ -67,7 +61,7 @@ function Geometria() {
   var displayType = style.display;
   var visibilityType = style.visibility;
   var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';
-  console.log('2 :','ID:', contiBotonI.id);
+  console.log('2 :','PADRE :', contiBotonI.id);
   console.log('2 :','Top:', topPosition);
   console.log('2 :','Left:', leftPosition);
   console.log('2 :','Height:', heightValue);
@@ -78,29 +72,19 @@ function Geometria() {
   console.log('2 :','Is Visible:', isVisible); 
   console.log("Z-Index:", style.zIndex);
 }
-
-let color = ''
+let color = ''  
 class objetoColores {
   constructor() {
-    this.amarillo = {
-      linea: this.crearEstructura("linea", 22),         
-      lineaSeguidor: this.crearEstructura("led", 22),
-      lineaGrilla: this.crearEstructura("grilla", 22),  
-      nivelAgua: [],
-      nivelTinta: [],
-      colorElemento: '',
-      posicionTopDisplay: 0,           
-      posicionTopAgua: 0
-    };   
-
-    // Agregar propiedades adicionales con la misma estructura                      
+    this.amarillo = this.crearPropiedadColor();
     this.magenta = this.crearPropiedadColor();
-    this.azul = this.crearPropiedadColor();   
+    this.azul = this.crearPropiedadColor();
     this.negro = this.crearPropiedadColor();
-    this.especial = this.crearPropiedadColor();  
-    this.barniz = this.crearPropiedadColor();   
+    this.especial = this.crearPropiedadColor();
+    this.barniz = this.crearPropiedadColor();
+    this.RGBA = this.crearPropiedadRGBA(); // Agregar RGBA como un color más
+    this.CMYK = this.crearPropiedadCMYK(); // Agregar CMYK como un color más
   }
-
+ 
   // Método para crear la estructura repetitiva
   crearEstructura(prefijo, cantidad) {
     const estructura = {};
@@ -110,7 +94,7 @@ class objetoColores {
     return estructura;
   }
 
-  // Metodo para generar una estructura completa de color  
+  // Método para generar una estructura completa de color
   crearPropiedadColor() {
     return {
       linea: this.crearEstructura("linea", 22),
@@ -122,6 +106,27 @@ class objetoColores {
       nivelTintaGral: [],
       colorElemento: '',
       posicionTopDisplay: 0
+    };
+  }
+
+  // Método para crear la propiedad RGBA como un "color"
+  crearPropiedadRGBA() {
+    return {
+      R: [],
+      G: [],
+      B: [],
+      A: []
+    };
+  }
+
+  // Método para crear la propiedad CMYK como un "color"
+  crearPropiedadCMYK() {
+    return {
+      C: [],
+      M: [],
+      Y: [],
+      K: [],
+      A: []
     };
   }
 }
@@ -164,9 +169,7 @@ const alertaPerfil = document.querySelector('.alerta-perfil')
 const buttsControl = document.querySelectorAll('.div-ctrl')
 const irAconsola = document.querySelector('#ir-consola')
 const listaClientes = document.getElementById('lista-clientes');
-
 const nombreCliente = document.querySelector('.nombre-cliente')
- 
 const verdeAgua = 'rgb(127, 255, 212)';
 const azul = 'blue'
 const verde = 'rgb(0,255,0)'
@@ -177,7 +180,6 @@ const magenta = 'rgb(255,0,255)'
 const negro = 'rgb(0,0,0)'
 const especial = 'rgb(255,130,0)' 
 const barniz = 'rgb(200,200,200)'
-
 let botonera = document.querySelectorAll('.botones-registro');
 let botonInicio = document.getElementById('startButton')
 let botonDetener = document.getElementById('stopButton') 
@@ -187,8 +189,8 @@ let iniciador = document.getElementById('iniciador')
 let retroceder = document.getElementById('iniciador-I')
 let almacenObjetos = JSON.parse(localStorage.getItem('almacenObjetos')) || {}; 
 let objetoGlobal = null
-
-
+let nombreProvisional = null
+let objetoGlobalColor = null
 function ocultaElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13,id14){
   var elementosExcluidos = [id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13,id14]  
   for (var i = 0; i < allContenedores.length; i++) {
@@ -212,16 +214,6 @@ function ocultaElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13
         interfaz.style.display = 'flex'
       }
     break;
-/*     case 'colorDisplay':
-      let contenedor = document.querySelector('#padre-controles')
-      contenedor.style.display = 'grid'
-    break;
-    case 'colorBox':
-      document.querySelector('#container-slider').style.display = 'grid'
-      document.querySelectorAll('.slider-group').forEach(element => {
-        element.style.display = 'grid'
-      });
-      break; */
     case 'interfaz-perfiles':
     break;
   }  
@@ -755,7 +747,6 @@ let flagEspecial = false
 let flagBarniz = false
 const estadoIntervaloSolucion = { intervalo: null };  
 const estadoIntervaloTinta = { intervalo: null };
-
 const estadoBalanceNegro = {
   indices: [], // Almacena los índices de los elementos coloreados de amarillo
   indicador: []
@@ -787,9 +778,6 @@ const estadoSolucion = {
   indices: [],
   indicador: []
 }  
-
-
-
 masTintaGeneral.addEventListener('mousedown', () =>{
   if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
     if (!flagNegro && !flagCyan && !flagMagenta && !flagAmarillo && !flagEspecial && !flagBarniz) {  
@@ -1459,7 +1447,6 @@ menosTinta.addEventListener('mouseup', () => {
   }
   menosTinta.style.backgroundColor = ''; 
 });
-
 menosTinta.addEventListener('mouseleave', () =>{
   if (estadoIntervaloTinta.intervalo) { // Verifica que el intervalo esté activo
     clearInterval(estadoIntervaloTinta.intervalo); // Detiene el intervalo
@@ -1467,7 +1454,6 @@ menosTinta.addEventListener('mouseleave', () =>{
   }  
   menosTinta.style.backgroundColor = ''; 
 })
-
 let intervaloTintaNegro = null
 let intervaloTintaCyan = null
 let intervaloTintaMagenta = null
@@ -2254,7 +2240,6 @@ masSolucion.addEventListener('mousedown', () => {
   }
   masSolucion.style.backgroundColor='rgb(0,255,0)'
 });
-
 masSolucion.addEventListener('mouseup', () => {
   if (estadoIntervaloSolucion.intervalo) { // Verifica que el intervalo esté activo
     clearInterval(estadoIntervaloSolucion.intervalo); // Detiene el intervalo
@@ -2262,7 +2247,6 @@ masSolucion.addEventListener('mouseup', () => {
   }
   masSolucion.style.backgroundColor = ''; // Restaura el color de fondo
 });
-
 masSolucion.addEventListener('mouseleave', () => {
   if (estadoIntervaloSolucion.intervalo) { // Verifica que el intervalo esté activo
     clearInterval(estadoIntervaloSolucion.intervalo); // Detiene el intervalo
@@ -2386,7 +2370,6 @@ let almacenTintaMagenta = []
 let almacenTintaAmarillo = []  
 let almacenTintaEspecial = []
 let almacenTintaBarniz = []
-
 // Objetos que contienen las banderas y los estados correspondientes
 const flags = {
   negro: flagNegro,
@@ -2798,7 +2781,6 @@ function renderObjeto() {
   const porcentaje = Math.min(cantidad, elementos.length) * 100 / elementos.length; // Calcula el porcentaje (0-100)
   porcentajeTinta.textContent = `${Math.round(porcentaje)}%`;  
 }  
-
 document.getElementById('butt-perfil-tinta').addEventListener('click', () =>{ 
   nombreCliente.style.top=''
   let nombreDatos = document.querySelector('#cliente-nombre')
@@ -2998,7 +2980,6 @@ document.getElementById('butt-control-tinta').addEventListener('click', () =>{
     restablecerClick(['.butt-selector'])      
   }, 10);
 })
-
 document.getElementById('butt-job-track').addEventListener('click', () =>{
   ["panel-uno", "panel-dos"].forEach(id => document.getElementById(id)?.removeAttribute("style"));
   const conteJobTrack = document.querySelector('#job-files')
@@ -3023,14 +3004,6 @@ document.getElementById('butt-job-track').addEventListener('click', () =>{
     conteJobTrack.classList.add('move-job-track') 
   }, 100);
 })
-
-
-
-
-
-
-
-
 document.getElementById('conte-img').addEventListener('click', () =>{
   var elementosExcluidos = ['simulador','interfaz-perfiles','inerfaz-ajuste-fino','perfil-individual','control-perfiles','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4']  
   for (var i = 0; i < allContenedores.length; i++) {
@@ -3040,7 +3013,6 @@ document.getElementById('conte-img').addEventListener('click', () =>{
     }
   }  
 })
-/* container1.style.display = 'none' */
 let menuHambrgr = document.getElementById('show-todos')
 let txtHambrgr = document.getElementById('texto-perf-todos')
 // Función común para manejar el cambio de color y las acciones relacionadas
@@ -3124,7 +3096,6 @@ let banderaMagenta = false;
 let banderaAmarillo = false;
 let banderaEspecial = false;  
 let banderaBarniz = false;
-  
 function removerClasesColores() {
   const elementosColorInd = document.querySelectorAll('.color-ind');  
   // Recorremos todos los elementos y eliminamos las clases de movimiento
@@ -3144,7 +3115,6 @@ const textosEncabezados = ['Negro', 'Cyan', 'Magenta', 'Aamarillo', 'Especial', 
 const textosReglas = Array.from({ length: 22 }, (_, i) => i + 1); // Array de números del 1 al 20
 const idsEncabezados = ['cabeza-negro', 'cabeza-azul', 'cabeza-magenta', 'cabeza-amarillo', 'cabeza-especial', 'cabeza-barniz'];
 const maquinasTextos = ['IBM 5000','IBM Infoprint','GTO 52','Pinza','Heidelberg SORMZ','rotatek RK-200','rotatek RK-300'] 
-
 function elementosDinamicamente(contPadre, numeroDeLineas, classElto, startNumber = null, prefixId = '') {
   const contenedorPrincipal = document.getElementById(contPadre);
   // Limpiar el contenedor para evitar acumulación de elementos
@@ -3251,13 +3221,13 @@ function idPadreCantidadClaseTextId(contPadre, numeroDeLineas, classElto, claseD
   if (contenedorDestino) {
     contenedorDestino.appendChild(spanAgua);
   } else {
-    /* console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`); */
+    console.log(`El contenedor con ID "${padreEtiqueta}" no se encontró.`);
   }
 
   if (contenedorTinta) {
     contenedorTinta.appendChild(spanTinta);
   } else {
-    /* console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`); */
+    console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`);
   }
 
   // Crear múltiples spans dentro del contenedorPrincipal usando el bucle
@@ -3290,7 +3260,6 @@ let intervalColorMagenta = null
 let intervalColorAmmarillo = null
 let intervalColorEspecial = null
 let intervalColorBarniz = null
-
 function toggleColorButton(index) {
   const coleccionCabeza = document.querySelectorAll('.cabeza');
   const coleccionButtSelector = document.querySelectorAll('.butt-selector');
@@ -3922,11 +3891,9 @@ const informacionBotonesMagenta = [];
 const informacionBotonesNaranja = [];
 const informacionBotonesGris = [];
 let colorAplicadoContador = 0;
-
 const numeroLineas = 22; 
 let currentLinea = 0;
 let currentIndice = 0;
-
 function desactivarEventos() {
   // Prevenir clicks y mousedown en toda la página
   document.addEventListener('click', bloquearEvento, true);
@@ -3941,7 +3908,6 @@ function bloquearEvento(e) {
   e.stopPropagation();
   e.preventDefault();
 }
-
 let objetoAmarillo = { 
   linea: {
     "linea-1": [],
@@ -4021,16 +3987,13 @@ let objetoAmarillo = {
   nivelTintaGral: [],
   colorElemento: ''
 };
-
 let objetoMagenta = JSON.parse(JSON.stringify(objetoAmarillo));
 let objetoCian = JSON.parse(JSON.stringify(objetoAmarillo));
 let objetoNegro = JSON.parse(JSON.stringify(objetoAmarillo));
 let objetoEspecial = JSON.parse(JSON.stringify(objetoAmarillo));
 let objetoBarniz = JSON.parse(JSON.stringify(objetoAmarillo));
-
 let primeraPantalla = true;
 let segundaPantalla = false;
-
 let objetoRender = {
   boton1: {
     boton: "",
@@ -4052,7 +4015,6 @@ function getColorName(color) {
   const rgbColor = typeof color === "string" ? color : color.toString();      
   return colorNames[rgbColor] || "desconocido";
 }
-
 function crearBotonSuma(color, linea1, linea2, linea3) {
   const contenedorPrincipal = document.getElementById('columna-30');
   const botonesSuma = []; 
@@ -4138,7 +4100,6 @@ function crearBotonSuma(color, linea1, linea2, linea3) {
     });
   }
 }
-
 function guardarObjetoEnLocalStorage(){
   localStorage.setItem('objetoAmarillo', JSON.stringify(objetoAmarillo));
   localStorage.setItem('objetoMagenta', JSON.stringify(objetoMagenta));
@@ -4147,7 +4108,6 @@ function guardarObjetoEnLocalStorage(){
   localStorage.setItem('objetoEspecial', JSON.stringify(objetoEspecial));
   localStorage.setItem('objetoBarniz', JSON.stringify(objetoBarniz));
 }
-
 function traerObjetoDeLocalStorage() {
   const objetoAmarilloDesdeLocal = JSON.parse(localStorage.getItem('objetoAmarillo') || '{}'); 
   const objetoMagentaDesdeLocal = JSON.parse(localStorage.getItem('objetoMagenta') || '{}');
@@ -4198,7 +4158,6 @@ function traerObjetoDeLocalStorage() {
   ensayoAplicacion(objetoEspecial,'#perfil-especial',especial,'especial');         
   ensayoAplicacion(objetoBarniz,'#perfil-barniz',barniz,'barniz');
 }
-
 function vaciarObjeto(){
   const objetos = [objetoAmarillo, objetoMagenta, objetoCian, objetoNegro, objetoEspecial, objetoBarniz];  
   objetos.forEach(objeto => {
@@ -4219,7 +4178,6 @@ function vaciarObjeto(){
   });  
   guardarObjetoEnLocalStorage();
 }
-
 function vaciarAlmacenObjetos() {
   // 1. Traer el objeto almacenado en localStorage
   const almacenJSON = localStorage.getItem('almacenObjetos');
@@ -4241,7 +4199,6 @@ function vaciarAlmacenObjetos() {
 
   console.log("El almacén de objetos ha sido vaciado.");
 }
-
 function ensayoAplicacion(objeto,colorPerfil,color,colorTinta){ 
   setTimeout(() => {
     const ledsRutaBase = `#columna-70`;
@@ -4329,7 +4286,6 @@ function ensayoAplicacion(objeto,colorPerfil,color,colorTinta){
     }       
   }, 100);
 }
-
 let buttonSmart = document.getElementById('seleccion-gral')
 let intervaloLeds; // Declaración global
 buttonSmart.addEventListener('mousedown', () =>{
@@ -4352,7 +4308,6 @@ function guardarObjetoEnLocal(objeto) {
   localStorage.setItem('informacionCopia', objetoString);
   
 }
-
 function guardarObjetoAmarillo(objetoAmarillo) {   
   try {
       // Convertir el objeto a una cadena JSON
@@ -4366,8 +4321,6 @@ function guardarObjetoAmarillo(objetoAmarillo) {
       console.error("Error al guardar el objeto en localStorage:", error);
   }
 } 
-
-
 function guardarobjetoMagenta(objetoMagenta) {
   try {
       // Convertir el objeto a una cadena JSON
@@ -4530,7 +4483,6 @@ document.querySelector('#boton-reseteo').addEventListener('click', () =>{
     alertaPerfiles.style.display = 'flex';
   });
 })
-
 document.querySelector('#boton-perfiles').addEventListener('click', () =>{
   var elementosExcluidos = ['simulador','butt-perfil-tinta', 'butt-control-tinta', 'butt-perfil', 'butt-job-track', 'boton-perfiles', 'interfaz-perfiles', 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6']  
   for (var i = 0; i < allContenedores.length; i++) {
@@ -4548,7 +4500,6 @@ document.querySelector('#boton-perfiles').addEventListener('click', () =>{
     document.getElementById('nombreCliente').value = ''
   }, 20);
 })  
-
 document.querySelector('#aceptar-eliminar').addEventListener('click', () =>{
   const contenedor = document.getElementById('botonera-fondo');
   const alertasPerfiles = document.querySelectorAll('.alerta-perfiles');  
@@ -4927,7 +4878,6 @@ function vaciarObjetoEnLocal() {
 }
 /* *************************************************************************************************************************************************** */
 /* LOGICA AL CREAR EL OBJETO EN LOCAL STORE*/
-
 // Crear una nueva instancia de la clase objetoColores y guardarla en almacenObjetos
 function crearYGuardarInstanciaEnAlmacen(clave) {
   // Verificar si la clave ya existe en el almacén
@@ -4946,8 +4896,8 @@ function crearYGuardarInstanciaEnAlmacen(clave) {
   localStorage.setItem('almacenObjetos', JSON.stringify(almacenObjetos));
 
   console.log(`Nueva instancia creada y almacenada bajo la clave "${clave}":`, nuevaInstancia);
+  console.log('ALMACEN OBJETOS :', almacenObjetos);
 }
-
 function guardarCambios(nombreClave) {
   if (objetoGlobal) {
     try {
@@ -4961,8 +4911,7 @@ function guardarCambios(nombreClave) {
     console.warn("No hay una instancia cargada para guardar cambios.");
   }
 }
-
-function cargarInstanciaDesdeLocalStorage(nombreClave) {
+function cargarInstanciaDesdeLocalEnObjetoglobal(nombreClave) {
   const instanciaGuardada = localStorage.getItem(nombreClave);
     
   if (instanciaGuardada) {
@@ -4984,8 +4933,6 @@ function vaciarTodoAlmacenObjetos() {
   localStorage.clear(); // Borra todo el contenido de localStorage
   console.log("Todos los objetos han sido eliminados del almacenamiento local.");
 }
-
-
 document.getElementById('btn-crea-perfil').addEventListener('click', () => {
   // Capturar el valor del input
   let inputNombre = document.getElementById('nombreCliente').value.trim();
@@ -5040,12 +4987,10 @@ document.getElementById('btn-crea-perfil').addEventListener('click', () => {
   }
   restablecerClick(['.butt-perfiles'])
 });
-
 // Función para capitalizar la primera letra de cada palabra
 function capitalizarTexto(texto) {
   return texto.replace(/\b\w/g, char => char.toUpperCase());
 }
-
 // Función para actualizar y mostrar la lista de nombres
 function actualizarListaNombres() {
   const listaNombresContainer = document.getElementById('listaNombresContainer');  
@@ -5094,7 +5039,6 @@ function resaltarElemento(elementoClicado) {
    });
   document.querySelector('#filtroNombres input').value = '';
 }
-
 /* *************************************************************************************************************************************************** */
 /* *************************************************************************************************************************************************** */
 /* LOGICA PARA ADMINISTRAR EL objetoGlobal */
@@ -5119,9 +5063,7 @@ function guardarCambiosGeneralesEnAlmacen() {
     console.error('Error al guardar almacenObjetos en localStorage:', error);  
   }
 }
-
 /* *************************************************************************************************************************************************** */
-
 // Función para mostrar la ventana emergente
 function mostrarVentanaEmergente(mensaje) {
   const ventanaEmergente = document.getElementById('ventanaEmergente');
@@ -5130,54 +5072,49 @@ function mostrarVentanaEmergente(mensaje) {
   ventanaEmergente.classList.remove('oculta');
 }
 
-
-
-
-
-
-
-// Manejar el cierre de la ventana emergente
 document.getElementById('cerrarEmergente').addEventListener('click', () => {
+  let conteCMYK = document.querySelector('#padre-cmyk');
+  let conteRGB = document.querySelector('#padre-rgb');
   const mensajeEmergente = document.getElementById('mensajeEmergente');
+  const conteJobTrack = document.querySelector('#job-files');
 
-  if(mensajeEmergente.textContent ==='Perfil creado y almacenado'){
+  if (mensajeEmergente.textContent === 'Perfil creado y almacenado') {
     document.getElementById('ventanaEmergente').classList.add('oculta');
-    document.querySelector('#unit-job-track').style.display='flex'
-    const conteJobTrack = document.querySelector('#job-files')
-    conteJobTrack.classList.add('move-job-track')
-    document.querySelector('#nombreCliente').value = '';
-    document.querySelectorAll('.datos-base').forEach((elemento) => { 
-    elemento.textContent = ''
-    }); 
-    desactivarClick(['.butt-perfiles'])
-    restablecerClick(['.cont-vacio'])
-    setTimeout(() => {
-      ocultarElemento('#formulario-perfiles')
-    }, 200);   
-    setTimeout(() => {
-      mostrarElemento('.files-job')
-      document.getElementById('nombreCliente').focus();
-      document.getElementById('nombreCliente').value = ''
-    }, 700);
+    document.querySelector('#unit-job-track').style.display = 'flex';
 
-  }else{
+    // Verificar si alguno de los dos contenedores tiene display "grid"
+    let cmykVisible = window.getComputedStyle(conteCMYK).display === 'grid';
+    let rgbVisible = window.getComputedStyle(conteRGB).display === 'grid';
+
+    if (!cmykVisible && !rgbVisible) { 
+      conteJobTrack.classList.add('move-job-track'); 
+    }
+
+    document.getElementById('nombreCliente').value = '';
+    document.querySelectorAll('.datos-base').forEach((elemento) => {
+      elemento.textContent = '';
+    });
+
+    desactivarClick(['.butt-perfiles']);
+    restablecerClick(['.cont-vacio']);
+
+    setTimeout(() => {
+      ocultarElemento('#formulario-perfiles');
+    }, 200);
+
+    setTimeout(() => {
+      mostrarElemento('.files-job');
+      document.getElementById('nombreCliente').focus();
+      document.getElementById('nombreCliente').value = '';
+    }, 700);
+    
+  } else {
     document.getElementById('ventanaEmergente').classList.add('oculta');
     document.getElementById('nombreCliente').focus();
-    document.getElementById('nombreCliente').value = ''
+    document.getElementById('nombreCliente').value = '';
   }
 });
 
-function borrarEnsayos(){
-  let acumular = objetoAmarillo.nivelTinta.length;
-  acumular = ''
-  const leds = document.querySelectorAll('.leds, .led, .led-general, .lineas-tinta, .lineas-solucion, .divs-grales-tinta-magenta');
-  contadorTinta.textContent = ''
-  // Iterar sobre los LEDs y borrar propiedades
-  leds.forEach(led => {
-    led.style.backgroundColor = ''; // Restablecer color visual
-    led.dataset.color = ''; // Limpiar dataset asociado
-  });
-}
 
 function crearBotonResta(color, linea1, linea2, linea3) {
   const contenedorPrincipal = document.getElementById('columna-30');
@@ -5263,7 +5200,6 @@ function crearBotonResta(color, linea1, linea2, linea3) {
     });
   }
 }
-
 function renderizarPerfilesTinta(color) {
   const todosLeds = document.querySelectorAll('.led, .leds');
   todosLeds.forEach(led => {
@@ -5566,8 +5502,6 @@ botonesPerfiles.forEach(boton => {
     boton.style.backgroundColor = '#00FF00';
   });
 });
-
-
 let intervalColor;
 function alternarColor() {
   const elemento = document.querySelector('#grid-numbers > div:nth-child(12)')   
@@ -5588,7 +5522,6 @@ function alternarColor() {
     console.log('El intervalColor ya está en ejecución.');
   }
 }
-
 function detenerAlternarColor() {
   const elemento = document.querySelector('#grid-numbers > div:nth-child(12)');  
   if (intervalColor) {
@@ -5598,8 +5531,6 @@ function detenerAlternarColor() {
     console.log('El intervalColor ha sido detenido.');
   }
 }
-
-
 document.querySelector('#conte-butts-calculadora > div:nth-child(1)').addEventListener('click', ()=>{ 
   const numeros = document.querySelectorAll('.number'); // Selecciona todos los elementos con la clase .number  
   const algunoConContenido = Array.from(numeros).some(numero => numero.textContent.trim() !== '');
@@ -5616,8 +5547,7 @@ document.querySelector('#conte-butts-calculadora > div:nth-child(1)').addEventLi
     const calculadora = document.getElementById('calculadora') 
     calculadora.classList.add('move-calculadora')
   }
-}) 
-                                            
+})                                          
 const coleccionNumeros = [];
 const contenedorResultado = document.querySelector('#resultado-calculadora');
 const spansNumeros = contenedorResultado.querySelectorAll('.number');
@@ -5639,19 +5569,18 @@ const alertaSeis = document.getElementById('alerta-seis')
 const alertaSiete = document.getElementById('alerta-siete')
 const alertaOcho = document.getElementById('alerta-ocho')
 let alertaNueve = document.querySelector('#alerta-nueve')
-
 const buttsJobs = document.querySelectorAll('.base-datos');
-
 buttsJobs.forEach(boton => {
   let panelUno = document.getElementById('panel-uno')
   let panelDos = document.getElementById('panel-dos')  
   boton.addEventListener('click', () => {
     switch(boton.id) {
-      case 'clientes':      
+      case 'clientes':
         document.querySelectorAll('.butt-perfiles').forEach(elemento => {   
           elemento.style.display = 'block';   
         });
-        let listaClientes = document.querySelector('#lista-clientes')  
+        let listaClientes = document.querySelector('#lista-clientes')
+        listaClientes.removeAttribute('style');      
         listaClientes.style.top='43vh'
         limpiarColoresDeFondo()
         desactivarClick(['.butt-perfiles', '.estilo-1']);  
@@ -5695,11 +5624,9 @@ buttsJobs.forEach(boton => {
     } 
   });
 });
-
 function actualizarDisplay() {
   document.querySelectorAll('#resultado-calculadora .number, #display-cantidad .cantidad-display').forEach(elemento => elemento.textContent = '');
 }
-
 const listadoClientes = document.querySelectorAll('#lista-clientes > div');
 const arriba = document.querySelector('#job-files > div:nth-child(1) > span:nth-child(2)');
 listadoClientes.forEach(cliente => {
@@ -5709,7 +5636,6 @@ listadoClientes.forEach(cliente => {
     restablecerClick(['.butt-perfiles', '.estilo-1']);
   });
 });
-
 const listaLineas = document.querySelectorAll('#lista-lineas > div');
 const panelDos = document.getElementById('panel-dos');
 const destinoLinea = document.querySelector('#job-files > .jobs:nth-child(2) > .base-datos:nth-child(2)');  
@@ -5786,9 +5712,6 @@ document.getElementById('alerta-seis').children[2].addEventListener('click', () 
     alertaSeis.style.display='none'
   }, 700);
 });
-
-
-
 document.querySelector('#perfil-existe').addEventListener('click', () => {
   ["panel-uno", "panel-dos"].forEach(id => document.getElementById(id)?.removeAttribute("style"));
   alertaSeis.classList.add('move-alerta')
@@ -5818,14 +5741,6 @@ document.querySelector('#perfil-existe').addEventListener('click', () => {
     restablecerClick(['.cont-vacio', '.mod-tinta', '.div-ctrl','.base-datos'])
   }, 1000);
 }) 
-
-
-
-
-
-
-
-
 document.querySelector('#perfil-crear').addEventListener('click', () => {
   ["panel-uno", "panel-dos"].forEach(id => document.getElementById(id)?.removeAttribute("style"));
   alertaSeis.classList.add('move-alerta')  
@@ -5886,12 +5801,10 @@ document.querySelector('#grid-numbers > div:nth-child(11)').addEventListener('cl
   actualizarDisplay();  
   detenerAlternarColor();
 });
-
 document.querySelector('#abandonar-perfiles').addEventListener('click', () => {
   document.querySelector('#job-files').style.display = 'none'
   restablecerClick(['.butt-perfiles'])  
 })
-
 document.querySelector('#grid-numbers > div:nth-child(12)').addEventListener('click', () => {
   desactivarClick(['.butt-perfiles','.digit', '.estilo-1','digito']);
 
@@ -5924,9 +5837,6 @@ document.querySelector('#grid-numbers > div:nth-child(12)').addEventListener('cl
     }, 1700);
   }
 });
-
-
-
 function sumarPorcentaje() {
   // Obtener el valor actual del contador (remover el símbolo '%')
   let porcentajeCurrent = parseInt(contadorTinta.textContent.replace('%', ''), 10);
@@ -5975,7 +5885,6 @@ function borrarEnsayo() {
   console.log(`En total se restauraron ${totalRestaurados} elementos.`); 
   console.log('OBJETO GLOBAL', objetoGlobal);
 }
-   
 //APLICA A leds, led, grilla
 function muestraRenderObjetoGlobal(objeto, color, propiedad, propiedadII, propiedadIII, propiedadIV, propiedadV, propiedadVI, footer, foot){
   // Mapeo de nombres de colores a valores CSS válidos
@@ -6264,6 +6173,43 @@ function mostrarNombresDeObjetos() {
         objetoGlobal = nombreCapitalizado;
         console.log('OBJETO GLOBAL :', objetoGlobal);
         listaClientes.style.display = 'none';
+
+        let contRGB = document.querySelector('#padre-rgb')
+        let conteCMYK = document.querySelector('#padre-cmyk')
+
+        let primerImputRGB = document.querySelector('#input-r');
+        let segundoImputRGB = document.querySelector('#input-g');
+        let tercerImputRGB = document.querySelector('#input-b');
+        let cuartoImputRGB = document.querySelector('#input-w');
+      
+        let primerImputCMYK = document.querySelector('#input-c');
+        let segundoImputCMYK = document.querySelector('#input-m');
+        let tercerImputCMYK = document.querySelector('#input-y');
+        let cuartoImputCMYK = document.querySelector('#input-k');
+        let quintoImputCMYK = document.querySelector('#input-a');
+
+        if (contRGB.style.display === 'grid') {
+          primerImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.R ?? 0;
+          segundoImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.G ?? 0;
+          tercerImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.B ?? 0;
+          cuartoImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.A ?? 0;
+          aparecerColor('#control-panel-rgb') 
+          document.querySelectorAll('.btn-opcion, .lbls-cmyRgb').forEach(el => {
+            el.style.display = 'block';
+          });          
+        }
+        
+        if (conteCMYK.style.display === 'grid') {
+          primerImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.C ?? 0;
+          segundoImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.M ?? 0;
+          tercerImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.Y ?? 0;
+          cuartoImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.K ?? 0;
+          quintoImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.A ?? 0;
+          aparecerColor('#control-panel-cmyk')
+          document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
+            el.style.display = 'block';
+          });          
+        }
       });
 
       // Asignar evento 'contextmenu' para el clic derecho
@@ -6496,7 +6442,6 @@ document.querySelector('#perfil-cambio').addEventListener('click', () =>{
 function verDetallesObjeto(nombreObjeto) {
   console.log(`Mostrando detalles del objeto "${nombreObjeto}"`);  
 }
-
 function ocultarConsultas(){
   let alertas = document.querySelectorAll('.cerrar')
   let menu = document.querySelector('#menu-contextual')
@@ -6523,8 +6468,6 @@ function ocultarConsultas(){
   }
   console.log('OBJETO GLOBAL ', objetoGlobal)
 }
-
-
 function consultarCapacidadAlamcenamiento() {
   // Verificar uso actual
   let totalUsed = 0;
@@ -6555,18 +6498,30 @@ function consultarCapacidadAlamcenamiento() {
   console.log("Estado de las banderas:", flagsEstado);
   
 }
-function traerAlmacenObjetos(){
+function traerAlmacenObjetos() {
+  console.clear()
   // Recuperar el almacenamiento desde localStorage
   const datosGuardados = localStorage.getItem('almacenObjetos');
   if (datosGuardados) {
-    // Parsear los datos y asignarlos a `almacenObjetos`
-    almacenObjetos = JSON.parse(datosGuardados);
-    console.log('ALMACEN DE OBJETOS ', almacenObjetos);
+    try {
+      // Parsear los datos y asignarlos a almacenObjetos
+      almacenObjetos = JSON.parse(datosGuardados);
+      console.log('almacenObjetos CARGADO:', almacenObjetos);
+      // Mostrar la composición detallada del objeto
+
+    } catch (error) {
+      console.error('Error al parsear almacenObjetos desde localStorage:', error);
+      almacenObjetos = {}; // En caso de error, inicializar vacío
+    }
   } else {
-    console.warn('No se encontraron datos en localStorage.');  
-    almacenObjetos = {}; // Inicializar con un objeto vacío si no hay datos   
+    console.warn('No se encontraron datos en localStorage.');
+    almacenObjetos = {}; // Inicializar con un objeto vacío
   }
-  console.log('OBJETO GLOBAL ', objetoGlobal)
+  // Asignar el objeto recuperado a objetoGlobal
+  // Confirmar que el objeto se ha asignado correctamente
+  console.log('objetoGlobal:', objetoGlobal);
+  console.log('nombreProvisional:', nombreProvisional);
+
 }
 function moverFormulario() {
   const formulario = document.querySelector('#formulario-perfiles'); 
@@ -6661,13 +6616,29 @@ document.querySelectorAll('.section').forEach((btn, index) => {
     }
   })
 })
-
 /* ************************************************************************************************************************************** */
 // mueve botones mezcladores DA COLOR NARANJA Y COLOR A PANTALLAS RGB Y CMYK
+let values = { C: 0, M: 0, Y: 0, K: 0, A: 0, R: 0, G: 0, B: 0, W:0 };
 let red = 0, green = 0, blue = 0; 
-function initSlider(trackId, spanId, channel) {
+// ejecuta la función de inicialización de los sliders (initSliderCYK) para cada canal de color
+document.addEventListener("DOMContentLoaded", () => {
+  initSliderCMYK("slid-cian", "c-span-", "C");
+  initSliderCMYK("slid-magenta", "m-span", "M");
+  initSliderCMYK("slid-amarillo", "y-span", "Y");
+  initSliderCMYK("slid-negro", "k-span", "K");
+  initSliderCMYK("slid-blanco", "w-span", "A");
+  updateColorCMYK();
+  /* *********************************************************************************************************** */
+  initSliderRGB("slid-rojo-rgb", "c-span-rgb", "R");
+  initSliderRGB("slid-verde-rgb", "m-span-rgb", "G");
+  initSliderRGB("slid-azul-rgb", "y-span-rgb", "B");
+  initSliderRGB("slid-blanco-rgb", "w-span-rgb", "W");
+  updateColorRGB();
+});
+// Inicializa un slider con eventos de arrastre y actualiza valores CMYK.
+function initSliderCMYK(trackId, spanId, channel) {
   let track = document.getElementById(trackId);
-  let thumb = track.querySelector(".slider-thumb");
+  let thumb = track.querySelector(".slider-thumb-cmyk");
   let span = document.getElementById(spanId); 
   let isDragging = false;
 
@@ -6676,28 +6647,104 @@ function initSlider(trackId, spanId, channel) {
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseup", stopDragging);
   });
-
+  // Calcula la posición del slider, actualiza el fondo y almacena el valor en 'values[channel]'.
   function onMouseMove(e) {
     if (!isDragging) return;
     let rect = track.getBoundingClientRect();
     let offsetY = rect.bottom - e.clientY;
-    let porcentaje = Math.max(0, Math.min(100, (offsetY / rect.height) * 100));
+    let porcentaje = Math.round(Math.max(0, Math.min(100, (offsetY / rect.height) * 100)));
     
     thumb.style.bottom = `${(porcentaje/100) * (rect.height - thumb.offsetHeight)}px`;
     track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
     
     values[channel] = porcentaje;
-    updateColor();
+    updateColorCMYK(channel);
   }
+  // Detiene la interacción y elimina los eventos de movimiento del ratón.
   function stopDragging() {
     isDragging = false;
     document.removeEventListener("mousemove", onMouseMove);
     document.removeEventListener("mouseup", stopDragging);
   }
 }
+// Convierte los valores CMYKW a RGB y actualiza el color en 'colorBox' y los valores en labels e inputs.
+function updateColorCMYK(channel) { // CMYK
+  let rgb = cmykwToRgb(values.C, values.M, values.Y, values.K, values.A);
+  document.getElementById("colorCMYK").style.backgroundColor = rgb;
+  document.getElementById("c-span").textContent = values.C.toFixed(0); 
+  document.getElementById("m-span").textContent = values.M.toFixed(0);
+  document.getElementById("y-span").textContent = values.Y.toFixed(0);
+  document.getElementById("k-span").textContent = values.K.toFixed(0);
+  document.getElementById("w-span").textContent = values.A.toFixed(0);  
+  document.getElementById("input-c").value = values.C.toFixed(0);
+  document.getElementById("input-m").value = values.M.toFixed(0);
+  document.getElementById("input-y").value = values.Y.toFixed(0);
+  document.getElementById("input-k").value = values.K.toFixed(0);
+  document.getElementById("input-a").value = values.A.toFixed(0);
 
+  // Asegurar que objetoGlobalColor y su estructura existan
+  if (!objetoGlobalColor) {
+    objetoGlobalColor = { CMYK: {} };
+  }
+  if (!objetoGlobalColor.CMYK) {
+    objetoGlobalColor.CMYK = {};
+  }
+  if (!objetoGlobalColor.CMYK[channel]) {
+    objetoGlobalColor.CMYK[channel] = { value: 0 };
+  }
 
-function initSliderII(trackId, spanId, channel) {
+  // Asignar el valor actualizado
+  objetoGlobalColor.CMYK[channel].value = values[channel];
+
+  console.log("Almacenado en almacenObjetos:", almacenObjetos);
+}
+// Normaliza valores CMYK manteniendo la proporción entre ellos.
+function normalizeCMYK(c, m, y, k) { // CMYK 
+  let max = Math.max(c, m, y, k);
+  if (max > 0) {
+    c = Math.round((c / max) * 100);
+    m = Math.round((m / max) * 100);
+    y = Math.round((y / max) * 100);
+    k = Math.round((k / max) * 100);
+  }
+  return { c, m, y, k };
+}
+// Anima el movimiento de los sliders hasta un porcentaje destino en un tiempo determinado.
+function animarSlidersCMYK(sliderConfigs, duracion = 1000) {
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    let progress = (timestamp - startTime) / duracion;
+    if (progress > 1) progress = 1;
+
+    sliderConfigs.forEach(({ trackId, spanId, channel, porcentajeDestino }) => {
+      let track = document.getElementById(trackId);
+      let thumb = track.querySelector(".slider-thumb-cmyk");
+      let span = document.getElementById(spanId);
+      let rect = track.getBoundingClientRect();
+      
+      // Cálculo de la posición final según el porcentaje destino
+      let endValue = (porcentajeDestino / 100) * (rect.height - thumb.offsetHeight);
+      let newValue = progress * endValue;
+
+      thumb.style.bottom = `${newValue}px`;
+      let porcentaje = (newValue / (rect.height - thumb.offsetHeight)) * 100;
+
+      track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+
+      values[channel] = Math.round(porcentaje); // ✅ Ahora W se mantiene en escala 0-100 como los demás      
+
+      span.textContent = Math.round(values[channel]); 
+    });
+    updateColorCMYK();
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+  requestAnimationFrame(step);
+}
+function initSliderRGB(trackId, spanId, channel) {
   let track = document.getElementById(trackId);
   let thumb = track.querySelector(".slider-thumb-rgb");
   let span = document.getElementById(spanId);
@@ -6715,76 +6762,85 @@ function initSliderII(trackId, spanId, channel) {
     let offsetY = rect.bottom - e.clientY;
     let porcentaje = Math.max(0, Math.min(100, (offsetY / rect.height) * 100));
 
-    thumb.style.bottom = `${(porcentaje / 100) * (rect.height - thumb.offsetHeight)}px`;
+    let newValue = (porcentaje / 100) * (rect.height - thumb.offsetHeight);
+    thumb.style.bottom = `${newValue}px`;
+
     track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
 
-    // Normalización a escala de 0-255 (excepto W que irá de 0 a 1)
-    if (channel === "W") {
-      values[channel] = porcentaje / 100; // Opacidad en escala 0-1
-    } else {
-      values[channel] = Math.round((porcentaje / 100) * 255);
-    }
+    // 🔹 Ahora W usa el rango 0-255 como los demás
+    values[channel] = Math.round((porcentaje / 100) * 255);
+    span.textContent = values[channel];
 
-    span.textContent = channel === "W" ? values[channel].toFixed(2) : values[channel];
-    updateColorDisplay();
+    updateColorRGB();
   }
 
   function stopDragging() {
     isDragging = false;
-    document.removeEventListener("mousemove", onMouseMove); 
+    document.removeEventListener("mousemove", onMouseMove);
     document.removeEventListener("mouseup", stopDragging);
   }
 }
-
-
-function updateColorDisplay() { // RGB
-  let rgba = `rgba(${values.R}, ${values.G}, ${values.B}, ${values.W})`;  
+function updateColorRGB() {
+  let rgba = `rgba(${values.R}, ${values.G}, ${values.B}, ${values.W / 255})`;
   document.getElementById("colorDisplay").style.backgroundColor = rgba;
+
   document.getElementById("c-span-rgb").textContent = values.R;
   document.getElementById("m-span-rgb").textContent = values.G;
   document.getElementById("y-span-rgb").textContent = values.B;
-  document.getElementById("w-span-rgb").textContent = values.W.toFixed(2);
+  document.getElementById("w-span-rgb").textContent = (values.W / 255).toFixed(2);
+
+  document.getElementById("input-r").value = values.R;
+  document.getElementById("input-g").value = values.G;
+  document.getElementById("input-b").value = values.B;
+  document.getElementById("input-w").value = values.W;
 }
+function animarSlidersRGB(sliderConfigs, duracion = 1000) {
+  let startTime = null;
 
-let values = { C: 0, M: 0, Y: 0, K: 0, A: 0, R: 0, G: 0, B: 0, W:0 };
-function updateColor() { // CMYK
-  let rgb = cmykwToRgb(values.C, values.M, values.Y, values.K, values.A);
-  document.getElementById("colorBox").style.backgroundColor = rgb;
-  document.getElementById("c-span").textContent = values.C.toFixed(0); 
-  document.getElementById("m-span").textContent = values.M.toFixed(0);
-  document.getElementById("y-span").textContent = values.Y.toFixed(0);
-  document.getElementById("k-span").textContent = values.K.toFixed(0);
-  document.getElementById("w-span").textContent = values.A.toFixed(0);  
-}
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    let progress = (timestamp - startTime) / duracion;
+    if (progress > 1) progress = 1;
 
-document.addEventListener("DOMContentLoaded", () => {
-  initSliderII("slid-rojo-rgb", "c-span-rgb", "R");
-  initSliderII("slid-verde-rgb", "m-span-rgb", "G");
-  initSliderII("slid-azul-rgb", "y-span-rgb", "B");
-  initSliderII("slid-blanco-rgb", "w-span-rgb", "W");
-  updateColorDisplay();
-});
+    sliderConfigs.forEach(({ trackId, spanId, channel, porcentajeDestino }) => {
+      let track = document.getElementById(trackId);
+      let thumb = track.querySelector(".slider-thumb-rgb");
+      let span = document.getElementById(spanId);
+      let rect = track.getBoundingClientRect();
 
-document.addEventListener("DOMContentLoaded", () => {
-  initSlider("slid-cian", "c-span-", "C");
-  initSlider("slid-magenta", "m-span", "M");
-  initSlider("slid-amarillo", "y-span", "Y");
-  initSlider("slid-negro", "k-span", "K");
-  initSlider("slid-blanco", "w-span", "A");
-  updateColor();
-});
+      // 🔹 W ahora usa el mismo cálculo que los demás
+      let endValue = (porcentajeDestino / 255) * (rect.height - thumb.offsetHeight);
+      let newValue = progress * endValue;
 
+      thumb.style.bottom = `${newValue}px`;
 
-function normalizeCMYK(c, m, y, k) { //CMYK
-  let max = Math.max(c, m, y, k);
-  if (max > 0) {
-    c = (c / max) * 100;
-    m = (m / max) * 100;
-    y = (y / max) * 100;
-    k = (k / max) * 100;
+      let porcentaje = (newValue / (rect.height - thumb.offsetHeight)) * 100;
+      track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
+
+      values[channel] = Math.round((porcentaje / 100) * 255);
+      span.textContent = values[channel];
+    });
+    updateColorRGB();
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
   }
-  return { c, m, y, k };
+  requestAnimationFrame(step);
 }
+// Botón para animar los sliders según los valores en los inputs
+document.getElementById("animate-btn").addEventListener("click", () => {
+  let rValue = parseInt(document.getElementById("input-r").value) || 0;
+  let gValue = parseInt(document.getElementById("input-g").value) || 0;
+  let bValue = parseInt(document.getElementById("input-b").value) || 0;
+  let wValue = parseInt(document.getElementById("input-w").value) || 0;
+
+  animarSlidersRGB([
+    { trackId: "slid-rojo-rgb", spanId: "c-span-rgb", channel: "R", porcentajeDestino: rValue },
+    { trackId: "slid-verde-rgb", spanId: "m-span-rgb", channel: "G", porcentajeDestino: gValue },
+    { trackId: "slid-azul-rgb", spanId: "y-span-rgb", channel: "B", porcentajeDestino: bValue },
+    { trackId: "slid-blanco-rgb", spanId: "w-span-rgb", channel: "W", porcentajeDestino: wValue }
+  ]);
+});
 function cmykwToRgb(c, m, y, k, a) {  // RGB
   let normalized = normalizeCMYK(c, m, y, k);
   c = normalized.c;
@@ -6800,100 +6856,8 @@ function cmykwToRgb(c, m, y, k, a) {  // RGB
   b = b + (255 - b) * factorBlanco;
   return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
 }
-
-function animarSlidersRGB(sliderConfigs, duracion = 1000) {
-  let startTime = null;
-
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    let progress = (timestamp - startTime) / duracion;
-    if (progress > 1) progress = 1;
-
-    sliderConfigs.forEach(({ trackId, spanId, channel, porcentajeDestino }) => {
-      let track = document.getElementById(trackId);
-      let thumb = track.querySelector(".slider-thumb-rgb");
-      let span = document.getElementById(spanId);
-      let rect = track.getBoundingClientRect();
-      
-      // Cálculo de la posición final según el porcentaje destino
-      let endValue = (porcentajeDestino / 255) * (rect.height - thumb.offsetHeight);
-      let newValue = progress * endValue;
-
-      thumb.style.bottom = `${newValue}px`;
-      let porcentaje = (newValue / (rect.height - thumb.offsetHeight)) * 100;
-
-      track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
-
-      if (channel === "W") {
-        values[channel] = porcentaje / 100; // Opacidad en escala 0-1
-      } else {
-        values[channel] = Math.round((porcentaje / 100) * 255);
-      }
-
-      span.textContent = channel === "W" ? values[channel].toFixed(2) : values[channel];
-    });
-    updateColorDisplay();
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    }
-  }
-  requestAnimationFrame(step);
-}
-
-function animarSlidersCMYK(sliderConfigs, duracion = 1000) {
-  let startTime = null;
-
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    let progress = (timestamp - startTime) / duracion;
-    if (progress > 1) progress = 1;
-
-    sliderConfigs.forEach(({ trackId, spanId, channel, porcentajeDestino }) => {
-      let track = document.getElementById(trackId);
-      let thumb = track.querySelector(".slider-thumb");
-      let span = document.getElementById(spanId);
-      let rect = track.getBoundingClientRect();
-      
-      // Cálculo de la posición final según el porcentaje destino
-      let endValue = (porcentajeDestino / 100) * (rect.height - thumb.offsetHeight);
-      let newValue = progress * endValue;
-
-      thumb.style.bottom = `${newValue}px`;
-      let porcentaje = (newValue / (rect.height - thumb.offsetHeight)) * 100;
-
-      track.style.background = `linear-gradient(to top, rgb(255,120,0) ${porcentaje}%, rgb(0,0,17) ${porcentaje}%)`;
-
-      values[channel] = Math.round(porcentaje); // ✅ Ahora W se mantiene en escala 0-100 como los demás      
-
-      span.textContent = Math.round(values[channel]); 
-    });
-    updateColor();
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    }
-  }
-  requestAnimationFrame(step);
-}
-
-
-
-
-
-document.getElementById("animate-btn").addEventListener("click", () => {
-  let rValue = parseInt(document.getElementById("input-r").value) || 0;
-  let gValue = parseInt(document.getElementById("input-g").value) || 0;
-  let bValue = parseInt(document.getElementById("input-b").value) || 0;
-  let wValue = parseInt(document.getElementById("input-w").value) || 0;
-
-  animarSlidersRGB([
-    { trackId: "slid-rojo-rgb", spanId: "c-span-rgb", channel: "R", porcentajeDestino: rValue },
-    { trackId: "slid-verde-rgb", spanId: "m-span-rgb", channel: "G", porcentajeDestino: gValue },
-    { trackId: "slid-azul-rgb", spanId: "y-span-rgb", channel: "B", porcentajeDestino: bValue },
-    { trackId: "slid-blanco-rgb", spanId: "w-span-rgb", channel: "W", porcentajeDestino: wValue }
-  ]);
-});
-
-document.getElementById("animate-btn-cmyk").addEventListener("click", () => {
+// renderiza cantidad guardada en inputs CMYK
+document.getElementById("animate-btn-cmyk").addEventListener("mouseup", () => {
   let cValue = parseInt(document.getElementById("input-c").value) || 0;
   let mValue = parseInt(document.getElementById("input-m").value) || 0;
   let yValue = parseInt(document.getElementById("input-y").value) || 0;
@@ -6908,9 +6872,6 @@ document.getElementById("animate-btn-cmyk").addEventListener("click", () => {
     { trackId: "slid-blanco", spanId: "w-span", channel: "A", porcentajeDestino: oValue }
   ]);
 });
-
-
-
 /* ************************************************************************************************************************************** */
 function animarColorSecuencia() {
   desactivarClick(['.butt-perfiles']);
@@ -7043,114 +7004,56 @@ function initDrag(elemento) {
 }
 initDrag(document.getElementById("padre-rgb"));
 initDrag(document.getElementById("padre-cmyk"));
-
-function rgbFlotante() {
-  let padreRgb = document.querySelector('#padre-rgb');
-  let padreControles = document.querySelector('#padre-controles');
-  let pantallaColor = document.querySelector('#colorDisplay');
-  let padreCmyk = document.querySelector('#padre-cmyk');
-
-  if('perfiles-color' || 'control-panel-rgb'){
-    document.querySelector('#control-panel-rgb').style.display = 'none'
-    document.querySelector('#perfiles-color').style.display = 'none'
-    padreRgb.classList.remove('move-panel-rgb')
+initResize(
+  document.querySelector("#padre-rgb"),
+  document.querySelector(".esquina-rgb")
+);
+initResize(
+  document.querySelector("#padre-cmyk"),
+  document.querySelector(".esquina-cmyk")
+);
+function rgbFlotante() { // botones rojos
+  var elementosExcluidos = ['colorDisplay','padre-controles','padre-rgb','simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
   }
-  if(padreCmyk){
-    padreCmyk.style.display = 'none'
-  }
-  padreRgb.style.opacity = "0";
+   document.querySelectorAll('.btn-opcion, .lbls-cmyRgb').forEach(el => {
+    el.style.display = 'block';
+  });      
+
+  let padreRgb = document.querySelector("#padre-rgb");
+  let padreControles = document.querySelector("#padre-controles");
+  let perfilador = document.querySelector('#perfiles-color')
+
   padreRgb.style.display = "grid";
-  setTimeout(() => {
-    padreRgb.style.transition = "opacity 1s ease"; // Reaplicar transición
-    padreRgb.style.opacity = "1"; // Hacerlo visible
-    padreRgb.classList.remove('move-panel-rgb')
-  }, 50);     
-  padreRgb.style.zIndex = "200";
-  pantallaColor.style.display = "block";
-  padreControles.style.display = "grid";
-  padreControles.style.left = "";
+  padreControles.style.display = 'grid';
+  padreRgb.style.zIndex = 200
+  perfilador.removeAttribute("style");
 }
-function cmykFlotante() {
+function cmykFlotante() { // botones rojos
+  var elementosExcluidos = ['colorCMYK','container-slider','padre-cmyk','simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
+    el.style.display = 'block';
+  });     
+
   let padreCmyk = document.querySelector("#padre-cmyk");
   let padreControles = document.querySelector("#container-slider");
-  let pantallaColor = document.querySelector("#colorBox");
-  let padreRgb = document.querySelector("#padre-rgb");
+  let perfilador = document.querySelector('#perfiles-color')
 
-  if('perfiles-color' || 'control-panel-rgb'){
-    document.querySelector('#control-panel-rgb').style.display = 'none'
-    document.querySelector('#perfiles-color').style.display = 'none'
-    padreCmyk.classList.remove('move-panel-cmyk')
-  }
-  if(padreRgb){
-    padreRgb.style.display = 'none'
-  }
-  // Restablecer propiedades antes de hacerlo visible
-  padreCmyk.style.opacity = "0"; // Mantenerlo invisible al principio
-  padreCmyk.style.display = "grid"; // Mostrar antes de la animación
-  // Pequeño retardo para que el navegador registre el cambio en `display`
-  setTimeout(() => {
-    padreCmyk.style.transition = "opacity 1s ease"; // Reaplicar transición
-    padreCmyk.style.opacity = "1"; // Hacerlo visible
-    padreCmyk.classList.remove('move-panel-cmyk')
-  }, 50); 
-  padreCmyk.style.zIndex = "200";
-  pantallaColor.style.display = "block";
-  padreControles.style.display = "grid";
-  padreControles.style.left = "";
-}
-document.querySelector('#boton-cmyk').addEventListener('click', () =>{
-  document.querySelector('#padre-cmyk').style.display = 'none'
-  setTimeout(() => {
-    document.querySelector('#padre-rgb').style.display = 'grid'
-    document.querySelector('#padre-rgb').style.zIndex = 200
-    document.querySelector('#padre-controles').style.display = 'grid' 
-    document.querySelector('#colorDisplay').style.display = 'flex'
-  }, 200);
-})
-
-function alternarControles(controlador){
-  let elemento = document.querySelector('#perfiles-color');
-  let complemento = document.querySelector('#control-panel-rgb');
-  let ayudante = document.querySelector('#control-panel-cmyk');
-  let padreRGB = document.querySelector('#padre-rgb');
-  let padreCMYK = document.querySelector('#padre-cmyk');  
-
-  if (elemento && getComputedStyle(elemento).display !== 'grid' && padreRGB) {
-    padreRGB.classList.remove('move-panel-rgb');
-  }
-  if (elemento && getComputedStyle(elemento).display !== 'grid' && padreCMYK) {
-    padreCMYK.classList.remove('move-panel-cmyk');
-  }
-  if ((elemento && getComputedStyle(elemento).display === 'grid') || 
-    (complemento && getComputedStyle(complemento).display === 'grid') ||
-    (ayudante && getComputedStyle(ayudante).display === 'grid')) {
-    if (elemento) elemento.style.display = 'none';
-    if (complemento) complemento.style.display = 'none';
-    if (ayudante) ayudante.style.display = 'none';
-  }    
-  switch(controlador){
-    case 'rgb':
-      document.querySelector('#padre-rgb').style.display = 'none'
-      setTimeout(() => {
-        document.querySelector('#padre-cmyk').style.display = 'grid'
-        document.querySelector('#padre-cmyk').style.zIndex = 200
-        document.querySelector('#container-slider').style.display = 'grid' 
-        document.querySelector('#colorBox').style.display = 'flex'    
-      }, 200);   
-    break;
-    case 'cmyk':
-      document.querySelector('#padre-cmyk').style.display = 'none'
-      setTimeout(() => {
-        document.querySelector('#padre-rgb').style.display = 'grid'
-        document.querySelector('#padre-rgb').style.zIndex = 200
-        document.querySelector('#padre-controles').style.display = 'grid' 
-        document.querySelector('#colorDisplay').style.display = 'flex'    
-      }, 200);   
-    break;
-  }
-}
-
-
+  padreCmyk.style.display = "grid";
+  padreControles.style.display = 'grid';
+  padreCmyk.style.zIndex = 200
+  perfilador.removeAttribute("style");
+}  
 // controlan redimensionado
 function initResize(contenedor, esquina) {
   const MIN_WIDTH = 200;
@@ -7185,20 +7088,12 @@ function initResize(contenedor, esquina) {
     document.removeEventListener("mouseup", stopResize);
   }
 }
-initResize(
-  document.querySelector("#padre-rgb"),
-  document.querySelector(".esquina-rgb")
-);
-initResize(
-  document.querySelector("#padre-cmyk"),
-  document.querySelector(".esquina-cmyk")
-);
 function resetBotonMezclador(parentContiner) {
   if (typeof parentContiner !== "string") return;
   parentContiner = parentContiner.trim().toLowerCase();
 
   let isCMYK = parentContiner === 'padre-cmyk';
-  let sliders = document.querySelectorAll(isCMYK ? ".slider-thumb" : ".slider-thumb-rgb");
+  let sliders = document.querySelectorAll(isCMYK ? ".slider-thumb-cmyk" : ".slider-thumb-rgb");
   
   sliders.forEach(mezclador => {
     mezclador.style.transition = "bottom 0.8s ease"; 
@@ -7209,7 +7104,7 @@ function resetBotonMezclador(parentContiner) {
     }, 800);
   });
 
-  let colorElement = document.querySelector(isCMYK ? "#colorBox" : "#colorDisplay");
+  let colorElement = document.querySelector(isCMYK ? "#colorCMYK" : "#colorDisplay");
   if (colorElement) colorElement.style.backgroundColor = "";  
 
   // Reseteo de los valores de mezcla
@@ -7232,10 +7127,10 @@ function resetBotonMezclador(parentContiner) {
 
   // Llamar a la función de actualización correspondiente
   if (isCMYK) {
-    updateColor();  
+    updateColorCMYK();  
   } else {
     values.A = parseFloat(values.A) || 0;  
-    updateColorDisplay();
+    updateColorRGB();
   }
 }
 function configurarBoton(selector,contenedor, callback) {
@@ -7244,19 +7139,318 @@ function configurarBoton(selector,contenedor, callback) {
 
   if (!boton) return
   // Envolvemos la lógica original del botón
-  boton.addEventListener('click', () => {
+  boton.addEventListener('mousedown', () => {
     padre.style.width = '50vw'
     padre.style.height = '68vh'
     padre.style.zIndex = 200
+    boton.style.backgroundColor = 'rgb(255,0,0)'
+
     padre.style.backgroundColor = ''
     if (callback) callback() // Llama la función deseada
-  })
-  boton.addEventListener('mousedown', () => {
-    boton.style.backgroundColor = 'rgb(255,0,0)'
   })
   boton.addEventListener('mouseup', () => {
     boton.style.backgroundColor = ''
   })
+}
+function alternarTeccnologia(tecnologia){
+  let perfiladorDeColor = document.querySelector('#perfiles-color')
+  let primerImputRGB = document.querySelector('#input-r');
+  let segundoImputRGB = document.querySelector('#input-g');
+  let tercerImputRGB = document.querySelector('#input-b');
+  let cuartoImputRGB = document.querySelector('#input-w');
+
+  let primerImputCMYK = document.querySelector('#input-c');
+  let segundoImputCMYK = document.querySelector('#input-m');
+  let tercerImputCMYK = document.querySelector('#input-y');
+  let cuartoImputCMYK = document.querySelector('#input-k');
+  let quintoImputCMYK = document.querySelector('#input-a');
+
+  let spanC = document.querySelector('#c-span')
+  let spanM = document.querySelector('#m-span')
+  let spanY = document.querySelector('#y-span')
+  let spanK = document.querySelector('#k-span')
+  let spanW = document.querySelector('#w-span')
+  
+  let spanR = document.querySelector('#c-span-rgb')
+  let spanG = document.querySelector('#m-span-rgb')
+  let spanB = document.querySelector('#y-span-rgb')
+  let spanA = document.querySelector('#w-span-rgb')
+
+  switch(tecnologia){
+    case 'rgb':
+      document.querySelectorAll('.btn-opcion, .lbls-cmyRgb').forEach(el => {
+        el.style.display = 'block';
+      });      
+
+      primerImputRGB.value = spanR.textContent.trim();
+      segundoImputRGB.value = spanG.textContent.trim();
+      tercerImputRGB.value = spanB.textContent.trim();
+      cuartoImputRGB.value = spanA.textContent.trim();
+
+      setTimeout(() => {
+        rgbFlotante()
+        perfiladorDeColor.style.display = 'grid' 
+      }, 177);
+      setTimeout(() => {
+        aparecerColor('#control-panel-rgb') 
+        let buttsGreen = document.querySelectorAll('.cmyRgb-group');
+        buttsGreen.forEach((elem) => {
+          elem.style.backgroundColor = ''; // Limpia el color de fondo
+        });
+      }, 354);
+    break;
+    case 'cmyk':
+      document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
+        el.style.display = 'block';
+      });      
+
+      primerImputCMYK.value = spanC.textContent.trim();
+      segundoImputCMYK.value = spanM.textContent.trim();
+      tercerImputCMYK.value = spanY.textContent.trim();
+      cuartoImputCMYK.value = spanK.textContent.trim();
+      quintoImputCMYK.value = spanW.textContent.trim();
+
+      setTimeout(() => {
+        cmykFlotante()
+        perfiladorDeColor.style.display = 'grid' 
+      }, 177);
+      setTimeout(() => {
+        aparecerColor('#control-panel-cmyk') 
+        let buttsGreen = document.querySelectorAll('.cmyRgb-group');
+        buttsGreen.forEach((elem) => {
+          elem.style.backgroundColor = ''; // Limpia el color de fondo
+        });
+      }, 344);
+    break;
+  }
+}
+function secuenciaAparicion(canal) { 
+  let perfiladorColor = document.querySelector('#perfiles-color')
+  let equalizerColorMYK = document.querySelector('#control-panel-cmyk')
+  let equalizerColorRGB = document.querySelector('#control-panel-rgb')
+  switch(canal){
+    case 'rgb':
+      let etiquetasOpcion = document.querySelectorAll('.lbl-opcion')
+      let botonesOpcion = document.querySelectorAll('.btn-opcion')
+      botonesOpcion.forEach((opcion) =>{
+        opcion.style.display = 'none'
+      })
+      etiquetasOpcion.forEach((opcion) =>{
+        opcion.style.display = 'none'
+      })
+      equalizerColorRGB.style.display = 'none'
+      perfiladorColor.style.display = 'grid'
+    break
+    case 'cmyk' :
+      let etiquetasCmyk = document.querySelectorAll('.lbl-cmyk')
+      let botonesCmyk = document.querySelectorAll('.btnCmyk')
+      botonesCmyk.forEach((opcion) =>{
+        opcion.style.display = 'none'
+      })
+      etiquetasCmyk.forEach((opcion) =>{
+        opcion.style.display = 'none'
+      })
+      equalizerColorMYK.style.display = 'none'
+      perfiladorColor.style.display = 'grid'
+    break
+
+  }
+}
+function crearPerfilColor() { // crear nuevo desde boton blanco
+  
+  let contRGB = document.querySelector('#padre-rgb');
+  let contCYMK = document.querySelector('#padre-cmyk');
+
+  let primerImputRGB = document.querySelector('#input-r');
+  let segundoImputRGB = document.querySelector('#input-g');
+  let tercerImputRGB = document.querySelector('#input-b');
+  let cuartoImputRGB = document.querySelector('#input-w');
+
+  let primerImputCMYK = document.querySelector('#input-c');
+  let segundoImputCMYK = document.querySelector('#input-m');
+  let tercerImputCMYK = document.querySelector('#input-y');
+  let cuartoImputCMYK = document.querySelector('#input-k');
+  let quintoImputCMYK = document.querySelector('#input-a');
+
+  // Capturar el valor del input
+  let inputNombre = document.getElementById('nombre-Perfil').value.trim();
+  if (inputNombre === '') {
+    mostrarVentanaEmergente('Por favor, ingrese un nombre válido');
+    return;
+  }
+
+  // Capitalizar la primera letra de cada palabra
+  inputNombre = capitalizarTexto(inputNombre);
+  
+  // Validar si el perfil ya existe
+  if (almacenObjetos[inputNombre]) {
+    mostrarVentanaEmergente('Ya existe un perfil con este nombre');
+    return;
+  }
+
+  // Crear una nueva instancia de la clase objetoColores
+  const nuevoObjeto = new objetoColores();
+  
+  // Almacenar el objeto en `almacenObjetos`
+  almacenObjetos[inputNombre] = nuevoObjeto;
+
+  // Guardar el nombre recién creado en `nombreProvisional`
+  objetoGlobal = inputNombre;
+
+  // Verificar si el objeto se creó correctamente
+  if (!almacenObjetos[objetoGlobal]) {
+    console.error("Error: No se pudo encontrar el perfil en almacenObjetos.");
+    return;
+  }
+
+  console.log('almacenObjetos[nombreProvisional]', almacenObjetos[objetoGlobal])
+
+  // Asignar valores a la propiedad correspondiente en `almacenObjetos`
+  if (contRGB.style.display === 'grid') {
+    almacenObjetos[objetoGlobal].RGBA.R = parseInt(primerImputRGB.value) || 0;
+    almacenObjetos[objetoGlobal].RGBA.G = parseInt(segundoImputRGB.value) || 0;
+    almacenObjetos[objetoGlobal].RGBA.B = parseInt(tercerImputRGB.value) || 0;
+    almacenObjetos[objetoGlobal].RGBA.A = parseInt(cuartoImputRGB.value) || 0;
+  }
+  if (contCYMK.style.display === 'grid') {
+    almacenObjetos[objetoGlobal].CMYK.C = parseInt(primerImputCMYK.value) || 0;
+    almacenObjetos[objetoGlobal].CMYK.M = parseInt(segundoImputCMYK.value) || 0;
+    almacenObjetos[objetoGlobal].CMYK.Y = parseInt(tercerImputCMYK.value) || 0;
+    almacenObjetos[objetoGlobal].CMYK.K = parseInt(cuartoImputCMYK.value) || 0;
+    almacenObjetos[objetoGlobal].CMYK.A = parseInt(quintoImputCMYK.value) || 0;
+  }
+
+  // Ordenar `almacenObjetos` alfabéticamente
+  const almacenObjetosOrdenado = Object.keys(almacenObjetos)
+    .sort()
+    .reduce((obj, key) => {
+      obj[key] = almacenObjetos[key];
+      return obj;
+    }, {});
+
+  // Guardar en localStorage
+  localStorage.setItem('almacenObjetos', JSON.stringify(almacenObjetosOrdenado));
+
+  // Mostrar mensaje de éxito
+  mostrarVentanaEmergente('Perfil creado y almacenado');
+
+  // Limpiar el input
+  document.getElementById('nombre-Perfil').value = '';
+
+  console.log('ALMACEN GLOBAL ACTUALIZADO:', almacenObjetosOrdenado);
+  console.log('NOMBRE PROVISIONAL GUARDADO:', objetoGlobal);
+  traerAlmacenObjetos();
+
+}
+function colorRenderizado(){
+  let padreLuz = document.querySelector('#padre-rgb')
+  let padrePigmento = document.querySelector('#padre-cmyk')
+
+  if(padreLuz.style.display = 'grid'){
+    padrePigmento.style.display = 'none'
+    padreLuz.style.display  = 'grid'
+
+    setTimeout(() => {
+      renderizaMezclaRGB()
+    }, 100);
+  }
+
+  if(padrePigmento.style.display = 'grid'){
+    padreLuz.style.display = 'none'
+    padrePigmento.style.display  = 'grid'
+
+    setTimeout(() => {
+      renderizaMezclaCMYK()
+    }, 100);
+  }
+  
+}
+function renderizaMezclaRGB() {
+  // Verificar si almacenObjetos está definido
+  if (!almacenObjetos[objetoGlobal] || !almacenObjetos[objetoGlobal].CMYK) {
+    console.warn("Error: objetoGlogal o objetoGlogal.RGBA no está definido.");
+    document.getElementById("ventanaEmergente").classList.remove("oculta");
+    document.getElementById("mensajeEmergente").textContent = "Cargue la base de datos antes de generar el perfil de color";
+  return;
+  }
+
+  console.log('almacenObjetos.objetoGlobal', almacenObjetos[objetoGlobal])
+  // Extraer valores asegurando que existen, de lo contrario asignar 0
+  let rValue = almacenObjetos[objetoGlobal].RGBA.R;
+  let gValue = almacenObjetos[objetoGlobal].RGBA.G;
+  let bValue = almacenObjetos[objetoGlobal].RGBA.B;
+  let wValue = almacenObjetos[objetoGlobal].RGBA.A;
+
+  // Verificar si los valores fueron obtenidos correctamente
+  console.log("Valores RGBA extraídos:", { R: rValue, G: gValue, B: bValue, W: wValue });
+
+  animarSlidersRGB([
+    { trackId: "slid-rojo-rgb", spanId: "c-span-rgb", channel: "R", porcentajeDestino: rValue },
+    { trackId: "slid-verde-rgb", spanId: "m-span-rgb", channel: "G", porcentajeDestino: gValue },
+    { trackId: "slid-azul-rgb", spanId: "y-span-rgb", channel: "B", porcentajeDestino: bValue },
+    { trackId: "slid-blanco-rgb", spanId: "w-span-rgb", channel: "W", porcentajeDestino: wValue }
+  ]);
+  traerAlmacenObjetos()
+}
+function renderizaMezclaCMYK() {
+  // Verificar si almacenObjetos está definido
+  if (!almacenObjetos[objetoGlobal] || !almacenObjetos[objetoGlobal].CMYK) {
+    console.warn("Error: objetoGlogal o objetoGlogal.CMYK no está definido.");
+    document.getElementById("ventanaEmergente").classList.remove("oculta");
+    document.getElementById("mensajeEmergente").textContent = "Cargue la base de datos antes de generar el perfil de color";
+  return;
+  }
+
+  console.log('almacenObjetos.objetoGlobal', almacenObjetos.objetoGlobal)
+  // Extraer valores asegurando que existen, de lo contrario asignar 0
+  let cValue = almacenObjetos[objetoGlobal].CMYK.C;
+  let mValue = almacenObjetos[objetoGlobal].CMYK.M;
+  let yValue = almacenObjetos[objetoGlobal].CMYK.Y;
+  let kValue = almacenObjetos[objetoGlobal].CMYK.K;
+  let wValue = almacenObjetos[objetoGlobal].CMYK.A;
+
+
+  // Verificar si los valores fueron obtenidos correctamente
+  console.log("Valores CMYK extraídos:", { C: cValue, M: mValue, Y: yValue, K: kValue, A: wValue });
+
+  animarSlidersCMYK([
+    { trackId: "slid-cian", spanId: "c-span", channel: "C", porcentajeDestino: cValue },
+    { trackId: "slid-magenta", spanId: "m-span", channel: "M", porcentajeDestino: mValue },
+    { trackId: "slid-amarillo", spanId: "y-span", channel: "Y", porcentajeDestino: yValue },
+    { trackId: "slid-negro", spanId: "k-span", channel: "K", porcentajeDestino: kValue },
+    { trackId: "slid-blanco", spanId: "w-span", channel: "A", porcentajeDestino: wValue }
+  ]);
+  traerAlmacenObjetos()
+}
+
+function alternarOcultarBotones(altern){
+  switch(altern){
+    case 'cmyk':
+      let etiquetasCmyk = document.querySelectorAll('.lbl-cmyk')
+      let botonesCmyk = document.querySelectorAll('.btnCmyk')
+      botonesCmyk.forEach((opcion) =>{
+        opcion.style.display = 'flex'
+      })
+      etiquetasCmyk.forEach((opcion) =>{
+        opcion.style.display = 'flex'
+      })
+      document.querySelector('#padre-cmyk').classList.remove('move-panel-cmyk') 
+      desvanecerColor('#control-panel-cmyk');
+    break;
+    case 'rgb':
+      let etiquetasRgb = document.querySelectorAll('.lbl-opcion')
+      let botonesRgb = document.querySelectorAll('.btn-opcion')
+      botonesRgb.forEach((opcion) =>{
+        opcion.style.display = 'flex'
+      })
+      etiquetasRgb.forEach((opcion) =>{
+        opcion.style.display = 'flex'
+      })
+      document.querySelector('#padre-cmyk').classList.remove('move-panel-cmyk') 
+      desvanecerColor('#control-panel-cmyk');
+    break;
+
+  }
 }
 configurarBoton('#boton-seis', '#padre-cmyk', () => resetBotonMezclador('padre-cmyk'));
 configurarBoton('#boton-rgb', '#padre-rgb', () => resetBotonMezclador('padre-rgb'));
@@ -7264,92 +7458,133 @@ configurarBoton('#boton-cmyk','#padre-cmyk', '')
 configurarBoton('#boton-rgb-alternar','#padre-rgb', '') 
 configurarBoton('#boton-rgb-salir','#padre-rgb', '')
 configurarBoton('#boton-cmyk-salir','#padre-cmyk', '')
-
-
-
-function secuenciaAparicion(canal) { 
-  let panelRgb = document.getElementById('padre-rgb');
-  let panelCmyk = document.getElementById('padre-cmyk');
-  let perfilesRgb = document.getElementById("perfiles-color");
-  switch(canal){
-    case 'rgb' :
-      if (panelRgb) {
-        panelRgb.classList.remove("move-panel-rgb");
-        panelRgb.style.display = 'grid';  // Asegura que sea visible antes de animar
-        panelRgb.style.opacity = '1';     // Suaviza la aparición
-        panelRgb.classList.add("move-panel-rgb");
-      }     
-      setTimeout(() => {
-        if (perfilesRgb) {
-          document.querySelector('#control-panel-rgb').style.display = 'none'
-          document.querySelector('#control-panel-cmyk').style.display = 'none'
-          aparecerColor('#perfiles-color')
-          perfilesRgb.style.top = '41vh';
-          perfilesRgb.classList.add("move-perfil-color"); 
-        }
-      }, 100);
-    break
-    case 'cmyk' :
-      if (panelCmyk) {
-        panelCmyk.classList.remove("move-panel-cmyk");
-        panelCmyk.style.display = 'grid';  // Asegura que sea visible antes de animar
-        panelCmyk.style.opacity = '1';     // Suaviza la aparición
-        panelCmyk.classList.add("move-panel-cmyk");
-      }
-      setTimeout(() => {
-        if (perfilesRgb) {
-          document.querySelector('#control-panel-cmyk').style.display = 'none'
-          document.querySelector('#control-panel-rgb').style.display = 'none'
-          aparecerColor('#perfiles-color')
-          perfilesRgb.style.top = '41vh';
-          perfilesRgb.classList.add("move-perfil-color");
-        }
-      }, 100);    
-    break
-
-  }
-} 
 document.querySelector('#btn-salir-perfiles').addEventListener('click', ()=>{
+  let etiquetasCmyk = document.querySelectorAll('.lbl-cmyk')
+  let botonesCmyk = document.querySelectorAll('.btnCmyk') 
+  botonesCmyk.forEach((opcion) =>{
+    opcion.style.display = 'flex'
+  })
+  etiquetasCmyk.forEach((opcion) =>{
+    opcion.style.display = 'flex'
+  })
+  let etiquetasRgb = document.querySelectorAll('.lbl-opcion')
+  let botonesRgb = document.querySelectorAll('.btn-opcion')
+  botonesRgb.forEach((opcion) =>{
+    opcion.style.display = 'flex'
+  })
+  etiquetasRgb.forEach((opcion) =>{
+    opcion.style.display = 'flex'
+  })
+  
   let panel = document.getElementById('padre-rgb');
   let panelcmyk = document.getElementById('padre-cmyk');
+  perfilVisible = false
   desvanecerColor('#perfiles-color')
   setTimeout(() => {
     panel.classList.remove("move-panel-rgb");
-    panelcmyk.classList.remove("move-panel-cmyk");
   }, 800);
+  setTimeout(() => {
+    panelcmyk.classList.remove("move-panel-cmyk");
+  }, 1000);
 
 })
-function alternarTeccnologia(tecnologia){
-  switch(tecnologia){
-    case 'rgb':
-      desvanecerColor('#padre-cmyk')
-      rgbFlotante()
-      desvanecerColor('#perfiles-color')
-      aparecerColor('#control-panel-rgb')
-      setTimeout(() => {
-        document.querySelector('#padre-rgb').classList.add('move-panel-rgb')  
-      }, 100); 
-    break;
-    case 'cmyk':
-      desvanecerColor('#padre-rgb')
-      cmykFlotante()
-      desvanecerColor('#perfiles-color')
-      aparecerColor('#control-panel-cmyk') 
-      setTimeout(() => {
-        document.querySelector('#padre-cmyk').classList.add('move-panel-cmyk')  
-      }, 100);
-    break;
-
-  }
-}
-
 document.querySelectorAll('.alterna-panel').forEach(btn => {
   btn.addEventListener('click', () => {
-    desvanecerColor('#control-panel-cmyk');
-    desvanecerColor('#control-panel-rgb');
+    document.querySelector('#padre-rgb').classList.remove('move-panel-rgb')
+    document.querySelector('#padre-cmyk').classList.remove('move-panel-cmyk')  
+
     setTimeout(() => {
-      document.querySelector('#padre-rgb').classList.remove('move-panel-rgb')
-      document.querySelector('#padre-cmyk').classList.remove('move-panel-cmyk')  
-    }, 500);
+      desvanecerColor('#control-panel-cmyk');
+      desvanecerColor('#control-panel-rgb');  
+    }, 1);
   });
+});
+document.querySelector('#boton-rgb-alternar').addEventListener('mousedown',()=>{ 
+  let padreCMYK = document.querySelector('#padre-cmyk');  
+  let slidersCMYK = document.querySelector('#container-slider')
+
+    var elementosExcluidos = ['colorCMYK','container-slider','padre-cmyk','simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var element = document.getElementById(allContenedores[i])
+      if (element) {
+        element.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    } 
+    padreCMYK.style.display = "grid";
+    slidersCMYK.style.display = 'grid';
+    padreCMYK.style.zIndex = 200
+    padreCMYK.classList.remove('move-panel-cmyk')    
+
+})
+document.querySelector('#boton-cmyk').addEventListener('mousedown',()=>{
+  let padreRGB = document.querySelector('#padre-rgb');
+  let slidersRGB = document.querySelector('#padre-controles')
+
+    var elementosExcluidos = ['colorDisplay','padre-controles','padre-rgb','simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var element = document.getElementById(allContenedores[i])  
+      if (element) {
+        element.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    } 
+    padreRGB.style.display = "grid";
+    slidersRGB.style.display = 'grid';
+    padreRGB.style.zIndex = 200
+    padreRGB.classList.remove('move-panel-rgb')      
+
+})
+document.querySelector('#boton-cmyk-salir').addEventListener('click', () => {
+  let elementos = [
+    { selector: '#padre-cmyk', delay: 0 },
+    { selector: '#perfiles-color', delay: 177 },
+    { selector: '#control-panel-cmyk', delay: 300 },
+    { selector: '#control-panel-rgb', delay: 300 }
+  ];
+
+  elementos.forEach(({ selector, delay }) => {
+    let elemento = document.querySelector(selector);
+    if (elemento) {
+      setTimeout(() => desvanecerColor(selector), delay);
+    }
+  });
+});
+document.querySelector('#boton-rgb-salir').addEventListener('click', () => {
+  let elementos = [
+    { selector: '#padre-rgb', delay: 0 },
+    { selector: '#perfiles-color', delay: 177 },
+    { selector: '#control-panel-cmyk', delay: 300 },
+    { selector: '#control-panel-rgb', delay: 300 }
+  ];
+
+  elementos.forEach(({ selector, delay }) => {
+    let elemento = document.querySelector(selector);
+    if (elemento) {
+      setTimeout(() => desvanecerColor(selector), delay);
+    }
+  });
+});
+document.querySelector('#save-tecnology').addEventListener('click', ()=>{
+  crearPerfilColor()
+})
+document.getElementById('nombre-Perfil-existe').addEventListener('click', () => {
+  document.querySelectorAll('.butt-perfiles').forEach(elemento => {   
+    elemento.style.display = 'block';   
+  });
+  let listaClientes = document.querySelector('#lista-clientes')  
+  listaClientes.style.top='39vh'
+  listaClientes.style.width = '30vw'
+  listaClientes.style.left = '66vw'
+  limpiarColoresDeFondo()
+  desactivarClick(['.butt-perfiles', '.estilo-1']);  
+  listaClientes.style.display = 'block'
+  listaClientes.style.zIndex = 500
+  mostrarNombresDeObjetos(); 
+  setTimeout(() => {
+    if (listaClientes && listaClientes.children.length === 0) {
+      alertaCuatro.style.display='flex'
+      alertaCuatro.style.top = '30vh'       
+      alertaCuatro.textContent= 'El almacenamiento y la base de datos estan vacíos'   
+    }
+  }, 50);      
+
 });

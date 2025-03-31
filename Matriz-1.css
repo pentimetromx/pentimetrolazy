@@ -393,7 +393,6 @@ color: white;
   justify-items: center;
   z-index: -1;
 }
-
 /* Botones de fondo (rojos) */  
 .butt-back {
   position: relative;
@@ -411,8 +410,6 @@ color: white;
   background-color: rgba(255, 0, 0, 1); 
   z-index: -1;
 }
-
-
 #container01 {
   position: absolute;
   display: grid;
@@ -429,7 +426,6 @@ color: white;
   backdrop-filter: blur(7px);
   z-index: 1;
 }
-
 #container01 > button {
   position: relative;
   display: flex;
@@ -445,8 +441,6 @@ color: white;
   background-color: rgba(255, 24, 55, 0.4);
   backdrop-filter: blur(5px);
 }
-
-
 .rebobinador,
 .unidProceso,
 .alimentadorId,
@@ -2098,7 +2092,6 @@ header {
   height: 13%;
   width: 100%;
  }
-
 .anuncio{
   white-space: nowrap;
   margin-top: 4vh; 
@@ -2150,7 +2143,6 @@ header {
   width:100%;
   height:24%;
 }
-/* #control-neumatico > *, */
 #rodillo-infeed > *,
 #puesta-punto > * {
   margin-left: 17px;
@@ -2526,7 +2518,6 @@ h6{
   text-align: right;
   transform: translateY(-50%);
 }
-
 #tendencia-naranja .item-orange:nth-child(1) {
   width: 48%;
 }
@@ -2792,7 +2783,6 @@ h6{
   border-radius: 20px;
   /* overflow: hidden; */
 }
-
 #rodillos-II img{
   height: 195px;
   width: 260px;
@@ -3594,7 +3584,6 @@ h4{
 .cyan { background-color: cyan; }
 .purpura { background-color: purple; }
 .anaranjado { background-color: orangered; }
-
 .btnRoute{
   width: auto;
   height: auto;
@@ -3954,7 +3943,6 @@ h4{
   width: 99%;
   z-index: -1; 
 }
-
 @keyframes parpadeo {
   from {
     opacity: 1;
@@ -4127,8 +4115,7 @@ input.numero{
   text-align: center;
   font-family: Arial, sans-serif;
   border: 2px solid transparent;
-  }
-
+}
 #input1{
   left: -28vw;
   transition: transform 0.3s ease;
@@ -4149,7 +4136,6 @@ input.numero{
   transition: transform 0.3s ease;
   display: none;
 }
-
 input.numero:focus {
   border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
 }
@@ -5538,7 +5524,6 @@ input.numero:focus {
   font-size:2.5em;
   transition: font-size 0.6s ease;
 }
-
 .dureza{
   width:44vw;
   height:55vh;
@@ -6098,7 +6083,6 @@ height:21%;
   background-color: rgb(0,255,0);
   color: rgb(40, 0, 0);
 }
-
 .tarea {
   margin-bottom: 5px;
 }
@@ -6127,7 +6111,6 @@ height:21%;
 .canva-graphs {
   pointer-events: none;
 }
-
 @media only screen and (max-width: 420px) {
   #cont-titulo-comercial,  
   #cont-titulo-admin,

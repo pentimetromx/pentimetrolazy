@@ -196,7 +196,7 @@ function cerrarAyudas(){
 }
 var nuevosDatos = [0, 70, 30, 70, 50, 90];
 var nuevosDatosI = [55, 5, 95, 30, 10, 10];
-var nuevosDatosII = [30, 50, 60, 77, 20, 8];
+var nuevosDatosII = [30, 50, 60, 77, 20, 8]; 
 var nuevosDatosIII = [5, 17, 8, 30, 44, 10];
 var nuevosDatosIIII = [11, 50, 20, 80, 10, 100];
 var nuevosDatosV = [5, 17, 33, 45, 51, 57, 67, 99];
@@ -655,9 +655,6 @@ function detenerDinamica(){
     }
   });
 }
-
-
-
 function actualizarDatosII() {
   if (intervaloActualizarII) {
     clearInterval(intervaloActualizarII);
@@ -2110,7 +2107,6 @@ zoomableImages.forEach((zoomableImage) => {
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const suggestionsList = document.getElementById('suggestions')
-
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault() // Evita que se envíe el formulario
   const searchTerm = searchInput.value.toLowerCase() // Obtenemos el término de búsqueda y lo convertimos a minúsculas
@@ -2204,7 +2200,6 @@ searchForm.addEventListener('submit', function (e) {
     break;
   }
 })
-
 const canvasElements2 = document.querySelectorAll('#canvasContainer2 canvas')
 const canvasElements3 = document.querySelectorAll('#canvasContainer3 canvas')
 const canvasElements4 = document.querySelectorAll('#contChecks input')
@@ -2430,193 +2425,193 @@ function animateScroll(elementId) {
     console.error(`Element with ID ${elementId} not found.`);
   }
 }
- var canvas = document.getElementById("sinusoidalCanvas");         
- var ctx = canvas.getContext("2d");
- ctx.strokeStyle = "rgb(0, 255, 0)"; // Verde
- ctx.lineWidth = 1;
- drawSinusoidalI();
- function drawSinusoidalI() {
-   // Ajusta la escala de la onda y el desplazamiento
-   var amplitude = 50; // Altura máxima de la onda
-   var frequency = 0.05; // Frecuencia de la onda
-   var phase = 0; // Desplazamiento horizontal
-   // Comienza el trazado de la onda
-   ctx.beginPath();
-   for (var x = 0; x < canvas.width; x++) {
-   // Calcula el valor y de la onda en función de x
-   var y = amplitude * Math.sin(frequency * x + phase);
-   // Dibuja un segmento de la onda
-   ctx.lineTo(x, canvas.height / 2 - y);
-   }
-   // Finaliza el trazado y dibuja la línea
-   ctx.stroke();
-   // Dibuja el eje horizontal con numeración y etiquetas rojas
-   drawHorizontalAxisI();
-   // Dibuja el eje vertical con numeración y etiquetas rojas
-   drawVerticalAxis();
- }
- function drawHorizontalAxisI() {
-   // Dibuja el eje horizontal
-   ctx.beginPath();
-   ctx.moveTo(0, canvas.height / 2);
-   ctx.lineTo(canvas.width, canvas.height / 2);
-   ctx.stroke();
-   // Dibuja las marcas y etiquetas en el eje horizontal
-   for (var x = 0; x <= canvas.width; x += 50) {
-   ctx.beginPath();
-   ctx.moveTo(x, canvas.height / 2 - 5);
-   ctx.lineTo(x, canvas.height / 2 + 5);
-   ctx.stroke();
-   ctx.fillStyle = "yellow"; // Etiquetas rojas
-   ctx.fillText(x - canvas.width / 2, x - 10, canvas.height / 2 + 20);
-   }
- }
- function drawVerticalAxis() {
-   // Dibuja el eje vertical
-   ctx.beginPath();
-   ctx.moveTo(canvas.width / 2, 0);
-   ctx.lineTo(canvas.width / 2, canvas.height);
-   ctx.stroke();
-   // Dibuja las marcas y etiquetas en el eje vertical
-   for (var y = 0; y <= canvas.height; y += 50) {
-   ctx.beginPath();
-   ctx.moveTo(canvas.width / 2 - 5, y);
-   ctx.lineTo(canvas.width / 2 + 5, y);
-   ctx.stroke();
-   ctx.fillStyle = "yellow"; // Etiquetas rojas
-   ctx.fillText(canvas.height / 2 - y, canvas.width / 2 - 30, y + 5);
-   }
- }
- var canvasI = document.getElementById("diagonalCanvas");
- var dcx = canvasI.getContext("2d");
- dcx.strokeStyle = "rgb(0,255,0)"; // Azul
- dcx.lineWidth = 1;
- drawDiagonalLine();
- function drawDiagonalLine() {
-   // Comienza el trazado de la línea
-   dcx.beginPath();
-   // Establece el punto de inicio en (300, 0)
-   dcx.moveTo(0, 177);
-   // Dibuja la línea hasta (0, 300)
-   dcx.lineTo(300, 0);
-   // Finaliza el trazado y dibuja la línea
-   dcx.stroke();
- 
-   // Dibuja el eje horizontal con numeración y etiquetas rojas
-   drawHorizontalAxisII();
-   // Dibuja el eje vertical con numeración y etiquetas rojas
-   drawVerticalAxisII();
- }
- function drawHorizontalAxisII() {
-   // Dibuja el eje horizontal
-   dcx.beginPath();
-   dcx.moveTo(0, canvasI.height / 2);
-   dcx.lineTo(canvasI.width, canvasI.height / 2);
-   dcx.stroke();
-   // Dibuja las marcas y etiquetas en el eje horizontal
-   for (var x = 0; x <= canvasI.width; x += 50) {
-   dcx.beginPath();
-   dcx.moveTo(x, canvasI.height / 2 - 5);
-   dcx.lineTo(x, canvasI.height / 2 + 5);
-   dcx.stroke();
-   dcx.fillStyle = "orangered"; // Etiquetas rojas
-   dcx.fillText(x - canvasI.width / 2, x - 10, canvasI.height / 2 + 20);
-   }
- }
- function drawVerticalAxisII() {
-   // Dibuja el eje vertical
-   dcx.beginPath();
-   dcx.moveTo(canvasI.width / 2, 0);
-   dcx.lineTo(canvasI.width / 2, canvasI.height);
-   dcx.stroke();
-   // Dibuja las marcas y etiquetas en el eje vertical
-   for (var y = 0; y <= canvasI.height; y += 50) {
-   dcx.beginPath();
-   dcx.moveTo(canvasI.width / 2 - 5, y);
-   dcx.lineTo(canvasI.width / 2 + 5, y);
-   dcx.stroke();
-   dcx.fillStyle = "orangered"; // Etiquetas rojas
-   dcx.fillText(canvasI.height / 2 - y, canvasI.width / 2 - 30, y + 5);
-   }
- }
- var canvasII = document.getElementById("dualSinusoidalCanvas");
- var cdsc = canvasII.getContext("2d");
- cdsc.strokeStyle = "rgb(0, 255, 0)"; // Verde
- cdsc.lineWidth = 1;
- drawSinusoidalDoubleI(50, 0.05, 0);
- cdsc.strokeStyle = "rgb(0, 0, 255)"; // Amarillo
- cdsc.lineWidth = 1;
- drawSinusoidalDoubleI(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
- drawGridI(4, 7);
- function drawSinusoidalDoubleI(amplitude, frequency, phase) {
-   // Comienza el trazado de la onda
-   cdsc.beginPath();
-   for (var x = 0; x < canvasII.width; x++) {
-   // Calcula el valor y de la onda en función de x
-   var y = amplitude * Math.sin(frequency * x + phase);
-   // Dibuja un segmento de la onda
-   cdsc.lineTo(x, canvasII.height / 2 - y);
-   }
-   // Finaliza el trazado y dibuja la línea
-   cdsc.stroke();
- }
- function drawGridI(horizontalLinesI, verticalLinesI) {
-   // Configura el color y el grosor de las líneas de la cuadrícula
-   cdsc.strokeStyle = "rgb(0,255,0)"; // Gris
-   cdsc.lineWidth = 1;
-   // Dibuja líneas horizontales
-   for (var i = 1; i < horizontalLinesI; i++) {
-   var y = (i / horizontalLinesI) * canvasII.height;
-   cdsc.beginPath();
-   cdsc.moveTo(0, y);
-   cdsc.lineTo(canvasII.width, y);
-   cdsc.stroke();
-   }
-   // Dibuja líneas verticales
-   for (var j = 1; j < verticalLinesI; j++) {
-   var x = (j / verticalLinesI) * canvasII.width;
-   cdsc.beginPath();
-   cdsc.moveTo(x, 0);
-   cdsc.lineTo(x, canvasII.height);
-   cdsc.stroke();
-   }
- }        
- var canvas = document.getElementById("tripleSinusoidalCanvas");
- var ctx = canvas.getContext("2d");
- ctx.strokeStyle = "rgb(255, 125, 0)"; // Verde
- ctx.lineWidth = 1;
- drawSinusoidalDouble(50, 0.05, 0);
- ctx.strokeStyle = "rgb(255, 0, 255)"; // Amarillo
- ctx.lineWidth = 1;
- drawSinusoidalDouble(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
- ctx.strokeStyle = "rgb(255, 255, 0)"; // Azul
- ctx.lineWidth = 1;
- drawSinusoidal(40, 0.1, Math.PI); // Parámetros diferentes para la tercera onda
- drawGrid(4, 7);
- function drawSinusoidal(amplitude, frequency, phase) {
- // Comienza el trazado de la onda
- ctx.beginPath();
- for (var x = 0; x < canvas.width; x++) {
- // Calcula el valor y de la onda en función de x
- var y = amplitude * Math.sin(frequency * x + phase);
- // Dibuja un segmento de la onda
- ctx.lineTo(x, canvas.height / 2 - y);
- }
- // Finaliza el trazado y dibuja la línea
- ctx.stroke();
- }
- function drawSinusoidalDouble(amplitude, frequency, phase) {
-   // Comienza el trazado de la onda
-   ctx.beginPath();
-   for (var x = 0; x < canvas.width; x++) {
-   // Calcula el valor y de la onda en función de x
-   var y = amplitude * Math.sin(frequency * x + phase);
-   // Dibuja un segmento de la onda
-   ctx.lineTo(x, canvas.height / 2 - y);
-   }
-   // Finaliza el trazado y dibuja la línea
-   ctx.stroke();
- }
+var canvas = document.getElementById("sinusoidalCanvas");         
+var ctx = canvas.getContext("2d");
+ctx.strokeStyle = "rgb(0, 255, 0)"; // Verde
+ctx.lineWidth = 1;
+drawSinusoidalI();
+function drawSinusoidalI() {
+  // Ajusta la escala de la onda y el desplazamiento
+  var amplitude = 50; // Altura máxima de la onda
+  var frequency = 0.05; // Frecuencia de la onda
+  var phase = 0; // Desplazamiento horizontal
+  // Comienza el trazado de la onda
+  ctx.beginPath();
+  for (var x = 0; x < canvas.width; x++) {
+  // Calcula el valor y de la onda en función de x
+  var y = amplitude * Math.sin(frequency * x + phase);
+  // Dibuja un segmento de la onda
+  ctx.lineTo(x, canvas.height / 2 - y);
+  }
+  // Finaliza el trazado y dibuja la línea
+  ctx.stroke();
+  // Dibuja el eje horizontal con numeración y etiquetas rojas
+  drawHorizontalAxisI();
+  // Dibuja el eje vertical con numeración y etiquetas rojas
+  drawVerticalAxis();
+}
+function drawHorizontalAxisI() {
+  // Dibuja el eje horizontal
+  ctx.beginPath();
+  ctx.moveTo(0, canvas.height / 2);
+  ctx.lineTo(canvas.width, canvas.height / 2);
+  ctx.stroke();
+  // Dibuja las marcas y etiquetas en el eje horizontal
+  for (var x = 0; x <= canvas.width; x += 50) {
+  ctx.beginPath();
+  ctx.moveTo(x, canvas.height / 2 - 5);
+  ctx.lineTo(x, canvas.height / 2 + 5);
+  ctx.stroke();
+  ctx.fillStyle = "yellow"; // Etiquetas rojas
+  ctx.fillText(x - canvas.width / 2, x - 10, canvas.height / 2 + 20);
+  }
+}
+function drawVerticalAxis() {
+  // Dibuja el eje vertical
+  ctx.beginPath();
+  ctx.moveTo(canvas.width / 2, 0);
+  ctx.lineTo(canvas.width / 2, canvas.height);
+  ctx.stroke();
+  // Dibuja las marcas y etiquetas en el eje vertical
+  for (var y = 0; y <= canvas.height; y += 50) {
+  ctx.beginPath();
+  ctx.moveTo(canvas.width / 2 - 5, y);
+  ctx.lineTo(canvas.width / 2 + 5, y);
+  ctx.stroke();
+  ctx.fillStyle = "yellow"; // Etiquetas rojas
+  ctx.fillText(canvas.height / 2 - y, canvas.width / 2 - 30, y + 5);
+  }
+}
+var canvasI = document.getElementById("diagonalCanvas");
+var dcx = canvasI.getContext("2d");
+dcx.strokeStyle = "rgb(0,255,0)"; // Azul
+dcx.lineWidth = 1;
+drawDiagonalLine();
+function drawDiagonalLine() {
+  // Comienza el trazado de la línea
+  dcx.beginPath();
+  // Establece el punto de inicio en (300, 0)
+  dcx.moveTo(0, 177);
+  // Dibuja la línea hasta (0, 300)
+  dcx.lineTo(300, 0);
+  // Finaliza el trazado y dibuja la línea
+  dcx.stroke();
+
+  // Dibuja el eje horizontal con numeración y etiquetas rojas
+  drawHorizontalAxisII();
+  // Dibuja el eje vertical con numeración y etiquetas rojas
+  drawVerticalAxisII();
+}
+function drawHorizontalAxisII() {
+  // Dibuja el eje horizontal
+  dcx.beginPath();
+  dcx.moveTo(0, canvasI.height / 2);
+  dcx.lineTo(canvasI.width, canvasI.height / 2);
+  dcx.stroke();
+  // Dibuja las marcas y etiquetas en el eje horizontal
+  for (var x = 0; x <= canvasI.width; x += 50) {
+  dcx.beginPath();
+  dcx.moveTo(x, canvasI.height / 2 - 5);
+  dcx.lineTo(x, canvasI.height / 2 + 5);
+  dcx.stroke();
+  dcx.fillStyle = "orangered"; // Etiquetas rojas
+  dcx.fillText(x - canvasI.width / 2, x - 10, canvasI.height / 2 + 20);
+  }
+}
+function drawVerticalAxisII() {
+  // Dibuja el eje vertical
+  dcx.beginPath();
+  dcx.moveTo(canvasI.width / 2, 0);
+  dcx.lineTo(canvasI.width / 2, canvasI.height);
+  dcx.stroke();
+  // Dibuja las marcas y etiquetas en el eje vertical
+  for (var y = 0; y <= canvasI.height; y += 50) {
+  dcx.beginPath();
+  dcx.moveTo(canvasI.width / 2 - 5, y);
+  dcx.lineTo(canvasI.width / 2 + 5, y);
+  dcx.stroke();
+  dcx.fillStyle = "orangered"; // Etiquetas rojas
+  dcx.fillText(canvasI.height / 2 - y, canvasI.width / 2 - 30, y + 5);
+  }
+}
+var canvasII = document.getElementById("dualSinusoidalCanvas");
+var cdsc = canvasII.getContext("2d");
+cdsc.strokeStyle = "rgb(0, 255, 0)"; // Verde
+cdsc.lineWidth = 1;
+drawSinusoidalDoubleI(50, 0.05, 0);
+cdsc.strokeStyle = "rgb(0, 0, 255)"; // Amarillo
+cdsc.lineWidth = 1;
+drawSinusoidalDoubleI(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
+drawGridI(4, 7);
+function drawSinusoidalDoubleI(amplitude, frequency, phase) {
+  // Comienza el trazado de la onda
+  cdsc.beginPath();
+  for (var x = 0; x < canvasII.width; x++) {
+  // Calcula el valor y de la onda en función de x
+  var y = amplitude * Math.sin(frequency * x + phase);
+  // Dibuja un segmento de la onda
+  cdsc.lineTo(x, canvasII.height / 2 - y);
+  }
+  // Finaliza el trazado y dibuja la línea
+  cdsc.stroke();
+}
+function drawGridI(horizontalLinesI, verticalLinesI) {
+  // Configura el color y el grosor de las líneas de la cuadrícula
+  cdsc.strokeStyle = "rgb(0,255,0)"; // Gris
+  cdsc.lineWidth = 1;
+  // Dibuja líneas horizontales
+  for (var i = 1; i < horizontalLinesI; i++) {
+  var y = (i / horizontalLinesI) * canvasII.height;
+  cdsc.beginPath();
+  cdsc.moveTo(0, y);
+  cdsc.lineTo(canvasII.width, y);
+  cdsc.stroke();
+  }
+  // Dibuja líneas verticales
+  for (var j = 1; j < verticalLinesI; j++) {
+  var x = (j / verticalLinesI) * canvasII.width;
+  cdsc.beginPath();
+  cdsc.moveTo(x, 0);
+  cdsc.lineTo(x, canvasII.height);
+  cdsc.stroke();
+  }
+}        
+var canvas = document.getElementById("tripleSinusoidalCanvas");
+var ctx = canvas.getContext("2d");
+ctx.strokeStyle = "rgb(255, 125, 0)"; // Verde
+ctx.lineWidth = 1;
+drawSinusoidalDouble(50, 0.05, 0);
+ctx.strokeStyle = "rgb(255, 0, 255)"; // Amarillo
+ctx.lineWidth = 1;
+drawSinusoidalDouble(60, 0.05, Math.PI / 2); // Parámetros diferentes para la segunda onda
+ctx.strokeStyle = "rgb(255, 255, 0)"; // Azul
+ctx.lineWidth = 1;
+drawSinusoidal(40, 0.1, Math.PI); // Parámetros diferentes para la tercera onda
+drawGrid(4, 7);
+function drawSinusoidal(amplitude, frequency, phase) {
+// Comienza el trazado de la onda
+ctx.beginPath();
+for (var x = 0; x < canvas.width; x++) {
+// Calcula el valor y de la onda en función de x
+var y = amplitude * Math.sin(frequency * x + phase);
+// Dibuja un segmento de la onda
+ctx.lineTo(x, canvas.height / 2 - y);
+}
+// Finaliza el trazado y dibuja la línea
+ctx.stroke();
+}
+function drawSinusoidalDouble(amplitude, frequency, phase) {
+  // Comienza el trazado de la onda
+  ctx.beginPath();
+  for (var x = 0; x < canvas.width; x++) {
+  // Calcula el valor y de la onda en función de x
+  var y = amplitude * Math.sin(frequency * x + phase);
+  // Dibuja un segmento de la onda
+  ctx.lineTo(x, canvas.height / 2 - y);
+  }
+  // Finaliza el trazado y dibuja la línea
+  ctx.stroke();
+}
 function drawGrid(horizontalLines, verticalLines) {
   // Configura el color y el grosor de las líneas de la cuadrícula
   ctx.strokeStyle = "rgb(150, 150, 150)"; // Gris
@@ -2635,7 +2630,7 @@ function drawGrid(horizontalLines, verticalLines) {
   ctx.beginPath();
   ctx.moveTo(x, 0);
   ctx.lineTo(x, canvas.height);
-  ctx.stroke();
+  ctx.stroke(); 
   }
 }
 var intervalId;
@@ -4834,8 +4829,6 @@ document.getElementById('ventana-lateral').addEventListener('mouseleave',() =>{
     }
   });
 })
-
-
 function reponerEstilos(){
   let padreSolucionador = document.getElementById('troubleshooting')
   padreSolucionador.style.gridTemplateColumns = '';
@@ -4902,7 +4895,6 @@ function reponerEstilos(){
     }
   }
 }
-
 const targetDiv = document.querySelector('.img1');
 const contextMenu = document.getElementById('context-menu');
 function showContextMenu(x, y) {
@@ -4985,9 +4977,7 @@ subMenu.addEventListener('mouseleave',() =>{
 function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
-
 let intervalEnEjecucion = false;
-
 function openGraphics(elementId){
   if(turnBlock === false){
     turnBlock = true
@@ -5106,7 +5096,6 @@ function openGraphics(elementId){
     } 
   }
 }
-
 function iniciarAnimacionDias() {
   if (intervalEnEjecucion) return;
   setTimeout(() => {
@@ -5128,8 +5117,6 @@ function iniciarAnimacionDias() {
     }, 17);
   }, 100);
 }
-
-
 function mostrarSecuencialmente() {
   const padreElementos = document.getElementById('metas-diarias')
   const elementos = document.querySelectorAll("#metas-diarias li")
@@ -5370,7 +5357,6 @@ const elemento = document.getElementById('padre-naranja');
 let desplazamientoX = 0;
 let desplazamientoY = 0;
 let activo = false;
-
 // Iniciar el arrastre cuando se toca el elemento
 elemento.addEventListener('touchstart', (event) => {
   activo = true;
@@ -5378,7 +5364,6 @@ elemento.addEventListener('touchstart', (event) => {
   desplazamientoX = touch.clientX - elemento.offsetLeft;
   desplazamientoY = touch.clientY - elemento.offsetTop;
 });
-
 // Mover el elemento mientras se arrastra
 document.addEventListener('touchmove', (event) => {
   if (activo) {
@@ -5389,13 +5374,10 @@ document.addEventListener('touchmove', (event) => {
     elemento.style.top = `${y}px`;
   }   
 });
-
 // Detener el arrastre cuando se suelta
 document.addEventListener('touchend', () => {
   activo = false;
 });
-
-
 function verificarPosicionTop(childID) {
   let elementos = childID  
   elementos.forEach(id => {

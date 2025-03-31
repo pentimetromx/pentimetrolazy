@@ -1,3 +1,7 @@
-TAREA:	al SALIR del color salmon se deberia remover la clase que 
-	mueve a los padres para que se reposicionen		  
+n alternarTeccnologia         // boton amarillento grisaceo
 
+n secuenciaAparicion         // boton verde crear
+
+n cmykFlotante                   // boton rojo CMYK
+
+N rgbFlotante                     // boton rojo RGB

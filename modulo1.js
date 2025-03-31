@@ -93,8 +93,6 @@ function cierraContenedores(elementId,buttonID){
     abrirSeccionContinua() 
   }
 }
-
-
 function muestraRodillo (vidElem, imgCont){
   switch(vidElem){
   case 'videoElement2':
@@ -263,8 +261,6 @@ function muestraRodillo (vidElem, imgCont){
   default:
   }
 }
-
-
 function muestraHumedad(){
 var contImgsIsopropil = document.getElementById('imgsIsopropil')
 const pict = contImgsIsopropil.getElementsByTagName('img') 
@@ -1430,7 +1426,6 @@ function videosImpresor(videoId) {
     default: 
   } 
 } 
-
 function iniciarAnimaciones(){
   var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','bot-revertir','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7'] 
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -1447,7 +1442,6 @@ function iniciarAnimaciones(){
     animarSecuenciaPerfiles();
   }, 200);
 }
-
 function abrirSeccionContinua(elementId) {  
   var elementosExcluidos = ['buscador','search-form','toggleVideoButton','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','gran-cortina'];
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -1471,7 +1465,6 @@ function abrirSeccionContinua(elementId) {
   }
   firstClick = true;   
 }
-
 function alternarColorRojo(){
   var buttons = document.querySelectorAll('.Bot-inicio7');  
   buttons.forEach(function(currentButton, index) {
@@ -1874,11 +1867,6 @@ function abrirPilarMA(){
     }, delay * i,i)
   }    
 }
-
-
-
-
-
 function abrirPrepress(elementId) {
   var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pre-prensa','primerCont','imgs-prepress','conte-botDensitoII'] 
   for (var i = 0; i < allContenedores.length; i++) {
@@ -2515,21 +2503,6 @@ function irContenedorAnterior() {
   } 
   console.log('1.', idsArray)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function irContenedorSiguiente() {
   var previousElementID = idsArrayEliminados[idsArrayEliminados.length - 1];
   for (var i = 0; i < allContenedores.length; i++) {
