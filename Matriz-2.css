@@ -4,16 +4,16 @@
   font-family: "Oswald"; /* Nombre de la familia de fuentes personalizada */
   src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
 } 
-@font-face{
+@font-face{   
   font-family: "Digital";
   src:url(./fonts/DS-DIGIT.TTF),
 } 
 body{   
   margin: 0;
-  padding: 0;     
+  padding: 0;      
   margin: 0;
   padding: 0;
-  overflow: hidden; 
+  overflow: hidden;   
   background-color: rgb(30,30,30);     
   font-family: 'Arial', sans-serif;
   user-select: none;
@@ -2864,9 +2864,10 @@ width: 70%;
 #alerta-siete {
   position: fixed;
   display: grid;
-  background-color: #007bff; 
+  background-color: #007bff;
+  border: 1px solid white;
   color: white;  
-  top: 44vh;
+  top: 39vh;
   left: 37.5vw;
   width: 45vw; 
   height: 25vh;
@@ -2948,7 +2949,7 @@ width: 70%;
 .alerta-perfiles {
   transition: opacity 1s ease;
   opacity: 1;
-}
+}    
 #cancelar-eliminar,              
 #aceptar-eliminar{
   position: relative;
@@ -3038,7 +3039,7 @@ width: 70%;
   position: relative;
   display: grid;
   left: 2%;
-  grid-template-columns:30% 70% ; 
+  grid-template-columns:30% 40% 45% 45%;
   gap: 10px;
   width: 50%;
   height: 60%;
@@ -3176,11 +3177,15 @@ width: 70%;
   pointer-events: all;
 }
 #btn-crea-cmyk{
-  background-color: rgba(0,255,0,1);
+  background-color: rgba(255,255,185,0.9)
 }
 #btn-crea-rgb{
   background-color: rgba(255,255,185,0.9)
 }
+#btn-execute{
+  background-color: rgba(0,255,0,1);
+}
+
 #span-creacion {
   margin-top:7%;
   left: 28%;
@@ -3217,31 +3222,27 @@ width: 70%;
   margin-top: 50%;
   height: 50%;
 }
-.ocultar {
+/* .ocultar {
   opacity: 0;
   pointer-events: none;
-}
+} */
 #alerta-nueve:hover,
 #alerta-siete:hover,
 .botones button:hover {
   background-color: black; 
 }
+#execute-button > button:hover,
 #first-butts > :nth-child(1):hover{
-  box-shadow: inset 5px 15px 5px white; /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px rgba(255,255,185,0.7);
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(155,155,155, 0.5);
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
-#first-butts > :nth-child(2):hover{
-  box-shadow: inset 5px 15px 5px rgba(255,255,185,0.7); /* Sombreado interno para volumen */
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(155,155,155, 0.5);
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
+
+#first-butts > :nth-child(2):hover,
 #first-butts > :nth-child(3):hover{
-  box-shadow: inset 5px 15px 5px rgba(0,255,0,0.7); /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px white; /* Sombreado interno para volumen */
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(155,155,155, 0.5);
   transform: scale(1.1);
@@ -3355,7 +3356,7 @@ width: 70%;
   border: 1px solid #ccc;
   color: rgb(0, 255, 0);
   padding: 10px;
-  z-index: 100;
+  z-index: 500;
   font-size: 0.7em;
   line-height: 1.5;
 }
@@ -3369,15 +3370,15 @@ width: 70%;
   color: #ccc;
   font-size: 1.2em;
 }
-.contenedor-edicion {
-  position: fixed;
+.contenedor-edicion { 
+  position: absolute;
   display: grid;
   gap: 10px;
   grid-template-rows: repeat(3, 1fr);
   font-size: 1em;
-  top: 43.4vh;          
-  width: 45vw; 
-  height: 25vh;
+  top: 1%;          
+  width: 80%; 
+  height: 45%;
   background-color: #007bff;
   padding: 10px;
   border: 1px solid #ccc;
@@ -3407,6 +3408,8 @@ width: 70%;
   text-align: center;
   cursor: pointer;
   margin-left: 1.5%;
+  font-size: 70%;
+
 }
 .edicion-span:hover{
   background-color: white;
@@ -3664,8 +3667,8 @@ top: 44%;
   top:69%;
 }
 /* ******************************************************************************************************************************* */
-#control-panel-cmyk,
-#control-panel-rgb {
+#control-panel-rgb,
+#control-panel-cmyk {
   position: absolute;
   display: grid;
   display: none;
@@ -3673,18 +3676,36 @@ top: 44%;
   left: 76vw;
   width: 20%;
   height: 30%;
+  grid-template-rows: 10% 90%; /* 10% para el header, 90% para el contenido */
   grid-template-columns: 50% 50%;
-  background-color: rgba(0, 0, 0, 0.6);
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); 
   border-radius: 10px;
   z-index: 37;
 }
-#control-panel-cmyk :nth-child(2){
-  top: 8%;
+
+#color-composition-header-rgb,
+#color-composition-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 2; /* Ocupar ambas columnas */
+  background: rgba(255, 255, 255, 0.1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-#control-panel-cmyk{
-  grid-template-rows: repeat(5, 1fr);
+#color-composition-header-rgb span,
+#color-composition-header span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8em;
+  font-weight: bold;
 }
+#control-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100%;
+  align-items: center;
+}
+
 #lbl-control-cmyk,
 #lbl-control-rgb { /* ETIQUETAS */
   position: relative;
@@ -3736,12 +3757,20 @@ top: 44%;
 #control-btn-cmyk > button,
 #control-btn-rgb > button {
   height: 100%;
+  width: 100%;
   font-size: 14px;
   cursor: pointer;
-  background-color: rgba(188,188,0, 1);
-  color: rgb(0,0,33);
+  background-color: #007bff;
+  color: white;
   border-radius: 7px;
   font-size: 0.7em;
+}
+#control-btn-rgb :nth-child(1),
+#control-btn-rgb :nth-child(2),
+#control-btn-cmyk :nth-child(2),
+#control-btn-cmyk :nth-child(1){
+  margin-top: 37%;
+  margin-left: 17%;
 }
 #control-btn-cmyk > button:hover,
 #control-btn-rgb > button:hover{
@@ -3804,4 +3833,11 @@ top: 44%;
 }
 .flech-rgb > div:nth-child(4){
   background-color:rgba(233,255,165,0.15);
+}
+#video-cadena-offset video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 13px;
+  cursor: pointer;
 }

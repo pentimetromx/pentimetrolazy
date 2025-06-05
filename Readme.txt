@@ -1,7 +1,14 @@
-n alternarTeccnologia         // boton amarillento grisaceo
+ENTRA 5 DESDE 2046
 
-n secuenciaAparicion         // boton verde crear
+ENTRA 9 DESDE 2159
 
-n cmykFlotante                   // boton rojo CMYK
+ENTRA 1 DESDE 2272
 
-N rgbFlotante                     // boton rojo RGB
+ENTRA 10 DESDE 2385
+
+ENTRA 6 DESDE 2498
+
+
+241
+
+171

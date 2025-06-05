@@ -8,17 +8,22 @@ document.addEventListener('keydown', function(event) {
         }, 1000);
       break;
       case 'H':
+        function restablecerClickCanvasContainers() {
+          const elementos = document.querySelectorAll('.graphs-lines');
+          elementos.forEach((elemento) => {
+            elemento.style.setProperty('pointer-events', 'auto', 'important');
+            elemento.style.setProperty('opacity', '1', 'important');
+          });
+        }
+
+
+
         document.addEventListener("contextmenu", (event) => {
           event.stopPropagation(); 
         }, true);
-
-        /* colorRenderizado() */
-
-        renderizaMezclaRGB()
       break;
       case 'X':
         Geometria()
-        renderizaMezclaCMYK()
 
       break;                  
     }
@@ -26,7 +31,7 @@ document.addEventListener('keydown', function(event) {
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('perfiles-color');  
+  var contiBoton = document.getElementById('span-index');  
   var rect = contiBoton.getBoundingClientRect(); 
   var topPosition = rect.top;  
   var leftPosition = rect.left;  
@@ -38,6 +43,7 @@ function Geometria() {
   var visibilityType = style.visibility;  
   var zIndexValue = style.zIndex;  
   var isVisible = rect.width > 0 && rect.height > 0 && displayType !== 'none' && visibilityType !== 'hidden';   
+  
   
   console.log("PADRE :", contiBoton.id);  
   console.log("Top:", topPosition);  
@@ -162,14 +168,14 @@ const masSolucionGeneral = document.querySelector('#ctrl-gral-agua > div:nth-of-
 const menosSolucionGeneral = document.querySelector('#ctrl-gral-agua > div:nth-of-type(2)') 
 const botonesSelectores = document.querySelectorAll('.butt-selector') 
 const buttsJobTrack = document.querySelectorAll('.estilo-1')
-const buttsColores = document.querySelectorAll('.cabeza')
+const buttsColores = document.querySelectorAll('.cabeza')  
 const buttsGenerales = document.querySelectorAll('.mod-tinta')
 const alertaBotones = document.querySelector('.alerta-botones')
 const alertaPerfil = document.querySelector('.alerta-perfil')
 const buttsControl = document.querySelectorAll('.div-ctrl')
 const irAconsola = document.querySelector('#ir-consola')
-const listaClientes = document.getElementById('lista-clientes');
-const nombreCliente = document.querySelector('.nombre-cliente')
+const listaClientes = document.getElementById('lista-clientes')
+const nombreCliente = document.querySelector('.nombre-cliente') 
 const verdeAgua = 'rgb(127, 255, 212)';
 const azul = 'blue'
 const verde = 'rgb(0,255,0)'
@@ -3639,11 +3645,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alertaSeis.style.color = ''  
     }, 500);
     desactivarClicEnElementos(buttsPerfiles,buttsAguaGral,buttsAguaSingle);
-  }
+  }  
  
-
-
-
   negroGeneral.addEventListener('mousedown', () => { 
     if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
         color = 'rgb(0,0,0)';
@@ -3836,7 +3839,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#butt-perfil-tinta').style.backgroundColor='rgb(0,255,0)'
     irAconsola.style.display='none'
       restablecerClick(['.perfiles'])
-  })  
+  })
+  observarCambioDisplay()
 });  
 function crearLedsSpan() {
   // Ciclo para crear 22 padres con IDs secuenciales y 24 spans en cada uno
@@ -4875,7 +4879,7 @@ function vaciarObjetoEnLocal() {
   localStorage.removeItem('objetoAmarillo');
   
   console.log('Objeto eliminado de localStorage');
-}
+}  
 /* *************************************************************************************************************************************************** */
 /* LOGICA AL CREAR EL OBJETO EN LOCAL STORE*/
 // Crear una nueva instancia de la clase objetoColores y guardarla en almacenObjetos
@@ -4949,7 +4953,7 @@ document.getElementById('btn-crea-perfil').addEventListener('click', () => {
   // Crear una nueva instancia de la clase objetoColores
   const nuevoObjeto = new objetoColores();
  
-  // Almacenar el objeto en el almacén bajo el nombre del input
+  // Almacenar el objeto en el almacén bajo el nombre del input 
   almacenObjetos[inputNombre] = nuevoObjeto;
   // Crear un nuevo objeto ordenado alfabéticamente por las claves
   const almacenObjetosOrdenado = Object.keys(almacenObjetos)
@@ -4985,7 +4989,7 @@ document.getElementById('btn-crea-perfil').addEventListener('click', () => {
   } else {
     console.log("No se encontraron objetos almacenados en el localStorage.");
   }
-  restablecerClick(['.butt-perfiles'])
+  restablecerClick(['.butt-perfiles', '.jobs'])
 });
 // Función para capitalizar la primera letra de cada palabra
 function capitalizarTexto(texto) {
@@ -5077,6 +5081,7 @@ document.getElementById('cerrarEmergente').addEventListener('click', () => {
   let conteRGB = document.querySelector('#padre-rgb');
   const mensajeEmergente = document.getElementById('mensajeEmergente');
   const conteJobTrack = document.querySelector('#job-files');
+  conteJobTrack.classList.remove('move-job-track')
 
   if (mensajeEmergente.textContent === 'Perfil creado y almacenado') {
     document.getElementById('ventanaEmergente').classList.add('oculta');
@@ -5598,6 +5603,10 @@ buttsJobs.forEach(boton => {
         let lineaClientes = document.querySelector('#lista-lineas')
         lineaClientes.style.top='57vh'
         lineaClientes.style.height = '39vh'
+        lineaClientes.addEventListener('mouseleave', () => {
+          lineaClientes.style.display = 'none'
+          restablecerClick(['.butt-perfiles', '.estilo-1']);
+        })
         desactivarClick(['.butt-perfiles', '.estilo-1']);
         if(panelUno.textContent === ''){alertaTres.style.display = 'flex';} 
         else{
@@ -6043,7 +6052,7 @@ function eliminarColores(){
   } 
 
 
-}
+} 
 /* ********************************************************************************************************************************************************** */
 function desactivarClick(classElements) {
   if (!Array.isArray(classElements)) {
@@ -6057,6 +6066,28 @@ function desactivarClick(classElements) {
     });
   });
 }
+function desactivarClickTemporalmente(classElements, duracion) {
+  if (!Array.isArray(classElements) || typeof duracion !== 'number') {
+    console.error('Parámetros inválidos. Se espera un array de selectores y una duración en milisegundos.');
+    return;
+  }
+
+  classElements.forEach(selector => {
+    const botones = document.querySelectorAll(selector);
+    
+    botones.forEach(boton => {
+      boton.style.pointerEvents = 'none'; // Desactivar clics
+    });
+
+    // Reactivar después del tiempo especificado
+    setTimeout(() => {
+      botones.forEach(boton => {
+        boton.style.pointerEvents = 'auto'; // Reactivar clics
+      });
+    }, duracion);
+  });
+}
+
 function restablecerClick(classElements) { 
   if (!Array.isArray(classElements)) {
     console.error('El parámetro debe ser un array de selectores.');
@@ -6077,7 +6108,7 @@ function bloquearClick(event) {
     event.preventDefault();
     console.log('Click desactivado en:', event.currentTarget); 
   }
-} 
+}  
 /* ********************************************************************************************************************************************************** */
 function limpiarColoresDeFondo() {
   // Lista de clases a recorrer
@@ -6096,8 +6127,11 @@ function limpiarColoresDeFondo() {
 
   console.log('Colores de fondo eliminados para las clases:', clases.join(', '));
 }
+let inputBuscar = document.getElementById('input-buscar-perfil');
+  
 function mostrarNombresDeObjetos() {
   flagAplicacion = true;
+  let listadoPerfiles = document.querySelector('#lista-clientes')
 
   // Recuperar el objeto almacenado en localStorage
   const almacenJSON = localStorage.getItem('almacenObjetos');
@@ -6121,9 +6155,9 @@ function mostrarNombresDeObjetos() {
     const menuContextual = document.createElement('div');
     menuContextual.id = 'menu-contextual';
     document.body.appendChild(menuContextual);
-
+   
     // Agregar opciones al menú contextual
-    const opcionesMenu = ['Editar', 'Ver detalles', 'Eliminar'];
+    const opcionesMenu = ['Editar', 'Filtrar', 'Eliminar'];
     opcionesMenu.forEach(opcion => {  
       const menuItem = document.createElement('div');
       menuItem.className = 'opcion';
@@ -6131,15 +6165,16 @@ function mostrarNombresDeObjetos() {
       menuItem.style.cursor = 'pointer';
       menuItem.style.padding = '5px';
       menuItem.addEventListener('click', () => {
-        menuContextual.style.display = 'none';
+      menuContextual.style.display = 'none';
 
         if (opcion === 'Eliminar') {
           eliminarObjeto(menuContextual.dataset.nombreObjeto);  
         } else if (opcion === 'Editar') {
           editarObjeto(menuContextual.dataset.nombreObjeto);
-        } else if (opcion === 'Ver detalles') {
-          verDetallesObjeto(menuContextual.dataset.nombreObjeto);
+        } else if (opcion === 'Filtrar') {
+          buscarPerfil(event); // Pasa el evento al llamar la función          
         }
+             
       });
       menuContextual.appendChild(menuItem);
       menuContextual.addEventListener('mouseleave', () =>{
@@ -6159,82 +6194,181 @@ function mostrarNombresDeObjetos() {
     Object.keys(almacenCapitalizado).forEach(nombreCapitalizado => {  
       const nuevoDiv = document.createElement('div');
       nuevoDiv.className = 'cliente-item';
-      nuevoDiv.textContent = nombreCapitalizado;
+      nuevoDiv.textContent = nombreCapitalizado;  
       nuevoDiv.style.fontSize = '1em';
-
+  
       nuevoDiv.addEventListener('click', () => {
         restablecerClick(['.estilo-1']);
-        const panelUno = document.getElementById('panel-uno');
+        const panelUno = document.getElementById('panel-uno'); // INPUT DE CLIENTES
+
+        const panelPerfil = document.getElementById('nombre-Perfil-existe');
+        panelPerfil.value = nombreCapitalizado;         
+
         const nombreCliente = document.querySelector('.nombre-cliente');
         nombreCliente.textContent = nombreCapitalizado;
         panelUno.textContent = nombreCapitalizado;
-        panelUno.style.backgroundColor='rgb(0,0,23)'
-        panelUno.style.color='rgb(200,200,200)'
+        panelUno.style.backgroundColor = 'rgb(0,0,23)';
+        panelUno.style.color = 'rgb(200,200,200)';
         objetoGlobal = nombreCapitalizado;
         console.log('OBJETO GLOBAL :', objetoGlobal);
         listaClientes.style.display = 'none';
-
-        let contRGB = document.querySelector('#padre-rgb')
-        let conteCMYK = document.querySelector('#padre-cmyk')
-
-        let primerImputRGB = document.querySelector('#input-r');
-        let segundoImputRGB = document.querySelector('#input-g');
-        let tercerImputRGB = document.querySelector('#input-b');
-        let cuartoImputRGB = document.querySelector('#input-w');
-      
-        let primerImputCMYK = document.querySelector('#input-c');
-        let segundoImputCMYK = document.querySelector('#input-m');
-        let tercerImputCMYK = document.querySelector('#input-y');
-        let cuartoImputCMYK = document.querySelector('#input-k');
-        let quintoImputCMYK = document.querySelector('#input-a');
-
-        if (contRGB.style.display === 'grid') {
-          primerImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.R ?? 0;
-          segundoImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.G ?? 0;
-          tercerImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.B ?? 0;
-          cuartoImputRGB.value = almacenObjetos[nombreProvisional]?.RGBA?.A ?? 0;
-          aparecerColor('#control-panel-rgb') 
-          document.querySelectorAll('.btn-opcion, .lbls-cmyRgb').forEach(el => {
-            el.style.display = 'block';
-          });          
-        }
-        
-        if (conteCMYK.style.display === 'grid') {
-          primerImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.C ?? 0;
-          segundoImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.M ?? 0;
-          tercerImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.Y ?? 0;
-          cuartoImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.K ?? 0;
-          quintoImputCMYK.value = almacenObjetos[nombreProvisional]?.CMYK?.A ?? 0;
-          aparecerColor('#control-panel-cmyk')
-          document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
-            el.style.display = 'block';
-          });          
-        }
       });
-
+  
       // Asignar evento 'contextmenu' para el clic derecho
       nuevoDiv.addEventListener('contextmenu', (event) => {
         event.preventDefault();
-        menuContextual.style.display = 'block';
-        menuContextual.style.left = `${event.pageX}px`;
 
-        const alturaVentana = window.innerHeight;
+        // Asegurar que el menú contextual está visible antes de calcular su tamaño
+        menuContextual.style.display = 'block';
+        menuContextual.style.visibility = 'hidden'; // Para que no parpadee mientras se calcula
+        document.body.appendChild(menuContextual); // Asegurar que está en el DOM
+
+        // Obtener dimensiones del menú y la ventana
         const menuAltura = menuContextual.offsetHeight;
-        const maxPosY = alturaVentana - menuAltura;
-        const posY = Math.min(event.pageY, maxPosY);
+        const menuAnchura = menuContextual.offsetWidth;
+        const alturaVentana = window.innerHeight;
+        const anchoVentana = window.innerWidth;
+
+        // Evitar que el menú se salga de la pantalla
+        let posX = event.pageX;
+        let posY = event.pageY;
+
+        // Ajustar si el menú sobrepasa el ancho de la pantalla
+        if (posX + menuAnchura > anchoVentana) {
+          posX = anchoVentana - menuAnchura - 10;
+        }
+
+        // Ajustar si el menú sobrepasa el alto de la pantalla
+        if (posY + menuAltura > alturaVentana) {
+          posY = alturaVentana - menuAltura - 10;
+        }
+
+        // Aplicar posición corregida
+        menuContextual.style.left = `${posX}px`;
         menuContextual.style.top = `${posY}px`;
+        menuContextual.style.visibility = 'visible';
 
         menuContextual.dataset.nombreObjeto = nombreCapitalizado;
-      });
 
+        setTimeout(() => {
+          document.querySelectorAll('.cliente-item').forEach(item => item.blur());
+        }, 100);
+        
+      });
+  
       listaClientes.appendChild(nuevoDiv);
     });
+  
+  // Verificar si el menú contextual ya existe, si no, crearlo
+  if (!menuContextual) {
+    menuContextual = document.createElement('div');
+    menuContextual.id = 'menu-contextual';
+    menuContextual.style.position = 'absolute';
+    menuContextual.style.display = 'none';
+    menuContextual.style.zIndex = '1000'; // Asegurar que esté en la capa superior
+    document.body.appendChild(menuContextual);
+  }
+  
+  // Mantener visible 'listadoPerfiles' si el cursor está sobre el menú contextual
+  menuContextual.addEventListener('mouseover', () => {
+    listadoPerfiles.style.display = 'block';
+    menuContextual.style.display = 'block';
+  });
+  
+  // Ocultar elementos cuando el cursor sale completamente del área
+  menuContextual.addEventListener('mouseleave', () => {
+    menuContextual.style.display = 'none';
+  });
+  
 
-    console.log('Nombres de objetos mostrados en lista-clientes:', Object.keys(almacenCapitalizado));
+  listadoPerfiles.addEventListener('mouseleave', () => {
+  
+    // Si el input existe y está visible, no hacer nada
+    if (inputBuscar && inputBuscar.style.display !== 'none') {
+      return;
+    }
+  
+    // Si no hay input visible, ejecutar la lógica de ocultar
+    listadoPerfiles.style.display = 'none';
+    menuContextual.style.display = 'none';
+    restablecerClick(['.base-datos']);
+  });
+  
+  console.log('Nombres de objetos mostrados en lista-clientes:', Object.keys(almacenCapitalizado));
   } else {
     console.log("No se encontraron objetos almacenados en localStorage.");
   }
 }
+
+
+function buscarPerfil(event) {
+  let listadoPerfiles = document.querySelector('#lista-clientes')
+  desactivarClick(['.cliente-item']);
+
+  if (!inputBuscar) {
+    // Crear el input flotante solo si no existe
+    inputBuscar = document.createElement('input');
+    inputBuscar.type = 'text';
+    inputBuscar.id = 'input-buscar-perfil';
+    inputBuscar.placeholder = 'Buscar perfil...';
+    inputBuscar.style.position = 'absolute';
+    inputBuscar.style.zIndex = '2000';
+    inputBuscar.style.padding = '8px';
+    inputBuscar.style.border = '1px solid #ccc';
+    inputBuscar.style.borderRadius = '5px';
+    inputBuscar.style.outline = 'none';
+    inputBuscar.style.display = 'none'; // Inicialmente oculto
+    document.body.appendChild(inputBuscar);
+
+    // Agregar evento mouseleave para ocultar el input
+    inputBuscar.addEventListener('mouseleave', () => {
+      if (inputBuscar.value.trim() === '') { 
+        // Solo ocultar si el input está vacío
+        inputBuscar.style.display = 'none';
+        listadoPerfiles.style.display = 'none';
+      }
+    });    
+
+  }  
+
+  // Verificar si el evento es válido
+  if (event && event.pageX !== undefined && event.pageY !== undefined) {
+    inputBuscar.style.left = '65vw'
+    inputBuscar.style.top = '63vh'
+  } else {
+    // Si no hay evento, ubicarlo en el centro de la pantalla como fallback
+    inputBuscar.style.left = '50%';
+    inputBuscar.style.top = '20px';
+    inputBuscar.style.transform = 'translateX(-50%)';
+  }
+
+  inputBuscar.style.display = 'block';
+  inputBuscar.value = '';
+  inputBuscar.focus();
+
+  // Evento para filtrar en tiempo real
+  inputBuscar.addEventListener('input', () => {
+    let textoIngresado = inputBuscar.value.toLowerCase();
+    let clientes = document.querySelectorAll('.cliente-item');
+
+    clientes.forEach(cliente => {
+      let nombre = cliente.textContent.toLowerCase();
+      cliente.style.display = nombre.startsWith(textoIngresado) ? 'block' : 'none';
+    });
+  });
+
+  // Evento para ocultar el input cuando se haga clic fuera
+  setTimeout(() => {
+    document.addEventListener('click', function ocultarInput(evento) {
+      if (evento.target !== inputBuscar) {
+        inputBuscar.style.display = 'none';
+        document.removeEventListener('click', ocultarInput);
+      }
+    });
+    restablecerClick(['.cliente-item']);
+  }, 500);
+}
+
 function guardarObjetoEnAlmacen(nombreObjeto, datosObjeto) {
   // Capitalizar el nombre antes de guardar
   const nombreCapitalizado = capitalizarTexto(nombreObjeto);
@@ -6251,6 +6385,7 @@ function guardarObjetoEnAlmacen(nombreObjeto, datosObjeto) {
   console.log(`Guardado en almacenObjetos:`, almacenObjetos);
 }
 function eliminarObjeto(nombreObjeto) {
+  desactivarClick(['.cliente-item']);
   document.querySelectorAll('.cliente-item').forEach(item => {
     item.style.filter = 'blur(15px)';
   });
@@ -6286,6 +6421,7 @@ function eliminarObjeto(nombreObjeto) {
   divEliminacion.style.height = '30vh'
   // Evento para confirmar la eliminación
   spanConfirmar.addEventListener('click', () => {
+    const alertaNueve = document.getElementById('span-index');    
     divEliminacion.style.display='none'
     // Eliminar del localStorage  
     const almacenJSON = localStorage.getItem('almacenObjetos');
@@ -6298,24 +6434,29 @@ function eliminarObjeto(nombreObjeto) {
           almacenObjetos = JSON.parse(localStorage.getItem('almacenObjetos')) || {};
         }, 50);
       }
-    }
+    } 
     // Eliminar visualmente de la lista
     const elementosLista = document.querySelectorAll('.cliente-item');
     elementosLista.forEach((elemento) => {
       if (elemento.textContent === nombreObjeto) {
         elemento.remove();
       }
-    });
+    }); 
+
     mostrarNombresDeObjetos(); // Refrescar la lista después de eliminar
     document.querySelector('.alerta-botones').style.display='flex'
     document.querySelector('.alerta-botones').style.top='43vh'
     document.querySelector('.alerta-botones').style.left='37vw'
     document.querySelector('.alerta-botones').textContent= `El perfil : ${nombreObjeto} ha sido eliminado exitosamente.`
     document.querySelectorAll('.cliente-item').forEach(item => {
-      item.style.filter = 'blur(15px)';
-    });
+    item.style.filter = 'blur(15px)';
+    alertaNueve.style.zIndex=9999
+
+    });  
   });
-  spanAbandonar.addEventListener('click', () => {
+  spanAbandonar.addEventListener('click', () => { 
+    restablecerClick(['.cliente-item']);
+
     document.querySelectorAll('.cliente-item').forEach(item => {
       item.style.filter = 'none';
     });
@@ -6324,6 +6465,8 @@ function eliminarObjeto(nombreObjeto) {
       divEliminacion.style.display = 'none';
     }
   });
+  desactivarClickTemporalmente(['.nueve-span'], 500);
+
 }
 function editarObjeto(nombreObjeto) {
   document.querySelectorAll('.cliente-item').forEach(item => {
@@ -6334,7 +6477,7 @@ function editarObjeto(nombreObjeto) {
   // Crear un input para capturar el nuevo nombre
   const inputNuevoNombre = document.createElement('input');
   inputNuevoNombre.type = 'text';
-  inputNuevoNombre.value = nombreObjeto; // Valor actual por defecto
+  inputNuevoNombre.value = nombreObjeto; // Valor actual por defecto 
   inputNuevoNombre.id = 'input-edicion'
 
   // Botón para confirmar el cambio de nombre
@@ -6358,12 +6501,14 @@ function editarObjeto(nombreObjeto) {
   // Insertar el contenedor en el DOM
   listaClientes.appendChild(contenedorEdicion);
   contenedorEdicion.style.display='grid'
+  
   inputNuevoNombre.focus();
   // Evento para confirmar el cambio de nombre
   botonConfirmar.addEventListener('click', () => {
     const nuevoNombre = inputNuevoNombre.value.trim(); 
     if (!nuevoNombre) {
       alertaOcho.style.display='flex'
+      alertaOcho.style.zIndex = 2000
       alertaOcho.textContent='El perfil debe tener un nombre'
       return;
     }
@@ -6374,6 +6519,8 @@ function editarObjeto(nombreObjeto) {
       // Verificar que el nuevo nombre no exista ya
       if (almacenRecuperado[nuevoNombre]) {
         alertaOcho.style.display='flex'
+        alertaOcho.style.zIndex = 2000
+
         alertaOcho.addEventListener('click', () => {
           alertaOcho.style.display='none'
           listaClientes.style.filter = 'none';
@@ -6397,6 +6544,7 @@ function editarObjeto(nombreObjeto) {
       ordenarListaClientes();
       mostrarNombresDeObjetos();
       alertaSiete.style.display='grid'
+      alertaSiete.style.zIndex= 2000
       spanAviso.textContent = `${nuevoNombre}`;      
     }                           
     // Eliminar el contenedor temporal
@@ -6439,9 +6587,6 @@ document.querySelector('#perfil-cambio').addEventListener('click', () =>{
     item.style.filter = 'none';
   });
 })
-function verDetallesObjeto(nombreObjeto) {
-  console.log(`Mostrando detalles del objeto "${nombreObjeto}"`);  
-}
 function ocultarConsultas(){
   let alertas = document.querySelectorAll('.cerrar')
   let menu = document.querySelector('#menu-contextual')
@@ -6521,6 +6666,18 @@ function traerAlmacenObjetos() {
   // Confirmar que el objeto se ha asignado correctamente
   console.log('objetoGlobal:', objetoGlobal);
   console.log('nombreProvisional:', nombreProvisional);
+
+}
+function borrarESTO(){
+
+  /* ********************************************************************************** */
+  abrirSeccionOperativa('cont-titulo-operacion')
+  setTimeout(() => {
+    abrirSeccionContinua('pantalla-inicial')
+  }, 500);
+
+  /* ********************************************************************************** */
+
 
 }
 function moverFormulario() {
@@ -7013,7 +7170,7 @@ initResize(
   document.querySelector(".esquina-cmyk")
 );
 function rgbFlotante() { // botones rojos
-  var elementosExcluidos = ['colorDisplay','padre-controles','padre-rgb','simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+  var elementosExcluidos = ['colorDisplay','padre-controles','padre-rgb','simulador','interfaz-perfiles','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -7034,7 +7191,7 @@ function rgbFlotante() { // botones rojos
   perfilador.removeAttribute("style");
 }
 function cmykFlotante() { // botones rojos
-  var elementosExcluidos = ['colorCMYK','container-slider','padre-cmyk','simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+  var elementosExcluidos = ['colorCMYK','container-slider','padre-cmyk','simulador','interfaz-perfiles','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i])  
     if (elemento) {
@@ -7154,6 +7311,9 @@ function configurarBoton(selector,contenedor, callback) {
 }
 function alternarTeccnologia(tecnologia){
   let perfiladorDeColor = document.querySelector('#perfiles-color')
+  let inputR = document.querySelector('#input-r')
+  let inputC = document.querySelector('#input-c')
+
   let primerImputRGB = document.querySelector('#input-r');
   let segundoImputRGB = document.querySelector('#input-g');
   let tercerImputRGB = document.querySelector('#input-b');
@@ -7197,7 +7357,11 @@ function alternarTeccnologia(tecnologia){
         buttsGreen.forEach((elem) => {
           elem.style.backgroundColor = ''; // Limpia el color de fondo
         });
+        if (inputR) {
+          inputR.focus();
+        }      
       }, 354);
+  
     break;
     case 'cmyk':
       document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
@@ -7220,14 +7384,30 @@ function alternarTeccnologia(tecnologia){
         buttsGreen.forEach((elem) => {
           elem.style.backgroundColor = ''; // Limpia el color de fondo
         });
+        if (inputC) {
+          inputC.focus();
+        }      
+
       }, 344);
     break;
   }
 }
-function secuenciaAparicion(canal) { 
+function secuenciaAparicion(canal) {
+  let inputPerfil = document.querySelector('#nombre-Perfil');
+  let inputPerfilExiste = document.querySelector('#nombre-Perfil-existe');
+
   let perfiladorColor = document.querySelector('#perfiles-color')
   let equalizerColorMYK = document.querySelector('#control-panel-cmyk')
   let equalizerColorRGB = document.querySelector('#control-panel-rgb')
+
+  setTimeout(() => {
+    if (inputPerfil) {  
+      inputPerfil.value = '';                     
+      inputPerfil.focus();
+      inputPerfilExiste.value = ''
+    }    
+
+  }, 100);
   switch(canal){
     case 'rgb':
       let etiquetasOpcion = document.querySelectorAll('.lbl-opcion')
@@ -7253,9 +7433,14 @@ function secuenciaAparicion(canal) {
       equalizerColorMYK.style.display = 'none'
       perfiladorColor.style.display = 'grid'
     break
-
   }
 }
+document.querySelector('#nombre-Perfil').addEventListener('click', () => {
+  document.querySelector('#nombre-Perfil-existe').value = ''
+  listaClientes.style.display = 'none'
+})
+
+
 function crearPerfilColor() { // crear nuevo desde boton blanco
   
   let contRGB = document.querySelector('#padre-rgb');
@@ -7393,6 +7578,7 @@ function renderizaMezclaRGB() {
   traerAlmacenObjetos()
 }
 function renderizaMezclaCMYK() {
+  
   // Verificar si almacenObjetos está definido
   if (!almacenObjetos[objetoGlobal] || !almacenObjetos[objetoGlobal].CMYK) {
     console.warn("Error: objetoGlogal o objetoGlogal.CMYK no está definido.");
@@ -7421,6 +7607,7 @@ function renderizaMezclaCMYK() {
     { trackId: "slid-blanco", spanId: "w-span", channel: "A", porcentajeDestino: wValue }
   ]);
   traerAlmacenObjetos()
+
 }
 
 function alternarOcultarBotones(altern){
@@ -7540,13 +7727,14 @@ document.querySelector('#boton-cmyk-salir').addEventListener('click', () => {
     { selector: '#control-panel-cmyk', delay: 300 },
     { selector: '#control-panel-rgb', delay: 300 }
   ];
-
+ 
   elementos.forEach(({ selector, delay }) => {
     let elemento = document.querySelector(selector);
     if (elemento) {
       setTimeout(() => desvanecerColor(selector), delay);
     }
   });
+  restablecerClick(['.butt-perfiles']); 
 });
 document.querySelector('#boton-rgb-salir').addEventListener('click', () => {
   let elementos = [
@@ -7562,21 +7750,25 @@ document.querySelector('#boton-rgb-salir').addEventListener('click', () => {
       setTimeout(() => desvanecerColor(selector), delay);
     }
   });
+  restablecerClick(['.butt-perfiles']); 
 });
 document.querySelector('#save-tecnology').addEventListener('click', ()=>{
   crearPerfilColor()
 })
 document.getElementById('nombre-Perfil-existe').addEventListener('click', () => {
+  document.querySelector('#nombre-Perfil').value = ''
+  document.querySelector('#nombre-Perfil-existe').value = ''
+
   document.querySelectorAll('.butt-perfiles').forEach(elemento => {   
     elemento.style.display = 'block';   
   });
   let listaClientes = document.querySelector('#lista-clientes')  
-  listaClientes.style.top='39vh'
-  listaClientes.style.width = '30vw'
-  listaClientes.style.left = '66vw'
+  listaClientes.style.top='39vh'  
+  listaClientes.style.width = '46vw'
+  listaClientes.style.left = '50vw'
   limpiarColoresDeFondo()
   desactivarClick(['.butt-perfiles', '.estilo-1']);  
-  listaClientes.style.display = 'block'
+  listaClientes.style.display = 'block'   
   listaClientes.style.zIndex = 500
   mostrarNombresDeObjetos(); 
   setTimeout(() => {
@@ -7588,3 +7780,33 @@ document.getElementById('nombre-Perfil-existe').addEventListener('click', () => 
   }, 50);      
 
 });
+
+function pintarColor(){
+  if(tecnologyCMYK){
+    renderizaMezclaCMYK()
+  }
+  if(tecnologyRGB){
+    renderizaMezclaRGB()
+  }  
+}
+
+// Función para observar cambios en el DOM
+function observarCambioDisplay() {
+  const observer = new MutationObserver(() => {
+    const rgbVisible = getComputedStyle(document.getElementById('padre-rgb')).display === 'grid';
+    const cmykVisible = getComputedStyle(document.getElementById('padre-cmyk')).display === 'grid';
+
+    if (rgbVisible) {
+      tecnologyRGB = true;
+      tecnologyCMYK = false;
+    } else if (cmykVisible) {
+      tecnologyRGB = false;
+      tecnologyCMYK = true;
+    }
+  });
+  // Observar cambios en el body y sus hijos
+  observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['style', 'class'] });
+}
+
+// Iniciar la observación
+/* document.addEventListener('DOMContentLoaded', observarCambioDisplay); */

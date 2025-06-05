@@ -1,12 +1,10 @@
 function cierraContenedores(elementId,buttonID){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
-  var arrayButtsRojos = ['boton2','boton3','boton4','boton5','boton6','boton8','boton9','boton10','boton11','boton12']   
-  for (var i = 0; i < arrayButtsRojos.length; i++) {
-  var button = arrayButtsRojos[i]
-  if (button) {
-    document.getElementById(button).style.backgroundColor = ''    
-  }
-  }      
+
+  document.querySelectorAll('.boton-c').forEach(boton => {
+    boton.style = ''; // Restablece todos los estilos en línea
+  });
+
   if (firstClick) { 
     if (typeof elementId !== 'undefined' && !idsArray.includes(elementId)) {  
       idsArray.push(elementId);
@@ -268,7 +266,7 @@ contImgsIsopropil.style.display = 'flex'
 for (let i = 0; i < pict.length; i++) {
 pict[i].style.display = 'block'
 }
-}
+} 
 function applyImageEffects() {
 const imageElements = document.querySelectorAll('#imageElement6,#imageElement7')
 let currentIndex = 0;
@@ -347,21 +345,6 @@ let currentIndex = 0;
     }, 177)}
   }
   applyEffect()
-}
-function applyImageEffects5() {
-const imageElements = document.getElementsByClassName('butts-inicio')
-let currentIndex = 0;
-function applyEffect() {
-if (currentIndex < imageElements.length) {
-  const currentImage = imageElements[currentIndex]
-  currentImage.style.transition = 'transform 0.1s'
-  currentImage.style.transform = 'scale(2.0)'
-  setTimeout(() => {
-    currentImage.style.transition = 'transform 0.7s'
-    currentImage.style.transform = 'scale(1)'
-    currentIndex++;
-    applyEffect()
-  }, 177) }}applyEffect()
 }
 function alternarVisibilidad(docId) {
 var elementosParaAlternar = document.querySelectorAll('.bot-entre, .video-training,.image-training, .butt-partes, .documentos')
@@ -1016,6 +999,7 @@ function cambiaColorBotones(){
   botones.forEach((boton, index) => {
     setTimeout(() => {
       boton.style.backgroundColor = 'rgb(0,255,0)';
+      boton.style.color = 'black'
     }, 35 * index + 7);
   });
 }
@@ -2832,7 +2816,9 @@ function irContenedorSiguiente() {
 }
 function listaEntrenamientosII(btnList) {
   restablecerPosiciones(['.ocultos'])      
-  const solucionador = document.querySelector('#troubleshooting')  
+  const solucionador = document.querySelector('#troubleshooting') 
+  const conteLink = document.querySelector('#linksMA')
+  conteLink.style = ''
   solucionador.style.top = ''
   solucionador.style.left = ''
   document.body.style.zoom = "100%"; 
@@ -2858,8 +2844,10 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-            boton.style.backgroundColor = 'rgb(0,255,0)'; 
-            boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       if(screenWidth < 500){
@@ -2880,8 +2868,10 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-          boton.style.backgroundColor = 'rgb(0,255,0)'; 
-          boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       document.getElementById('troubleshooting').style.display='grid'
@@ -2900,8 +2890,10 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-          boton.style.backgroundColor = 'rgb(0,255,0)'; 
-          boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       document.getElementById('troubleshooting').style.display='grid'
@@ -2920,8 +2912,10 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-          boton.style.backgroundColor = 'rgb(0,255,0)'; 
-          boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       document.getElementById('troubleshooting').style.display='grid'
@@ -2940,8 +2934,10 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-          boton.style.backgroundColor = 'rgb(0,255,0)'; 
-          boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       document.getElementById('troubleshooting').style.display='grid'
@@ -2960,8 +2956,10 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-          boton.style.backgroundColor = 'rgb(0,255,0)'; 
-          boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       document.getElementById('troubleshooting').style.display='grid'
@@ -2980,12 +2978,37 @@ function listaEntrenamientosII(btnList) {
         var boton = document.getElementById(botonId);
         boton.style.backgroundColor = '';
         if (botonId === btnList) {
-          boton.style.backgroundColor = 'rgb(0,255,0)'; 
-          boton.style.color='rgb(0,0,33)' 
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
+        }
+      }
+      document.getElementById('troubleshooting').style.display='grid'
+    break;
+        case 'btt8':
+      var elementosExcluidos = ['buscador','search-form','conteneMantaut','conti-boton','troubleshooting','links-inicialesI','links-iniciales','largoImpresion','contImgEntrenos']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      container1.style.display='grid'
+      for (var i = 0; i < contiBtt.length; i++) {
+        var botonId = contiBtt[i];
+        var boton = document.getElementById(botonId);
+        boton.style.backgroundColor = '';
+        if (botonId === btnList) {
+          boton.style.backgroundColor = '#4CAF50'; 
+          boton.style.color='white' 
+        }else{
+          boton.style.color='black' 
         }
       }
       document.getElementById('troubleshooting').style.display='grid'
     break;    
+    
     default:
   }
   document.getElementById('context-menu').style.display='none'
@@ -3041,9 +3064,12 @@ function toggleFullScreen(element) {
 function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {  
   desactivarClicsPorUnTiempo(500)
   let solucionador = document.getElementById('troubleshooting')
+  let conteLink = document.querySelector('#linksMA')
   solucionador.style.display='grid'
   var linkOrange = document.getElementById(id)
   document.body.style.zoom = "67%"
+  conteLink.style.left = '43.5vw'
+  conteLink.style.top = '16vh'
   if(screenWidth < 500){
     document.body.style.zoom = "100%"
   }
@@ -3171,6 +3197,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
     solucionador.style.left='11.5%' 
     linkOrange.style.color = 'orange'
     var botones = document.getElementsByClassName('colorClick')
+    animateScroll('rodillo-infeed')   
     for (var i = 0; i < botones.length; i++) {
       if (botones[i].id !== id) {
       botones[i].style.color = ''
@@ -3184,7 +3211,6 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
         }
       }
       container1.style.display='grid'
-      animateScroll('rodillo-infeed')   
     }     
     break;  
     case 'link5':
@@ -3202,6 +3228,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
       solucionador.style.left='11.5%'  
       linkOrange.style.color = 'orange'
       var botones = document.getElementsByClassName('colorClick')
+      animateScroll('puesta-punto')
       for (var i = 0; i < botones.length; i++) {
         if (botones[i].id !== id) {
         botones[i].style.color = ''
@@ -3215,16 +3242,32 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
           }
         }
         container1.style.display='grid'      
-        animateScroll('puesta-punto')
       }     
     break;  
     default: 
   }        
-}
+} 
 function lubricacion(buttId){
-    switch (buttId) {
-      case 'boton2':  
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb']  
+  alternarButtsDesbobinador(buttId);
+  switch (buttId) {
+    case 'boton2':  
+      var elementosExcluidos = [
+        'buscador', 'search-form', 'links-inicialesI', 'links-iniciales', 
+        'pantalla-inicial', 'desbobinadorId', 'lubricacion', 'conti-boton-desb'
+      ];  
+
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i]);  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';
+        }
+      }
+      container1.style.display = 'grid';
+      mostrartBotonesIntervalo('butt-mautonomo-desbobina');
+      eliminarEstilos('.butt-mautonomo-desbobina')
+    break;
+    case 'boton3':
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','freno','conti-boton-freno']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3232,21 +3275,33 @@ function lubricacion(buttId){
         }
       }
       container1.style.display='grid'
-      mostrartBotonesIntervalo('butt-mautonomo-desbobina');    
-      break;
-      case 'boton3':
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','freno','conti-boton-freno']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
+      mostrartBotonesIntervalo('butt-mautonomo-freno'); 
+      eliminarEstilos('.butt-mautonomo-freno') 
+    break;    
+    case 'boton4':
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }
+    container1.style.display='grid'
+    palpitarBoton('desbobinadorId')       
+    break;
+    case 'boton5':
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-        container1.style.display='grid'
-        mostrartBotonesIntervalo('butt-mautonomo-freno');  
-      break;    
-      case 'boton4':
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
+      }
+      container1.style.display='grid'
+      palpitarBoton('desbobinadorId')
+    break  
+    case 'boton6':
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
@@ -3255,32 +3310,128 @@ function lubricacion(buttId){
       }
       container1.style.display='grid'
       palpitarBoton('desbobinadorId')       
-      break;
-      case 'boton5':
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        container1.style.display='grid'
-        palpitarBoton('desbobinadorId')
-      break  
-      case 'boton6':
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        container1.style.display='grid'
-        palpitarBoton('desbobinadorId')       
-      break;
-      default:
+    break;
+    default:
+  }
+}
+function alternarButtsDesbobinador(buttId) {
+  var buttsDesbobinador = ['boton2', 'boton3', 'boton4', 'boton5', 'boton6'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === buttId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else {
+        boton.style = ''; // Resetear solo el color de fondo
+      }
     }
-} 
+  });
+}
+function alternarButtsTeñido(buttId) {
+  var buttsDesbobinador = ['boton8', 'boton9', 'boton10', 'boton11', 'boton12'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === buttId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else {  
+        boton.style = ''; // Resetear solo el color de fondo
+      }
+    }
+  });
+}
+function alternarButtsFreno(idButt) {
+  var buttsDesbobinador = ['btn60','btn70','btn80','btn1','btn2','btn3','btn4','btn5'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === idButt) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+        boton.style.color = 'white'
+      } else {  
+        boton.style = ''
+        boton.style.display = 'block'
+      }
+    }
+  });
+}
+function alternarButtsfeed(buttId) {
+  var buttsDesbobinador = ['boton14', 'boton15', 'boton16', 'boton17', 'boton18'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === buttId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else {  
+        boton.style = ''; // Resetear solo el color de fondo
+      }
+    }
+  });
+}
+function alternarButtsUnit(buttId) {
+  var buttsDesbobinador = ['boton20', 'boton21', 'boton22', 'boton23', 'boton24'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === buttId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else {  
+        boton.style = ''; // Resetear solo el color de fondo
+      }
+    }
+  });
+}
+function alternarButtsRebobina(buttId) {
+  var buttsDesbobinador = ['boton26', 'boton27', 'boton28', 'boton29', 'boton30'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === buttId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else {  
+        boton.style = ''; // Resetear solo el color de fondo
+      }
+    }
+  });
+}  
+
+function alternarButtsnPneumatic(buttId) {
+  var buttsDesbobinador = ['btn600','btn700','btn800'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === buttId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else { 
+        boton.style = ''; // Resetear solo el color de fondo
+        boton.style.display = 'block'
+      }
+    }
+  });
+}
+function alternarButtsnRodilleria(botId) {
+  var buttsDesbobinador = ['btn06','btn07','btn08'];
+  buttsDesbobinador.forEach(id => {
+    var boton = document.getElementById(id);
+    if (boton) {
+      if (id === botId) {
+        boton.style.background = 'rgba(0,255,0,1)';
+        boton.style.boxShadow = "inset 5px 15px 5px rgba(0, 0, 0, 0.8)";
+      } else { 
+        boton.style = ''; // Resetear solo el color de fondo
+        boton.style.display = 'block'
+      }
+    }
+  });
+}
+
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80']
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
@@ -3291,26 +3442,25 @@ function LubricaDesbobinador(idButt) {
   for (var i = 0; i < arrayIdButtsCheck.length; i++) {
     var button = arrayIdButtsCheck[i]
     if (button) {
-      document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
+      document.getElementById(button).style.backgroundColor = 'rgb(138, 149, 151)'
     } 
   }
     arrayLabels.forEach(label => {
     if (label) {
       document.getElementById(label).style.color = 'rgb(0, 255, 0)'
     }
-  })  
+  }) 
   for (var i = 0; i < arrayIdButtsLub.length; i++) {                                                     
     var button = arrayIdButtsLub[i]                                                                                         
     if (button === idButt) {
       document.getElementById(button).style.backgroundColor = 'rgb(0, 255, 0)'
-      document.getElementById(button).style.color = 'black'
-  
+      document.getElementById(button).style.color = 'black'  
     } else {
       document.getElementById(button).style.backgroundColor= '#333333'
       document.getElementById(button).style.color = 'white'
     }
   }
-    for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                            
+  for (var i = 0; i < arrayIdButtsLubII.length; i++) {                                                            
     var button = arrayIdButtsLubII[i]                                                                                         
     if (button === idButt) {
       document.getElementById(button).style.backgroundColor = 'rgba(217, 255, 0, 1)'
@@ -3319,9 +3469,20 @@ function LubricaDesbobinador(idButt) {
     } else {
       document.getElementById(button).style.backgroundColor= '#333333'
       document.getElementById(button).style.color = 'white'
-
     }
-  }  
+  }
+  let coleccionLubrica = document.querySelectorAll('.butt-mautonomo-desbobina');
+  coleccionLubrica.forEach(element => {
+    if (idButt === element.id) {
+      // Aplicar estilos al botón seleccionado
+      element.style.backgroundColor = 'rgba(0,255,0,1)';
+    } else {
+      // Restablecer estilos en los demás botones
+      element.style = ""; 
+      element.style.display = "block"; 
+    }
+  }); 
+
   switch (idButt) {
     case 'btn1':
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','lubricacion','conti-boton-desb','frec-lubrica']  
@@ -3332,6 +3493,7 @@ function LubricaDesbobinador(idButt) {
         }
       }
       container1.style.display='grid'
+      alternarButtsFreno(idButt)
       showLablsLubricacion()
       break;
     case 'btn2':
@@ -3354,6 +3516,7 @@ function LubricaDesbobinador(idButt) {
       const child = document.getElementById('child-div');
       const parent = document.getElementById('inicio');
       moveElement(child,parent)
+      alternarButtsFreno(idButt)
       if(screenWidth < 500){
         document.getElementById('butt-links-II').style.display='flex'
         document.getElementById('butt-links-II').style.top='64vh'
@@ -3371,6 +3534,7 @@ function LubricaDesbobinador(idButt) {
       container1.style.display='grid'
       palpitarBoton('desbobinadorId')
       document.getElementById('frec-lubrica').style.display = 'none'
+      alternarButtsFreno(idButt)
     break;
     case 'btn4':
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
@@ -3383,6 +3547,7 @@ function LubricaDesbobinador(idButt) {
       container1.style.display='grid'
       palpitarBoton('desbobinadorId')
       document.getElementById('frec-lubrica').style.display = 'none'
+      alternarButtsFreno(idButt)
     break; 
     case 'btn5':
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','lubricacion','padre-lubrica','pantalla-inicial']  
@@ -3395,6 +3560,7 @@ function LubricaDesbobinador(idButt) {
       container1.style.display='grid'
       palpitarBoton('desbobinadorId')
       document.getElementById('frec-lubrica').style.display = 'none'
+      alternarButtsFreno(idButt)
     break;
     case 'btn60':
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','abuelo-grilla','freno','cont-arriba-freno','conti-boton-freno','desbobinadorId','padre-lubrica','pantalla-inicial']  
@@ -3405,9 +3571,11 @@ function LubricaDesbobinador(idButt) {
         }
       }
       container1.style.display='grid'
+      alternarButtsFreno(idButt)
       const movil = document.getElementById('child-move-II')
       const currentZone = document.getElementById('abuelo-grilla')
       moveElement(movil,currentZone)
+
       if(screenWidth < 500){
         let boton = document.getElementById('butt-links-II')
         boton.style .display='flex'
@@ -3424,6 +3592,7 @@ function LubricaDesbobinador(idButt) {
         }
       }
       contPadre.style.display = 'flex'
+      alternarButtsFreno(idButt)
     break;
     case 'btn80': 
       var contFreno = document.getElementById('freno')
@@ -3435,11 +3604,13 @@ function LubricaDesbobinador(idButt) {
         }
       }
       contPadre.style.display = 'flex' 
+      alternarButtsFreno(idButt)
     break;    
     default:
   }   
 } 
 function UnidadTeñido(buttId){
+  alternarButtsTeñido(buttId)
   switch (buttId) {
     case 'boton8' :
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido']  
@@ -3451,6 +3622,7 @@ function UnidadTeñido(buttId){
       }
       container1.style.display='grid'
       mostrartBotonesIntervalo('butt-mautonomo-teñido');    
+      eliminarEstilos('.butt-mautonomo-teñido')
       break;
     case 'boton9' :
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','rodilleria']  
@@ -3461,7 +3633,8 @@ function UnidadTeñido(buttId){
         }
       }
       container1.style.display='grid'
-      mostrartBotonesIntervalo('butt-mautonomo-rodilleria');    
+      mostrartBotonesIntervalo('butt-mautonomo-rodilleria'); 
+      eliminarEstilos('.butt-mautonomo-rodilleria')
     break; 
     case 'boton10' :
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos']  
@@ -3504,32 +3677,33 @@ function UnidadTeñido(buttId){
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      alternarButtsnPneumatic(buttId)
       container1.style.display='grid'
       const child = document.getElementById('pieza-movil');
-      const parent = document.getElementById('abuelo-grilla-teñido');
+      const parent = document.getElementById('abuelo-grilla-teñido');    
       moveElement(child,parent)
     break; 
     case 'btn700' :
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
+    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido','teñido-I','vidTeñido','teñido-vid']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      alternarButtsnPneumatic(buttId)
       container1.style.display='grid'
-      palpitarBoton('uteñidos')
      break; 
     case 'btn800' :
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniTeñido','conti-boton-teñido']  
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','uTeñidos','uniteñido','conti-boton-teñido','teñido-I','vidTeñido','teñido-vid']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
         if (elemento) {
           elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
       }
+      alternarButtsnPneumatic(buttId)
       container1.style.display='grid'
-      palpitarBoton('uteñidos')
     break;                               
     default:
   }  
@@ -3540,49 +3714,61 @@ function mostrartBotonesIntervalo(className) {
 
   let delay = 0;
   buttons.forEach(button => {
-      setTimeout(() => {
-          button.style.visibility = 'visible';
-          button.style.display='flex'
-      }, delay);
-      delay += 177;
+    setTimeout(() => {
+        button.style.visibility = 'visible';
+        button.style.display='flex'
+    }, delay);
+    delay += 177;
   });
 }
 function UnidadAlimenta(buttId){
-    switch (buttId) {
-      case 'boton14' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
+  alternarButtsfeed(buttId)
+  switch (buttId) {
+    case 'boton14' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-        container1.style.display='grid'
-        palpitarBoton('alimentadorId')
-      break;
-      case 'boton15' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
+      }
+      container1.style.display='grid'
+      palpitarBoton('alimentadorId')
+    break;
+    case 'boton15' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-        container1.style.display='grid'
-        palpitarBoton('alimentadorId')
-      break; 
-      case 'boton16' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
+      }
+      container1.style.display='grid'
+      palpitarBoton('alimentadorId')
+    break; 
+    case 'boton16' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-        container1.style.display='grid'
-        palpitarBoton('alimentadorId')
-      break; 
-      case 'boton17' : 
+      }
+      container1.style.display='grid'
+      palpitarBoton('alimentadorId')
+    break; 
+    case 'boton17' : 
+    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }        
+    container1.style.display='grid'
+    palpitarBoton('alimentadorId')
+    break; 
+    case 'boton18' :
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
@@ -3592,57 +3778,25 @@ function UnidadAlimenta(buttId){
       }        
       container1.style.display='grid'
       palpitarBoton('alimentadorId')
-      break; 
-      case 'boton18' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','alimentadorId']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }        
-        container1.style.display='grid'
-        palpitarBoton('alimentadorId')
-      break; 
-      default:
-    }
+    break; 
+    default:
+  }
 }
 function UnidadProceso(buttId){
-    switch (buttId) {
-      case 'boton20' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
+  alternarButtsUnit(buttId)
+  switch (buttId) {
+    case 'boton20' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-        container1.style.display='grid'
-        palpitarBoton('unidProceso')
-      break;
-      case 'boton21' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        container1.style.display='grid'
-        palpitarBoton('unidProceso')
-      break; 
-      case 'boton22' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
-        }
-        container1.style.display='grid'
-        palpitarBoton('unidProceso')
-      break; 
-      case 'boton23' : 
+      }
+      container1.style.display='grid'
+      palpitarBoton('unidProceso')
+    break;
+    case 'boton21' :
       var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
       for (var i = 0; i < allContenedores.length; i++) { 
         var elemento = document.getElementById(allContenedores[i])  
@@ -3653,22 +3807,45 @@ function UnidadProceso(buttId){
       container1.style.display='grid'
       palpitarBoton('unidProceso')
     break; 
-      case 'boton24' :
-        var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
-        for (var i = 0; i < allContenedores.length; i++) { 
-          var elemento = document.getElementById(allContenedores[i])  
-          if (elemento) {
-            elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-          }
+    case 'boton22' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
         }
-        container1.style.display='grid'
-        palpitarBoton('unidProceso')
-      break; 
-      default:
+      }
+      container1.style.display='grid'
+      palpitarBoton('unidProceso')
+    break; 
+    case 'boton23' : 
+    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
     }
+    container1.style.display='grid'
+    palpitarBoton('unidProceso')
+  break; 
+    case 'boton24' :
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','unidProceso']  
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }
+      container1.style.display='grid'
+      palpitarBoton('unidProceso')
+    break; 
+    default:
+  }
 }
 function UnidadRebonina(buttId){
-    switch (buttId) {
+  alternarButtsRebobina(buttId)
+  switch (buttId) {
       case 'boton26' :
         var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','pantalla-inicial','rebobinador']  
         for (var i = 0; i < allContenedores.length; i++) { 
@@ -4208,13 +4385,14 @@ function rodillosTeñido(botId) {
         }
       }
       container1.style.display='grid'
+      alternarButtsnRodilleria(botId)
+
       if(screenWidth < 500){
         let boton = document.getElementById('butt-links-II')
         boton.style.display='flex'
         boton.style.top='88vh'
       }
-      reproducirVideo('rodilleria-vid');
-      
+      reproducirVideo('rodilleria-vid');      
       const child = document.getElementById('child-div-I');
       const parent = document.getElementById('abuelo-cuadricula');
       moveElement(child,parent)
@@ -4228,6 +4406,8 @@ function rodillosTeñido(botId) {
         }
       } 
       container1.style.display='grid'
+      alternarButtsnRodilleria(botId)
+
       const childI = document.getElementById('item-movil');
       const parentI = document.getElementById('grilla-durezas');
       moveElement(childI,parentI)
@@ -4249,6 +4429,7 @@ function rodillosTeñido(botId) {
           container.style.display = 'flex'
         }
       }
+      alternarButtsnRodilleria(botId)
     break;
     default:
   } 
@@ -4274,7 +4455,7 @@ function lubricaDiario(butId,labelId){
     if (button === butId) {
       document.getElementById(button).style.backgroundColor = 'rgb(0,255,0)'
     } else {
-      document.getElementById(button).style.backgroundColor= 'rgba(217, 255, 0, 1)'
+      document.getElementById(button).style.backgroundColor= 'rgb(138, 149, 151)'
     }
   }
   arrayLabels.forEach(label => {
@@ -4284,17 +4465,17 @@ function lubricaDiario(butId,labelId){
       document.getElementById(label).style.color = 'rgb(255, 255, 0)'
     }
   }) 
+  var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
+  var elementosGrid =['lubricantes','abuelo-lubrica','padre-lubricante']
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  container1.style.display='grid'
   switch(butId) {    
     case 'lub-diario':
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
-      var elementosGrid =['lubricantes','abuelo-lubrica','padre-lubricante']
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
-      }
-      container1.style.display='grid'
       for (var i = 0; i < elementosGrid.length; i++) { 
         var elemento = document.getElementById(elementosGrid[i])  
         if (elemento) {
@@ -4305,30 +4486,16 @@ function lubricaDiario(butId,labelId){
       const parent = document.getElementById('lubricantes');
       child.style.display='flex'
       moveElement(child,parent)
+
       if(screenWidth < 500){
         document.getElementById('butt-links-II').style.display='flex'
         document.getElementById('butt-links-II').style.top='64%'
       }
     break;
     case 'lub-semanal':
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
-      }
-      container1.style.display='grid'
+      
     break;
     case 'lub-mensual':
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','conti-boton-desb','desbobinadorId','frec-lubrica','lubricacion','padre-lubrica','pantalla-inicial']  
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
-      }
-      container1.style.display='grid'
     break;
     default:
   }
@@ -4402,10 +4569,100 @@ function ubicaPerfil(idEmpleado) {
   }
 }
 let llamadaEjecutada = false;
-var intervaloActualizarII = null;
+var intervaloActualizarII = null; 
 var intervaloActualizar = null;
 
 /* ********************************************************************************* */
+
+/* function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
+  verificarPosicionTop(['conte-butts-graphs']);
+  setTimeout(() => {
+    turnGraphic = false
+    console.log(turnGraphic)
+    const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
+    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
+    for (var i = 0; i < allContenedores.length; i++) { 
+      var elemento = document.getElementById(allContenedores[i])
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+      }
+    }
+    restaurarPosicion(["conte-butts-graphs"]);
+    container1.style.display='grid'
+    if(turnBlock === 'false'){
+      restablecerClick(['.desactivar', '.graphs-lines'])
+    }
+
+    document.getElementById('contLineas').style.backgroundColor='rgb(0,0,17)'
+    const elementos = document.querySelectorAll('.graphs-lines');
+    elementos.forEach((elemento) => {
+      elemento.removeAttribute('style');
+    });
+    if(screenWidth < 500){
+      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','dynamic-graphs-II','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
+      for (var i = 0; i < allContenedores.length; i++) { 
+        var elemento = document.getElementById(allContenedores[i])  
+        if (elemento) {
+          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+        }
+      }     
+      container1.style.display='grid'
+      desactivarClicsPorUnTiempo(1000)
+      const elementos = document.querySelectorAll('.graphs-employee');
+      elementos.forEach((elemento) => {
+        elemento.removeAttribute('style');
+      });    
+      if(state === 'true'){
+        setTimeout(() => {
+          animateScroll('contenedor-vertical')
+        }, 500);}
+      if (iconosPermitidos.includes(icono)) {
+      }
+        ubicaPerfil(idEmpleado)
+        document.getElementById('links-iniciales').style.left='16vw'
+
+      }else{
+          
+        ubicaPerfil(idEmpleado)
+        document.getElementById('conte-butts-graphs').style.display = 'grid'
+    }
+      switch (functionExe) {
+      case 'updateAna':
+        updateAna() 
+        updateAnaII()
+      break;
+      case 'updateMario':
+        updateMario()
+        updateMarioII()
+      break;
+      case 'updateSandra':
+        updateSandra()
+        updateSandraII()
+      break;
+      case 'updateJesus':
+        updateJesus()
+        updateJesusII()      
+      break;
+      case 'updateJorge':
+        updateJorge()
+        updateJorgeII()      
+      break;
+      case 'updateAndres':
+        updateAndres()
+        updateAndresII()      
+      break;
+      case 'updateCarlos':
+        updateCarlos()
+        updateCarlosII()      
+      break;
+      default:
+      break;
+    }
+
+  }, 100);
+
+} */
+
 function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
   verificarPosicionTop(['conte-butts-graphs']);
   setTimeout(() => {
@@ -4515,9 +4772,9 @@ function resultadosMA(){
     usuario.style.left = '';
     var label = usuario.querySelector('label');
     clearInterval(intervaloColor);
-    if (label) {
+    /* if (label) {
       label.style.color = 'yellow';
-    }
+    } */
   }
   if(screenWidth < 500){
     document.getElementById('gran-cortina').style.display='flex'
@@ -4576,38 +4833,39 @@ function graficosAutomaticos(idGrafico){
     }
   }
 }
-document.getElementById('textToColorI').addEventListener('click', () => {
-  let padreLinks = document.getElementById('links-inicialesI')
-  let conteLinks = document.getElementById('linkListI')
 
-  if(screenWidth < 500){
-    var elementosNoIncluidos = ['buscador','search-form','links-inicialesI', 'links-iniciales','linkList','linkListI'];  
+document.getElementById('textToColorI').addEventListener('mouseenter', () => {
+  let padreLinks = document.getElementById('links-inicialesI');
+  let conteLinks = document.getElementById('linkListI');
+
+  if (screenWidth < 500) {
+    var elementosNoIncluidos = ['buscador', 'search-form', 'links-inicialesI', 'links-iniciales', 'linkList', 'linkListI'];  
     for (var i = 0; i < allContenedores.length; i++) { 
       var elemento = document.getElementById(allContenedores[i]);
       if (elemento) {
         if (elementosNoIncluidos.includes(allContenedores[i])) {
           elemento.style.filter = '';
         } else {
-          if(screenWidth < 500){
+          if (screenWidth < 500) {
             elemento.style.filter = 'blur(6px)';
           }
         }
       }
     }
-    container1.style.display='grid'
+    container1.style.display = 'grid';
     setTimeout(() => {
-      padreLinks.style.display='block'
-      conteLinks.style.display='block'
-      expandHeight('linkListI')
+      padreLinks.style.display = 'block';
+      conteLinks.style.display = 'block';
+      expandHeight('linkListI');
     }, 400);
-  }else{
-    padreLinks.style.display='block'
-    conteLinks.style.display='block'
-    expandHeight('linkListI')    
+  } else {
+    padreLinks.style.display = 'block';
+    conteLinks.style.display = 'block';
+    expandHeight('linkListI');    
   }
-}
-);
-document.getElementById('textToColor').addEventListener('click', () => {
+});
+
+document.getElementById('textToColor').addEventListener('mouseenter', () => {
   let padreLinks = document.getElementById('links-iniciales')
   let conteLinks = document.getElementById('linkList')
 

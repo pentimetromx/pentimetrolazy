@@ -1,10 +1,10 @@
 var anchoPantalla = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var acumuladorVideos = []  
 
-var intervaloColor;
+var intervaloColor;  
 let videoStore = []
 var contenedor2 = document.getElementById('canvasContainer2')   
-var troublesh = document.getElementById('troubleshooting')
+var troublesh = document.getElementById('troubleshooting')  
 var grafica2 = document.getElementById('MiGrafica') 
 var linkIni1 = document.getElementById('links-inicialesI')
 var linkIni2 = document.getElementById('links-iniciales') 
@@ -21,7 +21,6 @@ var contiVidSmed = document.getElementById('conti-video-smed')
 var contibotsDistriV = document.getElementById('contenedor-7-VII')
 var buttRepuestIII = document.getElementById('conti-boton-repuestos-II')
 var padreImgsDistribuidor = document.getElementById("contene-images")         
-var contiBotsDesbobina = document.getElementById('conti-boton-desb')
 var contiBotsFreno = document.getElementById('conti-boton-freno')
 var contibotsDistri = document.getElementById('contenedor-7')
 var contibotsDistriII = document.getElementById('contenedor-7-V')
@@ -39,6 +38,8 @@ var padreManometro = document.getElementById('padre-1')
 let firstClick = true;
 let clickHabilitado = true;
 let primeraVez = false;
+let tecnologyRGB = false;
+let tecnologyCMYK = false;
 
 let botonClick = document.getElementById('boton1')
 let botonClickII = document.getElementById('boton7')
@@ -55,7 +56,7 @@ var arrayButtsInstructivos = ['contBotCasos']
 var enlacesIDs = ['link1', 'link2', 'link3', 'link4','link5'] 
 var arrayPosicionnador = []
 var destino = 257
-var idsArray = [];
+var idsArray = []; 
 var idsArrayEliminados = []
 var idsMA = ['control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','casos-kaizen','mejoras-kai','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','planos-kaizen','materiales-kaizen','kaizenCont','conti-boton-planos', 'conti-boton-kaizen','troubleshooting','canvasContainer2','canvasContainer3', 'contImagNeg',,'contImagGraf','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II']
 var contenedoresMA = ['troubleshooting','canvasContainer2','canvasContainer3','contImagNeg','contImagGraf','kaizenCont']
@@ -72,7 +73,7 @@ var linkList = document.getElementById("linkList")
 var linkListI = document.getElementById("linkListI")
 var uTeñido = document.getElementById('uTeñidos')
 var arrayIdButtsCheck = ['boton2','boton3','boton4','boton5','boton6','boton7','boton8','boton9','boton10','boton11','boton12','btn600','btn700','btn800']
-var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7'] 
+var contiBtt = ['archivo','btt2','btt3','btt4','btt5','btt6','btt7','btt8'] 
 var currentID = null; 
 var butInicio = document.getElementById('bot-inic')
 var botonMa = document.getElementById('bot-mantaut')  
@@ -86,7 +87,7 @@ var apliqueII = document.getElementById('aplique_2')
 
 var posicionPantalla = document.getElementById('positionDisplay')              
 var positionDisplayIII = document.getElementById('positionDisplay_3')
-var allContenedores = ['perfiles-color','control-panel-rgb','control-panel-cmyk','padre-rgb','padre-cmyk','simulador','conte-butts-graphs','gran-cortina','contraseña','input1','input2','input3','input4','tareas-lubricacion','dynamic-graphs-II','tareas-limpieza','dia','actividad-lubricacion','actividad-limpieza','meses','metas-diarias','calendario-mes','ventana-lateral','etqts-festo','vidColor-II','contenedor_padre_3','contenedor_padre_2','contenedor_padre','butt-links-I','butt-links-II','butt-links-III','buscador','search-form','butt-links','imagenes-plancha','uniteñido','video-placa','placa','imagen1','imagen2','imagen3','imagen4','imagenes-impresor','video-impresor','padre-naranja','tendencia-naranja','abuelo-variable','planetary','padre-variable','cont-variable','abuelo-plana','padre-plana','cont-plana','contenedorElementos','general','frec-lubrica','padre-grilla','grilla-durezas','abuelo-entintadores','padre-entintadores','abuelo-grilla-dureza','cont-arriba-rodillos','lubricantes','abuelo-cuadricula','abuelo-teñido','abuelo-grilla','abuelo-lubrica','padre-lubricante','freno-II','conti-boton-freno','cont-arriba','conti-boton-teñido','teñido-I','teñido-II','vidTeñido','teñido-vid','cont-arriba-freno','inicio','padre-lubrica','bis-abuelo','image-background','def2','over_size','over_side','equalizer','nicho_spans','padre','patern','first_half','cortina','second_half','wall_street_II','vid_festo','instrucciones_manometro','positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','linkList','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','abandonar-perfiles','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','butt-repuestos','images-entintador','toggleVideoButton','videoElement1','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','frame-rollers','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPortManta','contImpresor','contImgDistribuidor','contImgEntintador','cont-variable','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','video-background','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','uniTeñidos','rodilleria', 'cont-user','cont-userI','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6', 'colorCMYK', 'colorDisplay','container-slider','padre-controles','alerta-perfiles','btn2', 'cliente-nombre', 'bot-revertir', 'formulario-perfiles','boton-reseteo','boton-perfiles','unit-job-track','lista-lineas','lista-clientes','job-files','clock','texto-perf-indiv','bot-modific','blur-interfaz-perfiles','cont-modificadores','info-perfiles','admin-perfiles','cronometro','cronos','inerfaz-ajuste-fino','perfil-individual','control-perfiles','interfaz-registro','perfiles-entintado','perfil-entintado','interfaz-perfiles','water-background','segunda-pantalla','contenedor-padre','conte-colors','sombra','control-panel','contiene-lineas']
+var allContenedores = ['perfiles-color','contenedor-2','control-panel-rgb','control-panel-cmyk','padre-rgb','padre-cmyk','simulador','conte-butts-graphs','gran-cortina','contraseña','input1','input2','input3','input4','tareas-lubricacion','dynamic-graphs-II','tareas-limpieza','dia','actividad-lubricacion','actividad-limpieza','meses','metas-diarias','calendario-mes','ventana-lateral','etqts-festo','vidColor-II','contenedor_padre_3','contenedor_padre_2','contenedor_padre','butt-links-I','butt-links-II','butt-links-III','buscador','search-form','butt-links','imagenes-plancha','uniteñido','video-placa','placa','imagen1','imagen2','imagen3','imagen4','imagenes-impresor','video-impresor','padre-naranja','tendencia-naranja','abuelo-variable','planetary','padre-variable','cont-variable','abuelo-plana','padre-plana','cont-plana','contenedorElementos','general','frec-lubrica','padre-grilla','grilla-durezas','abuelo-entintadores','padre-entintadores','abuelo-grilla-dureza','cont-arriba-rodillos','lubricantes','abuelo-cuadricula','abuelo-teñido','abuelo-grilla','abuelo-lubrica','padre-lubricante','freno-II','conti-boton-freno','cont-arriba','conti-boton-teñido','teñido-I','teñido-II','vidTeñido','teñido-vid','cont-arriba-freno','inicio','padre-lubrica','bis-abuelo','image-background','def2','over_size','over_side','equalizer','nicho_spans','padre','patern','first_half','cortina','second_half','wall_street_II','vid_festo','instrucciones_manometro','positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','linkList','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','abandonar-perfiles','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','butt-repuestos','images-entintador','toggleVideoButton','videoElement1','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','frame-rollers','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPortManta','contImpresor','contImgDistribuidor','contImgEntintador','cont-variable','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','video-background','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','uniTeñidos','rodilleria', 'cont-user','cont-userI','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6', 'colorCMYK', 'colorDisplay','container-slider','padre-controles','alerta-perfiles', 'cliente-nombre', 'bot-revertir', 'formulario-perfiles','boton-reseteo','boton-perfiles','unit-job-track','lista-lineas','lista-clientes','job-files','clock','texto-perf-indiv','bot-modific','blur-interfaz-perfiles','cont-modificadores','info-perfiles','admin-perfiles','cronometro','cronos','inerfaz-ajuste-fino','perfil-individual','control-perfiles','interfaz-registro','perfiles-entintado','perfil-entintado','interfaz-perfiles','water-background','segunda-pantalla','contenedor-padre','conte-colors','sombra','control-panel','contiene-lineas']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
@@ -145,7 +146,7 @@ const containerIII = document.getElementById('container_interfaz_3')
 const spanGuide = document.getElementById('unicoide_triangulo')
 const spanGuideI = document.getElementById('unicoide_flecha')
 const cortina = document.getElementsByClassName('overlay')[0]
-const buttonRight2 = document.getElementById('buttonRight_2')
+const buttonRight2 = document.getElementById('buttonRight_2')  
 const buttonRight3 = document.getElementById('buttonRight_3')
 
 const buttReset2 = document.getElementById('buttonReset_2')  
@@ -247,7 +248,6 @@ document.addEventListener("DOMContentLoaded", function() {
       lazyVideoObserver.observe(lazyVideo);
     });
   } else {
-    // Fallback para navegadores que no soportan IntersectionObserver
     lazyVideos.forEach(function(lazyVideo) {
       for (let source of lazyVideo.children) {
         if (typeof source.tagName === "string" && source.tagName === "SOURCE") {
@@ -268,11 +268,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   /* **************************************************************************************************************************** */
-  toggleVideoButton.addEventListener("click", function() {
-    video.pause()
-  })
-    /* **************************************************************************************************************************** */
+  var toggleVideoButton = document.getElementById("toggleVideoButton");
+  var video = document.getElementById("videoElement");
 
+  if (toggleVideoButton && video) {
+    toggleVideoButton.addEventListener("click", function() {
+      video.pause();
+    });
+  }
+  /* **************************************************************************************************************************** */
 });
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
@@ -355,7 +359,7 @@ function manejarLogica() {
       let valor = inputActual.value.replace(/\D/g, ""); // Elimina cualquier carácter que no sea número
 
       if (valor.length > 1) {
-          valor = valor.charAt(0); // Solo permite un solo dígito
+        valor = valor.charAt(0); // Solo permite un solo dígito
       }
 
       inputActual.value = valor; // Actualiza el input con solo el número válido
@@ -366,7 +370,7 @@ function manejarLogica() {
       setTimeout(() => {
           inputActual.value = '*'; // Oculta el número ingresado
           if (indice < inputs.length - 1) {
-              inputs[indice + 1].focus(); // Mueve el foco al siguiente input
+            inputs[indice + 1].focus(); // Mueve el foco al siguiente input
           }
       }, 177);
 
@@ -374,14 +378,14 @@ function manejarLogica() {
       const suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
       if (suma === masterKey[0]) {
           inputs.forEach(input => {
-              input.style.display = 'none';
+            input.style.display = 'none';
           });
           document.getElementById('contraseña').style.display = 'none';
           setTimeout(() => {
-              abrirInterfaz();
+            abrirInterfaz();
           }, 200);
           inputs.forEach(input => {
-              input.value = '';
+            input.value = '';
           });
       }
     }
@@ -390,7 +394,7 @@ function manejarLogica() {
     function validarTecla(event) {
       const teclaPresionada = event.key;
       if (!/^\d$/.test(teclaPresionada) && teclaPresionada !== "Backspace" && teclaPresionada !== "Tab") {
-          event.preventDefault(); // Bloquea la tecla si no es un número, Backspace o Tab
+        event.preventDefault(); // Bloquea la tecla si no es un número, Backspace o Tab
       }
     }
 
@@ -432,7 +436,6 @@ function abrirInterfaz() {
     el.style.setProperty("cursor", "none", "important"); 
   });
 
-
   var elementosExcluidos = ['videoBackgroundII','video-background','padre-interfaz','cont-titulo','franja-Blanca','subtitulo-I','descripcion-I','butt-Institucional','padre-interfaz', 'agrupaOblicuos-XI', 'hijo-interaz-1', 'hijo-interaz-2', 'contFrente-V','titulo-ancho','logo-grande','image-background'];
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);
@@ -454,7 +457,6 @@ function abrirInterfaz() {
     }, 900);
     setTimeout(() => {
       alternarColorVerdeInverso() 
-      applyImageEffects5()      
     }, 1200); 
     setTimeout(() => {
       alternarColorVerde() 
@@ -485,8 +487,7 @@ function abrirInterfaz() {
       alternarColorVerde() 
     },2500);  
     setTimeout(() => {
-      alternarColorVerdeInverso() 
-      applyImageEffects5()            
+      alternarColorVerdeInverso()           
     }, 2800);  
     setTimeout(() => {
       alternarColorVerde() 
@@ -707,6 +708,12 @@ function aparecerColor(contenedor) {
   setTimeout(() => {
     padre.style.opacity = "1";
   }, 10);
+}
+function eliminarEstilos(coleccionEltos) {
+  let elementos = document.querySelectorAll(coleccionEltos);
+    elementos.forEach(elemento => {
+    elemento.removeAttribute("style");
+  });
 }
 /* ******************************************************************************************************************************************************** */
 function showButtonsMAconRetraso() {

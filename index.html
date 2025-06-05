@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Lazy desde Git hub</title>
+    <title>Lazy desde Programar</title>
     <link rel="stylesheet" href="./Matriz-1.css">
     <link rel="stylesheet" href="./Matriz-2.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" href="./Matriz-2.css">
   </head>
-  <body onload="manejarLogica()">   
+  <body onload="manejarLogica()"> 
 
     <header class="buscador" id="buscador">
       <form id="search-form">
         <input type="text" id="search-input" placeholder="Buscar..."> 
         <datalist id="suggestions"></datalist>                                             
-        <img data-src="./assets/lupa.jpg" class="busqueda lazy" alt="Buscar">  
+        <img data-src="./assets/lupa.jpg" class="busqueda lazy" alt="Buscar">   
       </form>
     </header>
     
-    <div id="gran-cortina"></div>
+    <div id="gran-cortina"></div> 
     <div id="over_size"></div>
     <div id="over_side"></div>
     <div id="logo-grande">
@@ -26,7 +26,7 @@
     </div>
     <div id="franja-Blanca">
       <img src="./assets/cadena logo.png" id="img-logo" alt="logo">
-    </div>
+    </div> 
     
     <input id="input1" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric" autofocus>    
     <input id="input2" type="text" class="numero" maxlength="1" oninput="moveCursorToEnd(this)" inputmode="numeric">    
@@ -61,10 +61,15 @@
       <span class="sub-arrow">
         <i class="fas fa-caret-down"></i>
       </span>
+
       <div id="padre-interfaz">
-        <div id="hijo-interaz-1" class="columna"></div>
+
+        <div id="video-cadena-offset">
+          <video class="lazy" src="./assets/Offset-9.mp4" autoplay loop muted playsinline></video>
+        </div> 
         <div id="hijo-interaz-2" class="columna"></div>  
       </div>
+
     </div>
     <div id="cont-videojuegos" style="display: none;">
       <div id="contMetrics" class="sinusoidales">
@@ -493,8 +498,8 @@
         <div  id="cont-Verticales1">
           <button class="boton-b btn-bloque" id="boton1">DESBOBINADOR</button><br><br>
           <div class="linea-vertical-33"></div>
-          <button id="boton2" class="boton-c" onclick="lubricacion('boton2','boton1')">Lubricacion<div class="linea-horizontal"></div></button>
-          <button id="boton3" class="boton-c" onclick="lubricacion('boton3','boton1')">Freno<div class="linea-horizontal"></div></button>
+          <button id="boton2" class="boton-c" onclick="lubricacion('boton2')">Lubricacion<div class="linea-horizontal"></div></button>
+          <button id="boton3" class="boton-c" onclick="lubricacion('boton3')">Freno<div class="linea-horizontal"></div></button>
           <button id="boton4" class="boton-c" onclick="lubricacion('boton4')">Bailarina<div class="linea-horizontal"></div></button>
           <button id="boton5" class="boton-c" onclick="lubricacion('boton5')">Ensarte<div class="linea-horizontal"></div></button>
           <button id="boton6" class="boton-c" onclick="lubricacion('boton6')">Regulación neumática<div class="linea-horizontal"></div></button>
@@ -790,7 +795,7 @@
     <div id="videosTraining" style="display: none;">
 
       <div class="videos-training" id="videos-training">
-        <video class="lazy" class="video-training" id="videoElement1" loop>
+        <video class="lazy video-training" id="videoElement1" loop>
           <source data-src="./assets/Bateria de entintado.mp4" type="video/mp4">
         </video>
         <video class="lazy video-training" id="videoElement4" loop>
@@ -895,7 +900,7 @@
         <button class="miBoton" id="btt5" onclick="listaEntrenamientosII('btt5')">fuera de rango</button>
         <button class="miBoton" id="btt6" onclick="listaEntrenamientosII('btt6')">Emulsion en mantilla</button>
         <button class="miBoton" id="btt7" onclick="listaEntrenamientosII('btt7')">Problemas de teñido</button>       
-        <button class="miBoton" id="btt8" onclick="listaEntrenamientosII('btt7')">Seleccionar archivo</button>       
+        <button class="miBoton" id="btt8" onclick="listaEntrenamientosII('btt8')">Seleccionar archivo</button>       
       </div>
 
       <canvas id="ctx"></canvas>
@@ -982,6 +987,7 @@
         </div>
       </div>
     </div>
+
     <div id="lubricacion">
       <div class="conti-boton" id="conti-boton-desb"> 
         <button class="butt-mautonomo-desbobina image-trainings hidden" id="btn1" onclick="LubricaDesbobinador('btn1')">REMALINER</button>
@@ -1005,6 +1011,7 @@
         </div>
       </div>
     </div>
+
     <div id="lubricantes" class="conte-lubrica ventana">
       <div id="child-move"></div>
       <div id="abuelo-lubrica" class="abuelo-lub">
@@ -1013,7 +1020,7 @@
           <div class="aceite-lub"><label class="labl-class" for="lubrica">GRASA</label></div>
         </div>
         <div id="padre-lubricante" class="contenedor-lubri">
-          <div class="lubricante"><video class="lazy" id="lubri-vid" autoplay loop muted>
+          <div class="lazy lubricante"><video class="lazy" id="lubri-vid" autoplay loop muted>
             <source data-src="./assets/Lubricacion.mp4" type="video/mp4">
           </video></div>
           <div class="lubricante"><label class="labl-lub" style="display: none;" for="lubrica">Boquilla principal</label></div>  
@@ -1030,7 +1037,9 @@
         </div>    
       </div>
     </div>
+
     <button id="butt-links-II" class="butt-links ventana" onclick="cerrarVentanasII()">Volver</button>
+    
     <div id="lubri-I">
 
       <div id="vertical-lineI"></div>
@@ -1052,6 +1061,7 @@
         <label class="labl-class labl-lub" style="display: none;" for="lubrica">Aceite SAE 70W</label>
       </div>
     </div>
+    
     <div id="lubri-II">
 
       <div class="linea-vertical-II" id="vertcal-line"></div>
@@ -1551,7 +1561,7 @@
         </video>
       </div> 
       <div id="conte-botDensitoII">
-        <button class="butt-prepre" id="troubleshoot" onclick="muestraVidPrisma('prisma-vid-II')">MONTAJES</button>
+        <button class="butt-prepre" id="troubleshoot" onclick="muestraVidPrisma('prisma-vid-II')">MONTAJES</button>  
         <button class="butt-prepre" id="def1" onclick="muestraVidPrisma('vid04')">ANGULACION</button>
         <button class="butt-prepre" id="def2" onclick="muestraVidPrisma('vid05')">INSOLADOR</button>
         <button class="butt-prepre" id="adtBut" onclick="muestraVidPrisma('vid06')">AYUDAS</button>
@@ -1677,16 +1687,19 @@
     </div>
     <div id="largoImpresion">
       <div id="contImgEntrenos" class="imgs-entrenos" style="display: flex;">  </div> 
+      
       <div id="linksMA">
         <div id="conte-links">
           <h2 style="margin-left: 20px;width: 517px;color: orange;">Largo de impresión ajustes preliminares</h2>
+
           <ol class="linksTraining" id="linkLis">
-            <li><a href="#" id="link1" class="colorClick" data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li><br>
-            <li><a href="#" id="link2" class="colorClick" data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li><br> 
-            <li><a href="#" id="link3" class="colorClick" data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li><br>  
-            <li><a href="#" id="link4" class="colorClick" data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad en INFEED</a></li><br>
-            <li><a href="#" id="link5" class="colorClick" data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto',)">Paso a paso puesta a punto</a></li><br>
-          </ol> 
+            <li><a href="#" id="link1" class="colorClick" data-imagen="imag11" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag1','link1','control-neumatico')">Asegurar PSI neumática</a></li>
+            <li><a href="#" id="link2" class="colorClick" data-imagen="imag22" onclick="imagenesPasoApaso('contImgEntrenos','padre-neumat','pneumatico','imag2','link2','vid-pneumatic')">Optimización al freno de bobina</a></li>
+            <li><a href="#" id="link3" class="colorClick" data-imagen="imag33" onclick="imagenesPasoApaso('contImgEntrenos','bailarina','vid-basculante','imag3','link3','contImaginario')">Ajuste parámetros en basculante</a></li>
+            <li><a href="#" id="link4" class="colorClick" data-imagen="imag44" onclick="imagenesPasoApaso('contImgEntrenos','','contBotInfeed','imag4','link4','rodillo-infeed')">Calibración / Limpieza / Rugosidad en INFEED</a></li>
+            <li><a href="#" id="link5" class="colorClick" data-imagen="imag55" onclick="imagenesPasoApaso('','','contBotInfeed','','link5','puesta-punto')">Paso a paso puesta a punto</a></li>
+        </ol>
+        
         </div>        
       </div>
     </div> 
@@ -1894,31 +1907,31 @@
       <div id="conte-secundario">
         <div class="cont-user"  id="icon-carlos">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img1" onclick="resultadosEmpleado('icon-carlos','updateCarlos','img1','true')" alt="icono">
-          <label for="nombres">Carlos Mario Sanchez</labelclass=>  
+          <label class="lblEmpleado" for="nombres">Carlos Mario Sanchez</label>  
         </div>
         <div class="cont-user" id="icon-andres">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img2" onclick="resultadosEmpleado('icon-andres','updateAndres','img2','true')" alt="icono">
-          <label for="nombres">Andres Felipe Montoya</labelclass=>
+          <label class="lblEmpleado" for="nombres">Andres Felipe Montoya</label>
         </div>
         <div class="cont-user" id="icon-jorge">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img3" onclick="resultadosEmpleado('icon-jorge','updateJorge','img3','true')" alt="icono">
-          <label for="nombres">Jorge Alberto Lozada</label>
+          <label class="lblEmpleado" for="nombres">Jorge Alberto Lozada</label>
         </div>
         <div class="cont-user" id="icon-jesus">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img4" onclick="resultadosEmpleado('icon-jesus','updateJesus','img4','true')" alt="icono">
-          <label for="nombres">Jesus Norvey Cordoba</label>
+          <label class="lblEmpleado" for="nombres">Jesus Norvey Cordoba</label>
         </div>
         <div class="cont-user" id="icon-sandra">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img5" onclick="resultadosEmpleado('icon-sandra','updateSandra','img5','true')" alt="icono">
-          <label for="nombres">Sandra Milena Alvarez</label>
+          <label class="lblEmpleado" for="nombres">Sandra Milena Alvarez</label>
         </div>
         <div class="cont-user" id="icon-mario">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img6" onclick="resultadosEmpleado('icon-mario','updateMario','img6','true')" alt="icono">
-          <label for="nombres">John Mario Mira Pineda</label>
+          <label class="lblEmpleado"   for="nombres">John Mario Mira Pineda</label>
         </div>
         <div class="cont-user" id="icon-ana">
           <img data-src="./assets/icono1.jpg" class="lazy icono-user" id="img7" onclick="resultadosEmpleado('icon-ana','updateAna','img7','true')" alt="icono">
-          <label for="nombres">Ana Maria Duarte Pineda</label>
+          <label class="lblEmpleado" for="nombres">Ana Maria Duarte Pineda</label>
         </div>
       </div>
 
@@ -2444,7 +2457,7 @@
       <li onclick="listaEntrenamientosII('archivo')">Volver</li>
     </ul>
     <div id="metas-diarias">
-      <ol>
+      <ol class="listado-actividades">
         <li><span class="indice">1.</span> Establece objetivos claros y alcanzables para cada día.</li>
         <li><span class="indice">2.</span> Prioriza las tareas más importantes primero.</li>
         <li><span class="indice">3.</span> Divide las metas grandes en pasos más pequeños y manejables.</li>
@@ -2478,6 +2491,67 @@
         <li><span class="indice">31.</span> Recuerda que cada día es una nueva oportunidad para mejorar.</li>
       </ol>
     </div>
+
+    <div id="contenedor-2" class="calendar-container">
+      <h2 class="month-title">March</h2>
+      
+      <div class="calendar-grid">
+        <div class="day-header">Su</div>
+        <div class="day-header">Mo</div>
+        <div class="day-header">Tu</div>
+        <div class="day-header">We</div>
+        <div class="day-header">Th</div>
+        <div class="day-header">Fr</div>
+        <div class="day-header">Sa</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div> 
+        <div class="day-cell">1</div>
+        <div class="day-cell">2</div>
+        <div class="day-cell">3</div>
+        <div class="day-cell">4</div>
+        <div class="day-cell">5</div>
+        <div class="day-cell">6</div>
+        <div class="day-cell">7</div>
+        <div class="day-cell">8</div>
+
+        <div class="day-cell">9</div>
+        <div class="day-cell">10</div>
+        <div class="day-cell">11</div>
+        <div class="day-cell">12</div>
+        <div class="day-cell">13</div>
+        <div class="day-cell">14</div>
+        <div class="day-cell">15</div>
+
+        <div class="day-cell">16</div>
+        <div class="day-cell">17</div>
+        <div class="day-cell">18</div>
+        <div class="day-cell">19</div>
+        <div class="day-cell">20</div>
+        <div class="day-cell">21</div>
+        <div class="day-cell">22</div>
+
+        <div class="day-cell">23</div>
+        <div class="day-cell">24</div>
+        <div class="day-cell">25</div>
+        <div class="day-cell">26</div>
+        <div class="day-cell">27</div>
+        <div class="day-cell">28</div>
+        <div class="day-cell">29</div>
+
+        <div class="day-cell">30</div>
+        <div class="day-cell">31</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
     <div id="calendario-mes">
       <div class="semana">
         <div class="dia">1</div>
@@ -2603,7 +2677,7 @@
         <div class="section" onclick="iniciaAnimaciones()">Consola</div>
         <div class="section" onclick="cmykFlotante()">CMYK</div>
         <div class="section" onclick="rgbFlotante()">RGB</div>
-        <div class="section" onclick="traerAlmacenObjetos()">Objeto Global</div>
+        <div class="section" onclick="borrarESTO()">Objeto Global</div>
 
       </div>   
       <div class="digital-clock" id="clock">  
@@ -3047,7 +3121,7 @@
       <span id="alerta-ocho"class="alerta-normal cerrar">
         Ya existe un cliente con este nombre
       </span>    
-      <span class="alerta-botones cerrar">
+      <span id="span-index" class="alerta-botones cerrar">
         Seleccione el color para perfilar   
       </span>
       <span class="alerta-perfil cerrar"> 
@@ -3088,6 +3162,9 @@
 
       <div id="padre-rgb">
         <div class="esquina esquina-rgb"></div>
+
+        <span id="color-nombre" class="nombre-cliente"></span>
+
         <div id="colorDisplay"></div>   
                  
         <div id="padre-controles" class="slider">
@@ -3216,22 +3293,30 @@
         <span id="span-crear">Creacion de perfil</span>
         <span id="span-nombres">Nombre perfil / color</span>
   
-        <input type="text" id="nombre-Perfil" placeholder="Crear perfil nuevo">
-        <input type="text" id="nombre-Perfil-existe" placeholder="Buscar en BD">
+        <input type="text" id="nombre-Perfil" placeholder="Crear perfil">
+        <input type="text" id="nombre-Perfil-existe" placeholder="Buscar Perfil">
 
   
         <div class="btns-crear">
 
           <div id="first-span" class="eltos-crear">
-            <span>Guardar:</span>    
-            <span>rgba :</span>    
+            <span>Guardar:</span>
+            <span>rgba :</span>  
             <span>cmyk :</span>  
           </div>
 
           <div id="first-butts" class="eltos-crear">
             <button id="save-tecnology"></button>
             <button id="btn-crea-rgb" onclick="alternarTeccnologia('rgb')"></button>
-            <button id="btn-crea-cmyk" onclick="alternarTeccnologia('cmyk')"></button>  
+            <button id="btn-crea-cmyk" onclick="alternarTeccnologia('cmyk')"></button>
+          </div>
+
+          <div id="second-span" class="eltos-crear">
+            <span>Ejecutar:</span>
+          </div>
+
+          <div id="execute-button" class="eltos-crear">
+            <button id="btn-execute" onclick="pintarColor()"></button>
           </div>
 
         </div>
@@ -3244,6 +3329,11 @@
 
       
       <div id="control-panel-rgb" class="panel-color">
+
+        <div id="color-composition-header-rgb">
+          <span>Composición del color</span>
+        </div>
+
         <div id="lbl-control-rgb">    
           <div id="control-rgb-lbl">
             <label>R :</label>
@@ -3268,7 +3358,13 @@
     
       </div>
     
+      
       <div id="control-panel-cmyk" class="panel-color">
+  
+        <div id="color-composition-header">
+          <span>Composición del color</span>
+        </div>
+      
         <div id="lbl-control-cmyk">          
           <div id="control-cmyk-lbl">
             <label>C :</label>
@@ -3277,7 +3373,7 @@
             <label>K :</label>
             <label>W :</label>
           </div>
-
+      
           <div id="control-cmyk-inpt">
             <input type="number" id="input-c" min="0" max="100" value="0">
             <input type="number" id="input-m" min="0" max="100" value="0"> 
@@ -3285,15 +3381,17 @@
             <input type="number" id="input-k" min="0" max="100" value="0"> 
             <input type="number" id="input-a" min="0" max="100" value="0">
           </div>
-
         </div>
-
+      
         <div id="control-btn-cmyk">
           <button id="animate-btn-cmyk">Actualizar color</button>
           <button id="exit-btn" class="alterna-panel" onclick="alternarOcultarBotones('cmyk')">Salir</button>
         </div>
-
+      
       </div>
+      
+
+
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--LIBRERIA DE GRAFICOS-->

@@ -91,18 +91,18 @@ h1, h2, h3 {
   width:39.7vw;
   height:6.5vh;
   text-align: center;
+  font-size: 0.7em;
   align-items: center;
   cursor: pointer;
   justify-content: center;
-  background-color:#FF1836;;
-  font-size:1vw;
-  color: white;
+  /* background-color: rgb(0, 255, 0); */
+  background-color:  rgb(138, 149, 151);
+  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8); /* Sombreado interno para volumen */
+  color: black;
   border-radius: 7px;
   transition: transform 0.1s;
 }
 .boton-a:hover,
-.boton-b:hover,
-.boton-c:hover,
 .boton-e:hover,
 .boton-f:hover,
 .boton-g:hover,
@@ -110,6 +110,13 @@ h1, h2, h3 {
 transform: scale(1.1);
 background:  blue;
 color: white;
+}
+#toggleVideoButton:hover,
+.boton-b:hover,
+.boton-c:hover{
+  transform: scale(1.1);
+  background:  blue;
+  color: white;
 }
 .boton-d:hover {
   transform: scale(1.1);
@@ -225,6 +232,7 @@ color: white;
   height: 6%;
   background-color: #333333;
   display: none;
+  z-index: 200;
 }
 #search-form{
   position:relative;
@@ -292,18 +300,19 @@ color: white;
 #butt-Institucional.big-buttonII {
   transform: scale(30);
 }
-#padre-interfaz{
+#padre-interfaz {
   position: absolute;
-  left: 33%;
+  left: 22%;
   top: 32%;
-  display: flex;
-  flex-direction: row;
-  background-color: #000;  
-  width:33%;
+  display: grid;                      /* Mantener visible */
+  grid-template-columns: 1fr 1fr;     /* Dos columnas iguales */
+  background-color: #000;
+  width: 50%;
   height: 62%;
-  border: 0.1px solid rgb(0,255,0);
+  border: 0.1px solid rgb(0, 255, 0);
   border-radius: 13px;
-  display: none;
+  box-sizing: border-box;            /* Para que el padding y el border no rompan el grid */
+  overflow: hidden;                  /* Si algo sobresale */
 }
 #agrupaOblicuos-XI{       
   position: absolute;
@@ -312,7 +321,7 @@ color: white;
   align-items: center;
   width: 100%;
   top: 63%;
-  left: 4%;
+  left: 7%;
   gap: 55px;
   transform: translateY(-50%);
   z-index: 2;   
@@ -474,11 +483,13 @@ color: white;
   left: 0;
   height:6.5vh;
   width:9.2vw;
-  background: linear-gradient(45deg,  rgb(255, 24, 55) 55%,  rgba(255, 24, 55, 0.33) 99%);                       
-  color: white;
+  /* background-color: rgb(0, 255, 0); */
+  background-color:  rgb(138, 149, 151); 
+  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8);
+  color: black;
   border-radius: 7px;
   margin-right:1.9vw;
-  font-size: 1vw;
+  font-size: 0.7em;
   cursor: pointer;
   text-align: center;
   transition: transform 0.1s; 
@@ -774,15 +785,14 @@ color: white;
 }
 .boton-e,
 .boton-c {
-  position: relative;
+  position: relative;  
   display: flex;
   align-items: center;
   height:6vh;
   width:6.7vw;
-  background: linear-gradient(45deg, rgba(250, 250, 1) 15%,  rgb(27, 27, 28, 0.777) 85%);  
-  font-size: 52%;
-  color: rgb(0,0,77);
-  font-weight: bold;
+  background: linear-gradient(to bottom,#008b8b , #005f5f);
+  font-size: 0.6em;
+  color: #ffffff;
   border-radius: 5px;
   margin-right:1.6vw;
   margin-bottom:2.3vh;
@@ -796,7 +806,7 @@ color: white;
   height:6.5vh;
   width:8.2vw;
   background: linear-gradient(45deg, rgba(0,250,0) 15%,  rgb(0,255,0,0.077) 85%);  
-  font-size:0.9vw;                  
+  font-size:0.8vw;                  
   color: rgb(0,0,0);
   border-radius: 7px;
   left: 0;
@@ -935,13 +945,16 @@ width:447px ;
 }
 .butt-prepre-d:hover{
   transform: scale(1.3);
-  background-color: rgb(0, 255, 0);
-  color: black;
+  /* background-color: rgb(0, 255, 0);
+  color: black; */
+  background: linear-gradient(to bottom, #00b7c2, #007f89); 
+  color: #ffffff;
+  
 }
 .butt-prepre:hover {
-  transform: scale(1.3);
-  background-color: rgb(255, 255, 0);
-  color: black;
+  transform: scale(1.2);
+  background: linear-gradient(to bottom, #00b7c2, #007f89);
+  color: #ffffff;
 }
 .butt-prepre-d::before{
   content: "";
@@ -1773,7 +1786,7 @@ width:447px ;
 #textToColor {
   position: relative;
   color: white;
-  transition: color 0.2s;
+  transition: color 0.2s; 
   cursor: pointer;
   width:100%;
 }
@@ -1807,7 +1820,7 @@ width:447px ;
   display:flex; 
   flex-direction: column;
   background-color:#333333;
-  width:34vw;
+  width:29vw;
   height:47vh;
   left: 0%;
   margin-top:-6%;
@@ -1820,10 +1833,26 @@ width:447px ;
   top: 17PX;
   display: none;
 }
+.linksTraining {
+  list-style: decimal; /* Mantiene el índice numérico */
+  border-radius: 13px;
+}
+.linksTraining li {
+  color: rgba(255,255,255,0.8);
+  transition: color 0.3s ease;
+  margin-top: 20px; /* Agrega separación entre los elementos */
+}
+
 .linksTraining li a{
-  color: white; /*Cambiar el color del texto a blanco*/
-  cursor: pointer; /*Cambiar el cursor a una mano */
-  font-size: 1.7vw;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.linksTraining li:hover,
+.linksTraining li:hover a {
+    color: orange; /* Cambia el color del índice y del texto */
 }
 header {
   background-color: #333;
@@ -1835,7 +1864,7 @@ header {
 #bot-atras1::before,
 #bot-atras2::before,
 #bot-atras3::before,
-#bot-atras4::before,
+#bot-atras4::before,               
 #bot-atras5::before,
 #bot-atras6::before,
 #bot-atras7::before,
@@ -2294,19 +2323,12 @@ h6{
   color: rgb(0,0,33);
   font-size:0.6em;
   cursor: pointer; 
-  /* Efecto de profundidad (tridimensional) */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4), 
-  inset 0px -3px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 /* Efecto de presionado */
-#miBoton:active {
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4), 
-  inset 0px 3px 3px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%) translateY(2px) translateX(2px); /* Mueve el botón hacia abajo */
-}
 .miBoton:hover {
-  background-color:rgb(0,255,0);
-  color: black;
+  background-color: #4CAF50; /* Verde más suave */
+  color: white;
 }
 .inpt-class{
   border-radius: 7px;
@@ -2822,12 +2844,12 @@ h6{
   position: absolute;
   display: flex;
   top: 4%;
-  left: 27%;
+  left: 32.5%;
   width: 60%;
   font-family: "GothamRounded", sans-serif;
   text-align: center;
   color: rgb(255, 204, 0);
-  font-size:2vw; 
+  font-size:1.5vw; 
 }
 #conte-secundario{
   position: absolute;
@@ -2905,9 +2927,10 @@ elemento.visible {
   border-radius: 9px;
   margin-bottom: 4px;
 }
+.cont-user .lblEmpleado,
 .cont-userI .lblNombres{
   position: relative;
-  color: yellow;
+  color: #cccccc;
   font-family: "GothamRounded", sans-serif;
   align-items: center;
   justify-content: center; 
@@ -3233,8 +3256,8 @@ elemento.visible {
 }
 .butt-mautonomo:hover {
   transform: scale(1.2);
-  background-color:rgb(255,255,0);
-  color: black;
+  background: linear-gradient(to bottom, #00b7c2, #007f89);
+  color: #ffffff;
 }
 #cont-arriba-freno {
   position: absolute;
@@ -4077,13 +4100,12 @@ h4{
 }
 .columna {
   position: relative;
-  width: calc(55% - 20px);
-  margin: 7px; 
-  border: 0.1px solid rgb(0,255,0);
-  border-radius: 13px;
+  width: 100%;
   height: 97%;
+  margin: 7px 7px;
+  border: 0.1px solid rgb(0, 255, 0);
+  border-radius: 13px;
   box-sizing: border-box;
-  float: left;
 }
 #contenedor-principal{
   position: relative;
@@ -5095,7 +5117,7 @@ input.numero:focus {
   position: absolute;
   display: flex;
   left: 19%;
-  top: 47.7%;
+  top: 45.3%;
   width: 31vw;
   height: 1px;
   object-fit: fill;
@@ -5931,6 +5953,9 @@ height:21%;
   height: 33vh;
   margin: auto;
   display: none;
+  font-family: Arial, sans-serif;
+  color: rgba(255,255,255,0.5);
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
 }
 #metas-diarias{
   position:absolute;
@@ -5947,7 +5972,8 @@ height:21%;
 }
 #metas-diarias li {
   opacity: 0;
-  color: rgb(255,255,220);
+  color: whitesmoke;
+  background-color: rgb(0,0,17);
   transition: opacity 0.5s ease;
 }  
 #metas-diarias li.visible {
@@ -5970,17 +5996,20 @@ height:21%;
   display:none;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ccc;
   cursor: pointer;
   font-size: 0.9em;
   font-family: Arial, sans-serif;
   border-radius: 5px;
-  color: rgb(0, 191, 255);
-  background-color: rgb(0, 0, 50);
+  color: #f0f0f0;
+  /* background-color: rgb(0, 0, 50); */
   font-weight: bold;
   box-sizing: border-box;
   height:100%;
   width:14.2%;
+
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
 }  
 .vacio {
   background-color: #f0f0f0; /* Color para los días vacíos */
@@ -6070,8 +6099,8 @@ height:21%;
   left:64.8vw;
   height: 4vh;
   width: 6vw;
-  background-color: rgb(0,0,50); 
-  color: rgb(0, 191, 255);
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+  color: #f0f0f0;
   font-family: "GothamRounded", sans-serif;
   font-size: 0.9em;
   border: 1px solid #ccc;
@@ -6101,6 +6130,10 @@ height:21%;
   top:26vh;
   height: 3vh;
   width: 20vw;
+}
+.actividades:hover{
+  background-color: rgb(0,255,0);
+  color: rgb(0, 0, 17);
 }
 #actividad-limpieza{
   left:70vw;

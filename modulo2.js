@@ -2087,7 +2087,7 @@ var chart12II = new Chart(miCanvas11II, {
     }
   }
 });
-const zoomableImages = document.querySelectorAll('.image-trainings')
+/* const zoomableImages = document.querySelectorAll('.image-trainings')
 const sensitivity = 5; 
 zoomableImages.forEach((zoomableImage) => {
   zoomableImage.addEventListener('mouseenter', () => {
@@ -2103,7 +2103,7 @@ zoomableImages.forEach((zoomableImage) => {
     zoomableImage.style.transition = 'transform 0.1s ease'
     zoomableImage.style.transform = 'translate(0, 0) scale(1)'
   })
-})
+}) */
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const suggestionsList = document.getElementById('suggestions')
@@ -2403,7 +2403,7 @@ function moveScroll(container) {
 }
 function scrollToTop(element) {
   const startTime = performance.now();
-  const duration = 1500; 
+  const duration = 500; 
   const startScrollTop = element.scrollTop;
   const endScrollTop = 0;  
   function animate(time) {
@@ -4978,6 +4978,7 @@ function muestraMenu(){
   document.getElementById('segundaLista').style.display='block'
 }
 let intervalEnEjecucion = false;
+
 function openGraphics(elementId){
   if(turnBlock === false){
     turnBlock = true
@@ -5046,7 +5047,7 @@ function openGraphics(elementId){
       }
     }
     container1.style.display='grid'
-    document.getElementById('calendario-mes').style.display='none'
+    document.getElementById('contenedor-2').style.display='none'
 
     const elementosLi = document.querySelectorAll("#metas-diarias li")
     elementosLi.forEach((li, index) => {
