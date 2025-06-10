@@ -4895,7 +4895,6 @@ document.getElementById('textToColor').addEventListener('mouseenter', () => {
     expandHeight('linkList')    
   }
 }
-
 );
 let intervaloAltura = null; 
 let intervaloAlturaI = null;

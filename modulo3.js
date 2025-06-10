@@ -15,23 +15,19 @@ document.addEventListener('keydown', function(event) {
             elemento.style.setProperty('opacity', '1', 'important');
           });
         }
-
-
-
         document.addEventListener("contextmenu", (event) => {
           event.stopPropagation(); 
         }, true);
       break;
       case 'X':
         Geometria()
-
       break;                  
     }
   }
 });
 function Geometria() {
   console.clear();  
-  var contiBoton = document.getElementById('span-index');  
+  var contiBoton = document.getElementById('img-cuchilla-1');  
   var rect = contiBoton.getBoundingClientRect(); 
   var topPosition = rect.top;  
   var leftPosition = rect.left;  
