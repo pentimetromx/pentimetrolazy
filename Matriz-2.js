@@ -87,7 +87,7 @@ var apliqueII = document.getElementById('aplique_2')
 
 var posicionPantalla = document.getElementById('positionDisplay')              
 var positionDisplayIII = document.getElementById('positionDisplay_3')
-var allContenedores = ['visor-tools','imagenes-sheeter','perfiles-color','contenedor-2','control-panel-rgb','control-panel-cmyk','padre-rgb','padre-cmyk','simulador','conte-butts-graphs','gran-cortina','contraseña','input1','input2','input3','input4','tareas-lubricacion','dynamic-graphs-II','tareas-limpieza','dia','actividad-lubricacion','actividad-limpieza','meses','metas-diarias','calendario-mes','ventana-lateral','etqts-festo','vidColor-II','contenedor_padre_3','contenedor_padre_2','contenedor_padre','butt-links-I','butt-links-II','butt-links-III','buscador','search-form','butt-links','imagenes-plancha','uniteñido','video-placa','placa','imagen1','imagen2','imagen3','imagen4','imagenes-impresor','video-impresor','padre-naranja','tendencia-naranja','abuelo-variable','planetary','padre-variable','cont-variable','abuelo-plana','padre-plana','cont-plana','contenedorElementos','general','frec-lubrica','padre-grilla','grilla-durezas','abuelo-entintadores','padre-entintadores','abuelo-grilla-dureza','cont-arriba-rodillos','lubricantes','abuelo-cuadricula','abuelo-teñido','abuelo-grilla','abuelo-lubrica','padre-lubricante','freno-II','conti-boton-freno','cont-arriba','conti-boton-teñido','teñido-I','teñido-II','vidTeñido','teñido-vid','cont-arriba-freno','inicio','padre-lubrica','bis-abuelo','image-background','def2','over_size','over_side','equalizer','nicho_spans','padre','patern','first_half','cortina','second_half','wall_street_II','vid_festo','instrucciones_manometro','positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','linkList','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','abandonar-perfiles','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','butt-repuestos','images-entintador','toggleVideoButton','videoElement1','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','frame-rollers','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPortManta','contImpresor','contImgDistribuidor','contImgEntintador','cont-variable','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','video-background','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','uniTeñidos','rodilleria', 'cont-user','cont-userI','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6', 'colorCMYK', 'colorDisplay','container-slider','padre-controles','alerta-perfiles', 'cliente-nombre', 'bot-revertir', 'formulario-perfiles','boton-reseteo','boton-perfiles','unit-job-track','lista-lineas','lista-clientes','job-files','clock','texto-perf-indiv','bot-modific','blur-interfaz-perfiles','cont-modificadores','info-perfiles','admin-perfiles','cronometro','cronos','inerfaz-ajuste-fino','perfil-individual','control-perfiles','interfaz-registro','perfiles-entintado','perfil-entintado','interfaz-perfiles','water-background','segunda-pantalla','contenedor-padre','conte-colors','sombra','control-panel','contiene-lineas','triada-videos','trinquete','home-gym','tinta_segmento','trinquete-multi','trinquete-rodillo-tintero-v','trinquete-rodillo-tintero','tintero-interior','tintero-palanca','dos-videos','video-doctor-blade','video-insolacion','video-desliza-plancha','ajuste-corte','corte-oscilacion','corte-ajuste','video-graduar-sheeter','video-cadena-offset','video-completo','video-manta-capas','video-manta-enrolla','video-la-manta','video-manta-dos','video-manta-render','video-cuchilla-1','video-cuchilla','video-cuchilla-1','video-cuchilla','imagenes-sheeter','contenedor-1','contenedor-2','image-uno','image-tres','image-cuatro','contenedor-sheeter','formulario-cuenta']
+var allContenedores = ['visor-tools','butts-simulador','contenedor-botonera','sections-fondo','sections-fondo','imagenes-sheeter','container01','perfiles-color','contenedor-2','control-panel-rgb','control-panel-cmyk','padre-rgb','padre-cmyk','simulador','conte-butts-graphs','gran-cortina','contraseña','input1','input2','input3','input4','tareas-lubricacion','dynamic-graphs-II','tareas-limpieza','dia','actividad-lubricacion','actividad-limpieza','meses','metas-diarias','calendario-mes','ventana-lateral','etqts-festo','vidColor-II','contenedor_padre_3','contenedor_padre_2','contenedor_padre','butt-links-I','butt-links-II','butt-links-III','buscador','search-form','butt-links','imagenes-plancha','uniteñido','video-placa','placa','imagen1','imagen2','imagen3','imagen4','imagenes-impresor','video-impresor','padre-naranja','tendencia-naranja','abuelo-variable','planetary','padre-variable','cont-variable','abuelo-plana','padre-plana','cont-plana','contenedorElementos','general','frec-lubrica','padre-grilla','grilla-durezas','abuelo-entintadores','padre-entintadores','abuelo-grilla-dureza','cont-arriba-rodillos','lubricantes','abuelo-cuadricula','abuelo-teñido','abuelo-grilla','abuelo-lubrica','padre-lubricante','freno-II','conti-boton-freno','cont-arriba','conti-boton-teñido','teñido-I','teñido-II','vidTeñido','teñido-vid','cont-arriba-freno','inicio','padre-lubrica','bis-abuelo','image-background','def2','over_size','over_side','equalizer','nicho_spans','padre','patern','first_half','cortina','second_half','wall_street_II','vid_festo','instrucciones_manometro','positionDisplay_3','display_2','container_interfaz_2','butts_interfaz_2','container_interfaz_3','butts_interfaz_3','display_3','subtitulo-I','display','container_interfaz','butts_interfaz','interfaz','conte-ayudas','ayudas-video','imagen-ayudas','logo-grande','agrupaOblicuos-XI','titulo-ancho','descripcion-I','ventana-lateral','linkList','contenedor','padre-circle','circle','options','nicho-videos','primerCont','vidColor','vid01','vidCicodelia','padre-interfaz','hijo-interaz-1','hijo-interaz-2','abandonar-perfiles','MiGrafica9-II','contLineas-II','contLineas','title-interfaz','vidElem','kaizen-propuestos','canvasContainer3','troubleshooting','conti-boton','canvasContainer2','conteneMantaut','MiGrafica','contImaginario-II','contImaginario-III','padre-1','padre-2','imag3','imag4','contImaginario','bailarina','pneumatico','padre-neumat','largoImpresion','contImgEntrenos','imag1','imag2','linksMA','linkLis','sitio-en-construccion','curado-uv','video-container','conti-video-background','video-background-planas','contenedor-9','conti-video-bancada','plate-smed-I','contVid-smed-I','butt-repuestos-III','conti-boton-repuestos-III','imgsIsopropil','contenedor-8','bancada','contVid-smed','contenedor-7-VII','butt-repuestos-II','butt-repuestos-I','conti-boton-repuestos-II','conti-boton-repuestos-I','contenedor-7-VI','sector-smed','sector-entintador','sector-distribuidor','conti-video-smed','conti-video-entintador','conti-video-distribuidor','conti-boton-repuestos','contenedor-7-V','plate-smed','contenedor-7','butt-repuestos','images-entintador','toggleVideoButton','videoElement1','videoElement1-II','video-entintado','videos-training','videoElement2','contenedor-7','contene-images','cuartoContDensito','tercerContDensito','segundoContDensito','contDensito','imgs-densito','conte-botDensito','conte-botDensitoII','imgs-prepress','frame-rollers','links-inicialesI','linkListI','links-iniciales','impresorImg','agrupaOblicuos-IX','imagenes-manta','cont-titulo-operacion','cont-titulo-calidad','cont-titulo-comercial','cont-titulo-admin','control-neumatico','rodillo-infeed','contBotCasos','puesta-punto','mejoras-kai','casos-kaizen','kaizen-propuestos','toyota-kaizen','toyota-kaizen-antes','materiales-kaizen','planos-kaizen','conti-boton','conti-boton-kaizen','conti-boton-planos','kaizenCont','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','verticales-alimentador','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','pantalla-tintero','cont-links','imgTorre','imgsRepuestos','agrupaOblicuos-II','pantalla-frente','pantalla-mandos','pantalla-servicio','pantalla-atras','videosTraining','contPortPlaca','contPortManta','contImpresor','contImgDistribuidor','contImgEntintador','cont-variable','bancada-torre-II','bateria-entintado-II','cont-secador','sitema-humedad','pre-prensa','agrupaOblicuos-placa','densitometria','contImagGraf','contImagNeg','lubricacion','title-interfaz','iconos','canvasContainer4','canvasContainer4-II','canvasContainer5','canvasContainer5-II','canvasContainer6','canvasContainer6-II','canvasContainer7','canvasContainer7-II','canvasContainer8','canvasContainer8-II','canvasContainer9','canvasContainer9-II','conte-secundario','contenedor-vertical','franja-Blanca','cont-titulo','videoBackground','video-background','videoBackgroundII','lubri-II','lubri-I','images-smed','images-distribuidor','lubri-III','freno','uniTeñido','uniTeñidos','rodilleria', 'cont-user','cont-userI','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6', 'colorCMYK', 'colorDisplay','container-slider','padre-controles','alerta-perfiles', 'cliente-nombre', 'bot-revertir', 'formulario-perfiles','boton-reseteo','boton-perfiles','unit-job-track','lista-lineas','lista-clientes','job-files','clock','texto-perf-indiv','bot-modific','blur-interfaz-perfiles','cont-modificadores','info-perfiles','admin-perfiles','cronometro','cronos','inerfaz-ajuste-fino','perfil-individual','control-perfiles','interfaz-registro','perfiles-entintado','perfil-entintado','interfaz-perfiles','water-background','segunda-pantalla','contenedor-padre','conte-colors','sombra','control-panel','contiene-lineas','triada-videos','trinquete','home-gym','tinta_segmento','trinquete-multi','trinquete-rodillo-tintero-v','trinquete-rodillo-tintero','tintero-interior','tintero-palanca','dos-videos','video-doctor-blade','video-insolacion','video-desliza-plancha','ajuste-corte','corte-oscilacion','corte-ajuste','video-graduar-sheeter','video-cadena-offset','video-completo','video-manta-capas','video-manta-enrolla','video-la-manta','video-manta-dos','video-manta-render','video-cuchilla-1','video-cuchilla','video-cuchilla-1','video-cuchilla','imagenes-sheeter','contenedor-1','contenedor-2','image-uno','image-tres','image-cuatro','contenedor-sheeter','formulario-cuenta']
 var linksIniciales = ['links-inicialesI','links-iniciales']
 var allContIzquierdos = ['desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador']
 var contenedoresHijo = ['contImgDistribuidor','rodillForma','portaPlancha','portaMantilla','cilindroImpresor']
@@ -205,11 +205,25 @@ idsArray.push("cont-titulo")
 idsArrayEliminados.push('cont-titulo')
 const IDSARRAYCICODELIA = ['first_half','cortina','second_half','nicho_spans','wall_street_II','equalizer','padre','patern']
 const masterKey = [4];
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));  
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar sliders CMYK
+  initSliderCMYK("slid-cian", "c-span-", "C");
+  initSliderCMYK("slid-magenta", "m-span", "M");
+  initSliderCMYK("slid-amarillo", "y-span", "Y");
+  initSliderCMYK("slid-negro", "k-span", "K");
+  initSliderCMYK("slid-blanco", "w-span", "A");
+  updateColorCMYK();
+  // Inicializar sliders RGB
+  initSliderRGB("slid-rojo-rgb", "c-span-rgb", "R");
+  initSliderRGB("slid-verde-rgb", "m-span-rgb", "G");
+  initSliderRGB("slid-azul-rgb", "y-span-rgb", "B");
+  initSliderRGB("slid-blanco-rgb", "w-span-rgb", "W");
+  updateColorRGB();
+  // Lazy loading de imágenes
+  const lazyImages = Array.from(document.querySelectorAll("img.lazy"));
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
+    let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
@@ -218,23 +232,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     });
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
+    lazyImages.forEach(lazyImage => lazyImageObserver.observe(lazyImage));
   } else {
-    lazyImages.forEach(function(lazyImage) {
+    lazyImages.forEach(lazyImage => {
       lazyImage.src = lazyImage.dataset.src;
     });
   }
-
-  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));  
+  // Lazy loading de videos
+  const lazyVideos = Array.from(document.querySelectorAll("video.lazy"));
   if ("IntersectionObserver" in window) {
-    let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
+    let lazyVideoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           let lazyVideo = entry.target;
           for (let source of lazyVideo.children) {
-            if (typeof source.tagName === "string" && source.tagName === "SOURCE") {
+            if (source.tagName === "SOURCE") {
               source.src = source.dataset.src;
             }
           }
@@ -244,39 +256,578 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     });
-    lazyVideos.forEach(function(lazyVideo) {
-      lazyVideoObserver.observe(lazyVideo);
-    });
+    lazyVideos.forEach(lazyVideo => lazyVideoObserver.observe(lazyVideo));
   } else {
-    lazyVideos.forEach(function(lazyVideo) {
+    lazyVideos.forEach(lazyVideo => {
       for (let source of lazyVideo.children) {
-        if (typeof source.tagName === "string" && source.tagName === "SOURCE") {
+        if (source.tagName === "SOURCE") {
           source.src = source.dataset.src;
         }
       }
       lazyVideo.load();
     });
   }
-  /* **************************************************************************************************************************** */
-  var buttons = document.querySelectorAll('.Bot-inicio3,.Bot-inicio7');
-  buttons.forEach(function(currentButton) {
-    currentButton.addEventListener("mouseover", function () {
-      currentButton.style.backgroundColor = "red"; 
-      setTimeout(function () {
-        currentButton.style.backgroundColor = "";
+  // Hover en botones
+  const buttons = document.querySelectorAll('.Bot-inicio3, .Bot-inicio7');
+  buttons.forEach(button => {
+    button.addEventListener("mouseover", () => {
+      button.style.backgroundColor = "red";
+      setTimeout(() => {
+        button.style.backgroundColor = "";
       }, 200);
     });
   });
-  /* **************************************************************************************************************************** */
-  var toggleVideoButton = document.getElementById("toggleVideoButton");
-  var video = document.getElementById("videoElement");
-
+  // Botón para pausar el video
+  const toggleVideoButton = document.getElementById("toggleVideoButton");
+  const video = document.getElementById("videoElement");
   if (toggleVideoButton && video) {
-    toggleVideoButton.addEventListener("click", function() {
-      video.pause();
-    });
+    toggleVideoButton.addEventListener("click", () => video.pause());
   }
-  /* **************************************************************************************************************************** */
+
+
+  // elementosDinamicamente(PADRE , CANTIDAD , CLASE , TEXTO ENTRE DIVS , span); 
+  elementosDinamicamente('tanque-solucion', 100,'lineas-solucion');
+  AelementosDinamicamente('tanque-tinta', 100, 'lineas-tinta');
+  elementosDinamicamente('puntos', 22,'punto');
+  elementosDinamicamente('indexado', 22,'indexar',1);
+  elementosDinamicamente('perfil-barniz', 22,'grilla-barniz','','grilla');
+  elementosDinamicamente('perfil-especial', 22,'grilla-especial','','grilla');
+  elementosDinamicamente('perfil-amarillo', 22,'grilla-amarillo','','grilla');  
+  elementosDinamicamente('perfil-magenta', 22,'grilla-magenta','','grilla');
+  elementosDinamicamente('perfil-azul', 22,'grilla-azul','','grilla');
+  elementosDinamicamente('perfil-negro', 22,'grilla-negro','','grilla');
+  elementosDinamicamente('conte-colors',8,'celda');
+  clasePadreCantidadClaseTextId('grilla-negro', 24, 'led-general', '','')
+  clasePadreCantidadClaseTextId('grilla-amarillo', 24, 'led-general', '','')
+  clasePadreCantidadClaseTextId('grilla-azul', 24, 'led-general', '','')
+  clasePadreCantidadClaseTextId('grilla-magenta', 24, 'led-general', '','')
+  clasePadreCantidadClaseTextId('grilla-especial', 24, 'led-general', '','')
+  clasePadreCantidadClaseTextId('grilla-barniz', 24, 'led-general', '','')
+  idPadreCantidadClaseTextId('footer-1', 100, 'divs-grales-tinta-negro','clase-dos', '','','','');
+  idPadreCantidadClaseTextId('footer-2', 100, 'divs-grales-solucion-negro','clase-dos', '','','footer-2', 'negro', 'footer-1')
+  idPadreCantidadClaseTextId('footer-3', 100, 'divs-grales-tinta-azul','clase-dos', '','')
+  idPadreCantidadClaseTextId('footer-4', 100, 'divs-grales-solucion-azul','clase-dos', '','', 'footer-4', 'azul', 'footer-3')
+  idPadreCantidadClaseTextId('footer-5', 100, 'divs-grales-tinta-magenta','clase-dos', '','')
+  idPadreCantidadClaseTextId('footer-6', 100, 'divs-grales-solucion-magenta','clase-dos', '','','footer-6', 'magenta', 'footer-5')
+  idPadreCantidadClaseTextId('footer-7', 100, 'divs-grales-tinta-amarillo','clase-dos', '','')
+  idPadreCantidadClaseTextId('footer-8', 100, 'divs-grales-solucion-amarillo','clase-dos', '','','footer-8', 'amarillo', 'footer-7')
+  idPadreCantidadClaseTextId('footer-9', 100, 'divs-grales-tinta-especial','clase-dos', '','')
+  idPadreCantidadClaseTextId('footer-10', 100, 'divs-grales-solucion-especial','clase-dos', '','','footer-10', 'especial', 'footer-9')
+  idPadreCantidadClaseTextId('footer-11', 100, 'divs-grales-tinta-barniz','clase-dos', '','')
+  idPadreCantidadClaseTextId('footer-12', 100, 'divs-grales-solucion-barniz','clase-dos', '','','footer-12', 'barniz', 'footer-11')
+
+ const botonesLatentes = document.querySelectorAll('.butt-selector'); 
+ const colorActual = document.querySelector('#current-Color');   
+  botonesLatentes.forEach((boton,index) => {
+    boton.addEventListener('click', () => {
+      // Cambia el color de fondo y el color del texto del span dentro del botón clicado
+      boton.style.backgroundColor = 'rgb(0,255,0)';
+      const spanBoton = boton.querySelector('span');
+      if (spanBoton) {
+        spanBoton.style.color = 'black'; // Cambia el color del texto a negro
+      }  
+      // Reinicia el color de fondo y el color del texto del span en los demás botones
+      botonesLatentes.forEach(otroBoton => {
+        if (otroBoton !== boton) {
+          otroBoton.style.backgroundColor = ''; // Reinicia el color de fondo
+          const spanOtroBoton = otroBoton.querySelector('span');
+          if (spanOtroBoton) {
+            spanOtroBoton.style.color = ''; // Reinicia el color del texto
+          }
+        }
+      });
+      switch (index) {
+        case 0:
+          colorActual.textContent = 'NEGRO';
+          colorActual.style.color = 'black'
+          break;
+        case 1:
+          colorActual.textContent = 'AZUL';
+          colorActual.style.color = 'rgb(0,255,255)';
+          break;
+        case 2:
+          colorActual.textContent = 'MAGENTA';
+          colorActual.style.color = 'rgb(255,0,255)'
+          break;
+        case 3:
+          colorActual.textContent = 'AMARILLO';
+          colorActual.style.color = 'rgb(255,255,0)'
+          break;
+        case 4:
+          colorActual.textContent = 'ESPECIAL';
+          colorActual.style.color = 'rgb(255,130,0)'
+          break;
+        case 5:
+          colorActual.textContent = 'BARNIZ';
+          colorActual.style.color = 'rgb(200,200,200)'
+          break;
+      }
+
+    });
+  }); 
+  document.querySelector('.alerta-perfil').addEventListener('click', function () {  
+    this.classList.add('move-alerta-perfil');
+  });
+  document.querySelector('#butts-selectores > div:nth-of-type(1)').addEventListener('click', () => {  
+    alertaSeis.classList.remove('move-alerta')
+    color = 'rgb(0,0,0)'
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      if(!flagAplicacion){
+        alertaPerfil.style.display = 'flex'
+        alertaPerfil.style.backgroundColor = verde
+        alertaPerfil.style.color = 'black'
+        setTimeout(() => {
+          alertaPerfil.style.backgroundColor = ''  
+          alertaPerfil.style.color = ''  
+        }, 500);
+      }else{      
+        if (!flagNegro) {
+          flagNegro = true;   
+          flagCyan = false;
+          flagMagenta = false;
+          flagAmarillo = false;
+          flagEspecial = false;
+          flagBarniz = false; 
+          crearBotoneraDinamica(color)
+          setTimeout(() => {
+            eliminarColores()
+          }, 50);
+          setTimeout(() => {
+            if (objetoGlobal && flagNegro) {
+              muestraRenderObjetoGlobal(objetoGlobal, 'negro', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 1,2);
+            }
+          }, 100);
+        }    
+      }  
+    }else{
+      alertaSeis.style.display='grid'
+      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
+    }
+  });
+  document.querySelector('#butts-selectores > div:nth-of-type(2)').addEventListener('click', () => { 
+    alertaSeis.classList.remove('move-alerta')
+    color = 'rgb(0,0,255)'
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      if(!flagAplicacion){
+        console.log('ESTADO BANDERA ', flagAplicacion)
+        alertaPerfil.style.display = 'flex'
+        alertaPerfil.style.backgroundColor = verde
+        alertaPerfil.style.color = 'black'
+        setTimeout(() => {
+          alertaPerfil.style.backgroundColor = ''  
+          alertaPerfil.style.color = ''  
+        }, 500);
+      }else{      
+        if (!flagCyan) {
+          flagCyan = true;
+          flagNegro = false;
+          flagMagenta = false;
+          flagAmarillo = false;
+          flagEspecial = false;
+          flagBarniz = false; 
+          crearBotoneraDinamica(color)
+          setTimeout(() => {
+            eliminarColores()
+          }, 50);
+          setTimeout(() => {
+            if (objetoGlobal && flagCyan) {
+              muestraRenderObjetoGlobal(objetoGlobal, 'azul', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 3,4);
+            }
+          }, 100);
+        }    
+      } 
+    }else{
+      alertaSeis.style.display='grid'
+      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
+    }   
+  });
+  document.querySelector('#butts-selectores > div:nth-of-type(3)').addEventListener('click',() => {
+    alertaSeis.classList.remove('move-alerta')
+    color = 'rgb(255,0,255)'
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      if(!flagAplicacion){
+        console.log('ESTADO BANDERA ', flagAplicacion)
+        alertaPerfil.style.display = 'flex'
+        alertaPerfil.style.backgroundColor = verde
+        alertaPerfil.style.color = 'black'
+        desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
+        setTimeout(() => {
+          alertaPerfil.style.backgroundColor = ''  
+          alertaPerfil.style.color = ''  
+        }, 500);
+      }else{      
+        if (!flagMagenta) {
+          flagMagenta = true;
+          flagCyan = false;
+          flagNegro = false;
+          flagAmarillo = false;
+          flagEspecial = false;
+          flagBarniz = false; 
+          crearBotoneraDinamica(color)
+          setTimeout(() => {
+            eliminarColores()
+          }, 50);
+          setTimeout(() => {
+            if (objetoGlobal && flagMagenta) {
+              muestraRenderObjetoGlobal(objetoGlobal, 'magenta', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 5,6);
+            }
+          }, 100);
+        }    
+      }  
+    }else{
+      alertaSeis.style.display='grid'
+      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
+    }  
+  });
+  document.querySelector('#butts-selectores > div:nth-of-type(4)').addEventListener('click',() => {
+    alertaSeis.classList.remove('move-alerta')
+    color = 'rgb(255,255,0)'
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      if(!flagAplicacion){
+        console.log('ESTADO BANDERA ', flagAplicacion)
+        alertaPerfil.style.display = 'flex'
+        alertaPerfil.style.backgroundColor = verde
+        alertaPerfil.style.color = 'black'
+        desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
+        setTimeout(() => {
+          alertaPerfil.style.backgroundColor = ''  
+          alertaPerfil.style.color = ''  
+        }, 500);
+      }else{      
+        if (!flagAmarillo) {
+          flagAmarillo = true;
+          flagCyan = false;
+          flagMagenta = false;
+          flagNegro = false;
+          flagEspecial = false;
+          flagBarniz = false; 
+          crearBotoneraDinamica(color)
+          setTimeout(() => {
+            eliminarColores()
+          }, 50);
+          setTimeout(() => {
+            if (objetoGlobal && flagAmarillo) {
+              muestraRenderObjetoGlobal(objetoGlobal, 'amarillo', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 7,8);
+            }
+          }, 100);
+        }    
+      }  
+    }else{
+      alertaSeis.style.display='grid'
+      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
+    }  
+  });  
+  document.querySelector('#butts-selectores > div:nth-of-type(5)').addEventListener('click',() => {
+    alertaSeis.classList.remove('move-alerta')
+    color = 'rgb(255,130,0)'
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      if(!flagAplicacion){
+        console.log('ESTADO BANDERA ', flagAplicacion)
+        alertaPerfil.style.display = 'flex'
+        alertaPerfil.style.backgroundColor = verde
+        alertaPerfil.style.color = 'black'
+        desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
+        setTimeout(() => {
+          alertaPerfil.style.backgroundColor = ''  
+          alertaPerfil.style.color = ''  
+        }, 500);
+      }else{      
+        if (!flagEspecial) {
+          flagEspecial = true;
+          flagCyan = false;
+          flagMagenta = false;
+          flagAmarillo = false;
+          flagNegro = false;
+          flagBarniz = false; 
+          crearBotoneraDinamica(color)
+          setTimeout(() => {
+            eliminarColores()
+          }, 50);
+          setTimeout(() => {
+            if (objetoGlobal && flagEspecial) {
+              muestraRenderObjetoGlobal(objetoGlobal, 'especial', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 9,10);
+            }
+          }, 100);
+        }    
+      } 
+    }else{
+      alertaSeis.style.display='grid'
+      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
+    }   
+  });
+  document.querySelector('#butts-selectores > div:nth-of-type(6)').addEventListener('click',() => {
+    alertaSeis.classList.remove('move-alerta')
+    color = 'rgb(200,200,200)'
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      if(objetoGlobal != '' && objetoGlobal != null){
+        if(!flagAplicacion){
+          console.log('ESTADO BANDERA ', flagAplicacion)
+          alertaPerfil.style.display = 'flex'
+          alertaPerfil.style.backgroundColor = verde
+          alertaPerfil.style.color = 'black'
+          desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
+          setTimeout(() => {
+            alertaPerfil.style.backgroundColor = ''  
+            alertaPerfil.style.color = ''  
+          }, 500);
+        }else{      
+          if (!flagBarniz) {
+            flagBarniz = true;
+            flagCyan = false;
+            flagMagenta = false;
+            flagAmarillo = false;
+            flagEspecial = false;
+            flagNegro = false; 
+            crearBotoneraDinamica(color)
+            setTimeout(() => {
+              eliminarColores()
+            }, 50);
+            setTimeout(() => {
+              if (objetoGlobal && flagBarniz) {
+                muestraRenderObjetoGlobal(objetoGlobal, 'barniz', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 11,12);
+              }
+            }, 100);
+          }    
+        }
+      }else{
+        alertaSeis.style.display='grid'
+      }
+    }else{
+      alertaSeis.style.display='grid'
+      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
+    }     
+  });
+  idPadreCantidadClaseTextId('control-perfiles', 22,'leds-indiv','','','led');
+  idPadreCantidadClaseTextId('regla-barniz', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
+  idPadreCantidadClaseTextId('regla-especial', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
+  idPadreCantidadClaseTextId('regla-amarillo', textosReglas.length, 'spn-gral','', textosReglas, 'spn'); 
+  idPadreCantidadClaseTextId('regla-magenta', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
+  idPadreCantidadClaseTextId('regla-azul', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
+  idPadreCantidadClaseTextId('regla-negro', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
+  const negroGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(1)')
+  const cyanGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(2)')
+  const magentaGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(3)')
+  const amarilloGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(4)')
+  const especialGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(5)')
+  const barnizGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(6)')
+  const  botonesGenerales = [negroGeneral, cyanGeneral, magentaGeneral, amarilloGeneral, especialGeneral, barnizGeneral];
+  const bloqueTinta = document.getElementById('ctrl-gral-tinta')
+  const bloqueAgua = document.getElementById('ctrl-gral-agua')
+  const clases = [
+    'move-generales-cyan',
+    'move-generales-magenta',
+    'move-generales-amarillo',
+    'move-generales-especial',
+    'move-generales-barniz',
+    'move-generales-barniz-II'
+  ];  
+  function alertaCrearPerfil(){
+    alertaSeis.classList.remove('move-alerta')
+    darColorVerdeCabeza()
+    alertaSeis.style.display='grid'   
+    alertaSeis.style.backgroundColor = 'rgb(0, 166, 255)'
+    alertaSeis.style.color = 'black'
+    alertaSeis.style.top = '42vh'
+    setTimeout(() => {
+      alertaSeis.style.backgroundColor = ''  
+      alertaSeis.style.color = ''  
+    }, 500);
+    desactivarClicEnElementos(buttsPerfiles,buttsAguaGral,buttsAguaSingle);
+  }  
+  negroGeneral.addEventListener('mousedown', () => { 
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+        color = 'rgb(0,0,0)';
+        manejoGeneralIndividual('negro', negro, estadoBalanceNegro, negroGeneral, 'negro', 'NEGRO', 'flagNegro', 1, 0);  
+        muestraRenderObjetoGlobal(objetoGlobal, 'negro', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 1, 2);  
+    } else {
+        alertaCrearPerfil();  
+    }
+  })
+  cyanGeneral.addEventListener('mousedown', () => {
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+    color = 'rgb(0,0,255)'
+    manejoGeneralIndividual('azul',cian,estadoBalanceCyan,cyanGeneral,'cyan','AZUL','flagCyan',2,1)  
+    muestraRenderObjetoGlobal(objetoGlobal, 'azul', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 3,4);
+  }else{
+    alertaCrearPerfil()
+  }
+  })
+  magentaGeneral.addEventListener('mousedown', () => {
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      color = 'rgb(255,0,255)'
+    manejoGeneralIndividual('magenta',magenta,estadoBalanceMagenta ,magentaGeneral,'magenta','MAGENTA','flagMagenta',3,2)  
+    muestraRenderObjetoGlobal(objetoGlobal, 'magenta', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 5,6);
+  }else{
+    alertaCrearPerfil()
+  }
+  })
+  amarilloGeneral.addEventListener('mousedown', () => {
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      color = 'rgb(255,255,0)'
+    manejoGeneralIndividual('amarillo',amarillo,estadoBalanceAmarillo,amarilloGeneral,'amarillo','AMARILLO','flagAmarillo',4,3)  
+    muestraRenderObjetoGlobal(objetoGlobal, 'amarillo', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 7,8);
+  }else{
+    alertaCrearPerfil()
+  }
+  })
+  especialGeneral.addEventListener('mousedown', () => {
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      color = 'rgb(255,130,0)'
+    manejoGeneralIndividual('especial',especial,estadoBalanceEspecial,especialGeneral,'especial','ESPECIAL','flagEspecial',5,4)  
+    muestraRenderObjetoGlobal(objetoGlobal, 'especial', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 9,10);
+  }else{
+    alertaCrearPerfil()
+  }
+  })
+  barnizGeneral.addEventListener('mousedown', () => {
+    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
+      color = 'rgb(200,200,200)'
+    manejoGeneralIndividual('barniz',barniz,estadoBalanceBarniz,barnizGeneral,'especial','BARNIZ','flagBarniz',6,5)  
+    muestraRenderObjetoGlobal(objetoGlobal, 'barniz', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 11,12);
+  }else{
+    alertaCrearPerfil()
+  }
+  })  
+  function manejoGeneralIndividual(grilla,botoneraDinamica,actualBalanceColor,botonActual,claseColor,textoSpan,banderaActiva,index,indexSelector){
+    const lineaLeds = document.querySelectorAll(`.grilla-${grilla}`);
+    lineaLeds.forEach((elto, index) => { 
+      setTimeout(() => {
+        elto.style.backgroundColor = verde;
+      }, index * 7); // Retraso de 100ms entre cada elemento
+    });
+    setTimeout(() => {
+      lineaLeds.forEach((elto, index) => {
+        setTimeout(() => {
+          elto.style.backgroundColor = '';
+        }, index * 7); // Retraso de 100ms entre cada elemento
+      });    
+    }, 177);
+    clases.forEach(clase => {
+      bloqueTinta.classList.remove(clase);
+      bloqueAgua.classList.remove(clase);
+    });
+    flagNegro = false;
+    flagCyan = false;
+    flagMagenta = false;
+    flagAmarillo = false;
+    flagEspecial = false;
+    flagBarniz = false;
+    switch (banderaActiva) {
+      case 'flagNegro':
+        flagNegro = true;
+        break;
+      case 'flagCyan':
+        flagCyan = true;
+        break;
+      case 'flagMagenta':
+        flagMagenta = true;
+        break;
+      case 'flagAmarillo':
+        flagAmarillo = true;
+        break;
+      case 'flagEspecial':
+        flagEspecial = true;
+        break;
+      case 'flagBarniz':
+        flagBarniz = true;
+        break;
+      default:
+        console.warn('Bandera no reconocida');
+    }
+    crearBotoneraDinamica(botoneraDinamica);
+    botonesGenerales.forEach(boton => {
+      boton.style.backgroundColor = ''; // Reinicia el color
+    });    
+    botonActual.style.backgroundColor = verde;    
+    bloqueTinta.classList.add(`move-generales-${claseColor}`)
+    bloqueAgua.classList.add(`move-generales-${claseColor}`)    
+    colorActual.textContent= textoSpan    
+    const todosSpan = document.querySelectorAll('.texto-selectores');
+    todosSpan.forEach(span => {
+      span.style.color = ''; 
+    });  
+    const spanElement = botonActual.querySelector('span.texto-selectores');
+    if (spanElement) {
+      spanElement.style.color = 'black';
+    }
+    const spanSelectores = document.querySelector(`#butts-selectores div:nth-child(${index}) .texto-selectores`);
+    if (spanSelectores) {
+      spanSelectores.style.color = 'black';
+    }
+    const bottsSelectores = document.querySelectorAll('.butt-selector');  
+    bottsSelectores.forEach((boton, i) => {
+      if (i === indexSelector) {
+        boton.style.backgroundColor = verde ; // Aplicar fondo verde al botón en la posición `index`
+      } else {
+        boton.style.backgroundColor = ''; // Restablecer color para los demás botones
+      }
+    });
+  }      
+  function mostrarSecuenciaPerfiles(){
+    manejoGeneralIndividual('negro',negro,estadoBalanceNegro,negroGeneral,'negro','NEGRO','flagNegro',1,0)  
+    muestraRenderObjetoGlobal(objetoGlobal, 'negro', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 1,2);  
+    setTimeout(() => {
+      manejoGeneralIndividual('azul',cian,estadoBalanceCyan,cyanGeneral,'cyan','AZUL','flagCyan',2,1)  
+      muestraRenderObjetoGlobal(objetoGlobal, 'azul', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 3,4);
+    }, 150);
+    setTimeout(() => {
+      manejoGeneralIndividual('magenta',magenta,estadoBalanceMagenta ,magentaGeneral,'magenta','MAGENTA','flagMagenta',3,2)  
+      muestraRenderObjetoGlobal(objetoGlobal, 'magenta', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 5,6);
+    }, 300);
+    setTimeout(() => {
+      manejoGeneralIndividual('amarillo',amarillo,estadoBalanceAmarillo,amarilloGeneral,'amarillo','AMARILLO','flagAmarillo',4,3)  
+      muestraRenderObjetoGlobal(objetoGlobal, 'amarillo', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 7,8);
+    }, 450);
+    setTimeout(() => {
+      manejoGeneralIndividual('especial',especial,estadoBalanceEspecial,especialGeneral,'especial','ESPECIAL','flagEspecial',5,4)  
+      muestraRenderObjetoGlobal(objetoGlobal, 'especial', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 9,10);
+    }, 600);
+    setTimeout(() => {
+      manejoGeneralIndividual('barniz',barniz,estadoBalanceBarniz,barnizGeneral,'especial','BARNIZ','flagBarniz',6,5)  
+      muestraRenderObjetoGlobal(objetoGlobal, 'barniz', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 11,12);
+    }, 750);
+
+  }
+  irAconsola.addEventListener('click', () =>{
+    nombreCliente.style.top=''
+    let nombreDatos = document.querySelector('#cliente-nombre')
+    let interfazPerfiles = document.getElementById('perfiles-entintado')
+    interfazPerfiles.classList.remove('move-perfiles-entintado')
+    desactivarClick(['.butt-perfiles', '.cabeza', '.mod-tinta']); 
+    var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7']
+    for (var i = 0; i < allContenedores.length; i++) {
+      var elemento = document.getElementById(allContenedores[i])  
+      if (elemento) {
+        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'  
+      }
+    }
+    const elementos = document.querySelectorAll('.div-gral, .div-agua');
+    elementos.forEach(elemento => {
+      elemento.style.color = 'transparent'
+    });
+    container1.style.display = 'none'
+    restablecerClick(['.butt-perfiles', '.cabeza', '.mod-tinta']);
+    if(objetoGlobal === null || objetoGlobal === ''){nombreDatos.textContent = ''}
+    setTimeout(() => {
+      interfazPerfiles.classList.add('move-perfiles-entintado')
+    }, 100);
+    setTimeout(() => {
+      document.querySelector('.nombre-cliente').style.display='flex'
+    }, 1500);
+    setTimeout(() =>{
+      mostrarSecuenciaPerfiles()                        
+    },1550);
+      document.querySelectorAll('.butt-perfiles').forEach(elemento => {
+      elemento.style.display = 'flex'; 
+    });
+    buttsPerfiles.forEach(boton =>{ 
+      boton.style.backgroundColor = ''
+    })
+    document.querySelector('#butt-perfil-tinta').style.backgroundColor='rgb(0,255,0)'
+    irAconsola.style.display='none'
+      restablecerClick(['.perfiles'])
+  })
+  observarCambioDisplay()
 });
 function manejarLogica() {
   const inputs = document.querySelectorAll('.numero');
@@ -295,40 +846,6 @@ function manejarLogica() {
       if (inputs.length > 0) {
         inputs[0].focus();
       }
-    /* function manejarEntrada(event) {
-      const inputActual = event.target;
-      const valor = parseInt(inputActual.value);
-      let suma = 0;
-      const indice = Array.from(inputs).indexOf(inputActual);
-      if (!isNaN(valor)) {
-        valoresIngresados[indice] = valor;
-      } else {
-        valoresIngresados[indice] = 0;
-      }
-        setTimeout(() => {
-        inputActual.value = '*';
-        if (indice < inputs.length - 1) {
-          inputs[indice + 1].focus();
-        }
-      }, 177);
-      suma = valoresIngresados.reduce((acumulador, valor) => acumulador + valor, 0);
-      if (suma === masterKey[0]) {
-
-        inputs.forEach(input => {
-          input.style.display = 'none';
-        });
-        document.getElementById('contraseña').style.display='none'
-        setTimeout(() => {
-          abrirInterfaz();
-        }, 200);
-        inputs.forEach(input => {
-        input.value = '';
-        });         
-      }
-    } */
-    /* inputs.forEach(input => {
-      input.addEventListener('input', manejarEntrada);
-    }); */
   }else{
       var tituloAncho = document.getElementById('titulo-ancho');
       tituloAncho.style.width = '100%'
@@ -391,32 +908,6 @@ function manejarLogica() {
       input.addEventListener('keydown', validarTecla); // Restringe la entrada de teclas no numéricas
     });
   }
-}
-function abrirSeccionOperativa(elementId){
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen(); // Método estándar
-  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
-    document.documentElement.msRequestFullscreen();
-  }
-  var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','cont-titulo-operacion','image-background']  
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  }
-  container1.style.display='grid'
-  animateScroll('agrupaOblicuos-XII')
-  if (typeof elementId !== 'undefined') {
-    const index = idsArray.indexOf(elementId);
-    if (index !== -1) {
-      idsArray.splice(index, 1);
-    }
-    idsArray.push(elementId);
-    console.log(idsArray);  
-  }  
 }
 function abrirInterfaz() {
   document.querySelectorAll("*").forEach(el => {
@@ -702,7 +1193,6 @@ function eliminarEstilos(coleccionEltos) {
     elemento.removeAttribute("style");
   });
 }
-/* ******************************************************************************************************************************************************** */
 function showButtonsMAconRetraso() {
   var botones = document.querySelectorAll('.butt-mautonomo');
   botones.forEach(boton => {

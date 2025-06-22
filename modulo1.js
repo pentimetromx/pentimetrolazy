@@ -2,7 +2,7 @@ function cierraContenedores(elementId,buttonID){
   var arrayGeneral = ['btn1','btn2','btn3','btn4','btn5','btn60','btn70','btn80','btn600','btn700','btn800']
 
   document.querySelectorAll('.boton-c').forEach(boton => {
-    boton.style = ''; // Restablece todos los estilos en línea
+    boton.style = '';
   });
 
   if (firstClick) { 
@@ -24,7 +24,7 @@ function cierraContenedores(elementId,buttonID){
             }
           }
         }      
-        aumentarTamanosDeBotones() 
+         
       break;
       case 'uTeñido':
         var pantallaInicial = document.getElementById('pantalla-inicial');
@@ -38,7 +38,6 @@ function cierraContenedores(elementId,buttonID){
             }
           }
         }  
-        aumentarTamanosDeBotonesII()
       break;
       case 'alimentadorId':
         var pantallaInicial = document.getElementById('pantalla-inicial');
@@ -53,7 +52,6 @@ function cierraContenedores(elementId,buttonID){
           }
         } 
         botonClickIII.style.display = 'block'
-        aumentarTamanosDeBotonesIII()
       break;
       case 'unidProceso':
         var pantallaInicial = document.getElementById('pantalla-inicial');
@@ -68,7 +66,6 @@ function cierraContenedores(elementId,buttonID){
           }
         }  
         botonClickIV.style.display = 'block'
-        aumentarTamanosDeBotonesIV()         
       break;
       case 'rebobinador':
         var pantallaInicial = document.getElementById('pantalla-inicial');
@@ -82,15 +79,14 @@ function cierraContenedores(elementId,buttonID){
             }
           }
         }
-        aumentarTamanosDeBotonesV()  
       break;
       default:
     }    
     firstClick = false;
   } else {
-    abrirSeccionContinua() 
+    mostrarElementos(['pantalla-inicial','buscador','container01','search-form','toggleVideoButton','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','gran-cortina'])
   }
-}
+} 
 function muestraRodillo (vidElem, imgCont){
   switch(vidElem){
   case 'videoElement2':
@@ -1426,29 +1422,6 @@ function iniciarAnimaciones(){
     animarSecuenciaPerfiles();
   }, 200);
 }
-function abrirSeccionContinua(elementId) {  
-  var elementosExcluidos = ['buscador','search-form','toggleVideoButton','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','gran-cortina'];
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i]);  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none';   
-    }
-  }
-  container1.style.display = 'grid'
-  setTimeout(() => {
-    document.getElementById('gran-cortina').style.display='none'
-  }, 500);
-  document.body.style.zoom = "100%"
-  if (typeof elementId !== 'undefined') {
-    const index = idsArray.indexOf(elementId);
-    if (index !== -1) {
-      idsArray.splice(index, 1);
-    }
-    idsArray.push(elementId);
-    console.log(idsArray);
-  }
-  firstClick = true;   
-}
 function alternarColorRojo(){
   var buttons = document.querySelectorAll('.Bot-inicio7');  
   buttons.forEach(function(currentButton, index) {
@@ -1995,8 +1968,6 @@ function muestraVidPrisma(eltoHtml) {
   switch(eltoHtml){    
     case 'prisma-vid-II':
       reproducirVideo('prisma-vid-II');
-      /* formateaPrepress('prisma-vid-II')
-      videoStore.push(videoComponent) */
     break
     case 'vid04' :
       formateaPrepress('vid04')
@@ -2160,13 +2131,7 @@ function formateaPrepress(eltoHtml){
     }
 }
 function irContenedorAnterior() {
-  var previousElementID = idsArray[idsArray.length - 2];
-/*   let linksInicio = document.querySelectorAll('#links-inicialesI, #links-iniciales');
-  linksInicio.forEach(link => {
-    link.style.left = ''
-    link.style.top = ''
-  });*/  
-  
+  var previousElementID = idsArray[idsArray.length - 2];  
   switch (previousElementID ) {  
     case "cont-titulo":
     location.reload()
@@ -2361,7 +2326,6 @@ function irContenedorAnterior() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       }   
-      aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2']          
@@ -2387,7 +2351,6 @@ function irContenedorAnterior() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       }      
-      aumentarTamanosDeBotonesII()     
     break;
     case 'alimentadorId':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador']          
@@ -2413,7 +2376,6 @@ function irContenedorAnterior() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       }      
-      aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7']          
@@ -2439,7 +2401,6 @@ function irContenedorAnterior() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       } 
-      aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador']          
@@ -2465,7 +2426,6 @@ function irContenedorAnterior() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       } 
-      aumentarTamanosDeBotonesV()
     break;
     case 'pantalla-frente':
       muestraTorresI('pantalla-frente')
@@ -2513,7 +2473,8 @@ function irContenedorSiguiente() {
       abrirSeccionCalidad()        
     break;     
     case "pantalla-inicial":        
-    abrirSeccionContinua('pantalla-inicial')
+      /* abrirSeccionContinua('pantalla-inicial') */
+      mostrarElementos(['pantalla-inicial','buscador','container01','search-form','toggleVideoButton','links-inicialesI','links-iniciales','pantalla-inicial','desbobinadorId','uTeñidos','alimentadorId','unidProceso','rebobinador','torre-imp','tinter-o','bateria-entintado','gran-cortina'])
     break; 
     case "pantalla-tintero":
       container1.style.display='grid'             
@@ -2690,7 +2651,6 @@ function irContenedorSiguiente() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       }   
-      aumentarTamanosDeBotones()
     break;
     case 'uTeñido':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','uTeñidos','cont-Verticales2']          
@@ -2716,7 +2676,6 @@ function irContenedorSiguiente() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       }      
-      aumentarTamanosDeBotonesII()   
     break;
     case 'alimentadorId':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','alimentadorId','verticales-alimentador']          
@@ -2742,7 +2701,6 @@ function irContenedorSiguiente() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       }      
-      aumentarTamanosDeBotonesIII()
     break;
     case 'unidProceso':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','unidProceso','cont-Verticales7']           
@@ -2768,7 +2726,6 @@ function irContenedorSiguiente() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       } 
-      aumentarTamanosDeBotonesIV()
     break;
     case 'rebobinador':
       var elementosExcluidos = ['buscador','search-form','pantalla-inicial','rebobinador']          
@@ -2794,7 +2751,6 @@ function irContenedorSiguiente() {
         var elemento = document.getElementById(linksIniciales[i]);
         elemento.style.display = 'flex'
       } 
-      aumentarTamanosDeBotonesV()
     break;
     case 'pantalla-frente':
       muestraTorresI('pantalla-frente')
@@ -3248,7 +3204,7 @@ function imagenesPasoApaso(padreId,idCont,idButt,idImg,id,contImgs) {
   }        
 } 
 function lubricacion(buttId){
-  alternarButtsDesbobinador(buttId);
+  alternarButtsDesbobinador(buttId); 
   switch (buttId) {
     case 'boton2':  
       var elementosExcluidos = [
@@ -3400,7 +3356,6 @@ function alternarButtsRebobina(buttId) {
     }
   });
 }  
-
 function alternarButtsnPneumatic(buttId) {
   var buttsDesbobinador = ['btn600','btn700','btn800'];
   buttsDesbobinador.forEach(id => {
@@ -3431,7 +3386,6 @@ function alternarButtsnRodilleria(botId) {
     }
   });
 }
-
 function LubricaDesbobinador(idButt) {
   var arrayIdButtsLub = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn60', 'btn70', 'btn80']
   var arrayIdButtsLubII = ['btn60', 'btn70', 'btn80']
@@ -4571,99 +4525,8 @@ function ubicaPerfil(idEmpleado) {
 let llamadaEjecutada = false;
 var intervaloActualizarII = null; 
 var intervaloActualizar = null;
-
-/* ********************************************************************************* */
-
-/* function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
-  verificarPosicionTop(['conte-butts-graphs']);
-  setTimeout(() => {
-    turnGraphic = false
-    console.log(turnGraphic)
-    const iconosPermitidos = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
-    var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','iconos','contenedor-vertical','title-interfaz','contLineas','canvasContainer4','MiGrafica4','canvasContainer5','MiGrafica5','canvasContainer6','MiGrafica6','canvasContainer7','MiGrafica7','canvasContainer9','MiGrafica9']
-    for (var i = 0; i < allContenedores.length; i++) { 
-      var elemento = document.getElementById(allContenedores[i])
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-      }
-    }
-    restaurarPosicion(["conte-butts-graphs"]);
-    container1.style.display='grid'
-    if(turnBlock === 'false'){
-      restablecerClick(['.desactivar', '.graphs-lines'])
-    }
-
-    document.getElementById('contLineas').style.backgroundColor='rgb(0,0,17)'
-    const elementos = document.querySelectorAll('.graphs-lines');
-    elementos.forEach((elemento) => {
-      elemento.removeAttribute('style');
-    });
-    if(screenWidth < 500){
-      var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','dynamic-graphs-II','iconos','contLineas-II','contenedor-vertical','canvasContainer4-II','MiGrafica4-II','canvasContainer5-II','MiGrafica5-II','canvasContainer6-II','MiGrafica6-II','canvasContainer7-II','MiGrafica7-II','canvasContainer8-II','MiGrafica8-II','canvasContainer9-II','MiGrafica9-II']
-      for (var i = 0; i < allContenedores.length; i++) { 
-        var elemento = document.getElementById(allContenedores[i])  
-        if (elemento) {
-          elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-        }
-      }     
-      container1.style.display='grid'
-      desactivarClicsPorUnTiempo(1000)
-      const elementos = document.querySelectorAll('.graphs-employee');
-      elementos.forEach((elemento) => {
-        elemento.removeAttribute('style');
-      });    
-      if(state === 'true'){
-        setTimeout(() => {
-          animateScroll('contenedor-vertical')
-        }, 500);}
-      if (iconosPermitidos.includes(icono)) {
-      }
-        ubicaPerfil(idEmpleado)
-        document.getElementById('links-iniciales').style.left='16vw'
-
-      }else{
-          
-        ubicaPerfil(idEmpleado)
-        document.getElementById('conte-butts-graphs').style.display = 'grid'
-    }
-      switch (functionExe) {
-      case 'updateAna':
-        updateAna() 
-        updateAnaII()
-      break;
-      case 'updateMario':
-        updateMario()
-        updateMarioII()
-      break;
-      case 'updateSandra':
-        updateSandra()
-        updateSandraII()
-      break;
-      case 'updateJesus':
-        updateJesus()
-        updateJesusII()      
-      break;
-      case 'updateJorge':
-        updateJorge()
-        updateJorgeII()      
-      break;
-      case 'updateAndres':
-        updateAndres()
-        updateAndresII()      
-      break;
-      case 'updateCarlos':
-        updateCarlos()
-        updateCarlosII()      
-      break;
-      default:
-      break;
-    }
-
-  }, 100);
-
-} */
-
 function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
+  detenerDinamica()
   verificarPosicionTop(['conte-butts-graphs']);
   setTimeout(() => {
     turnGraphic = false
@@ -4749,7 +4612,6 @@ function resultadosEmpleado(idEmpleado, functionExe,icono,state) {
 
   }, 100);
 }
-
 function resultadosMA(){
   restablecerPosiciones(['.ocultos'])      
   var elementosExcluidos = ['buscador','search-form','links-inicialesI','links-iniciales','iconos','conte-secundario','title-interfaz']  
@@ -4772,9 +4634,6 @@ function resultadosMA(){
     usuario.style.left = '';
     var label = usuario.querySelector('label');
     clearInterval(intervaloColor);
-    /* if (label) {
-      label.style.color = 'yellow';
-    } */
   }
   if(screenWidth < 500){
     document.getElementById('gran-cortina').style.display='flex'
@@ -4833,7 +4692,6 @@ function graficosAutomaticos(idGrafico){
     }
   }
 }
-
 document.getElementById('textToColorI').addEventListener('mouseenter', () => {
   let padreLinks = document.getElementById('links-inicialesI');
   let conteLinks = document.getElementById('linkListI');
@@ -4864,7 +4722,6 @@ document.getElementById('textToColorI').addEventListener('mouseenter', () => {
     expandHeight('linkListI');    
   }
 });
-
 document.getElementById('textToColor').addEventListener('mouseenter', () => {
   let padreLinks = document.getElementById('links-iniciales')
   let conteLinks = document.getElementById('linkList')
@@ -4963,7 +4820,6 @@ function expandHeight(linksGuard) {
     }, 7);
   }
 }
-/* ///////////////////*/
 document.getElementById('linkListI').addEventListener('mouseleave', () =>{
   for (var i = 0; i < allContenedores.length; i++) { 
     var elemento = document.getElementById(allContenedores[i]);

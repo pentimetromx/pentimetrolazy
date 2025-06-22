@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap'); 
 @font-face {
-  font-family: "Oswald"; /* Nombre de la familia de fuentes personalizada */
+  font-family: "Oswald";
   src: url('C:\Users\Juan\Downloads\matrix\matrix.ttf') format('ttf'), /* Ruta hacia el archivo .woff2 de la fuente */
 } 
 @font-face{   
@@ -224,15 +224,16 @@ body{
   border: 1px solid #000;
   height:100%;
   background-color:rgb(125,125,125);
-}  
+}
 .sections {
   position:absolute;
   display: grid;
+  display: none;
   top:20vh;
   left: 1vw;
   width: 8vw;
   height:70vh;
-  grid-template-rows:repeat(8 ,1fr);
+  grid-template-rows:repeat(7 ,1fr);
   gap: 8px;
   cursor: pointer;
   z-index: 44;
@@ -254,12 +255,13 @@ body{
 .sections-btn {
   position: absolute;
   display: grid;
+  display: none;
   gap: 5px;
   top: 20vh;
   left: 1vw;
   width: 8vw;
   height: 70vh;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   justify-items: center;
   align-items: center;
 }
@@ -1227,7 +1229,7 @@ body{
   z-index:40;
 }
 #interfaz-perfiles{
-  position:relative;
+  position:relative; 
   display: flex;
   top: 5vh;
   left: 10vw;
@@ -1236,6 +1238,14 @@ body{
   border-radius: 20px 20px 0 0;
   background-color: rgb(20,160,253,0.3);  
   display: none;  
+}
+#botonera-frente{
+  position: absolute; 
+  top: 6%;
+  width:100%;
+  height: 9%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 .butt-revertir{
   position: absolute;
@@ -1250,16 +1260,16 @@ body{
   border-radius: 7px 7px 0 0;
 }
 .butt-perfiles{
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center; 
-  justify-content: center;
+  justify-content: center;    
   cursor: pointer;
   top:6%;
-  height: 10%;
-  width: 14%;
+  height: 100%;
+  width: 100%;
   background-color: rgba(30, 24, 24, 0.3);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);  
   box-shadow: inset 0px 0px 5px rgba(20,200,200,0.5);
   border-radius: 7px 12px 0 0;
 }
@@ -1271,12 +1281,11 @@ body{
 .fondo-btn{
   position: absolute;
   display: grid;
+  grid-template-columns: repeat(7, 1fr); 
+  top: 9%; 
   gap: 15px;
-  top:8%;
-  left:0.5%;
-  width:96.8%;
-  height:5%;
-  grid-template-columns: repeat(7, 1fr);  
+  width:100%;
+  height:4%;
   z-index: -1;
 }
 .btn-respaldo {
@@ -1284,7 +1293,7 @@ body{
   border-radius: 7px;
   transition: background-color 0.1s linear;
 }
-#butt-control-tinta{
+/* #butt-control-tinta{
   left: 14%;
  }
  #butt-perfil{
@@ -1301,7 +1310,7 @@ body{
 }
 #bot-revertir{
   left: 84%;
-}
+} */
 #perfiles-entintado{
   position:absolute;
   display: flex;
@@ -2616,7 +2625,6 @@ width: 70%;
   z-index: 10;
 }
 .texto-selectores{
-  /* color:#001; */
   color: rgb(200,200,200);
   margin-left: 15%;
 }
@@ -2809,8 +2817,8 @@ width: 70%;
 }
 .interno::after {
   display: flex;
-  content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
-  font-size: 1em; /* Aumentar el tamaño al doble */
+  content: "\25B6";
+  font-size: 1em;
   color:rgb(0,255,0);
   margin-left: 8px;
 }
@@ -2904,11 +2912,11 @@ width: 70%;
 .interno {
   position: relative;
   display: flex;
-  align-items: center; /* Centra verticalmente el texto */
-  justify-content: center; /* Centra horizontalmente el texto */
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
-  height: 40px; /* Define una altura para el centrado vertical */
+  height: 40px;
   background-color: #000;
   color: rgb(0,255,0);
   border-radius: 3px;
@@ -2965,7 +2973,7 @@ width: 70%;
   font-weight: bold;  
 }
 #perfiles-color input::placeholder {
-  font-size: 0.8em; /* Ajusta según lo necesites */
+  font-size: 0.8em;
 }
 #perfiles-color input {
   background-color: black;
@@ -3036,8 +3044,8 @@ width: 70%;
 .formulario > *:nth-child(6) {
   position: relative;
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: flex-start; /* Alinea los hijos en la parte superior */
+  justify-content: center;
+  align-items: flex-start;
   height: 40%;
 }
 .formulario > *:nth-child(6) button {
@@ -3051,7 +3059,7 @@ width: 70%;
   border-radius: 9px;
   cursor: pointer;
   font-size: 1em;
-  margin-bottom: 0; /* Elimina el margen inferior */
+  margin-bottom: 0;
 }
 #formulario-perfiles{
   position: absolute;
@@ -3156,7 +3164,7 @@ width: 70%;
   justify-content: center;
   width: 80%;
   height:95% ;
-  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8); /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8);
   border-radius: 7px;
   color: white;
   border: none;
@@ -3225,7 +3233,7 @@ width: 70%;
 }
 #first-butts > :nth-child(2):hover,
 #first-butts > :nth-child(3):hover{
-  box-shadow: inset 5px 15px 5px white; /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px white;
   background-color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(155,155,155, 0.5);
   transform: scale(1.1);
@@ -3463,11 +3471,11 @@ width: 70%;
 .esquina-cmyk {
   bottom: 0;
   right: 0;
-  cursor: nwse-resize; /* Icono de redimensionar */
+  cursor: nwse-resize;
 }
 #padre-cmyk:active,
 #padre-rgb:active {
-  cursor: grabbing; /*cursor arrastrable */
+  cursor: grabbing;
 }
 #colorCMYK,
 #colorDisplay{
@@ -3530,7 +3538,7 @@ width: 70%;
   bottom: 0; 
   left: -500%;
   cursor: pointer;
-  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8); /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8);
   z-index: 3;
   pointer-events: all;
   display: flex;
@@ -3568,8 +3576,8 @@ width: 70%;
   font-size: 0.8em;
   margin-bottom: 10px;
 }
-.slid-container label,
-.slider-group label{
+.slid-container .tecno-color,
+.slider-group .etq-cmyk{
   position: absolute;
   font-size: 0.9em;
   color:rgb(177,177,177);
@@ -3586,7 +3594,7 @@ width: 70%;
   border-radius: 7px;
   bottom: 0; 
   cursor: pointer;
-  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8); /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8);
   z-index: 3;
   pointer-events: all;
   display: flex;
@@ -3637,7 +3645,7 @@ top: 44%;
   left: 76vw;
   width: 20%;
   height: 30%;
-  grid-template-rows: 10% 90%; /* 10% para el header, 90% para el contenido */
+  grid-template-rows: 10% 90%;
   grid-template-columns: 50% 50%;
   background-color: rgba(0, 0, 0, 0.6); 
   border-radius: 10px;
@@ -3648,7 +3656,7 @@ top: 44%;
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-column: span 2; /* Ocupar ambas columnas */
+  grid-column: span 2;
   background: rgba(255, 255, 255, 0.1);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -3680,12 +3688,12 @@ top: 44%;
   position: relative;
   top: 3%;
   display: grid;
-  grid-template-rows: repeat(4, auto); /* C: 4 filas */
+  grid-template-rows: repeat(4, auto);
   align-items: center;
   color: white;
 }
-#control-cmyk-lbl > label,
-#control-rgb-lbl > label{
+#control-cmyk-lbl > .etq-control,
+#control-rgb-lbl > .etq-control{
   height: 50%;
 }
 #control-cmyk-inpt,
@@ -3804,8 +3812,8 @@ top: 44%;
   display: none;
   background-color: rgba(130,125,133,0.1);
   border-radius: 13px;
-  top: 15vh;
-  left: 33vh;
+  top: 23vh;
+  left: 20vh;
   width: 36vw;
   height: 50vh;
 }
@@ -3861,13 +3869,15 @@ top: 44%;
 .calendar-container {
   position: relative;
   display: none;
-  left: 33vw;
-  top: 15vh;
+  left: 49vw;
+  top: 14.5vh;
   width: 33vw;
   height:50vh;
   padding: 20px;
   border-radius: 15px;
   font-family: Arial, sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
   color: rgba(255,255,255,0.5);
   background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
 }
@@ -3876,6 +3886,9 @@ top: 44%;
   font-size: 1.4rem;
   margin-bottom: 15px;
   letter-spacing: 2px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
 }
 .calendar-grid {
   display: grid;
@@ -3896,7 +3909,7 @@ top: 44%;
   cursor: pointer;
 }
 .day-cell:hover {
-  background-color: rgba(0,255,0);
+  background-color: #00cc88;
   color:rgb(0,0,55);
   box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
 }
@@ -4028,11 +4041,12 @@ top: 44%;
 #contenedor-botonera{
   position: fixed;
   display: grid;
-  grid-template-rows: repeat(9, 1fr);
+  display: none;
+  grid-template-rows: repeat(7, 1fr);
   height: 50vh;
   width: 10vw;
   left: 89vw;
-  top: 5vh;
+  top: 20vh;
   z-index: 7;
 }
 #contenedor-botonera button{
@@ -4042,10 +4056,9 @@ top: 44%;
   cursor: pointer;
 }
 #contenedor-botonera button:hover {
-  scale: 1.2;
-  background-color: black;
-  color: rgb(0, 255, 0);
-  text-shadow: 1px 1px 2px rgb(0, 255, 0);
+  scale: 1.1;
+  background-color: rgb(6, 31, 223);
+  color: #fff;
 }
 #home-gym {
   display: grid;
@@ -4072,18 +4085,18 @@ top: 44%;
   position: absolute;
   display: grid;
   display: none;
-  grid-template-rows: repeat(22, 1fr);
+  grid-template-rows: repeat(21, 1fr);
   left: 1vw;
-  top: 3vh;
+  top: 8vh;
   gap: 10px;
   background-color: #071520;
-  padding: 2%;
+  padding: 1%;
   border-radius: 13px;
   width: 20vw;
-  height: 87vh;
+  height: 85vh;
   color: white;
 }
-.formulario-crear-cuenta label{
+.formulario-crear-cuenta .etq-frm{
   display: flex;
   align-items: center;
   justify-content: flex-start; 
@@ -4092,9 +4105,9 @@ top: 44%;
   border-radius: 7px;
   background-color: #1f3546;
 }
-.formulario-crear-cuenta label:hover{
-  color: rgba(0,255,0,1);
-  background-color:#11242c;
+.formulario-crear-cuenta .etq-frm:hover{
+  background-color: #00cc88;
+  color: #001;
   transition: background-color 0.3s ease;
 }
 .element-chart{
@@ -4103,12 +4116,15 @@ top: 44%;
   grid-template-rows: 50% 50%;
   width: 100%;
 }
-.formulario-crear-cuenta h2 {
-  margin-bottom: 5%;
-  font-size: 12px;
+.formulario-crear-cuenta h2{
+  position:absolute;
+  margin-top: -15%;
+  left: 11%;
   text-align: center;
   overflow: hidden;
   color: rgba(0,255,0,1);
+  font-family: 'Courier New', Courier, monospace; 
+  font-size: 1.5rem;      
 }
 .formulario-crear-cuenta button:hover{
   color: rgba(0,255,0,1);
@@ -4165,7 +4181,6 @@ top: 44%;
   object-fit: contain;
   border-radius: 14px;
 }
-
 .rbs-style {
   width: 200px;
   padding: 40px;
@@ -4207,8 +4222,6 @@ top: 44%;
   background-color: rgb(0,255,0) !important;
   color: rgb(0,0,55) !important;
 }
-/* ************************************************************************************************************************************************* */
-
 .image-viewer {
   position: relative;
   display: grid;
@@ -4218,8 +4231,8 @@ top: 44%;
   display: none;
   top: 56vh;
   left: 32vw;
-  width: 50vw;   /* Tamaño fijo del visor */
-  height: 44vh;  /* Tamaño fijo del visor */  
+  width: 50vw;
+  height: 44vh;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -4242,12 +4255,12 @@ top: 44%;
   object-fit: contain;
 }
 .nav {
-  position: relative;  /* Mantiene su celda en el grid */
+  position: relative;
   background-color: rgb(34, 63, 147);
   border: none;
   color: white;
   height: 7%;
-  width: 50%;    /* Ajusta si quieres un botón cuadrado */
+  width: 50%;
   font-size: 0.6rem;
   cursor: pointer;
   border-radius: 50%;
@@ -4259,4 +4272,15 @@ top: 44%;
 }
 .nav:hover {
   background-color: rgba(0,0,255  ,0.7);
+}
+.borrar-boton{
+  position: absolute;
+  display: flex;
+  top: 44vh;
+  left: 44vw;
+  width: 5vw;
+  height: 5vh;
+  background-color: #0056b3;
+  cursor: pointer;
+  z-index: 200;
 }

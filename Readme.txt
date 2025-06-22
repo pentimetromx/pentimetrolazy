@@ -1,14 +1,1 @@
-ENTRA 5 DESDE 2046
-
-ENTRA 9 DESDE 2159
-
-ENTRA 1 DESDE 2272
-
-ENTRA 10 DESDE 2385
-
-ENTRA 6 DESDE 2498
-
-
-241
-
-171
+mostrarElementos(['container01','buscador','search-form','links-inicialesI','links-iniciales',])

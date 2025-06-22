@@ -47,7 +47,7 @@ body,html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.4; /* Ajusta la opacidad según tus preferencias */
+  opacity: 0.4;
 }
 .overlay {
   position: absolute;
@@ -66,7 +66,7 @@ body,html {
   width: 100vw;
   height: 100vh; 
   object-fit: cover; 
-  z-index: -1; /* Ajustado para estar detrás de la imagen de fondo */
+  z-index: -1;
 }
 #image-background {
   position: fixed;
@@ -95,9 +95,8 @@ h1, h2, h3 {
   align-items: center;
   cursor: pointer;
   justify-content: center;
-  /* background-color: rgb(0, 255, 0); */
   background-color:  rgb(138, 149, 151);
-  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8); /* Sombreado interno para volumen */
+  box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8);
   color: black;
   border-radius: 7px;
   transition: transform 0.1s;
@@ -115,8 +114,8 @@ color: white;
 .boton-b:hover,
 .boton-c:hover{
   transform: scale(1.1);
-  background:  blue;
-  color: white;
+  background-color: rgb(6, 31, 223);
+  color: #fff;
 }
 .boton-d:hover {
   transform: scale(1.1);
@@ -204,11 +203,11 @@ color: white;
   font-size:0.7em;
   cursor: pointer;
   background-color: #e0e0e0;
-  border-bottom: 2px solid #aaa; /* Bisel inferior gris */
-  border-top: 2px solid #fff; /* Sombra superior blanca */
+  border-bottom: 2px solid #aaa;
+  border-top: 2px solid #fff;
 }
 .iridescent-element li:hover {
-  background-color: rgb(0,0,100);
+  background-color: rgb(6, 31, 223);
   color: #fff;
 }
 #container2,
@@ -304,15 +303,15 @@ color: white;
   position: absolute;
   left: 22%;
   top: 32%;
-  display: grid;                      /* Mantener visible */
-  grid-template-columns: 1fr 1fr;     /* Dos columnas iguales */
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
   background-color: #000;
   width: 50%;
   height: 62%;
   border: 0.1px solid rgb(0, 255, 0);
   border-radius: 13px;
-  box-sizing: border-box;            /* Para que el padding y el border no rompan el grid */
-  overflow: hidden;                  /* Si algo sobresale */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 #agrupaOblicuos-XI{       
   position: absolute;
@@ -457,7 +456,6 @@ color: white;
   position: relative;
   flex-direction: column;
   display: flex;
-  /* margin-right:13.6vw; */
 }
 #pantalla-inicial{
   position: relative;
@@ -482,7 +480,6 @@ color: white;
   left: 0;
   height:6.5vh;
   width:9.2vw;
-  /* background-color: rgb(0, 255, 0); */
   background-color:  rgb(138, 149, 151); 
   box-shadow: inset 5px 15px 5px rgba(0, 0, 0, 0.8);
   color: black;
@@ -504,6 +501,10 @@ color: white;
   top:0;
   width:60%;
   padding-left:1.5vw;
+}
+#cont-Verticales1 button:hover{
+  background-color: rgb(6, 31, 223);
+  color: #fff;
 }
 #videosTraining{
   display: flex;
@@ -944,8 +945,6 @@ width:447px ;
 }
 .butt-prepre-d:hover{
   transform: scale(1.3);
-  /* background-color: rgb(0, 255, 0);
-  color: black; */
   background: linear-gradient(to bottom, #00b7c2, #007f89); 
   color: #ffffff;
   
@@ -1057,7 +1056,7 @@ width:447px ;
   width: 350px;
   height: 333px;
   border-radius: 20px;
-  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+  transition: left 1.007s ease;
 }
 #canvasContainer3{
   position: absolute;
@@ -1074,7 +1073,7 @@ width:447px ;
 #MiGrafica{
   position: absolute;
   display: flex;
-  transition: left 1.007s ease; /* Usa la propiedad left para la transición */
+  transition: left 1.007s ease;
 }
 #contImagGraf,
 #contImagNeg{
@@ -1240,8 +1239,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: 24px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto;
+  margin-right: auto;
 }
 #agrupaOblicuos-XXIV{ 
   position: relative;
@@ -1249,8 +1248,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: 24px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto;
+  margin-right: auto;
 }
 #agrupaOblicuos-XVII,
 #agrupaOblicuos-XV,
@@ -1260,8 +1259,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: 53px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto; 
+  margin-right: auto;
 }
 #agrupaOblicuos-XIV{
   position: relative;
@@ -1269,8 +1268,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: 24px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto;
+  margin-right: auto;
 }
 #agrupaOblicuos-XVI{
   position: relative;
@@ -1278,8 +1277,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: 24px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto;
+  margin-right: auto;
 }
 #agrupaOblicuos-XIX{
   position: relative;
@@ -1287,8 +1286,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: -264px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto; 
+  margin-right: auto;
 }
 #agrupaOblicuos-XX{
   position: relative;
@@ -1296,8 +1295,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: -264px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto;
+  margin-right: auto;
 }
 #agrupaOblicuos-XXI{
   position: relative;
@@ -1305,8 +1304,8 @@ width:447px ;
   flex-direction: row-reverse;
   top: -264px;
   gap: 7px;
-  margin-left: auto; /* Establece el margen izquierdo automático */
-  margin-right: auto; /* Establece el margen derecho automático */
+  margin-left: auto;
+  margin-right: auto;
 }
 #contMedio-V-admin-I{
   position: relative;
@@ -1833,13 +1832,13 @@ width:447px ;
   display: none;
 }
 .linksTraining {
-  list-style: decimal; /* Mantiene el índice numérico */
+  list-style: decimal;
   border-radius: 13px;
 }
 .linksTraining li {
   color: rgba(255,255,255,0.8);
   transition: color 0.3s ease;
-  margin-top: 20px; /* Agrega separación entre los elementos */
+  margin-top: 20px; 
 }
 
 .linksTraining li a{
@@ -1851,7 +1850,7 @@ width:447px ;
 }
 .linksTraining li:hover,
 .linksTraining li:hover a {
-    color: orange; /* Cambia el color del índice y del texto */
+    color: orange;
 }
 header {
   background-color: #333;
@@ -1876,14 +1875,14 @@ header {
 #bot-atras101::before,
 #bot-atras102::before,
 #bot-atras-m::before{
-  content: "\25C0"; /* Código HTML para el triángulo de reproducción */
-  font-size: 2em; /* Aumentar el tamaño al doble */
+  content: "\25C0"; 
+  font-size: 2em;
   color: white;
 }
 #arow-direction::after{
   position: absolute;
   top:0;
-  content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
+  content: "\25B6";
   font-size: 1em;
   color: rgb(0,255,0);
   margin-left:6.3vw;
@@ -1910,8 +1909,8 @@ header {
 #bot-atras30::before,
 #bot-atras32::before,
 #bot-atras33::before{
-  content: "\25B6"; /* Código HTML para el triángulo de reproducción hacia la derecha */
-  font-size: 2em; /* Aumentar el tamaño al doble */
+  content: "\25B6"; 
+  font-size: 2em; 
   color: white;
 }
 #imgsSecador{
@@ -2325,7 +2324,7 @@ h6{
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .miBoton:hover {
-  background-color: #4CAF50; /* Verde más suave */
+  background-color: #4CAF50;
   color: white;
 }
 .inpt-class{
@@ -2500,7 +2499,7 @@ h6{
   background-color: rgb(255, 200, 0); 
   margin-bottom:1vh;
   border-radius:2px;
-  transition: width 0.5s ease; /* Transición suave */
+  transition: width 0.5s ease;
 }
 .but-analitic{
   position: absolute;
@@ -2801,7 +2800,6 @@ h6{
   height: 100%;
   object-fit: fill; 
   border-radius: 20px;
-  /* overflow: hidden; */
 }
 #rodillos-II img{
   height: 195px;
@@ -2874,7 +2872,7 @@ h6{
   height:100%;
   border-radius: 11px;
 }
-.cont-user label {
+.cont-user span {
   position: relative;
   display: flex;
   color: yellow;
@@ -3047,7 +3045,7 @@ elemento.visible {
 .boton-inclinado {
   width: 167px;
   height: 77px;
-  background-color: #eaeaea; /* Color blanco perla */
+  background-color: #eaeaea;
   position: relative;
   text-align: center;
   line-height: 77px;
@@ -3059,7 +3057,7 @@ elemento.visible {
   position: absolute;
   width: 77px;
   height: 100%;
-  background-color: #eaeaea; /* Color blanco perla */
+  background-color: #eaeaea;
 }
 .boton-inclinado:before {
   left: 0;
@@ -3070,15 +3068,15 @@ elemento.visible {
   transform: skewY(-45deg);
 }
 .texto {
-  color: #555; /* Color gris */
+  color: #555;
 }
 #videoElement4{
-  object-fit: fill; /* Utiliza 'fill' para que el video llene el contenedor sin conservar la relación de aspecto */
+  object-fit: fill;
   position: absolute;
   left: 377px;
   top: 100px;
-  width: 550px; /* Establece el ancho deseado */
-  height: 400px; /* Establece el alto deseado */
+  width: 550px;
+  height: 400px;
 }
 #indicaciones-eje,
 #indicaciones-conico {
@@ -3091,9 +3089,9 @@ elemento.visible {
   align-content: center;
   justify-content: space-evenly;
   align-items: flex-start;
-  height: 100vh; /* 100% de la altura de la ventana */
+  height: 100vh;
   background-color: gray;
-  left: 75%; /* El 75% del ancho de la ventana */
+  left: 75%;
   top: 0;
   z-index: 3;
   border-radius: 14px;
@@ -3144,7 +3142,7 @@ elemento.visible {
   left:15vw;
   width:28vw;
   height:45vh;
-  margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
+  margin-bottom:2.7vh;
   display: none;  
 }
 .marco-3{
@@ -3247,9 +3245,9 @@ elemento.visible {
   content: "";
   position: absolute;
   left: 0;
-  top: 0; /* Ajusta la posición desde la parte superior */
+  top: 0;
   width: 10%;
-  height: 100%; /* Ajusta para que coincida con la altura del contenedor */
+  height: 100%;
   background-color: rgb(0, 255, 0);
 }
 .butt-mautonomo:hover {
@@ -3442,8 +3440,8 @@ elemento.visible {
   box-sizing: border-box;
   border: solid orange;
   border-radius: 7px;
-  width: calc(33.3333% - 10px); /* 10px es el espacio entre las imágenes */
-  margin-bottom: 10px; /* Espacio entre las filas */
+  width: calc(33.3333% - 10px); 
+  margin-bottom: 10px;
 }
 #toyota-kaizen-antes{
   position:absolute;
@@ -3561,7 +3559,6 @@ h4{
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px; 
-  /* transform: rotate(90deg); */
 }
 .contCicodelicos {
   position: absolute;
@@ -3960,7 +3957,7 @@ h4{
 #vidCicodelia{
   position: absolute;
   height: 99%; 
-  object-fit: fill; /* Elimina la relación de aspecto original */
+  object-fit: fill;
   width: 99%;
   z-index: -1; 
 }
@@ -4045,7 +4042,7 @@ h4{
   border-radius: 5px;
   text-align: center;
   font-family: 'GothamRounded', sans-serif;
-  animation: aumentarTamano 1s infinite alternate; /* Animación cada 1 segundo */
+  animation: aumentarTamano 1s infinite alternate;
   display: none;
 }
 #kaizen-propuestos{
@@ -4157,7 +4154,7 @@ input.numero{
   display: none;
 }
 input.numero:focus {
-  border-color: blue; /* Cambia el color del borde al azul cuando el input está enfocado */
+  border-color: blue;
 }
 #padre-circle{
   position: absolute;
@@ -4272,7 +4269,7 @@ input.numero:focus {
 }
 @keyframes aumentarTamano{
   to {
-    transform: scale(3); /* Aumenta el tamaño 2x */
+    transform: scale(3);
   }
 }
 #butt-Institucional.big-button{
@@ -4288,8 +4285,8 @@ input.numero:focus {
   overflow: hidden;
 }  
 #titulo-ancho{
-  width: 0; /* Inicia con ancho de 0 para el efecto de desenrollar */
-  transition: width 0.7s ease; /* Transición para el efecto de desenrollar */
+  width: 0;
+  transition: width 0.7s ease;
 }
 #imagen-ayudas{
   position: absolute;
@@ -4299,7 +4296,7 @@ input.numero:focus {
   border-radius: 100px;
   cursor: pointer;
   display: none;
-  transition: all 0.2s ease; /* Transición suave para el efecto */
+  transition: all 0.2s ease;
 }
 #imagen-ayudasII{
   position: absolute;
@@ -4309,15 +4306,15 @@ input.numero:focus {
   border-radius: 100px;
   cursor: pointer;
   display: none;
-  transition: all 0.2s ease; /* Transición suave para el efecto */
+  transition: all 0.2s ease;
 }
 #imagen-ayudas.pressed{
-  transform: translateY(2px); /* Mueve la imagen hacia abajo */
-  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2); /* Efecto de sombreado hacia adentro */
+  transform: translateY(2px);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 #imagen-ayudasII.pressed{
-  transform: translateY(3px); /* Mueve la imagen hacia abajo */
-  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2); /* Efecto de sombreado hacia adentro */
+  transform: translateY(3px);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 #contenedorElementos{
   position: relative;
@@ -4461,7 +4458,7 @@ input.numero:focus {
   position: absolute;
   top: -1.1vh;
   left: calc(50% - 4px); 
-  font-size:1.4vw; /* Tamaño triángulo */
+  font-size:1.4vw; 
   color: rgb(0,2556,255)
 }
 #slider_4{
@@ -4553,7 +4550,7 @@ input.numero:focus {
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  padding-bottom: 4px; /* Relleno en la parte inferior */
+  padding-bottom: 4px;
 }
 #container_interfaz_2{
   position: absolute;
@@ -4580,8 +4577,8 @@ input.numero:focus {
   height: 100%;
 }
 .numero{
-  width: calc(10% - 2px); /* Divide el espacio en 10 elementos y resta el margen */
-  margin: 0 12px; /* Espacio de margen entre los elementos */
+  width: calc(10% - 2px);
+  margin: 0 12px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size:0.7vw;
@@ -4634,12 +4631,12 @@ input.numero:focus {
   height: 15px; 
 }
 .guide_2::after {
-  content: '\25B2'; /* triángulo */ 
+  content: '\25B2';
   position: absolute;
-  top: -8px; /* Ajusta la posición del triángulo */
-  left: calc(50% - 4px); /* Ajusta la posición del triángulo */
-  font-size: 16px; /* Tamaño triángulo */
-  color: rgb(255, 255, 0); /* Color triángulo */
+  top: -8px;
+  left: calc(50% - 4px);
+  font-size: 16px;
+  color: rgb(255, 255, 0);
 }
 .guide{
   position: absolute;
@@ -4981,7 +4978,7 @@ input.numero:focus {
 .interfaz button {
   width: 17px;
   height: 17px;
-  border-radius: 50%; /* Hacemos los botones circulares */
+  border-radius: 50%;
   margin-right: 5px;
   cursor: pointer;
 }
@@ -5120,7 +5117,7 @@ input.numero:focus {
   object-fit: fill;
   opacity: 0.7;
   background-image: url('./assets/grafico\ avanzado.png');
-  background-size: cover; /* Esto se asegurará de que la imagen cubra todo el área del elemento */
+  background-size: cover;
   background-position: center;  
   z-index: 4;
   display: none;
@@ -5130,7 +5127,6 @@ input.numero:focus {
   display: flex;
   top: -7.5%;
   width:0.1px;
-  /* height: 178px; */
   height: 107.5%;
   opacity: 0.7;
   background-image: url('./assets/grafico\ lineasIII.png');
@@ -5213,7 +5209,7 @@ input.numero:focus {
   right: 77%;
   z-index: 3;
   display: flex;
-  justify-content: space-around; /* Distribuye los botones equitativamente */
+  justify-content: space-around;
   align-items: center;
   width: 24%;
   max-width: 800px;
@@ -5450,7 +5446,7 @@ input.numero:focus {
   width: 100%;
   height: 0;
   border-radius: 0 0 5px 5px;
-  background-color: rgb(0, 255, 0); /* Color verde */
+  background-color: rgb(0, 255, 0);
   box-shadow: 0 0 15px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 0.7);
 }
 #general{
@@ -5762,7 +5758,7 @@ input.numero:focus {
   height: 100%;
   object-fit: fill;
 }
-.lubricante label{
+.lubricante .labl-lub{
   position: relative;
   display: block;
   top:0;
@@ -5784,12 +5780,19 @@ input.numero:focus {
 .labl-text{
   font-size: 1.3vw;
 }
-.contenedor-padre label{ 
+/* .contenedor-padre label{ 
   position:relative;
   display: grid;
   margin-top: -3vh;
 }
-.hidden{
+ */
+ .contenedor-padre .labl-lub {
+  position: relative;
+  display: grid;
+  margin-top: -3vh;
+}
+
+ .hidden{
   display: none;
 }
 .visible {
@@ -5926,8 +5929,8 @@ height:21%;
   font-size:0.7em;
   cursor: pointer;
   background-color: #e0e0e0;
-  border-bottom: 2px solid #aaa; /* Bisel inferior gris */
-  border-top: 2px solid #fff; /* Sombra superior blanca */
+  border-bottom: 2px solid #aaa;
+  border-top: 2px solid #fff;
   border-radius: 4px;
 }
 .context-menu li:hover {
@@ -5998,7 +6001,6 @@ height:21%;
   font-family: Arial, sans-serif;
   border-radius: 5px;
   color: #f0f0f0;
-  /* background-color: rgb(0, 0, 50); */
   font-weight: bold;
   box-sizing: border-box;
   height:100%;
@@ -6009,7 +6011,7 @@ height:21%;
 
 }  
 .vacio {
-  background-color: #f0f0f0; /* Color para los días vacíos */
+  background-color: #f0f0f0;
   border: none;
 }
 #meses{
@@ -6233,9 +6235,9 @@ height:21%;
   .torre-imp .unidad-torre{
     flex: 1;
     top: 0;
-    width: 25%; /* Esto asegura que cada hijo ocupe el 20% del ancho del padre */
-    height: 100%; /* Esto asegura que los hijos tengan la misma altura que el contenedor padre */
-    box-sizing: border-box; /* Esto asegura que el padding y border se incluyan en el ancho y alto */
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
   }
   #toggleVideoButton{
     position:absolute;
@@ -6390,8 +6392,8 @@ height:21%;
     margin-bottom: 5px;
   }
   #lubri-vid{
-    width: 100%; /* Asegura que el video ocupe todo el espacio disponible */
-    height: 100%; /* Asegura que el video ocupe todo el espacio disponible */
+    width: 100%; 
+    height: 100%;
     object-fit: fill; 
     border-radius: 17px;
   } 
@@ -6827,7 +6829,7 @@ height:21%;
     left:17%;
     width:41%;
     height:21%;
-    margin-bottom:2.7vh; /* Añade un margen inferior de 20px al contenedor padre */
+    margin-bottom:2.7vh;
     display: none;  
   }
   .marco-3{
@@ -7076,15 +7078,6 @@ height:21%;
   .mostrar-cont{
     display: flex;
   }
-  /* #back-container{
-    left: 10%;
-    top: 6%;
-    width:85%; 
-    height:5%;
-  }
-  #back-container > button{
-    background-color: transparent;
-  } */
   #container01{
     position: absolute;
     display: flex;
@@ -7339,8 +7332,8 @@ height:21%;
     font-size:0.7em;
     cursor: pointer;
     background-color: #e0e0e0;
-    border-bottom: 2px solid #aaa; /* Bisel inferior gris */
-    border-top: 2px solid #fff; /* Sombra superior blanca */
+    border-bottom: 2px solid #aaa;
+    border-top: 2px solid #fff;
   }
   .iridescent-element li:hover {
     background-color: rgb(0,0,100);
@@ -7400,8 +7393,8 @@ height:21%;
     margin-top: 116%;
     left: -29%;
     gap: 7px;
-    margin-left: auto; /* Establece el margen izquierdo automático */
-    margin-right: auto; /* Establece el margen derecho automático */
+    margin-left: auto;
+    margin-right: auto;
   }
   #butt-operacion{
     position: absolute;
@@ -8449,15 +8442,13 @@ height:21%;
     font-size:0.6em;
     cursor: pointer;
     border-radius: 8px; 
-    /* Efecto de profundidad (tridimensional) */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4), 
     inset 0px -3px 3px rgba(0, 0, 0, 0.2);
   }
-  /* Efecto de presionado */
   #miBoton:active {
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4), 
     inset 0px 3px 3px rgba(0, 0, 0, 0.2);
-    transform: translate(-50%, -50%) translateY(2px) translateX(2px); /* Mueve el botón hacia abajo */
+    transform: translate(-50%, -50%) translateY(2px) translateX(2px);
   }
   .miBoton:hover {
     background-color:rgb(0,255,0);
@@ -8580,8 +8571,8 @@ height:21%;
     left: 31%;
     display: none;
     z-index: 3;
-    padding: 3%; /* Agrega un padding interno de 3% */
-    box-sizing: border-box; /* Asegura que el padding no afecte el width */
+    padding: 3%;
+    box-sizing: border-box;
   }
   .guia-neumatica{
     overflow-y: scroll;
@@ -9161,7 +9152,7 @@ height:21%;
     width:100%;
     margin-bottom: 7px;
   }  
-  .cont-user label{
+  .cont-user span{
     position: relative;
     color: yellow;
     font-family: "GothamRounded", sans-serif;
@@ -9257,7 +9248,6 @@ height:21%;
     width:59vw;
     height:13vh;
     cursor: pointer;
-    /* transition: left 1.6s ease, top 1.6s ease;  */
   }
   .graphs{
     cursor: pointer;
@@ -10307,16 +10297,15 @@ height:21%;
     font-weight: bold;
   }
   #gran-cortina{
-    position: fixed; /* Usa 'fixed' para que cubra toda la ventana de visualización */
-    display: none; /* Inicialmente está oculto */
+    position: fixed;
+    display: none;
     left: 0;
     top: 0;
-    width: 100vw; /* Cubre todo el ancho de la ventana */
-    height: 100vh; /* Cubre todo el alto de la ventana */
-    background-color: rgba(0, 0, 0, 0.1); /* Semitransparente para ver los elementos detrás */
-    z-index: 5; /* Asegura que esté sobre otros elementos */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 5;
   }  
-  /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
   #metas-diarias{
     position:absolute;
     display: flex;
@@ -10380,7 +10369,7 @@ height:21%;
     color: rgb(40, 0, 0);
   }
   .vacio {
-    background-color: #f0f0f0; /* Color para los días vacíos */
+    background-color: #f0f0f0;
     border: none;
   }
   #meses{

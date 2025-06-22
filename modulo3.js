@@ -1,11 +1,30 @@
 document.addEventListener('keydown', function(event) {                
   if (event.ctrlKey && event.shiftKey) {
     switch (event.key) {
-      case 'Z':   
-        abrirSeccionOperativa('cont-titulo-operacion')
+      case 'Z':
         setTimeout(() => {
-          abrirSeccionContinua('pantalla-inicial')
-        }, 1000);
+        actualizarAlturaBarra(primerContenedor, '75%');          
+        }, 177); 
+        setTimeout(() => {
+        actualizarAlturaBarra(segundoContenedor, '55%');          
+        }, 244);  
+        setTimeout(() => {
+        actualizarAlturaBarra(tercerContenedor, '35%');          
+        }, 311);  
+        setTimeout(() => {
+        actualizarAlturaBarra(cuartoContenedor, '87%');          
+        }, 386);  
+        setTimeout(() => {
+        actualizarAlturaBarra(quintoContenedor, '90%');          
+        }, 450);  
+        setTimeout(() => {
+        actualizarAlturaBarra(sextoContenedor, '22%');          
+        }, 527);  
+        setTimeout(() => {
+        actualizarAlturaBarra(septimoContenedor, '67%');          
+        }, 600);  
+
+
       break;
       case 'H':
         function restablecerClickCanvasContainers() {
@@ -189,7 +208,7 @@ let botonReseteo = document.getElementById('resetButton')
 let flagAplicacion = false
 let iniciador = document.getElementById('iniciador')
 let retroceder = document.getElementById('iniciador-I')
-let almacenObjetos = JSON.parse(localStorage.getItem('almacenObjetos')) || {}; 
+let almacenObjetos = JSON.parse(localStorage.getItem('almacenObjetos')) || {};  
 let objetoGlobal = null
 let nombreProvisional = null
 let objetoGlobalColor = null
@@ -201,22 +220,39 @@ function ocultaElementos(id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id13
       elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'  
     }
   }
+  document.querySelector('.sections').style.display = 'grid'
+  document.querySelector('.sections-btn').style.display = 'grid'
   document.querySelector('#simulador').style.display = 'flex'
   container1.style.display = 'none'
   const interfaz = document.getElementById('inerfaz-ajuste-fino');    
   let displayTraining = document.getElementById('component1')  
   displayTraining.style.display = 'flex'
   switch(id1){
-    case 'segunda-pantalla':
-      break;
-    case 'interfaz-registro':
-    break;
     case 'inerfaz-ajuste-fino':
       if (interfaz.style.display === 'none' || interfaz.style.visibility === 'hidden') {
         interfaz.style.display = 'flex'
       }
     break;
-    case 'interfaz-perfiles':
+    case 'colorCMYK':
+      let padreCmyk = document.querySelector("#padre-cmyk");
+      let padreControles = document.querySelector("#container-slider");
+      let perfilador = document.querySelector('#perfiles-color')
+
+      padreCmyk.style.display = "grid";
+      padreControles.style.display = 'grid';
+      padreCmyk.style.zIndex = 200
+      perfilador.removeAttribute("style");
+    break;
+    case 'colorDisplay':
+      let padreRgb = document.querySelector("#padre-rgb");
+      let padreControlesRGB = document.querySelector("#padre-controles");
+      let perfiladorRGB = document.querySelector('#perfiles-color')
+
+      padreRgb.style.display = "grid";
+      padreControlesRGB.style.display = 'grid';
+      padreRgb.style.zIndex = 200
+      perfiladorRGB.removeAttribute("style");
+      
     break;
   }  
 }
@@ -2365,7 +2401,6 @@ let almacenSolucionMagenta = []
 let almacenSolucionAmarillo = []
 let almacenSolucionEspecial = []
 let almacenSolucionBarniz = []
-
 let almacenTintaNegro = []
 let almacenTintaCyan = []
 let almacenTintaMagenta = []
@@ -2837,8 +2872,6 @@ document.getElementById('butt-perfil').addEventListener('click', () =>{
 let primerClickRealizado = false;
 document.getElementById('butt-control-tinta').addEventListener('click', () =>{ 
   const colorPerfilador = document.querySelector('#current-Color');   
-/*   if (objetoGlobal && Object.keys(objetoGlobal).length <= 0) {
-  } */
   var elementosExcluidos = ['simulador','inerfaz-ajuste-fino','perfil-individual','control-perfiles','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7']  
   for (var i = 0; i < allContenedores.length; i++) {
     var elemento = document.getElementById(allContenedores[i])  
@@ -3201,35 +3234,27 @@ function idPadreCantidadClaseTextId(contPadre, numeroDeLineas, classElto, claseD
   const contenedorPrincipal = document.getElementById(contPadre);  
   // Limpiar el contenedor para evitar acumulación de elementos
   contenedorPrincipal.innerHTML = '';
-
-
   // Crear el único span que debe estar fuera del bucle
   const spanAgua = document.createElement('span');
   const spanTinta = document.createElement('span');
-
   spanAgua.classList.add('div-agua', 'agua-div');
   spanTinta.classList.add('div-gral');
-
   // Asignar ID al span creado
   spanAgua.id = `display-general-${color}`;
   spanTinta.id = `gral-display-${color}`;
-
-
   // Agregar el span al contenedor padre especificado en `padreEtiqueta`
   const contenedorDestino = document.getElementById(padreEtiqueta);
   const contenedorTinta = document.getElementById(padreEtiquetaTinta);
-
-  
   if (contenedorDestino) {
     contenedorDestino.appendChild(spanAgua);
   } else {
-    console.log(`El contenedor con ID "${padreEtiqueta}" no se encontró.`);
+    
   }
 
   if (contenedorTinta) {
     contenedorTinta.appendChild(spanTinta);
   } else {
-    console.warn(`El contenedor con ID "${padreEtiqueta}" no se encontró.`);
+  
   }
 
   // Crear múltiples spans dentro del contenedorPrincipal usando el bucle
@@ -3284,560 +3309,6 @@ function toggleColorButton(index) {
   }
   
 }
-document.addEventListener('DOMContentLoaded', () => {
-  // elementosDinamicamente(PADRE , CANTIDAD , CLASE , TEXTO ENTRE DIVS , span); 
-  elementosDinamicamente('tanque-solucion', 100,'lineas-solucion');
-  AelementosDinamicamente('tanque-tinta', 100, 'lineas-tinta');
-  elementosDinamicamente('puntos', 22,'punto');
-  elementosDinamicamente('indexado', 22,'indexar',1);
-  elementosDinamicamente('perfil-barniz', 22,'grilla-barniz','','grilla');
-  elementosDinamicamente('perfil-especial', 22,'grilla-especial','','grilla');
-  elementosDinamicamente('perfil-amarillo', 22,'grilla-amarillo','','grilla');  
-  elementosDinamicamente('perfil-magenta', 22,'grilla-magenta','','grilla');
-  elementosDinamicamente('perfil-azul', 22,'grilla-azul','','grilla');
-  elementosDinamicamente('perfil-negro', 22,'grilla-negro','','grilla');
-  elementosDinamicamente('conte-colors',8,'celda');
-  clasePadreCantidadClaseTextId('grilla-negro', 24, 'led-general', '','')
-  clasePadreCantidadClaseTextId('grilla-amarillo', 24, 'led-general', '','')
-  clasePadreCantidadClaseTextId('grilla-azul', 24, 'led-general', '','')
-  clasePadreCantidadClaseTextId('grilla-magenta', 24, 'led-general', '','')
-  clasePadreCantidadClaseTextId('grilla-especial', 24, 'led-general', '','')
-  clasePadreCantidadClaseTextId('grilla-barniz', 24, 'led-general', '','')
-  idPadreCantidadClaseTextId('footer-1', 100, 'divs-grales-tinta-negro','clase-dos', '','','','');
-  idPadreCantidadClaseTextId('footer-2', 100, 'divs-grales-solucion-negro','clase-dos', '','','footer-2', 'negro', 'footer-1')
-  idPadreCantidadClaseTextId('footer-3', 100, 'divs-grales-tinta-azul','clase-dos', '','')
-  idPadreCantidadClaseTextId('footer-4', 100, 'divs-grales-solucion-azul','clase-dos', '','', 'footer-4', 'azul', 'footer-3')
-  idPadreCantidadClaseTextId('footer-5', 100, 'divs-grales-tinta-magenta','clase-dos', '','')
-  idPadreCantidadClaseTextId('footer-6', 100, 'divs-grales-solucion-magenta','clase-dos', '','','footer-6', 'magenta', 'footer-5')
-  idPadreCantidadClaseTextId('footer-7', 100, 'divs-grales-tinta-amarillo','clase-dos', '','')
-  idPadreCantidadClaseTextId('footer-8', 100, 'divs-grales-solucion-amarillo','clase-dos', '','','footer-8', 'amarillo', 'footer-7')
-  idPadreCantidadClaseTextId('footer-9', 100, 'divs-grales-tinta-especial','clase-dos', '','')
-  idPadreCantidadClaseTextId('footer-10', 100, 'divs-grales-solucion-especial','clase-dos', '','','footer-10', 'especial', 'footer-9')
-  idPadreCantidadClaseTextId('footer-11', 100, 'divs-grales-tinta-barniz','clase-dos', '','')
-  idPadreCantidadClaseTextId('footer-12', 100, 'divs-grales-solucion-barniz','clase-dos', '','','footer-12', 'barniz', 'footer-11')
-
- const botonesLatentes = document.querySelectorAll('.butt-selector'); 
- const colorActual = document.querySelector('#current-Color');   
-  botonesLatentes.forEach((boton,index) => {
-    boton.addEventListener('click', () => {
-      // Cambia el color de fondo y el color del texto del span dentro del botón clicado
-      boton.style.backgroundColor = 'rgb(0,255,0)';
-      const spanBoton = boton.querySelector('span');
-      if (spanBoton) {
-        spanBoton.style.color = 'black'; // Cambia el color del texto a negro
-      }  
-      // Reinicia el color de fondo y el color del texto del span en los demás botones
-      botonesLatentes.forEach(otroBoton => {
-        if (otroBoton !== boton) {
-          otroBoton.style.backgroundColor = ''; // Reinicia el color de fondo
-          const spanOtroBoton = otroBoton.querySelector('span');
-          if (spanOtroBoton) {
-            spanOtroBoton.style.color = ''; // Reinicia el color del texto
-          }
-        }
-      });
-      switch (index) {
-        case 0:
-          colorActual.textContent = 'NEGRO';
-          colorActual.style.color = 'black'
-          break;
-        case 1:
-          colorActual.textContent = 'AZUL';
-          colorActual.style.color = 'rgb(0,255,255)';
-          break;
-        case 2:
-          colorActual.textContent = 'MAGENTA';
-          colorActual.style.color = 'rgb(255,0,255)'
-          break;
-        case 3:
-          colorActual.textContent = 'AMARILLO';
-          colorActual.style.color = 'rgb(255,255,0)'
-          break;
-        case 4:
-          colorActual.textContent = 'ESPECIAL';
-          colorActual.style.color = 'rgb(255,130,0)'
-          break;
-        case 5:
-          colorActual.textContent = 'BARNIZ';
-          colorActual.style.color = 'rgb(200,200,200)'
-          break;
-      }
-
-    });
-  }); 
-
-  document.querySelector('.alerta-perfil').addEventListener('click', function () {  
-    this.classList.add('move-alerta-perfil');
-  });
-
-
-
-
-
-
-  document.querySelector('#butts-selectores > div:nth-of-type(1)').addEventListener('click', () => {  
-    alertaSeis.classList.remove('move-alerta')
-    color = 'rgb(0,0,0)'
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      if(!flagAplicacion){
-        alertaPerfil.style.display = 'flex'
-        alertaPerfil.style.backgroundColor = verde
-        alertaPerfil.style.color = 'black'
-        setTimeout(() => {
-          alertaPerfil.style.backgroundColor = ''  
-          alertaPerfil.style.color = ''  
-        }, 500);
-      }else{      
-        if (!flagNegro) {
-          flagNegro = true;   
-          flagCyan = false;
-          flagMagenta = false;
-          flagAmarillo = false;
-          flagEspecial = false;
-          flagBarniz = false; 
-          crearBotoneraDinamica(color)
-          setTimeout(() => {
-            eliminarColores()
-          }, 50);
-          setTimeout(() => {
-            if (objetoGlobal && flagNegro) {
-              muestraRenderObjetoGlobal(objetoGlobal, 'negro', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 1,2);
-            }
-          }, 100);
-        }    
-      }  
-    }else{
-      alertaSeis.style.display='grid'
-      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
-    }
-  });
-  document.querySelector('#butts-selectores > div:nth-of-type(2)').addEventListener('click', () => { 
-    alertaSeis.classList.remove('move-alerta')
-    color = 'rgb(0,0,255)'
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      if(!flagAplicacion){
-        console.log('ESTADO BANDERA ', flagAplicacion)
-        alertaPerfil.style.display = 'flex'
-        alertaPerfil.style.backgroundColor = verde
-        alertaPerfil.style.color = 'black'
-        setTimeout(() => {
-          alertaPerfil.style.backgroundColor = ''  
-          alertaPerfil.style.color = ''  
-        }, 500);
-      }else{      
-        if (!flagCyan) {
-          flagCyan = true;
-          flagNegro = false;
-          flagMagenta = false;
-          flagAmarillo = false;
-          flagEspecial = false;
-          flagBarniz = false; 
-          crearBotoneraDinamica(color)
-          setTimeout(() => {
-            eliminarColores()
-          }, 50);
-          setTimeout(() => {
-            if (objetoGlobal && flagCyan) {
-              muestraRenderObjetoGlobal(objetoGlobal, 'azul', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 3,4);
-            }
-          }, 100);
-        }    
-      } 
-    }else{
-      alertaSeis.style.display='grid'
-      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
-    }   
-  });
-  document.querySelector('#butts-selectores > div:nth-of-type(3)').addEventListener('click',() => {
-    alertaSeis.classList.remove('move-alerta')
-    color = 'rgb(255,0,255)'
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      if(!flagAplicacion){
-        console.log('ESTADO BANDERA ', flagAplicacion)
-        alertaPerfil.style.display = 'flex'
-        alertaPerfil.style.backgroundColor = verde
-        alertaPerfil.style.color = 'black'
-        desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
-        setTimeout(() => {
-          alertaPerfil.style.backgroundColor = ''  
-          alertaPerfil.style.color = ''  
-        }, 500);
-      }else{      
-        if (!flagMagenta) {
-          flagMagenta = true;
-          flagCyan = false;
-          flagNegro = false;
-          flagAmarillo = false;
-          flagEspecial = false;
-          flagBarniz = false; 
-          crearBotoneraDinamica(color)
-          setTimeout(() => {
-            eliminarColores()
-          }, 50);
-          setTimeout(() => {
-            if (objetoGlobal && flagMagenta) {
-              muestraRenderObjetoGlobal(objetoGlobal, 'magenta', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 5,6);
-            }
-          }, 100);
-        }    
-      }  
-    }else{
-      alertaSeis.style.display='grid'
-      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
-    }  
-  });
-  document.querySelector('#butts-selectores > div:nth-of-type(4)').addEventListener('click',() => {
-    alertaSeis.classList.remove('move-alerta')
-    color = 'rgb(255,255,0)'
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      if(!flagAplicacion){
-        console.log('ESTADO BANDERA ', flagAplicacion)
-        alertaPerfil.style.display = 'flex'
-        alertaPerfil.style.backgroundColor = verde
-        alertaPerfil.style.color = 'black'
-        desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
-        setTimeout(() => {
-          alertaPerfil.style.backgroundColor = ''  
-          alertaPerfil.style.color = ''  
-        }, 500);
-      }else{      
-        if (!flagAmarillo) {
-          flagAmarillo = true;
-          flagCyan = false;
-          flagMagenta = false;
-          flagNegro = false;
-          flagEspecial = false;
-          flagBarniz = false; 
-          crearBotoneraDinamica(color)
-          setTimeout(() => {
-            eliminarColores()
-          }, 50);
-          setTimeout(() => {
-            if (objetoGlobal && flagAmarillo) {
-              muestraRenderObjetoGlobal(objetoGlobal, 'amarillo', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 7,8);
-            }
-          }, 100);
-        }    
-      }  
-    }else{
-      alertaSeis.style.display='grid'
-      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
-    }  
-  });  
-  document.querySelector('#butts-selectores > div:nth-of-type(5)').addEventListener('click',() => {
-    alertaSeis.classList.remove('move-alerta')
-    color = 'rgb(255,130,0)'
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      if(!flagAplicacion){
-        console.log('ESTADO BANDERA ', flagAplicacion)
-        alertaPerfil.style.display = 'flex'
-        alertaPerfil.style.backgroundColor = verde
-        alertaPerfil.style.color = 'black'
-        desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
-        setTimeout(() => {
-          alertaPerfil.style.backgroundColor = ''  
-          alertaPerfil.style.color = ''  
-        }, 500);
-      }else{      
-        if (!flagEspecial) {
-          flagEspecial = true;
-          flagCyan = false;
-          flagMagenta = false;
-          flagAmarillo = false;
-          flagNegro = false;
-          flagBarniz = false; 
-          crearBotoneraDinamica(color)
-          setTimeout(() => {
-            eliminarColores()
-          }, 50);
-          setTimeout(() => {
-            if (objetoGlobal && flagEspecial) {
-              muestraRenderObjetoGlobal(objetoGlobal, 'especial', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 9,10);
-            }
-          }, 100);
-        }    
-      } 
-    }else{
-      alertaSeis.style.display='grid'
-      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
-    }   
-  });
-  document.querySelector('#butts-selectores > div:nth-of-type(6)').addEventListener('click',() => {
-    alertaSeis.classList.remove('move-alerta')
-    color = 'rgb(200,200,200)'
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      if(objetoGlobal != '' && objetoGlobal != null){
-        if(!flagAplicacion){
-          console.log('ESTADO BANDERA ', flagAplicacion)
-          alertaPerfil.style.display = 'flex'
-          alertaPerfil.style.backgroundColor = verde
-          alertaPerfil.style.color = 'black'
-          desactivarClicEnElementos(buttSelector,buttsPerfiles,buttsColores,buttSuma,buttResta,buttsControl);
-          setTimeout(() => {
-            alertaPerfil.style.backgroundColor = ''  
-            alertaPerfil.style.color = ''  
-          }, 500);
-        }else{      
-          if (!flagBarniz) {
-            flagBarniz = true;
-            flagCyan = false;
-            flagMagenta = false;
-            flagAmarillo = false;
-            flagEspecial = false;
-            flagNegro = false; 
-            crearBotoneraDinamica(color)
-            setTimeout(() => {
-              eliminarColores()
-            }, 50);
-            setTimeout(() => {
-              if (objetoGlobal && flagBarniz) {
-                muestraRenderObjetoGlobal(objetoGlobal, 'barniz', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 11,12);
-              }
-            }, 100);
-          }    
-        }
-      }else{
-        alertaSeis.style.display='grid'
-      }
-    }else{
-      alertaSeis.style.display='grid'
-      desactivarClick(['.div-ctrl','.butt-perfiles', '.butt-selector', '.digit']);
-    }     
-  });
-  idPadreCantidadClaseTextId('control-perfiles', 22,'leds-indiv','','','led');
-  idPadreCantidadClaseTextId('regla-barniz', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
-  idPadreCantidadClaseTextId('regla-especial', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
-  idPadreCantidadClaseTextId('regla-amarillo', textosReglas.length, 'spn-gral','', textosReglas, 'spn'); 
-  idPadreCantidadClaseTextId('regla-magenta', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
-  idPadreCantidadClaseTextId('regla-azul', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
-  idPadreCantidadClaseTextId('regla-negro', textosReglas.length, 'spn-gral','', textosReglas, 'spn');
-  const negroGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(1)')
-  const cyanGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(2)')
-  const magentaGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(3)')
-  const amarilloGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(4)')
-  const especialGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(5)')
-  const barnizGeneral = document.querySelector('#perfiles-entintado > #encabezado > div:nth-of-type(6)')
-  const  botonesGenerales = [negroGeneral, cyanGeneral, magentaGeneral, amarilloGeneral, especialGeneral, barnizGeneral];
-  const bloqueTinta = document.getElementById('ctrl-gral-tinta')
-  const bloqueAgua = document.getElementById('ctrl-gral-agua')
-  const clases = [
-    'move-generales-cyan',
-    'move-generales-magenta',
-    'move-generales-amarillo',
-    'move-generales-especial',
-    'move-generales-barniz',
-    'move-generales-barniz-II'
-  ];  
-
-  function alertaCrearPerfil(){
-    alertaSeis.classList.remove('move-alerta')
-    darColorVerdeCabeza()
-    alertaSeis.style.display='grid'   
-    alertaSeis.style.backgroundColor = 'rgb(0, 166, 255)'
-    alertaSeis.style.color = 'black'
-    alertaSeis.style.top = '42vh'
-    setTimeout(() => {
-      alertaSeis.style.backgroundColor = ''  
-      alertaSeis.style.color = ''  
-    }, 500);
-    desactivarClicEnElementos(buttsPerfiles,buttsAguaGral,buttsAguaSingle);
-  }  
- 
-  negroGeneral.addEventListener('mousedown', () => { 
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-        color = 'rgb(0,0,0)';
-        manejoGeneralIndividual('negro', negro, estadoBalanceNegro, negroGeneral, 'negro', 'NEGRO', 'flagNegro', 1, 0);  
-        muestraRenderObjetoGlobal(objetoGlobal, 'negro', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 1, 2);  
-    } else {
-        alertaCrearPerfil();  
-    }
-  })
-  cyanGeneral.addEventListener('mousedown', () => {
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-    color = 'rgb(0,0,255)'
-    manejoGeneralIndividual('azul',cian,estadoBalanceCyan,cyanGeneral,'cyan','AZUL','flagCyan',2,1)  
-    muestraRenderObjetoGlobal(objetoGlobal, 'azul', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 3,4);
-  }else{
-    alertaCrearPerfil()
-  }
-  })
-  magentaGeneral.addEventListener('mousedown', () => {
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      color = 'rgb(255,0,255)'
-    manejoGeneralIndividual('magenta',magenta,estadoBalanceMagenta ,magentaGeneral,'magenta','MAGENTA','flagMagenta',3,2)  
-    muestraRenderObjetoGlobal(objetoGlobal, 'magenta', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 5,6);
-  }else{
-    alertaCrearPerfil()
-  }
-  })
-  amarilloGeneral.addEventListener('mousedown', () => {
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      color = 'rgb(255,255,0)'
-    manejoGeneralIndividual('amarillo',amarillo,estadoBalanceAmarillo,amarilloGeneral,'amarillo','AMARILLO','flagAmarillo',4,3)  
-    muestraRenderObjetoGlobal(objetoGlobal, 'amarillo', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 7,8);
-  }else{
-    alertaCrearPerfil()
-  }
-  })
-  especialGeneral.addEventListener('mousedown', () => {
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      color = 'rgb(255,130,0)'
-    manejoGeneralIndividual('especial',especial,estadoBalanceEspecial,especialGeneral,'especial','ESPECIAL','flagEspecial',5,4)  
-    muestraRenderObjetoGlobal(objetoGlobal, 'especial', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 9,10);
-  }else{
-    alertaCrearPerfil()
-  }
-  })
-  barnizGeneral.addEventListener('mousedown', () => {
-    if (objetoGlobal && Object.keys(objetoGlobal).length > 0) {  
-      color = 'rgb(200,200,200)'
-    manejoGeneralIndividual('barniz',barniz,estadoBalanceBarniz,barnizGeneral,'especial','BARNIZ','flagBarniz',6,5)  
-    muestraRenderObjetoGlobal(objetoGlobal, 'barniz', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 11,12);
-  }else{
-    alertaCrearPerfil()
-  }
-  })  
-  function manejoGeneralIndividual(grilla,botoneraDinamica,actualBalanceColor,botonActual,claseColor,textoSpan,banderaActiva,index,indexSelector){
-    const lineaLeds = document.querySelectorAll(`.grilla-${grilla}`);
-    lineaLeds.forEach((elto, index) => { 
-      setTimeout(() => {
-        elto.style.backgroundColor = verde;
-      }, index * 7); // Retraso de 100ms entre cada elemento
-    });
-    setTimeout(() => {
-      lineaLeds.forEach((elto, index) => {
-        setTimeout(() => {
-          elto.style.backgroundColor = '';
-        }, index * 7); // Retraso de 100ms entre cada elemento
-      });    
-    }, 177);
-    clases.forEach(clase => {
-      bloqueTinta.classList.remove(clase);
-      bloqueAgua.classList.remove(clase);
-    });
-    flagNegro = false;
-    flagCyan = false;
-    flagMagenta = false;
-    flagAmarillo = false;
-    flagEspecial = false;
-    flagBarniz = false;
-    switch (banderaActiva) {
-      case 'flagNegro':
-        flagNegro = true;
-        break;
-      case 'flagCyan':
-        flagCyan = true;
-        break;
-      case 'flagMagenta':
-        flagMagenta = true;
-        break;
-      case 'flagAmarillo':
-        flagAmarillo = true;
-        break;
-      case 'flagEspecial':
-        flagEspecial = true;
-        break;
-      case 'flagBarniz':
-        flagBarniz = true;
-        break;
-      default:
-        console.warn('Bandera no reconocida');
-    }
-    crearBotoneraDinamica(botoneraDinamica);
-    botonesGenerales.forEach(boton => {
-      boton.style.backgroundColor = ''; // Reinicia el color
-    });    
-    botonActual.style.backgroundColor = verde;    
-    bloqueTinta.classList.add(`move-generales-${claseColor}`)
-    bloqueAgua.classList.add(`move-generales-${claseColor}`)    
-    colorActual.textContent= textoSpan    
-    const todosSpan = document.querySelectorAll('.texto-selectores');
-    todosSpan.forEach(span => {
-      span.style.color = ''; 
-    });  
-    const spanElement = botonActual.querySelector('span.texto-selectores');
-    if (spanElement) {
-      spanElement.style.color = 'black';
-    }
-    const spanSelectores = document.querySelector(`#butts-selectores div:nth-child(${index}) .texto-selectores`);
-    if (spanSelectores) {
-      spanSelectores.style.color = 'black';
-    }
-    const bottsSelectores = document.querySelectorAll('.butt-selector');  
-    bottsSelectores.forEach((boton, i) => {
-      if (i === indexSelector) {
-        boton.style.backgroundColor = verde ; // Aplicar fondo verde al botón en la posición `index`
-      } else {
-        boton.style.backgroundColor = ''; // Restablecer color para los demás botones
-      }
-    });
-  }      
-  function mostrarSecuenciaPerfiles(){
-    manejoGeneralIndividual('negro',negro,estadoBalanceNegro,negroGeneral,'negro','NEGRO','flagNegro',1,0)  
-    muestraRenderObjetoGlobal(objetoGlobal, 'negro', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 1,2);  
-    setTimeout(() => {
-      manejoGeneralIndividual('azul',cian,estadoBalanceCyan,cyanGeneral,'cyan','AZUL','flagCyan',2,1)  
-      muestraRenderObjetoGlobal(objetoGlobal, 'azul', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 3,4);
-    }, 150);
-    setTimeout(() => {
-      manejoGeneralIndividual('magenta',magenta,estadoBalanceMagenta ,magentaGeneral,'magenta','MAGENTA','flagMagenta',3,2)  
-      muestraRenderObjetoGlobal(objetoGlobal, 'magenta', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 5,6);
-    }, 300);
-    setTimeout(() => {
-      manejoGeneralIndividual('amarillo',amarillo,estadoBalanceAmarillo,amarilloGeneral,'amarillo','AMARILLO','flagAmarillo',4,3)  
-      muestraRenderObjetoGlobal(objetoGlobal, 'amarillo', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 7,8);
-    }, 450);
-    setTimeout(() => {
-      manejoGeneralIndividual('especial',especial,estadoBalanceEspecial,especialGeneral,'especial','ESPECIAL','flagEspecial',5,4)  
-      muestraRenderObjetoGlobal(objetoGlobal, 'especial', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 9,10);
-    }, 600);
-    setTimeout(() => {
-      manejoGeneralIndividual('barniz',barniz,estadoBalanceBarniz,barnizGeneral,'especial','BARNIZ','flagBarniz',6,5)  
-      muestraRenderObjetoGlobal(objetoGlobal, 'barniz', 'linea', 'lineaSeguidor', 'lineaGrilla', 'tanque-tinta', 'nivelTinta', 'nivelAgua', 11,12);
-    }, 750);
-
-  }
-  irAconsola.addEventListener('click', () =>{
-    nombreCliente.style.top=''
-    let nombreDatos = document.querySelector('#cliente-nombre')
-    let interfazPerfiles = document.getElementById('perfiles-entintado')
-    interfazPerfiles.classList.remove('move-perfiles-entintado')
-    desactivarClick(['.butt-perfiles', '.cabeza', '.mod-tinta']); 
-    var elementosExcluidos = ['simulador','interfaz-perfiles','perfiles-entintado','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7']
-    for (var i = 0; i < allContenedores.length; i++) {
-      var elemento = document.getElementById(allContenedores[i])  
-      if (elemento) {
-        elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'  
-      }
-    }
-    const elementos = document.querySelectorAll('.div-gral, .div-agua');
-    elementos.forEach(elemento => {
-      elemento.style.color = 'transparent'
-    });
-    container1.style.display = 'none'
-    restablecerClick(['.butt-perfiles', '.cabeza', '.mod-tinta']);
-    if(objetoGlobal === null || objetoGlobal === ''){nombreDatos.textContent = ''}
-    setTimeout(() => {
-      interfazPerfiles.classList.add('move-perfiles-entintado')
-    }, 100);
-    setTimeout(() => {
-      document.querySelector('.nombre-cliente').style.display='flex'
-    }, 1500);
-    setTimeout(() =>{
-      mostrarSecuenciaPerfiles()                        
-    },1550);
-      document.querySelectorAll('.butt-perfiles').forEach(elemento => {
-      elemento.style.display = 'flex'; 
-    });
-    buttsPerfiles.forEach(boton =>{ 
-      boton.style.backgroundColor = ''
-    })
-    document.querySelector('#butt-perfil-tinta').style.backgroundColor='rgb(0,255,0)'
-    irAconsola.style.display='none'
-      restablecerClick(['.perfiles'])
-  })
-  observarCambioDisplay()
-});  
 function crearLedsSpan() {
   // Ciclo para crear 22 padres con IDs secuenciales y 24 spans en cada uno
   for (let i = 1; i <= 22; i++) {
@@ -4483,6 +3954,18 @@ document.querySelector('#boton-reseteo').addEventListener('click', () =>{
     alertaPerfiles.style.display = 'flex';
   });
 })
+document.querySelector('#boton-prensas').addEventListener('click', () =>{
+  var elementosExcluidos = ['simulador','buscador','search-form','links-inicialesI','links-iniciales','container01']  
+  for (var i = 0; i < allContenedores.length; i++) {
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  document.querySelector('.sections').style.display = 'grid'
+  document.querySelector('#sections-fondo').style.display = 'grid'
+  document.querySelector('#contenedor-botonera').style.display = 'grid'
+})
 document.querySelector('#boton-perfiles').addEventListener('click', () =>{
   var elementosExcluidos = ['simulador','butt-perfil-tinta', 'butt-control-tinta', 'butt-perfil', 'butt-job-track', 'boton-perfiles', 'interfaz-perfiles', 'boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6']  
   for (var i = 0; i < allContenedores.length; i++) {
@@ -4876,8 +4359,6 @@ function vaciarObjetoEnLocal() {
   
   console.log('Objeto eliminado de localStorage');
 }  
-/* *************************************************************************************************************************************************** */
-/* LOGICA AL CREAR EL OBJETO EN LOCAL STORE*/
 // Crear una nueva instancia de la clase objetoColores y guardarla en almacenObjetos
 function crearYGuardarInstanciaEnAlmacen(clave) {
   // Verificar si la clave ya existe en el almacén
@@ -5039,9 +4520,7 @@ function resaltarElemento(elementoClicado) {
    });
   document.querySelector('#filtroNombres input').value = '';
 }
-/* *************************************************************************************************************************************************** */
-/* *************************************************************************************************************************************************** */
-/* LOGICA PARA ADMINISTRAR EL objetoGlobal */
+// LOGICA PARA ADMINISTRAR EL objetoGlobal
 function cargarObjetoGlobalDesdeLocalStorage() {
   const datosObjetoGlobal = localStorage.getItem('objetoGlobal');
   if (datosObjetoGlobal) {
@@ -5063,7 +4542,6 @@ function guardarCambiosGeneralesEnAlmacen() {
     console.error('Error al guardar almacenObjetos en localStorage:', error);  
   }
 }
-/* *************************************************************************************************************************************************** */
 // Función para mostrar la ventana emergente
 function mostrarVentanaEmergente(mensaje) {
   const ventanaEmergente = document.getElementById('ventanaEmergente');
@@ -5071,7 +4549,6 @@ function mostrarVentanaEmergente(mensaje) {
   mensajeEmergente.textContent = mensaje;
   ventanaEmergente.classList.remove('oculta');
 }
-
 document.getElementById('cerrarEmergente').addEventListener('click', () => {
   let conteCMYK = document.querySelector('#padre-cmyk');
   let conteRGB = document.querySelector('#padre-rgb');
@@ -5115,8 +4592,6 @@ document.getElementById('cerrarEmergente').addEventListener('click', () => {
     document.getElementById('nombreCliente').value = '';
   }
 });
-
-
 function crearBotonResta(color, linea1, linea2, linea3) {
   const contenedorPrincipal = document.getElementById('columna-30');
   const botonesResta = [];
@@ -6049,7 +5524,6 @@ function eliminarColores(){
 
 
 } 
-/* ********************************************************************************************************************************************************** */
 function desactivarClick(classElements) {
   if (!Array.isArray(classElements)) {
     console.error('El parámetro debe ser un array de selectores.');
@@ -6083,7 +5557,6 @@ function desactivarClickTemporalmente(classElements, duracion) {
     }, duracion);
   });
 }
-
 function restablecerClick(classElements) { 
   if (!Array.isArray(classElements)) {
     console.error('El parámetro debe ser un array de selectores.');
@@ -6105,7 +5578,6 @@ function bloquearClick(event) {
     console.log('Click desactivado en:', event.currentTarget); 
   }
 }  
-/* ********************************************************************************************************************************************************** */
 function limpiarColoresDeFondo() {
   // Lista de clases a recorrer
   const clases = ['.led-general', '.clase-dos', '.led', '.leds', '.lineas-tinta', '.lineas-solucion'];
@@ -6124,7 +5596,6 @@ function limpiarColoresDeFondo() {
   console.log('Colores de fondo eliminados para las clases:', clases.join(', '));
 }
 let inputBuscar = document.getElementById('input-buscar-perfil');
-  
 function mostrarNombresDeObjetos() {
   flagAplicacion = true;
   let listadoPerfiles = document.querySelector('#lista-clientes')
@@ -6295,8 +5766,6 @@ function mostrarNombresDeObjetos() {
     console.log("No se encontraron objetos almacenados en localStorage.");
   }
 }
-
-
 function buscarPerfil(event) {
   let listadoPerfiles = document.querySelector('#lista-clientes')
   desactivarClick(['.cliente-item']);
@@ -6364,7 +5833,6 @@ function buscarPerfil(event) {
     restablecerClick(['.cliente-item']);
   }, 500);
 }
-
 function guardarObjetoEnAlmacen(nombreObjeto, datosObjeto) {
   // Capitalizar el nombre antes de guardar
   const nombreCapitalizado = capitalizarTexto(nombreObjeto);
@@ -6599,7 +6067,6 @@ function ocultarConsultas(){
   elemento.textContent = ''
   })
   restablecerClick(['.butt-perfiles', '.estilo-1','.digit','.digito']);
-    /* calculadora.classList.add('move-calculadora') */
   if(menu){
     menu.style.display = 'none'
   }
@@ -6665,16 +6132,10 @@ function traerAlmacenObjetos() {
 
 }
 function borrarESTO(){
-
-  /* ********************************************************************************** */
   abrirSeccionOperativa('cont-titulo-operacion')
   setTimeout(() => {
     abrirSeccionContinua('pantalla-inicial')
   }, 500);
-
-  /* ********************************************************************************** */
-
-
 }
 function moverFormulario() {
   const formulario = document.querySelector('#formulario-perfiles'); 
@@ -6769,26 +6230,10 @@ document.querySelectorAll('.section').forEach((btn, index) => {
     }
   })
 })
-/* ************************************************************************************************************************************** */
 // mueve botones mezcladores DA COLOR NARANJA Y COLOR A PANTALLAS RGB Y CMYK
 let values = { C: 0, M: 0, Y: 0, K: 0, A: 0, R: 0, G: 0, B: 0, W:0 };
 let red = 0, green = 0, blue = 0; 
 // ejecuta la función de inicialización de los sliders (initSliderCYK) para cada canal de color
-document.addEventListener("DOMContentLoaded", () => {
-  initSliderCMYK("slid-cian", "c-span-", "C");
-  initSliderCMYK("slid-magenta", "m-span", "M");
-  initSliderCMYK("slid-amarillo", "y-span", "Y");
-  initSliderCMYK("slid-negro", "k-span", "K");
-  initSliderCMYK("slid-blanco", "w-span", "A");
-  updateColorCMYK();
-  /* *********************************************************************************************************** */
-  initSliderRGB("slid-rojo-rgb", "c-span-rgb", "R");
-  initSliderRGB("slid-verde-rgb", "m-span-rgb", "G");
-  initSliderRGB("slid-azul-rgb", "y-span-rgb", "B");
-  initSliderRGB("slid-blanco-rgb", "w-span-rgb", "W");
-  updateColorRGB();
-});
-// Inicializa un slider con eventos de arrastre y actualiza valores CMYK.
 function initSliderCMYK(trackId, spanId, channel) {
   let track = document.getElementById(trackId);
   let thumb = track.querySelector(".slider-thumb-cmyk");
@@ -6845,11 +6290,8 @@ function updateColorCMYK(channel) { // CMYK
   if (!objetoGlobalColor.CMYK[channel]) {
     objetoGlobalColor.CMYK[channel] = { value: 0 };
   }
-
   // Asignar el valor actualizado
   objetoGlobalColor.CMYK[channel].value = values[channel];
-
-  console.log("Almacenado en almacenObjetos:", almacenObjetos);
 }
 // Normaliza valores CMYK manteniendo la proporción entre ellos.
 function normalizeCMYK(c, m, y, k) { // CMYK 
@@ -7025,7 +6467,6 @@ document.getElementById("animate-btn-cmyk").addEventListener("mouseup", () => {
     { trackId: "slid-blanco", spanId: "w-span", channel: "A", porcentajeDestino: oValue }
   ]);
 });
-/* ************************************************************************************************************************************** */
 function animarColorSecuencia() {
   desactivarClick(['.butt-perfiles']);
   
@@ -7165,6 +6606,27 @@ initResize(
   document.querySelector("#padre-cmyk"),
   document.querySelector(".esquina-cmyk")
 );
+function cmykFlotante() { // botones rojos
+  var elementosExcluidos = ['colorCMYK','container-slider','padre-cmyk','simulador','interfaz-perfiles','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
+  for (var i = 0; i < allContenedores.length; i++) { 
+    var elemento = document.getElementById(allContenedores[i])  
+    if (elemento) {
+      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
+    }
+  }
+  document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
+    el.style.display = 'block';
+  });     
+
+  let padreCmyk = document.querySelector("#padre-cmyk");
+  let padreControles = document.querySelector("#container-slider");
+  let perfilador = document.querySelector('#perfiles-color')
+
+  padreCmyk.style.display = "grid";
+  padreControles.style.display = 'grid';
+  padreCmyk.style.zIndex = 200
+  perfilador.removeAttribute("style");
+}
 function rgbFlotante() { // botones rojos
   var elementosExcluidos = ['colorDisplay','padre-controles','padre-rgb','simulador','interfaz-perfiles','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
   for (var i = 0; i < allContenedores.length; i++) { 
@@ -7186,27 +6648,6 @@ function rgbFlotante() { // botones rojos
   padreRgb.style.zIndex = 200
   perfilador.removeAttribute("style");
 }
-function cmykFlotante() { // botones rojos
-  var elementosExcluidos = ['colorCMYK','container-slider','padre-cmyk','simulador','interfaz-perfiles','boton-perfiles','boton-reseteo','spn-blur-1','spn-blur-2','spn-blur-3','spn-blur-4','spn-blur-5','spn-blur-6','spn-blur-7','bot-revertir'] 
-  for (var i = 0; i < allContenedores.length; i++) { 
-    var elemento = document.getElementById(allContenedores[i])  
-    if (elemento) {
-      elemento.style.display = elementosExcluidos.includes(allContenedores[i]) ? 'flex' : 'none'
-    }
-  }
-  document.querySelectorAll('.cmyRgb-group, .lbls-cmyRgb').forEach(el => {
-    el.style.display = 'block';
-  });     
-
-  let padreCmyk = document.querySelector("#padre-cmyk");
-  let padreControles = document.querySelector("#container-slider");
-  let perfilador = document.querySelector('#perfiles-color')
-
-  padreCmyk.style.display = "grid";
-  padreControles.style.display = 'grid';
-  padreCmyk.style.zIndex = 200
-  perfilador.removeAttribute("style");
-}  
 // controlan redimensionado
 function initResize(contenedor, esquina) {
   const MIN_WIDTH = 200;
@@ -7435,8 +6876,6 @@ document.querySelector('#nombre-Perfil').addEventListener('click', () => {
   document.querySelector('#nombre-Perfil-existe').value = ''
   listaClientes.style.display = 'none'
 })
-
-
 function crearPerfilColor() { // crear nuevo desde boton blanco
   
   let contRGB = document.querySelector('#padre-rgb');
@@ -7605,7 +7044,6 @@ function renderizaMezclaCMYK() {
   traerAlmacenObjetos()
 
 }
-
 function alternarOcultarBotones(altern){
   switch(altern){
     case 'cmyk':
@@ -7776,7 +7214,6 @@ document.getElementById('nombre-Perfil-existe').addEventListener('click', () => 
   }, 50);      
 
 });
-
 function pintarColor(){
   if(tecnologyCMYK){
     renderizaMezclaCMYK()
@@ -7785,7 +7222,6 @@ function pintarColor(){
     renderizaMezclaRGB()
   }  
 }
-
 // Función para observar cambios en el DOM
 function observarCambioDisplay() {
   const observer = new MutationObserver(() => {
@@ -7803,6 +7239,3 @@ function observarCambioDisplay() {
   // Observar cambios en el body y sus hijos
   observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['style', 'class'] });
 }
-
-// Iniciar la observación
-/* document.addEventListener('DOMContentLoaded', observarCambioDisplay); */
